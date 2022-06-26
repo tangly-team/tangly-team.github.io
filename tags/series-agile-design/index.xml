@@ -1,0 +1,1414 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly OS Components – series-agile-design</title>
+    <link>blog.tangly.net/tags/series-agile-design/</link>
+    <description>Recent content in series-agile-design on tangly OS Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="blog.tangly.net/tags/series-agile-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Legacy Systems Refactoring</title>
+      <link>blog.tangly.net/blog/2020/legacy-systems-refactoring/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2020/legacy-systems-refactoring/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_legacy_systems_refactoring&#34;&gt;Legacy Systems Refactoring&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2020-06-01-head.jpg&#34; alt=&#34;2020 06 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In computer programming and software design, code refactoring is the process of restructuring existing computer code without changing its external behavior.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Refactoring is intended to improve the design, structure, or implementation of the software (its non-functional attributes), while preserving its functionality.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;With refactoring you can take bad design, even chaos software, and rework it into well-designed code.
+Most often, it is cheaper to refactoring a legacy application instead of rewriting it from scratch.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Simply put, refactoring is a way of decreasing &lt;a href=&#34;https://en.wikipedia.org/wiki/Technical_debt&#34;&gt;Technical Debt&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;There are two general categories of benefits to the activity of refactoring.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Maintainability&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;It is easier to fix bugs because the source code is easy to read and the intent of its author is easy to grasp.
+This might be achieved by reducing large monolithic routines into a set of individually concise, well-named, single-purpose methods.
+It might be achieved by moving a method to a more appropriate class, or by removing misleading comments.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Extensibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;It is easier to extend the capabilities of the application if it uses recognizable design patterns.
+It provides flexibility where none before May have existed.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Refactoring is the process of changing a software system in such a way that it does not alter the external behavior of the code.
+Yet the internal structure improves.
+It is a disciplined way to clean up code that minimizes the chances of introducing bugs.
+In essence, when you refactor you are improving the design of the code after it has been written.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Martin Fowler
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_introduction&#34;&gt;Introduction&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For a developer new to a legacy software solution, it is often hard to understand the existing application.
+He must determine the extent of source code and architectural decay, and identify smells and metric violations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Legacy applications are often critical to business and have been in use for years, sometimes decades.
+Since business is evolving, there is constant pressure to support additional requirements.
+However, changing these applications is difficult and you end up spending an increasing number of resources maintaining the software.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;There are many reasons why maintaining legacy software is a difficult problem.
+Often, most, if not all, of the original developers are gone, and no one understands how the application is implemented.
+The technologies used in the application are no longer current, having been replaced by newer and more exciting technologies.
+Also, software complexity increases as it evolves over time as you add new requirements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The key to managing the lifecycle of software is to continuously work as a professional and skilled developer.
+A professional engineer &lt;a href=&#34;https://martinfowler.com/bliki/OpportunisticRefactoring.html&#34;&gt;opportunistically refactor&lt;/a&gt; each time he modifies source code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_understand_your_product&#34;&gt;Understand Your Product&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Understand how it is used&lt;/em&gt;.
+These scenarios define the acceptance tests you need to start creating a set of automated validation criteria.
+And you will better understand how your users are working with your product.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Understand how it is deployed&lt;/em&gt;.
+You need a reproducible and in the long-run automated process to deploy a new version of your application.
+We are talking about continuous delivery and even continuous deployment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Understand how it is build&lt;/em&gt;.
+You need a reproducible and automated build process.
+This process must be integrated into your continuous integration and delivery pipeline.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Understand how it is structured&lt;/em&gt;.
+You need a tentative architecture description to start refactoring and to untangle this &lt;a href=&#34;https://en.wikipedia.org/wiki/Big_ball_of_mud&#34;&gt;big ball of mud&lt;/a&gt; into a more modular solution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_refactor_your_product&#34;&gt;Refactor Your Product&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Refactoring is always a successful activity.
+You cannot fail.
+But you need discipline, continuous involvement, and measurement.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each refactoring step is simple, even simplistic.
+Yet the cumulative effect of these small changes can radically improve the design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Martin Fowler
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you are new to refactoring, it is worth having a coach to smooth the learning curve.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Extract one big service, refactor, test, and deploy.
+&lt;strong&gt;Iterate&lt;/strong&gt;.
+&lt;em&gt;If you are not successful, discard your failure and checkout the current working version of git.
+You should have learnt enough so that the next try will be successful.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://refactoring.com/&#34;&gt;Refactor code&lt;/a&gt;.
+Use static analysis tools to detect the flaws in your source code.
+You should only improve live code, meaning code you must correct or extend.
+See Agile Code is Clean Code.
+&lt;em&gt;Use a modern IDE to automate the smaller refactoring steps, and avoid spurious errors&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Resolve design issues.
+Your senior design specialists already know the flaws.
+Now it is time to correct them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Increase code coverage.
+Code coverage is the security net when you are refactoring code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slowly add &lt;a href=&#34;https://www.thoughtworks.com/insights/articles/fitness-function-driven-development&#34;&gt;fitness functions&lt;/a&gt; to continuously validate your non-functional requirements.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware of good practices how to write good software products and refactor successfully applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Move to &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Design&lt;/a&gt; as an architecture approach.
+It works either for micro architecture or for modular monolith approaches.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Master long live domain driven design and event storming&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Master your technical stack and use current tools and libraries.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Modularize one big service extraction one after the other Avoid using dead architectural techniques.
+TOGAF, UML, PMI, CMMI are obsolete - various activities they recommend are good, do them in your sprints.
+Avoid lengthy, slow and expensive review approach.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Architecture_tradeoff_analysis_method&#34;&gt;ATAM&lt;/a&gt; is dead.
+The quality tree technique is wonderful, use fitness functions to implement your quality tree.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you are running legacy technology, this not only becomes a threat to your business but also to your hiring and employer branding efforts.
+As fewer and fewer programmers and operation managers will have the knowledge of those systems, you’ll face a dwindling talent pool.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_ameliorate_your_process&#34;&gt;Ameliorate Your Process&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Applications do not degrade to legacy or geriatric systems overnight.
+The organization and development group failed to work professionally over years before the product was ultimately doomed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;By continuously improving the design of code, we make it easier and easier to work with.
+This is in sharp contrast to what typically happens: little refactoring and a great deal of attention paid to expediently adding new features.
+If you get into the hygienic habit of refactoring continuously, you’ll find that it is easier to extend and maintain code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Joshua Kerievsky&lt;br/&gt;
+&lt;cite&gt;Refactoring to Patterns&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You must establish a culture of professional software development.
+Professional software developers write code which is maintainable and legible.
+Only unprofessional organizations create legacy applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Embrace software craftsmanship.
+All your developers should have formal software development training and frequent training in new approaches and techniques.
+They read consistently books.
+Is it not that you expect from your physician or the pilot of the plane you are taking?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The agile architecture track contains the following blogs&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-principles&#34;&gt;Agile Architecture Principles&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-code-is-clean-code&#34;&gt;Agile Code is Clean Code!&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-within-scrum/&#34;&gt;Agile Architecture within Scrum&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/agile-component-design&#34;&gt;Agile Component Design&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/legacy-systems-refactoring&#34;&gt;Legacy Systems Refactoring&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/how-agile-collaborators-learn&#34;&gt;How Agile Collaborators Learn&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We also published our &lt;a href=&#34;https://www.tangly.net/insights/continuous-learning/agile-architecture-course&#34;&gt;agile architecture course&lt;/a&gt; (3 ECTS) used for teaching computer science students at bachelor level at Swiss technical universities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Agile Component Design</title>
+      <link>blog.tangly.net/blog/2020/agile-component-design/</link>
+      <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2020/agile-component-design/</guid>
+      <description>
+        
+        
+        Unknown reference: efactoring-to-patterns
+Unknown reference: {building-microservices-2nd
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_component_design&#34;&gt;Agile Component Design&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2020-04-01-head.jpg&#34; alt=&#34;2020 04 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are responsible for creating or modifying a component in your current application.
+This is a &lt;strong&gt;design&lt;/strong&gt; activity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How can you create a good, legible, maintainable component architecture?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How can you validate your functional and non-functional requirements?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Yes, you are right.
+You are responsible for &lt;strong&gt;architecture decisions&lt;/strong&gt; at component or subsystem level.
+Below a set of tools to improve the quality of your design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_design_approaches&#34;&gt;Design Approaches&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_patterns_and_idioms&#34;&gt;Patterns and Idioms&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The pattern movement was started last millennium.
+Very talented and experienced developers have documented how to solve common problems elegantly and effectively.
+Depending on the programming language, you are using different idioms are preferred.
+The way to solve the same problem is different in Java, Scala, C++, Python or C#.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You should know all regular structural, behavioral and creational patterns.
+Explore your programming language and discover how idioms and patterns have evolved between major releases.
+For example, lambda expressions and streams introduced in Java 8 - released Spring 2014 - completely transform the solution for regular business logic.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Records introduced in Java 14 - released Spring 2020 - have a huge impact on how your architecture deals with data transfer objects – DTO – and immutability
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_read_open_source_code&#34;&gt;Read Open Source Code&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Stop inventing the wheel again and again.
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Not_invented_here&#34;&gt;Avoid Not Invented&lt;/a&gt; Here syndrome.
+Your current problem was already solved multiple times.
+Explore open source solutions, read posts, study books.
+Select the most adequate solution and fill free to adapt and improve it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Instead of searching for a solution for days, post your question on an adequate forum or on &lt;a href=&#34;https://stackoverflow.com/&#34;&gt;Stack Overflow&lt;/a&gt;.
+Fill free to improve the suggested solutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Become more efficient and use the wisdom of all these developers accessible through the Internet.
+Always verify the quality and adequacy of their proposed solutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_java_standard_api&#34;&gt;Java Standard API&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Know your programming language and the huge associated standard libraries part of your technology stack.
+Wisdom is coded in this code.
+Standard patterns are implemented in almost all packages.
+Idioms are encoded everywhere.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;See how Java deals with human and machine time with &lt;a href=&#34;https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/time/package-summary.html&#34;&gt;java.time&lt;/a&gt; package.
+Decades of trials and errors were needed to finally create a balanced and simple to use time abstractions.
+The author of &lt;a href=&#34;https://www.joda.org/joda-time/&#34;&gt;Joda Time&lt;/a&gt; experimented years before he wrote the java time package – JSR 310 – introduced in Java 8.
+All these decisions and learning are encoded in this code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_clean_architecture&#34;&gt;Clean Architecture&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_clean_code&#34;&gt;Clean Code&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You want to create a clean architecture you are proud of.
+You must first write a clean code.
+Clean architecture build up on clean code.
+Promote clean code in your agile team.
+Agile code is clean code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern IDE provide static code analysis tools to detect smells in your source code.
+&lt;a href=&#34;https://www.sonarlint.org/&#34;&gt;SonarLint&lt;/a&gt; is available for all major integrated development environments.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use these tools to steadily improve the quality of your code and remove well-known smells.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Do not fall to the fallacy to draw beautiful and useless &lt;a href=&#34;https://en.wikipedia.org/wiki/Unified_Modeling_Language&#34;&gt;UML&lt;/a&gt; diagram and write thick
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_architecture_description&#34;&gt;Software Architecture Design&lt;/a&gt; documents.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The real architecture is hidden in the source code of your product.
+You still document all major &lt;a href=&#34;https://en.wikipedia.org/wiki/Architectural_decision&#34;&gt;Architectural Decisions&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_know_your_programming_language&#34;&gt;Know Your Programming Language&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you are developing in Java, you should use the current features of the programming language.
+For example, with Java 14&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Try with resources and &lt;em&gt;closeable&lt;/em&gt; resources,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Immutable collections,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Streams, optionals, filters, and collectors,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Predicates and functions to define lambda expressions,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Records and immutability for objects,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pattern matching syntactic sugar as for &lt;em&gt;instanceof&lt;/em&gt; operator,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Switch expressions,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Text blocks to write legible multi-line text expression.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_aggressive_refactoring&#34;&gt;Aggressive Refactoring&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The entropy of the source code increases over time.
+Only continuous and aggressive refactoring mitigates the degenerescence of your application.
+Each time you correct an error or add a new functionality refactor your code.
+Remove smells, compiler warnings and migrate older code to use newer and better features of your programming language.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_acceptance_test_driven_development&#34;&gt;Acceptance Test Driven Development&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your users want a working application.
+Write acceptance tests insuring all relevant functions are tested through your continuous integration pipeline.
+You guarantee your users the application behaves as specified.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_test_driven_development&#34;&gt;Test Driven Development&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Testability and changeability of your application are architectural aspects.
+You must have a way to verify these non-functional requirements.
+Test driven development is a proven approach to fulfill these requirements and validate them continuously.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_continuous_integration&#34;&gt;Continuous Integration&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Continuous integration and delivery are the mechanisms to continuously validate and verify all functional and non-functional requirements are correctly implemented.
+You guarantee your users and customers that any software delivery they get is compliant and correct.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each time you find a discrepancy, add a test validating the requirement behind this fault.
+The same error will never happen again.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_good_practices&#34;&gt;Good Practices&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Publish your components on a central repository such as &lt;em&gt;Maven Central&lt;/em&gt;.
+Your users have easy and standardized access to your components and their latest version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Build tools such as &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; and &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt; or IDE such as &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;IntelliJ IDEA&lt;/a&gt; allows potential users to fetch the component without having to install out-of-the-box mechanisms.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Javadoc is the standard and hugely helpful approach to document classes and component public interfaces in Java.
+Similar tools exist for other programming languages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Architecture design records provide hints why specific design decisions were chosen.
+Your users can better understand the path you follow and the selected tradeoffs of your design.
+They do not have to agree, but they can understand the arguments why you choose so.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Static code generator is an actual good practice to provide the current documentation and tutorials for your components.
+We write all our documentation in the &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; format - including &lt;a href=&#34;https://plantuml.com/&#34;&gt;plantUML&lt;/a&gt; and highlighted source code - and generate our website using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; tool suite.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Start small and improve your approach every day.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The agile architecture track contains the following blogs&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-principles&#34;&gt;Agile Architecture Principles&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-code-is-clean-code&#34;&gt;Agile Code is Clean Code!&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture&#34;&gt;Agile Architecture within Scrum&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/agile-component-design&#34;&gt;Agile Component Design&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/legacy-systems-refactoring&#34;&gt;Legacy Systems Refactoring&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/how-agile-collaborators-learn&#34;&gt;How Agile Collaborators Learn&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We also published our &lt;a href=&#34;https://www.tangly.net/insights/continuous-learning/agile-architecture-course&#34;&gt;agile architecture course&lt;/a&gt; (3 ECTS) used for teaching computer science students at bachelor level at Swiss technical universities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.innoq.com/en/blog/is-domain-driven-design-overrated/&#34;&gt;Is Domain Driven Design Overrated?&lt;/a&gt;.
+Stefan Tilkov.2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://tilkov.com/post/2021/03/01/ddd-is-overrated/&#34;&gt;DDD is overrated&lt;/a&gt;.
+Stefan Tilkov. 2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;N. Ford, R. Parsons, and P. Kua, &lt;em&gt;Building Evolutionary Architectures: Support Constant Change&lt;/em&gt;. O’Reilly Media [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1491986360&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1491986360&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;V. Vernon, &lt;em&gt;Domain-Driven Design Distilled&lt;/em&gt;. Addison-Wesley Professional, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01JJSGE5S/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01JJSGE5S/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;M. C. Feathers, &lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;. Prentice Hall, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0131177052&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0131177052&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;efactoring-to-patterns&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;E. Gamma, R. Helm, R. Johnson, and J. Vlissides, &lt;em&gt;Design Patterns&lt;/em&gt;. Addison-Wesley Professional, 1995 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B000SEIBB8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B000SEIBB8&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;building-microservices-2nd&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Java 17 LTS added full support for &lt;a href=&#34;https://en.wikipedia.org/wiki/Algebraic_data_type&#34;&gt;algebraic data types&lt;/a&gt; with the record and sealed concepts.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: How Agile Collaborators Learn</title>
+      <link>blog.tangly.net/blog/2020/how-agile-collaborators-learn/</link>
+      <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2020/how-agile-collaborators-learn/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_how_agile_collaborators_learn&#34;&gt;How Agile Collaborators Learn&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2020-02-01-head.jpg&#34; alt=&#34;2020 02 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Most products are developed by a team, and these achievements are the fruit of teamwork.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Software product development is now agile, and most often uses the &lt;a href=&#34;https://scrumguides.org/scrum-guide.html&#34;&gt;Scrum&lt;/a&gt; approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Just putting a bunch of people together in the same open office will not produce a high performance agile team.
+Quite a few companies find that out the hard way.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How can you increase the odds to create an environment where agile teams bloom and perform?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_attitude_versus_aptitudes&#34;&gt;Attitude versus Aptitudes&lt;/h3&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your business is nothing more than the collective energy and efforts of the people working with and for you.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you want to make your business better, invest in your people.
+They’ll get the job done.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Learn and pass on good development practices through pair programming, mob programming and coding dojos.
+Promote &lt;a href=&#34;https://en.wikipedia.org/wiki/Community_of_practice&#34;&gt;Communities of Practice&lt;/a&gt; &lt;em&gt;CoP&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It is not enough management commit themselves to quality and productivity.
+They must know what it is they must do.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Such a responsibility cannot be delegated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— W. Edwards Deming
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You have hired good people.
+Train them to improve and perform better.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_continuous_learning_and_improvement&#34;&gt;Continuous Learning and Improvement&lt;/h3&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;CFO to CEO: “What happens if we invest in developing our people, and they leave us?”&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;CEO to CFO: “What happens if we don’t, and they stay?”&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Peter Baeklund
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Secure collective knowledge of the code through code reviews, pair collaboration or collective work.
+Avoid any developer working solely on his own on a specific piece of code.
+Crafting successful software applications is teamwork.
+Encourage your collaborators to write blogs and ask questions in forums such as &lt;a href=&#34;https://stackoverflow.com/&#34;&gt;Stack Overflow&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Establish together development standards and keep them up to date.
+Nurture these good practices through &lt;a href=&#34;https://en.wikipedia.org/wiki/Community_of_practice&#34;&gt;Communities of Practice&lt;/a&gt; &lt;em&gt;CoP&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Rely on tools such as continuous integration, static metrics and architecture fitness functions to shorten the feedback loop.
+See our post about &lt;a href=&#34;../../2018/pragmatic-craftsmanship-professional-software-developer&#34;&gt;pragmatic software craftsmanship&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Establish a culture to use current versions of programming languages, tools and libraries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;On a previous project, we had planned a coding dojo ritual once every two weeks, during which we shared our practices with some perspective over the product.
+It was an occasion to experiment with new technologies, assess their match for the project needs, share new coding techniques, and update our standards together.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_formal_training&#34;&gt;Formal Training&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Professional software developers should have formal training in software development.
+You should expect from a person working forty hours a week for the next forty years to pursue a bachelor or a master in computer science.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You should expect regular certifications in the used technology stack or development approaches.
+A Scrum master two days training does not make somebody an expert.
+A specialist refusing to invest in a two-day training is probably not a member you want in a high performing team.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A professional engineer should read multiple technical books each year.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_leadership_responsibilities&#34;&gt;Leadership Responsibilities&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Create &lt;a href=&#34;https://en.wikipedia.org/wiki/Psychological_safety&#34;&gt;psychological safety&lt;/a&gt; in the workplace.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2020-02-01-psychological-safety.jpg&#34; alt=&#34;2020 02 01 psychological safety&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The major responsibility of senior management is hire the best collaborators, retain and develop top collaborators, and respectfully off-board departing collaborators.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Hiring and on-boarding collaborators,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nurturing and development of collaborators,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Off-boarding of collaborators,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Move collaborators to the learning zone and let them thrive.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Nurture a culture of learning through training on the job, learning from external sources – such as reading
+&lt;a href=&#34;../../../ideas/learnings/links\&#34;&gt; high-quality blogs&lt;/a&gt; – and formal education – such as bachelor or master courses, for example,
+&lt;a href=&#34;https://www.tangly.net/insights/continuous-learning/agile-architecture-course&#34;&gt;agile architecture&lt;/a&gt; -.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Please reflect how you encourage continuous learning in your organization.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Training is always an investment and never a cost point.
+Look how you budget and account training activities.
+Are they really investment positions?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The agile architecture track contains the following blogs&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-principles&#34;&gt;Agile Architecture Principles&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-code-is-clean-code&#34;&gt;Agile Code is Clean Code!&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-within-scrum&#34;&gt;Agile Architecture within Scrum&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/agile-component-design&#34;&gt;Agile Component Design&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/legacy-systems-refactoring&#34;&gt;Legacy Systems Refactoring&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/how-agile-collaborators-learn&#34;&gt;How Agile Collaborators Learn&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We also published our &lt;a href=&#34;https://www.tangly.net/insights/continuous-learning/agile-architecture-course&#34;&gt;agile architecture course&lt;/a&gt; (3 ECTS) used for teaching computer science students at bachelor level at Swiss technical universities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Agile Architecture within Scrum</title>
+      <link>blog.tangly.net/blog/2019/agile-architecture-within-scrum/</link>
+      <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2019/agile-architecture-within-scrum/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_architecture_within_scrum&#34;&gt;Agile Architecture within Scrum&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2019-08-01-head.jpg&#34; alt=&#34;2019 08 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are applying the agile, lean approach to your software product development.
+Your teams use Scrum or Kanban to deliver running software every two weeks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Agile architecture is a key element to improve the quality of your solution and reduce overall cycle-time of your product delivery.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your journey toward greater business agility starts by identifying what outcomes are most important to your company’s success.
+Outcomes are codified in functional and non-functional requirements your product shall fulfill.
+A key component is to find out how to create a great resilient architecture within the Scrum framework.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;What Is Agile Architecture?
+An agile architecture shall have four characteristics.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2019-08-01-architecture.jpg&#34; alt=&#34;2019 08 01 architecture&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Allow change quickly&lt;/em&gt; because we cannot foresee the future.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Always verifiable&lt;/em&gt; because we want changes without impeding integrity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Support rapid development&lt;/em&gt; because we want effective and efficient implementation of new features.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Always working&lt;/em&gt; because we want continuous deployment to have customers&amp;#39; feedback -.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;These characteristics are essential for successful agile development of great software products.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_what_is_the_scrum_approach&#34;&gt;What Is The Scrum Approach?&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Scrum and the &lt;a href=&#34;https://scrumguides.org/scrum-guide.html&#34;&gt;Scrum Guide&lt;/a&gt; are silent how architecture activities are performed during sprints.
+We can use the Scrum values, the &lt;a href=&#34;https://www.scrumguides.org/scrum-guide.html&#34;&gt;Scrum Guide&lt;/a&gt; and the
+&lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;Agile Manifesto Principles&lt;/a&gt; to infer approaches.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The architect shall be part of the Scrum development team.
+This is the most embedded way an architect would fit into a Scrum team.
+It may not even be an individual who has the title of an architect.
+The big idea behind Scrum teams is that team members have different skills.
+Their roles may change to deliver what is required for a particular sprint.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;So it could be that senior developers within the team got architecture skills.
+They are in the best position, or have the best knowledge, to make those architectural decisions.
+Those team members with architectural skills are involved in the sprint on a day-to-day basis.
+They attend the daily Scrum meetings, take items off the backlog, and work on them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Interestingly &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; is more opinionated and describe
+&lt;a href=&#34;https://less.works/less/technical-excellence/architecture-design.html&#34;&gt;Successful Approaches&lt;/a&gt; for agile architecture and design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_how_do_you_perform_agile_design&#34;&gt;How Do You Perform Agile Design?&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Scrum is quite silent about technical practices.
+The Scrum fathers and community strongly emphasize adopting &lt;a href=&#34;https://en.wikipedia.org/wiki/Extreme_programming&#34;&gt;eXtreme Programming&lt;/a&gt; practices.
+For bigger systems use the good practices described in &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An actual very good practice is to use &lt;a href=&#34;https://en.wikipedia.org/wiki/Event_storming&#34;&gt;Event Storming&lt;/a&gt; and
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Design&lt;/a&gt; &lt;em&gt;DDD&lt;/em&gt; to model the application domain and partition the system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use &lt;a href=&#34;https://www.thoughtworks.com/insights/blog/fitness-function-driven-development&#34;&gt;fitness functions&lt;/a&gt;
+to monitor and validate all non-functional requirements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The well-established practices from the object-oriented and DevOps communities are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Develop very early a working skeleton.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clean architecture implies clean code and requires clean coders in your team.
+See our post &lt;a href=&#34;../../2019/agile-code-is-clean-code/&#34;&gt;Clean Code&lt;/a&gt;,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Aggressive refactoring and understand technical debt, Continuous integration, continuous delivery, and continuous deployment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For a detailed discussion, consult the post &lt;a href=&#34;../../2018/pragmatic-craftsmanship-professional-software-developer/&#34;&gt;Pragmatic Craftsmanship&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_what_is_the_architect_role&#34;&gt;What is the Architect Role?&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The architect shall&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Be part of the team, work daily with team members and attend all team events.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Maintain the pace of development.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Often Communicate and early as a coach and mentor - &lt;em&gt;meaning pair programming and design sessions&lt;/em&gt; -.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Be fluent in domain-driven development, hexagonal architecture, refactoring, and clean code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use architecture design record ADR and light documentation to describe architecture decisions - meaning no lengthy Software Architecture Document SAD or overwhelming UML models -.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Be a master programmer and writes code in the application technological stack.
+He writes actual source code as current good practices are.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Have rich knowledge of architecture and design.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We have mentioned refactoring, which is how we evolve an ever-improving design and architecture while building the product incrementally.
+To do that, we need to know the difference between good architecture and design and not-so-good.
+We need a rich pool of architecture and design options in our bag of tricks, ranging from very simple options to the more complex and rich options that we may need as the system grows.
+One never knows too much about the quality of architecture, code, and design.
+One does, of course, need to apply that knowledge smoothly, incrementally, little by little.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The agile architecture track contains the following blogs&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-principles&#34;&gt;Agile Architecture Principles&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-code-is-clean-code&#34;&gt;Agile Code is Clean Code!&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-within-scrum&#34;&gt;Agile Architecture within Scrum&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/agile-component-design&#34;&gt;Agile Component Design&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/legacy-systems-refactoring&#34;&gt;Legacy Systems Refactoring&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/how-agile-collaborators-learn&#34;&gt;How Agile Collaborators Learn&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We also published our &lt;a href=&#34;https://www.tangly.net/insights/continuous-learning/agile-architecture-course&#34;&gt;agile architecture course&lt;/a&gt; (3 ECTS) used for teaching computer science students at bachelor level at Swiss technical universities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Agile Code is Clean Code!</title>
+      <link>blog.tangly.net/blog/2019/agile-code-is-clean-code/</link>
+      <pubDate>Thu, 13 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2019/agile-code-is-clean-code/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_code_is_clean_code&#34;&gt;Agile Code is Clean Code!&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2019-06-01-head.png&#34; alt=&#34;2019 06 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are applying the agile, lean approach to your software product development.
+Your teams use Scrum or Kanban to deliver running software every two weeks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To create an agile architecture, you must write agile worthy code.
+Agile code is always clean code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Start early, do it continuously and soon your code will be clean, legible and free of defects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_architecture_versus_code&#34;&gt;Architecture versus Code&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Be honest.
+Having a huge class with thousands of lines of code plainly demonstrates that your organization worked unprofessionally over months in the past.
+Such monsters are not born over one night coding session.
+It takes time and incompetence to create such maintenance nightmares.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As long as your product contains such code monsters, it is worthless to pretend to have a nice and thought through architecture.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Team discipline and early warning systems are the keys to avoid such blunders and kill the monster in the egg.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_clean_code_and_refactoring&#34;&gt;Clean Code and Refactoring&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The clean code &lt;a href=&#34;https://en.wikipedia.org/wiki/Test-driven_development&#34;&gt;test driven development&lt;/a&gt; &lt;em&gt;TDD&lt;/em&gt; approach to write code was defined last millennium.
+Professional developers adopted this approach to deliver high quality, legible and maintainable code artifacts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock &#34; left&#34;=&#34;&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2019-06-01-red-green-refactor.png&#34; alt=&#34;2019 06 01 red green refactor&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Red&lt;/strong&gt; - Write a test and run it, validating the test harness.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Green&lt;/strong&gt; - Write the minimum amount of code to implement the functionality validated in the previously developed test.
+Update the code and run the tests until the test suite shows successful execution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Refactor&lt;/strong&gt; the code to reach a clean code level.
+Continuously run the tests for guaranty compliant changes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you are a Java developer you will * Use JUnit 5 and Mockito 2 to implement the first step, * Use a powerful IDE such an IntelliJ IDEA to write and enhance the functional code, * Use tools such as SonarLint, Jacoco, Spotbugs, ArchUnit to refactor your functional code and test cases.
+Clean code applies to productive and test code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The described approach has good practice since the beginning of this millennium.
+All above-mentioned tools are open source and free to use.
+Your organization has no excuse to write crap code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Just write well engineered, legible and maintainable source code.
+It is a matter of &lt;em&gt;discipline&lt;/em&gt;.
+It is also a prerequisite to agile architecture.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_acceptance_test_driven_development&#34;&gt;Acceptance Test Driven Development&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How do you know what are the requirements of a specific feature?
+Either write a huge amount of outdated documentation or find a better way.
+The better way is &lt;a href=&#34;https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development&#34;&gt;acceptance test driven development&lt;/a&gt; &lt;em&gt;ATDD&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For each feature, you need acceptance criteria; this approach is also called &lt;em&gt;specification by example&lt;/em&gt;.
+For each acceptance criteria write an acceptance test which is executed each time the application is updated in the continuous delivery pipeline.
+The acceptance tests are the living documentation of the behavior of your product.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To implement this approach you need&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Acceptance criteria which imply specifications by example - you need to train your business analysts and product owners,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cucumber for Java (or equivalent tools) - to write acceptance tests, Mock all external systems including the database.
+You want to have fast build and test time and avoid external dependencies.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A continuous build and delivery pipeline to automatically run your acceptance validation tests upon each application change,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Avoid user interface tests - because they are slow and brittle.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use an in-memory database only if you have to - they are a fast solution to write acceptance tests but are intrinsically slower than mocks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_code_sociology&#34;&gt;Code Sociology&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The most simple engineering practices are the most powerful.
+Practice consolidates changes in behavior of your development organization.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Pair_programming&#34;&gt;Pair Programming&lt;/a&gt; - is a training on the job and crowd wisdom approach to steadily improving knowledge and quality -.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Test-driven_development&#34;&gt;TDD&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development&#34;&gt;ATDD&lt;/a&gt; - are safety net to guaranty quality attributes in your source code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt; starting with git, docker, continuous integration, delivery and deployment - to speed up development and eliminate tedious manual errors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lack of accountability equates to lack of trust - your teams are accountable for the quality of your product.
+You should trust them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Once good practices are established, you can move to more sophisticated tools - such as git history code analysis - to uncover weaknesses in your development department.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Teams ready to learn from the like of Google could evaluate &lt;a href=&#34;https://trunkbaseddevelopment.com/&#34;&gt;Trunk Based Development&lt;/a&gt; and consider long-lived branches as waste.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_code_review&#34;&gt;Code Review&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A code review can be done in different ways.
+Many teams use GitHub, Bitbucket or GitLab.
+A very common approach for our code reviews is using merge requests.
+However, there are situations where pull requests are not necessary.
+For example, if a feature is implemented in pair programming or mob programming then the code is already reviewed while it is written.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We decided that it does not have to be reviewed again but of course, everybody may look at the commits later on in GitHub and add comments.
+A rule of thumb we agreed upon is that every line of code has to be approved by at least one other developer before it is pushed into our master branch.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_pull_requests_in_trunk_based_development&#34;&gt;Pull Requests in Trunk-Based Development&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In trunk-based development it is different.
+Since we want to merge our commits into the master branch as quickly as possible, we cannot wait until the complete feature is finished.
+Unlike in the original trunk-based development approach we still use feature branches, but we have much less divergence from the master branch than in Git Flow.
+We create a pull request as soon as the first commit is pushed into the feature branch.
+Of course, that requires that no commit breaks anything or causes tests to fail.
+Remember that unfinished features can always be disabled with feature toggles.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Now, with part of the new feature committed and the pull request created, another developer from the team can review it.
+In most cases, that does not happen immediately because the developers don’t want to interrupt their work every time a team member pushes a commit.
+Instead, the code reviews are done when another developer is open for it.
+Meanwhile, the pull request might grow by a few commits.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The code is not always reviewed immediately after the commit.
+In most cases it reaches the master branch much quicker than in Git Flow.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The agile architecture track contains the following blogs&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-principles&#34;&gt;Agile Architecture Principles&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-code-is-clean-code&#34;&gt;Agile Code is Clean Code!&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-within-scrum&#34;&gt;Agile Architecture within Scrum&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/agile-component-design&#34;&gt;Agile Component Design&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/legacy-systems-refactoring&#34;&gt;Legacy Systems Refactoring&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/how-agile-collaborators-learn&#34;&gt;How Agile Collaborators Learn&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We also published our &lt;a href=&#34;https://www.tangly.net/insights/continuous-learning/agile-architecture-course&#34;&gt;agile architecture course&lt;/a&gt; (3 ECTS) used for teaching computer science students at bachelor level at Swiss technical universities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Agile Architecture Principles</title>
+      <link>blog.tangly.net/blog/2019/agile-architecture-principles/</link>
+      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2019/agile-architecture-principles/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_architecture_principles&#34;&gt;Agile Architecture Principles&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2019-05-01-head.jpg&#34; alt=&#34;2019 05 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are applying the agile, lean approach to your software product development.
+Your teams use Scrum or Kanban to deliver running software every two weeks.
+The product market introduction is a success.
+You will successfully sell the solution for the next ten years.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How shall you define the software architecture of your product and insure a long living and high-quality solution?
+The experts tell you the design is emergent.
+What does it mean?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_less_architecture_observations&#34;&gt;LeSS Architecture Observations&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following observations are true for any software product.
+It is irrelevant if developed using agile approaches or traditional older ones.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;The sum of all source code artifacts is the true design blueprint or software architecture&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The real software architecture evolves (better or worse) every day of the product, as people do programming.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;em&gt;real living architecture needs to be grown every day&lt;/em&gt; through acts of programming by master programmers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A software architect who is not in touch with the evolving source code of the product is out of touch with reality.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Every programmer is some kind of architect&lt;/em&gt; — whether wanted or not.
+Every act of programming is some kind of architectural act — good or bad, small or large, intended or not.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Agile architecture comes from the behavior of agile architecting&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;hands-on master-programmer architects, a culture of excellence in code,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ban emphasis on pair-programming coaching for high-quality code/design,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;agile modeling design workshops,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;test-driven development and refactoring&lt;/em&gt;,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;and other hands-on-the-code behaviors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_quality_of_your_architecture&#34;&gt;Quality of Your Architecture&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You shall measure the quality of your design and produced software artifacts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Static analysis tools - validate your source code -,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Test driven development - validate your design -,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Acceptance test driven development - validate your functional requirements -,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fitness functions - validate your non-functional requirements -,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pair programming - improve the produced artifacts through wisdom of the crowd -,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pair review and pull requests - validate your developers&amp;#39; work -.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The above validation activities are backed through tools.
+But these tools can only detect non-quality and never provide a proof you achieved quality.
+Qualified and experienced engineers are your best guaranty to achieve and sustain high quality in architecture and software products.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implement the above measures to gather data and publish the actual state of your source code.
+You find further information in Code Scene as Crime Scene, SonarLint for the Impatient, and Pragmatic Craftsmanship articles.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Read the &lt;a href=&#34;https://less.works/less/technical-excellence/architecture-design.html&#34;&gt;LeSS architecture page&lt;/a&gt; for a comprehensive discussion of agile architecting.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_good_versus_bad_architecture&#34;&gt;Good versus bad architecture&lt;/h3&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A good architecture fulfills the specifications and is easy to change.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It shall emerge during the development and intentionally implement the known requirements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your architects are talented developers and are full members of your Scrum teams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your development teams&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;are experts in the used programming language and stack.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;understand object-oriented, functional and rule-based programming.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;known all major patterns and idioms of the used development stack.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;practice &lt;a href=&#34;https://en.wikipedia.org/wiki/Test-driven_development&#34;&gt;TDD&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development&#34;&gt;ATDD&lt;/a&gt;, clean code, refactoring, embrace CI/CD and DevOps,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;read source code from open source projects to learn better ways.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;know &lt;a href=&#34;https://en.wikipedia.org/wiki/SMART_criteria&#34;&gt;SMART&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/INVEST_(mnemonic)&#34;&gt;INVEST&lt;/a&gt;,
+&lt;a href=&#34;https://de.wikipedia.org/wiki/Solid_(Software)&#34;&gt;SOLID&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/KISS_principle&#34;&gt;KISS&lt;/a&gt;,
+&lt;a href=&#34;https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it&#34;&gt;YAGNI&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;hold weekly design workshops with huge whiteboards.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;use &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;domain driven design&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Event_storming&#34;&gt;event storming&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;avoid &lt;a href=&#34;https://en.wikipedia.org/wiki/Big_Design_Up_Front&#34;&gt;BDUF&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You shall keep it simple, make it valuable, and build it piece by piece.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The above hints and practices shall empower your teams to practice successfully agile architecture and timely deliver delightful software solutions.
+Your organization shall train your collaborators, see also Shu Ha Ri model.
+Smart money goes in training your collaborators.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The agile architecture track contains the following blogs&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-principles&#34;&gt;Agile Architecture Principles&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-code-is-clean-code&#34;&gt;Agile Code is Clean Code!&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-within-scrum&#34;&gt;Agile Architecture within Scrum&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/agile-component-design&#34;&gt;Agile Component Design&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/legacy-systems-refactoring&#34;&gt;Legacy Systems Refactoring&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/how-agile-collaborators-learn&#34;&gt;How Agile Collaborators Learn&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We also published our &lt;a href=&#34;https://www.tangly.net/insights/continuous-learning/agile-architecture-course&#34;&gt;agile architecture course&lt;/a&gt; (3 ECTS) used for teaching computer science students at bachelor level at Swiss technical universities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

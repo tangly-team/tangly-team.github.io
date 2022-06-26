@@ -1,0 +1,854 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly OS Components – hugo</title>
+    <link>blog.tangly.net/tags/hugo/</link>
+    <description>Recent content in hugo on tangly OS Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="blog.tangly.net/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Improving a Static Web Site Build With Hugo and Docsy</title>
+      <link>blog.tangly.net/blog/2021/improving-a-static-web-site-build-with-hugo-and-docsy/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2021/improving-a-static-web-site-build-with-hugo-and-docsy/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_improving_a_static_website_build_with_hugo_and_docsy_theme&#34;&gt;Improving a Static Website Build With Hugo and Docsy Theme&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2021-09-02-head.jpg&#34; alt=&#34;2021 09 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The static website build tool &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; is awesome.
+With the extensive built-in feature set of Hugo and the feature-rich text formatting options that &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; offers, it creates a blogging experience composed of easy content management and fun writing experience.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In most static site generators including Hugo, &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt; is the one and only first-class citizen when it comes to creating posts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;However, in recent Hugo versions, external helpers are an official feature.
+It calls appropriate external programs to certain type of files.
+Fortunately, Asciidoc based files are automatically compiled with &lt;a href=&#34;https://asciidoctor.org/&#34;&gt;Asciidoctor&lt;/a&gt;, so we do not need to do anything.
+Just have it installed and you are ready to go.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Hugo theme &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; is ideal to create a good-looking software documentation site.
+This theme is currently the best match I found to combine product documentation with blogging.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I love to write my documentation and blogs using &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; notation
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.
+The official site is &lt;a href=&#34;https://asciidoc.org/&#34;&gt;AsciiDoc&lt;/a&gt;.
+A major tool chain can be found under &lt;a href=&#34;https://docs.asciidoctor.org/home/&#34;&gt;AsciiDoctor&lt;/a&gt;.].&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Hugo supports Asciidoctor through external helpers.
+External helpers are relatively new and more like an experimental feature.
+There is a proposal on improving it by adding user configurations so at least there is hope for this particular feature to expand.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The features of &lt;a href=&#34;https://en.wikipedia.org/wiki/AsciiDoc&#34;&gt;AsciiDoc&lt;/a&gt; set is equivalent to &lt;a href=&#34;https://en.wikipedia.org/wiki/DocBook&#34;&gt;DocBook&lt;/a&gt;.
+The readers with grey hair probably remember &lt;a href=&#34;https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language&#34;&gt;SGML&lt;/a&gt;, the ancestor of DocBook.
+The librarians could remember &lt;a href=&#34;https://en.wikipedia.org/wiki/LaTeX&#34;&gt;LaTeX&lt;/a&gt; created by &lt;a href=&#34;https://en.wikipedia.org/wiki/Leslie_Lamport&#34;&gt;Leslie Lamport&lt;/a&gt;.
+He created it to describe &lt;a href=&#34;https://en.wikipedia.org/wiki/Temporal_logic&#34;&gt;temporal logic&lt;/a&gt; aspects of cluster communication for the
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Digital_Equipment_Corporation&#34;&gt;Digital Equipment Corporation&lt;/a&gt; &lt;em&gt;DEC&lt;/em&gt; solution.
+These highly qualified experts and their solutions paved the way to legible documentation and professional typography.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_source_code_highlight&#34;&gt;Source Code Highlight&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Asciidoctor supports rouge source code highlighting per default
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.
+You do need to add any extension to Hugo.
+Just select the style you prefer such as:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color: #d14&#34;&gt;rouge-style = &amp;#34;github&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_search_function_for_the_website&#34;&gt;Search Function for the Website&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The theme has multiple search solutions to index your static website.
+I chose the &lt;a href=&#34;https://lunrjs.com/&#34;&gt;Lunr&lt;/a&gt; approach for our site.
+The solution has no strings attached and does not require an external search server.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The website and the search functionality are self-contained as a static website should be.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_comment_function_for_blog_article&#34;&gt;Comment Function for Blog Article&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The comment feature is somewhat at odds with the concept of static website.
+The theme has multiple comment solutions to allow readers to publish a question or a test to our site.
+I decided to provide comments only to the blog part of the website.
+I chose the &lt;a href=&#34;https://utteranc.es/&#34;&gt;Utterances&lt;/a&gt; approach for our site.
+The solution has no strings attached and uses the well-known platform GitHub.
+No tracking, no ads and no locking are great.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The comment author must first log in GitHub before adding her comment therefore spamming or flaming are minimized.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You have to create a partial in docsy to use Utterances.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;page-blank&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;utterancers_thread&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;script &lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;src=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;https://utteranc.es/client.js&amp;#34;&lt;/span&gt;
+            &lt;span style=&#34;color: #008080&#34;&gt;repo= &lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Site.Params.comments_utterances_repo&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;}}&lt;/span&gt;
+            &lt;span style=&#34;color: #008080&#34;&gt;issue-term= &lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Site.Params.comments_utterances_issue_term&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;}}&lt;/span&gt;
+            &lt;span style=&#34;color: #008080&#34;&gt;theme= &lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Site.Params.comments_utterances_theme&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;}}&lt;/span&gt;
+            &lt;span style=&#34;color: #008080&#34;&gt;crossorigin=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;anonymous&amp;#34;&lt;/span&gt;
+            &lt;span style=&#34;color: #008080&#34;&gt;async&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_tag_function_for_blog_article&#34;&gt;Tag Function for Blog Article&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Docsy has finally merged the change request for taxonomies during the first semester of 2021.
+Tags for articles are now natively supported without tinkering with the code of the plugin.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Our &lt;a href=&#34;http://blog.tangly.net/blog/&#34;&gt;blog&lt;/a&gt; displays the tags on the right side of the window.
+Give it a try.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_diagrams_in_articles&#34;&gt;Diagrams in articles&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Diagrams in blog articles are currently a more complex issue.
+Hugo seems to be quite restrictive which extensions can be loaded when generating a static site.
+No reasonable reasons exit for the above-mentioned restrictions.
+Ongoing pull requests try to improve the situation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I had success with:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://plantuml.com/&#34;&gt;plantUML&lt;/a&gt; diagrams&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;See for example following blogs &lt;a href=&#34;../../2021/gitlab-for-bachelor-students&#34;&gt;GitLab for Students&lt;/a&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://mermaid-js.github.io/&#34;&gt;mermaid&lt;/a&gt; diagrams&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;See for example following blogs &lt;a href=&#34;../../2021/agile-trends-switzerland-2021&#34;&gt;Agile Trend 2021&lt;/a&gt; or
+&lt;a href=&#34;../../2021/agile-trends-switzerland-2020&#34;&gt;Agile Trend 2020&lt;/a&gt;.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The generated HTML code does not respect all AsciiDoc parameters.
+Text flow configurations are not enforced.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_layout_and_appearance&#34;&gt;Layout and Appearance&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The docsy theme is regularly improving.
+The provided features are good and very stable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Hugo integration of &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; is subpar.
+The CSS styling files of &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; are not integrated with Hugo and themes.
+Often the appearance of the generated HTML could be improved.
+I am currently exploring venues to improve the integration of nice looking asciidoc styling sheets with the docsy universe.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_future_features&#34;&gt;Future Features&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I have integrated an extension to provide access to static files through a Hugo/Docsy site.
+For example the presentation of a speech is made available directly in the static website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This feature is currently experimental and queued as a pull request in the Docsy GitHub repository
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_hugo_and_docsy_related_articles&#34;&gt;Hugo and Docsy Related Articles&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/creating-a-technical-website-with-hugo-and-asciidoc&#34;&gt;Creating a technical Website with Hugo and Asciidoc&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/support-comments-for-static-hugo-website&#34;&gt;Support Comments for Static Hugo Website&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2021/improving-a-static-web-site-build-with-hugo-and-docsy&#34;&gt;Improving a Static Website Build With Hugo and Docsy&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. If you are new to asciidoc, you can experiment &lt;a href=&#34;https://asciidoclive.com/&#34;&gt;online&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. Beware the Hugo documentation stating you have to import an extension for syntax highlighting is plain wrong if you are using &lt;a href=&#34;https://docs.asciidoctor.org/asciidoctor/latest/syntax-highlighting/rouge/&#34;&gt;rouge&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
+&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. This feature removed my dependency to Google drive to host downloadable artifacts.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Support Comments for Static Hugo Website</title>
+      <link>blog.tangly.net/blog/2020/support-comments-for-static-hugo-website/</link>
+      <pubDate>Fri, 11 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2020/support-comments-for-static-hugo-website/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_support_comments_for_static_hugo_website&#34;&gt;Support Comments for Static Hugo Website&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2020-12-02-head.png&#34; alt=&#34;2020 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;There are times in software when you are facing a problem, you find an off-the-shelf solution, and a few lines of code later it just works.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Today I lived one of those moments.
+The whole configuration of comments and modification of the &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; theme took around one hour.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I wanted to add a comment section to this blog for a while.
+I was reluctant to implement one myself the classical way, using an external service such as disqus.
+This blog is a static website created with &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and does not use a database.
+All pages are written with &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;, stored in a Git repository and rendered using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;.
+I wanted to store comments in a personally owned repository and protect my readers from an advertisement and personal information collection.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_meeting_utterances&#34;&gt;Meeting Utterances&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Some information on the Internet about &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt; is wrong.
+Facts are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The Utterances library uses a GitHub repository to store comments associated with your website articles and pages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Your website can be hosted &lt;strong&gt;anywhere&lt;/strong&gt;.
+You do &lt;strong&gt;not&lt;/strong&gt; need to host your static website repository on GitHub; but you can.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Readers wanting to comment &lt;strong&gt;must&lt;/strong&gt; login once with their GitHub account to authorize the &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt; application.
+Anonymous commenting is not supported.
+&lt;em&gt;This restriction is reasonable for a technical website whose readers are technically affine and already have a GitHub account.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Utterance products are free.
+It claims to have no tracking, no advertisement, and no lock-in.
+The comments are stored in your repository as GitHub issues.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Utterances layout looks nice and can be styled.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Utterances is an open source app built and maintained by Jeremy Danyow.
+He announced the project in 2018.
+It provides a lightweight web widget &lt;em&gt;&amp;lt;iframe&amp;gt;&lt;/em&gt; to add a comment section to a website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;When someone posts a comment, the Utterances bot literally leaves a corresponding comment on the issue.
+In other words, each page gets its own issue with a comment feed, and so you benefit from the entire feature set of issues out-of-the-box.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Comments are stored as issues inside a GitHub repository of your choosing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can edit, report and delete comments.
+&lt;em&gt;These functions are great for moderation.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you are watching the repository, you will get email notifications when comments are posted to your site.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The other wonderful aspect of Utterances is how simple the entire setup really is.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_setting_up_utterances&#34;&gt;Setting Up Utterances&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The process is described in details on &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt;.
+The steps are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Create a public GitHub repository.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install the &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt; app on the repo you would like to host comments on.
+You can use the repository of your blog, or set up a dedicated repository.
+This option means your blog or website does not need to be hosted on GitHub.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure the code snippet on the &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt; website and copy it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can skip the code snippet step if you are using Docsy and follow the below instructions to configure your theme.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;script
+  &lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;async&lt;/span&gt;
+  &lt;span style=&#34;color: #008080&#34;&gt;src=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;https://utteranc.es/client.js&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color: #008080&#34;&gt;repo=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;&amp;lt;OWNER&amp;gt;/&amp;lt;NAME&amp;gt;&amp;#34;&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+  &lt;span style=&#34;color: #008080&#34;&gt;issue-term=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;title&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color: #008080&#34;&gt;theme=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;github-light&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color: #008080&#34;&gt;crossorigin=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;anonymous&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&amp;lt;OWNER&amp;gt;/&amp;lt;NAME&amp;gt; is the name of your repository.
+In my case, it would be &lt;em&gt;marcelbaumann/tangly-team-comments&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_configure_docsy_theme&#34;&gt;Configure Docsy Theme&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I use the Hugo theme &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; to style the &lt;a href=&#34;http://blog.tangly.net/&#34;&gt;Open Source Components&lt;/a&gt;.
+I put some effort to have a configurable extension through site parameters.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_create_the_comments_partial_for_utterances&#34;&gt;Create the comments partial for utterances&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The partial file contains the code to display for commenting using utterances.
+It is a modified version of the snippet you can generate on the &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt; website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Create a partial in &lt;em&gt;docsy/layout/partial&lt;/em&gt;.
+I named my partial &lt;em&gt;comments-utterances.html&lt;/em&gt; and add the following snippet.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;page-blank&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;utterancers_thread&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;script &lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;src=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;https://utteranc.es/client.js&amp;#34;&lt;/span&gt;
+            &lt;span style=&#34;color: #008080&#34;&gt;repo= &lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Site.Params.comments_utterances_repo&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;}}&lt;/span&gt;                   &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+            &lt;span style=&#34;color: #008080&#34;&gt;issue-term= &lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Site.Params.comments_utterances_issue_term&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;}}&lt;/span&gt;       &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+            &lt;span style=&#34;color: #008080&#34;&gt;theme= &lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Site.Params.comments_utterances_theme&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;}}&lt;/span&gt;                 &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+            &lt;span style=&#34;color: #008080&#34;&gt;crossorigin=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;anonymous&amp;#34;&lt;/span&gt;
+            &lt;span style=&#34;color: #008080&#34;&gt;async&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;GitHub repository where the issues are stored&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;See &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt; documentation how the reference to a page, or an article can be tailored&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;See &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt; documentation about supported themes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_edit_the_blog_content_file&#34;&gt;Edit the blog content file&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The template &lt;em&gt;docsy/layouts/blog/content.html&lt;/em&gt; is edited to include the above defined partial file.
+The original file supports connecting to disqus.
+I replaced the disqus specific code with the inclusion of the partial defined above for utterances comment support.
+&lt;em&gt;Perhaps &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; will introduce a more generic mechanism in the future to integrate commenting systems.
+I assume they are waiting on &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; to first provide such a mechanism.
+Currently, Hugo and Docsy only provide out of the box support for Disqus.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;td-content&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;{{ .Title }}&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+	{{ with .Params.description }}&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;lead&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&lt;/span&gt;{{ . | markdownify }}&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;{{ end }}
+	&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;td-byline mb-4&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&lt;/span&gt;
+		{{ with .Params.author }}{{ T &amp;#34;post_byline_by&amp;#34; }} &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;b&amp;gt;&lt;/span&gt;{{ . | markdownify }}&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/b&amp;gt;&lt;/span&gt; |{{ end}}
+		&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;time&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;datetime=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;{{  $.Date.Format &amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;2006&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;-01-02&lt;/span&gt;&lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color: #a61717;background-color: #e3d2d2&#34;&gt;}}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;text-muted&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;gt;&lt;/span&gt;{{ $.Date.Format $.Site.Params.time_format_blog  }}&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/time&amp;gt;&lt;/span&gt;
+	&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+	{{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
+	    {{ partial &amp;#34;reading-time.html&amp;#34; . }}
+	{{ end }}
+	{{ .Content }}
+	{{ if (.Site.Params.comments_utterances) }}
+		&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;br&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;/&amp;gt;&lt;/span&gt;
+		{{ partial &amp;#34;comments-utterances.html&amp;#34; . }}
+		&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;br&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;/&amp;gt;&lt;/span&gt;
+	{{ end }}
+
+	{{ partial &amp;#34;pager.html&amp;#34; . }}
+&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_add_four_site_variables_to_config_toml&#34;&gt;Add four site variables to config.toml&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The above changes try to be generic and are configured through site variables in the site configuration file under the &lt;em&gt;[params]&lt;/em&gt; block.
+You do not need to edit partial files to tailor them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;color: #999988;font-style: italic&#34;&gt;# flag indicating if the utterances (https://utteranc.es/) should be displayed&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;comments_utterances&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;true&lt;/span&gt;
+
+&lt;span style=&#34;color: #999988;font-style: italic&#34;&gt;# GitHub repository name where all comments are stored. The repository can be the same as the website repository or a different one.&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;comments_utterances_repo&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;marcelbaumann/tangly-team-comments&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color: #999988;font-style: italic&#34;&gt;# Encoding used to map a site page to a GitHub issue. See utterances (https://utteranc.es/) documentation.&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;comments_utterances_issue_term&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;pathname&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color: #999988;font-style: italic&#34;&gt;# Theme used by utterance on the website. See utterances (https://utteranc.es/) documentation.&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;comments_utterances_theme&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;github-light&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_hugo_and_docsy_related_articles&#34;&gt;Hugo and Docsy Related Articles&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/creating-a-technical-website-with-hugo-and-asciidoc&#34;&gt;Creating a technical Website with Hugo and Asciidoc&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/support-comments-for-static-hugo-website&#34;&gt;Support Comments for Static Hugo Website&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Creating a technical Website with Hugo and Asciidoc</title>
+      <link>blog.tangly.net/blog/2020/creating-a-technical-website-with-hugo-and-asciidoc/</link>
+      <pubDate>Fri, 02 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2020/creating-a-technical-website-with-hugo-and-asciidoc/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_creating_a_technical_website_with_hugo_and_asciidoc&#34;&gt;Creating a technical Website with Hugo and Asciidoc&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2020-10-01-head.jpg&#34; alt=&#34;2020 10 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I hosted my technical blogs on &lt;a href=&#34;https://www.blogger.com/&#34;&gt;blogger&lt;/a&gt; for years.
+If I correctly remember I started to use blogger ten years ago.
+It is a great tool with some drawbacks.
+Over the years, the drawbacks sting more and more:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Their editor is brittle, with limited functionality and unreliable.
+The generated HTML is not legible and does not support concepts such a micro fragments, meta information or simple functions such as source code highlighting.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The last quarters they started to tinker with their editor and output format.
+My older posts are now a mess and can only be open in the HTML mode.
+If I switch to their WYSIWYG editor, the layout is destroyed and random fonts family and sizes are displayed.
+Worse, the blogs are also displayed mangled to the readers even if I do not edit them.
+This destruction of all older blogs and the missing migration path were killer criteria.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Blogger does not support modern markup language such &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;Markdown&lt;/a&gt; or &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;.
+Blogger uses a proprietary and not easy to port format.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It is &lt;strong&gt;time&lt;/strong&gt; to find an alternative, and I have to confess I am a huge fan of &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;OK, so why not go with Markdown?
+Don’t get me wrong, there is nothing bad with Markdown - except that no one should probably use it when &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; and Asciidoctor are available.
+I’m writing all my documents with &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following needs are identified:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;I shall write blogs with the selected solution.
+The blogs shall be written in &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;.
+The blog platform should support multiple years of publishing and referencing between blogs.
+Our projects and our collaborators put effort to regularly publish articles.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I shall be able to write technical articles and publish them on the same site.
+The articles are naturally written in &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;.
+We want professional looking documentation to encourage new users to try our open source components.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I shall publish the technical documentation of the open source components I develop on the same site.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; was selected as static site generator because its support for &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; is tremendously improving.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Static website generators have strong advantages for technical savvy people:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Hosting is cheap.
+GitHub, GitLab or Bitbucket pages even host static websites for free.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The source files go into Git for backup and history.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The source files are in plain text:&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Changes come in as a &lt;em&gt;Pull Request&lt;/em&gt; for proper review and CI pipeline validation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The sources are open in our IDEs, which encourages refactoring them alongside the code.
+This results in less stale content.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;First I used the &lt;a href=&#34;https://github.com/thingsym/hugo-theme-techdoc/&#34;&gt;hugo-theme-techdoc&lt;/a&gt; to customize &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;.
+It worked great for the technical documentation and technical articles but fell short of my wishes for the blog part.
+When I discover the theme &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt;.
+It supports the technical documentation, technical articles, and blogging.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The best part is that &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; now supports &lt;a href=&#34;https://asciidoctor.org/&#34;&gt;Asciidoctor&lt;/a&gt; natively.
+No more strange manipulation to load &lt;em&gt;gem&lt;/em&gt; modules you need.
+And diagrams through asciidoc-diagram and plantUml are generated in the expected folders.
+The documentation is still on the light side, but you find the need information on the various pull requests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The bonus is that &lt;a href=&#34;https://asciidoctor.org/&#34;&gt;Asciidoctor&lt;/a&gt; newer versions have native support for &lt;em&gt;rouge&lt;/em&gt; syntax highlighter.
+It is no more necessary to load &lt;em&gt;pygment&lt;/em&gt; highlighter and configure CSS files.
+Another huge gain is that &lt;em&gt;plantuml&lt;/em&gt; and other diagrams are generated at the right location.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_install_the_tools&#34;&gt;Install the Tools&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;My development platform is a MacBookPro and macOS.
+I use &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt; as a package manager.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The instructions to install hugo and asciidoctor are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;brew &lt;span style=&#34;color: #0086B3&#34;&gt;install &lt;/span&gt;hugo                         &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+
+brew &lt;span style=&#34;color: #0086B3&#34;&gt;install &lt;/span&gt;asciidoctor                  &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+gem &lt;span style=&#34;color: #0086B3&#34;&gt;install &lt;/span&gt;asciidoctor-diagram
+gem &lt;span style=&#34;color: #0086B3&#34;&gt;install &lt;/span&gt;asciidoctor-rouge
+gem &lt;span style=&#34;color: #0086B3&#34;&gt;install &lt;/span&gt;asciidoctor-bibtex
+gem &lt;span style=&#34;color: #0086B3&#34;&gt;install &lt;/span&gt;asciimath
+
+brew &lt;span style=&#34;color: #0086B3&#34;&gt;install &lt;/span&gt;plantuml                     &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+brew &lt;span style=&#34;color: #0086B3&#34;&gt;install &lt;/span&gt;graphviz
+
+&lt;span style=&#34;color: #0086B3&#34;&gt;sudo &lt;/span&gt;npm &lt;span style=&#34;color: #0086B3&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;-D&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;--save&lt;/span&gt; autoprefixer   &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
+&lt;span style=&#34;color: #0086B3&#34;&gt;sudo &lt;/span&gt;npm &lt;span style=&#34;color: #0086B3&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;-D&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;--save&lt;/span&gt; postcss-cli
+&lt;span style=&#34;color: #0086B3&#34;&gt;sudo &lt;/span&gt;npm &lt;span style=&#34;color: #0086B3&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;-D&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;--save&lt;/span&gt; postcss&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Install &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; application&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Install &lt;a href=&#34;https://asciidoctor.org/&#34;&gt;asciidoctor&lt;/a&gt; and additional asciidoctor packages&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Install &lt;a href=&#34;https://plantuml.com/&#34;&gt;plantuml&lt;/a&gt; and &lt;a href=&#34;https://graphviz.org/&#34;&gt;graphviz&lt;/a&gt; for diagrams, in particular UML sketches&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Install &lt;a href=&#34;https://postcss.org/&#34;&gt;PostCSS&lt;/a&gt; and additional packages used by docsy to generate deployment site.
+See also &lt;a href=&#34;https://www.docsy.dev/docs/getting-started/&#34;&gt;docsy documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_asciidoctor_configuration&#34;&gt;Asciidoctor Configuration&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below the configuration of asciidoctor in the &lt;em&gt;config.toml&lt;/em&gt; file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;markup.asciidocext&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;]&lt;/span&gt;
+  &lt;span style=&#34;color: #d14&#34;&gt;extensions = [&amp;#34;asciidoctor-html5s&amp;#34;, &amp;#34;asciidoctor-diagram&amp;#34;]&lt;/span&gt;
+  &lt;span style=&#34;color: #d14&#34;&gt;workingFolderCurrent = &lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;true&lt;/span&gt;
+  &lt;span style=&#34;color: #d14&#34;&gt;[markup.asciidocext.attributes]&lt;/span&gt;
+    &lt;span style=&#34;color: #d14&#34;&gt;imagesdir = &amp;#34;../pics&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color: #d14&#34;&gt;source-highlighter = &amp;#34;rouge&amp;#34;&lt;/span&gt;            &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    &lt;span style=&#34;color: #d14&#34;&gt;rouge-style = &amp;#34;github&amp;#34;&lt;/span&gt;                  &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+    &lt;span style=&#34;color: #d14&#34;&gt;rouge-css = &amp;#34;style&amp;#34;&lt;/span&gt;                     &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+    &lt;span style=&#34;color: #d14&#34;&gt;icons = &amp;#34;font&amp;#34;&lt;/span&gt;                          &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
+    &lt;span style=&#34;color: #d14&#34;&gt;ref-less = &amp;#34;https://less.works/[LeSS]&amp;#34;&lt;/span&gt;  &lt;i class=&#34;conum&#34; data-value=&#34;5&#34;&gt;&lt;/i&gt;&lt;b&gt;(5)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Select &lt;a href=&#34;https://rouge-ruby.github.io/docs/&#34;&gt;rouge&lt;/a&gt; as source highlighter.
+You should not add it to the extensions because since &lt;a href=&#34;https://asciidoctor.org/&#34;&gt;Asciidoctor&lt;/a&gt; version 2.0 rouge is included.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Define the style used to highlight source code.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Configure rouge to generate all formatting data into the generated html file, avoiding any css file configuration.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Icons provide better looking icons for various &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;} constructs.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;5&#34;&gt;&lt;/i&gt;&lt;b&gt;5&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Define document attributes which are accessible to all processed documents (DRY concepts for the whole site).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;CAUTION&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;exampleblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Newer versions of hugo have stricter security restrictions.
+You must explicitly enable asciidoctor support by adding the following statements in your configuration file&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;security&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;security.exec&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color: #d14&#34;&gt;allow = [&amp;#39;^dart-sass-embedded$&amp;#39;, &amp;#39;^go$&amp;#39;, &amp;#39;^npx$&amp;#39;, &amp;#39;^postcss$&amp;#39;, &amp;#39;^asciidoctor$&amp;#39;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_docsy_configuration&#34;&gt;Docsy Configuration&lt;/h4&gt;
+&lt;div class=&#34;sect4&#34;&gt;
+&lt;h5 id=&#34;_add_first_level_folders&#34;&gt;Add First Level Folders&lt;/h5&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each time you add your own first level folder – meaning at the same level as docs, blog, about, or community you need to extend the layout to support it.
+For example, I store technical articles in the folder ideas and use the standard template.
+So I need to add (if not, no items are visible in the sidebar).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color: #0086B3&#34;&gt;cp&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;-R&lt;/span&gt; ./layouts/docs ./layouts/ideas&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect4&#34;&gt;
+&lt;h5 id=&#34;_change_layouts&#34;&gt;Change layouts&lt;/h5&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We had to change the partial &lt;em&gt;footer.html&lt;/em&gt; to display a better looking copyright clause.
+The original version has hard coded text not really compatible with the commons creative license we are using.
+The layout is updated by overwriting the involved partial file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color: #0086B3&#34;&gt;cp&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;$prjDir&lt;/span&gt;/src/site/website/docsy/layouts/partials/footer.html &lt;span style=&#34;color: #008080&#34;&gt;$siteDir&lt;/span&gt;/themes/docsy/layouts/partials&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_enable_local_search_engine&#34;&gt;Enable Local Search Engine&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;One cool feature of &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; is local search support through &lt;a href=&#34;https://lunrjs.com/&#34;&gt;lunrjs&lt;/a&gt; engine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color: #d14&#34;&gt;algolia_docsearch = &lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;false&lt;/span&gt;
+
+&lt;span style=&#34;color: #d14&#34;&gt;offlineSearch = &lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color: #d14&#34;&gt;offlineSearchSummaryLength = &lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;200&lt;/span&gt;
+&lt;span style=&#34;color: #d14&#34;&gt;offlineSearchMaxResults = 25&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_learning&#34;&gt;Learning&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The static website is published under &lt;a href=&#34;http://blog.tangly.net/&#34;&gt;Open Source Components&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The source of the whole website is available under &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os/src/master/src/site/website/&#34;&gt;Website Source Code&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Printing of a single article is supported through your browser.
+You can configure printing a whole section with or without a table of contents through &lt;a href=&#34;https://www.docsy.dev/docs/adding-content/print/&#34;&gt;configuration options&lt;/a&gt;.
+For advanced cases, you can define the layout of the printed document.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can use relative links in your &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; documents.
+Beware where the files are located by &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; engine and the naming conventions shall follow &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; rules.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Avoid the specialized but uncompleted &lt;em&gt;html5s&lt;/em&gt; backend and use instead the &lt;em&gt;html5&lt;/em&gt; backend.
+I was not able to find good examples of stylesheets for the semantic backend.
+The &lt;em&gt;html5s&lt;/em&gt; backend uses new names for classification and sometimes different HTML structures.
+The regular available stylesheets will not style correctly the generated website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Docsy theme does not explicitly support asciidoc documents and the associated stylesheets.
+I had to extend the Docsy stylesheets with styling for admonition blocks, quote blocks, and embedded images to improve the quality of the texts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+The Hugo theme community is slow to better support asciidoc documents.
+The Hugo developers clearly stated that styling for asciidoc documents is the responsibility of theme authors.
+All Hugo users shall be aware that asciidoc is an officially supported input format.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Funny is that the blogger software and the docsy theme are from the same company as &lt;strong&gt;Google&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;This blog article is naturally written in &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; syntax&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_hugo_and_docsy_related_articles&#34;&gt;Hugo and Docsy Related Articles&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/creating-a-technical-website-with-hugo-and-asciidoc&#34;&gt;Creating a technical Website with Hugo and Asciidoc&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/support-comments-for-static-hugo-website&#34;&gt;Support Comments for Static Hugo Website&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

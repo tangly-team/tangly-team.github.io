@@ -1,0 +1,1023 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly OS Components – FSM - Hierarchical Finite State Machine</title>
+    <link>blog.tangly.net/docs/fsm/</link>
+    <description>Recent content in FSM - Hierarchical Finite State Machine on tangly OS Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="blog.tangly.net/docs/fsm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Readme</title>
+      <link>blog.tangly.net/docs/fsm/readme/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/fsm/readme/</guid>
+      <description>
+        
+        
+        &lt;div id=&#34;preamble&#34;&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/license-Apache%202-blue.svg&#34; alt=&#34;Apache License 2.0&#34;/&gt;&lt;/span&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/maven-central/v/net.tangly/fsm.svg)&#34; alt=&#34;Maven Central&#34;/&gt;&lt;/span&gt;
+&lt;a href=&#34;https://javadoc.io/doc/net.tangly/fsm&#34;&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://javadoc.io/badge2/net.tangly/fsm/javadoc.svg&#34; alt=&#34;javadoc&#34;/&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg&#34; alt=&#34;Bitbucket Pipelines&#34;/&gt;&lt;/span&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg)&#34; alt=&#34;Sonar Coverage&#34;/&gt;&lt;/span&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg&#34; alt=&#34;Bitbucket open issues&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_purpose&#34;&gt;Purpose&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;strong&gt;tangly fsm&lt;/strong&gt; is a finite state machine library. You can use it in productive projects and academic assignments.
+The component is using records and requires &lt;strong&gt;Java 17 or higher&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library provides&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Definition of hierarchical state machine descriptions. The machine states and transitions are generic classes. You provide an enumeration for the
+set of states, and an enumeration for the set of events triggering the machine. The builder pattern is used to create complex state machine
+definition declaratively,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Builder approach to construct finite state machine declaration - either classical state machines or hierarchical state machines -&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lambda expressions based on standard API functional interfaces are used for guards and actions&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Guard are bi-predicate lambda expressions with the context and event as parameters&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Actions are bi-function lambda expressions with the context and event as parameters&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A runtime engine processing events on a finite state machine description. Multiple instances of the same description can be instantiated. The class
+owning the state machine is passed as context to all guards and actions,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Support classes to implement listeners and logging are provided.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Documentation helper can generate a graphical representation of a state machine using the graph dot language. Various output formats are supported&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Table representation&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dot graph representation&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PlantUML UML finite hierarchical state machine representation&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_download_and_documentation&#34;&gt;Download and Documentation&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library can be included in Maven as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;xml&#34;&gt;    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;net.tangly&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;fsm&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.2.7&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library can be included in Gradle as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;implementation&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;net.tangly:fsm:0.2.7&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The documentation can be found under [FSM documentation](&lt;a href=&#34;https://blog.tangly.net/docs/fsm/&#34; class=&#34;bare&#34;&gt;https://blog.tangly.net/docs/fsm/&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For any further question and discussion you can use the forum [tangly-OS-Components](&lt;a href=&#34;https://groups.google.com/g/tangly-os-components&#34; class=&#34;bare&#34;&gt;https://groups.google.com/g/tangly-os-components&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_contribution&#34;&gt;Contribution&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library can be build with Gradle&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;    gradle build&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+[bitbucket git repository](&lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os.git&#34; class=&#34;bare&#34;&gt;https://bitbucket.org/tangly-team/tangly-os.git&lt;/a&gt;) and build  the library with the provided gradle configuration file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you find a bug or want to request a feature, please use the [issue tracker](&lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os/issues&#34; class=&#34;bare&#34;&gt;https://bitbucket.org/tangly-team/tangly-os/issues&lt;/a&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_license&#34;&gt;License&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The source code is licensed under &lt;a href=&#34;https://www.apache.org/licenses/LICENSE-2.0&#34;&gt;Apache license 2.0&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The documentation and examples are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;Creative Common (CC Attribution 4.0 International)&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_awesome_sponsors_and_developers&#34;&gt;Awesome Sponsors and Developers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Corporate sponsors are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tangly.net&#34;&gt;tangly llc&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Individual developers are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://linkedin.com/in/marcelbaumann&#34;&gt;Marcel Baumann&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Release Notes</title>
+      <link>blog.tangly.net/docs/fsm/releasesnotes/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/fsm/releasesnotes/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_fsm_library_change_logs&#34;&gt;FSM Library Change Logs&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This document provides a high-level view of the changes introduced in the FSM library by release.
+For a detailed view of what has changed, refer to the &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os&#34;&gt;repository&lt;/a&gt; git commits.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_7_2022_06_30&#34;&gt;0.2.7 (2022-06-30)&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Update of library dependencies, update to JDK-18, and modern Gradle approach to build solutions&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_6_2021_04_30&#34;&gt;0.2.6 (2021-04-30)&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Update of the dependencies&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Corrected bug in the declaration of local transitions through the builder mechanism&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_5_2020_08_31&#34;&gt;0.2.5 (2020-08-31)&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Update of the dependencies&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_4_2020_06_30&#34;&gt;0.2.4 (2020-06-30)&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;FSM library is now a regular Java 9 module (thanks to the new module support in Gradle 6.4)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The new Java record construct is used to simplify the API of the library&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The library requires JDK 14 and all dependencies were updated to the current version&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_3_2020_03_06&#34;&gt;0.2.3 (2020-03-06)&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Dependencies were updated to current versions&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Unit test examples and documentation improvements&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_2_2019_05_17&#34;&gt;0.2.2 (2019-05-17)&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Unit tests were extended to provide better code coverage&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Typos in the &lt;a href=&#34;https://blog.tangly.net/&#34;&gt;static site documentation&lt;/a&gt; were corrected&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_1_2019_05_16&#34;&gt;0.2.1 (2019-05-16)&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Initial release of the library&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: User Guide Finite State Machine</title>
+      <link>blog.tangly.net/docs/fsm/userguidefsm/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/fsm/userguidefsm/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_features&#34;&gt;Features&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The FSM library aims to provide the following features:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Easy to use flat state machine for simple use cases.
+This type of FSM is taught in bachelor engineering courses.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Hierarchical state machine structure to ease complex state configuration.
+Hierarchical type of FSM is part of the UML notation,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Usage of events, transitions, guards and actions.
+Transition actions, state entry actions, and state exit actions are supported.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Builder pattern for easy creation of a complete state machine declaration using a fluent approach,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Recipes for usual use cases,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;State machine event listeners,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Diagrams generators for dot and plantUml applications; diagrams are living documentation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;State machines are powerful because their behaviour is always guaranteed to be consistent, making it relatively easy to debug.
+This is because operational rules are written in stone when the machine is started.
+The idea is that your application may exist in a finite number of states and certain predefined events can take your application from one state to the next.
+Such triggers can be based on either events or timers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It is much easier to define high-level logic outside your application and then rely on the state machine to manage state.
+You can interact with the state machine by sending an event, listening for changes or simply request a current state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_scenarios&#34;&gt;Scenarios&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Applications are a good candidate to use a finite state machine if:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Application or part of its structure can be represented as states.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You want to split complex logic into smaller manageable tasks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Application is already suffering concurrency issues with i.e. some operations are happening asynchronously.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are already trying to implement a finite state machine if you:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Use of boolean flags or enums to model situations and states.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Have variables which only have meaning for some part of your application lifecycle.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Loop through if/else structure and check if a particular flag or enum is set and then making further exceptions what to do when a certain combination of your flags and enums exists or does not exist together.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Finite state machines provide a clear and well-documented approach for complex logic with states.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_get_started&#34;&gt;Get Started&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;FSM finite state machine&lt;/strong&gt; module supports both a fluent API and a more declarative manner to define a state machine, and also enable a user to define the action methods in a straightforward manner.
+Lambda constructs support a compact and legible notation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Actions and guards declarations use the lambda feature of Java 8.
+Guard is a boolean function, and an action is a method without return value.
+Once a finite state machine is declared, you can execute multiple instances of the declaration in your application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;StateMachine&lt;/strong&gt; interface takes free generic type parameters.&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;E&lt;/strong&gt; stands for the type of implemented event.
+The event values must be a Java enumeration type.
+The enumeration type defines all the different event values&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;S&lt;/strong&gt; stands for the type of implemented state.
+The state values must be a Java enumeration type.
+The enumeration type defines the possible states of the finite state machine&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;C&lt;/strong&gt; stands for the class owning the state machine and defining the &lt;strong&gt;context&lt;/strong&gt; in which the machine is executed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;States&lt;/strong&gt; represent the system state available for some time.&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A simple state is as state without children and without history.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Composite state is a hierarchical state.
+It may contain nested simple or composite states.
+The composite children states may themselves have nested children.
+This may proceed to any depth.
+When a hierarchical state is active, one and only one of its child states is active&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The initial state is the state selected when entering a composite state no having active history states&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The final state is a state with only inferent transitions and no afferent transitions&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;State with history allows a composite state to remember its configuration.
+A transition taking the history composite state as its target will return the child state stored in the history as the last active state last time the target composite state was exited&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Transitions&lt;/strong&gt; represent a possible change from a start state to a destination state.&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Normal transition moving from a source state to a destination state&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Internal transition means after the transition completes, no state is excited or entered.
+Therefore, no entry or exit actions are executed&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Guards&lt;/strong&gt; are implemented as an extension of a standard Java &lt;strong&gt;BiPrediction&lt;/strong&gt; functional interface.
+The parameters are the event triggering the guard and the context.&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;boolean expression lambda expression deciding if the transition shall be fired or not.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Actions&lt;/strong&gt; are implemented as an extension of a standard Java &lt;strong&gt;BiFunction&lt;/strong&gt; functional interface.
+The parameters are the event triggering the guard and the context.&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Entry actions are executed upon activation of the state, when the fired transition enters the state&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exit actions are executed upon deactivation of the state, when the fired transition leaves the state&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Transition actions are executed when a transition is fired&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The design requires that the set of states and the set of events are declared as enumeration types.
+Enumeration types allow static checking at compile time.
+They diminish runtime errors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern development environments allow fast round trip changes therefore static type declarations should not slow your development speed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below the UML diagram of the public interface of the finite state machine component.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;![Finite State Machine UML](./pics/fsm-uml.svg &amp;#34;Finite State Machine UML Diagram&amp;#34;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_fluent_examples&#34;&gt;Fluent Examples&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_how_to_create_the_state_machine_builder&#34;&gt;How to create the state machine builder&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order to create a state machine, you need to create a state machine builder first.
+For example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;DefinitionBuilder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Owner&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;DefinitionBuilder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Root&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;After a state machine builder was created, we can use the fluent API to define states, transitions and actions of the state machine declaration.
+The internal objects are implicitly built during creation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_how_to_create_states&#34;&gt;How to create states&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below how to create a state &lt;em&gt;Off&lt;/em&gt; as substrate of the root state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;root&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below two variants how to create an initial state with an entry and an exit action.
+The &lt;em&gt;isInitial&lt;/em&gt; marker specifies that the state &lt;em&gt;Off&lt;/em&gt; is an initial state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;root&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isInitial&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logOffEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logOffExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;addToRoot&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isInitial&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logOffEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logOffExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below how to create a nested initial state with an entry and an exit action.
+The state &lt;em&gt;DAB&lt;/em&gt; is a substate of state &lt;em&gt;On&lt;/em&gt;.
+The &lt;em&gt;isInitial&lt;/em&gt; marker specifies that the state &lt;em&gt;DAB&lt;/em&gt; is an initial state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;On&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;DAB&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isInitial&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logDabEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logDabExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_how_to_create_transitions&#34;&gt;How to create transitions&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below how to create a transition between two states with an event and an action – without a guard -.
+The transition starts on state &lt;em&gt;Maintenance&lt;/em&gt; when the event &lt;em&gt;TogglePower&lt;/em&gt; is received and finishes in state &lt;em&gt;Off_.
+The action &lt;/em&gt;logTransitionFromMaintenanceToOff__ is executed when the transition is traversed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Maintenance&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;TogglePower&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromMaintenanceToOff&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below how to create a transition between two states with an event, a guard and an action.
+The first statement uses a lambda expression calling a method of the owner object.
+The second statement uses a lambda expression with a code block.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;TogglePower&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Maintenance&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onlyIf&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;isMaintenanceMode&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromOffToMaintenance&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;TogglePower&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;On&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onlyIf&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;((&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isMaintenanceMode&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromOffToOn&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below how to create a local transition in the state.
+A local transition does not trigger the exit and entry action of the state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;On&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onLocal&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;StoreStation&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logIgnoreStoreOperation&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_an_example_of_a_complete_finite_state_machine_definition&#34;&gt;An example of a complete finite state machine definition&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The example below declares a complete state machine.
+The enumeration &lt;em&gt;States&lt;/em&gt; defines the states.
+The enumeration &lt;em&gt;Events&lt;/em&gt; defines the events recognized and processed through the finite state machine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;enum&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Root&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Maintenance&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;On&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;FM&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;DAB&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Play&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;AutoTune&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;enum&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;TogglePower&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ToggleMode&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;StationLost&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;StationFound&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;StoreStation&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;DefinitionBuilder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Owner&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;DefinitionBuilder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Root&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;addToRoot&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isInitial&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logOffEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logOffExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;addToRoot&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Maintenance&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logMaintenanceEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logMaintenanceExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;addToRoot&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;On&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;hasHistory&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logOnEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logOnExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;On&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;DAB&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isInitial&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logDabEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logDabExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;DAB&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onLocal&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;StoreStation&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;((&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;appendToLog&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;DABToDAB&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;));&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;On&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;FM&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;hasHistory&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logFmEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logFmExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;FM&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Play&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isInitial&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;hasHistory&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logPlayEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logPlayExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Play&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onLocal&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;StoreStation&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;((&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;appendToLog&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;PlayToPlay&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;));&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;FM&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;AutoTune&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logAutoTuneEntry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logAutoTuneExit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;TogglePower&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Maintenance&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onlyIf&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;isMaintenanceMode&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromOffToMaintenance&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Maintenance&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;TogglePower&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromMaintenanceToOff&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;TogglePower&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;On&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;onlyIf&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;((&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isMaintenanceMode&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromOffToOn&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;On&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;TogglePower&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Off&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromOnToOff&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;DAB&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;ToggleMode&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;FM&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromDabToFm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;FM&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;ToggleMode&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;DAB&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromFmToDab&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Play&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;StationLost&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;AutoTune&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromPlayToAutoTune&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;AutoTune&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;on&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;StationFound&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Play&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Fsm:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logTransitionFromAutoTuneToPlay&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;machine&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;name of the machine&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;owner&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Defines the set of states for the finite state machine&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Defines the set of events processed by the finite state machine&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Creates a builder instance&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Returns a finite state machine instance with the given human rea-able name and the given owning object, ready to process events&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The above finite state machine description will generate the following machine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/fsm-userGuideFsm-DabFsm.svg&#34; alt=&#34;fsm userGuideFsm DabFsm&#34; width=&#34;1603&#34; height=&#34;395&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_how_to_create_an_instance_of_a_finite_state_machine_and_fire_events&#34;&gt;How to create an instance of a finite state machine and fire events&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;After you have defined the state machine behaviour in the description, you create a new state machine instance.
+The initial state of the machine is inferred from the definition of the state machine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;StateMachine&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Fsm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;States&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;fsm&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;machine&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;name-of-fsm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;ownerInstance&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can fire events with the statement:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;fsm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;fire&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Event&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;TogglePower&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_advanced_user_guide&#34;&gt;Advanced User Guide&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_static_validation&#34;&gt;Static Validation&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The static validator verifies the syntax of finite state machine declaration.
+The implemented checks are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Each value of the state identifier enumeration is used exactly once in the declaration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A state has at most one initial substate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A state with a different transition has an initial substate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The hierarchy of initial states allows a clean identification of the first state when the machine is reset to default.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A final state cannot have efferent transitions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_dynamic_validation&#34;&gt;Dynamic Validation&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The static validator verifies the semantics of a finite state machine during execution.
+The implemented checks are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;To be written&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_log_a_state_machine_instance&#34;&gt;Log a state machine instance&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To be written&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_documentation_of_state_machines&#34;&gt;Documentation of State Machines&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can document your state machine declaration by&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Generate a diagram in the dot language and visualize your state machine as a hierarchical graph.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate a plantUML state machine diagram following UML notation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add description to states, actions and guards directly in the builder.
+These descriptions are used to enrich the hierarchical graph.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We provide the finite state machine diagrams of the builder FSM and the Washer FSM as complete examples.
+Please consult the unit tests for the complete source code.
+Use JUnit to run the state machine programs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: User Guide Actors</title>
+      <link>blog.tangly.net/docs/fsm/userguideactor/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/fsm/userguideactor/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_user_guide_actors&#34;&gt;User Guide Actors&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_get_starting&#34;&gt;Get Starting&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A finite state machine actor class is provided to easily create an active class whose behavior is defined through a finite state machine&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;FsmActor&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;O&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;FsmActor&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;O&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;S&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;E&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Actor&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Event&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;?&amp;gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Void&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Logger&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logger&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;LoggerFactory&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;getLogger&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;StateMachine&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;O&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;fsm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;FsmActor&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@Nonnull&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;FsmBuilder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;O&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;throws&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;SuspendExecution&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+         &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;super&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;MailboxConfig&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;());&lt;/span&gt;
+         &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;fsm&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;builder&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;machine&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;O&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+         &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;spawn&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+         &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;try&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+             &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;register&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+         &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;catch&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;SuspendExecution&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+             &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;logger&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;error&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Could not register actor {} in name registry due {}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+         &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+   &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;process&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@Nonnull&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Event&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;event&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;throws&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;SuspendExecution&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;send&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;event&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Void&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;doRun&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;throws&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;InterruptedException&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;SuspendExecution&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(;&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Event&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;event&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;receive&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+            &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;fsm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;fire&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;((&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Event&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;)&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;event&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;fsm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isFinal&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;())&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+                &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can find an example of how to create FSM actor derived classes in the tests in package &lt;strong&gt;net.tangly.fsm.actors&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_messages&#34;&gt;Messages&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The message sent to a finite state machine instance is a regular event instance with a generic parameter being the enumeration of all event kinds the machine should process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You send a message to a quasar actor with the following snippet such as.
+The run method of the FSM actor will retrieve the event from the message queue of the quasar actor instance and dispatch it to the finite state machine instance&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ActorRef&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Object&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;clientRef&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ActorRegistry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;getActor&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;clientName&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;clientRef&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;send&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Event&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Response&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;of&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;clientName&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;())));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you have reference to the FSM actor instance use the convenience method &lt;code&gt;&lt;code&gt;process&lt;/code&gt;&lt;/code&gt; such as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;client&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;process&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Event&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Events&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Inquiry&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Design Considerations</title>
+      <link>blog.tangly.net/docs/fsm/design/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/fsm/design/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_design_finite_state_machine&#34;&gt;Design Finite State Machine&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_definitions&#34;&gt;Definitions&lt;/h3&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+A person who never made a mistake never tried anything new.
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Albert Einstein
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;What is a finite state machine?
+&lt;em&gt;A Finite State Machine&lt;/em&gt; or &lt;em&gt;FSM&lt;/em&gt; is an abstract model of deterministic computation, which can be in only one finite state at a specific moment.
+Finite State Machines are used to model problems in different domains such as AI, games, or application flows.
+It describes how a program should behave by specifying states and routes between them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Finite state machines are also called &lt;a href=&#34;https://en.wikipedia.org/wiki/Deterministic_finite_automaton&#34;&gt;deterministic Finite Automaton&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Another open source implementation can be found under &lt;a href=&#34;https://github.com/j-easy/easy-states&#34;&gt;Easy States&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_states&#34;&gt;States&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A state is a description of the status of a system that is waiting to execute a transition.
+A transition is a set of actions to be executed when an event is received.
+For example, when using an audio system to listen to the radio, receiving the &lt;em&gt;next&lt;/em&gt; stimulus results in moving to the next station.
+When the system is in the &amp;#34;CD&amp;#34; state, the &amp;#34;next&amp;#34; stimulus results in moving to the next track.
+Identical stimuli trigger different actions depending on the current state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It is also possible to associate actions with a state:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;an &lt;em&gt;entry action&lt;/em&gt; performed when entering the state, and&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;an &lt;em&gt;exit action&lt;/em&gt; performed when exiting the state.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;The set of possible states is defined as an enumeration type in our library.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;States can contain substates.
+A state containing a set of substates is called a hierarchical state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;When you enter a hierarchical state, it is possible to define an initial state which is activated when a transition terminates on the border of the hierarchical state and no history is active.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A hierarchical state can have a history.
+When a transition terminates on the border of the hierarchical state and it has a history, the latest active state is automatically activated.
+If no history is available, the default state is activated.
+If none is defined, an illegal state error occurs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_events&#34;&gt;Events&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An event is an external trigger processed in the finite state machine.
+The trigger can induce the firing of one transition.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;The set of possible events is defined as an enumeration type in our library.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_transitions&#34;&gt;Transitions&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A transition defines a potential change from one state to another one.
+A transition has a mandatory event triggering the firing of transition and an optional guard evaluation as a boolean condition.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A local transition is a transition starting and ending in the same state.
+When fired the exit and entry actions of the state are not executed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An external transition between two states or the same state.
+When fired the exit and entry actions of the states are always executed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_actions_and_guards&#34;&gt;Actions and Guards&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An operation executed when the state machine processes an event.
+An action can be executed * when a transition is fired and the action is associated with the transition * when a state is entered through the firing of a transition * when a state is exited through the firing of a transition&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;An action has two parameters.
+The first is the context object owning the instance of the finite state machine.
+The second is the event being processed.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;The order of the processing is the ordered list of actions associated with the exited states, the action on the transition, and the ordered list of actions associated with the entered states.
+The ordering is based on the traversal of the states seen from the transition being fired.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A guard evaluates a transition which could potentially be fired.
+A transition is only fired if the guard returns true and the transition event is the event being fired.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;A guard has two parameters.
+The first is the context object owning the instance of the finite state machine.
+The second is the event being processed.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_finite_state_machine_model&#34;&gt;Finite State Machine Model&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The event class triggering transitions in the finite state machine must be an enumeration type.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The state class defining the set of possible states in the finite state machine must be an enumeration type.
+The root state enclosing the whole machine is called &lt;em&gt;Root&lt;/em&gt; by convention.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/fsm-design-machine_model.svg&#34; alt=&#34;fsm design machine model&#34; width=&#34;848&#34; height=&#34;550&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_finite_state_machine_builder_model&#34;&gt;Finite State Machine Builder Model&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The builder interfaces provide the implementation of the builder pattern to construct a finite state machine description using a fluent API.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/fsm-design-builder_model.svg&#34; alt=&#34;fsm design builder model&#34; width=&#34;1684&#34; height=&#34;175&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Architecture Design Record (ADR)</title>
+      <link>blog.tangly.net/docs/fsm/adr/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/fsm/adr/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The list of all architectural design record defined for the finite state machine FSM component.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

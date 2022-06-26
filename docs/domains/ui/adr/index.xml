@@ -1,0 +1,82 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly OS Components – Architecture Design Record (ADR)</title>
+    <link>blog.tangly.net/docs/domains/ui/adr/</link>
+    <description>Recent content in Architecture Design Record (ADR) on tangly OS Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="blog.tangly.net/docs/domains/ui/adr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: ERPUI-001: Markdown for all Text Fields</title>
+      <link>blog.tangly.net/docs/domains/ui/adr/erpui-001-markdown-for-all-texts/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/domains/ui/adr/erpui-001-markdown-for-all-texts/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_erpui_001_markdown_for_all_text_fields&#34;&gt;ERPUI-001 Markdown for all Text Fields&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2021-06-01&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Markdown is a well-establish approach to write rich text documentation or comments.
+The casual user can learn and use the notation without excessive effort.
+The legibility and professional appearance of Markdown texts are markantly higher than plain text.
+Markdown is an open standard and used in various environments and tools.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All texts and comments in the ERP components shall use Markdown notation to improve legibility.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Alternatives would be proprietary formats such as Microsoft Word or more sophisticated notations such as Asciidoc.
+Our open source approach to product development rejects any propriatary formats.
+Asciidoc is a very powerful and successful format.
+The associated complexity for the users is probably an overkill for casual users of our product.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Text and comments in our system should have a limited length complexity.
+Markdown is an optimal balance between expression power and ease of use.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Markdown is backward compatible with text fields.
+No migration of existing records is needed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The user interface components shall be extended to support a Markdown visualiation and editing component.
+Vaadin currently does not provide native support for Markdown.
+The tangly-os components will be extended to provide such a component until Vaadin supports in the future such an approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

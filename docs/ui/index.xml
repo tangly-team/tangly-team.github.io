@@ -1,0 +1,627 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly OS Components – Vaadin UI</title>
+    <link>blog.tangly.net/docs/ui/</link>
+    <description>Recent content in Vaadin UI on tangly OS Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="blog.tangly.net/docs/ui/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Readme</title>
+      <link>blog.tangly.net/docs/ui/readme/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/ui/readme/</guid>
+      <description>
+        
+        
+        &lt;div id=&#34;preamble&#34;&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/license-Apache%202-blue.svg&#34; alt=&#34;Apache License 2.0&#34;/&gt;&lt;/span&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/maven-central/v/net.tangly/ui.svg&#34; alt=&#34;Maven Central&#34;/&gt;&lt;/span&gt;
+&lt;a href=&#34;https://javadoc.io/badge2/net.tangly/ports/javadoc.svg&#34;&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;//javadoc.io/doc/net.tangly/ui&#34; alt=&#34;javadoc&#34;/&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg&#34; alt=&#34;Bitbucket Pipelines&#34;/&gt;&lt;/span&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg&#34; alt=&#34;Sonar Coverage&#34;/&gt;&lt;/span&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg&#34; alt=&#34;Bitbucket open issues&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_purpose&#34;&gt;Purpose&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;strong&gt;tangly ui erp&lt;/strong&gt; component provides a Vaadin based user interfaces for enterprise applications written in Java.
+The component is using records and requires &lt;strong&gt;Java 17 or higher&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Currently, we are moving at the bleeding edge of our components. Therefore to build and execute the ERP application please&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;    mvn jetty:run&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The initial username and password are &amp;#39;administrator&amp;#39; and &amp;#39;aeon&amp;#39;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The file &lt;em&gt;application.properties&lt;/em&gt; in &lt;em&gt;…/main/resources&lt;/em&gt; directory tailors the configuration of the application, mainly the location of data.
+The file contains comments for new users.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Maven POM file is used to build the application and run it because the Gradle Jetty plugin crashes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_download_and_documentation&#34;&gt;Download and Documentation&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library can be included in Maven as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;xml&#34;&gt;    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;net.tangly&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;ui&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.2.7&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library can be included in Gradle as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;implementation&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;net.tangly:ui:0.2.7&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The documentation can be found under &lt;a href=&#34;https://blog.tangly.net/docs/ui/&#34;&gt;UI documentation&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For any further question and discussion you can use the forum &lt;a href=&#34;https://groups.google.com/g/tangly-os-components&#34;&gt;tangly-OS-Components&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_contribution&#34;&gt;Contribution&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+&lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os.git&#34;&gt;bitbucket git repository&lt;/a&gt; and build the library with the provided gradle configuration file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you find a bug or want to request a feature, please use the &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os/issues&#34;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_license&#34;&gt;License&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The source code is licensed under &lt;a href=&#34;https://www.apache.org/licenses/LICENSE-2.0&#34;&gt;Apache license 2.0&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The documentation and examples are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;Creative Common (CC Attribution 4.0 International)&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_awesome_sponsors_and_developers&#34;&gt;Awesome Sponsors and Developers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Corporate sponsors are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tangly.net&#34;&gt;tangly llc&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Individual developers are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://linkedin.com/in/marcelbaumann&#34;&gt;Marcel Baumann&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Release Notes</title>
+      <link>blog.tangly.net/docs/ui/releasesnotes/</link>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/ui/releasesnotes/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_commons_ui_library_change_logs&#34;&gt;Commons UI Library Change Logs&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This document provides a high-level view of the changes introduced in Common UI library by release.
+For a detailed view of what has changed, refer to the &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os&#34;&gt;repository&lt;/a&gt; commits.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_6_2021_08_31&#34;&gt;0.2.6 (2021-08-31)&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Improvements&lt;/dt&gt;
+&lt;dd&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CRM analytics are provided to have a analytics reporting of key indicators&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Support for localized invoice generation and support of CHF and EUR as currency&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Upgrade to Vaadin 19&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Provides full run and debug mode through Intellij IDEA and gradle. Removed all dependencies to maven.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Provides embedded Jetty standalone mode for production deployment&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_4_2020_06_30&#34;&gt;0.2.4 (2020-06-30)&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Improvements&lt;/dt&gt;
+&lt;dd&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Initial release of the library&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: User Guide UI</title>
+      <link>blog.tangly.net/docs/ui/userguide/</link>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/ui/userguide/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_user_guide_commons_ui&#34;&gt;User Guide Commons UI&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_crud_component&#34;&gt;CRUD Component&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_reflections&#34;&gt;Reflections&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;One key decision is that the user interface library does not require the use of annotations, interfaces, or inheritance in the business model.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Visualized entities are manipulated under different access rights.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Readonly or full access&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Readonly access allow a user to view an entity and associated properties.
+The update, delete and create operations are disabled.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Full access allows a user to view, update, create and delete an entity and associated properties.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Editable, immutable, or audited immutable entities&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Immutable entities or properties support view, create and delete.
+The update operation is not available.
+We avoid support for hybrid approach such as clone a new instance and delete an old one.
+The semantics are often slightly awkward.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Audited immutable entities or properties support view, and create.
+Neither update nor delete operations are available to provide an audit trail.
+Immutable instances can be added programmatically to provide an exhaustive audit trail.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Developer Guide UI</title>
+      <link>blog.tangly.net/docs/ui/developerguide/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/ui/developerguide/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_developer_guide_commons_ui&#34;&gt;Developer Guide Commons UI&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_develop_erp_application&#34;&gt;Develop ERP Application&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_run_from_command_line&#34;&gt;Run From Command Line&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To run quickly from the command-line in development mode:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;./gradlew run &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Your app will be running on &lt;a href=&#34;http://localhost:8080&#34; class=&#34;bare&#34;&gt;http://localhost:8080&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_run_from_ide&#34;&gt;Run From IDE&lt;/h4&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;em&gt;./gradle vaadinPrepareFrontend&lt;/em&gt; in the project, to configure Vaadin for npm mode.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run/Debug the EmbeddedJetty class as an application (run the _main()- method).
+The app will use npm to download all javascript libraries (will take a long time) and will start in development mode.
+Your app will be running on &lt;a href=&#34;http://localhost:8080&#34; class=&#34;bare&#34;&gt;http://localhost:8080&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If in trouble you can find and kill the server on a specific port address, here 8080 with the following commands.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;lsof &lt;span style=&#34;color: #000080&#34;&gt;-i&lt;/span&gt; :8080 | &lt;span style=&#34;color: #0086B3&#34;&gt;grep &lt;/span&gt;LISTEN &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+ps &lt;span style=&#34;color: #000080&#34;&gt;-ef&lt;/span&gt; pid
+&lt;span style=&#34;color: #0086B3&#34;&gt;kill &lt;/span&gt;pid &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;to get the pid of process using the port 8080&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;kill the process using port 8080&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_deploy_erp_application&#34;&gt;Deploy ERP Application&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_packaging_for_production&#34;&gt;Packaging for production&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To package in production mode:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;/gradlew build -PproductionMode=true&lt;/div&gt;
+&lt;p&gt;The project packages itself as a zip file with dependencies.
+The file is in build/distributions/net.tangly.ui-X.Y.Z.zip&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_running_in_production_mode&#34;&gt;Running in production mode&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To build and run the zip file:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;gradle build &lt;span style=&#34;color: #000080&#34;&gt;-PproductionMode&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #0086B3&#34;&gt;true &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+cd &lt;/span&gt;build/distributions/
+unzip net.tangly.ui-X.Y.Z.zip
+&lt;span style=&#34;color: #0086B3&#34;&gt;cd &lt;/span&gt;net.tangly.ui-X.Y.Z/bin
+&lt;span style=&#34;color: #0086B3&#34;&gt;export &lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;NET_TANGLY_UI_OPTS&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #000080&#34;&gt;--enable-preview&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+./net.tangly.ui &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;creates the distribution as a zip file with all dependencies for production&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;enables preview mode for the JVM to support preview features&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;head to localhost:8080/&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you do not have node installed in your CI environment, you can use Vaadin plugin to download node.js for you beforehand:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;gradle clean vaadinPrepareNode build &lt;span style=&#34;color: #000080&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_running_in_docker&#34;&gt;Running in Docker&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To build and package this project as a docker image:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;gradle build &lt;span style=&#34;color: #000080&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #0086B3&#34;&gt;true
+&lt;/span&gt;unzip build/distributions/build/distributions/net.tangly.ui-X.Y.Z.zip
+&lt;span style=&#34;color: #999988;font-style: italic&#34;&gt;# modify run shell and update NET_TANGLY_UI_OPTS=&amp;#34;--enable-preview&amp;#34; or JVM_ARGS=&amp;#34;-enable-preview&amp;#34;&lt;/span&gt;
+docker build &lt;span style=&#34;color: #000080&#34;&gt;--no-cache&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;-t&lt;/span&gt; &lt;span style=&#34;color: #0086B3&#34;&gt;test&lt;/span&gt;/erp-tangly:latest &lt;span style=&#34;color: #0086B3&#34;&gt;.&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+docker run &lt;span style=&#34;color: #000080&#34;&gt;--rm&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;-ti&lt;/span&gt; &lt;span style=&#34;color: #000080&#34;&gt;-p8080&lt;/span&gt;:8080 &lt;span style=&#34;color: #0086B3&#34;&gt;test&lt;/span&gt;/erp-tangly &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Docker will run the Dockerfile and build a docker image. Beware the dot tells docker that the Dockerfile is in local directory&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Run the image, head to localhost:8080/&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_tips_and_tricks&#34;&gt;Tips and Tricks&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The application works well with Google Chrome, Safari, and Firefox.
+We have trouble with iPad Safari.
+The menu bar and button bars are not always visible and scrolling is slow and bumpy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using addAndExpand(Components …​) instead of add(Components …​) displays the button bar of a vertical component in iPad Safari.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: User Guide tangly ERP</title>
+      <link>blog.tangly.net/docs/ui/userguideerp/</link>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/ui/userguideerp/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_erp&#34;&gt;ERP&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_introduction&#34;&gt;Introduction&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The tangly ERP application promotes the various open source components our {ref:tangly} company develops, supports, and publishes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We are a strong supporter of the &lt;em&gt;eat your own dog food&lt;/em&gt; approach.
+The application is used to run daily business and all financial processes of our company.
+All data since the inception were moved in the application.
+This approach is ideal for the industrialisation and validation of all features.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We are proud to provide quite a few advanced functions in the released application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Full support of the Swiss 2D barcode payment solution for all invoices issued for Swiss customers,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Full support of digital invoice data based on the EN 16931 standard for all interested customers.
+The standard is also know as &lt;em&gt;Factur-X&lt;/em&gt; and &lt;em&gt;ZUGFeRD&lt;/em&gt; version 2.1 in France and Germany.
+E-invoices are mandatory for some business in Germany and France.
+Switzerland is a slow adapter.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sliding windows for all financial reports to support rolling financial planning and reporting.
+{ref:bbrt} advocates similar approaches for digital and agile company-wide transformation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The first objective of Factur-X is to enable suppliers, invoice issuers, to create added-value e-invoices.
+The e-invoices shall contain a maximum of information in structured form, according to their ability to produce them in this form.
+Let customers recipients free to use the invoice data or the readable presentation, depending on their needs, and their invoice process maturity on automation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_components&#34;&gt;Components&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The application provides independant components to manage all aspects of a service company&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Customer Relationships&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;To be written&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Products and Projects&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;To be written&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Articles and Invoices&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;To be written&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Financial Accounting&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;To be written&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ERP Design</title>
+      <link>blog.tangly.net/docs/ui/design/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/ui/design/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_erp_design&#34;&gt;ERP Design&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/context-diagram-erp.svg&#34; alt=&#34;context diagram erp&#34; width=&#34;1214&#34; height=&#34;679&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_persistence&#34;&gt;Persistence&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_folder_structure&#34;&gt;Folder Structure&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Files are written in italics font, folders are written in bold font.
+Examples with content are provided for each file type as test resources.
+These resources are available in the git repository.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/folder-structure-erp.svg&#34; alt=&#34;folder structure erp&#34; width=&#34;631&#34; height=&#34;450&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_entity_abstraction&#34;&gt;Entity Abstraction&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The entity abstraction has five kinds of properties&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Simple Properties&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;are all displayed in a form part of a &lt;em&gt;properties&lt;/em&gt; tab for visualization or editing.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Comments&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;are displayed as a CRUD Grid - Form component part of a &lt;em&gt;comments&lt;/em&gt; tab for visualization or editing following CRUD approach.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Tags&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;are displayed as a CRUD Grid - Form component part of a &lt;em&gt;tags&lt;/em&gt; tab for visualization or editing following CRUD approach.
+The tag registry provides support for legible &lt;em&gt;namespaces&lt;/em&gt;, &lt;em&gt;tag names&lt;/em&gt;, and if defined &lt;em&gt;values&lt;/em&gt;.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;One to One Relations&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;To be written&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;One to Many Relations&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;To be written&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_crud_forms&#34;&gt;CRUD Forms&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;CRUD forms are programmatically defined to offer full content and layout control to the developer.
+The programmer populates a form layout and provides it to the CRUD class.
+The buttons of the form and associated actions are handled by the CRUD class.
+Callbacks are provided to inform the entity form class defining the form layout if the user accepted or cancelled his changes in the form.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_crud_list_view_and_details_form&#34;&gt;Crud List View and Details Form&lt;/h4&gt;
+&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/crud-view.svg&#34; alt=&#34;crud view&#34; width=&#34;460&#34; height=&#34;391&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

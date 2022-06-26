@@ -1,0 +1,2401 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta name="generator" content="Hugo 0.101.0" />
+<link href="blog.tangly.net/ideas/learnings/" rel="canonical" type="text/html">
+<link href="blog.tangly.net/ideas/learnings/index.xml" rel="alternate" type="application/rss&#43;xml">
+<meta content="noindex, nofollow" name="robots">
+
+
+<link rel="shortcut icon" href="/blog.tangly.net/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/blog.tangly.net/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-192x192.png" sizes="192x192">
+
+<title>Learnings | tangly OS Components</title>
+<meta content="" name="description">
+<meta property="og:title" content="Learnings" />
+<meta property="og:description" content="tangly llc Open Source Components" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="blog.tangly.net/ideas/learnings/" /><meta property="og:site_name" content="tangly OS Components" />
+
+<meta itemprop="name" content="Learnings">
+<meta itemprop="description" content="tangly llc Open Source Components"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Learnings"/>
+<meta name="twitter:description" content="tangly llc Open Source Components"/>
+
+
+
+
+<link rel="preload" href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" as="style">
+<link href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" rel="stylesheet" integrity="">
+
+<script
+    crossorigin="anonymous"
+    integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+    crossorigin="anonymous"
+    integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+    src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-90395055-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="blog.tangly.net/">
+		<span class="navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns="http://www.w3.org/2000/svg" width="200pt" height="200pt" viewBox="0 0 200 200" id="svg2486" sodipodi:version=".32" inkscape:version=".46" sodipodi:docname="Trefoil knot right.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape"><sodipodi:namedview inkscape:window-height="968" inkscape:window-width="1280" inkscape:pageshadow="2" inkscape:pageopacity="0" guidetolerance="10" gridtolerance="10" objecttolerance="10" borderopacity="1" bordercolor="#666666" pagecolor="#ffffff" id="base" showgrid="false" inkscape:zoom="1.3067333" inkscape:cx="249.63266" inkscape:cy="62.855447" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:current-layer="svg2486"/><defs id="defs2488"><inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 125 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="250 : 125 : 1" inkscape:persp3d-origin="125 : 83.333333 : 1" id="perspective2513"/><clipPath id="clip0"><rect width="200" height="200" id="rect2491"/></clipPath></defs><path id="path2494" d="M0 0H2e2V2e2H0V0z" style="fill:none;stroke:#fff;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2498" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2500" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2502" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2504" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2506" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2508" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:#000;fill-rule:nonzero;stroke:none"/></svg></span><span class="font-weight-bold">tangly OS Components</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/docs/" ><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="blog.tangly.net/ideas/" ><span class="active">Ideas</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/expertise/" ><span>Expertise</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Repositories
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://github.com/tangly-team/tangly-os/">GitHub</a>
+	
+	<a class="dropdown-item" href="https://gitlab.com/marcelbaumann/tangly-os">GitLab</a>
+	
+	<a class="dropdown-item" href="https://bitbucket.org/tangly-team/tangly-os/">Bitbucket</a>
+	
+</div>
+
+			</li>
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/blog.tangly.net/offline-search-index.72cb1c62467a6d39fe4e23b79eb68cc5.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="50"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="blog.tangly.net/ideas/learnings/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Learnings</h1>
+
+
+
+
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-5f95e59f44636f67b8cf313328a8cee4">1 - Lectures</h1>
+    <div class="lead">Lectures and associated literature</div>
+	<h2 id="software-architecture-and-techniques-lectures">Software Architecture and Techniques Lectures</h2>
+<p><a href="https://en.wikipedia.org/wiki/Software_architecture">Software Architecture</a> and Techniques <em>SWAT</em> discuss approaches, methods and tools taught in the context
+of agile development approaches. It reflects current trends where more than 80 % of new software development is performed using
+<a href="https://en.wikipedia.org/wiki/Agile_software_development">agile software development</a> approaches.</p>
+<p>The depth of the concepts shall be modulated to the knowledge of the participants. Primary goals are to establish comprehension on agile architecture and master
+a small set of techniques enabling the participant to define a component or a small application architecture.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="card attachments td-max-width-on-larger-screens">
+    <label class="card-header attachments-label">
+        <i class="attachments-icon fas fa-paperclip" aria-hidden="true"></i>
+        SWAT Lectures
+    </label>
+    <div class="card-body attachments-files">
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <ul>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/01-WhyAgileArchitectureAndDesign.pdf" >01-WhyAgileArchitectureAndDesign.pdf 
+
+
+
+
+
+
+
+
+(711.9 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/02-EvolutionOfSoftwareArchitectureOverTheLastDecades.pdf" >02-EvolutionOfSoftwareArchitectureOverTheLastDecades.pdf 
+
+
+
+
+
+
+
+
+(1.4 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/03-WhatIsAgileArchitecture.pdf" >03-WhatIsAgileArchitecture.pdf 
+
+
+
+
+
+
+
+
+(1.4 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/04-AgileApproachesWithScrumXpLess.pdf" >04-AgileApproachesWithScrumXpLess.pdf 
+
+
+
+
+
+
+
+
+(1.8 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/05-Refactoring.pdf" >05-Refactoring.pdf 
+
+
+
+
+
+
+
+
+(260.7 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/06-ErrorsVulnerabilitiesSmellsInSourceCode.pdf" >06-ErrorsVulnerabilitiesSmellsInSourceCode.pdf 
+
+
+
+
+
+
+
+
+(614.7 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/07-ArchitectureOfComponentsAndSubsystems.pdf" >07-ArchitectureOfComponentsAndSubsystems.pdf 
+
+
+
+
+
+
+
+
+(586.5 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/08-VerifyFunctionalFeatures.pdf" >08-VerifyFunctionalFeatures.pdf 
+
+
+
+
+
+
+
+
+(621.3 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/09-ValidateQualityAttributesOfSoftwareArchitecture.pdf" >09-ValidateQualityAttributesOfSoftwareArchitecture.pdf 
+
+
+
+
+
+
+
+
+(889.6 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/10-ArchitectureDocumentation.pdf" >10-ArchitectureDocumentation.pdf 
+
+
+
+
+
+
+
+
+(546.6 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/11-ArchitectureTrends-I.pdf" >11-ArchitectureTrends-I.pdf 
+
+
+
+
+
+
+
+
+(1.1 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/12-ArchitectureTrends-II.pdf" >12-ArchitectureTrends-II.pdf 
+
+
+
+
+
+
+
+
+(702.9 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/13-DomainDrivenDesignWorkshop.pdf" >13-DomainDrivenDesignWorkshop.pdf 
+
+
+
+
+
+
+
+
+(224.5 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-lectures/14-TeamAndTechnicalExcellenceForArchitects.pdf" >14-TeamAndTechnicalExcellenceForArchitects.pdf 
+
+
+
+
+
+
+
+
+(1.4 MB)
+</a>
+            </li>
+            
+        </ul>
+        
+        
+    </div>
+    
+    <div class="card-footer attachments-inner">Software Architecture and Techniques SWAT
+lectures</div>
+    
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="card attachments td-max-width-on-larger-screens">
+    <label class="card-header attachments-label">
+        <i class="attachments-icon fas fa-paperclip" aria-hidden="true"></i>
+        SWAT Recommended Literature
+    </label>
+    <div class="card-body attachments-files">
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <ul>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/.DS_Store" >.DS_Store 
+
+
+
+
+
+
+
+
+(6.0 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/01-DevDotStar_Reeves_CodeAsDesign%20%28optional%29.pdf" >01-DevDotStar_Reeves_CodeAsDesign (optional).pdf 
+
+
+
+
+
+
+
+
+(76.7 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/01-WhoNeedsArchitect.pdf" >01-WhoNeedsArchitect.pdf 
+
+
+
+
+
+
+
+
+(147.5 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/02-TOGAF-AgileArchitectureInTheDigitalAge.pdf" >02-TOGAF-AgileArchitectureInTheDigitalAge.pdf 
+
+
+
+
+
+
+
+
+(721.3 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/02-TOGAF-OpenAgileArchitecture.pdf" >02-TOGAF-OpenAgileArchitecture.pdf 
+
+
+
+
+
+
+
+
+(19.2 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/03-CleanArchitectureCheatSheet.pdf" >03-CleanArchitectureCheatSheet.pdf 
+
+
+
+
+
+
+
+
+(596.2 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/04-LargeScaleAgileDesignAndArchitectureWaysOfWorking.pdf" >04-LargeScaleAgileDesignAndArchitectureWaysOfWorking.pdf 
+
+
+
+
+
+
+
+
+(2.9 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/04-LeSS-Poster%20%28optional%29.pdf" >04-LeSS-Poster (optional).pdf 
+
+
+
+
+
+
+
+
+(11.9 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/04-ScrumAndXpFromTheTrenches-2nd%20%28optional%29.pdf" >04-ScrumAndXpFromTheTrenches-2nd (optional).pdf 
+
+
+
+
+
+
+
+
+(5.2 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/04-ScrumGuide2020.pdf" >04-ScrumGuide2020.pdf 
+
+
+
+
+
+
+
+
+(248.4 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/05-CleanTDDCheatSheet.pdf" >05-CleanTDDCheatSheet.pdf 
+
+
+
+
+
+
+
+
+(1.7 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/06-CleanCodeCheatSheet.pdf" >06-CleanCodeCheatSheet.pdf 
+
+
+
+
+
+
+
+
+(1.6 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/06-OWASPTop10-2017%20%28optional%29.pdf" >06-OWASPTop10-2017 (optional).pdf 
+
+
+
+
+
+
+
+
+(1.7 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/07-JavaDesignPatterns%20%28optional%29.pdf" >07-JavaDesignPatterns (optional).pdf 
+
+
+
+
+
+
+
+
+(3.5 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/08-ArchitecturesExamples%20%28optional%29%20.pdf" >08-ArchitecturesExamples (optional) .pdf 
+
+
+
+
+
+
+
+
+(2.9 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/09-ModernJavaEEDesignPatterns.pdf" >09-ModernJavaEEDesignPatterns.pdf 
+
+
+
+
+
+
+
+
+(9.1 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/10-CheatSheet-UML-Notation%20%28optional%29.pdf" >10-CheatSheet-UML-Notation (optional).pdf 
+
+
+
+
+
+
+
+
+(10.3 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/10-Checklist-C4-Notation.pdf" >10-Checklist-C4-Notation.pdf 
+
+
+
+
+
+
+
+
+(33.2 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/11-DomainDrivenDesignQuickly.pdf" >11-DomainDrivenDesignQuickly.pdf 
+
+
+
+
+
+
+
+
+(1.2 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/11-MicroservicesVsMonoliths%20%28optional%29.pdf" >11-MicroservicesVsMonoliths (optional).pdf 
+
+
+
+
+
+
+
+
+(4.7 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/12-ContinuousDeliveryPatterns%20%28optional%29.pdf" >12-ContinuousDeliveryPatterns (optional).pdf 
+
+
+
+
+
+
+
+
+(950.4 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/12-FasterSmarterDevOps%20%28optional%29.pdf" >12-FasterSmarterDevOps (optional).pdf 
+
+
+
+
+
+
+
+
+(6.0 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/14-HighPerformanceTeamsTheFoundations.pdf" >14-HighPerformanceTeamsTheFoundations.pdf 
+
+
+
+
+
+
+
+
+(1.3 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/14-Leading-Self-Organising-Teams%20%28optional%29.pdf" >14-Leading-Self-Organising-Teams (optional).pdf 
+
+
+
+
+
+
+
+
+(3.7 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="swat-literature/14-WhyAgileWorks%20%28optional%29.pdf" >14-WhyAgileWorks (optional).pdf 
+
+
+
+
+
+
+
+
+(2.2 MB)
+</a>
+            </li>
+            
+        </ul>
+        
+        
+    </div>
+    
+    <div class="card-footer attachments-inner">Recommended readings for
+the Software Architecture and Techniques SWAT lectures</div>
+    
+</section>
+
+
+
+<h2 id="modern-java-and-selected-jvm-languages-lectures">Modern Java and Selected JVM Languages Lectures</h2>
+<p>Modern Java and Selected JVM languages <em>PCP</em> discuss programming paradigms to write legible, efficient source code.
+Theory is mapped to programming language features.
+The participants learn how to create modern design concepts and implement them in JVM languages such as Java, Clojure, and Groovy.</p>
+<p>Key themes are:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Algebraic_data_type">Algebraic data types</a> with records, sealed types and libraries such as lombok</li>
+<li><a href="https://en.wikipedia.org/wiki/Functional_programming">Functional programming</a> with lambdas, streams, and optional. Functional concepts of first-class
+citizens, currying, recursion are discussed.</li>
+<li><a href="https://en.wikipedia.org/wiki/Pattern_matching">Pattern matching</a> extensions in switch, if and instanceof expressions.</li>
+<li>Module concept in Java environment</li>
+<li>Advanced concepts such as <a href="https://openjdk.java.net/projects/valhalla/">Valhalla</a>, <a href="https://openjdk.java.net/projects/loom/">Loom</a>,
+<a href="https://openjdk.java.net/projects/panama/">Panama</a>, and <a href="https://openjdk.java.net/projects/amber/">Amber</a> and their impact on JVM programming</li>
+<li><a href="https://clojure.org/">Clojure</a> and <a href="https://groovy-lang.org/">Groovy</a> are extensively used to explain better implementations of the above concepts.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="card attachments td-max-width-on-larger-screens">
+    <label class="card-header attachments-label">
+        <i class="attachments-icon fas fa-paperclip" aria-hidden="true"></i>
+        Modern Java Lectures
+    </label>
+    <div class="card-body attachments-files">
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <ul>
+            
+            
+            
+            
+            <li>
+                <a href="moja-lectures/.DS_Store" >.DS_Store 
+
+
+
+
+
+
+
+
+(6.0 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="moja-lectures/PCP-Modern-Java-01-Algebraic-Data-Types.pdf" >PCP-Modern-Java-01-Algebraic-Data-Types.pdf 
+
+
+
+
+
+
+
+
+(228.4 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="moja-lectures/PCP-Modern-Java-02-Lambdas-Streams.pdf" >PCP-Modern-Java-02-Lambdas-Streams.pdf 
+
+
+
+
+
+
+
+
+(284.0 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="moja-lectures/PCP-Modern-Java-03-Modules.pdf" >PCP-Modern-Java-03-Modules.pdf 
+
+
+
+
+
+
+
+
+(340.6 kB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="moja-lectures/PCP-Modern-Java-04-Valhalla-Loom-Panama-Amber.pdf" >PCP-Modern-Java-04-Valhalla-Loom-Panama-Amber.pdf 
+
+
+
+
+
+
+
+
+(1.2 MB)
+</a>
+            </li>
+            
+        </ul>
+        
+        
+    </div>
+    
+    <div class="card-footer attachments-inner">Modern Java and Selected JVM
+Languages Lectures</div>
+    
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="card attachments td-max-width-on-larger-screens">
+    <label class="card-header attachments-label">
+        <i class="attachments-icon fas fa-paperclip" aria-hidden="true"></i>
+        Modern Java Recommended Literature
+    </label>
+    <div class="card-body attachments-files">
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <ul>
+            
+            
+            
+            
+            <li>
+                <a href="moja-literature/Java-9-modules-cheatsheet.pdf" >Java-9-modules-cheatsheet.pdf 
+
+
+
+
+
+
+
+
+(204.2 kB)
+</a>
+            </li>
+            
+        </ul>
+        
+        
+    </div>
+    
+    <div class="card-footer attachments-inner">Recommended readings
+for the Modern Java and selected JVM languages lectures</div>
+    
+</section>
+
+
+
+<h2 id="user-interfaces-with-vaadin">User Interfaces with Vaadin</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="card attachments td-max-width-on-larger-screens">
+    <label class="card-header attachments-label">
+        <i class="attachments-icon fas fa-paperclip" aria-hidden="true"></i>
+        User Interface Books
+    </label>
+    <div class="card-body attachments-files">
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <ul>
+            
+            
+            
+            
+            <li>
+                <a href="ui-books/2016-vaadin-programming-cookbook.pdf" >2016-vaadin-programming-cookbook.pdf 
+
+
+
+
+
+
+
+
+(3.6 MB)
+</a>
+            </li>
+            
+            
+            
+            
+            <li>
+                <a href="ui-books/2019-Book-of-Vaadin-14.pdf" >2019-Book-of-Vaadin-14.pdf 
+
+
+
+
+
+
+
+
+(9.4 MB)
+</a>
+            </li>
+            
+        </ul>
+        
+        
+    </div>
+    
+    <div class="card-footer attachments-inner">Modern Java User Interfaces</div>
+    
+</section>
+
+
+
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-11608bf1673e2c2d25551ad90e2c8318">2 - Books</h1>
+    <div class="lead">bibliography agile and technical excellence books</div>
+	Unknown reference: skilled-facilitator-resoruce
+Unknown reference: agile-produt-management
+<div class="sect1">
+<h2 id="_agile_and_technical_excellence_books">Agile and Technical Excellence Books</h2>
+<div class="sectionbody">
+<details>
+<summary class="title"><strong>Agile</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>J. Hesselberg, <em>Unlocking Agility</em>. Addison-Wesley Professional, 2019 [Online]. Available: <a href="https://www.amazon.com/dp/0134542843" class="bare">https://www.amazon.com/dp/0134542843</a></p>
+</li>
+<li>
+<p>M. Poppendieck and T. Poppendieck, <em>Implementing Lean Software Development</em>. Addison-Wesley Professional, 2006 [Online]. Available: <a href="https://www.amazon.com/dp/0321437381" class="bare">https://www.amazon.com/dp/0321437381</a></p>
+</li>
+<li>
+<p>J. Appelo, <em>Management 3.0</em>. Addison-Wesley, 2011 [Online]. Available: <a href="https://www.amazon.com/dp/0321712471" class="bare">https://www.amazon.com/dp/0321712471</a></p>
+</li>
+<li>
+<p>F. Laloux, <em>Reinventing Organizations</em>. Nelson Parker, 2014 [Online]. Available: <a href="https://www.amazon.com/dp/2960133501" class="bare">https://www.amazon.com/dp/2960133501</a></p>
+</li>
+<li>
+<p>H. Hamel and B. Breen, <em>The Future of Management</em>. Harvard Business Review Press, 2007 [Online]. Available: <a href="https://www.amazon.com/dp/1422102505" class="bare">https://www.amazon.com/dp/1422102505</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>Scrum</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>G. Verheyen, <em>Scrum - A Pocket Guide</em>, Third. Van Haren Publishing, 2021 [Online]. Available: <a href="https://www.amazon.com/dp/B08XWQ7DG9" class="bare">https://www.amazon.com/dp/B08XWQ7DG9</a></p>
+</li>
+<li>
+<p>H. Kniberg, <em>Scrum and Xp from the trenches</em>. C4MEDIA, 2015 [Online]. Available: <a href="https://www.amazon.com/dp/1329224272" class="bare">https://www.amazon.com/dp/1329224272</a></p>
+</li>
+<li>
+<p>M. Lacey, <em>The scrum field guide agile advice for your first year and beyond</em>. 2016 [Online]. Available: <a href="https://www.amazon.com/dp/0133853624" class="bare">https://www.amazon.com/dp/0133853624</a></p>
+</li>
+<li>
+<p>M. Cohn, <em>Succeeding with agile</em>. Addison-Wesley, 2010 [Online]. Available: <a href="https://www.amazon.com/dp/0321579364" class="bare">https://www.amazon.com/dp/0321579364</a></p>
+</li>
+<li>
+<p>K. S. Rubin, <em>Essential Scrum</em>. Addison-Wesley, 2012 [Online]. Available: <a href="https://www.amazon.com/dp/0137043295" class="bare">https://www.amazon.com/dp/0137043295</a></p>
+</li>
+<li>
+<p>M. Cohn, <em>Agile estimating and planning</em>. Prentice Hall Professional Technical Reference, 2005 [Online]. Available: <a href="https://www.amazon.com/dp/0131479415" class="bare">https://www.amazon.com/dp/0131479415</a></p>
+</li>
+<li>
+<p>J. Sutherland, <em>Scrum: The Art of Doing Twice the Work in Half the Time</em>. Crown Publishing Group, 2014 [Online]. Available: <a href="https://www.amazon.com/dp/038534645X" class="bare">https://www.amazon.com/dp/038534645X</a></p>
+</li>
+<li>
+<p>S. Ockerman and S. Reindl, <em>Mastering Professional Scrum</em>. Addison Wesley, 2019 [Online]. Available: <a href="https://www.amazon.com/dp/B07XTLNPTC" class="bare">https://www.amazon.com/dp/B07XTLNPTC</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>Lean &amp; kanban</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>H. Kniberg, <em>Lean from the Trenches</em>. Pragmatic Bookshelf, 2011 [Online]. Available: <a href="https://www.amazon.com/dp/B00N4HZ6PK" class="bare">https://www.amazon.com/dp/B00N4HZ6PK</a></p>
+</li>
+<li>
+<p>E. Ries, <em>The Lean Startup</em>. Crown Business, 2011 [Online]. Available: <a href="https://www.amazon.com/dp/0307887898" class="bare">https://www.amazon.com/dp/0307887898</a></p>
+</li>
+<li>
+<p>M. Poppendieck and T. Poppendieck, <em>The Lean Mindset</em>. Addison-Wesley Professional, 2013 [Online]. Available: <a href="https://www.amazon.com/dp/0321896904" class="bare">https://www.amazon.com/dp/0321896904</a></p>
+</li>
+<li>
+<p>F. Ballé and M. Ballé, <em>The Gold Mine</em>. Lean Enterprises Inst Inc, 2005 [Online]. Available: <a href="https://www.amazon.com/dp/0974322563" class="bare">https://www.amazon.com/dp/0974322563</a></p>
+</li>
+<li>
+<p>M. Ballé, F. Ballé, and J. Liker, <em>The Lean Manager</em>. Len Publishing, 2009 [Online]. Available: <a href="https://www.amazon.com/dp/1934109258" class="bare">https://www.amazon.com/dp/1934109258</a></p>
+</li>
+<li>
+<p>M. Ballé and F. Ballé, <em>Lead with Respect</em>. Len Publishing, 2014 [Online]. Available: <a href="https://www.amazon.com/dp/1934109479" class="bare">https://www.amazon.com/dp/1934109479</a></p>
+</li>
+<li>
+<p>M. Balle, R. Priolo, and D. T. Jones, <em>Lead with Lean</em>. CreateSpace Independent Publishing Platform, 2016 [Online]. Available: <a href="https://www.amazon.com/dp/B075GTQHFX" class="bare">https://www.amazon.com/dp/B075GTQHFX</a></p>
+</li>
+<li>
+<p>M. Poppendieck and T. Poppendieck, <em>Implementing Lean Software Development</em>. Addison-Wesley Professional, 2006 [Online]. Available: <a href="https://www.amazon.com/dp/0321437381" class="bare">https://www.amazon.com/dp/0321437381</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>Less &amp; Other Scaling Frameworks</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>C. Larman, <em>Large-scale scrum</em>. 2017 [Online]. Available: <a href="https://www.amazon.com/dp/0321985710" class="bare">https://www.amazon.com/dp/0321985710</a></p>
+</li>
+<li>
+<p>C. Larman, <em>Scaling lean &amp; agile development</em>. Addison-Wesley, 2008 [Online]. Available: <a href="https://www.amazon.com/dp/0321480961" class="bare">https://www.amazon.com/dp/0321480961</a></p>
+</li>
+<li>
+<p>C. Larman, <em>Practices for scaling lean &amp; agile development</em>. Addison-Wesley, 2010 [Online]. Available: <a href="https://www.amazon.com/dp/0321636406" class="bare">https://www.amazon.com/dp/0321636406</a></p>
+</li>
+<li>
+<p>K. Bittner, <em>The Nexus framework for scaling scrum</em>. 2018 [Online]. Available: <a href="https://www.amazon.com/dp/0134682661" class="bare">https://www.amazon.com/dp/0134682661</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>Teams</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Z. Sochova, <em>The Great ScrumMaster</em>. Addison Wesley, 2016 [Online]. Available: <a href="https://www.amazon.com/dp/013465711X" class="bare">https://www.amazon.com/dp/013465711X</a></p>
+</li>
+<li>
+<p>G. Verheyen, <em>Scrum - A Pocket Guide</em>, Third. Van Haren Publishing, 2021 [Online]. Available: <a href="https://www.amazon.com/dp/B08XWQ7DG9" class="bare">https://www.amazon.com/dp/B08XWQ7DG9</a></p>
+</li>
+<li>
+<p>S. Ockerman and S. Reindl, <em>Mastering Professional Scrum</em>. Addison Wesley, 2019 [Online]. Available: <a href="https://www.amazon.com/dp/B07XTLNPTC" class="bare">https://www.amazon.com/dp/B07XTLNPTC</a></p>
+</li>
+<li>
+<p>L. Adkins, <em>Coaching agile teams</em>. Addison-Wesley, 2010 [Online]. Available: <a href="https://www.amazon.com/dp/0321534468" class="bare">https://www.amazon.com/dp/0321534468</a></p>
+</li>
+<li>
+<p>E. Derby, D. Larsen, and K. Schwaber, <em>Agile Retrospectives</em>. Pragmatic Bookshelf, 2006 [Online]. Available: <a href="https://www.amazon.com/dp/0977616649" class="bare">https://www.amazon.com/dp/0977616649</a></p>
+</li>
+<li>
+<p>R. Schwarz, <em>The Skilled Facilitator</em>. Jossey-Bass, 2002 [Online]. Available: <a href="https://www.amazon.com/dp//0787947237" class="bare">https://www.amazon.com/dp//0787947237</a></p>
+</li>
+<li>
+<p>skilled-facilitator-resoruce</p>
+</li>
+<li>
+<p>T. DeMarco, <em>Peopleware productive projects and teams</em>, Third. 2013 [Online]. Available: <a href="https://www.amazon.com/dp/03219" class="bare">https://www.amazon.com/dp/03219</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>Product Owner</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>D. McGreal and R. Jocham, <em>The Professional Product Owner</em>. Addison-Wesley Professional [Online]. Available: <a href="https://www.amazon.com/dp/B07D5ZPJBY" class="bare">https://www.amazon.com/dp/B07D5ZPJBY</a></p>
+</li>
+<li>
+<p>J. Patton, <em>User Story Mapping</em>. O’Reilly and Associates, 2014 [Online]. Available: <a href="https://www.amazon.com/dp/1491904909" class="bare">https://www.amazon.com/dp/1491904909</a></p>
+</li>
+<li>
+<p>G. Adzic, M. Bisset, and T. Poppendieck, <em>Impact Mapping</em>. Provoking Thoughts, 2012 [Online]. Available: <a href="https://www.amazon.com/dp/0955683645" class="bare">https://www.amazon.com/dp/0955683645</a></p>
+</li>
+<li>
+<p>R. Pichler, <em>Strategize</em>. Pichler Consulting, 2016 [Online]. Available: <a href="https://www.amazon.com/dp/0993499201" class="bare">https://www.amazon.com/dp/0993499201</a></p>
+</li>
+<li>
+<p>agile-produt-management</p>
+</li>
+<li>
+<p>R. Pichler, <em>How to Lead in Product Management</em>. 978-1-9163030-0-3, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/article/B085L8Z4YS" class="bare">https://www.amazon.com/dp/article/B085L8Z4YS</a></p>
+</li>
+<li>
+<p>M. Cohn, <em>User Stories Applied</em>. Addison-Wesley Professional, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321205685" class="bare">https://www.amazon.com/dp/0321205685</a></p>
+</li>
+<li>
+<p>A. Osterwalder, <em>Value proposition design</em>. 2014 [Online]. Available: <a href="https://www.amazon.com/dp/1118968050" class="bare">https://www.amazon.com/dp/1118968050</a></p>
+</li>
+<li>
+<p>C. Alvarez, <em>Lean Customer Development</em>. O’Reilly Media, 2014 [Online]. Available: <a href="https://www.amazon.com/dp/1492023744" class="bare">https://www.amazon.com/dp/1492023744</a></p>
+</li>
+<li>
+<p>G. Adzic, <em>Bridging the Communication Gap</em>. Neuri Limited, 2009 [Online]. Available: <a href="https://www.amazon.com/dp/B008YZ993W/" class="bare">https://www.amazon.com/dp/B008YZ993W/</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>Agile Architecture</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>N. Ford, R. Parsons, and P. Kua, <em>Building Evolutionary Architectures: Support Constant Change</em>. O’Reilly Media [Online]. Available: <a href="https://www.amazon.com/dp/1491986360" class="bare">https://www.amazon.com/dp/1491986360</a></p>
+</li>
+<li>
+<p>M. Fowler, <em>Refactoring</em>, Second. Addision-Wesley, 2018 [Online]. Available: <a href="https://www.amazon.com/dp/0134757599" class="bare">https://www.amazon.com/dp/0134757599</a></p>
+</li>
+<li>
+<p>E. Evans, <em>Domain-driven design</em>. Addison-Wesley, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321125215" class="bare">https://www.amazon.com/dp/0321125215</a></p>
+</li>
+<li>
+<p>V. Vernon, <em>Domain-Driven Design Distilled</em>. Addison-Wesley Professional, 2016 [Online]. Available: <a href="https://www.amazon.com/dp/B01JJSGE5S/" class="bare">https://www.amazon.com/dp/B01JJSGE5S/</a></p>
+</li>
+<li>
+<p>V. Vernon, <em>Implementing Domain driven Design</em>. Addison-Wesley Professional, 2012 [Online]. Available: <a href="https://www.amazon.com/dp/B00BCLEBN8" class="bare">https://www.amazon.com/dp/B00BCLEBN8</a></p>
+</li>
+<li>
+<p>M. C. Feathers, <em>Working Effectively with Legacy Code</em>. Prentice Hall, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0131177052" class="bare">https://www.amazon.com/dp/0131177052</a></p>
+</li>
+<li>
+<p>J. Kerievsky, <em>Refactoring to Patterns</em>. Addison-Wesley Professional, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321213351" class="bare">https://www.amazon.com/dp/0321213351</a></p>
+</li>
+<li>
+<p>E. Gamma, R. Helm, R. Johnson, and J. Vlissides, <em>Design Patterns</em>. Addison-Wesley Professional, 1995 [Online]. Available: <a href="https://www.amazon.com/dp/B000SEIBB8" class="bare">https://www.amazon.com/dp/B000SEIBB8</a></p>
+</li>
+<li>
+<p>S. Newman, <em>Building Microservices</em>. O’Reilly Media, Incorporated, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/B09B5L4NVT" class="bare">https://www.amazon.com/dp/B09B5L4NVT</a></p>
+</li>
+<li>
+<p>S. Newman, <em>Building Microservices</em>. O’Reilly Media [Online]. Available: <a href="https://www.amazon.com//dp/B00T3N7XB4" class="bare">https://www.amazon.com//dp/B00T3N7XB4</a></p>
+</li>
+<li>
+<p>D. Farley, <em>Modern Software Engineering</em>. Pearson Education, Limited, 2000 [Online]. Available: <a href="https://www.amazon.com/dp/B09GG6XKS4" class="bare">https://www.amazon.com/dp/B09GG6XKS4</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>Technical Excellence</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>D. Thomas and A. Hunt, <em>The Pragmatic Programmer</em>, Second. Pragmatic Programmer - 20th Anniversary Edition, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135957052" class="bare">https://www.amazon.com/dp/0135957052</a></p>
+</li>
+<li>
+<p>S. Mancuso, <em>The Software Craftsman</em>. Prentice Hall, 2015 [Online]. Available: <a href="https://www.amazon.com/dp/0134052501" class="bare">https://www.amazon.com/dp/0134052501</a></p>
+</li>
+<li>
+<p>K. Beck and C. Andres, <em>Extreme Programming Explained</em>, Second. Addison-Wesley Professional, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321278658" class="bare">https://www.amazon.com/dp/0321278658</a></p>
+</li>
+<li>
+<p>L. Crispin, <em>Agile testing</em>. Addison-Wesley, 2009 [Online]. Available: <a href="https://www.amazon.com/dp/0321534468" class="bare">https://www.amazon.com/dp/0321534468</a></p>
+</li>
+<li>
+<p>J. G. Gregory and L. Crispin, <em>More Agile Testing</em>. Addison-Wesley Professional [Online]. Available: <a href="https://www.amazon.com/dp/0321967054" class="bare">https://www.amazon.com/dp/0321967054</a></p>
+</li>
+<li>
+<p>R. C. Martin, <em>Clean Code</em>. Prentice Hall, 2009 [Online]. Available: <a href="https://www.amazon.com/dp/0132350882" class="bare">https://www.amazon.com/dp/0132350882</a></p>
+</li>
+<li>
+<p>R. C. Martin, <em>The Clean Coder</em>. Prentice Hall, 2011 [Online]. Available: <a href="https://www.amazon.com/dp/0137081073" class="bare">https://www.amazon.com/dp/0137081073</a></p>
+</li>
+<li>
+<p>R. C. Martin, <em>Clean Architecture</em>. Pearson, 2017 [Online]. Available: <a href="https://www.amazon.com/dp/0134494164" class="bare">https://www.amazon.com/dp/0134494164</a></p>
+</li>
+<li>
+<p>R. C. Martin, <em>Clean Agile</em>. Prentice Hall, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135781868" class="bare">https://www.amazon.com/dp/0135781868</a></p>
+</li>
+<li>
+<p>R. C. Martin, <em>Clean Craftsmanship</em>. Addison-Wesley Professional, 2021 [Online]. Available: <a href="https://www.amazon.com/dp/B095C16LSW" class="bare">https://www.amazon.com/dp/B095C16LSW</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>DevOps</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>B. Beyer, C. Jones, J. Petoff, and N. R. Murphy, <em>Site Reliability Engineering</em>. O’Reilly Media, Inc., 2016 [Online]. Available: <a href="https://www.amazon.com/dp/1492029505" class="bare">https://www.amazon.com/dp/1492029505</a></p>
+</li>
+<li>
+<p>N. Forsgren, J. Humble, and G. Kim, <em>Accelerate: The Science of Lean Software and DevOps</em>. IT Revolution Press [Online]. Available: <a href="https://www.amazon.com/dp/B07B9F83WM" class="bare">https://www.amazon.com/dp/B07B9F83WM</a></p>
+</li>
+<li>
+<p>G. Kim and N. Forsgren, <em>DevOps Handbook</em>, Second. IT Revolution Press, 2021 [Online]. Available: <a href="https://www.amazon.com/dp/B01M9ASFQ3" class="bare">https://www.amazon.com/dp/B01M9ASFQ3</a></p>
+</li>
+<li>
+<p>G. Kim, <em>The Phoenix Project a novel about IT, DevOps, and helping your business win</em>. IT Revolution Press [Online]. Available: <a href="https://www.amazon.com/dp/0988262592" class="bare">https://www.amazon.com/dp/0988262592</a></p>
+</li>
+<li>
+<p>J. Humble and D. Farley, <em>Continuous Delivery</em>. Addison-Wesley Professional, 2010 [Online]. Available: <a href="https://www.amazon.com/dp/0321601912" class="bare">https://www.amazon.com/dp/0321601912</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>Change Process</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>M. L. Manns and L. Rising, <em>Fearless Change</em>. Addison-Wesley, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/B019TM4P6Y" class="bare">https://www.amazon.com/dp/B019TM4P6Y</a></p>
+</li>
+<li>
+<p>M. L. Manns, <em>More fearless change</em>. 2015 [Online]. Available: <a href="https://www.amazon.com/dp/0133966445" class="bare">https://www.amazon.com/dp/0133966445</a></p>
+</li>
+<li>
+<p>J. P. Kotter, <em>Leading change</em>. Harvard Business Review Press, 2012 [Online]. Available: <a href="https://www.amazon.com/dp/1422186431" class="bare">https://www.amazon.com/dp/1422186431</a></p>
+</li>
+<li>
+<p>H. R. John Kotter, <em>Our Iceberg Is Melting</em>. Penguin Publishing Group, 2016 [Online]. Available: <a href="https://www.amazon.com/dp/0399563911" class="bare">https://www.amazon.com/dp/0399563911</a></p>
+</li>
+<li>
+<p>J. P. Kotter, <em>Accelerate building strategic agility for a faster moving world</em>. 2014 [Online]. Available: <a href="https://www.amazon.com/dp/1625271743" class="bare">https://www.amazon.com/dp/1625271743</a></p>
+</li>
+<li>
+<p>E. H. Schein and P. Schein, <em>Organizational Leadership and Culture</em>. John Wiely, 2017 [Online]. Available: <a href="https://www.amazon.com/dp/1119212049" class="bare">https://www.amazon.com/dp/1119212049</a></p>
+</li>
+<li>
+<p>E. H. Schein and P. Schein, <em>Corporate Culture Survival Guide</em>. Wiley &amp; Sons, Incorporated, John, 2019 [Online]. Available: <a href="https://www.amazon.com//dp/1119212286" class="bare">https://www.amazon.com//dp/1119212286</a></p>
+</li>
+<li>
+<p>E. H. Schein and P. A. Schein, <em>Humble Inquiry</em>, Second. Berrett-Koehler Publishers, Incorporated, 2021 [Online]. Available: <a href="https://www.amazon.com/dp/1609949811" class="bare">https://www.amazon.com/dp/1609949811</a></p>
+</li>
+<li>
+<p>P. M. Senge, <em>The fifth discipline</em>. Doubleday/Currency, 1990 [Online]. Available: <a href="https://www.amazon.com/dp/0385517254" class="bare">https://www.amazon.com/dp/0385517254</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>Java</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>J. Bloch, <em>Effective Java</em>, Third. Addison-Wesley Professional, 2017 [Online]. Available: <a href="https://www.amazon.com/dp/B078H61SCH" class="bare">https://www.amazon.com/dp/B078H61SCH</a></p>
+</li>
+<li>
+<p>J. Bloch, <em>Effective Java</em>, Second. Addison-Wesley Professional, 2008 [Online]. Available: <a href="https://www.amazon.com/dp/B078H61SCH" class="bare">https://www.amazon.com/dp/B078H61SCH</a></p>
+</li>
+<li>
+<p>J. Bloch and N. Gafter, <em>Java™ Puzzlers</em>. Addison-Wesley Professional, 2005 [Online]. Available: <a href="https://www.amazon.com/dp/032133678X" class="bare">https://www.amazon.com/dp/032133678X</a></p>
+</li>
+<li>
+<p>S. Harrer, J. Lenhard, and L. Dietz, <em>Java By Comparison</em>. Pragmatic Bookshelf, 2018 [Online]. Available: <a href="https://www.amazon.com/dp/B07CLFTVZS" class="bare">https://www.amazon.com/dp/B07CLFTVZS</a></p>
+</li>
+<li>
+<p>S. Mak, <em>Java 9 Modularity</em>. O’Reilly Media, 2017 [Online]. Available: <a href="https://www.amazon.com/dp/1491954167" class="bare">https://www.amazon.com/dp/1491954167</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-420ce387a2a8048aafd748fa069ca8e0">3 - Links</h1>
+    <div class="lead">links to agile and technical excellence themes such as Scrum, XP, LeSS, Software Craftsmanship</div>
+	<div class="sect1">
+<h2 id="_agile_and_technical_excellence_links">Agile and Technical Excellence Links</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>-
+=== Scrum Food For Thoughts Links</p>
+</div>
+<div class="paragraph">
+<p>We are continuously looking for fresh approaches and implementing continuous improvements.
+These sites and blogs are a source of knowledge and experience.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.scrumalliance.org/">Scrum Alliance</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.scrumalliance.org/agilematters/home/">Scrum Alliance Blog</a></p>
+</li>
+<li>
+<p><a href="https://www.scrumalliance.org/labs/">Scrum Alliance Labs videos</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://www.scrum.org/">Scrum.org</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.scrum.org/resources/blog/">Scrum.org Blog</a></p>
+</li>
+<li>
+<p><a href="https://www.scrum.org/resources/suggested-reading-professional-scrum-master-ii/">Scrum Master Reading List</a>
+Scrum masters shall read these books to achieve proficiency</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://less.works/">LeSS</a> - extensive documentation on important aspects using Large Scaled Scrum approach -</p>
+</li>
+<li>
+<p><a href="https://www.mountaingoatsoftware.com/blog">Mike Cohn Blog</a></p>
+</li>
+<li>
+<p><a href="https://www.romanpichler.com/blog/">Roman Pichler Blog</a> especially for product owners</p>
+</li>
+<li>
+<p><a href="https://ronjeffries.com/">Ron Jeffries Blog</a></p>
+</li>
+<li>
+<p><a href="https://guntherverheyen.com/">Gunther Verheyen Blog</a> A Scrum caretaker</p>
+</li>
+<li>
+<p>Crisp</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blog.crisp.se/">Crisp Blog</a> Henrik Kniberg works at Crisp, and they are often the coaches at Spotify and initiators of the Spotify Model -</p>
+</li>
+<li>
+<p>Kniberg books <a href="https://drive.google.com/open?id=11aGDqP5zc4UlTyg87HzpEPaj2hHJ0xVl">Scrum and XP from the trenches</a> and
+<a href="https://drive.google.com/open?id=11aGDqP5zc4UlTyg87HzpEPaj2hHJ0xVl">Kanban and Scrum</a></p>
+</li>
+<li>
+<p>Kniberg has also very professional and interesting YouTube presentations</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://martinfowler.com">Martin Fowler Blog</a> Martin Fowler is working at Thoughtworks and has written seminal books</p>
+</li>
+<li>
+<p><a href="https://leanarch.eu/">Viktor Grgic Blog</a></p>
+</li>
+<li>
+<p>Stefan Wolpers <a href="https://age-of-product.com/">Age of Product Blog</a> tons of materials and a weekly newsletter with links to interesting articles</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../blog/">tangly Blog</a> our learnings over the years with the support of our customers -</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_seminal_references_are_found_under">Seminal references are found under</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://agilemanifesto.org/">Agile Manifesto</a> – also read the <a href="https://agilemanifesto.org/principles.html">12 principles</a> of the manifesto</p>
+</li>
+<li>
+<p><a href="https://scrumguides.org/">Scrum Guide</a> - the seminal work defining what Scrum is from <a href="https://en.wikipedia.org/wiki/Jeff_Sutherland">Jeff Sutherland</a> and
+<a href="https://en.wikipedia.org/wiki/Ken_Schwaber">KenSchwaber</a> - <em>Read the history section to understand the evolution of the guide over the years</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_knowledge_facts">Knowledge Facts</h3>
+<div class="paragraph">
+<p>Analyze facts and act on them – Lean and Agile are rooted in empirical methods and scientific approaches -.
+Fascinating how our civilisation lost the belief in facts and science.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://ourworldindata.org">World in Data</a> is an initiative to decide based on facts and empirical approaches.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f55bdbe1e6a9d696df441f18f56fba0e">4 - Talks</h1>
+    <div class="lead">links to public talks of Marcel Baumann discussing agile, Scrum, technical excellence</div>
+	<h2 id="talks">Talks</h2>
+<h3 id="scrum-user-groups">Scrum User Groups</h3>
+<p>Our crusade Scrum and agile approaches require technical excellence.
+The talk <em>Why Organizational Agility Depends on Technical Excellence!</em> was held on the events</p>
+<ul>
+<li>Scrum User Group Bern,  2020-01-20</li>
+<li>Scrum User Group Zürich, 2020-02-19</li>
+<li>.NET User Group Bern, 2020-03-09</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="card attachments td-max-width-on-larger-screens">
+    <label class="card-header attachments-label">
+        <i class="attachments-icon fas fa-paperclip" aria-hidden="true"></i>
+        Talks
+    </label>
+    <div class="card-body attachments-files">
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <ul>
+            
+            
+            
+            
+            <li>
+                <a href="usergroups/2020-Meetup-Technical-Agility.pdf" >2020-Meetup-Technical-Agility.pdf 
+
+
+
+
+
+
+
+
+(956.1 kB)
+</a>
+            </li>
+            
+        </ul>
+        
+        
+    </div>
+    
+    <div class="card-footer attachments-inner">Agile and Technical Excellence Talks</div>
+    
+</section>
+
+
+
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+
+
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Issue Tracker" aria-label="Issue Tracker">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os/issues">
+      <i class="bitbucket-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Documentation" aria-label="Documentation">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://blog.tangly.net/">
+      <i class="bitbucker-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Groups" aria-label="Groups">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://groups.google.com/g/tangly-os-components">
+      <i class="users-cog"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Bitbucket" aria-label="Bitbucket">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os">
+      <i class="bitbucket"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 tangly llc - Attribution 4.0 International (CC BY 4.0)</small>
+        
+	
+		<p class="mt-2"><a href="blog.tangly.net/about/">About tangly OS Components</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/blog.tangly.net/js/main.min.91798a335c881f1b6b805085ba4aa22d1dbd2b0b18d105d05189fa104ddae350.js" integrity="sha256-kXmKM1yIHxtrgFCFukqiLR29KwsY0QXQUYn6EE3a41A=" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>

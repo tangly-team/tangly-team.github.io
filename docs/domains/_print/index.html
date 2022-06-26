@@ -1,0 +1,3162 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta name="generator" content="Hugo 0.101.0" />
+<link href="blog.tangly.net/docs/domains/" rel="canonical" type="text/html">
+<link href="blog.tangly.net/docs/domains/index.xml" rel="alternate" type="application/rss&#43;xml">
+<meta content="noindex, nofollow" name="robots">
+
+
+<link rel="shortcut icon" href="/blog.tangly.net/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/blog.tangly.net/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-192x192.png" sizes="192x192">
+
+<title>ERP Bounded Domains | tangly OS Components</title>
+<meta content="The bounded domain models to build an enterprise resources planning application for services companies.
+" name="description">
+<meta property="og:title" content="ERP Bounded Domains" />
+<meta property="og:description" content="tangly llc Open Source Components" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="blog.tangly.net/docs/domains/" /><meta property="og:site_name" content="tangly OS Components" />
+
+<meta itemprop="name" content="ERP Bounded Domains">
+<meta itemprop="description" content="tangly llc Open Source Components"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ERP Bounded Domains"/>
+<meta name="twitter:description" content="tangly llc Open Source Components"/>
+
+
+
+
+<link rel="preload" href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" as="style">
+<link href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" rel="stylesheet" integrity="">
+
+<script
+    crossorigin="anonymous"
+    integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+    crossorigin="anonymous"
+    integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+    src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-90395055-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="blog.tangly.net/">
+		<span class="navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns="http://www.w3.org/2000/svg" width="200pt" height="200pt" viewBox="0 0 200 200" id="svg2486" sodipodi:version=".32" inkscape:version=".46" sodipodi:docname="Trefoil knot right.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape"><sodipodi:namedview inkscape:window-height="968" inkscape:window-width="1280" inkscape:pageshadow="2" inkscape:pageopacity="0" guidetolerance="10" gridtolerance="10" objecttolerance="10" borderopacity="1" bordercolor="#666666" pagecolor="#ffffff" id="base" showgrid="false" inkscape:zoom="1.3067333" inkscape:cx="249.63266" inkscape:cy="62.855447" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:current-layer="svg2486"/><defs id="defs2488"><inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 125 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="250 : 125 : 1" inkscape:persp3d-origin="125 : 83.333333 : 1" id="perspective2513"/><clipPath id="clip0"><rect width="200" height="200" id="rect2491"/></clipPath></defs><path id="path2494" d="M0 0H2e2V2e2H0V0z" style="fill:none;stroke:#fff;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2498" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2500" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2502" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2504" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2506" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2508" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:#000;fill-rule:nonzero;stroke:none"/></svg></span><span class="font-weight-bold">tangly OS Components</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="blog.tangly.net/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/ideas/" ><span>Ideas</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/expertise/" ><span>Expertise</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Repositories
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://github.com/tangly-team/tangly-os/">GitHub</a>
+	
+	<a class="dropdown-item" href="https://gitlab.com/marcelbaumann/tangly-os">GitLab</a>
+	
+	<a class="dropdown-item" href="https://bitbucket.org/tangly-team/tangly-os/">Bitbucket</a>
+	
+</div>
+
+			</li>
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/blog.tangly.net/offline-search-index.72cb1c62467a6d39fe4e23b79eb68cc5.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="50"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="blog.tangly.net/docs/domains/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">ERP Bounded Domains</h1>
+
+
+
+
+
+
+<div class="content">
+      <p>The bounded domain models to build an enterprise resources planning application for services companies.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-c08d09945436bbbeecfb9919fe672718">1 - Agile - Agile Bounded Domain</h1>
+    
+	<p>The readme, user manual, documentation of the component and architecture consideration of the components.</p>
+<p>The API documentation can be found under <a href="/docs/domains/agile/api-agile/index.html">Javadoc</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-974f95390ec8351db9400c23656701c2">1.1 - Readme</h1>
+    
+	<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Apache License 2.0"/></span>
+<span class="image"><img src="https://img.shields.io/maven-central/v/net.tangly/erp/agile.svg" alt="Maven Central"/></span>
+<a href="https://javadoc.io/badge2/net.tangly/bus/javadoc.svg"><span class="image"><img src="https://javadoc.io/doc/net.tangly.erp/collaborators" alt="javadoc"/></span></a>
+<span class="image"><img src="https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg" alt="Bitbucket Pipelines"/></span>
+<span class="image"><img src="https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg" alt="Sonar Coverage"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg" alt="Bitbucket open issues"/></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose">Purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>tangly erp agile</strong> bounded domain component provides regular business model abstractions for business applications written in Java. The component is
+using records and requires <strong>Java 17 or higher</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Try it out</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_and_documentation">Download and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The library can be included in Maven as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"><span style="color: #000080">&lt;dependency&gt;</span>
+    <span style="color: #000080">&lt;groupId&gt;</span>net.tangly.erp<span style="color: #000080">&lt;/groupId&gt;</span>
+    <span style="color: #000080">&lt;artifactId&gt;</span>collaborators<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;version&gt;</span>0.2.7<span style="color: #000080">&lt;/version&gt;</span>
+<span style="color: #000080">&lt;/dependency&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The library can be included in Gradle as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy">    <span style="background-color: #f8f8f8">implementation</span> <span style="color: #d14">&#34;net.tangly.erp:collaborators:0.2.7&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation can be found under <a href="https://blog.tangly.net/docs/erp/agile/">Business documentation</a></p>
+</div>
+<div class="paragraph">
+<p>For any further question and discussion you can use the forum <a href="https://groups.google.com/g/tangly-os-components">tangly-OS-Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution">Contribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+<a href="https://bitbucket.org/tangly-team/tangly-os.git">bitbucket git repository</a> and build the library with the provided gradle configuration file.</p>
+</div>
+<div class="paragraph">
+<p>If you find a bug or want to request a feature, please use the <a href="https://bitbucket.org/tangly-team/tangly-os/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache license 2.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The documentation and examples are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Common (CC Attribution 4.0 International)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_awesome_sponsors_and_developers">Awesome Sponsors and Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Corporate sponsors are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.tangly.net">tangly llc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Individual developers are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linkedin.com/in/marcelbaumann">Marcel Baumann</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8bf5997ae1105c2652da1d8e1ba4040a">1.2 - Architecture Design Record (ADR)</h1>
+    
+	<p>The list of all architectural design record defined for the business component.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9825a4d06f97369294a1f0150ddd5f48">2 - BDD - Behavior Driven Development</h1>
+    
+	<p>The readme, user manual, documentation of the component and architecture consideration of the components.</p>
+<p>The API documentation can be found under <a href="/docs/bdd/api-bdd/index.html">Javadoc</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-18c1cf33f12c081ba9b1be3873bb90f1">2.1 - Readme</h1>
+    
+	<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Apache License 2.0"/></span>
+<span class="image"><img src="https://img.shields.io/maven-central/v/net.tangly/erp/apps.svg" alt="Maven Central"/></span>
+<a href="https://javadoc.io/badge2/net.tangly.erp.bus/javadoc.svg"><span class="image"><img src="https://javadoc.io/doc/net.tangly.erp/apps" alt="javadoc"/></span></a>
+<span class="image"><img src="https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg" alt="Bitbucket Pipelines"/></span>
+<span class="image"><img src="https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg" alt="Sonar Coverage"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg" alt="Bitbucket open issues"/></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose">Purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>tangly erp apps</strong> bounded domain component provides regular business model abstractions for business applications written in Java.
+The component is requires <strong>Java 17 or higher</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Try it out</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_and_documentation">Download and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The library can be included in Maven as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"><span style="color: #000080">&lt;dependency&gt;</span>
+    <span style="color: #000080">&lt;groupId&gt;</span>net.tangly.erp<span style="color: #000080">&lt;/groupId&gt;</span>
+    <span style="color: #000080">&lt;artifactId&gt;</span>apps<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;version&gt;</span>0.2.7<span style="color: #000080">&lt;/version&gt;</span>
+<span style="color: #000080">&lt;/dependency&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The library can be included in Gradle as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy">    <span style="background-color: #f8f8f8">implementation</span> <span style="color: #d14">&#34;net.tangly.erp:apps:0.2.7&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation can be found under <a href="https://blog.tangly.net/docs/erp/agile/">Business documentation</a></p>
+</div>
+<div class="paragraph">
+<p>For any further question and discussion you can use the forum <a href="https://groups.google.com/g/tangly-os-components">tangly-OS-Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution">Contribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+<a href="https://bitbucket.org/tangly-team/tangly-os.git">bitbucket git repository</a> and build the library with the provided gradle configuration file.</p>
+</div>
+<div class="paragraph">
+<p>If you find a bug or want to request a feature, please use the <a href="https://bitbucket.org/tangly-team/tangly-os/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache license 2.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The documentation and examples are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Common (CC Attribution 4.0 International)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_awesome_sponsors_and_developers">Awesome Sponsors and Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Corporate sponsors are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.tangly.net">tangly llc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Individual developers are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linkedin.com/in/marcelbaumann">Marcel Baumann</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-1eefa1128aef94d42353a65923f6ebdf">3 - Collaborators - Collaborators Bounded Domain</h1>
+    
+	<p>The readme, user manual, documentation of the component and architecture consideration of the components.</p>
+<p>The API documentation can be found under <a href="/docs/domains/collaborators/api-collaborators/index.html">Javadoc</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-49ee8904c626f8fbdef41d4ed5c269d2">3.1 - Collaborators Design</h1>
+    
+	<div class="sect1">
+<h2 id="_collaborators_bounded_domain">Collaborators Bounded Domain</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_domain_model">Domain Model</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/collaborators-domain.svg" alt="collaborators domain" width="970" height="442"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scenario">Scenario</h3>
+<div class="sect3">
+<h4 id="_yearly_legal_salary_form">Yearly Legal Salary Form</h4>
+<div class="paragraph">
+<p>As a collaborator I have a work contract with an organization.
+The organization provides legal insurances, social insurances and pension funds.
+The minimal coverage is defined by law in Switzerland.
+Companies are free to provide additional services.</p>
+</div>
+<div class="paragraph">
+<p>I shall receive a yearly legal salary form documenting my salary and paid insurances.
+The form is a key document for the Swiss tax declaration.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pension_fund_individual_rebate">Pension Fund Individual Rebate</h4>
+<div class="paragraph">
+<p>Pension funds can offer a rebate for each collaborator based on non-documented rules.
+The pension funds must provide a rebate based on legal requirements to ease the burden of cotisations for older collaborators.</p>
+</div>
+<div class="paragraph">
+<p>Our domain model shall provide a mechanism to track these yearly individual rebates.
+The rebates have an impact to some positions in the yearly legal salary form.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_social_insurances">Social Insurances</h4>
+<div class="paragraph">
+<p>Social insurances are a percentage deducation of the salary of each collaborator.
+The percentages can be modified on a yearly basis.
+The percentages are dependant of the salary of the collaborator.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-437ff859cc8de4e18bcffb5acac6ec90">3.2 - Readme</h1>
+    
+	<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Apache License 2.0"/></span>
+<span class="image"><img src="https://img.shields.io/maven-central/v/net.tangly/erp/collaborators.svg" alt="Maven Central"/></span>
+<a href="https://javadoc.io/badge2/net.tangly/bus/javadoc.svg"><span class="image"><img src="https://javadoc.io/doc/net.tangly.erp/collaborators" alt="javadoc"/></span></a>
+<span class="image"><img src="https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg" alt="Bitbucket Pipelines"/></span>
+<span class="image"><img src="https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg" alt="Sonar Coverage"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg" alt="Bitbucket open issues"/></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose">Purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>tangly erp collaborators</strong> bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires <strong>Java 17 or higher</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Try it out</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_and_documentation">Download and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The library can be included in Maven as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"><span style="color: #000080">&lt;dependency&gt;</span>
+    <span style="color: #000080">&lt;groupId&gt;</span>net.tangly.erp<span style="color: #000080">&lt;/groupId&gt;</span>
+    <span style="color: #000080">&lt;artifactId&gt;</span>collaborators<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;version&gt;</span>0.2.7<span style="color: #000080">&lt;/version&gt;</span>
+<span style="color: #000080">&lt;/dependency&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The library can be included in Gradle as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy">    <span style="background-color: #f8f8f8">implementation</span> <span style="color: #d14">&#34;net.tangly.erp:collaborators:0.2.7&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation can be found under <a href="https://blog.tangly.net/docs/erp/collaborators/">Business documentation</a></p>
+</div>
+<div class="paragraph">
+<p>For any further question and discussion you can use the forum <a href="https://groups.google.com/g/tangly-os-components">tangly-OS-Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution">Contribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+<a href="https://bitbucket.org/tangly-team/tangly-os.git">bitbucket git repository</a> and build the library with the provided gradle configuration file.</p>
+</div>
+<div class="paragraph">
+<p>If you find a bug or want to request a feature, please use the <a href="https://bitbucket.org/tangly-team/tangly-os/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache license 2.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The documentation and examples are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Common (CC Attribution 4.0 International)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_awesome_sponsors_and_developers">Awesome Sponsors and Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Corporate sponsors are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.tangly.net">tangly llc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Individual developers are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linkedin.com/in/marcelbaumann">Marcel Baumann</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e744b12cd9f9e44a9acdecdd3a23343b">3.3 - Architecture Design Record (ADR)</h1>
+    
+	<p>The list of all architectural design record defined for the business component.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-4d18cf79e1bca8ac38cf3ca7f3daf488">4 - CRM - CRM Bounded Domain</h1>
+    
+	<p>The readme, user manual, documentation of the component and architecture consideration of the components.</p>
+<p>The API documentation can be found under <a href="/docs/domains/crm/api-crm/index.html">Javadoc</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-71984af7cb488955d5618433e9e090b0">4.1 - Readme</h1>
+    
+	<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Apache License 2.0"/></span>
+<span class="image"><img src="https://img.shields.io/maven-central/v/net.tangly/erp/crm.svg" alt="Maven Central"/></span>
+<a href="https://javadoc.io/badge2/net.tangly/bus/javadoc.svg"><span class="image"><img src="https://javadoc.io/doc/net.tangly.erp/crm" alt="javadoc"/></span></a>
+<span class="image"><img src="https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg" alt="Bitbucket Pipelines"/></span>
+<span class="image"><img src="https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg" alt="Sonar Coverage"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg" alt="Bitbucket open issues"/></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose">Purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>tangly erp crm</strong> bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires <strong>Java 17 or higher</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Try it out</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_and_documentation">Download and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The library can be included in Maven as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"><span style="color: #000080">&lt;dependency&gt;</span>
+    <span style="color: #000080">&lt;groupId&gt;</span>net.tangly.erp<span style="color: #000080">&lt;/groupId&gt;</span>
+    <span style="color: #000080">&lt;artifactId&gt;</span>crm<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;version&gt;</span>0.2.7<span style="color: #000080">&lt;/version&gt;</span>
+<span style="color: #000080">&lt;/dependency&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The library can be included in Gradle as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy">    <span style="background-color: #f8f8f8">implementation</span> <span style="color: #d14">&#34;net.tangly.erp:crm:0.2.7&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation can be found under <a href="https://blog.tangly.net/docs/erp/crm/">Business documentation</a></p>
+</div>
+<div class="paragraph">
+<p>For any further question and discussion you can use the forum <a href="https://groups.google.com/g/tangly-os-components">tangly-OS-Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution">Contribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+<a href="https://bitbucket.org/tangly-team/tangly-os.git">bitbucket git repository</a> and build the library with the provided gradle configuration file.</p>
+</div>
+<div class="paragraph">
+<p>If you find a bug or want to request a feature, please use the <a href="https://bitbucket.org/tangly-team/tangly-os/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache license 2.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The documentation and examples are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Common (CC Attribution 4.0 International)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_awesome_sponsors_and_developers">Awesome Sponsors and Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Corporate sponsors are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.tangly.net">tangly llc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Individual developers are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linkedin.com/in/marcelbaumann">Marcel Baumann</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3d042644d0798b4fc9a63378642129df">4.2 - Release Notes</h1>
+    
+	<div class="sect1">
+<h2 id="_erp_crm_library_change_logs">ERP CRM Library Change Logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document provides a high-level view of the changes introduced in the ERP CRM library by release.
+For a detailed view of what has changed, refer to the <a href="https://bitbucket.org/tangly-team/tangly-os">repository</a> commits.</p>
+</div>
+<div class="sect2">
+<h3 id="_0_2_6_2021_08_31">0.2.6 (2021-08-31)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>First version of the library packed as a DDD bounded domain</p>
+</li>
+<li>
+<p>Requires Java 16 or higher due to extensive usage of <em>records</em> and <em>sealed</em> classes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5e4b7a9cfaafbac3b437d277bd0a4c71">4.3 - Bounded Domain CRM Model</h1>
+    
+	<div class="sect1">
+<h2 id="_bounded_domain_crm">Bounded Domain CRM</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="paragraph">
+<p>The bounded domain contextCRM implements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The core domain <em>Customer Relationship Management</em></p>
+</li>
+<li>
+<p>It uses the shared kernel <em>Core</em> providing core abstractions to modeling</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bounded_domain_workflow">Bounded Domain Workflow</h3>
+<div class="paragraph">
+<p>The workflows describe the regular activities a service company has with their contacts and customers.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. CRM Workflows</caption>
+<colgroup>
+<col style="width: 10%;"/>
+<col style="width: 90%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRM-001</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a salesperson I want to create and modify a legal entity so that I have a record of every organization my company is working with.
+I want to have access to data describing the organization so that I can formally interact with them.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRM-002</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a salesperson I want to create and modify a natural entity so that I have a record of every prospect my company interacts with.
+I want to have access to data describing the person so that I can better interact with her.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRM-003</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a salesperson I want to define when a person is working for an organization so that I have an history of which companies a contact worked for.
+We register the duration when a person is an employee of an organization.
+A person can work for multiple organizations simultaneously.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRM-004</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As an employee I want to create and modify an interaction describing how I interact with a legal entity so that an history of all initiatives exists.
+The goal of an interaction is to conclude a contract.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRM-005</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As an employee I want to document all activities with entities necessary during an interaction so that an history of all communicaitons exists</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRM-006</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a salesperson I want to register all legal contracts with an organization so taht I have a trace of these legal documens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRM-007</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a salesperson I want to initiate an interaction with a legal entity and actively work to conclude a contract with them.
+I can have multiple activities to interact with the organization before concluding the interaction.
+An interaction can be completed successfully or not.
+During the timeline of the interaction the potential and probability of success can change.
+As a salesperson I am only interested on the current potential and success odds and not on their timely evolution.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A legal and natural entity shall provide links to gather additional information.
+A standard approach is to provide a link to the organization or persson LinkedIn profile.</p>
+</div>
+<div class="paragraph">
+<p>All entities support tags and comments to add additional information or define orthogonal classifiations.</p>
+</div>
+<div class="paragraph">
+<p>The following secondary workflows are under evaluation</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>As a salesperson I want to create a lead so that A list of potential prospects is available.</p>
+</li>
+<li>
+<p>As a salesperson I want to promote a lead to a legal entity so that I can perform sales activities with this organization.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The non-functional constraints for typical regular small and medium enterprise datasets.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The legal entities are less than 5&#39;000 organizations.</p>
+</li>
+<li>
+<p>The natural entities are less than 20&#39;000 persons.</p>
+</li>
+<li>
+<p>The contract entities are less than 5&#39;000 a year with a legal retention of the year.
+The total number is less than 50&#39;000.</p>
+</li>
+<li>
+<p>The active employees of the company are less than 200.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_shared_features">Shared Features</h4>
+<div class="paragraph">
+<p>The bounded domain uses the features provided through the tangly-os shared kernel.</p>
+</div>
+<div class="paragraph">
+<p>All entities can have human-readable comments and orthogonal tags.
+Comments provide a mechanism to add unstructured human-readable information.
+Tags allow the definition of classification and informal ontologies.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bounded_domain_crm_model">Bounded Domain CRM model</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/crm-model-uml.svg" alt="crm model uml" width="789" height="420"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a90d988a0921cf0a19e85fa681a386eb">4.4 - Architecture Design Record (ADR)</h1>
+    
+	<p>The list of all architectural design record defined for the business component.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-507d53e7d3e8d7362825e9d047e46774">5 - Invoices - Invoices Bounded Domain</h1>
+    
+	<p>The readme, user manual, documentation of the component and architecture consideration of the components.</p>
+<p>The API documentation can be found under <a href="/docs/domains/invoices/api-invoices/index.html">Javadoc</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-7f717f7e954d2e9c2deda8def4d29cdd">5.1 - Readme</h1>
+    
+	<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Apache License 2.0"/></span>
+<span class="image"><img src="https://img.shields.io/maven-central/v/net.tangly/erp/invoices.svg" alt="Maven Central"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg" alt="Bitbucket Pipelines"/></span>
+<a href="https://javadoc.io/badge2/net.tangly/bus/javadoc.svg" class="bare">https://javadoc.io/badge2/net.tangly/bus/javadoc.svg</a>[<span class="image"><img src="https://javadoc.io/doc/net.tangly.erp/invoices" alt="javadoc"/></span>
+<span class="image"><img src="https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg" alt="Sonar Coverage"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg" alt="Bitbucket open issues"/></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose">Purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>tangly erp invoices</strong> bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires <strong>Java 17 or higher</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Try it out</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_and_documentation">Download and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The library can be included in Maven as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"><span style="color: #000080">&lt;dependency&gt;</span>
+    <span style="color: #000080">&lt;groupId&gt;</span>net.tangly.erp<span style="color: #000080">&lt;/groupId&gt;</span>
+    <span style="color: #000080">&lt;artifactId&gt;</span>invoices<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;version&gt;</span>0.2.7<span style="color: #000080">&lt;/version&gt;</span>
+<span style="color: #000080">&lt;/dependency&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The library can be included in Gradle as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy">    <span style="background-color: #f8f8f8">implementation</span> <span style="color: #d14">&#34;net.tangly.erp:invoices:0.2.7&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation can be found under <a href="https://blog.tangly.net/docs/erp/invoices/">Business documentation</a></p>
+</div>
+<div class="paragraph">
+<p>For any further question and discussion you can use the forum <a href="https://groups.google.com/g/tangly-os-components">tangly-OS-Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution">Contribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+<a href="https://bitbucket.org/tangly-team/tangly-os.git">bitbucket git repository</a> and build the library with the provided gradle configuration file.</p>
+</div>
+<div class="paragraph">
+<p>If you find a bug or want to request a feature, please use the <a href="https://bitbucket.org/tangly-team/tangly-os/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache license 2.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The documentation and examples are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Common (CC Attribution 4.0 International)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_awesome_sponsors_and_developers">Awesome Sponsors and Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Corporate sponsors are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.tangly.net">tangly llc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Individual developers are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linkedin.com/in/marcelbaumann">Marcel Baumann</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-bed48b2367485e91cfcbc12fc043b163">5.2 - Release Notes</h1>
+    
+	<div class="sect1">
+<h2 id="_erp_invoices_library_change_logs">ERP Invoices Library Change Logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document provides a high-level view of the changes introduced in the ERP Invoices library by release.
+For a detailed view of what has changed, refer to the <a href="https://bitbucket.org/tangly-team/tangly-os">repository</a> commits.</p>
+</div>
+<div class="sect2">
+<h3 id="_0_2_6_2021_08_31">0.2.6 (2021-08-31)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>First version of the library packed as a DDD bounded domain</p>
+</li>
+<li>
+<p>Requires Java 16 or higher due to extensive usage of <em>records</em> and <em>sealed</em> classes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0d000810444b7285bbbfafd0a563d34d">5.3 - Architecture Design Record (ADR)</h1>
+    
+	<p>The list of all architectural design record defined for the business component.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3c526cec6b2784214d0f7a79c44cabc4">6 - Ledger - Ledger Bounded Domain</h1>
+    
+	<p>The readme, user manual, documentation of the component and architecture consideration of the components.</p>
+<p>The API documentation can be found under <a href="/docs/domains/ledger/api-ledger/index.html">Javadoc</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-912cb076f9a75b79a8d241d4c0d7175a">6.1 - Readme</h1>
+    
+	<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Apache License 2.0"/></span>
+<span class="image"><img src="https://img.shields.io/maven-central/v/net.tangly/erp/crm.svg" alt="Maven Central"/></span>
+<a href="https://javadoc.io/badge2/net.tangly/bus/javadoc.svg" class="bare">https://javadoc.io/badge2/net.tangly/bus/javadoc.svg</a>[<span class="image"><img src="https://javadoc.io/doc/net.tangly.erp/crm" alt="javadoc"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg" alt="Bitbucket Pipelines"/></span>
+<span class="image"><img src="https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg" alt="Sonar Coverage"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg" alt="Bitbucket open issues"/></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose">Purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>tangly erp crm</strong> bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires <strong>Java 17 or higher</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Try it out</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_and_documentation">Download and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The library can be included in Maven as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"><span style="color: #000080">&lt;dependency&gt;</span>
+    <span style="color: #000080">&lt;groupId&gt;</span>net.tangly.erp<span style="color: #000080">&lt;/groupId&gt;</span>
+    <span style="color: #000080">&lt;artifactId&gt;</span>crm<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;version&gt;</span>0.2.7<span style="color: #000080">&lt;/version&gt;</span>
+<span style="color: #000080">&lt;/dependency&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The library can be included in Gradle as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy">    <span style="background-color: #f8f8f8">implementation</span> <span style="color: #d14">&#34;net.tangly.erp:crm:0.2.7&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation can be found under <a href="https://blog.tangly.net/docs/erp/crm/">Business documentation</a></p>
+</div>
+<div class="paragraph">
+<p>For any further question and discussion you can use the forum <a href="https://groups.google.com/g/tangly-os-components">tangly-OS-Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution">Contribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+<a href="https://bitbucket.org/tangly-team/tangly-os.git">bitbucket git repository</a> and build the library with the provided gradle configuration file.</p>
+</div>
+<div class="paragraph">
+<p>If you find a bug or want to request a feature, please use the <a href="https://bitbucket.org/tangly-team/tangly-os/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache license 2.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The documentation and examples are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Common (CC Attribution 4.0 International)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_awesome_sponsors_and_developers">Awesome Sponsors and Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Corporate sponsors are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.tangly.net">tangly llc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Individual developers are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linkedin.com/in/marcelbaumann">Marcel Baumann</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9a00cf4733824ab0cbf607c2dbd4ca42">6.2 - Release Notes</h1>
+    
+	<div class="sect1">
+<h2 id="_erp_ledger_library_change_logs">ERP Ledger Library Change Logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document provides a high-level view of the changes introduced in the Ledger CRM library by release.
+For a detailed view of what has changed, refer to the <a href="https://bitbucket.org/tangly-team/tangly-os">repository</a> commits.</p>
+</div>
+<div class="sect2">
+<h3 id="_0_2_7_2022_06_30">0.2.7 (2022-06-30)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Update of library dependencies, update to JDK-18, and modern Gradle approach to build solutions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_2_6_2021_08_31">0.2.6 (2021-08-31)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initial version of the library packed as a DDD bounded domain</p>
+</li>
+<li>
+<p>Requires Java 16 or higher due to extensive usage of <em>records</em> and <em>sealed</em> classes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-29ac74bc1b7fd7707c8ea4e07308dc5f">6.3 - ERP Ports</h1>
+    
+	<div class="sect1">
+<h2 id="_crm_ports">CRM Ports</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The CRM ports provide a bidirectional interface to persistent file storage.</p>
+</div>
+<div class="paragraph">
+<p>CRM entities can be stored to and retrieved from tab separated values <em>TSV</em> files.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_invoices_ports">Invoices Ports</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Invoices are stored to and retrieved from JSON files.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ledger_ports">Ledger Ports</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>To be written</em></p>
+</div>
+<div class="sect2">
+<h3 id="_ledger_banana_import_handler">Ledger Banana Import Handler</h3>
+<div class="sect3">
+<h4 id="_importing_ledger_structure">Importing Ledger Structure</h4>
+<div class="paragraph">
+<p>The following steps export the information from the banana application:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select the accounts tab displaying all the accounts and their structure of the period</p>
+</li>
+<li>
+<p>Goto Data &gt; Export Rows &gt; Export Rows to txt</p>
+</li>
+<li>
+<p>Select the destination file</p>
+</li>
+<li>
+<p>If necessary change the extension to <em>tsv</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The generated file is a CSV file containing the whole ledger account plan. The separator is TAB.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_importing_transactions">Importing Transactions</h4>
+<div class="paragraph">
+<p>The following steps export the information from the banana application:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select the transaction tab displaying all the transactions of the period</p>
+</li>
+<li>
+<p>Goto Data &gt; Export Rows &gt; Export Rows to txt</p>
+</li>
+<li>
+<p>Select the destination file</p>
+</li>
+<li>
+<p>If necessary change the extension to <em>tsv</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The generated file is a CSV file containing the transaction details. The separator is TAB.
+It is a good practice to generate a file per fiscal year.</p>
+</div>
+<div class="paragraph">
+<p>All imported transactions should use the same ledger structure to support benchmarking and reporting over multiple periods.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-33fdd2b217a09d1f5fa7e792362552b5">6.4 - Bounded Domain Invoice Model</h1>
+    
+	<div class="sect1">
+<h2 id="_bounded_domain_invoice_model">Bounded Domain Invoice Model</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_concepts">Concepts</h3>
+<div class="paragraph">
+<p>Invoices define a business bounded domain as defined in domain driven design approach.
+They are not constrained through external entities such as products, contracts or legal entities.
+External entities can provide hints to streamline the creation of regular invoices.
+The invoice article identifier is available as an external identifier to the article bounded domain.
+Similar identifiers are available for legal entities.</p>
+</div>
+<div class="paragraph">
+<p>VAT rates are defined within a article definition.
+Therefore, different VAT rates require different article definitions.
+For example in Switzerland a service company has two VAT rates.
+One for regular services and one for services exempted from VAT taxes.</p>
+</div>
+<div class="paragraph">
+<p>The currency is defined at the invoice level meaning all invoice items and subtotals should use the same currency.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_archiving">Archiving</h3>
+<div class="paragraph">
+<p>An invoice contains all the information to create a legally binding document and hove no dependencies to external systems.
+Invoices should have a unique identifier for accounting purposes.
+A good practice is to use the identifier as part of the archived file to streamline traceability.
+Invoices can be stored in a database, exported as a PDF file or as a JSON file.
+The PDF file is human readable and adequate for document archiving and legal auditing.
+The JSON file is an adequate archive format which can digitally be processed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/bus-invoice-uml.svg" alt="bus invoice uml" width="968" height="725"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2a6ba339993aae45e2fa8b862f5b367a">6.5 - Architecture Design Record (ADR)</h1>
+    
+	<p>The list of all architectural design record defined for the business component.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-2012bfdc7c5f3fe4e060f43c25241a74">6.5.1 - LED 001</h1>
+    
+	<div class="sect1">
+<h2 id="_led_001_use_tag_for_vat_costs_computation">LED-001 Use Tag for VAT costs computation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2017-12-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="paragraph">
+<p>We need to record the VAT components of transactions in our ledger system.
+The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.</p>
+</div>
+<div class="paragraph">
+<p>The value of the VAT is computed based on the VAT percentage.
+The percentage can change over time due to regulatory changes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>We will support tags at the transaction entry.
+The tags are a triplet <strong>[namespace:]name[=value]</strong> format.
+We recommend the namespace &#34;fin&#34;, the name &#34;vat&#34;, and a text identifier has value.</p>
+</div>
+<div class="paragraph">
+<p>The current values are:
+1. F1 for VAT invoiced at 8% and paid to the state at 7.1%
+1. F2 for VAT invoiced at 7.7% and paid to the state at 6.9%</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ontology based on tags are not validated through a type system.</p>
+</li>
+<li>
+<p>Checks have to be implemented to guaranty adequate level of tracking.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2117f08498c5b284cbe42e9024555e71">7 - Products - Products Bounded Domain</h1>
+    
+	<p>The readme, user manual, documentation of the component and architecture consideration of the components.</p>
+<p>The API documentation can be found under <a href="/docs/domains/products/api-products/index.html">Javadoc</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-276648b0299052a5d6348e2f51addce2">7.1 - Readme</h1>
+    
+	<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Apache License 2.0"/></span>
+<span class="image"><img src="https://img.shields.io/maven-central/v/net.tangly/erp/products.svg" alt="Maven Central"/></span>
+<a href="https://javadoc.io/badge2/net.tangly/bus/javadoc.svg" class="bare">https://javadoc.io/badge2/net.tangly/bus/javadoc.svg</a>[<span class="image"><img src="//javadoc.io/doc/net.tangly.erp/products" alt="javaoc"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg" alt="Bitbucket Pipelines"/></span>
+<span class="image"><img src="https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg" alt="Sonar Coverage"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg" alt="Bitbucket open issues"/></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose">Purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>tangly erp products</strong> bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires <strong>Java 17 or higher</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Try it out</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_and_documentation">Download and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The library can be included in Maven as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"><span style="color: #000080">&lt;dependency&gt;</span>
+    <span style="color: #000080">&lt;groupId&gt;</span>net.tangly.erp<span style="color: #000080">&lt;/groupId&gt;</span>
+    <span style="color: #000080">&lt;artifactId&gt;</span>products<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;version&gt;</span>0.2.7<span style="color: #000080">&lt;/version&gt;</span>
+<span style="color: #000080">&lt;/dependency&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The library can be included in Gradle as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy">    <span style="background-color: #f8f8f8">implementation</span> <span style="color: #d14">&#34;net.tangly.erp:products:0.2.7&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation can be found under <a href="https://blog.tangly.net/docs/erp/products/">Business documentation</a></p>
+</div>
+<div class="paragraph">
+<p>For any further question and discussion you can use the forum <a href="https://groups.google.com/g/tangly-os-components">tangly-OS-Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution">Contribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+<a href="https://bitbucket.org/tangly-team/tangly-os.git">bitbucket git repository</a> and build the library with the provided gradle configuration file.</p>
+</div>
+<div class="paragraph">
+<p>If you find a bug or want to request a feature, please use the <a href="https://bitbucket.org/tangly-team/tangly-os/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache license 2.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The documentation and examples are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Common (CC Attribution 4.0 International)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_awesome_sponsors_and_developers">Awesome Sponsors and Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Corporate sponsors are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.tangly.net">tangly llc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Individual developers are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linkedin.com/in/marcelbaumann">Marcel Baumann</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f960d3ed9fb1d6422631ff7f38241a8b">7.2 - Release Notes</h1>
+    
+	<div class="sect1">
+<h2 id="_erp_products_library_change_logs">ERP Products Library Change Logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document provides a high-level view of the changes introduced in the ERP Products library by release.
+For a detailed view of what has changed, refer to the <a href="https://bitbucket.org/tangly-team/tangly-os">repository</a> commits.</p>
+</div>
+<div class="sect2">
+<h3 id="_0_2_7_2022_06_30">0.2.7 (2022-06-30)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Update of library dependencies, update to JDK-18, and modern Gradle approach to build solutions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_2_6_2021_08_31">0.2.6 (2021-08-31)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initial version of the library packed as a DDD bounded domain</p>
+</li>
+<li>
+<p>Requires Java 16 or higher due to extensive usage of <em>records</em> and <em>sealed</em> classes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0c1bcc2fa4efbfaf1423fe8258ba9982">7.3 - Bounded Domain Producgts Model</h1>
+    
+	<div class="sect1">
+<h2 id="_bounded_domain_products_model">Bounded Domain Products Model</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-4268539ecc2cb352e7a1fd40bfe1b573">7.4 - Architecture Design Record (ADR)</h1>
+    
+	<p>The list of all architectural design record defined for the business component.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-20db8cba5c7d9c62137a17c90be79398">7.4.1 - PRJ 001</h1>
+    
+	<div class="sect1">
+<h2 id="_prj_001_use_tag_for_product_costs_computation">PRJ-001 Use Tag for product costs computation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2017-12-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="paragraph">
+<p>We would like to compute earnings and costs on per product base.
+Each transaction entry should support tags to identify the associated projects or departments.
+The tag approach supports multiple consolidation of an orthogonal cost structure.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>We will support tags at the transaction entry.
+The tags are a triplet <strong>[namespace:]name[=value]</strong> format.
+We recommend the namespace &#34;fin&#34;, the name &#34;segment&#34;, and a text identifier has value.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ontology based on tags are not hard defined through a type system.</p>
+</li>
+<li>
+<p>Checks have to be implemented to guaranty adequate level of tracking.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cf733158acd81a65dec6de2ab4191f10">8 - Shared - Shared Kernel</h1>
+    
+	<p>The readme, user manual, documentation of the component and architecture consideration of the components.</p>
+<p>The API documentation can be found under <a href="/docs/domains/shared/api-shared/index.html">Javadoc</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-2a24e2100313bee0b62db9bfb103ca67">8.1 - Readme</h1>
+    
+	<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Apache License 2.0"/></span>
+<span class="image"><img src="https://img.shields.io/maven-central/v/net.tangly/erp/shared.svg" alt="Maven Central"/></span>
+<a href="https://javadoc.io/badge2/net.tangly/bus/javadoc.svg"><span class="image"><img src="//javadoc.io/doc/net.tangly.erp/shared" alt="javadoc"/></span></a>
+<span class="image"><img src="https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg" alt="Bitbucket Pipelines"/></span>
+<span class="image"><img src="https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg" alt="Sonar Coverage"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg" alt="Bitbucket open issues"/></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose">Purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>tangly erp shared</strong> bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires <strong>Java 17 or higher</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Try it out</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_and_documentation">Download and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The library can be included in Maven as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"><span style="color: #000080">&lt;dependency&gt;</span>
+    <span style="color: #000080">&lt;groupId&gt;</span>net.tangly.erp<span style="color: #000080">&lt;/groupId&gt;</span>
+    <span style="color: #000080">&lt;artifactId&gt;</span>shared<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;version&gt;</span>0.2.7<span style="color: #000080">&lt;/version&gt;</span>
+<span style="color: #000080">&lt;/dependency&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The library can be included in Gradle as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy">    <span style="background-color: #f8f8f8">implementation</span> <span style="color: #d14">&#34;net.tangly.erp:shared:0.2.7&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation can be found under <a href="https://blog.tangly.net/docs/erp/shared/">Business documentation</a></p>
+</div>
+<div class="paragraph">
+<p>For any further question and discussion you can use the forum <a href="https://groups.google.com/g/tangly-os-components">tangly-OS-Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution">Contribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+<a href="https://bitbucket.org/tangly-team/tangly-os.git">bitbucket git repository</a> and build the library with the provided gradle configuration file.</p>
+</div>
+<div class="paragraph">
+<p>If you find a bug or want to request a feature, please use the <a href="https://bitbucket.org/tangly-team/tangly-os/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache license 2.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The documentation and examples are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Common (CC Attribution 4.0 International)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_awesome_sponsors_and_developers">Awesome Sponsors and Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Corporate sponsors are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.tangly.net">tangly llc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Individual developers are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linkedin.com/in/marcelbaumann">Marcel Baumann</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-081bf3c304cef1c4f5e633079d61a584">8.2 - Release Notes</h1>
+    
+	<div class="sect1">
+<h2 id="_erp_shared_library_change_logs">ERP Shared Library Change Logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document provides a high-level view of the changes introduced in the ERP Shared library by release.
+For a detailed view of what has changed, refer to the <a href="https://bitbucket.org/tangly-team/tangly-os">repository</a> commits.</p>
+</div>
+<div class="sect2">
+<h3 id="_0_2_6_2021_08_31">0.2.6 (2021-08-31)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>First version of the library packed as a DDD bounded domain</p>
+</li>
+<li>
+<p>Requires Java 16 or higher due to extensive usage of <em>records</em> and <em>sealed</em> classes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2678563de4c70d3d9976fff241bf66f2">8.3 - Bounded Domain Shared Model</h1>
+    
+	<div class="sect1">
+<h2 id="_bounded_domain_shared_model">Bounded Domain Shared Model</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a58304d0c95e4c6526c8a990147e3882">8.4 - Architecture Design Record (ADR)</h1>
+    
+	<p>The list of all architectural design record defined for the business component.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-4325a55a6c0407a86067cdd9d1b7eda3">9 - ERP-UI - UI for ERP Bounded Domains</h1>
+    
+	<p>The readme, user manual, documentation of the component and architecture consideration of the components.</p>
+<p>The API documentation can be found under <a href="/docs/domains/ui/api-ui/index.html">Javadoc</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-05834848a2f441b1624b397d8f9e7a2d">9.1 - Readme</h1>
+    
+	<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Apache License 2.0"/></span>
+<span class="image"><img src="https://img.shields.io/maven-central/v/net.tangly/erp/ui.svg" alt="Maven Central"/></span>
+<a href="https://javadoc.io/badge2/net.tangly/erp/ui/"><span class="image"><img src="https://javadoc.io/doc/net.tangly.erp/uijavadoc.svg" alt="javadoc"/></span></a>
+<span class="image"><img src="https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg" alt="Bitbucket Pipelines"/></span>
+<span class="image"><img src="https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg" alt="Sonar Coverage"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg" alt="Bitbucket open issues"/></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose">Purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>tangly erp ui</strong> bounded domain component provides regular business model abstractions for business applications written in Java.
+The component is using records and requires <strong>Java 17 or higher</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Try it out</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_and_documentation">Download and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Include the library in your Maven configuration as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"><span style="color: #000080">&lt;dependency&gt;</span>
+    <span style="color: #000080">&lt;groupId&gt;</span>net.tangly.erp<span style="color: #000080">&lt;/groupId&gt;</span>
+    <span style="color: #000080">&lt;artifactId&gt;</span>ui<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;version&gt;</span>0.2.7<span style="color: #000080">&lt;/version&gt;</span>
+<span style="color: #000080">&lt;/dependency&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Include the library in your Gradle configuration as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy">    <span style="background-color: #f8f8f8">implementation</span> <span style="color: #d14">&#34;net.tangly.erp:ui:0.2.7&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation can be found under <a href="https://blog.tangly.net/docs/erp/ui/">Business documentation</a></p>
+</div>
+<div class="paragraph">
+<p>For any further questions and discussion, you can use the forum <a href="https://groups.google.com/g/tangly-os-components">tangly-OS-Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_run_as_an_application">Run as an Application</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_run_locally_with_gradle">Run Locally with Gradle</h3>
+<div class="paragraph">
+<p>The gradle script compiles, packages, and runs the application with an embedded web server. <em>Run from the project root</em>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">    gradle run</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_run_locally_as_compiled_application">Run locally as compiled application</h3>
+<div class="paragraph">
+<p>You can build and run the generated Java Vaadin application locally. <em>Run from the project root</em>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">  ./gradlew build installDist <span style="color: #000080">-Pvaadin</span>.productionMode <i class="conum" data-value="1"></i><b>(1)</b>
+  net.tangly.erp.ui/build/install/net.tangly.erp.ui/bin/net.tangly.erp.ui  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_run_locally_as_fatjar_application">Run locally as fatjar application</h3>
+<div class="paragraph">
+<p>You can build and run the generated Java Vaadin application as fat jar locally. <em>Run from the project root</em>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">  ./gradlew build installShadowDist <span style="color: #000080">-Pvaadin</span>.productionMode <i class="conum" data-value="3"></i><b>(3)</b>
+  net.tangly.erp.ui/build/install/net.tangly.erp.ui-shadow/bin/net.tangly.erp.ui <i class="conum" data-value="2"></i><b>(2)</b>
+  java <span style="color: #008080">$JVM_OPTS</span> <span style="color: #000080">-jar</span> net.tangly.erp.ui/build/install/net.tangly.erp.ui-shadow/lib/net.tangly.erp.ui-all.jar <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;1&gt; The production mode parameter is mandatory.
+Otherwise, the distribution frontend is not built, and the application cannot run without JavaScript build tools.</p>
+</li>
+<li>
+<p>&lt;2&gt; Head to <a href="http://localhost:8080/erp/" class="bare">http://localhost:8080/erp/</a>.
+The default port is 8080, and the application starts with in-memory storage.
+The environment variables are set in the run script.</p>
+</li>
+<li>
+<p>&lt;3&gt; Start the application with java command.
+You are responsible to provide the JVM options as define below.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The JVM options to run the application are</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell"><span style="color: #008080">JVM_OPTS</span><span style="color: #000000;font-weight: bold">=</span><span style="color: #d14">&#34;--enable-preview --add-exports=java.base/jdk.internal.misc=ALL_UNNAMED </span><span style="color: #d14">\</span><span style="color: #d14">
+          --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED -XX:+ShowCodeDetailsInExceptionMessages -Xmx256m&#34;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_run_in_a_docker_image">Run in a Docker Image</h3>
+<div class="paragraph">
+<p>The prerequisite is that the application was built locally for production mode as described above.
+The first step is to build the Docker image with the provided configuration.
+<em>Run from the project root</em>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">  ./gradlew net.tangly.erp.ui:installDist <span style="color: #000080">-Pvaadin</span>.productionMode  <i class="conum" data-value="1"></i><b>(1)</b>
+  docker build <span style="color: #000080">-t</span> tanglyllc/tangly-erp:latest net.tangly.erp.ui/   <i class="conum" data-value="2"></i><b>(2)</b>
+  docker push tanglyllc/tangly-erp:latest                          <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Build the Java application and create a binary distribution of the application.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Generate a Docker image containing the binary application generated in the previous step.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Push the Docker image to the repository.
+Customers can retrieve the published Docker image and execute it in a container.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>We currently push to <a href="https://hub.docker.com/">Docker Hub</a> repository.
+The image is accessible unde <a href="https://hub.docker.com/r/tanglyllc/tangly-erp">tangly-erp Docker Image</a>.</p>
+</div>
+<div class="paragraph">
+<p>To run the built image use the following commands.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">  docker run <span style="color: #000080">--rm</span> <span style="color: #000080">-ti</span> <span style="color: #000080">-p</span> 8080:8080 <span style="color: #000080">-e</span> <span style="color: #008080">PORT</span><span style="color: #000000;font-weight: bold">=</span>8080 <span style="color: #000080">-e</span> <span style="color: #008080">m</span><span style="color: #000000;font-weight: bold">=</span><span style="color: #0086B3">true</span>  <span style="color: #000080">-v</span> /var/tangly-erp:/var/tangly-erp tanglyllc/tangly-erp:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The user under which the erp application shall not have root privileges.</p>
+</div>
+<div class="paragraph">
+<p>The port of the application is configured through the port environment variable.
+This approach is mandatory if the image is deployed in <a href="https://www.heroku.com/">Heroku</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_run_in_the_cloud">Run in the Cloud</h3>
+<div class="sect3">
+<h4 id="_heroku_cloud">Heroku Cloud</h4>
+<div class="paragraph">
+<p>An application must once be created to host the docker image.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">   heroku create tangly-erp <span style="color: #000080">--region</span> eu</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The ERP application can be accessed over <a href="https://tangly-erp.herokuapp.com/erp/">tangly-erp</a>.
+The first part of the URL is the link to the hosted docker instance.
+THe trailing <em>erp/</em> path defines the access to the user interface of the ERP application.
+The git repository is <a href="https://git.heroku.com/tangly-erp.git">git</a>.
+Update the heroku remote in git to point to this heroku git repository.</p>
+</div>
+<div class="paragraph">
+<p>These instructions build the docker image locally and publish it into the heroku application using heroku commands.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">  heroku login
+  heroku container:login <i class="conum" data-value="1"></i><b>(1)</b>
+  <span style="color: #0086B3">cd </span>net.tangly.erp.ui
+  heroku container:push web <i class="conum" data-value="2"></i><b>(2)</b>
+  heroku container:release web <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;1&gt; login in the heroku docker image registry using docker CLI</p>
+</li>
+<li>
+<p>&lt;2&gt; build the locally build docker image to heroku.
+You can also download an image from a repository and push it to Heroku.</p>
+</li>
+<li>
+<p>&lt;3&gt; Release the image to deploy it on Heroku Cloud.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These instructions create and publish the docker image using docker commands.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">  heroku login
+  heroku container:login <i class="conum" data-value="1"></i><b>(1)</b>
+  docker build <span style="color: #000080">-t</span> tanglyllc/tangly-erp:latest net.tangly.erp.ui/
+  docker tag tanglyllc/tangly-erp:latest registry.heroku.com/tangly-erp/web <i class="conum" data-value="2"></i><b>(2)</b>
+  docker push registry.heroku.com/tangly-erp/web <i class="conum" data-value="3"></i><b>(3)</b>
+  heroku container:release web</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>login in the heroku docker image registry using docker command line interface CLI</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>tag the docker image</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>push an existing image to the heroku registry</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>We deliberately decided not to provide the instructions to deploy a fat jar in docker.
+Fat jar applications are inherently bloaded executable files.
+You should always pursue small executable size when working with images, especially if the images are executed in a public cloud.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution">Contribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are welcome to contribute to the product with pull requests on Bitbucket.
+You can download the source files from the
+<a href="https://bitbucket.org/tangly-team/tangly-os.git">bitbucket git repository</a> and build the library with the provided gradle configuration file.</p>
+</div>
+<div class="paragraph">
+<p>If you find a bug or request a new feature, please use the <a href="https://bitbucket.org/tangly-team/tangly-os/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache license 2.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The documentation and examples are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Common (CC Attribution 4.0 International)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_awesome_sponsors_and_developers">Awesome Sponsors and Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Corporate sponsors are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.tangly.net">tangly llc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Individual developers are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linkedin.com/in/marcelbaumann">Marcel Baumann</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2749f8c41437222e2e4faa502655f0fc">9.2 - Release Notes</h1>
+    
+	<div class="sect1">
+<h2 id="_ui_library_change_logs">UI Library Change Logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document provides a high-level view of the changes introduced in the ERP UI library by release.
+For a detailed view of what has changed, refer to the <a href="https://bitbucket.org/tangly-team/tangly-os">repository</a> commits.</p>
+</div>
+<div class="sect2">
+<h3 id="_0_2_7_2022_06_30">0.2.7 (2022-06-30)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Update of library dependencies, update to JDK-18, and modern Gradle approach to build solutions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_2_6_2021_08_31">0.2.6 (2021-08-31)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initial version of the library packed as a DDD bounded domain</p>
+</li>
+<li>
+<p>Requires Java 16 or higher due to extensive usage of <em>records</em> and <em>sealed</em> classes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-764aa6cb6942eeb48c8dc98d0997449c">9.3 - Bounded Domain UI Model</h1>
+    
+	<div class="sect1">
+<h2 id="_bounded_domain_ui_model">Bounded Domain UI Model</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f0881cf26bc2265baa50a9998ab7ff98">9.4 - Architecture Design Record (ADR)</h1>
+    
+	<p>The list of all architectural design record defined for the business component.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-c4e1900fb094a94e83e587adca5b51c8">9.4.1 - ERPUI-001: Markdown for all Text Fields</h1>
+    
+	<div class="sect1">
+<h2 id="_erpui_001_markdown_for_all_text_fields">ERPUI-001 Markdown for all Text Fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2021-06-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="paragraph">
+<p>Markdown is a well-establish approach to write rich text documentation or comments.
+The casual user can learn and use the notation without excessive effort.
+The legibility and professional appearance of Markdown texts are markantly higher than plain text.
+Markdown is an open standard and used in various environments and tools.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>All texts and comments in the ERP components shall use Markdown notation to improve legibility.</p>
+</div>
+<div class="paragraph">
+<p>Alternatives would be proprietary formats such as Microsoft Word or more sophisticated notations such as Asciidoc.
+Our open source approach to product development rejects any propriatary formats.
+Asciidoc is a very powerful and successful format.
+The associated complexity for the users is probably an overkill for casual users of our product.</p>
+</div>
+<div class="paragraph">
+<p>Text and comments in our system should have a limited length complexity.
+Markdown is an optimal balance between expression power and ease of use.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="paragraph">
+<p>Markdown is backward compatible with text fields.
+No migration of existing records is needed.</p>
+</div>
+<div class="paragraph">
+<p>The user interface components shall be extended to support a Markdown visualiation and editing component.
+Vaadin currently does not provide native support for Markdown.
+The tangly-os components will be extended to provide such a component until Vaadin supports in the future such an approach.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ef207ff1ff07342be304fe4cdf2d3cca">10 - Services ERP</h1>
+    
+	<div class="sect1">
+<h2 id="_services_erp">Services ERP</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_idea">Idea</h3>
+<div class="paragraph">
+<p>The tangly services ERP provides the functionalities to manage a service company offerings and legal documents.</p>
+</div>
+<div class="paragraph">
+<p>The first customer ever using the application is <a href="https://www.tangly.net">tangly llc</a> company.
+The company is an agile consulting and Java stack boutique organization.</p>
+</div>
+<div class="paragraph">
+<p>A service company has no inventory, production, or logistics departments.</p>
+</div>
+<div class="paragraph">
+<p>A service company has a strong focus on customers, products, projects and associcated efforts.
+Cash-flow is dictated by the timely invoicing of performed activities.
+The cash drain is mainly salaries and social costs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_command_line_domain_access">Command Line Domain Access</h3>
+<div class="paragraph">
+<p>The goal is to provide a command line access to the various ERP domains.
+Specific and bulk operations shall be supported.</p>
+</div>
+<div class="paragraph">
+<p>Command line applications do not access the persistent storage or database.
+They only access services or external artifacts.
+These applications can be used in parallel to the main ERP system without any interferences.</p>
+</div>
+<div class="sect3">
+<h4 id="_invoices">Invoices</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Generate an invoice document for a JSON invoice and a template.
+Optionally the SwissQR code or the FacturX data are added to the human readable and printable invoice document.</p>
+</li>
+<li>
+<p>Generate all invoices doucuments for a tree of directories containing JSON invoices and a set of templates.
+Optionally SwissQR code or FacturX data can be added.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The invoices need the product descriptions and the invoices.
+No database or other services are needed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="bash">create-invoices <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-qrswiss</span><span style="color: #000000;font-weight: bold">]</span> <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-facturX</span><span style="color: #000000;font-weight: bold">]</span> <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-from</span> &lt;iso-date&gt;] <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-to</span> &lt;iso-date&gt;] <i class="conum" data-value="1"></i><b>(1)</b>
+create-invoices <span style="color: #000080">-i</span> &lt;invoice-id&gt; <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-qrswiss</span><span style="color: #000000;font-weight: bold">]</span> <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-facturX</span><span style="color: #000000;font-weight: bold">]</span><i class="conum" data-value="2"></i><b>(2)</b>
+report-contract <span style="color: #000080">-c</span> &lt;contract-id&gt; <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-from</span> &lt;iso-date&gt;] <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-to</span> &lt;iso-date&gt;] <i class="conum" data-value="3"></i><b>(3)</b>
+report-sellee <span style="color: #000080">-s</span> &lt;sellee-id&gt; <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-from</span> &lt;iso-date&gt;] <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-to</span> &lt;iso-date&gt;] <i class="conum" data-value="4"></i><b>(4)</b>
+report-range <span style="color: #000080">-d</span> &lt;invoiceDate|dueDate|paidDate&gt;] <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-from</span> &lt;iso-date&gt;] <span style="color: #000000;font-weight: bold">[</span><span style="color: #000080">-to</span> &lt;iso-date&gt;] <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>create all invoice artifacts with the created date in the time range specified with from and to date.
+Open intervals are supported.
+The artifact can optionally contain a QrSwiss code and a facturX B2B data package.
+Existing files will be overwritten.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>create the invoice artifact for the given invoice identifier.
+The artifact can optionally contain a QrSwiss code and a facturX B2B data package.
+Existing files will be overwritten.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>create a report over all invoices related to a contract.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+
+
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Issue Tracker" aria-label="Issue Tracker">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os/issues">
+      <i class="bitbucket-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Documentation" aria-label="Documentation">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://blog.tangly.net/">
+      <i class="bitbucker-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Groups" aria-label="Groups">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://groups.google.com/g/tangly-os-components">
+      <i class="users-cog"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Bitbucket" aria-label="Bitbucket">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os">
+      <i class="bitbucket"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 tangly llc - Attribution 4.0 International (CC BY 4.0)</small>
+        
+	
+		<p class="mt-2"><a href="blog.tangly.net/about/">About tangly OS Components</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/blog.tangly.net/js/main.min.91798a335c881f1b6b805085ba4aa22d1dbd2b0b18d105d05189fa104ddae350.js" integrity="sha256-kXmKM1yIHxtrgFCFukqiLR29KwsY0QXQUYn6EE3a41A=" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>

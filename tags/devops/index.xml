@@ -1,0 +1,1063 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly OS Components – devops</title>
+    <link>blog.tangly.net/tags/devops/</link>
+    <description>Recent content in devops on tangly OS Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="blog.tangly.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Introducing DevOps Ideas</title>
+      <link>blog.tangly.net/blog/2022/introducing-devops-ideas/</link>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2022/introducing-devops-ideas/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_introducing_devops_ideas&#34;&gt;Introducing DevOps Ideas&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-04-04-head.png&#34; alt=&#34;2022 04 04 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your organization heard of &lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt;, and your developers clamour you should adopt the approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each organization I talk with has some DevOps initiative.
+Often because they read that DevOps approach puts customers and end-user satisfaction at the center.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Does DevOps really improve the quality of your digital products and customer satisfaction?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Or is it only the next &lt;a href=&#34;https://en.wikipedia.org/wiki/No_Silver_Bullet&#34;&gt;silver bullet&lt;/a&gt; fad used to increase the bonus of consultants and managers?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You also find a simple way to boostrap your &lt;a href=&#34;#bootstrap-devops-adoption&#34;&gt;DevOps adoption&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_what_is_devops&#34;&gt;What is DevOps?&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Wikipedia provides the following definition
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;DevOps&lt;/strong&gt; is a set of practices that combines &lt;a href=&#34;https://en.wikipedia.org/wiki/Software_development&#34;&gt;software development&lt;/a&gt; &lt;strong&gt;Dev&lt;/strong&gt; and
+&lt;a href=&#34;https://en.wikipedia.org/wiki/IT_operations&#34;&gt;IT operations&lt;/a&gt; &lt;strong&gt;Ops&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It aims to shorten the &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;system development life-cycle&lt;/a&gt; and provide
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;continuous delivery&lt;/a&gt; with high &lt;a href=&#34;https://en.wikipedia.org/wiki/Software_quality&#34;&gt;software quality&lt;/a&gt;.
+DevOps is &lt;strong&gt;complementary&lt;/strong&gt; with &lt;a href=&#34;https://en.wikipedia.org/wiki/Agile_software_development&#34;&gt;agile software development&lt;/a&gt;.
+Several DevOps aspects came from the agile methodology.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Wikipedia
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;DevOps is intended to be a cross-functional mode of working [&lt;a href=&#34;#accelerate&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#devops-handbook&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#phoenix-project&#34;&gt;3&lt;/a&gt;].
+Practitioners use different toolchains rather than a single one.
+These toolchains are expected to fit into one or more of the following categories, reflective of key aspects of the development and delivery process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The major software product development platforms &lt;a href=&#34;https://gitlab.com/&#34;&gt;GitLab&lt;/a&gt;, &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; or &lt;a href=&#34;https://bitbucket.org/dashboard/overview&#34;&gt;BitBucket&lt;/a&gt;
+are classical examples of toolchains integration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;DevOps teams practice daily:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;hdlist&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Coding
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Code development and review, source code management tools, code merging [&lt;a href=&#34;#clean-code&#34;&gt;4&lt;/a&gt;, &lt;a href=&#34;#clean-architecture&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;#refactoring&#34;&gt;6&lt;/a&gt;].
+Emphasize continuous development and testing.
+Continuous testing can only be fully automated.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Building
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Continuous integration tools, build status.
+Emphasize continuous integration, continuous delivery, and continuous deployment [&lt;a href=&#34;#continuous-delivery&#34;&gt;7&lt;/a&gt;, &lt;a href=&#34;#continuous-delivery-pipelines&#34;&gt;8&lt;/a&gt;].&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Testing
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Continuous testing tools that provide quick and timely feedback on business risks.
+Supports continuous development activities.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Packaging
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Artifact repository, application pre-deployment staging.
+Supports the continuous delivery activities in a corporate environment.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Releasing
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Change management, release approvals, release automation.
+Supports the continuous delivery and deployment to productive servers.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Configuring
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Infrastructure configuration and management, infrastructure as code tools.
+Supports the infrastructure as a code approach.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Monitoring
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Applications performance monitoring, end-user experience.
+Emphasize continuous monitoring and alarming, optimize time to recover metric.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_development&#34;&gt;Development&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Development in an agile and DevOps environment means:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;Continuous integration&lt;/a&gt;, where the coding, building, integration, and testing processes are carried out.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;Continuous delivery&lt;/a&gt;, which includes continuous integration but mainly focuses on product delivery.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_deployment&#34;&gt;Continuous deployment&lt;/a&gt;, which aims at automating project deliveries.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-04-04-Ci-pipeline.png&#34; alt=&#34;2022 04 04 Ci pipeline&#34; width=&#34;480&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your development teams shall have automatic continuous integration.
+This pipeline builds the software, runs static code analyzer and executes a reasonable set of unit and integration.
+If not, they are pretending to do DevOps and lying to you.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The next step is to configure an automatic continuous delivery.
+This pipeline packages the complete solution and delivers as an installation package.
+This package can be deployed in staging area without manual configuration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Only professional DevOps teams shall dare to implement continuous delivery.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The areas that a DevOps engineer must be competent are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Version Control Systems&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Any DevOps engineer’s has expertise in Git, and platforms such as GitHub, GitLab, or BitBucket.
+Infrastructure as Code &lt;em&gt;IaC&lt;/em&gt; is used to build and deploy digital products.
+Documentation is always synchronized with the source artifacts.
+Approaches such as static websites are preferred.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;Continuous Integration&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_deployment&#34;&gt;Continuous Deployment&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;Continuous Delivery&lt;/a&gt; (CI/CD/CD)&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;As for this one, you should look for Jenkins, TeamCity, GitHub, GitLab, or Bitbucket.
+All products are built and packaged using continuous integration and continuous delivery approaches.
+No manual steps are required to package a release for production.
+It is important to note, however, that there are so many DevOps tools out there that it is impossible to cover them.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Testing and Automation Tools&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;One of the duties of a DevOps engineer is to speed up the delivery of software to the clients.
+Most companies care about the quality of their software and testing has become an essential part of DevOps engineers&amp;#39; job.
+Functional and non-functional testing techniques and tools are used to guaranty quality of the installed solutions.
+It provides the obvious benefits of automation, and helps DevOps engineers save a lot of time.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Containers and Cloud Services&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Containers such as Docker and Kubernetes are used to deploy digital solutions.
+Microsoft Azure, Google Cloud, Amazon Web Services are some examples.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Communication&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;DevOps is not isolated to a specific role or to a specific team in your organization.
+A DevOps specialist must have well-developed empathy because their job implies communication with other people.
+Conflicts are not going to help them.
+Deep understanding of empiricism and transparency of all available information and measurements is a must for successful communication in an agile and DevOps environment.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Google has published exhaustive insights how they implement DevOps mindset [&lt;a href=&#34;#site-reliability-engineering&#34;&gt;9&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_devsecops&#34;&gt;DevSecOps&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Security and corporate governance awareness tremendously grew during the beginning of this decade.
+Systematic cyberattacks and more stringent citizen protection laws displayed lack of competence in a lot of IT departments.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-04-04-DevOps-SecDevOps.png&#34; alt=&#34;2022 04 04 DevOps SecDevOps&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;DevOps engineers shall always also be DevSecOps specialists and master:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Collective Responsibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Security is not something ephemeral whose progress and contribution cannot be measured.
+Each person in the organization has their own security responsibility and must be aware of their own contribution to the organization’s security stance.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Collaboration and Integration&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Security can only be achieved through collaboration, not confrontation.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Pragmatic Implementation&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;They focus on application development to ensure safety, privacy and trust in the digital society.
+Organizations shall be able to pragmatically approach security in DevOps.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Bridge the Divide between Compliance and Development&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The key to addressing the gap between compliance and development is to identify applicable controls, translating them to appropriate software measures and identifying inflection points within the software lifecycle where these controls can be automated and measured.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Automation&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Software quality can be better by improving the thoroughness, timeliness and frequency of testing.
+Processes that can be automated should be automated, and the other ones should be considered for elimination.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Measurement, Monitoring, Report and Action&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The results during software development as well as post-delivery must be continuously controlled by the qualified people at the right time for DevSecOps to succeed.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;bootstrap-devops-adoption&#34;&gt;Bootstrap Your DevOps Adoption&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are already using agile approaches to develop your digital products.
+You want to start your journey with DevOps.
+Success requires actions in three areas.
+First, your development teams must adopt automated pipelines to create a new version of your application and deploy it.
+Second, you shall monitor your productive servers to infer service level agreement metrics.
+Indicators are used to improve the application to changing usage patterns.
+Third, a continuous improvement initiative shall continuously improve quality and effectiveness.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You shall provide at least the following capabilities for all your teams and products:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Development&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Focus on automation and repeatability.
+Measure deployment frequency and deployment duration.&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Each product can be checked out locally from a git repository and built with less than five commands.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Each product is built in a continuous delivery pipeline and packaged for deployment in a staging area or on production.
+Static code analysis and automated tests are executed in the pipeline.
+They provide an automated, tracked and documented quality gate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Each production version is tagged in the repository including associated documentation and technical instructions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Running&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Focus is on time to repair rather than time between issues.
+Measure mean-time to recovery, production failure rate and change failure rate.&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Each instance has a monitoring feature which enabled us to provide realtime information about resource usage, heartbeat, health status and warnings.
+You can rely on an automated alert and response system to troubleshoot and monitor your enterprise servers.
+The developing team can quickly rectify errors or hiccups in the workflow without disturbing the operations teams.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Each instance monitor view is accessible to all involved collaborators.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Each deployed product has a set of measurable targets and the associated metrics to track them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You have a documented process to handle security issues in a timely manner.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You have a documented process to mitigate proactively potential security, performance and governance issues.
+A governance goal could be to always update libraries once a security defect is corrected.
+Empiricism and data are the building block to quality and sustainable improvements.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continual_improvement_process&#34;&gt;Continuous Improvement&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Take small steps.
+Measure number of improvements, average lead time, and improvement impact.&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Each product development team has a continuous improvement initiative.
+The measures for the next releases are documented and progress is tracked.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Each measure is regularly evaluated for adequacy and success.
+Does the measure improve the overall quality of the product?
+Do the actions measurably improve the associated metrics?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_checklist&#34;&gt;Checklist&lt;/h3&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;You give access to a product repository.
+I can check out the whole project and build it locally with one command.+
+&lt;em&gt;I shall install the needed development tools based on written instruction available in the repository.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You give access to a product repository.
+I can initiate a complete build and delivery action in a continuous integration and delivery pipeline.+
+&lt;em&gt;I shall use the CI/CD tool chosen for the product.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I can check out, build and deploy the two last releases on a staging area with less than ten commands.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You give me access to the list of all issues and changes ongoing in the repository.
+The list is specific to one product.
+I see the information such as priority, cycle-time of these issues and in which release the issue was fixed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You give me read-only access to the health dashboard of any test and productive server on which the product runs.
+I see&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Uptime, availability, last down events with time of occurrence, duration and explanation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Database, memory, CPU, etc. usage and trends,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;List of alarms with the involved components and resolution status.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You give a list of improvements to continuously improve the quality of the product.
+For each improvement, a list of actions and their status are available.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You automate everything.
+All automation solutions are documented.
+Manual configuration or installation are banned.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Microsoft has published a checklist for &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/architecture/checklist/dev-ops&#34;&gt;Azure DevOps&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A vendor-agnostic checklist is &lt;a href=&#34;https://devopschecklist.com/&#34;&gt;the DevOps checklist&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here are some of the most critical DevOps metrics
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock text-center&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-04-04-elite-dora-success.png&#34; alt=&#34;2022 04 04 elite dora success&#34; width=&#34;70%&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Elite teams have tremendous overall performance when improving in the areas tracked through these metrics.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;hdlist&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Deployment Frequency
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;It analyzes how frequently you are deploying the current release of software into production.
+Deployment automation is covered through &lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_deployment&#34;&gt;continuous deployment&lt;/a&gt; and
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;continuous delivery&lt;/a&gt;.
+Higher frequencies correlate with high-performance teams.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Average Lead Time
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;It identifies how long it takes to develop, examine, deliver, and deploy a brand-new requirement through &lt;a href=&#34;https://en.wikipedia.org/wiki/Lead_time&#34;&gt;lead time&lt;/a&gt; tracking.
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Value_stream&#34;&gt;Value stream&lt;/a&gt; approaches emphasize optimizing lead time.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Meantime To Recovery
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Measures the time between an interruption due to deployment or system failure and full recovery through
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Mean_time_to_recovery&#34;&gt;mean time to recovery&lt;/a&gt; &lt;em&gt;MTTR&lt;/em&gt; tracking.
+Focus is on efficient recovery and away from mean time between failure.
+If your organization can recover in minutes, the failure rate is seldom critical.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Change Failure Rate
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Indicates how often a team’s changes or hotfixes lead to failures after the code has been deployed.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Additional metrics often are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;hdlist&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Deployment Speed
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;It suggests how quickly you can deploy a new software version into the production environment.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Production Failure Rate
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;It analyses how frequently your software crashes in production for a particular period through
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Failure_rate&#34;&gt;failure rate&lt;/a&gt;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_cultural_change&#34;&gt;Cultural change&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;DevOps initiatives create cultural changes in companies by transforming the way operations, developers and testers collaborate during the development and delivery processes.
+Getting these groups to work cohesively is a critical challenge in enterprise adoption.
+DevOps is as much about culture, the toolchains are only instruments to implement the approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Organizational culture is a strong predictor of IT and organizational performance.
+Cultural practices such as information flow, collaboration, shared responsibilities, learning from failures and encouraging new ideas are central to DevOps.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Team-building and other employee engagement activities are often used to create an environment that fosters this communication and cultural change within an organization.
+DevOps as a service approach allows developers and operations teams to take greater control of their applications and infrastructure without hindering speed.
+It also transfers the onus of owning a problem on to the development team, making them much more careful in their stride.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The 2015 State of DevOps Report discovered that the top seven measures with the strongest correlation to organizational culture and successful DevOps are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Organizational investment,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Team leaders&amp;#39; experience and effectiveness,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Continuous delivery,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The ability of different disciplines &lt;em&gt;development, operations and security&lt;/em&gt; to achieve win-win outcomes,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Organizational performance,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Deployment pain,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lean management practices.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;DevOps will only be successful if your organization adopts agile values.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Support transparency, inspection and adaption.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;These pillars are central to empiricism and lean thinking.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nurture commitment, focus, openness, respect and courage.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;These are the official values of &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Be honest with yourself.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you do not have concrete and visible initiatives in the areas of development &lt;em&gt;Dev&lt;/em&gt;, running &lt;em&gt;Ops&lt;/em&gt; and continuous improvement, you are just pretending to be a professional.
+But in reality you are just an amateur.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_glossary&#34;&gt;Glossary&lt;/h3&gt;
+&lt;div class=&#34;hdlist&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Continuous Integration
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Fowler, 2006 - a software development practice where members of a team integrate their work frequently, usually at least daily.
+Multiple integrations per day shall be possible.
+Each integration is verified by an automated build including tests to quickly detect errors.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Pair Programming
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Williams &amp;amp; Kessler, 2003 – style of programming in which two programmers work side by side at one computer, continually collaborating on the same design, algorithm, code or test.
+The &lt;strong&gt;driver&lt;/strong&gt; types and writes the design.
+The &lt;strong&gt;navigator&lt;/strong&gt; observes the driver and looks for defects.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Refactoring
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Fowler, 2014 - the process of changing a software system in such a way that it does not change the external structure of the code, only the internal.
+When you refactor, you are simply improving the design of the code after it has been written.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Single Command Build
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Biedenharn, personal communication, October 2018 - describes the goal of automating the process of turning the code into a fully functional program.
+It functions with a single command, thus not requiring a multistep procedure.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Single Source Repository
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;Fowler, 2006 - allows teams to keep the main project codebase in one easy-to-access location.
+This allows for easy version control; and, for any new team members to get up and running easily.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Technical Excellence
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;managing constraints on software development via techniques, individual skills, and practices as a team.
+Generally, this includes test-driven development, collective code ownership, continuous integration, &lt;em&gt;ego-less programming&lt;/em&gt; (Gerald Weinberg).
+Personal commitment to self-improvement in pursuit of software development as a craft is the driver for technical excellence.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Test-Driven Development
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;development driven by automated tests &lt;em&gt;published by Beck, 2014&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Red: Write a test that does not work.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Green: Make the test work quickly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Refactor: Clear up all duplications made in the process to make the test work.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Unit Testing
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;testing the smallest units possible to prove what was written is true.
+Unit testing frameworks are Xunit or NUnit for C# and .Net, Junit for Java, PyUnit for Python, Cppunit for C++.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;technical-debt&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2022/technical-debt/&#34;&gt;Technical Debt&lt;/a&gt;
+Marcel Baumann. 2022&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;devops-sme&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2021/devops-for-small-applications/&#34;&gt;DevOps for Small Applications&lt;/a&gt;
+Marcel Baumann. 2021&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;zero-defect&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2020/advocate-zero-bug-policy-in-your-projects/&#34;&gt;Advocate Zero Bug Policy in Your Projects&lt;/a&gt;
+Marcel Baumann. 2020&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;legacy-system-refactoring&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2020/legacy-systems-refactoring/&#34;&gt;Legacy System Refactoring&lt;/a&gt;
+Marcel Baumann. 2020&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;how-healthy-is-your-product&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2018/how-healthy-is-your-product-delivery-pipeline-check/&#34;&gt;How Healthy is Your Product Delivery Pipeline&lt;/a&gt;
+Marcel Baumann. 2018&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;accelerate&#34;&gt;&lt;/a&gt;[1] N. Forsgren, J. Humble, and G. Kim, &lt;em&gt;Accelerate: The Science of Lean Software and DevOps&lt;/em&gt;. IT Revolution Press [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B07B9F83WM&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B07B9F83WM&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;devops-handbook&#34;&gt;&lt;/a&gt;[2] G. Kim and N. Forsgren, &lt;em&gt;DevOps Handbook&lt;/em&gt;, Second. IT Revolution Press, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01M9ASFQ3&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01M9ASFQ3&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;phoenix-project&#34;&gt;&lt;/a&gt;[3] G. Kim, &lt;em&gt;The Phoenix Project a novel about IT, DevOps, and helping your business win&lt;/em&gt;. IT Revolution Press [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0988262592&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0988262592&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;clean-code&#34;&gt;&lt;/a&gt;[4] R. C. Martin, &lt;em&gt;Clean Code&lt;/em&gt;. Prentice Hall, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0132350882&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0132350882&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;clean-architecture&#34;&gt;&lt;/a&gt;[5] R. C. Martin, &lt;em&gt;Clean Architecture&lt;/em&gt;. Pearson, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134494164&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134494164&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[6] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, Second. Addision-Wesley, 2018 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134757599&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134757599&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;continuous-delivery&#34;&gt;&lt;/a&gt;[7] J. Humble and D. Farley, &lt;em&gt;Continuous Delivery&lt;/em&gt;. Addison-Wesley Professional, 2010 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321601912&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321601912&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;continuous-delivery-pipelines&#34;&gt;&lt;/a&gt;[8] D. Farley, &lt;em&gt;Continuous Delivery Pipelines&lt;/em&gt;. 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B096YGZVZ9&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B096YGZVZ9&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;site-reliability-engineering&#34;&gt;&lt;/a&gt;[9] B. Beyer, C. Jones, J. Petoff, and N. R. Murphy, &lt;em&gt;Site Reliability Engineering&lt;/em&gt;. O’Reilly Media, Inc., 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1492029505&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1492029505&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The first conference dedicated to DevOps themes was held in 2009 in Ghent, Belgium.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. The DevOps Research and assessment DORA has defined these key metrics and a strong correlation with high-performance organizations.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: DevOps for Small Applications</title>
+      <link>blog.tangly.net/blog/2021/devops-for-small-applications/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2021/devops-for-small-applications/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_devops_for_small_applications&#34;&gt;DevOps for Small Applications&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2021-08-02-head.png&#34; alt=&#34;2021 08 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt; is the combination of cultural philosophies, practices and tools that increase an organization’s ability to deliver at high velocity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It evolves and improves products at a faster pace than organizations using traditional software development and infrastructure management processes.
+This speed enables organizations to better serve their customers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_how_it_works&#34;&gt;How It Works&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Under a DevOps model, development and operations teams are no longer &lt;em&gt;siloed&lt;/em&gt;.
+Sometimes, these two teams are merged into a single team where the engineers work across the entire application lifecycle.
+The work is from development through test, deployment to operations.
+The range of skills is not limited to a single function.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In some DevOps models, quality assurance and security teams may also become more tightly integrated with development and operations.
+When security is the focus of everyone on a DevOps team, this is sometimes referred to as &lt;em&gt;DevSecOps&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2021-08-02-devops-cycle.png&#34; alt=&#34;2021 08 02 devops cycle&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;These teams practice automating processes that historically have been manual and slow.
+They use a technology stack and tooling which help them operate and evolve applications quickly and reliably.
+These tools also help engineers independently carry out tasks that normally would have required help from other teams.
+This increases a team’s velocity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You will &lt;strong&gt;automate&lt;/strong&gt; every workflow in the long term to achieve speed and &lt;strong&gt;reliability&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You will merge your Scrum software development teams, quality assurance groups, operations teams and testing groups into single product teams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_benefits&#34;&gt;Benefits&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Speed&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Move at high velocity, so you can innovate for customers faster, adapt to changing markets better, and grow more efficient at driving business results.
+The DevOps model enables your developers and operations teams to achieve these results.
+For example, microservices and continuous delivery let teams take ownership of services and then release updates to them quicker.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Rapid Delivery&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Increase the frequency and pace of releases, so you can innovate and improve your product faster.
+The quicker you can release new features and fix bugs, the faster you can respond to your customers’ needs and build competitive advantage.
+Continuous integration and continuous delivery are practices that automate the software release process, from build to deploy.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Reliability&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Ensure the quality of application updates and infrastructure changes, so you can reliably deliver at a more rapid pace while maintaining a positive experience.
+Use practices like continuous integration and continuous delivery to test that each change is functional and safe.
+Monitoring and logging practices help you stay informed of performance in real-time.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Scale&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Operate and manage your infrastructure and development processes at scale.
+Automation and consistency help you manage complex or changing systems efficiently and with reduced risk.
+For example, infrastructure as code helps you manage your development, testing and production environments in a repeatable and more efficient manner.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Improved Collaboration&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Build more effective teams under a DevOps cultural model, which emphasizes values such as ownership and accountability.
+Developers and operations teams collaborate closely, share many responsibilities, and combine their workflows.
+This reduces handover inefficiencies and diminishes cycle-time.
+It reduces for example handover periods between developers and operations, writing code that takes into account the environment in which it is run.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Security&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Move quickly while retaining control and preserving compliance.
+You can adopt a DevOps model without sacrificing security by using automated compliance policies.
+For example, using infrastructure as code and policy as code, you can define and then track compliance at scale.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_devops_adoption&#34;&gt;DevOps Adoption&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Transitioning to DevOps requires a change in culture and mindset.
+At its simplest, DevOps is about removing the barriers between two traditionally siloed teams, development and operations.
+In some organizations, there may not even be separate development and operations teams; engineers may do both.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;With DevOps, the two teams work together to optimize both the productivity of developers and the reliability of operations.
+They strive to communicate frequently, increase efficiencies, and improve the quality of services they provide to customers.
+They take full ownership for their services, often beyond where their stated roles or titles have traditionally been scoped.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Quality assurance and security teams may also become tightly integrated with these teams.
+Organizations using a DevOps model have teams that view the entire development and infrastructure lifecycle as part of their responsibilities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_devops_practices&#34;&gt;DevOps Practices&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;Continuous Integration&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Continuous integration is a software development practice where developers regularly merge their code changes into a central repository.
+Automated builds and tests are run upon changes in the repository.
+The key goals of continuous integration are to find and address bugs quicker, improve software quality, and reduce the time it takes to validate software updates.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;Continuous Delivery&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Continuous delivery is a software development practice where code changes are automatically built, tested, and prepared for a release to production.
+It expands upon continuous integration by deploying all code changes to a testing environment or a production environment after the build stage.
+When continuous delivery is implemented properly, developers will always have a deployment-ready build artifact.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Modular Systems and Microservices&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The microservice’s architecture is a design approach to build a single application as a set of small services.
+Each service runs in its own process and communicates with other services through a well-defined interface using a lightweight mechanism.
+Microservices are built around business capabilities; each service is scoped to a single purpose.
+You can use different frameworks or programming languages to write microservices and deploy them independently, as a single service, or as a group of services.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;Infrastructure as Code&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Infrastructure as code is a practice in which infrastructure is provisioned and managed using code and software development techniques.
+Examples are version control and continuous integration.
+The cloud’s API-driven model enables developers and system administrators to interact with infrastructure programmatically.
+They do need to interact manually set up and configure resources.
+Engineers can interface with infrastructure using code-based tools and treat infrastructure in a manner similar to how they treat application code.
+Because they are defined by code, infrastructure and servers can quickly be deployed using standardized patterns, updated with the latest patches and versions.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Monitoring and Logging&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Organizations monitor metrics and logs to see how application and infrastructure performance impacts the experience of their product’s end user.
+By capturing, categorizing, and then analyzing data and logs generated by applications and infrastructure, organizations understand how changes or updates impact users, shedding insights into the root causes of problems or unexpected changes.
+Active monitoring becomes increasingly important as services must be available 24/7 and as application and infrastructure update frequency increases.
+Creating alerts or performing real-time analysis of this data also helps organizations more proactively monitor their services.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Communication and Collaboration&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Increased communication and collaboration in an organization is one of the key cultural aspects of DevOps.
+The use of DevOps tooling and automation of the software delivery process establishes collaboration by physically bringing together the workflows and responsibilities of development and operations.
+Building on top of that, these teams set strong cultural norms around information sharing and facilitating communication through the use of chat applications, issue or project tracking systems, and wikis.
+This helps speed up communication across developers, operations, and even other teams like marketing or sales, allowing all parts of the organization to align more closely on goals and projects.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_devops_tools&#34;&gt;DevOps Tools&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A DevOps toolchain is a set or combination of tools that aid in the delivery, development, and management of software applications throughout the system development life cycle, as coordinated by an organisation that uses DevOps practices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;image center&#34;&gt;&lt;img src=&#34;../pics/2021-08-02-ci-cd-pipeline.png&#34; alt=&#34;2021 08 02 ci cd pipeline&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Generally, DevOps tools fit into one or more activities, which support specific DevOps initiatives: Plan, Create, Verify, Package, Release, Configure, Monitor, and Version Control.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_what_is_java_devops&#34;&gt;What is Java DevOps?&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java DevOps is simply applying DevOps practices and philosophies to Java app development.
+That means that compartmentalized teams are no longer needed when creating Java applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You should understand these principles:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;Continuous integration&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;This practice requires developers to periodically merge the code that they have written into a central repository.
+After the merge, tests and automated builds are executed.
+This allows a team to find issues and quickly quash out bugs, improve the application’s quality and then cut the time needed to validate your apps.
+Often the step of &lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;Continuous Delivery&lt;/a&gt; is added to the pipeline.&lt;br/&gt;
+&lt;em&gt;Use a platform such as gitLab, gitHub, BitBucket, or Azure DevOps.
+Use Gradle as your build tool.&lt;/em&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_deployment&#34;&gt;Continuous delivery&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;This practice requires your team to release into production all code changes after it is written and then automatically built, and tested.
+If continuous integration puts your code changes onto a testing environment, continuous delivery puts it into a production environment.
+What does this mean?
+You will always have a production-ready Java application!&lt;br/&gt;
+&lt;em&gt;Use Gradle to create your application.
+Use Docker, Ansible to deploy.&lt;/em&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Microservices&#34;&gt;Microservices&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;DevOps make use of microservices.
+Instead of having one big monolithic Java application, your application is made up of smaller and independent applications.&lt;br/&gt;
+&lt;em&gt;Use domain driven design DDD as your architecture method.
+Prefer standalone applications embedding your application server.&lt;/em&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;Infrastructure as a code&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;This practice means that infrastructure is allocated and then managed by using code and development techniques.
+Cloud services can help your development and operations teams interact with infrastructure at a scale they are comfortable with.
+With infrastructure as a code, servers and infrastructure are deployed fast, automatically patched and can easily be duplicated.&lt;br/&gt;
+&lt;em&gt;Use Docker and Ansible to automate your deployment.&lt;/em&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The motivations for what has become modern &lt;em&gt;DevOps&lt;/em&gt; and several standard DevOps practices such as automated build and test, continuous integration, and continuous delivery originated in the Agile world, which dates to the 1990s.
+Agile development teams using methods such as &lt;a href=&#34;http://www.extremeprogramming.org/&#34;&gt;eXtreme Programming&lt;/a&gt; could not &lt;em&gt;satisfy the customer through early and continuous delivery of valuable software&lt;/em&gt; unless they subsumed the operations responsibilities associated with their applications, many of which they automated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Because &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; emerged as the dominant Agile framework in the early 2000s, and it omitted the engineering practices that were part of many Agile teams, the movement to automate operations functions splintered from Agile and expanded into what has become modern DevOps.[11] Today, DevOps focuses on the deployment of developed software, whether it is developed via Agile or other methodologies&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To practice DevOps effectively, software applications have to meet a set of architecturally significant requirements such as: deployability, modifiability, testability, and monitorability.
+You must continuously monitor your infrastructure, network and application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You need a cultural change to implement successfully DevOps workflows.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Bigger companies often have trouble with the changes.
+Command and control cultures always fail.
+It boils down if your culture trusts your collaborators - often called &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_X_and_Theory_Y&#34;&gt;Theory X and Theory Y&lt;/a&gt; beliefs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Interestingly, the DevOps transformation is similar to an agile transformation.
+The approaches, recipes and failures are similar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Smaller organizations are often more affine with trust.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Although it is possible to practice DevOps with any architectural style, the microservices architectural style is becoming the standard for building continuously deployed systems.
+Small size service allows the architecture of an individual service to emerge through continuous refactoring,[69] hence reducing the need for a big upfront design, allows for releasing the software early[citation needed] and continuously.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_literature&#34;&gt;Literature&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;accelerate&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;https://www.amazon.com/dp/B07B9F83WM&#34;&gt;Accelerate: Building and Scaling High Performing Technology Organizations&lt;/a&gt;.
+Nicole Forsgren &amp;amp; Jez Humble &amp;amp; Gene Kene.
+IT Revolution. 2018&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;devops-handbook&#34;&gt;&lt;/a&gt;[2]  &lt;a href=&#34;https://www.amazon.com/dp/B01M9ASFQ3&#34;&gt;The DevOps Handbook: How to create World-Class Agility, Reliability, Security in Technology
+Organizations&lt;/a&gt;.
+Gene Kim &amp;amp; Jez Humble &amp;amp; Patrick Debois &amp;amp; John Willis.
+IT Revolution. 2016&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;phoenix-project&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;https://www.amazon.com/dp/0988262592&#34;&gt;The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win&lt;/a&gt;.
+Gene Kim &amp;amp; Kevin Behr. 2013&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;continuous-delivery&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;https://www.amazon.com/dp/0321601912&#34;&gt;Continuous Delivery: Reliable Software Releases through Build, Test and Deployment
+Automation&lt;/a&gt;.
+Jez Humble &amp;amp; David Farley. 2011&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,342 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly OS Components – Ledger - Ledger Bounded Domain</title>
+    <link>blog.tangly.net/docs/domains/ledger/</link>
+    <description>Recent content in Ledger - Ledger Bounded Domain on tangly OS Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="blog.tangly.net/docs/domains/ledger/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Readme</title>
+      <link>blog.tangly.net/docs/domains/ledger/readme/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/domains/ledger/readme/</guid>
+      <description>
+        
+        
+        &lt;div id=&#34;preamble&#34;&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/license-Apache%202-blue.svg&#34; alt=&#34;Apache License 2.0&#34;/&gt;&lt;/span&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/maven-central/v/net.tangly/erp/crm.svg&#34; alt=&#34;Maven Central&#34;/&gt;&lt;/span&gt;
+&lt;a href=&#34;https://javadoc.io/badge2/net.tangly/bus/javadoc.svg&#34; class=&#34;bare&#34;&gt;https://javadoc.io/badge2/net.tangly/bus/javadoc.svg&lt;/a&gt;[&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://javadoc.io/doc/net.tangly.erp/crm&#34; alt=&#34;javadoc&#34;/&gt;&lt;/span&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg&#34; alt=&#34;Bitbucket Pipelines&#34;/&gt;&lt;/span&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg&#34; alt=&#34;Sonar Coverage&#34;/&gt;&lt;/span&gt;
+&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg&#34; alt=&#34;Bitbucket open issues&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_purpose&#34;&gt;Purpose&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;strong&gt;tangly erp crm&lt;/strong&gt; bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires &lt;strong&gt;Java 17 or higher&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Try it out&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_download_and_documentation&#34;&gt;Download and Documentation&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library can be included in Maven as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;net.tangly.erp&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;crm&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.2.7&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library can be included in Gradle as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;implementation&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;net.tangly.erp:crm:0.2.7&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The documentation can be found under &lt;a href=&#34;https://blog.tangly.net/docs/erp/crm/&#34;&gt;Business documentation&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For any further question and discussion you can use the forum &lt;a href=&#34;https://groups.google.com/g/tangly-os-components&#34;&gt;tangly-OS-Components&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_contribution&#34;&gt;Contribution&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+&lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os.git&#34;&gt;bitbucket git repository&lt;/a&gt; and build the library with the provided gradle configuration file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you find a bug or want to request a feature, please use the &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os/issues&#34;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_license&#34;&gt;License&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The source code is licensed under &lt;a href=&#34;https://www.apache.org/licenses/LICENSE-2.0&#34;&gt;Apache license 2.0&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The documentation and examples are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;Creative Common (CC Attribution 4.0 International)&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_awesome_sponsors_and_developers&#34;&gt;Awesome Sponsors and Developers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Corporate sponsors are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tangly.net&#34;&gt;tangly llc&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Individual developers are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://linkedin.com/in/marcelbaumann&#34;&gt;Marcel Baumann&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Release Notes</title>
+      <link>blog.tangly.net/docs/domains/ledger/releasesnotes/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/domains/ledger/releasesnotes/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_erp_ledger_library_change_logs&#34;&gt;ERP Ledger Library Change Logs&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This document provides a high-level view of the changes introduced in the Ledger CRM library by release.
+For a detailed view of what has changed, refer to the &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os&#34;&gt;repository&lt;/a&gt; commits.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_7_2022_06_30&#34;&gt;0.2.7 (2022-06-30)&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Update of library dependencies, update to JDK-18, and modern Gradle approach to build solutions&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_0_2_6_2021_08_31&#34;&gt;0.2.6 (2021-08-31)&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Initial version of the library packed as a DDD bounded domain&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Requires Java 16 or higher due to extensive usage of &lt;em&gt;records&lt;/em&gt; and &lt;em&gt;sealed&lt;/em&gt; classes&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ERP Ports</title>
+      <link>blog.tangly.net/docs/domains/ledger/userguideports/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/domains/ledger/userguideports/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_crm_ports&#34;&gt;CRM Ports&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The CRM ports provide a bidirectional interface to persistent file storage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;CRM entities can be stored to and retrieved from tab separated values &lt;em&gt;TSV&lt;/em&gt; files.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_invoices_ports&#34;&gt;Invoices Ports&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Invoices are stored to and retrieved from JSON files.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_ledger_ports&#34;&gt;Ledger Ports&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;To be written&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_ledger_banana_import_handler&#34;&gt;Ledger Banana Import Handler&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_importing_ledger_structure&#34;&gt;Importing Ledger Structure&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following steps export the information from the banana application:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Select the accounts tab displaying all the accounts and their structure of the period&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Goto Data &amp;gt; Export Rows &amp;gt; Export Rows to txt&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select the destination file&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If necessary change the extension to &lt;em&gt;tsv&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The generated file is a CSV file containing the whole ledger account plan. The separator is TAB.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_importing_transactions&#34;&gt;Importing Transactions&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following steps export the information from the banana application:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Select the transaction tab displaying all the transactions of the period&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Goto Data &amp;gt; Export Rows &amp;gt; Export Rows to txt&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select the destination file&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If necessary change the extension to &lt;em&gt;tsv&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The generated file is a CSV file containing the transaction details. The separator is TAB.
+It is a good practice to generate a file per fiscal year.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All imported transactions should use the same ledger structure to support benchmarking and reporting over multiple periods.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Bounded Domain Invoice Model</title>
+      <link>blog.tangly.net/docs/domains/ledger/-models/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/domains/ledger/-models/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_bounded_domain_invoice_model&#34;&gt;Bounded Domain Invoice Model&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_concepts&#34;&gt;Concepts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Invoices define a business bounded domain as defined in domain driven design approach.
+They are not constrained through external entities such as products, contracts or legal entities.
+External entities can provide hints to streamline the creation of regular invoices.
+The invoice article identifier is available as an external identifier to the article bounded domain.
+Similar identifiers are available for legal entities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;VAT rates are defined within a article definition.
+Therefore, different VAT rates require different article definitions.
+For example in Switzerland a service company has two VAT rates.
+One for regular services and one for services exempted from VAT taxes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The currency is defined at the invoice level meaning all invoice items and subtotals should use the same currency.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_archiving&#34;&gt;Archiving&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An invoice contains all the information to create a legally binding document and hove no dependencies to external systems.
+Invoices should have a unique identifier for accounting purposes.
+A good practice is to use the identifier as part of the archived file to streamline traceability.
+Invoices can be stored in a database, exported as a PDF file or as a JSON file.
+The PDF file is human readable and adequate for document archiving and legal auditing.
+The JSON file is an adequate archive format which can digitally be processed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/bus-invoice-uml.svg&#34; alt=&#34;bus invoice uml&#34; width=&#34;968&#34; height=&#34;725&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Architecture Design Record (ADR)</title>
+      <link>blog.tangly.net/docs/domains/ledger/adr/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/docs/domains/ledger/adr/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The list of all architectural design record defined for the business component.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

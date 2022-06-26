@@ -1,0 +1,843 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly OS Components – ADR</title>
+    <link>blog.tangly.net/ideas/adr/</link>
+    <description>Recent content in ADR on tangly OS Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 15 Jun 2021 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="blog.tangly.net/ideas/adr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Ideas: OS 008: Use log4j2 as default logging framework</title>
+      <link>blog.tangly.net/ideas/adr/os-008-use-log4j2-as-default/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/ideas/adr/os-008-use-log4j2-as-default/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_os_008_use_log4j2_as_default_logging_framework&#34;&gt;OS-008 Use log4j2 as default logging framework&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2021-06-15&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/OS-008-head.png&#34; alt=&#34;OS 008 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The logging library &lt;a href=&#34;https://en.wikipedia.org/wiki/SLF4J&#34;&gt;slf4j&lt;/a&gt; seems to be a dead project for at least one year.
+The last commit in the &lt;a href=&#34;https://github.com/qos-ch/slf4j&#34;&gt;GitHub slf4j repository&lt;/a&gt; was performed two years ago.
+Version 2.0 of the library is an alpha release on &lt;a href=&#34;https://mvnrepository.com/artifact/org.slf4j/slf4j-api&#34;&gt;Maven Central&lt;/a&gt; dating back to October 2019.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The apache project log4j has made tremendous progress with the creation of the log4j2 library.
+All features provided in slf4j are now available in log4j2.
+In particular, the fluent interface which is only available in the beta version of slf4j is also supported.
+Additional features are also provided and performance is better than with other logging frameworks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The project is active and under the umbrella of the &lt;a href=&#34;https://www.apache.org&#34;&gt;Apache Foundation&lt;/a&gt;.
+The library uses well-documented Java module names as any modern library shall provide.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This situation raises the question to move our application to the apache logging framework.
+Both APIs are very similar in style and naming.
+the effort to migrate is quite reasonable.
+Usually, only the logger declaration needs a modification.
+The creation of logging records uses exactly the same syntax and calling conventions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The advantage is better integration with an actively supported and developed library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All components will be migrated to the log4j2 library
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All components shall use the fluent interface to write logging records.
+This decision shall increase the legibility of the source code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Staying in a library no more under active development is too dangerous.
+Closing of security issues and support of current JDK versions are not guaranteed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;All source files must be modified to use the new library&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;All logging record creations shall use a fluent interface.
+As in slf4j, no string concatenation shall happen in log record calls, use the message feature of the library.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Logging level is specified by using the fluent interface&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;No conditional statements shall be used to bracket logging statements&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exceptions are always stated through the fluent user interface and are not an argument of the log message&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;All &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle&lt;/a&gt; build files shall use the new library.
+The API is declared as an implementation dependency.
+The core library is declared as a test or runtime dependency.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Testing shall be performed to verify correct behavior and correct configuration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We shall explore if trouble arise from used components which are using other logging libraries.
+The risk is small because it is already existing wehn using slf4j liberary.
+The difference is only our new preferred library is now the Apache one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The architecture of log4j2 is described in &lt;a href=&#34;https://logging.apache.org/log4j/2.x/manual/architecture.html&#34;&gt;Log4j2 Main Components&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_learnings&#34;&gt;Learnings&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The log4j2 community reacted professionally and fast in 2022 to correct a security attack in the library.
+The update of all libraries and applications with the patched version was done in a few minutes.
+A gradle plugin was used to infer which version of the library was used.
+The continuous implementation and delivery pipeline were used to generate hardened versions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A new feature of Gradle supports the definition of dependencies in a central file for all submodules.
+The project uses &lt;em&gt;libs.version.toml&lt;/em&gt; configuration file to unify library usage through all components.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. It is sad that such a well-crafted library as slf4j is fading away. We assume that the community actively working on extensions was too small. Ceki Gülcü did a wonderful job to pave the way for modern and efficient logging concepts in the Java world.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Ideas: OS 001: System Guava Removal</title>
+      <link>blog.tangly.net/ideas/adr/os-001-system-guava-removal/</link>
+      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/ideas/adr/os-001-system-guava-removal/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_os_001_remove_usage_of_google_guava_library&#34;&gt;OS-001 Remove usage of Google Guava Library&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2018-02-20&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/OS-001-head.jpg&#34; alt=&#34;OS 001 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Guava is an historical effort to provide much needed functionalities to the Java community.
+The Java ecosystem evolves quite slowly at the beginning of the millennium.
+Later, stewardship clearly improved with six months release schedule approach.
+Preview and incubator initiatives allowed timely evaluation of new features and idioms in the Java language and ecosystem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;JDK versions from release 8 often provide better replacement methods for a lot of Guava functions.
+New JDKs are released every six months and provide regular improvements to the API.
+These improvements make Guava functions more and more obsolete.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/google/guava&#34;&gt;Guava&lt;/a&gt; is an external library of high quality but still an additional dependency in the application.
+We always follow the rule to use language and standard library constructs over using external libraries.
+Guava tries to support older JDKs and, therefore does not use more modern approaches defined in new API versions.
+We consider Guava has a legacy library.
+We are dedicated to writing modern Java using the latest official releases of the language and runtime environment.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The advantage is better integration, always synchronized with a new release of the JDK and no incompatibilities.
+The drawback is sometimes a slightly more cumbersome syntax or solution.
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All Guava usages shall be replaced by JDK standard functions.
+The main advantages are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Current JDK versions provide own implementation e.g. in the Objects class.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Guava dependency is removed from our source code and compiled artifacts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Guava is not optimized for idioms used in current JDK such as streams and extensive use of lambdas.
+Guava needs years to support new concepts such as algebraic data types.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Some operations are more complicated to implement because a solution is already provided in Guava.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We have the huge advantage of being able to use the current approaches provided in JDK and associated standard API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Code uses the current constructs provided through last released JDK.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. If a specific function is only available in Guava and your project strongly relies on it, feel free to continue using Guava
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Ideas: OS 002: Unit Test Conventions</title>
+      <link>blog.tangly.net/ideas/adr/os-002-unit-test-conventions/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/ideas/adr/os-002-unit-test-conventions/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_os_002_define_unit_test_conventions&#34;&gt;OS-002 Define Unit Test Conventions&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2020-06-15&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/OS-002-head.jpg&#34; alt=&#34;OS 002 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Some libraries need to create files on a file system.
+For example, you want to generate human-readable paper invoices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We recommend the following conventions when writing unit tests creating files.
+Use Google Java in memory file system &lt;a href=&#34;https://github.com/google/jimfs&#34;&gt;Jimfs&lt;/a&gt;.
+Additional file systems can only be used in Java if all operations are performed through Path objects.
+Path objects have a reference to the file system; File objects always referenced the default file system.
+When you are writing to the default file system use the root directory &lt;code&gt;/tmp/&lt;/code&gt; available in all Unix like operating systems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Avoid writing files to a local file system.
+This approach is slow, cumbersome and error-prone.
+Use in-memory file systems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;We have a dependency on an open source product currently managed by Google.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use of &lt;a href=&#34;https://github.com/google/jimfs&#34;&gt;Jimfs&lt;/a&gt; requires use of Path instances.
+We shall remove all references to File instances.
+File instances do not support alternative file systems.
+Therefore, we shall use libraries providing a workaround File instances either by using Path instances or reader and writer to access files.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Operations to physical file system have the risk that rights problems could rise in some continuous integration environment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Ideas: OS 003: Use Modern Java Constructs</title>
+      <link>blog.tangly.net/ideas/adr/os-003-use-modern-java-constructs/</link>
+      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/ideas/adr/os-003-use-modern-java-constructs/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_os_003_remove_usage_of_google_guava_library&#34;&gt;OS-003 Remove usage of Google Guava Library&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2020-01-01&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/OS-003-head.jpg&#34; alt=&#34;OS 003 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;JDK is released every six months to all Java developers.
+The latest approach is to release a long-term supported version every two years.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Better approaches support clean code, less verbose source code and reduce programming errors.
+These constructs shall be used in our modules as soon as they are released to the developers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The advantage is better integration, always synchronized with the current release of the JDK and no incompatibilities.
+The drawback is that our clients have to use the current JDK released version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The major advantage is that you are using the latest version you do not need to pay license fees for each server you have running.
+Older Oracle versions always require a support contract and associated fees.
+The other approach is to use an alternate distribution such as &lt;a href=&#34;https://openjdk.java.net/&#34;&gt;OpenJDK&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We use the current released JDK and all constructs provided in this JDK.
+We use preview features and incubating functionality present in this JDK.
+The main advantages are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Current JDK versions provide efficient and elegant implementation. See, for example, the record construct provided since JDK 14.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The source code is legible and has fewer errors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Our developers are up-to-date with Java evolution and enjoy writing modern code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Clients are forced to use the current JDK version.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tooling is more brittle because a lot of tool maintainers are late to adapt actual version of JDK.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_examples_of_new_features&#34;&gt;Examples of New Features&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;em&gt;instanceof&lt;/em&gt; operator supports in conditional statement deconstruction.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;em&gt;record&lt;/em&gt; construct simplifies data objects and encourages immutability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;em&gt;UncheckedIOException&lt;/em&gt; encourages the use of non-checked exceptions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Ideas: OS 004: Publish Technical Documentation Through Static Website</title>
+      <link>blog.tangly.net/ideas/adr/os-004-publish-technical-documentation-through-static-website/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/ideas/adr/os-004-publish-technical-documentation-through-static-website/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_os_004_publish_technical_documentation_through_static_website&#34;&gt;OS-004 Publish Technical Documentation Through Static Website&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2020-01-01&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/OS-004-head.png&#34; alt=&#34;OS 004 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A legible, well-structured and up-to-date technical documentation of released open source components is a service to all our users.
+Due to the small size of our team, we want a straight forward tool chain to generate the website.
+In the future, we could move our product to another hosting platform.
+The solution should be built on a standard to minimize porting overhead.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I am personally a fan of &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; and would promote a solution supporting this markup language.
+I will strongly fight against proprietary solutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;All our technical documentation and blogs will be written in &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The website is created using the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; toolchain.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The theme of hugo will be &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Committers are forced to document in &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tooling is slightly more brittle because &lt;a href=&#34;https://asciidoctor.org/&#34;&gt;Asciidoctor&lt;/a&gt; integration in &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; is work in progress.
+&lt;a href=&#34;https://asciidoctor.org/&#34;&gt;Asciidoctor&lt;/a&gt; is also undergoing changes such as the native support of rouge syntax highlighter.
+The improvements in both tools were impressive the last year, but we have to update regularly our toolchain and update all &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; documents.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_learnings&#34;&gt;Learnings&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Hugo themes styling for AsciiDoc is sketchy.
+The visual quality is currently hindered due to faulty support of the standard or custom AsciiDoc stylesheet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AsciiDoc supports native rouge code highlighting module.
+All source code fragments are nicely displayed without special support from Hugo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Ideas: OS 005: Publish Maven Central Artifacts</title>
+      <link>blog.tangly.net/ideas/adr/os-005-publish-maven-central-artifact/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/ideas/adr/os-005-publish-maven-central-artifact/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_os_005_publish_artifacts_on_public_java_components_repository&#34;&gt;OS-005 Publish Artifacts on Public Java Components Repository&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2019-05-01&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Supersede: &lt;a href=&#34;../../../../docs/fsm/adr/fsm-002-publish-maven-central-artifact&#34;&gt;FSM-0002&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/OS-005-head.png&#34; alt=&#34;OS 005 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://www.tangly.net/&#34;&gt;tangly&lt;/a&gt; open source libraries are mature enough to be used in public commercial and academic projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The libraries were used in internal projects and  refined to  fulfill these requirements.
+More customers will validate the usefulness of the library and identify extensions for further releases.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We want to provide a standard and well-known approach for our customers.
+They shall have access to our libraries through official and well-documented channels.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The libraries shall be published as artifacts on maven central and be accessible to a wide range of developers and organizations.
+A website shall be set up to provide an adequate documentation for users.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://tangly-team.bitbucket.io&#34;&gt;Technical Documentation&lt;/a&gt; will use a static web approach to minimize costs and provide good legibility.
+All open source components will be hosted on the same site.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The libraries will be published on Maven Central to maximize potential usage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;We have to establish a publishing process at the company level to deploy signed artifacts to maven central repository.
+See &lt;a href=&#34;../../../ideas/components-publication&#34;&gt;release and publication process&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We have to establish a public website to host the documentation of public published libraries.
+The static website is &lt;a href=&#34;http://blog.tangly.net/&#34;&gt;Open Source Components&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We have to support semantic versioning for all future releases of public published libraries.
+See &lt;a href=&#34;../../../ideas/components-publication&#34;&gt;release and publication process&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Ideas: OS 006: Dependency Injection with Guice</title>
+      <link>blog.tangly.net/ideas/adr/os-006-dependency-injection-guice/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/ideas/adr/os-006-dependency-injection-guice/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_os_006_dependency_injection_with_guice&#34;&gt;OS-006 Dependency Injection with Guice&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2018-02-20&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/OS-006-head.png&#34; alt=&#34;OS 006 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The modules provided as &lt;a href=&#34;https://www.tangly.net/&#34;&gt;tangly&lt;/a&gt; open source components are used in more complex applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;These applications often use dependency injection frameworks to construct and initialize their instances.
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Dependency_injection&#34;&gt;Dependency injection&lt;/a&gt; is is a technique in which an object receives other objects that it depends on, called dependencies.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Typically, the receiving object is called a client and the passed-in &lt;em&gt;injected&lt;/em&gt; object is called a service.
+The code that passes the service to the client is called the injector.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Instead of the client specifying which service it will use, the injector tells the client what service to use.
+The &lt;em&gt;injection&lt;/em&gt; refers to the passing of a dependency into the client that uses it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Guice is selected as a dependency injection framework.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Guice is one of the industrial standards with Dagger and Sprint DI.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Guice supports JDK standard &lt;em&gt;@inject&lt;/em&gt; annotation used in other dependency frameworks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Guice supports the definition of modules to describe dependencies.
+The modules are also used as a documentation mechanism.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Care will be taken to allow users to use a different dependency injection framework.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A dependency injection module shall be provided for each relevant module&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_conventions&#34;&gt;Conventions&lt;/h3&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Constructor injection is the preferred mechanism.
+In the long term, it should be the only approach.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Please avoid field injection as an injection approach.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Ideas: OS 007: Persistence with MicroStream</title>
+      <link>blog.tangly.net/ideas/adr/os-007-persistence-microstream/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/ideas/adr/os-007-persistence-microstream/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_os_007_persistence_with_microstream&#34;&gt;OS-007: Persistence with MicroStream&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2020-11-13&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/OS-007-head.jpg&#34; alt=&#34;OS 007 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The modules provided as &lt;a href=&#34;https://www.tangly.net/&#34;&gt;tangly&lt;/a&gt; open source components are used in more complex applications.
+These applications require a reliable and performant persistence approach for their data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In Java, everything is an object.
+In contrast, all databases come with their own specific data structure that is incompatible with Java objects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is called &lt;a href=&#34;https://en.wikipedia.org/wiki/Object%E2%80%93relational_impedance_mismatch&#34;&gt;impedance mismatch&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As a consequence, a mapping is required, which means all data must be converted behind the scenes.
+Conversions are inefficient, lead to enormous loss of performance and latencies, and are linked to further serious disadvantages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; was selected as persistence approach for the first versions of the ERP solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Almost no impedance mismatch between the Java application and persistence store&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Elegant approach to provide one persistence container per bounded domain the same application&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MicroStream has formally announced their software library will be published under an open source license&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The library supports current versions of the JDK and all constructs of the language including preview constructs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The support of the company is good and the answers professional&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Care will be taken to provide a fallback to another persistence solution if performance or licensing problems occur.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Knowledge in MicroStream library must be build-up.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Software design must be slightly adapted to the MicroStream approach.&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A clear separation of data from functions is required.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lambdas cannot currently be persisted.
+Therefore, all data containers with lambda variables must either be redesigned or declared as transient.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Work on a design enabling domain driven design with MicroStream approach.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The MicroStream approach supports a very effective way to persist data.
+The effort to define storage and map Java objects to a persistent representation are minimal.
+This approach minimizes the costs for this functionality without impeding the quality or completeness of the solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_conventions&#34;&gt;Conventions&lt;/h3&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Realm shall have a private data class to store all data to be persisted&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The application must generate unique object identifiers.
+MicroStream does not provide functions in this area.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

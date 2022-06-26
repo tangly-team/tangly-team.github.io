@@ -1,0 +1,878 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly OS Components – domain-driven-design</title>
+    <link>blog.tangly.net/tags/domain-driven-design/</link>
+    <description>Recent content in domain-driven-design on tangly OS Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="blog.tangly.net/tags/domain-driven-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Modular Monoliths are the new Graal</title>
+      <link>blog.tangly.net/blog/2022/modular-monoliths-are-the-new-graal/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2022/modular-monoliths-are-the-new-graal/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_modular_monoliths_are_the_new_graal&#34;&gt;Modular Monoliths are the new Graal&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-06-02-head.svg&#34; alt=&#34;2022 06 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A modular monolith is a software design approach in which a monolith is designed with an emphasis on interchangeable and potentially reusable modules.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A modular monolith can be splitted in the future into a set of microservices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Delay the split as long as you can.
+Microservices have a steep price tag during operations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A modular monolith provides:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Independent and parallel development approach&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Diminish coupling and improve cohesion.
+The interfaces are better documented and thinner.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Better observability&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_benefits_of_modular_monoliths&#34;&gt;Benefits of Modular Monoliths&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Adopting the modular approach for monolithic applications can have benefits in a few key areas, including better-organized dependencies, increased &lt;a href=&#34;https://en.wikipedia.org/wiki/Code_reuse&#34;&gt;code reusability&lt;/a&gt;, and increased code observability.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Increased Reusability&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;For large development teams, developing modular components of an application helps to increase reusability.
+Modular components can be reused and repurposed and can help teams establish a single source of truth.
+This can lead to faster and more consistent development.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Better-Organized Dependencies&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Because modular monoliths make individual functions more independent, they, by nature, make dependencies more organized and visible.
+This makes it easier for developers to easily assess which parts of the application require which dependencies.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Increased Observability&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Developing with modularity in mind means code is more accessible to developers.
+For Java developers in particular, interface classes and their requisite javadoc comments help to enhance accessibility and interoperability for developers who may need to work with the modularized function.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 50%;&#34;/&gt;
+&lt;col style=&#34;width: 50%;&#34;/&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&#34;tableblock halign-center valign-top&#34;&gt;Monolith Benefits&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-center valign-top&#34;&gt;Modular Monolith Benefits&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Low operational complexity.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Low operational complexity.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Can be more secure than microservice application.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Can be more secure than microservice application.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Easy to manage database consistency.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Easy to manage database consistency.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Less complex than microservice application.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Less complex than microservice application.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;Monoliths are usually a nightmare to maintain.&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Developed code is reusable.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;Often called big ball of mud.&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Has better-organized dependencies than a standard monolith.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;Observability is often low.&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Better code observability than a standard monolith.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_when_to_use_a_modular_monolith&#34;&gt;When to Use a Modular Monolith&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Any time a developer is working on a monolithic application, using principles of modularity can help them to improve the processes for their team.
+Whether that means making dependencies more manageable within the application, improving developer interoperability on the modular components of that application, or adding modular components to the house repository, embracing modularity can have a positive impact on teams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For the application itself, embracing modularity can help to organize dependencies, making it easier and less time-consuming to change components within the system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Good practices shall be applied to refactor the application [&lt;a href=&#34;#clean-code&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#clean-architecture&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#refactoring&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#refactoring-databases&#34;&gt;4&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_when_not_to_use_a_modular_monolith&#34;&gt;When Not to Use a Modular Monolith&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Of course, just as microservices are not one size fits all solutions, neither is modularity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For developers working on small projects with small development teams, developing their code in a modular way may not be worth the added time, or formality.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_final_thoughts&#34;&gt;Final Thoughts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Architecture approach for modular monoliths or microservices is &lt;em&gt;Domain Driven Design&lt;/em&gt;
+[&lt;a href=&#34;#domain-driven-design&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;#domain-driven-design-distilled&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;7&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you are like many Java developers who are still working on a monolithic application, then employing modularization best practices can help make your application achieve some benefits of microservices without the associated cost of refactoring.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;However, modular monoliths have significant shortcomings when compared to microservices — especially in terms of continuous testing, integration, and deployment.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;software-structure-with-ddd&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2022/software-structure-with-ddd/&#34;&gt;Software Structure with DDD&lt;/a&gt;
+Marcel Baumann. 2022.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;clean-code&#34;&gt;&lt;/a&gt;[1] R. C. Martin, &lt;em&gt;Clean Code&lt;/em&gt;. Prentice Hall, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0132350882&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0132350882&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;clean-architecture&#34;&gt;&lt;/a&gt;[2] R. C. Martin, &lt;em&gt;Clean Architecture&lt;/em&gt;. Pearson, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134494164&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134494164&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[3] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, Second. Addision-Wesley, 2018 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134757599&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134757599&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;refactoring-databases&#34;&gt;&lt;/a&gt;[4] A. Scott and P. J. Sadalage, &lt;em&gt;Refactoring Databases&lt;/em&gt;. Addison-Wesley Professional, 2006 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B001QAP36E&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B001QAP36E&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[5] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design-distilled&#34;&gt;&lt;/a&gt;[6] V. Vernon, &lt;em&gt;Domain-Driven Design Distilled&lt;/em&gt;. Addison-Wesley Professional, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01JJSGE5S/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01JJSGE5S/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[7] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Software Structure with DDD</title>
+      <link>blog.tangly.net/blog/2022/software-structure-with-ddd/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2022/software-structure-with-ddd/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_software_structure_when_using_domain_driven_design&#34;&gt;Software Structure when using Domain-Driven Design&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-06-01-head.jpg&#34; alt=&#34;2022 06 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Development&lt;/a&gt; &lt;em&gt;DDD&lt;/em&gt; is the preferred software architecture approach for designing digital products.
+The method nicely matches with the operational concepts of microservices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Domain-driven design is a holistic approach to understanding, designing and building software applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Seminal books [&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#domain-driven-design-distilled&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;3&lt;/a&gt;] describes the approach and key concepts defining the development method.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Concrete recipes and examples of code structure are still sparse.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How should you structure your namespaces and modules?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We propose a simple and adequate code structure for implementation using modern Java constructs.
+The approach builds on the strengths of the Java packages and modules.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The language visibility rules enforce cohesion and minimize coupling.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The described approach is ideal for small to medium software solutions.
+The source code size of a bounded domain is often less than 50&amp;#39;000 lines of code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The heart of software is its ability to solve domain-related problems for its user.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Eric Evans&lt;br/&gt;
+&lt;cite&gt;Domain-Driven Design: Tackling Complexity in the Heart of Software&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_layers_in_ddd&#34;&gt;Layers in DDD&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Domain-driven design &lt;em&gt;DDD&lt;/em&gt; has four layers in the architecture:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;hdlist&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Interface
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;This layer is in charge of the interaction with the user, whether software presents information to the user or receives information from the user.&lt;br/&gt;
+&lt;em&gt;I use vaadin to increase productivity.
+Vaadin allows us to use the single technology stack Java to develop all backend and frontend functionalities.&lt;/em&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Application
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;This is a thin layer between the interface and the domain, it could call domain services to serve the solution purposes.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Domain
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;The heart of the software, this layer holds domain logic and business knowledge.&lt;br/&gt;
+&lt;em&gt;A major gaal is to avoid any tainting of the core domain model from other layers.&lt;/em&gt;
+&lt;em&gt;Try to avoid extending domain entities with implementation specific root classes or to a lesser degree annotations.&lt;/em&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Infrastructure
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;A supporting layer for the other layers.
+This layer contains supporting libraries or external services like a database or UI supporting library.&lt;br/&gt;
+&lt;em&gt;I use libraries to minimize effort in support functions such as persistence, JSON transformation, archiving and reporting.
+The microstream library is a good example of this approach.
+The persistence capability is less than fifty lines of codes.
+No changes in the domain model was necessary.
+We did not have to add a root persistent class or use annotations.&lt;/em&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_package_structure&#34;&gt;Package Structure&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A bounded domain shall be configured as a Java module [&lt;a href=&#34;#java-9-modularity&#34;&gt;4&lt;/a&gt;].
+The exported services and entities are explicitly listed with the &lt;em&gt;exports&lt;/em&gt; directive.
+A huge advantage is the obligation to list all dependencies with the &lt;em&gt;requires&lt;/em&gt; directive.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock text-center&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-06-01-hexagonal-architecture.png&#34; alt=&#34;2022 06 01 hexagonal architecture&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Java compiler validates the module dependencies and interfaces.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;hdlist&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Services
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;defines the bounded domain context.
+The domain uses the library to implement a bounded domain.
+The ports, handlers and realms are declared in the context package for small bounded domains.
+Complex domains can declare these interfaces in separate packages for legibility.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Logic
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;contains common business logic and features.
+Elaborate domains can contain more business features.
+Use a package structure increasing legibility and enforcing separation of concerns.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Ports
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;contains the services receiving data and events from the environment.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Handlers
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;contains the services providing data and events to the environment and to other applications.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Realm
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;contains the repository functions to persist and create domain entities and object values.
+The current approach uses the &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; library.
+The amount of code to persist the domain model is minimal and non-intrusive
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Domain
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;contains the abstraction describing the bounded domain.
+Care is taken to define resilient and legible domain abstractions.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock text-center&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/bounded-domain-structure.svg&#34; alt=&#34;bounded domain structure&#34; width=&#34;328&#34; height=&#34;181&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The above diagram shows the package structure for a bounded domain named &lt;strong&gt;bounded-domain&lt;/strong&gt;.
+The names with the regular font are package names, the ones in italics are class names.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The infrastructure supports classes are not part of this structure.
+These classes shall be defined in a separate Java module and imported with regular dependency declaration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We use the &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt; tool to insure the expected structure is provided for each bounded domain.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The user interface for a bounded domain is stored in a separate package and often in its own Java module.
+The bounded domain implementation shall not constrain the technologies used to provide a user interface.
+Different approaches for user interface realization are available and no clear winner can currently be identified.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I mainly use &lt;a href=&#34;https://www.vaadin.com&#34;&gt;Vaadin&lt;/a&gt; to realize browser or mobile first internal applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_java_considerations&#34;&gt;Java Considerations&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Entities shall have well-documented internal or external identifiers.
+Entities visible to other bounded domains shall always have an external identifier.
+Identifiers are always immutable objects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Objects that have a distinct identity that runs through time and different representations.
+You also hear these called &lt;em&gt;reference objects&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Martin Fowler
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Value objects shall be expressed as Java value types.
+Record construct is the preferred way to model a value object in Java.
+The record concept provides the expected &lt;em&gt;equals(Object)&lt;/em&gt; behavior.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Objects that matter only as the combination of their attributes.
+Two value objects with the same values for all their attributes are considered equal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Martin Fowler
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An aggregate is a set of Entities and Value Objects that do not make sense alone.
+Every aggregate has a root entity, which will be responsible for providing all methods involving business rules that will modify its child entities.
+The first rule is that aggregates reference each other by identity instead of object references.
+Aggregates shall be constructed with the help of factory patterns such as factory method, abstract factory, or builder.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A DDD aggregate is a cluster of domain objects that can be treated as a unit.
+An example may be an order and its line-items, these will be separate objects.
+Tt is useful to treat the order together with its line items as a single aggregate.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Martin Fowler
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Rich domains are models that have full control of their data and do not rely on external objects to manipulate them.
+Anemic domains are models that rely on other classes to validate their data.
+Anemic domains are a smell in the domain-driven design world.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Services should be pure functions and be stateless.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Pure functions are functions (or methods) that do not change the value of any object outside it.
+It avoids side effects and guarantees the same output for certain inputs, meaning it needs to be completely deterministic.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_architecture_integrity&#34;&gt;Architecture Integrity&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A Bounded Context is a logical boundary of a domain where particular terms and rules apply consistently.
+Inside this boundary, all terms, definitions and concepts form the Ubiquitous Language.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Good practices shall be applied to ensure the quality of the bounded domain software architecture [&lt;a href=&#34;#clean-architecture&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;#refactoring&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#refactoring-databases&#34;&gt;7&lt;/a&gt;]&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Java Platform Module System (JPMS) encourages us to build more reliable and strongly encapsulated modules.
+As a result, these features can help to isolate our contexts and establish clear boundaries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A bounded domain is implemented as a Java module.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The domain internal layered architecture is verified with &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt; custom validation rules.
+The rules are coded as unit tests and are processed in the continuous integration pipeline.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The advantages of the architecture are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The whole company talking the same ubiquitous language, reduced risk of misunderstandings.
+Everyone needs to be aligned, both in vocabulary and ownership of the components.
+The engineers have common understanding and coding guidelines to realize the layers inside a bounded domain.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You have a segregated architecture defining a modular monolith application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Smaller and well-defined components are easier to maintain.
+Your services are independent and can more easily be refactored.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Development scalability is implicitly provided.
+Teams can develop simultaneous and independently bounded domain features.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_bounded_domain_relations&#34;&gt;Bounded Domain Relations&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;There are five main types of relationships between Bounded Contexts:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;hdlist&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Partnership
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;a relationship between two contexts that cooperates to align the two teams with dependent goals.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Shared Kernel
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;a kind of relationship when common parts of several contexts are extracted to another context/module to reduce code duplication.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Customer-supplier
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;a connection between two contexts, where one context (upstream) produces data, and the other (downstream) consume it.
+In this relationship, both sides are interested in establishing the best possible communication.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Conformist
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;this relationship also has upstream and downstream, however, downstream always conforms to the upstream’s APIs.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;hdlist1&#34;&gt;
+Anti-corruption layer
+&lt;/td&gt;
+&lt;td class=&#34;hdlist2&#34;&gt;
+&lt;p&gt;this relationship kind is widely used for legacy systems to adapt them to a new architecture and gradually migrate from the legacy codebase.
+The protection layer acts as an adapter to translate data from the upstream and protect from undesired changes&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Great technologies, programming languages and tools are used when building software applications.
+That is good and right.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;But unfortunately, it is often lost that the decisive factor for the success of a project is not technology, but the solution.
+In order to understand the subject matter or domain, we need a common language with the domain experts and users.
+If we do not map the technical model in the software and its architecture, it will not help our users in their work.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As a computer scientist, it is easy to fall into the trap of focusing on technology instead of specialist knowledge
+footnoote:[In the modern trend of technology driven curriculum this dreadful approach is often encountered].
+The principle of bounded contexts from DDD can help us here.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Domain-driven design (DDD) is a useful approach that provides excellent guidelines for modeling and building systems, but it is a means to an end, not an end in itself.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;While the concepts are valid, you lose a lot if you limit yourself to using them only: There actually is a life beyond DDD.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Stefan Tilkov&lt;br/&gt;
+&lt;cite&gt;2021&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The DDD approach emphasizes systematic refactoring and code improvements [&lt;a href=&#34;#refactoring&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#clean-code&#34;&gt;8&lt;/a&gt;, &lt;a href=&#34;#clean-coder&#34;&gt;9&lt;/a&gt;, &lt;a href=&#34;#clean-architecture&#34;&gt;5&lt;/a&gt;].
+It recommends test driven approach for bounded domain development [&lt;a href=&#34;#agile-testing&#34;&gt;10&lt;/a&gt;, &lt;a href=&#34;#more-agile-testing&#34;&gt;11&lt;/a&gt;, &lt;a href=&#34;#bridging-communication-gap&#34;&gt;12&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[1] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design-distilled&#34;&gt;&lt;/a&gt;[2] V. Vernon, &lt;em&gt;Domain-Driven Design Distilled&lt;/em&gt;. Addison-Wesley Professional, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01JJSGE5S/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01JJSGE5S/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[3] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;java-9-modularity&#34;&gt;&lt;/a&gt;[4] S. Mak, &lt;em&gt;Java 9 Modularity&lt;/em&gt;. O’Reilly Media, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1491954167&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1491954167&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;clean-architecture&#34;&gt;&lt;/a&gt;[5] R. C. Martin, &lt;em&gt;Clean Architecture&lt;/em&gt;. Pearson, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134494164&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134494164&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[6] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, Second. Addision-Wesley, 2018 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134757599&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134757599&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;refactoring-databases&#34;&gt;&lt;/a&gt;[7] A. Scott and P. J. Sadalage, &lt;em&gt;Refactoring Databases&lt;/em&gt;. Addison-Wesley Professional, 2006 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B001QAP36E&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B001QAP36E&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;clean-code&#34;&gt;&lt;/a&gt;[8] R. C. Martin, &lt;em&gt;Clean Code&lt;/em&gt;. Prentice Hall, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0132350882&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0132350882&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;clean-coder&#34;&gt;&lt;/a&gt;[9] R. C. Martin, &lt;em&gt;The Clean Coder&lt;/em&gt;. Prentice Hall, 2011 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0137081073&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0137081073&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;agile-testing&#34;&gt;&lt;/a&gt;[10] L. Crispin, &lt;em&gt;Agile testing&lt;/em&gt;. Addison-Wesley, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321534468&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321534468&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;more-agile-testing&#34;&gt;&lt;/a&gt;[11] J. G. Gregory and L. Crispin, &lt;em&gt;More Agile Testing&lt;/em&gt;. Addison-Wesley Professional [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321967054&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321967054&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;bridging-communication-gap&#34;&gt;&lt;/a&gt;[12] G. Adzic, &lt;em&gt;Bridging the Communication Gap&lt;/em&gt;. Neuri Limited, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B008YZ993W/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B008YZ993W/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. You do &lt;strong&gt;not&lt;/strong&gt; need to modify your domain model. No inheritance from a special persistence class, no annotations are required.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Meaningful Identifiers</title>
+      <link>blog.tangly.net/blog/2021/meaningful-identifiers/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>blog.tangly.net/blog/2021/meaningful-identifiers/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_meaningful_identifiers&#34;&gt;Meaningful Identifiers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2021-01-02-head.jpg&#34; alt=&#34;2021 01 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Identifiers are a key concept to successfully model complex business domains.
+They permeate how our modern civilization functions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Could you imagine a country without car registration number of vehicles, internet addresses, postal addresses or social security numbers?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Identifiers are &lt;strong&gt;identifiers&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Identifiers cannot be changed at any time.
+Updating identifiers means introducing mapping relations between the old and the new values.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In computer science, identifiers &lt;em&gt;IDs&lt;/em&gt; are lexical tokens that name entities.&lt;br/&gt;
+Identifiers are used extensively in virtually all information processing systems.&lt;br/&gt;
+Identifying entities makes it possible to refer to them, which is essential for any kind of symbolic processing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_external_well_defined_identifiers&#34;&gt;External Well-Defined Identifiers&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The best identifiers are externally well-defined identifiers.
+A unique and well-defined authority is responsible for defining and publishing them.
+Ideally, the authorities should only create new identifiers and never delete existing ones.
+The published information is available to all interested parties.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Examples are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Currency names as defined in &lt;a href=&#34;https://en.wikipedia.org/wiki/ISO_4217&#34;&gt;ISO standard 4217&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Country abbreviations as defined in &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes&#34;&gt;ISO standard 3166&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Social security numbers are well documented in the country they are used.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Car numbers are well-known and documented.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Try to use global externally defined identifiers as much as possible.
+Always document the authority in charge to create these identifiers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Examples you are using are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;IBAN account numbers are defined worldwide through &lt;a href=&#34;https://en.wikipedia.org/wiki/International_Bank_Account_Number&#34;&gt;ISO 13616&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bank connections are defined as Business Identifier Codes through &lt;a href=&#34;https://en.wikipedia.org/wiki/ISO_9362&#34;&gt;BIC ISO 9362&lt;/a&gt;.
+The registration authority is &lt;a href=&#34;https://en.wikipedia.org/wiki/Society_for_Worldwide_Interbank_Financial_Telecommunication&#34;&gt;SWIFT&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Car numbers and country acronyms are defined worldwide.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Passport numbers are defined worldwide.
+Each country has its own structure and conventions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Social security numbers are a counter-example.
+There are currently only defined locally.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_external_managed_identifiers&#34;&gt;External Managed Identifiers&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You shall document the source of truth for all externally defined and managed identifiers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The source of truth shall work as a benevolent responsible.
+It should support all interested parties and guaranty their identifiers can be trusted.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_internal_managed_identifiers&#34;&gt;Internal Managed Identifiers&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;One possible approach is to define a naming convention such as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Year - Acronym - Counter&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An example of such an identifier would be&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;literalblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre&gt;2021-CNT-0001 (Contract number 1 in year 2021)
+2020-EVT-0101 (Event number 101 in year 2020)&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Variations are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A full date as prefix, our system uses this convention to name invoices.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A more readable acronym, our ERP system uses the word invoice to name invoices.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware if you export internal managed identifiers, you become a source of truth.
+You are responsible for documenting these identifiers, and the process to create new ones.
+You shall also guaranty that existing identifiers are never recycled.
+If your identifiers are strings, you shall clearly define the supported languages, and character sets.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_domain_driven_design&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Design&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Domain Driven Design &lt;em&gt;DDD&lt;/em&gt; is a powerful and modern approach to define agile software architecture.
+Some key rules are related to identity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Entity has a wel-defined identity&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;An entity is an object that is not defined by its attributes, but rather by a thread of continuity and its identity.
+Any instance of an entity abstraction must have a unique identifier.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Identify aggregate through identity&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;An aggregate is a group of objects that are bound together by a root entity, called the aggregate root.
+Objects outside the aggregate are allowed to hold references to the root but not to any other object of the aggregate.
+The aggregate root is responsible for checking the consistency of changes in the aggregate.
+An aggregate is found and referenced through the identifier of the aggregate root entity.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Reference over aggregate through identity&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;An aggregate shall reference other aggregate through the identity of their root entity instance.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The concept of identity is therefore central to the domain driven design approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Always try to find an external, well-defined identifier for your entities.
+Beware of legal aspects when you are using government defined identifiers such as social security numbers, passport numbers or car numbers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Avoid by all means to use an internal privately defined identifier as a public one.
+You will bear the burden of documenting, manage and evolve the scheme as soon as you do this.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Related concepts are discussed in our blog series&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/entities-identifiers-external-identifiers-and-names&#34;&gt;Entities, Identifiers, External identifiers and Names&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/the-power-of-tags-and-comments&#34;&gt;The power of Tags and Comments&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/reference-codes&#34;&gt;Reference Codes&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2021/value-objects-as-embedded-entities&#34;&gt;Value Objects as Embedded Entities&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2021/meaningful-identifiers&#34;&gt;Meaningful Identifiers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

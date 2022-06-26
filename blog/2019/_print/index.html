@@ -1,0 +1,3218 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta name="generator" content="Hugo 0.101.0" />
+<link href="blog.tangly.net/blog/2019/" rel="canonical" type="text/html">
+<link href="blog.tangly.net/blog/2019/index.xml" rel="alternate" type="application/rss&#43;xml">
+<meta content="noindex, nofollow" name="robots">
+
+
+<link rel="shortcut icon" href="/blog.tangly.net/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/blog.tangly.net/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-192x192.png" sizes="192x192">
+
+<title>2019 | tangly OS Components</title>
+<meta content="" name="description">
+<meta property="og:title" content="2019" />
+<meta property="og:description" content="tangly llc Open Source Components" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="blog.tangly.net/blog/2019/" /><meta property="og:site_name" content="tangly OS Components" />
+
+<meta itemprop="name" content="2019">
+<meta itemprop="description" content="tangly llc Open Source Components"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2019"/>
+<meta name="twitter:description" content="tangly llc Open Source Components"/>
+
+
+
+
+<link rel="preload" href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" as="style">
+<link href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" rel="stylesheet" integrity="">
+
+<script
+    crossorigin="anonymous"
+    integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+    crossorigin="anonymous"
+    integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+    src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-90395055-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body class="td-section td-blog">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="blog.tangly.net/">
+		<span class="navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns="http://www.w3.org/2000/svg" width="200pt" height="200pt" viewBox="0 0 200 200" id="svg2486" sodipodi:version=".32" inkscape:version=".46" sodipodi:docname="Trefoil knot right.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape"><sodipodi:namedview inkscape:window-height="968" inkscape:window-width="1280" inkscape:pageshadow="2" inkscape:pageopacity="0" guidetolerance="10" gridtolerance="10" objecttolerance="10" borderopacity="1" bordercolor="#666666" pagecolor="#ffffff" id="base" showgrid="false" inkscape:zoom="1.3067333" inkscape:cx="249.63266" inkscape:cy="62.855447" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:current-layer="svg2486"/><defs id="defs2488"><inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 125 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="250 : 125 : 1" inkscape:persp3d-origin="125 : 83.333333 : 1" id="perspective2513"/><clipPath id="clip0"><rect width="200" height="200" id="rect2491"/></clipPath></defs><path id="path2494" d="M0 0H2e2V2e2H0V0z" style="fill:none;stroke:#fff;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2498" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2500" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2502" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2504" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2506" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2508" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:#000;fill-rule:nonzero;stroke:none"/></svg></span><span class="font-weight-bold">tangly OS Components</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/docs/" ><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/ideas/" ><span>Ideas</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="blog.tangly.net/blog/" ><span class="active">Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/expertise/" ><span>Expertise</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Repositories
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://github.com/tangly-team/tangly-os/">GitHub</a>
+	
+	<a class="dropdown-item" href="https://gitlab.com/marcelbaumann/tangly-os">GitLab</a>
+	
+	<a class="dropdown-item" href="https://bitbucket.org/tangly-team/tangly-os/">Bitbucket</a>
+	
+</div>
+
+			</li>
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/blog.tangly.net/offline-search-index.72cb1c62467a6d39fe4e23b79eb68cc5.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="50"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="blog.tangly.net/blog/2019/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">2019</h1>
+
+
+
+
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="">
+    <h1 id="pg-d5d58d039ea2d02809f7d3e1408d8271">A Journey to be a Digital Company - tangly llc</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-12-02" class="text-muted">2019-12-02</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_a_journey_to_be_a_digital_company_tangly_llc">A Journey to be a Digital Company - tangly llc</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-12-01-head.jpg" alt="2019 12 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>I long dreamed to work in a digital environment.
+I shall no longer print out a form, sign it by hand and use snake mail to deliver it to the receiving party.
+All company documents are stored electronically.
+I can search any artifacts by content and get a list of its in seconds.</p>
+</div>
+<div class="paragraph">
+<p>Our software service company is an ideal candidate to validate if this assumption is realistic.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Profit is like the air we breathe. We need air to live, but we don’t live to breathe.</p>
+</div>
+</blockquote>
+<div class="attribution">
+— Frederic Laloux
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_is_digital_working">What is Digital Working?</h3>
+<div class="paragraph">
+<p>You shall use digital tools and workflows to perform all your work related tasks.
+We want to increase interactions with our coworkers and remove any tedious activities.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fax is dead. You do not need faxes in Europe - no more waiting at the fax machine,</p>
+</li>
+<li>
+<p>You send your contracts electronically. You can sign them electronically - no more printing or paper archiving,</p>
+</li>
+<li>
+<p>You send invoices electronically - no more printing,</p>
+</li>
+<li>
+<p>You perform your accounting electronically and avoid any paper archive,</p>
+</li>
+<li>
+<p>You coordinate with your team members with chat tools; not over the phone or with emails.
+N o more answering long emails with huge cc list and less business travel,</p>
+</li>
+<li>
+<p>Any document can collaboratively be edited online by multiple collaborators working distributively.
+No more calls to find the latest version of a document or to remind somebody to unlock the document.
+Or worse finding out why your changes just disappeared,</p>
+</li>
+<li>
+<p>Any collaborator has access to all our assets.
+You monitor all software continuous integration and delivery pipelines from anywhere if authorized.
+The information is available with a regular notebook or on any mobile device.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And you have a positive impact on the environment.
+Less traveling, less paper and less shipping.
+Embrace the digital age and be environment aware.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_all_activities_and_processes_are_digitized">All Activities and Processes are Digitized</h3>
+<div class="sect3">
+<h4 id="_internal_tools">Internal Tools</h4>
+<div class="paragraph">
+<p>At <a href="https://www.tangly.net">tangly</a> we use internally</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Google Business Apps and LibreOffice for office work, email, calendar, video conference and document sharing.
+All documents are stored in our product or company online drives,</p>
+</li>
+<li>
+<p>Google Business Apps administration console to manage our technical infrastructure such as workstations, mobile devices, DNS record,</p>
+</li>
+<li>
+<p>Bitbucket and continuous integration, delivery and deployment pipelines for software development,</p>
+</li>
+<li>
+<p>Trello for activities management and our electronic Scrum or Kanban board.
+We use analog boards if the team members are collocated - we are trying to avoid JIRA. It would be just overkill for us -,</p>
+</li>
+<li>
+<p>Slack is our preferred chat platform,</p>
+</li>
+<li>
+<p><a href="https://www.banana.ch/">Banana</a> is our accounting solution.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We never had to bought or rent a printer, a landline or a fax machine since founding the company.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_external_tools">External Tools</h3>
+<div class="paragraph">
+<p>We use an impressive set of tools to collaborate with our customers and partners</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Google email, calendar and meetup for communication,</p>
+</li>
+<li>
+<p><a href="https://www.bitbucket.org/">Bitbucket</a> and continuous integration, delivery and deployment pipelines for software development,</p>
+</li>
+<li>
+<p>Maven Central to distribute public binary software artifacts,</p>
+</li>
+<li>
+<p>Slack is our preferred chat platform,</p>
+</li>
+<li>
+<p>Google Groups for technical discussion,</p>
+</li>
+<li>
+<p>Blogger to publish articles to our community,</p>
+</li>
+<li>
+<p>LinkedIn for marketing,</p>
+</li>
+<li>
+<p>GPG and S/MIME to securely exchange confidential documentation or protect sensitive emails.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An impressive set of processes with governmental organizations can now be performed electronically in Switzerland</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>VAT authority support declaration and payment electronically,</p>
+</li>
+<li>
+<p><a href="https://www.zefix.ch/en/search/entity/welcome">Company register</a> in Switzerland give access to all registered companies,</p>
+</li>
+<li>
+<p>Salary declarations and forms are generated electronically through government <a href="https://www.elohnausweis-ssk.ch/de/">online tools</a>,</p>
+</li>
+<li>
+<p>Swiss post office support package tracking and delivery rescheduling online,</p>
+</li>
+<li>
+<p>Swiss social insurances - pension fund, children allowance, military service, unemployment insurance - declaration and mutation are available online,</p>
+</li>
+<li>
+<p>Taxes declaration can be performed with a downloadable government application,</p>
+</li>
+<li>
+<p>Public transportation company tickets can be bought online and delivered electronically on collaborator’s mobile device.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_is_working">What is Working?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>We perform marketing and sales through online platforms and avoid any physical ads platform,</p>
+</li>
+<li>
+<p>We communicate through our company online platform. We never use physical documents and minimize email usage,</p>
+</li>
+<li>
+<p>We deliver all contractual documents electronically,</p>
+</li>
+<li>
+<p>We deliver all invoices electronically,</p>
+</li>
+<li>
+<p>We have our library and technical documentation as static websites, wikis, and electronic documents.
+We do not possess any paper books,</p>
+</li>
+<li>
+<p>Our archive is online. We do not possess a physical archive of documents or contractual documents and never bought or rented physical space for this purpose,</p>
+</li>
+<li>
+<p>We never did own or rent any printer, land phone line or fax machine. The quality and speed of our Internet connect improve yearly.
+It is already above our keenest expectations.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_is_not_working">What is NOT Working?</h3>
+<div class="paragraph">
+<p>Surprisingly most of the processes with private companies providing mandatory services cannot be done electronically due to obsolete information systems and cumbersome processes.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Accident insurance (BU and NBU) still request declaration of incidents and communication over paper mail,</p>
+</li>
+<li>
+<p>Pension fund insurance company provides a web portal but still send some forms over paper mail,</p>
+</li>
+<li>
+<p>Tax declaration must still be printed out and sent to the tax office of the state government.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>None of the government solutions provide modern API.
+We still must manually input our data in their portals.
+The old interfaces they provide are only partially available through expensive commercial solutions.
+By old interfaces we mean proprietary formats and proprietary file transfer solutions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_findings">Findings</h3>
+<div class="paragraph">
+<p>The last four years were a game changer.
+A lot of manual activities are now fully digitized and often automatized.
+We never had to buy a printer.
+The last year we seldom had to scan a paper document.</p>
+</div>
+<div class="paragraph">
+<p>The partners still requesting paper interactions are some government agencies and some insurances.
+We observe a decrease of such physical interactions. Our partners are steadily - if sometimes slowly - digitizing their workflows.</p>
+</div>
+<div class="paragraph">
+<p>Slowly digital versions for invoices are emerging.
+This approach should allow automated payment workflows.
+Interestingly private customers already have billing and e-payment solutions.
+Similar solutions for corporate customers are either not available or incredibly limited, cumbersome and expensive.</p>
+</div>
+<div class="paragraph">
+<p>The next big step will be the emergence of API to integrate the steps in a workflow specific to the involved companies.
+For example the technical part of the onboarding process for a new employee could be fully automated.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-de1346899fab77d7ce90b6a398261360">Agile @ Scale</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-11-04" class="text-muted">2019-11-04</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_agile_scale">Agile @ Scale</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-11-01-head.jpg" alt="2019 11 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>Your organization has decided to introduce agile at scale in all development departments or better in the whole company.</p>
+</div>
+<div class="paragraph">
+<p>Your Chief of Agility <em>COA</em>, Chief of Digitalization <em>COD</em> or Chief of Change <em>COC</em> was in an expensive training.
+After a few drinks he has selected the appropriate framework for your company.</p>
+</div>
+<div class="paragraph">
+<p>Welcome to the club of companies introducing agile approaches and having no clues why they do it and how they could be successful.</p>
+</div>
+<div class="paragraph">
+<p>Here some hardly learnt truths worth knowing when starting such an endeavor.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Imposing Agile methods introduces a conflict with the values and principles that underlie Agile methods.</p>
+</div>
+</blockquote>
+<div class="attribution">
+— Martin Fowler
+</div>
+</div>
+<div class="sect2">
+<h3 id="_know_popular_scaling_approaches">Know Popular Scaling Approaches</h3>
+<div class="paragraph">
+<p>The scaling approaches I encounter at customer sites in Switzerland and Europe are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Spotify Model was popularized by Henrik Kniberg.
+His YouTube videos are worth watching.
+The banking group ING adopted the approach and made it fashionable.</p>
+</li>
+<li>
+<p>Scrum@Scale defined by Jeff Sutherland and <a href="https://www.scrumalliance.org/">Scrum Alliance</a>.
+Henrik Kniberg has written an interesting article stating Spotify Model is a kind of Scrum@Scale.</p>
+</li>
+<li>
+<p>Nexus defined by <a href="https://en.wikipedia.org/wiki/Ken_Schwaber">Ken Schwaber</a> and <a href="https://www.scrum.org/">Scrum.org</a> [<a href="#nexus-framework">1</a>].</p>
+</li>
+<li>
+<p><a href="https://less.works/">LeSS</a> defined by Craig Larman and Bas Vodde. It is also supported by <a href="https://www.scrumalliance.org/">Scrum Alliance</a>
+[<a href="#scaling-lean-and-agile-development">2</a>, <a href="#large-scale-scrum">3</a>, <a href="#practices-for-scaling-lean-and-agile-development">4</a>].</p>
+</li>
+<li>
+<p><a href="https://www.scaledagileframework.com/">SAFe</a> 5.0 defined by the RUP aficionados and often trashed by Kniberg, Sutherland, Schwaber, Larmann and Vodde.
+At the same it is the most popular approach in quite a few countries.
+<em>And I would never state it is the most successful</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additional approaches exist but I did not encounter them lately.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delay_scaling">Delay Scaling</h3>
+<div class="paragraph">
+<p>The key learning is</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Delay your Scaling.  First Lean the ropes.  Try to descale your processes.</strong></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><strong>Learn the ropes</strong> with small agile teams applying <a href="https://scrumguides.org/">Scrum</a>, <a href="https://en.wikipedia.org/wiki/Kanban/">Kanban</a>, <a href="http://www.extremeprogramming.org/">eXtreme Programming</a> or our own approach.
+Learn as much as you can through experiments before considering scaling.
+The invested capital in small experiments with small teams is tremendously cheaper than experimenting with company-wide approaches.</p>
+</div>
+<div class="paragraph">
+<p>Be gentle and kind to your professional teams.
+<strong>Scale once your agile teams are seasoned.</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>It takes time to learn and master</strong> Scrum and Kanban approaches.</p>
+</div>
+<div class="paragraph">
+<p><strong>Recognize that organizational agility is constrained by technical agility.</strong>
+Focus the first years on technical excellence, software craftsmanship and clean development.</p>
+</div>
+<div class="paragraph">
+<p>All the above-mentioned methods emphasize the importance of technical excellence for durable success.</p>
+</div>
+<div class="paragraph">
+<p><strong>Simplify</strong> your processes, roles and structures. Reflect if you really need scaling.</p>
+</div>
+<div class="paragraph">
+<p>Now you are ready to experiment with scaling.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_understand_the_principles_of_scaling">Understand the Principles of Scaling</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a <em>learning organization</em>. It is the building block for agile approaches</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Train your collaborators.</p>
+</li>
+<li>
+<p>Experiment with new approaches and measure success.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Organize around up to eight teams, <em>one backlog for one product</em>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Avoid team backlogs.</p>
+</li>
+<li>
+<p>Have one product owner in charge of the whole product.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Pull, do not push.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Collaborators and teams select workload.</p>
+</li>
+<li>
+<p>All information are available to all collaborators.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>DevOps is king.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Automate aggressively</em>.</p>
+</li>
+<li>
+<p>Put all artifacts under version control.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Focus on outcomes and impact, not on outputs.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Customer features are product only when used by users.</p>
+</li>
+<li>
+<p>Velocity and burn-down charts are output.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_avoid_common_errors">Avoid Common Errors</h3>
+<div class="paragraph">
+<p>Study the history and evolution of the various scaling approaches.
+In particular the changes in <a href="https://www.scaledagileframework.com/">SAFe</a> are an archaeological treasury what they wrongly stated and how they corrected some identified flaws.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Continuous delivery is the new approach.
+Eliminate hardening iterations, integration phases, milestones when software should be integrated.
+Your teams shall deliver a workable software on demand, multiple times a week or a day.</p>
+</li>
+<li>
+<p><em>Organize around products</em>.
+Customers buy products.
+Eliminate product based organizations.
+*b <em>Have one backlog for the whole product</em>.
+Multiple backlogs must be otherwise synchronized and local optimization is de facto applied.
+This approach is against all lean principles.</p>
+</li>
+<li>
+<p><em>Customer and users talks directly with the development team</em>.
+Product owners, product managers enterprise architects should never be filtering the information flow between customers and engineers.</p>
+</li>
+<li>
+<p><em>Eliminate step by step all coordination roles</em>.
+Emphasize communication between developers in the team and between teams.
+Scrum of Scrums where only Scrum masters attend, Release Train Engineer, System teams, corporate Solution Engineers are just a waste of resources.</p>
+</li>
+<li>
+<p><em>Realize technical excellence is the only approach</em> to deliver quality products to the customer.
+Raise the importance of technical excellence, and never forget that when writing software, the technology side is really vital.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_final_words">Final Words</h3>
+<div class="paragraph">
+<p>Establish agile teams.
+Thin your process.
+Chose your scaling approach.
+Try it and measure impact.
+Iterate and improve continuously.
+Therefore, it could be necessary to change your initial scaling approach and adapt it to your company needs.</p>
+</div>
+<div class="paragraph">
+<p>I wish you successful scaling of agile approaches.
+And I have to warn you the path to success is long and risky.
+Personally I had some successes with Large Scale Scrum - <a href="https://less.works/">LeSS</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="paragraph">
+<p><a id="nexus-framework"></a>[1] K. Bittner, <em>The Nexus framework for scaling scrum</em>. 2018 [Online]. Available: <a href="https://www.amazon.com/dp/0134682661" class="bare">https://www.amazon.com/dp/0134682661</a></p>
+</div>
+<div class="paragraph">
+<p><a id="scaling-lean-and-agile-development"></a>[2] C. Larman, <em>Scaling lean &amp; agile development</em>. Addison-Wesley, 2008 [Online]. Available: <a href="https://www.amazon.com/dp/0321480961" class="bare">https://www.amazon.com/dp/0321480961</a></p>
+</div>
+<div class="paragraph">
+<p><a id="large-scale-scrum"></a>[3] C. Larman, <em>Large-scale scrum</em>. 2017 [Online]. Available: <a href="https://www.amazon.com/dp/0321985710" class="bare">https://www.amazon.com/dp/0321985710</a></p>
+</div>
+<div class="paragraph">
+<p><a id="practices-for-scaling-lean-and-agile-development"></a>[4] C. Larman, <em>Practices for scaling lean &amp; agile development</em>. Addison-Wesley, 2010 [Online]. Available: <a href="https://www.amazon.com/dp/0321636406" class="bare">https://www.amazon.com/dp/0321636406</a></p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-14e85707d367dc4964d7dd073f82153f">Time to Migrate to a Modern JDK, Laggards!</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-10-23" class="text-muted">2019-10-23</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_time_to_migrate_to_a_modern_jdk_laggards">Time to Migrate to a Modern JDK, Laggards!</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-10-01-head.jpg" alt="2019 10 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>Are you still using <em>Java 8</em> to run your mission critical systems?</p>
+</div>
+<div class="paragraph">
+<p>Are you truly using a <em>six years old</em> technology stack?</p>
+</div>
+<div class="paragraph">
+<p>Are you already applying for a Java laggard club membership?</p>
+</div>
+<div class="paragraph">
+<p>If you are still using Java 8 you are using technologies released in Spring 2014.
+You are missing all the improvements in the garbage collector, runtime engine and various API.</p>
+</div>
+<div class="paragraph">
+<p>Java 11 LTS was released in September 2018.
+The current LTS release is one year old.
+You had one year to migrate to this long term solution version.</p>
+</div>
+<div class="paragraph">
+<p>It is time to modernize the fundament of your application and invest a small amount of effort in it.
+The payback is fantastic.</p>
+</div>
+<div class="sect2">
+<h3 id="_advantages">Advantages</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>You have economical gains through</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Major performance improvements make your application faster.
+You have either higher customer satisfaction or need less processing resources,</p>
+</li>
+<li>
+<p>Major garbage collector updates make your application more predictable.
+The maximum amount of memory is often lower,</p>
+</li>
+<li>
+<p>Better behavior in container environment translates to less resource usage,</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You have more legible and maintainable source code</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Since Java 8 useful new language features have been introduced, along with new tooling,</p>
+</li>
+<li>
+<p>Various standard API were extended with convenience methods,</p>
+</li>
+<li>
+<p>One important change was that internal APIs - largely those classes in packages that started with sun.misc.* - were hidden from use,</p>
+</li>
+<li>
+<p>APIs that are not core to the JDK have also been removed in Java 11 or later.
+These changes may impact your application but there is a clear path to avoid these problems.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You have to select either the long term support path or upgrade every six months the Java runtime</p>
+<div class="ulist">
+<ul>
+<li>
+<p>When upgrading the choice you face is whether to use the latest version of Java, currently 13 and be prepared to upgrade every six months.
+Or upgrade to the latest LTS 11 to give yourself up to three years to think about your next upgrade,</p>
+</li>
+<li>
+<p>Don’t be tempted to ignore compiler warnings.
+Deprecation is being taken much more seriously in this modern Java world, and both Java 10 and Java 11 removed APIs.</p>
+</li>
+<li>
+<p>In less than two years the next LTS will be released with Java 17. It is scheduled in September 2021.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Become more agile</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Once over this first upgrade, it is worth at least testing the application on the latest version of Java every 6 months, for example in CI.</p>
+</li>
+<li>
+<p>In all cases openJDK is now the new default.
+Various companies - Oracle, Redhat, Amazon, Azul, IBM - provide commercial support for openJDK for different timelines.
+You are more flexible with your migration timeline.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock center">
+<div class="content">
+<img src="../pics/2019-10-01-jdk-releases.png" alt="2019 10 01 jdk releases"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_to_migrate">How to Migrate?</h3>
+<div class="paragraph">
+<p>You do not need to implement Java modules to migrate to Java 9 or beyond.
+It is worth the effort to slowly support the module approach.
+Your architecture will become more modular and the interfaces are more clearly defined.</p>
+</div>
+<div class="paragraph">
+<p>There are basically four incremental phases to fully migrate to Java 11 or later:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run an existing Java application with the JDK,</p>
+</li>
+<li>
+<p>Compile the application with the JDK,</p>
+</li>
+<li>
+<p>Use the new features of the current JDK,</p>
+</li>
+<li>
+<p>Modularize the application to use module system.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You could recompile and run your solution with the new Java version without code changes.</p>
+</div>
+<div class="paragraph">
+<p>Changes are necessary if you use deprecated packages or access Sun internal packages.
+All deprecated packages have a compatible alternate implementation.
+Often you just need to update the import statements.
+Sun packages have a documented migration path to alternate approaches providing similar functionality.
+By the way Sun company already stated years ago you should not use these internal packages.
+So it is time to clean up your code.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_call_for_action">Call for Action</h3>
+<div class="paragraph">
+<p>Start now your migration to a modern JDK and leave Java 8 behind you.</p>
+</div>
+<div class="paragraph">
+<p>Anyway you can only tinker with the date, you will have to migrate at some point.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-24361313c961e468433c234d261bbab5">A Commons View on Scrum</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-09-17" class="text-muted">2019-09-17</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_a_commons_view_on_scrum">A Commons View on Scrum</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-09-01-head.jpg" alt="2019 09 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>Agile approaches encourage common ownership of artifacts during product development.
+Historically, the <a href="https://en.wikipedia.org/wiki/Commons">commons</a> is the term used for shared resources.
+Can we apply the commons learnings to agile and Scrum approaches?</p>
+</div>
+<div class="paragraph">
+<p>Interestingly, economists were kind to state common ownership is doomed to fail through the theory published end of the sixties <a href="#tradegy-commons">[1]</a>.</p>
+</div>
+<div class="paragraph">
+<p>Thirty years later, <a href="https://en.wikipedia.org/wiki/Elinor_Ostrom">Elinor Ostrom</a> showed that commons can indeed work well if you follow a small set of rules.
+She found century-old examples scattered around the world.
+She was awarded the Nobel Prize in economics for her findings in 2009 and dissipated the previous fake news.</p>
+</div>
+<div class="paragraph">
+<p>The picture shows a <a href="https://de.wikipedia.org/wiki/Suone">Suone</a> in Wallis, Switzerland.
+The constructions bring water to arid regions and are build and maintained by communities.
+It is an example of commons in place for hundreds of years and is one of the concrete implementation studied by Elinor.
+Mountain pastures are also managed as commons in Switzerland.
+You will find a drawing of Suone on the
+<a href="https://en.wikipedia.org/wiki/Banknotes_of_the_Swiss_franc#/media/File:CHF_100_9_back.jpg">hundred Swiss Francs note</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>A resource arrangement that works in practice can work in theory.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Elinor Ostrom identified eight design principles of stable local common pool resource management through the world.
+These principles have a wider range of applications than common resource pool groups.
+They are relevant to nearly any situation where people - such as Scrum teams - must cooperate and coordinate to achieve shared goals.</p>
+</div>
+<div class="paragraph">
+<p>Below the eight principles are presented with a mapping to Scrum aspects.</p>
+</div>
+<div class="sect2">
+<h3 id="_a_clear_definition_of_the_contents_of_the_common_pool_resource_and_effective_exclusion_of_external_un_entitled_parties">A clear definition of the contents of the common pool resource and effective exclusion of external un-entitled parties</h3>
+<div class="paragraph">
+<p>The Scrum teams define the artifacts and processes exclusively owned by the team.
+Teams take ownership of items such as source code, Scrum board, pull process.
+Other items, such as refactoring process, incident tickets produce more infighting.
+You can measure the maturity of your team accordingly to the clarity which resources they own exclusively.
+The first step shall often be <em>collective ownership of source code</em> and <em>common coding style</em>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_appropriation_and_provision_of_common_resources_that_are_adapted_to_local_conditions">The appropriation and provision of common resources that are adapted to local conditions</h3>
+<div class="paragraph">
+<p>Agile teams own commons resources such as * <a href="https://martinfowler.com/bliki/CodeOwnership.html">Collective ownership of source code</a>, * Definition of Done DoD, * Sprint Backlog, * Coding Guidelines, * Team rules and work techniques.</p>
+</div>
+<div class="paragraph">
+<p>The work techniques often limit common resources in inexperienced teams.
+They ask the product owner if they could refactor a class or invest a few minutes in clean code techniques.
+They do not own the internal quality of the product.
+More mature teams are able to make the transition with the support of their Scrum master and the organization.
+They truly own the source code and its quality.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_collective_choice_arrangements_that_allow_most_resource_appropriators_to_participate_in_the_decision_making_process">Collective-choice arrangements that allow most resource appropriators to participate in the decision-making process</h3>
+<div class="paragraph">
+<p><a href="https://scrumguides.org/">Scrum</a> or <a href="https://less.works/">LeSS</a> have quite a few platforms to support decision-making process * Daily Scrum, * Retrospective, * Review, * Backlog refinement, * Planning.</p>
+</div>
+<div class="paragraph">
+<p>The decision-making process works only if the organization grants psychological security to their teams.
+In my experience, it takes years until an organization discards command and control reflexes and delegates responsibility and accountability to the Scrum team members.
+Daily Scrum events are often reporting meetings.
+The developers report either to the Scrum master, or the product owner, or a manager.
+The events are seldom a platform to collaborate, discuss options and experiment with variants.</p>
+</div>
+<div class="paragraph">
+<p>Consensus or consent approaches are widely more successful than majority decisions is one of the findings of Elinor.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_effective_monitoring_by_monitors_who_are_part_of_or_accountable_to_the_appropriators">Effective monitoring by monitors who are part of or accountable to the appropriators</h3>
+<div class="paragraph">
+<p>You have to monitor your commons to know if they are healthy.
+You can</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pair program or review commits with pull requests,</p>
+</li>
+<li>
+<p>Automate static metrics and test coverage,</p>
+</li>
+<li>
+<p>Implement continuous integration, delivery and deployment,</p>
+</li>
+<li>
+<p>Try zero bug policy.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I regularly state monitoring is the first commitment of team members to be publicly accountable.
+Often it is painful to realize how difficult transparency is.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a_scale_of_graduated_sanctions_for_resource_appropriators_who_violate_community_rules">A scale of graduated sanctions for resource appropriators who violate community rules</h3>
+<div class="paragraph">
+<p>Rules are only respected if sanctions are implemented upon violations of the agreement.
+Scrum teams can rule that</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You must repair the broken build.</p>
+</li>
+<li>
+<p>You must immediately correct your coding violations.</p>
+</li>
+<li>
+<p>You lose your source code management system check-in rights.</p>
+</li>
+<li>
+<p>You are excluded from the team.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Most teams need counseling before they can tackle the concept of sanctions.
+As a Scrum master you must gently empower them to sanction.
+If this rule is not implemented, you will always land in the <a href="https://en.wikipedia.org/wiki/Tragedy_of_the_commons">tragedy of commons</a> and utterly fail in your agile journey.
+Worse, your product will probably also fail.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mechanisms_of_conflict_resolution_that_are_cheap_and_of_easy_access">Mechanisms of conflict resolution that are cheap and of easy access</h3>
+<div class="paragraph">
+<p>Conflict resolution shall be fast, cheap, and timely.
+Scrum provides excellent approaches</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Automated checks on the source code and executable application,</p>
+</li>
+<li>
+<p>Daily Scrum,</p>
+</li>
+<li>
+<p>Review and retrospective.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The automatic checks are worth the effort as an effective, neutral, and cost-effective to detect violations and automatically block the offender.
+The Scrum events are platforms to discuss and resolve the discovered violations.
+The Scrum master must facilitate the discussion until the team members have developed their own conflict resolution instruments.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_self_determination_of_the_community_recognized_by_higher_level_authorities">Self-determination of the community recognized by higher-level authorities</h3>
+<div class="paragraph">
+<p>Self-determination works only if recognized by the overall authorities and organization.
+Here we leave the team level and need department recognition - for a LeSS approach - or company level recognition - for example to have ownership to remove a team member -.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Self-organizing of the Scrum team,</p>
+</li>
+<li>
+<p>Ownership of internal quality,</p>
+</li>
+<li>
+<p>Ownership of estimations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Scrum master shall coach and counsel the organization and the team.
+It takes time until management understands the dependencies between delegation, accountability, ownership, and autonomy.
+You shall remember <a href="https://www.craiglarman.com/wiki/index.php?title=Larman%27s_Laws_of_Organizational_Behavior">Larman’s Laws</a></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Culture follows structure.</p>
+</div>
+</blockquote>
+<div class="attribution">
+— Craig Larman
+</div>
+</div>
+<div class="paragraph">
+<p>You will as a change agent change together with leaders the structure of your organization.
+Please be gentle and patient.</p>
+</div>
+<div class="paragraph">
+<p>In the case of larger common-pool resources, organization isin the form of multiple layers of nested enterprises.
+Small local CPRs at the base level.</p>
+</div>
+<div class="paragraph">
+<p>Scaling agile practices at the organization level requires multiple levels.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Transparency through Scrum board,</p>
+</li>
+<li>
+<p>Definition of Dome as contract between a team and their organization,</p>
+</li>
+<li>
+<p>Visibility of source code, continuous integration, delivery and deployment of artifacts,</p>
+</li>
+<li>
+<p>Scale to product level using <a href="https://less.works/">LeSS</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you are ready to scale up to the company you could consider <a href="http://bbrt.org/">Beyond Budgeting Round Table</a>.
+<em>BBRT</em> and <a href="https://sociocracy30.org/">Sociocracy</a> approaches and tailor them to your specific needs.</p>
+</div>
+<div class="paragraph">
+<p>I rediscovered the commons rules through a presentation of <a href="https://en.wikipedia.org/wiki/Craig_Larman">Craig Larmann</a> at the <a href="https://less.works/">LeSS</a> conference 2019 in Munich.
+He inspired us to look at agile approaches through the <em>commons&#39;</em> lens.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="tradegy-commons"></a>[1] <a href="https://gosei.fi/blog/tragedy-of-commons-1/">Tragedy of Commons or Self-Management</a>.
+Ran Nyman. 2020</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-f5c5c469264357d92fb0582a8e9e2813">Agile Architecture within Scrum</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-08-12" class="text-muted">2019-08-12</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_agile_architecture_within_scrum">Agile Architecture within Scrum</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-08-01-head.jpg" alt="2019 08 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>You are applying the agile, lean approach to your software product development.
+Your teams use Scrum or Kanban to deliver running software every two weeks.</p>
+</div>
+<div class="paragraph">
+<p>Agile architecture is a key element to improve the quality of your solution and reduce overall cycle-time of your product delivery.</p>
+</div>
+<div class="paragraph">
+<p>Your journey toward greater business agility starts by identifying what outcomes are most important to your company’s success.
+Outcomes are codified in functional and non-functional requirements your product shall fulfill.
+A key component is to find out how to create a great resilient architecture within the Scrum framework.</p>
+</div>
+<div class="paragraph">
+<p>What Is Agile Architecture?
+An agile architecture shall have four characteristics.</p>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-08-01-architecture.jpg" alt="2019 08 01 architecture" width="420" height="360"/>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><em>Allow change quickly</em> because we cannot foresee the future.</p>
+</li>
+<li>
+<p><em>Always verifiable</em> because we want changes without impeding integrity.</p>
+</li>
+<li>
+<p><em>Support rapid development</em> because we want effective and efficient implementation of new features.</p>
+</li>
+<li>
+<p><em>Always working</em> because we want continuous deployment to have customers&#39; feedback -.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>These characteristics are essential for successful agile development of great software products.</p>
+</div>
+<div class="sect2">
+<h3 id="_what_is_the_scrum_approach">What Is The Scrum Approach?</h3>
+<div class="paragraph">
+<p>Scrum and the <a href="https://scrumguides.org/scrum-guide.html">Scrum Guide</a> are silent how architecture activities are performed during sprints.
+We can use the Scrum values, the <a href="https://www.scrumguides.org/scrum-guide.html">Scrum Guide</a> and the
+<a href="https://agilemanifesto.org/principles.html">Agile Manifesto Principles</a> to infer approaches.</p>
+</div>
+<div class="paragraph">
+<p>The architect shall be part of the Scrum development team.
+This is the most embedded way an architect would fit into a Scrum team.
+It may not even be an individual who has the title of an architect.
+The big idea behind Scrum teams is that team members have different skills.
+Their roles may change to deliver what is required for a particular sprint.</p>
+</div>
+<div class="paragraph">
+<p>So it could be that senior developers within the team got architecture skills.
+They are in the best position, or have the best knowledge, to make those architectural decisions.
+Those team members with architectural skills are involved in the sprint on a day-to-day basis.
+They attend the daily Scrum meetings, take items off the backlog, and work on them.</p>
+</div>
+<div class="paragraph">
+<p>Interestingly <a href="https://less.works/">LeSS</a> is more opinionated and describe
+<a href="https://less.works/less/technical-excellence/architecture-design.html">Successful Approaches</a> for agile architecture and design.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_do_you_perform_agile_design">How Do You Perform Agile Design?</h3>
+<div class="paragraph">
+<p>Scrum is quite silent about technical practices.
+The Scrum fathers and community strongly emphasize adopting <a href="https://en.wikipedia.org/wiki/Extreme_programming">eXtreme Programming</a> practices.
+For bigger systems use the good practices described in <a href="https://less.works/">LeSS</a>.</p>
+</div>
+<div class="paragraph">
+<p>An actual very good practice is to use <a href="https://en.wikipedia.org/wiki/Event_storming">Event Storming</a> and
+<a href="https://en.wikipedia.org/wiki/Domain-driven_design">Domain Driven Design</a> <em>DDD</em> to model the application domain and partition the system.</p>
+</div>
+<div class="paragraph">
+<p>Use <a href="https://www.thoughtworks.com/insights/blog/fitness-function-driven-development">fitness functions</a>
+to monitor and validate all non-functional requirements.</p>
+</div>
+<div class="paragraph">
+<p>The well-established practices from the object-oriented and DevOps communities are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Develop very early a working skeleton.</p>
+</li>
+<li>
+<p>Clean architecture implies clean code and requires clean coders in your team.
+See our post <a href="../../2019/agile-code-is-clean-code/">Clean Code</a>,</p>
+</li>
+<li>
+<p>Aggressive refactoring and understand technical debt, Continuous integration, continuous delivery, and continuous deployment.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For a detailed discussion, consult the post <a href="../../2018/pragmatic-craftsmanship-professional-software-developer/">Pragmatic Craftsmanship</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_is_the_architect_role">What is the Architect Role?</h3>
+<div class="paragraph">
+<p>The architect shall</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Be part of the team, work daily with team members and attend all team events.</p>
+</li>
+<li>
+<p>Maintain the pace of development.</p>
+</li>
+<li>
+<p>Often Communicate and early as a coach and mentor - <em>meaning pair programming and design sessions</em> -.</p>
+</li>
+<li>
+<p>Be fluent in domain-driven development, hexagonal architecture, refactoring, and clean code.</p>
+</li>
+<li>
+<p>Use architecture design record ADR and light documentation to describe architecture decisions - meaning no lengthy Software Architecture Document SAD or overwhelming UML models -.</p>
+</li>
+<li>
+<p>Be a master programmer and writes code in the application technological stack.
+He writes actual source code as current good practices are.</p>
+</li>
+<li>
+<p>Have rich knowledge of architecture and design.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We have mentioned refactoring, which is how we evolve an ever-improving design and architecture while building the product incrementally.
+To do that, we need to know the difference between good architecture and design and not-so-good.
+We need a rich pool of architecture and design options in our bag of tricks, ranging from very simple options to the more complex and rich options that we may need as the system grows.
+One never knows too much about the quality of architecture, code, and design.
+One does, of course, need to apply that knowledge smoothly, incrementally, little by little.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_agile_architecture_series">Agile Architecture Series</h3>
+<div class="paragraph">
+<p>The agile architecture track contains the following blogs</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="../../2019/agile-architecture-principles">Agile Architecture Principles</a></p>
+</li>
+<li>
+<p><a href="../../2019/agile-code-is-clean-code">Agile Code is Clean Code!</a></p>
+</li>
+<li>
+<p><a href="../../2019/agile-architecture-within-scrum">Agile Architecture within Scrum</a></p>
+</li>
+<li>
+<p><a href="../../2020/agile-component-design">Agile Component Design</a></p>
+</li>
+<li>
+<p><a href="../../2020/legacy-systems-refactoring">Legacy Systems Refactoring</a></p>
+</li>
+<li>
+<p><a href="../../2020/how-agile-collaborators-learn">How Agile Collaborators Learn</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>We also published our <a href="https://www.tangly.net/insights/continuous-learning/agile-architecture-course">agile architecture course</a> (3 ECTS) used for teaching computer science students at bachelor level at Swiss technical universities.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-c5c2159ccb542851ab777cd93a83ebb4">The World is a Better Place and We Must Tackle Climate Change</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-07-14" class="text-muted">2019-07-14</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_the_world_is_a_better_place_and_we_must_tackle_climate_change">The World is a Better Place and We Must Tackle Climate Change</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-07-01-head.jpg" alt="2019 07 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>The world has really improved in a lot of areas.</p>
+</div>
+<div class="paragraph">
+<p><em>Stop whining we are doomed. And yes we must act strong and fast to tackle the climate change disaster.</em></p>
+</div>
+<div class="paragraph">
+<p>Do not forget how much the world <strong>bettered</strong> the last centuries.</p>
+</div>
+<div class="paragraph">
+<p>We are not doomed, we must solve the next challenges instead of just complaining and doing nothing.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ask yourself if you need a car.</p>
+</li>
+<li>
+<p>Travel by train instead of flying.</p>
+</li>
+<li>
+<p>Schedule a video conference instead of a business trip.</p>
+</li>
+<li>
+<p>Reduce your plastic and paper usage.</p>
+</li>
+<li>
+<p>Each step reduces your carbon footprint.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Millions of persons taking similar steps will be a huge improvement. <strong>Just do it!</strong></p>
+</div>
+<div class="paragraph">
+<p>The late Swedish academic <a href="https://en.wikipedia.org/wiki/Hans_Rosling">Hans Rosling</a> has identified a worrying trend.
+Not only do many people across advanced economies have no idea that the world is becoming a much better place, but they actually even think the opposite.
+This is no wonder, when the news focuses on reporting catastrophes, terrorist attacks, wars and famines.</p>
+</div>
+<div class="paragraph">
+<p>Who wants to hear about the fact that every day some <strong>200&#39;000</strong> people around the world are lifted above the $2-a-day poverty line?
+Or that more than <strong>300&#39;000</strong> people a day get access to electricity and clean water for the first time every day?
+These stories of people in low-income countries simply does not make for exciting news coverage.</p>
+</div>
+<div class="sect2">
+<h3 id="_what_is_better">What is better?</h3>
+<div class="sect3">
+<h4 id="_extreme_poverty_is_plumping_down">Extreme poverty is plumping down</h4>
+<div class="imageblock center">
+<div class="content">
+<img src="../pics/2019-07-01-world-poverty.jpg" alt="2019 07 01 world poverty"/>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://ourworldindata.org/extreme-poverty" class="bare">https://ourworldindata.org/extreme-poverty</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_literacy_and_education_is_exploding">Literacy and education is exploding</h4>
+<div class="imageblock center">
+<div class="content">
+<img src="../pics/2019-07-01-world-literacy.jpg" alt="2019 07 01 world literacy"/>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://ourworldindata.org/literacy" class="bare">https://ourworldindata.org/literacy</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_health_is_improving_and_child_mortality_is_crashing">Health is improving and child mortality is crashing</h4>
+<div class="imageblock center">
+<div class="content">
+<img src="../pics/2019-07-01-world-life-expectancy.jpg" alt="2019 07 01 world life expectancy"/>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://ourworldindata.org/life-expectancy" class="bare">https://ourworldindata.org/life-expectancy</a></p>
+</div>
+<div class="paragraph">
+<p>Please stop the doomsday trashing and start to act to improve your social environment and diminish your solution footprint.
+I am tired hearing we cannot improve our world.
+Stop lying and simply look at the facts.
+Feel free to argument based on facts.</p>
+</div>
+<div class="paragraph">
+<p>I recognize that we have difficult problems to solve and success is not guaranteed.
+I am just tired of negative thinking and persons claiming we cannot improve our world.</p>
+</div>
+<div class="paragraph">
+<p>Start learning and explore the data on <a href="https://ourworldindata.org/">Our World In Data</a>.
+They have interactive charts.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sources">Sources</h3>
+<div class="paragraph">
+<p><a href="https://www.forbes.com/sites/stevedenning/2017/11/30/why-the-world-is-getting-better-why-hardly-anyone-knows-it/#2ab7ae478268" class="bare">https://www.forbes.com/sites/stevedenning/2017/11/30/why-the-world-is-getting-better-why-hardly-anyone-knows-it/#2ab7ae478268</a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.bbc.com/future/story/20190111-seven-reasons-why-the-world-is-improving">Seven Reasons the World is Improving</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.vox.com/2014/11/24/7272929/global-poverty-health-crime-literacy-good-news">23 charts and maps that show the world is getting much, much better</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://ourworldindata.org/">Research and interactive data visualizations to understand the world’s largest problems</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.bbc.com/news/health-47371078">What do the people of the world die from?</a></p>
+</div>
+<div class="paragraph">
+<p>The beautiful book from Hans Rosling is worth studying.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.amazon.com/Factfulness-Reasons-World-Things-Better-ebook/dp/B0756J1LLV/ref=sr_1_1?keywords=hans+rosling&amp;qid=1563089194&amp;s=digital-text&amp;sr=1-1" class="bare">https://www.amazon.com/Factfulness-Reasons-World-Things-Better-ebook/dp/B0756J1LLV/ref=sr_1_1?keywords=hans+rosling&amp;qid=1563089194&amp;s=digital-text&amp;sr=1-1</a></p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-cc37251837432d8a5bb7b1e1b3cbc622">Agile Code is Clean Code!</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-06-13" class="text-muted">2019-06-13</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_agile_code_is_clean_code">Agile Code is Clean Code!</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-06-01-head.png" alt="2019 06 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>You are applying the agile, lean approach to your software product development.
+Your teams use Scrum or Kanban to deliver running software every two weeks.</p>
+</div>
+<div class="paragraph">
+<p>To create an agile architecture, you must write agile worthy code.
+Agile code is always clean code.</p>
+</div>
+<div class="paragraph">
+<p>Start early, do it continuously and soon your code will be clean, legible and free of defects.</p>
+</div>
+<div class="sect2">
+<h3 id="_architecture_versus_code">Architecture versus Code</h3>
+<div class="paragraph">
+<p>Be honest.
+Having a huge class with thousands of lines of code plainly demonstrates that your organization worked unprofessionally over months in the past.
+Such monsters are not born over one night coding session.
+It takes time and incompetence to create such maintenance nightmares.</p>
+</div>
+<div class="paragraph">
+<p>As long as your product contains such code monsters, it is worthless to pretend to have a nice and thought through architecture.</p>
+</div>
+<div class="paragraph">
+<p>Team discipline and early warning systems are the keys to avoid such blunders and kill the monster in the egg.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clean_code_and_refactoring">Clean Code and Refactoring</h3>
+<div class="paragraph">
+<p>The clean code <a href="https://en.wikipedia.org/wiki/Test-driven_development">test driven development</a> <em>TDD</em> approach to write code was defined last millennium.
+Professional developers adopted this approach to deliver high quality, legible and maintainable code artifacts.</p>
+</div>
+<div class="imageblock " left"="">
+<div class="content">
+<img src="../pics/2019-06-01-red-green-refactor.png" alt="2019 06 01 red green refactor"/>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Red</strong> - Write a test and run it, validating the test harness.</p>
+</li>
+<li>
+<p><strong>Green</strong> - Write the minimum amount of code to implement the functionality validated in the previously developed test.
+Update the code and run the tests until the test suite shows successful execution.</p>
+</li>
+<li>
+<p><strong>Refactor</strong> the code to reach a clean code level.
+Continuously run the tests for guaranty compliant changes.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you are a Java developer you will * Use JUnit 5 and Mockito 2 to implement the first step, * Use a powerful IDE such an IntelliJ IDEA to write and enhance the functional code, * Use tools such as SonarLint, Jacoco, Spotbugs, ArchUnit to refactor your functional code and test cases.
+Clean code applies to productive and test code.</p>
+</div>
+<div class="paragraph">
+<p>The described approach has good practice since the beginning of this millennium.
+All above-mentioned tools are open source and free to use.
+Your organization has no excuse to write crap code.</p>
+</div>
+<div class="paragraph">
+<p>Just write well engineered, legible and maintainable source code.
+It is a matter of <em>discipline</em>.
+It is also a prerequisite to agile architecture.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_acceptance_test_driven_development">Acceptance Test Driven Development</h3>
+<div class="paragraph">
+<p>How do you know what are the requirements of a specific feature?
+Either write a huge amount of outdated documentation or find a better way.
+The better way is <a href="https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development">acceptance test driven development</a> <em>ATDD</em>.</p>
+</div>
+<div class="paragraph">
+<p>For each feature, you need acceptance criteria; this approach is also called <em>specification by example</em>.
+For each acceptance criteria write an acceptance test which is executed each time the application is updated in the continuous delivery pipeline.
+The acceptance tests are the living documentation of the behavior of your product.</p>
+</div>
+<div class="paragraph">
+<p>To implement this approach you need</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Acceptance criteria which imply specifications by example - you need to train your business analysts and product owners,</p>
+</li>
+<li>
+<p>Cucumber for Java (or equivalent tools) - to write acceptance tests, Mock all external systems including the database.
+You want to have fast build and test time and avoid external dependencies.</p>
+</li>
+<li>
+<p>A continuous build and delivery pipeline to automatically run your acceptance validation tests upon each application change,</p>
+</li>
+<li>
+<p>Avoid user interface tests - because they are slow and brittle.</p>
+</li>
+<li>
+<p>Use an in-memory database only if you have to - they are a fast solution to write acceptance tests but are intrinsically slower than mocks.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_code_sociology">Code Sociology</h3>
+<div class="paragraph">
+<p>The most simple engineering practices are the most powerful.
+Practice consolidates changes in behavior of your development organization.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Pair_programming">Pair Programming</a> - is a training on the job and crowd wisdom approach to steadily improving knowledge and quality -.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Test-driven_development">TDD</a> and <a href="https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development">ATDD</a> - are safety net to guaranty quality attributes in your source code.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a> starting with git, docker, continuous integration, delivery and deployment - to speed up development and eliminate tedious manual errors.</p>
+</li>
+<li>
+<p>Lack of accountability equates to lack of trust - your teams are accountable for the quality of your product.
+You should trust them.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once good practices are established, you can move to more sophisticated tools - such as git history code analysis - to uncover weaknesses in your development department.</p>
+</div>
+<div class="paragraph">
+<p>Teams ready to learn from the like of Google could evaluate <a href="https://trunkbaseddevelopment.com/">Trunk Based Development</a> and consider long-lived branches as waste.</p>
+</div>
+<div class="sect3">
+<h4 id="_code_review">Code Review</h4>
+<div class="paragraph">
+<p>A code review can be done in different ways.
+Many teams use GitHub, Bitbucket or GitLab.
+A very common approach for our code reviews is using merge requests.
+However, there are situations where pull requests are not necessary.
+For example, if a feature is implemented in pair programming or mob programming then the code is already reviewed while it is written.</p>
+</div>
+<div class="paragraph">
+<p>We decided that it does not have to be reviewed again but of course, everybody may look at the commits later on in GitHub and add comments.
+A rule of thumb we agreed upon is that every line of code has to be approved by at least one other developer before it is pushed into our master branch.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pull_requests_in_trunk_based_development">Pull Requests in Trunk-Based Development</h4>
+<div class="paragraph">
+<p>In trunk-based development it is different.
+Since we want to merge our commits into the master branch as quickly as possible, we cannot wait until the complete feature is finished.
+Unlike in the original trunk-based development approach we still use feature branches, but we have much less divergence from the master branch than in Git Flow.
+We create a pull request as soon as the first commit is pushed into the feature branch.
+Of course, that requires that no commit breaks anything or causes tests to fail.
+Remember that unfinished features can always be disabled with feature toggles.</p>
+</div>
+<div class="paragraph">
+<p>Now, with part of the new feature committed and the pull request created, another developer from the team can review it.
+In most cases, that does not happen immediately because the developers don’t want to interrupt their work every time a team member pushes a commit.
+Instead, the code reviews are done when another developer is open for it.
+Meanwhile, the pull request might grow by a few commits.</p>
+</div>
+<div class="paragraph">
+<p>The code is not always reviewed immediately after the commit.
+In most cases it reaches the master branch much quicker than in Git Flow.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_agile_architecture_series">Agile Architecture Series</h3>
+<div class="paragraph">
+<p>The agile architecture track contains the following blogs</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="../../2019/agile-architecture-principles">Agile Architecture Principles</a></p>
+</li>
+<li>
+<p><a href="../../2019/agile-code-is-clean-code">Agile Code is Clean Code!</a></p>
+</li>
+<li>
+<p><a href="../../2019/agile-architecture-within-scrum">Agile Architecture within Scrum</a></p>
+</li>
+<li>
+<p><a href="../../2020/agile-component-design">Agile Component Design</a></p>
+</li>
+<li>
+<p><a href="../../2020/legacy-systems-refactoring">Legacy Systems Refactoring</a></p>
+</li>
+<li>
+<p><a href="../../2020/how-agile-collaborators-learn">How Agile Collaborators Learn</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>We also published our <a href="https://www.tangly.net/insights/continuous-learning/agile-architecture-course">agile architecture course</a> (3 ECTS) used for teaching computer science students at bachelor level at Swiss technical universities.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-4d72c43268606b19e13fc259e02e440d">Agile Architecture Principles</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-05-06" class="text-muted">2019-05-06</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_agile_architecture_principles">Agile Architecture Principles</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-05-01-head.jpg" alt="2019 05 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>You are applying the agile, lean approach to your software product development.
+Your teams use Scrum or Kanban to deliver running software every two weeks.
+The product market introduction is a success.
+You will successfully sell the solution for the next ten years.</p>
+</div>
+<div class="paragraph">
+<p>How shall you define the software architecture of your product and insure a long living and high-quality solution?
+The experts tell you the design is emergent.
+What does it mean?</p>
+</div>
+<div class="sect2">
+<h3 id="_less_architecture_observations">LeSS Architecture Observations</h3>
+<div class="paragraph">
+<p>The following observations are true for any software product.
+It is irrelevant if developed using agile approaches or traditional older ones.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><em>The sum of all source code artifacts is the true design blueprint or software architecture</em>.</p>
+</li>
+<li>
+<p>The real software architecture evolves (better or worse) every day of the product, as people do programming.</p>
+</li>
+<li>
+<p>The <em>real living architecture needs to be grown every day</em> through acts of programming by master programmers.</p>
+</li>
+<li>
+<p>A software architect who is not in touch with the evolving source code of the product is out of touch with reality.</p>
+</li>
+<li>
+<p><em>Every programmer is some kind of architect</em> — whether wanted or not.
+Every act of programming is some kind of architectural act — good or bad, small or large, intended or not.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Agile architecture comes from the behavior of agile architecting</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>hands-on master-programmer architects, a culture of excellence in code,</p>
+</li>
+<li>
+<p>ban emphasis on pair-programming coaching for high-quality code/design,</p>
+</li>
+<li>
+<p>agile modeling design workshops,</p>
+</li>
+<li>
+<p><em>test-driven development and refactoring</em>,</p>
+</li>
+<li>
+<p>and other hands-on-the-code behaviors.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_quality_of_your_architecture">Quality of Your Architecture</h3>
+<div class="paragraph">
+<p>You shall measure the quality of your design and produced software artifacts.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Static analysis tools - validate your source code -,</p>
+</li>
+<li>
+<p>Test driven development - validate your design -,</p>
+</li>
+<li>
+<p>Acceptance test driven development - validate your functional requirements -,</p>
+</li>
+<li>
+<p>Fitness functions - validate your non-functional requirements -,</p>
+</li>
+<li>
+<p>Pair programming - improve the produced artifacts through wisdom of the crowd -,</p>
+</li>
+<li>
+<p>Pair review and pull requests - validate your developers&#39; work -.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The above validation activities are backed through tools.
+But these tools can only detect non-quality and never provide a proof you achieved quality.
+Qualified and experienced engineers are your best guaranty to achieve and sustain high quality in architecture and software products.</p>
+</div>
+<div class="paragraph">
+<p>Implement the above measures to gather data and publish the actual state of your source code.
+You find further information in Code Scene as Crime Scene, SonarLint for the Impatient, and Pragmatic Craftsmanship articles.</p>
+</div>
+<div class="paragraph">
+<p>Read the <a href="https://less.works/less/technical-excellence/architecture-design.html">LeSS architecture page</a> for a comprehensive discussion of agile architecting.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_good_versus_bad_architecture">Good versus bad architecture</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A good architecture fulfills the specifications and is easy to change.</p>
+</div>
+<div class="paragraph">
+<p>It shall emerge during the development and intentionally implement the known requirements.</p>
+</div>
+<div class="paragraph">
+<p>Your architects are talented developers and are full members of your Scrum teams.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Your development teams</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>are experts in the used programming language and stack.</p>
+</li>
+<li>
+<p>understand object-oriented, functional and rule-based programming.</p>
+</li>
+<li>
+<p>known all major patterns and idioms of the used development stack.</p>
+</li>
+<li>
+<p>practice <a href="https://en.wikipedia.org/wiki/Test-driven_development">TDD</a>, <a href="https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development">ATDD</a>, clean code, refactoring, embrace CI/CD and DevOps,</p>
+</li>
+<li>
+<p>read source code from open source projects to learn better ways.</p>
+</li>
+<li>
+<p>know <a href="https://en.wikipedia.org/wiki/SMART_criteria">SMART</a>, <a href="https://en.wikipedia.org/wiki/INVEST_(mnemonic)">INVEST</a>,
+<a href="https://de.wikipedia.org/wiki/Solid_(Software)">SOLID</a>, <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>,
+<a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a>.</p>
+</li>
+<li>
+<p>hold weekly design workshops with huge whiteboards.</p>
+</li>
+<li>
+<p>use <a href="https://en.wikipedia.org/wiki/Domain-driven_design">domain driven design</a> and <a href="https://en.wikipedia.org/wiki/Event_storming">event storming</a>.</p>
+</li>
+<li>
+<p>avoid <a href="https://en.wikipedia.org/wiki/Big_Design_Up_Front">BDUF</a>.</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>You shall keep it simple, make it valuable, and build it piece by piece.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The above hints and practices shall empower your teams to practice successfully agile architecture and timely deliver delightful software solutions.
+Your organization shall train your collaborators, see also Shu Ha Ri model.
+Smart money goes in training your collaborators.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_agile_architecture_series">Agile Architecture Series</h3>
+<div class="paragraph">
+<p>The agile architecture track contains the following blogs</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="../../2019/agile-architecture-principles">Agile Architecture Principles</a></p>
+</li>
+<li>
+<p><a href="../../2019/agile-code-is-clean-code">Agile Code is Clean Code!</a></p>
+</li>
+<li>
+<p><a href="../../2019/agile-architecture-within-scrum">Agile Architecture within Scrum</a></p>
+</li>
+<li>
+<p><a href="../../2020/agile-component-design">Agile Component Design</a></p>
+</li>
+<li>
+<p><a href="../../2020/legacy-systems-refactoring">Legacy Systems Refactoring</a></p>
+</li>
+<li>
+<p><a href="../../2020/how-agile-collaborators-learn">How Agile Collaborators Learn</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>We also published our <a href="https://www.tangly.net/insights/continuous-learning/agile-architecture-course">agile architecture course</a> (3 ECTS) used for teaching computer science students at bachelor level at Swiss technical universities.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-46ca7221ddd670425b3619ec3f6c87c8">Why I still love to use a MacBookPro and MacOS in 2019&#34;</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-04-15" class="text-muted">2019-04-15</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_why_i_still_love_to_use_a_macbookpro_and_macos_in_2019">Why I still love to use a MacBookPro and macOS in 2019</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-04-02-head.jpg" alt="2019 04 02 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>As a young developer, I loved Linux, compiled new kernels during evening sessions and struggled days to have the correct drivers for the graphic card and communication components of my notebook.</p>
+</div>
+<div class="paragraph">
+<p>I grew older and decided to enjoy my weekends, family and outdoor activities.</p>
+</div>
+<div class="paragraph">
+<p>And surely I shall have no virus, trojan and other evils on my workstation.
+So I went to macOS and Apple notebooks without regrets.</p>
+</div>
+<div class="sect2">
+<h3 id="_gains">Gains</h3>
+<div class="paragraph">
+<p>The major gains using macOS are * Still no virus scanner is necessary, the speed-up during complex programming and development activities is tremendous, * No trouble when updating OS, updates are automatic and often no new start is required, Unix command line and tools are available in the console.
+Homebrew provides all known and less-known utilities and programs available under Linux.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>My previous MacBook is now six years old and still used as a development backup platform.
+The performance is still very good.</p>
+</li>
+<li>
+<p>My preferred IDE Intellij IDEA works flawlessly on macOS.</p>
+</li>
+<li>
+<p>My new MacBookPro is perfect for Java development, database integration and running multiple Docker images locally.
+The 32 GB RAM goes a long way to run multiple docker images and databases.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>No virus scanner is still important.
+I was lately at a customer site.
+The whole deployment just crashed because IT department decided to update the virus scanner and associated options.
+Suddenly, the generated artifacts were considered harmful.
+This decision just broke the CI/CD pipeline for hours.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://brew.sh/">Homebrew</a> easily downloads and installs newer versions of favorite applications and utilities.
+It solved the dread of macOS slow or missing application updates.
+Pre-installed Unix utilities are seldom kept up to date by Apple.
+Just use Homebrew and forget about Apple slow updates.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_daily_development">Daily Development</h3>
+<div class="paragraph">
+<p>The tools I really enjoy and use on a daily basis for software development - mainly Java - are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> IDE is still a dream.
+It could sometimes be slightly snappier but still the best Java IDE under the sky.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>UML diagrams are created with <a href="https://plantuml.com/">plantUML</a> and the provided plugin.</p>
+</li>
+<li>
+<p>Documents are written in <a href="https://asciidoc.org/">Asciidoc</a> with the existing plugin.</p>
+</li>
+<li>
+<p><a href="https://git-scm.com/">Git</a> is kept up to date with homebrew.</p>
+</li>
+<li>
+<p><a href="https://gradle.org/">Gradle Build Tool</a> is kept up to date either with homebrew or gradlew.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Atlassian Cloud applications - <a href="https://bitbucket.org/">BitBucket</a>, <a href="https://trello.com/">Trello</a> and CI pipeline - and SourceTree for some git operations.</p>
+</li>
+<li>
+<p><a href="https://brew.sh/">Homebrew</a> as package manager for utilities.</p>
+</li>
+<li>
+<p><a href="https://www.docker.com/">Docker</a> as container manager - for complex product you can run locally kubernetes.</p>
+</li>
+<li>
+<p><em><a href="https://www.google.com/chrome/">Chrome</a> is my default browser.
+I almost never use _Safari</em> or <em>Firefox</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I retired <a href="https://www.virtualbox.org/">VirtualBox</a> because I do not need any virtual machines.
+They were replaced with Docker images, I stopped using MacPorts.
+Homebrew is more than enough for my needs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_daily_work">Daily Work</h3>
+<div class="paragraph">
+<p>The tools I used to perform administrative work are * <a href="https://www.libreoffice.org/">LibreOffice</a> - going strong and better every year -, * Google Business for teamwork in the cloud using collaborative tools, * Apple Mail Client with GPG plugin for PGP and S/MIME secure email, * A local Swiss article <a href="https://www.banana.ch/">Banana</a> for accounting and VAT reports for the federal government.
+I bought it as soon as the company stopped requesting higher prices for macOS than for the other platforms.</p>
+</div>
+<div class="paragraph">
+<p>I still have no need to use any Microsoft applications.
+My findings are inline with the ones in my <a href="../../2016/macbook-pro-love">older blog</a> in March 2016.
+I hope Apple will still produce high-quality hardware and software in the future.</p>
+</div>
+<div class="paragraph">
+<p>The only big macOS improvement I am waiting for from Apple is that Apple delegate the installation and update of Unix applications and utilities to Homebrew.
+Apple is sadly always behind the release cycle of regular Unix programs.
+Homebrew does a way better job to support software developers.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-d98c3fb14d1eb6c0f44a2c61531100e8">Code Scene as Crime Scene</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-04-13" class="text-muted">2019-04-13</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_code_scene_as_crime_scene">Code Scene as Crime Scene</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-04-01-head.jpg" alt="2019 04 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>You have a successful product and happy users.
+Slowly, the cost of adding new features is creeping up and product margins are shrinking.
+Which crimes did put us in this dreaded situation?</p>
+</div>
+<div class="paragraph">
+<p>How can you analyze the history of your product’s source code?</p>
+</div>
+<div class="paragraph">
+<p>How can you explore the social dimension of your product development?
+How can you find good approaches to increase time to market and improve development costs?</p>
+</div>
+<div class="paragraph">
+<p>This article presents a set of tools you can use to better understand the alternatives and select the best approach for your product.</p>
+</div>
+<div class="paragraph">
+<p>Our approach is based on the de facto standard for source code version management <a href="https://git-scm.com/">git</a>.
+If your development department is using another tool, you should consider moving to another company.</p>
+</div>
+<div class="sect2">
+<h3 id="_first_steps">First Steps</h3>
+<div class="paragraph">
+<p>We want to investigate various contexts in our source code history and identify suspects.
+A context can be a single file, a class, a package or a module.</p>
+</div>
+<div class="paragraph">
+<p>Gather overall information concerning your repository – use the optionals --before and --after to restrict the time range you are interested in -</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="bash">git log <span style="color: #000080">--numstat</span> <span style="color: #000080">--pretty</span><span style="color: #000000;font-weight: bold">=</span>format:<span style="color: #d14">&#39;[%h] %an %ad %s&#39;</span> <span style="color: #000080">--date</span><span style="color: #000000;font-weight: bold">=</span>short <span style="color: #000080">--before</span><span style="color: #000000;font-weight: bold">=</span><span style="color: #d14">&#39;YYY-MM-DD&#39;</span> <span style="color: #000080">--after</span><span style="color: #000000;font-weight: bold">=</span><span style="color: #d14">&#39;YYYY-MM-DD&#39;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Find out which contexts are most often modified</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="bash">git log <span style="color: #000080">--pretty</span><span style="color: #000000;font-weight: bold">=</span>format: <span style="color: #000080">--name-only</span> | <span style="color: #0086B3">sort</span> | <span style="color: #0086B3">uniq</span> <span style="color: #000080">-c</span> | <span style="color: #0086B3">sort</span> <span style="color: #000080">-rg</span> | <span style="color: #0086B3">head</span> <span style="color: #000080">-100</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or find out which contexts with a specific extension are most often modified</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="bash">git log <span style="color: #000080">--pretty</span><span style="color: #000000;font-weight: bold">=</span>format: <span style="color: #000080">--name-only</span> | <span style="color: #0086B3">sort</span> | <span style="color: #0086B3">uniq</span> <span style="color: #000080">-c</span> | <span style="color: #0086B3">sort</span> <span style="color: #000080">-rg</span> | <span style="color: #0086B3">grep</span> <span style="color: #000080">-I</span> extension | <span style="color: #0086B3">head</span> <span style="color: #000080">-100</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Find out how many times a specific context was modified</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="bash">git log <span style="color: #000080">--</span> contextPath <span style="color: #000080">--pretty</span><span style="color: #000000;font-weight: bold">=</span>format:<span style="color: #d14">&#39;%an&#39;</span> | <span style="color: #0086B3">grep</span> <span style="color: #d14">&#39;Author&#39;</span> | <span style="color: #0086B3">sed</span> <span style="color: #000080">-e</span> <span style="color: #d14">&#39;s/Author: \(.*\) &lt;\(.*\)/\1/&#39;</span> | <span style="color: #0086B3">sort</span> <span style="color: #000080">-rg</span> | <span style="color: #0086B3">uniq</span> <span style="color: #000080">-c</span> | <span style="color: #0086B3">sort</span> <span style="color: #000080">-rg</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Find out how many errors were fixed in a specific context – e.g. identified through close #TicketId -</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="bash">git log <span style="color: #000080">--</span> contextPath | <span style="color: #0086B3">grep</span> <span style="color: #d14">&#39;close #&#39;</span> | <span style="color: #0086B3">wc</span> <span style="color: #000080">-l</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deeper_insights">Deeper Insights</h3>
+<div class="paragraph">
+<p><span class="image left"><img src="../pics/2019-04-01-code-that-matters.png" alt="2019 04 01 code that matters" width="420" height="360"/></span>
+Analysis of various products found out that 5% to 10% of the source code is under active development.
+It is where your money is spent to make your customers happy.
+Just put all your refactoring efforts to improve these 10% of your product currently impacting your customer satisfaction.</p>
+</div>
+<div class="paragraph">
+<p>Technical debt reduction should always be prioritized to only these hotspots.
+Simply use the above described approach to identify the most often changed files during a specific time interval.</p>
+</div>
+<div class="sect3">
+<h4 id="_identify_team_and_social_metrics">Identify team and social metrics</h4>
+<div class="paragraph">
+<p>To understand team dynamics, you should group individual developers to their team.
+Simply replace the name of the team member with the team name at the command line using grep or sed.
+Now you can analyze the set of files the team mainly modifies and maintains.
+If none can be found, you have diffuse code ownership and will have quality issues.</p>
+</div>
+<div class="paragraph">
+<p>Using the <a href="https://en.wikipedia.org/wiki/Domain-driven_design">domain driven design</a> <em>DDD</em> terminology, bounded domains are developed and maintained through one team.
+This approach encourages architectural purity, continuous refactoring, and accountability.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_manage_off_boarding_risks">Manage Off-boarding Risks</h4>
+<div class="paragraph">
+<p>Each time you find a set of source code artifacts only modified by a single individual you have identified a major off-boarding risk.
+When this developer will leave the department or the company, all knowledge associated with the development and the maintenance of these components will immediately be lost.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_visualize">Visualize</h3>
+<div class="paragraph">
+<p>The above scripts provide information in textual forms.
+Over time, you will become more sophisticated with your inquiries and need better tools.
+Either visualize your findings with <a href="https://d3js.org/">d3js</a> or <a href="https://plot.ly/javascript/">plotly.js</a> or buy a commercial tool such as the <a href="https://codescene.io/">code scene</a>.</p>
+</div>
+<div class="paragraph">
+<p>Another approach is to write a small framework to analyze the data and to implement more complex queries in your preferred environment.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_next_steps">Next Steps</h3>
+<div class="paragraph">
+<p>The above techniques are part of the toolbox of professional development departments.
+Establish a software craftsmanship culture in your company.
+It helps you to avoid the invasion of gangs and eradicate crime in your neighborhood.</p>
+</div>
+<div class="paragraph">
+<p>Find similar ideas in our blogs Pragmatic Craftsmanship, SonarLint for the impatient, and You need an Engineering Culture.</p>
+</div>
+<div class="paragraph">
+<p>Two books published in the pragmatic programmer’s series are a wonderful deep analysis of source code as a crime scene [<a href="#your-code-as-crime-scene">1</a>] and scanning your application source code [<a href="#software-design-x-rays">2</a>].</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="paragraph">
+<p><a id="your-code-as-crime-scene"></a>[1] A. Tornhill, <em>Your Code as a Crime Scene : Use Forensic Techniques to Arrest Defects, Bottlenecks, and Bad Design in Your Programs</em>. O’Reilly Media. </p>
+</div>
+<div class="paragraph">
+<p><a id="software-design-x-rays"></a>[2] A. Tornhill, <em>Software Design X-Rays: Fix Technical Debt with Behavioral Code Analysis</em>. Pragmatic Bookshelf. </p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-42d9f34d62d8b59349c7782ba49dbc95">You Need an Engineering Culture</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-03-19" class="text-muted">2019-03-19</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_you_need_an_engineering_culture">You Need an Engineering Culture</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-03-01-head.jpg" alt="2019 03 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>Agile approaches are not enough.
+You need a strong engineering culture to achieve quality and lasting success.</p>
+</div>
+<div class="paragraph">
+<p>Often, coaches and Scrum masters tinker with the processes and invest effort and blood to improve the ceremonies and the company structure.</p>
+</div>
+<div class="paragraph">
+<p>But at the end of the day, the success of your application is defined by its adequacy to customers&#39; needs and its overall quality.
+You need a solid and professional engineering culture to produce high-quality products and release them at high rate.
+If not you just release a new set of defects to your paying customers.</p>
+</div>
+<div class="paragraph">
+<p>How do you establish and nurture a professional and effective engineering culture?</p>
+</div>
+<div class="sect2">
+<h3 id="_live_and_breath_your_values">Live and Breath Your Values</h3>
+<div class="paragraph">
+<p>Values drive your culture and the daily behavior of all your collaborators.
+But even if you have invested time and blood to identify the right values and put all the mechanisms in place, it might still not have the desired results.
+Culture is something that happens daily through personal interactions.
+Putting the right values and mechanisms in place will help move your company in the right direction, but it’s not a guaranty for success.</p>
+</div>
+<div class="paragraph">
+<p>In order to increase your odds for success, you need to live and breath your values.
+You need to truly believe at all levels in the organization and not compromise on them.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Advocate for build-in quality.</p>
+</li>
+<li>
+<p>Support employees first.</p>
+</li>
+<li>
+<p>Promote technical excellence.</p>
+</li>
+<li>
+<p>Don’t be penny wise and pound foolish.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_communicating">Communicating</h3>
+<div class="paragraph">
+<p>Make sure that people know the values.
+It should be part of every on-boarding.
+It is one of the first things that new people need to learn.
+But also make sure to remind people as often as possible, e.g. in employee guidelines, during appraisals and town hall meetings.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_eat_your_own_dog_food">Eat Your Own Dog Food</h3>
+<div class="paragraph">
+<p>People look up to you.
+They will imitate your behavior.
+So make sure that you and all members of the leadership team are the evangelists and provide at all times the right example.</p>
+</div>
+<div class="paragraph">
+<p>Read our blog post Pragmatic Craftsmanship for hints what a technical excellence culture should be.</p>
+</div>
+<div class="paragraph">
+<p>Learn from the <a href="https://less.works/">LeSS</a>] community.</p>
+</div>
+<div class="paragraph">
+<p>You can find an initial list of questions in our blog post Company Culture Check.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_validating">Validating</h3>
+<div class="paragraph">
+<p>Validate that all teams are living up to their values.
+Find a way to measure it.
+Identify and put actions in place in case you need to improve.
+If a value does not make sense, e.g. the value was defined early on, but in hindsight it doesn’t fit with your company, then get rid of it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_last_thoughts">Last Thoughts</h3>
+<div class="paragraph">
+<p>Building a great engineering culture is not something that you easily do.
+You cannot cheat.
+It will not automatically happen by copying the values and organization structure from another company such as Spotify.
+You need to really invest in creating a culture that works for your company.</p>
+</div>
+<div class="paragraph">
+<p>You can look at organizational structures, values and principles from other companies to get inspired.
+Sit down with your people and decide together what is important for your company.
+Put mechanisms in place that will support the concepts, allow them to grow.
+Then live and breathe it within all levels of your company.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-60b0e48b8b8273ae783cb21c0763eab7">How Healthy is Your Product? - Company Culture Check</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-02-01" class="text-muted">2019-02-01</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_how_healthy_is_your_product_company_culture_check">How Healthy is Your Product? - Company Culture Check</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-02-01-head.png" alt="2019 02 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>You are developing your application using agile and lean approaches.</p>
+</div>
+<div class="paragraph">
+<p>How can you check your approach and distill improvements?</p>
+</div>
+<div class="paragraph">
+<p>Health check of your product and your development approach are certainly a good solution.</p>
+</div>
+<div class="paragraph">
+<p>This post is the fourth and last of a set of articles identifying health checks with different focus.</p>
+</div>
+<div class="paragraph">
+<p>We will identify strengths, potential weaknesses and hopefully find room for improvement.</p>
+</div>
+<div class="paragraph">
+<p>What is your company culture?
+How are collaborators focused to delight your customers?</p>
+</div>
+<div class="sect2">
+<h3 id="_rules">Rules</h3>
+<div class="paragraph">
+<p>The patient solely decides if a health check shall be performed.
+The effort and depth of a health check are defined together with the patient.
+The findings are considered confidential.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Many attempts at achieving business agility are misguided and fake. But I consider the glass half full, not half empty.</p>
+</div>
+<div class="paragraph">
+<p>Fake Agile is a signal to do better. Fake agile is a treatable disorder.</p>
+</div>
+</blockquote>
+<div class="attribution">
+— Jurgen Appelo
+</div>
+</div>
+<div class="paragraph">
+<p>A short check with a feedback workshop presenting the insights requires around two work days.
+A deeper and more intensive check requests more effort, between one and four weeks.</p>
+</div>
+<div class="paragraph">
+<p>Upon completion, you can also hire a coach to implement selected findings and improve durably the health of your application.
+The findings are often clear and the measures are straightforward.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/2019-02-01-daily-learnings.jpg" alt="2019 02 01 daily learnings"/>
+</div>
+</div>
+<div class="paragraph">
+<p>The real work is to implement consistently the measures.</p>
+</div>
+<div class="paragraph">
+<p>Understand how powerful daily small improvements can be.
+Small improvements accumulate earnings over time.</p>
+</div>
+<div class="paragraph">
+<p>I have the same personal challenge when trying to lose weight or improve my running form.
+The long term implementation is the crux.</p>
+</div>
+<div class="paragraph">
+<p>The biggest flag to identifying a learning and improvement focused culture is perhaps this statement</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>I get better and lasting improvements with organizations who invest in training their collaborators.</p>
+</div>
+<div class="paragraph">
+<p>Not only training on the job, but they send them to courses, exhibitions and buy them books.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_company_culture_checks">Company Culture Checks</h3>
+<div class="paragraph">
+<p>A set of questions to detect cultural flaws for a lean and agile focused company are</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Do you still have individual bonuses?</p>
+</li>
+<li>
+<p>Does the organization provide feedback to each employee at least on a monthly basis?</p>
+</li>
+<li>
+<p>How complex is your travel expenses regulation?</p>
+</li>
+<li>
+<p>Are all C-level managers trained and certified in lean agile leadership and agile approaches?</p>
+</li>
+<li>
+<p>Are the human resources department collaborators trained in agile approaches and agile HR?</p>
+</li>
+<li>
+<p>Are all collaborators and managers working in the development organization trained in agile and lean approaches?</p>
+</li>
+<li>
+<p>Are all collaborators and managers working in the development organization trained in software development techniques?</p>
+</li>
+<li>
+<p>Is there a product charter that lays out the mission and strategic goals?</p>
+</li>
+<li>
+<p>Do all members of the team understand both, and are they able to see how their work contributes to both?</p>
+</li>
+<li>
+<p>Do you release your products at least once a month?</p>
+</li>
+<li>
+<p>Do software developers have local administrator rights on their workstation?</p>
+</li>
+<li>
+<p>Can software developers install tools and libraries on their workstation?</p>
+</li>
+<li>
+<p>How is the working environment of your talented developers?</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Do they have a team area with a dedicated desk for each team member?</p>
+</li>
+<li>
+<p>Do they have multiple high-resolution displays to work with - high-resolution means 4K or higher -?</p>
+</li>
+<li>
+<p>Do they have root access - admin rights - to their development workstation?</p>
+</li>
+<li>
+<p>Do they have access to technical books and articles?</p>
+</li>
+<li>
+<p>Do they have height adjustable desk?</p>
+</li>
+<li>
+<p>Do they have big whiteboard and flip charts to work on in the team area?</p>
+</li>
+<li>
+<p>Do they have rooms to meet and work as a team in the vicinity and available?</p>
+</li>
+<li>
+<p>Do they use the best development tools of trade - and not only the basic and cheap version -?</p>
+</li>
+<li>
+<p>Do they have access to fast and stable continuous integration and deployment pipelines?</p>
+</li>
+<li>
+<p>Do they develop and document in English?</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Can you work on refactoring and clean code without a product backlog item or task?</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_simple_look_see">Simple Look-See</h3>
+<div class="paragraph">
+<p>A very powerful check is to reflect on the behavior of your managers. Ask yourself:</p>
+</div>
+<div class="paragraph">
+<p>Do your managers know the four most important sentences and practice them daily?</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><em>Sorry</em></p>
+</li>
+<li>
+<p><em>Thank you</em></p>
+</li>
+<li>
+<p><em>I am sorry</em>, or <em>I am wrong</em></p>
+</li>
+<li>
+<p><em>Can I help you?</em></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_posts_in_the_health_check_series">Posts in the Health Check Series</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="../../2018/how-healthy-is-your-product-source-code-check">Source Code Check</a></p>
+</li>
+<li>
+<p><a href="../../2018/how-healthy-is-your-product-delivery-pipeline-check">Delivery Pipeline Check</a></p>
+</li>
+<li>
+<p><a href="../../2018/how-healthy-is-your-product-strategy-check">Product Strategy Check Company</a></p>
+</li>
+<li>
+<p><a href="../../2019/how-healthy-is-your-product-company-culture-check/">Company Culture Check</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-d3557e1daab116b89bb160862d3fc042">Detecting Agile Bullshit</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2019-01-13" class="text-muted">2019-01-13</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_detecting_agile_bullshit">Detecting Agile Bullshit</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2019-01-01-head.jpg" alt="2019 01 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>The Defense Innovation Board <a href="https://innovation.defense.gov/">DIB</a> advises the secretary of defense of the United States of America.</p>
+</div>
+<div class="paragraph">
+<p>Members of the board are recognizable names like Eric Schmidt who was CEO of Google and Alphabet, or Instagram COO Marne Levine.</p>
+</div>
+<div class="paragraph">
+<p>So I was quite surprised that a government committee was so straightforward to publish a document called <em>Detecting Agile Bullshit</em> <a href="#etecting-agile-bullshit">[etecting-agile-bullshit]</a>.</p>
+</div>
+<div class="paragraph">
+<p>Simple questions are used as a bullshit detector to identify organizations faking agile.
+Worth your time, if the government has this problem, you probably also encounter it in the private sector.</p>
+</div>
+<div class="sect2">
+<h3 id="_tips_to_identify_fake_agile_organizations">Tips to Identify Fake Agile Organizations</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Many attempts at achieving business agility are misguided and fake.
+But I consider the glass half full, not half empty.</p>
+</div>
+<div class="paragraph">
+<p>Fake Agile is a signal to do better.
+Fake agile is a <strong>treatable</strong> disorder.</p>
+</div>
+</blockquote>
+<div class="attribution">
+— Jurgen Appelo
+</div>
+</div>
+<div class="paragraph">
+<p>Agile development has become such a holy grail that some organizations or product teams wave the agile flag whether they are true believers or not.
+They throw around talk of sprints, stories and Scrum without meaning it.
+Signs of this behavior are</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Ignoring users</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Nobody in the software development team is talking with and observing the users of the software in action.
+We mean the actual users of the actual code.</p>
+</li>
+<li>
+<p>Continuous feedback from users to the development team (bug reports, users assessments) is not available.
+Talking once at the beginning of a program to verify requirements does not count!</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Not deploying early an initial product release</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Meeting requirements is treated as more important than getting something useful into the field as quickly as possible.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Development teams are silos instead of feature teams</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Participants act like <em>it is not my job</em></p>
+</li>
+<li>
+<p>Technical Excellence</p>
+<div class="ulist">
+<ul>
+<li>
+<p>DevOps or DevSecOps culture is lacking if manual processes are tolerated.
+Such processes can and should be automated (e.g. automated testing, continuous integration, continuous delivery).</p>
+</li>
+<li>
+<p>Distributed version control management systems - Git - are not used.</p>
+</li>
+<li>
+<p>Continuous integration and delivery - Jenkins - are not used.</p>
+</li>
+<li>
+<p>Modern deployment platforms - Docker, Kubernetes - are not used.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_questions_to_ask_programming_teams">Questions to Ask Programming Teams</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>How do you test your code?<br/>
+<em>Wrong answer: “we have a testing organization responsible for testing”</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What tool suite are you using for unit tests, regression testing, functional tests, security scans, and deployment certification?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>How automated are your development, testing, security, and deployment pipelines?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What tool suite are you using for continuous integration CI, continuous deployment CD, regression testing, program documentation?</p>
+</li>
+<li>
+<p>Is your infrastructure defined by code?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Who are your users and how are you interacting with them?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What mechanisms are you using to get direct feedback from your users?</p>
+</li>
+<li>
+<p>What tool suite are you using for issue reporting and tracking?</p>
+</li>
+<li>
+<p>How do you allocate issues to programming teams?</p>
+</li>
+<li>
+<p>How to you inform users that their issues are being addressed and/or have been resolved?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>What is your (current and future) cycle time for releases to your users?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What software platforms you support?
+Are you using containers?
+What configuration management tools do you use?</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For a team working on agile, the answer to all of these questions should be a form of “yes”.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_questions_for_program_management">Questions for Program Management</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>How many programmers are part of the organizations that own the budget and milestones for the program?<br/>
+<em>Wrong answers: “we don’t know,” “zero,” “it depends on how you define a programmer”</em>,</p>
+</li>
+<li>
+<p>What are your management metrics for development and operations; how are they used to inform priorities, detect problems?</p>
+</li>
+<li>
+<p>How often are they accessed and used by leadership?</p>
+</li>
+<li>
+<p>What have you learned in your past three sprint cycles and what did you do about it?<br/>
+<em>Wrong answers: “what’s a sprint cycle?,” “we are waiting to get approval from management”</em>,</p>
+</li>
+<li>
+<p>Who are the users that you deliver value to each sprint cycle?
+Can we talk to them?<br/>
+<em>Wrong answers: “we don’t directly deploy our code to users”</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For a team working on agile, the answer to all of these questions should be a form of “yes.”</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_questions_for_customers_and_users">Questions for Customers and Users</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>How do you communicate with the developers?</p>
+</li>
+<li>
+<p>Did they observe your relevant teams working and ask questions that indicated a deep understanding of your needs?</p>
+</li>
+<li>
+<p>When is the last time they sat with you and talked about features you would like to see implemented?</p>
+</li>
+<li>
+<p>How do you send in suggestions for new features or report issues or bugs in the code?</p>
+</li>
+<li>
+<p>What type of feedback do you get to your requests/reports?</p>
+</li>
+<li>
+<p>Are you ever asked to try prototypes of new software features and observed using them?</p>
+</li>
+<li>
+<p>What is the time it takes for a requested feature to show up in the application?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For a team working on agile, the answer to all of these questions should be a form of “yes”.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_questions_for_program_leadership">Questions for Program Leadership</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Are teams delivering working software to at least some subset of real users every iteration and gathering feedback?</p>
+</li>
+<li>
+<p>Is there a product charter that lays out the mission and strategic goals?
+Do all members of the team understand both, and are they able to see how their work contributes to both?</p>
+</li>
+<li>
+<p>Is feedback from users turned into concrete work items for sprint teams on timelines shorter than one month?</p>
+</li>
+<li>
+<p>Are teams empowered to change the requirements based on user feedback?</p>
+</li>
+<li>
+<p>Are teams empowered to change their process based on what they learn?</p>
+</li>
+<li>
+<p>Is the full ecosystem of your product agile?
+<em>Agile programming teams followed by linear, bureaucratic deployment is a failure</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For a team truly working agile, the answer to all of these questions should be a form of “yes”.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conclusion">Conclusion</h3>
+<div class="paragraph">
+<p>The above questions are taken directly from the document
+<a href="https://media.defense.gov/2018/Oct/09/2002049591/-1/-1/0/DIB_DETECTING_AGILE_BS_2018.10.05.PDF">Detecting Agile Bullshit</a>.
+Evaluate organization to find out if they or you are agile.</p>
+</div>
+<div class="imageblock center">
+<div class="content">
+<img src="../pics/2019-01-01-agile-bullshit.jpg" alt="2019 01 01 agile bullshit"/>
+</div>
+</div>
+<div class="paragraph">
+<p>Read my related set of blogs How Healthy is Your Product?</p>
+</div>
+<div class="paragraph">
+<p>Additional blogs for an in-depth check of your agile framework, values and current work processes are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="../../2019/code-scene-as-crime-scene/">Code Scene As a Crime Scene</a></p>
+</li>
+<li>
+<p><a href="../../2018/how-healthy-is-your-product-delivery-pipeline-check">Delivery Pipeline Check</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now government procurement acknowledges that some companies are just cheating with their agile claims, improve yours before getting caught.
+Luckily, the check will find out you are really being agile instead of pretending.</p>
+</div>
+<div class="paragraph">
+<p>I wish good luck and success with your agile transformation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="detecting-agile-bullshit"></a>[1] <a href="https://media.defense.gov/2018/Oct/09/2002049591/-1/-1/0/DIB_DETECTING_AGILE_BS_2018.10.05.PDF" class="bare">https://media.defense.gov/2018/Oct/09/2002049591/-1/-1/0/DIB_DETECTING_AGILE_BS_2018.10.05.PDF</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+
+
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Issue Tracker" aria-label="Issue Tracker">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os/issues">
+      <i class="bitbucket-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Documentation" aria-label="Documentation">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://blog.tangly.net/">
+      <i class="bitbucker-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Groups" aria-label="Groups">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://groups.google.com/g/tangly-os-components">
+      <i class="users-cog"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Bitbucket" aria-label="Bitbucket">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os">
+      <i class="bitbucket"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 tangly llc - Attribution 4.0 International (CC BY 4.0)</small>
+        
+	
+		<p class="mt-2"><a href="blog.tangly.net/about/">About tangly OS Components</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/blog.tangly.net/js/main.min.91798a335c881f1b6b805085ba4aa22d1dbd2b0b18d105d05189fa104ddae350.js" integrity="sha256-kXmKM1yIHxtrgFCFukqiLR29KwsY0QXQUYn6EE3a41A=" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>

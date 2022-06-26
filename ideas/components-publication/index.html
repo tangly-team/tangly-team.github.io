@@ -1,0 +1,961 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta name="generator" content="Hugo 0.101.0" />
+<meta content="index, follow" name="robots">
+
+
+<link rel="shortcut icon" href="/blog.tangly.net/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/blog.tangly.net/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-192x192.png" sizes="192x192">
+
+<title>Components Publication | tangly OS Components</title>
+<meta content="Workflow to publish open source components" name="description">
+<meta property="og:title" content="Components Publication" />
+<meta property="og:description" content="Workflow to publish open source components" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="blog.tangly.net/ideas/components-publication/" /><meta property="article:section" content="ideas" />
+<meta property="article:published_time" content="2019-05-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-01T00:00:00+00:00" /><meta property="og:site_name" content="tangly OS Components" />
+
+<meta itemprop="name" content="Components Publication">
+<meta itemprop="description" content="Workflow to publish open source components"><meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1198">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Components Publication"/>
+<meta name="twitter:description" content="Workflow to publish open source components"/>
+
+
+
+
+<link rel="preload" href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" as="style">
+<link href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" rel="stylesheet" integrity="">
+
+<script
+    crossorigin="anonymous"
+    integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+    crossorigin="anonymous"
+    integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+    src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-90395055-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="blog.tangly.net/">
+		<span class="navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns="http://www.w3.org/2000/svg" width="200pt" height="200pt" viewBox="0 0 200 200" id="svg2486" sodipodi:version=".32" inkscape:version=".46" sodipodi:docname="Trefoil knot right.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape"><sodipodi:namedview inkscape:window-height="968" inkscape:window-width="1280" inkscape:pageshadow="2" inkscape:pageopacity="0" guidetolerance="10" gridtolerance="10" objecttolerance="10" borderopacity="1" bordercolor="#666666" pagecolor="#ffffff" id="base" showgrid="false" inkscape:zoom="1.3067333" inkscape:cx="249.63266" inkscape:cy="62.855447" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:current-layer="svg2486"/><defs id="defs2488"><inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 125 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="250 : 125 : 1" inkscape:persp3d-origin="125 : 83.333333 : 1" id="perspective2513"/><clipPath id="clip0"><rect width="200" height="200" id="rect2491"/></clipPath></defs><path id="path2494" d="M0 0H2e2V2e2H0V0z" style="fill:none;stroke:#fff;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2498" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2500" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2502" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2504" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2506" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2508" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:#000;fill-rule:nonzero;stroke:none"/></svg></span><span class="font-weight-bold">tangly OS Components</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/docs/" ><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="blog.tangly.net/ideas/" ><span class="active">Ideas</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/expertise/" ><span>Expertise</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Repositories
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://github.com/tangly-team/tangly-os/">GitHub</a>
+	
+	<a class="dropdown-item" href="https://gitlab.com/marcelbaumann/tangly-os">GitLab</a>
+	
+	<a class="dropdown-item" href="https://bitbucket.org/tangly-team/tangly-os/">Bitbucket</a>
+	
+</div>
+
+			</li>
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/blog.tangly.net/offline-search-index.72cb1c62467a6d39fe4e23b79eb68cc5.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="50"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/blog.tangly.net/offline-search-index.72cb1c62467a6d39fe4e23b79eb68cc5.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="50"
+>
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="collapse td-sidebar-nav foldable-nav" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blogtanglynetideas-li">
+  <a href="blog.tangly.net/ideas/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-blogtanglynetideas"><span class="">Ideas</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasagile-architecture-li">
+  <input type="checkbox" id="m-blogtanglynetideasagile-architecture-check"/>
+  <label for="m-blogtanglynetideasagile-architecture-check"><a href="blog.tangly.net/ideas/agile-architecture/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasagile-architecture"><span class="">Agile Architecture</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasarchitecture-code-scene-li">
+  <input type="checkbox" id="m-blogtanglynetideasarchitecture-code-scene-check"/>
+  <label for="m-blogtanglynetideasarchitecture-code-scene-check"><a href="blog.tangly.net/ideas/architecture-code-scene/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasarchitecture-code-scene"><span class="">Architecture Code Scene</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideascomponents-publication-li">
+  <input type="checkbox" id="m-blogtanglynetideascomponents-publication-check"/>
+  <label for="m-blogtanglynetideascomponents-publication-check"><a href="blog.tangly.net/ideas/components-publication/" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideascomponents-publication"><span class="td-sidebar-nav-active-item">Components Publication</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasdevelopment-good-practices-li">
+  <input type="checkbox" id="m-blogtanglynetideasdevelopment-good-practices-check"/>
+  <label for="m-blogtanglynetideasdevelopment-good-practices-check"><a href="blog.tangly.net/ideas/development-good-practices/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasdevelopment-good-practices"><span class="">Development Good Practices for Enterprise Java Solutions</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasdesign-conventions-li">
+  <input type="checkbox" id="m-blogtanglynetideasdesign-conventions-check"/>
+  <label for="m-blogtanglynetideasdesign-conventions-check"><a href="blog.tangly.net/ideas/design-conventions/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasdesign-conventions"><span class="">Design Conventions</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasextendable-domain-models-li">
+  <input type="checkbox" id="m-blogtanglynetideasextendable-domain-models-check"/>
+  <label for="m-blogtanglynetideasextendable-domain-models-check"><a href="blog.tangly.net/ideas/extendable-domain-models/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasextendable-domain-models"><span class="">Extendable Models</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasfunctional-programming-in-java-li">
+  <input type="checkbox" id="m-blogtanglynetideasfunctional-programming-in-java-check"/>
+  <label for="m-blogtanglynetideasfunctional-programming-in-java-check"><a href="blog.tangly.net/ideas/functional-programming-in-java/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasfunctional-programming-in-java"><span class="">Functional Programming</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetideasadr-li">
+  <input type="checkbox" id="m-blogtanglynetideasadr-check"/>
+  <label for="m-blogtanglynetideasadr-check"><a href="blog.tangly.net/ideas/adr/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetideasadr"><span class="">ADR</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasadros-008-use-log4j2-as-default-li">
+  <input type="checkbox" id="m-blogtanglynetideasadros-008-use-log4j2-as-default-check"/>
+  <label for="m-blogtanglynetideasadros-008-use-log4j2-as-default-check"><a href="blog.tangly.net/ideas/adr/os-008-use-log4j2-as-default/" title="OS 008: Use log4j2 as default logging framework" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasadros-008-use-log4j2-as-default"><span class="">Log4j2</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasadros-001-system-guava-removal-li">
+  <input type="checkbox" id="m-blogtanglynetideasadros-001-system-guava-removal-check"/>
+  <label for="m-blogtanglynetideasadros-001-system-guava-removal-check"><a href="blog.tangly.net/ideas/adr/os-001-system-guava-removal/" title="OS 001: System Guava Removal" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasadros-001-system-guava-removal"><span class="">Guava Removal</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasadros-002-unit-test-conventions-li">
+  <input type="checkbox" id="m-blogtanglynetideasadros-002-unit-test-conventions-check"/>
+  <label for="m-blogtanglynetideasadros-002-unit-test-conventions-check"><a href="blog.tangly.net/ideas/adr/os-002-unit-test-conventions/" title="OS 002: Unit Test Conventions" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasadros-002-unit-test-conventions"><span class="">Unit Test Conventions</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasadros-003-use-modern-java-constructs-li">
+  <input type="checkbox" id="m-blogtanglynetideasadros-003-use-modern-java-constructs-check"/>
+  <label for="m-blogtanglynetideasadros-003-use-modern-java-constructs-check"><a href="blog.tangly.net/ideas/adr/os-003-use-modern-java-constructs/" title="OS 003: Use Modern Java Constructs" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasadros-003-use-modern-java-constructs"><span class="">Use Modern Java Constructs</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasadros-004-publish-technical-documentation-through-static-website-li">
+  <input type="checkbox" id="m-blogtanglynetideasadros-004-publish-technical-documentation-through-static-website-check"/>
+  <label for="m-blogtanglynetideasadros-004-publish-technical-documentation-through-static-website-check"><a href="blog.tangly.net/ideas/adr/os-004-publish-technical-documentation-through-static-website/" title="OS 004: Publish Technical Documentation Through Static Website" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasadros-004-publish-technical-documentation-through-static-website"><span class="">Static Website</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasadros-005-publish-maven-central-artifact-li">
+  <input type="checkbox" id="m-blogtanglynetideasadros-005-publish-maven-central-artifact-check"/>
+  <label for="m-blogtanglynetideasadros-005-publish-maven-central-artifact-check"><a href="blog.tangly.net/ideas/adr/os-005-publish-maven-central-artifact/" title="OS 005: Publish Maven Central Artifacts" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasadros-005-publish-maven-central-artifact"><span class="">Publish Maven Central Artifacts</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasadros-006-dependency-injection-guice-li">
+  <input type="checkbox" id="m-blogtanglynetideasadros-006-dependency-injection-guice-check"/>
+  <label for="m-blogtanglynetideasadros-006-dependency-injection-guice-check"><a href="blog.tangly.net/ideas/adr/os-006-dependency-injection-guice/" title="OS 006: Dependency Injection with Guice" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasadros-006-dependency-injection-guice"><span class="">DI Guice</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasadros-007-persistence-microstream-li">
+  <input type="checkbox" id="m-blogtanglynetideasadros-007-persistence-microstream-check"/>
+  <label for="m-blogtanglynetideasadros-007-persistence-microstream-check"><a href="blog.tangly.net/ideas/adr/os-007-persistence-microstream/" title="OS 007: Persistence with MicroStream" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasadros-007-persistence-microstream"><span class="">MicroStream</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideasagile-transformations-li">
+  <input type="checkbox" id="m-blogtanglynetideasagile-transformations-check"/>
+  <label for="m-blogtanglynetideasagile-transformations-check"><a href="blog.tangly.net/ideas/agile-transformations/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideasagile-transformations"><span class="">Agile Transformations</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetideaslearnings-li">
+  <input type="checkbox" id="m-blogtanglynetideaslearnings-check"/>
+  <label for="m-blogtanglynetideaslearnings-check"><a href="blog.tangly.net/ideas/learnings/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetideaslearnings"><span class="">Learnings</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideaslearningslectures-li">
+  <input type="checkbox" id="m-blogtanglynetideaslearningslectures-check"/>
+  <label for="m-blogtanglynetideaslearningslectures-check"><a href="blog.tangly.net/ideas/learnings/lectures/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetideaslearningslectures"><span class="">Lectures</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideaslearningsbooks-li">
+  <input type="checkbox" id="m-blogtanglynetideaslearningsbooks-check"/>
+  <label for="m-blogtanglynetideaslearningsbooks-check"><a href="blog.tangly.net/ideas/learnings/books/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideaslearningsbooks"><span class="">Books</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideaslearningslinks-li">
+  <input type="checkbox" id="m-blogtanglynetideaslearningslinks-check"/>
+  <label for="m-blogtanglynetideaslearningslinks-check"><a href="blog.tangly.net/ideas/learnings/links/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetideaslearningslinks"><span class="">Links</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetideaslearningstalks-li">
+  <input type="checkbox" id="m-blogtanglynetideaslearningstalks-check"/>
+  <label for="m-blogtanglynetideaslearningstalks-check"><a href="blog.tangly.net/ideas/learnings/talks/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetideaslearningstalks"><span class="">Talks</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a id="print" href="blog.tangly.net/ideas/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
+
+</div>
+
+            
+
+
+
+
+            
+
+	
+		
+			
+				
+			
+			
+
+
+
+  
+  
+    <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      
+        <h5 class="taxonomy-title">Tags</h5>
+      
+      <ul class="taxonomy-terms">
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">80</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">architecture</span><span class="taxonomy-count">12</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/crm/" data-taxonomy-term="crm"><span class="taxonomy-label">crm</span><span class="taxonomy-count">6</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/design/" data-taxonomy-term="design"><span class="taxonomy-label">design</span><span class="taxonomy-count">23</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">devops</span><span class="taxonomy-count">2</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/domain-driven-design/" data-taxonomy-term="domain-driven-design"><span class="taxonomy-label">domain-driven-design</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/git/" data-taxonomy-term="git"><span class="taxonomy-label">git</span><span class="taxonomy-count">4</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/hugo/" data-taxonomy-term="hugo"><span class="taxonomy-label">hugo</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">java</span><span class="taxonomy-count">31</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/less/" data-taxonomy-term="less"><span class="taxonomy-label">LeSS</span><span class="taxonomy-count">2</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/organization/" data-taxonomy-term="organization"><span class="taxonomy-label">organization</span><span class="taxonomy-count">10</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/series-agile-design/" data-taxonomy-term="series-agile-design"><span class="taxonomy-label">series-agile-design</span><span class="taxonomy-count">6</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/series-how-healthy/" data-taxonomy-term="series-how-healthy"><span class="taxonomy-label">series-how-healthy</span><span class="taxonomy-count">4</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/series-identifiers/" data-taxonomy-term="series-identifiers"><span class="taxonomy-label">series-identifiers</span><span class="taxonomy-count">5</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/series-students/" data-taxonomy-term="series-students"><span class="taxonomy-label">series-students</span><span class="taxonomy-count">15</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/series-swiss-agile-trends/" data-taxonomy-term="series-swiss-agile-trends"><span class="taxonomy-label">series-swiss-agile-trends</span><span class="taxonomy-count">6</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/tangly/" data-taxonomy-term="tangly"><span class="taxonomy-label">tangly</span><span class="taxonomy-count">6</span></a></li>
+        
+      </ul>
+    </div>
+  
+
+		
+	
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="blog.tangly.net/ideas/">Ideas</a>
+    </li>
+  <li class="breadcrumb-item active">
+      <span>Components Publication</span>
+    </li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Components Publication</h1>
+	<div class="lead">Workflow to publish open source components</div>
+	<header class="article-meta">
+		
+
+  
+    
+      
+
+
+    
+  
+
+		
+	</header>    
+	<div class="sect1">
+<h2 id="_components_publication">Components Publication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>-:sectnums:
+:toc:</p>
+</div>
+<div class="sect2">
+<h3 id="_regular_git_repository_update">Regular Git Repository Update</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Push the changes to the Bitbucket repository</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Verify the build job in the CI pipeline was successful</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Push the changes to the GitHub repository.
+<em>The statistics for developer activities will be automatically updated.</em></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_maven_central_publication">Maven Central Publication</h3>
+<div class="paragraph">
+<p>The following process is used to publish <a href="https://www.tangly.net/">tangly</a> open source component on <a href="https://mvnrepository.com/repos/central">Maven Central</a>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Publish artifacts of a component with the script <code>uploadToMavenCentral.sh</code>.
+Do not use the gradle task <code>gradle publishAllPublicationsToMavenRepository -Pmode=prod</code>.
+Sonatype cannot handle a parallel upload of multiple components and simply close the connections during upload (Status 2020-Q2).</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Pre activity: test publishing with <code>gradle publishToMavenLocal</code></p>
+</li>
+<li>
+<p>Pre activity: check on bitbucket the product compiles through the <strong>CI</strong> continuous integration pipeline</p>
+</li>
+<li>
+<p>Post activity: <strong>tag repository</strong> on git to identify the version of the published packages.
+The tag version semantic part <strong>must</strong> be the same as the package version on <a href="https://mvnrepository.com/repos/central">Maven Central</a>
+The tag is of the form -{AcronymComponent}-MajorVersion-MinorVersion-PatchVersion-</p>
+</li>
+<li>
+<p>Verify with <code>git tag label</code> and <code>git push origin --tags</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Log into <a href="https://oss.sonatype.org/#welcome">Sonatype Maven Central Repository</a></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Go to <a href="https://oss.sonatype.org/#stagingRepositories">Staging Repositories</a></p>
+</li>
+<li>
+<p>Find your temporary repository at the end of the list</p>
+</li>
+<li>
+<p>Review the content of the repository</p>
+</li>
+<li>
+<p>Close the repository -button on tool list-</p>
+</li>
+<li>
+<p>Close stage is initiated and checks are performed.
+If everything was fine, the content was published.</p>
+</li>
+<li>
+<p>Release the artifact -button on the tool list-</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>See <a href="#website-publication">Static Website Publication</a> to update the website</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It takes up to one day until the component is visible in Maven Central website upon publication.</p>
+</div>
+<div class="paragraph">
+<p>On the positive side, the last publications were performed in less than 30 minutes.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Below the dependencies between tangly open source components as defined in the multi-modules <a href="https://gradle.org/">Gradle Build Tool</a> build file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/tangly-componentsDependencies.svg" alt="tangly componentsDependencies" width="2289" height="185"/>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_decisions">Decisions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The open source components are stored in a mono repository.
+Each component is declared as a gradle module.</p>
+</li>
+<li>
+<p>We use de facto standard Git.</p>
+</li>
+<li>
+<p>We are hosted at <a href="https://bitbucket.org">bitbucket</a>.</p>
+</li>
+<li>
+<p>The bitbucket repository is regularly synchronized with a GitHub mirror repository <a href="https://github.com/marcelbaumann/tangly-os.git">GitHub</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The synchronization is performed with the command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">git push <span style="color: #000080">--prune</span> https://github.com/marcelbaumann/tangly-os.git +refs/remotes/origin/<span style="color: #000000;font-weight: bold">*</span>:refs/heads/<span style="color: #000000;font-weight: bold">*</span> +refs/tags/<span style="color: #000000;font-weight: bold">*</span>:refs/tags/<span style="color: #000000;font-weight: bold">*</span> <i class="conum" data-value="1"></i><b>(1)</b>
+
+git remote <i class="conum" data-value="2"></i><b>(2)</b>
+
+git push origin-bitbucket <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Pushes the repository with all remotes, references and tags to GitHub specified repository</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>List all remotes associated with this git repository</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Pushes the master branch to the <em>origin-bitbucket</em> remote repository.
+The push shall trigger the continuous integration pipeline</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You must create a token for developer account to be able to push changes and trigger the CI pipeline.
+The username is your account username The password is the generated token
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
+Store it in a safe place.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_findings">Findings</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>We needed to manually publish the public key on <a href="http://keys.gnupg.net">keys.gnupg.net</a></p>
+</li>
+<li>
+<p>Gradle build file has a condition including disabling the signing plugin on the CI pipeline because keys and associated authentication are not available.
+I decided not to upload private keys to <a href="https://bitbucket.org/">bitbucket</a>.
+See the documentation at the beginning of the Gradle build file for details.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Set the property if you want to sign the component artifacts and publish to Maven Central.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="website-publication">Static Website Publication</h3>
+<div class="sect3">
+<h4 id="_introduction">Introduction</h4>
+<div class="paragraph">
+<p>The static website uses <a href="https://asciidoc.org/">Asciidoc</a> to write all documents.</p>
+</div>
+<div class="paragraph">
+<p>The static website uses  <a href="https://gohugo.io/">Hugo</a> as site generator.
+The Hugo theme is <a href="https://www.docsy.dev/">Docsy</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configure_asciidoctor">Configure Asciidoctor</h4>
+<div class="paragraph">
+<p>The new version of the <a href="https://gohugo.io/">Hugo</a> support configuration of <a href="https://asciidoctor.org/">Asciidoctor</a> through config.toml therefore no manipulation of asciidoctor is needed.
+As a bonus, the files generated by PlantUml are created in the correct folder.
+We still need to install the referenced packages.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell"><span style="color: #0086B3">sudo </span>gem <span style="color: #0086B3">install </span>asciidoctor-diagram <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #0086B3">sudo </span>gem <span style="color: #0086B3">install </span>asciidoctor-bibtex <i class="conum" data-value="2"></i><b>(2)</b>
+<span style="color: #0086B3">sudo </span>gem <span style="color: #0086B3">install </span>asciimath <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Provides support for all diagrams such as plantUML and mermaid.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Provides support for formal bibliography references.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Provides support for mathematical and logical expressions in documents.</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docsy_tailoring">Docsy Tailoring</h3>
+<div class="paragraph">
+<p>The docsy theme is missing some features.
+It does not support asciidoc styling or commenting blogs.
+Our extensions follow the official rules how a theme can be tailored and expended.</p>
+</div>
+<div class="paragraph">
+<p>The major changes are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Inclusion of the styling sheet <em>asciidoctor.scss</em> to style asciidoc documents
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</li>
+<li>
+<p>Inclusion of the shortcodes extension <em>shortcodes.html</em> layouts and the style file <em>shortcodes.scss</em> to support file attachments in the website
+<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
+</li>
+<li>
+<p>Extesnsion of the blog section with <em>comments-uttereances.html</em> to support comments on blog articles
+<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.</p>
+</li>
+<li>
+<p>Changes in the header and footer partials to display mathematical expressions and well-styled copyright
+<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All chagnes are defined in the assets and layouts folders as part of our website content.
+Hugo algorithms select local overwritten files and ignore the corresponding theme files.\</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The current structure of our extensions follow the official approach how a Hugo module should be extended.
+We do not change any files in the theme.
+All changes are defined locally.
+We use the selection algorithm of Hugo to activate our tailoring and extensions.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect3">
+<h4 id="_create_website">Create Website</h4>
+<div class="paragraph">
+<p>The tangly open source components website is hosted under <a href="http://blog.tangly.net/docs">Documentation</a>.</p>
+</div>
+<div class="paragraph">
+<p>Read the instructions in the asciidoctor script file under the scripts&#39; folder.
+Four scripts are provided to generate the Hugo static site with associated structure and theme.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the script <em>initiateHugo.sh</em> creates the layout of the site and retrieve the theme.</p>
+</li>
+<li>
+<p>the script <em>populateHugo.sh</em> populates the site with our content.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Upon completion of local development, you must start a local Hugo server and generate the indexing files for <a href="https://lunrjs.com/">lunr</a> search.
+Before uploading the site stop the Hugo local server.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the script <em>completeHugo.sh</em> generates the static pictures and copies them to the static folder and publish the whole site on bitbucket.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Upon completion, the site is published on the web for all.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_set_jdk_version_under_macos">Set JDK Version under macOS</h4>
+<div class="paragraph">
+<p>Install regular Java JDK such as the Oracle or OpenJDK distribution.
+They will be located under <em>/Library/Java/JavaVirtualMachines</em>.</p>
+</div>
+<div class="paragraph">
+<p>If using bash shell, add following commands to your .bash_profile.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell"><span style="color: #0086B3">alias </span>java11 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 11<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span>
+<span style="color: #0086B3">alias </span>java17 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 17<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span>
+<span style="color: #0086B3">alias </span>java18 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 18<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span>
+<span style="color: #0086B3">alias </span>java19 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 19<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can set the exact version such as <em>17.0.1</em> to precisely select a JDK or set an overall version such as <em>17</em> to select a generic version.</p>
+</div>
+<div class="paragraph">
+<p>After restarting your terminal the command <em>java17</em> will set JDK 17 to default JDK (if installed on your macOS).</p>
+</div>
+<div class="paragraph">
+<p>The list of JDK can be found with</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">/usr/libexec/java_home <span style="color: #000080">-V</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_create_docker_distribution">Create Docker Distribution</h4>
+<div class="paragraph">
+<p>Generate the ERP application as a production release.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">gradle <span style="color: #0086B3">install</span> <span style="color: #000080">-DproductionMode</span><span style="color: #000000;font-weight: bold">=</span><span style="color: #0086B3">true <i class="conum" data-value="1"></i><b>(1)</b>
+</span>gradle <span style="color: #0086B3">install</span> <span style="color: #000080">-Pproduction</span>
+unzip ./build/distributions/net.tangly.erp.ui-&lt;version&gt;.zip <i class="conum" data-value="2"></i><b>(2)</b>
+docker build <span style="color: #000080">-t</span> erp-docker <span style="color: #0086B3">.</span> <i class="conum" data-value="3"></i><b>(3)</b>
+docker run <span style="color: #000080">-ti</span> <span style="color: #000080">-p</span> 8080:8080 erp-docker <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Generates a production distribution stored under ./build/distributions</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Unzip the packed distribution because the docker base image does not contain unzip utility</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Build the docker image named <em>erp-docker</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Run the docker image <em>erp-docker</em> and map the image port to 8080</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. This is necessary if you have enabled two factors authentication. The other approach is to generate an SSH key and perform all operations other SSH.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. I asked for a change request on GitHub for Docsy to better support asciidoc documents. The Docsy team decided that their priorities are different and rejected the request.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. This change is defined as a merge request. The pull request is quite old and seems to have a low priority.
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. The current setup of the template does not allow selection of a comment solution per configuration.
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. An issue report exists on GitHub about the copyright issue.
+</div>
+</div>
+
+	
+	
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+
+
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Issue Tracker" aria-label="Issue Tracker">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os/issues">
+      <i class="bitbucket-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Documentation" aria-label="Documentation">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://blog.tangly.net/">
+      <i class="bitbucker-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Groups" aria-label="Groups">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://groups.google.com/g/tangly-os-components">
+      <i class="users-cog"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Bitbucket" aria-label="Bitbucket">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os">
+      <i class="bitbucket"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 tangly llc - Attribution 4.0 International (CC BY 4.0)</small>
+        
+	
+		<p class="mt-2"><a href="blog.tangly.net/about/">About tangly OS Components</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/blog.tangly.net/js/main.min.91798a335c881f1b6b805085ba4aa22d1dbd2b0b18d105d05189fa104ddae350.js" integrity="sha256-kXmKM1yIHxtrgFCFukqiLR29KwsY0QXQUYn6EE3a41A=" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>

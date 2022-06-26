@@ -1,0 +1,897 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta name="generator" content="Hugo 0.101.0" />
+<meta content="index, follow" name="robots">
+
+
+<link rel="shortcut icon" href="/blog.tangly.net/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/blog.tangly.net/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-192x192.png" sizes="192x192">
+
+<title>Release Notes | tangly OS Components</title>
+<meta content="
+ERP Invoices Library Change Logs
+
+
+This document provides a high-level view of the changes introduced in the ERP Invoices library by release.
+For a …" name="description">
+<meta property="og:title" content="Release Notes" />
+<meta property="og:description" content="ERP Invoices Library Change Logs This document provides a high-level view of the changes introduced in the ERP Invoices library by release. For a detailed view of what has changed, refer to the repository commits.
+0.2.6 (2021-08-31) First version of the library packed as a DDD bounded domain
+Requires Java 16 or higher due to extensive usage of records and sealed classes" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="blog.tangly.net/docs/domains/invoices/releasesnotes/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2019-05-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-01T00:00:00+00:00" /><meta property="og:site_name" content="tangly OS Components" />
+
+<meta itemprop="name" content="Release Notes">
+<meta itemprop="description" content="ERP Invoices Library Change Logs This document provides a high-level view of the changes introduced in the ERP Invoices library by release. For a detailed view of what has changed, refer to the repository commits.
+0.2.6 (2021-08-31) First version of the library packed as a DDD bounded domain
+Requires Java 16 or higher due to extensive usage of records and sealed classes"><meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="62">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Release Notes"/>
+<meta name="twitter:description" content="ERP Invoices Library Change Logs This document provides a high-level view of the changes introduced in the ERP Invoices library by release. For a detailed view of what has changed, refer to the repository commits.
+0.2.6 (2021-08-31) First version of the library packed as a DDD bounded domain
+Requires Java 16 or higher due to extensive usage of records and sealed classes"/>
+
+
+
+
+<link rel="preload" href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" as="style">
+<link href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" rel="stylesheet" integrity="">
+
+<script
+    crossorigin="anonymous"
+    integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+    crossorigin="anonymous"
+    integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+    src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-90395055-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="blog.tangly.net/">
+		<span class="navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns="http://www.w3.org/2000/svg" width="200pt" height="200pt" viewBox="0 0 200 200" id="svg2486" sodipodi:version=".32" inkscape:version=".46" sodipodi:docname="Trefoil knot right.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape"><sodipodi:namedview inkscape:window-height="968" inkscape:window-width="1280" inkscape:pageshadow="2" inkscape:pageopacity="0" guidetolerance="10" gridtolerance="10" objecttolerance="10" borderopacity="1" bordercolor="#666666" pagecolor="#ffffff" id="base" showgrid="false" inkscape:zoom="1.3067333" inkscape:cx="249.63266" inkscape:cy="62.855447" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:current-layer="svg2486"/><defs id="defs2488"><inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 125 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="250 : 125 : 1" inkscape:persp3d-origin="125 : 83.333333 : 1" id="perspective2513"/><clipPath id="clip0"><rect width="200" height="200" id="rect2491"/></clipPath></defs><path id="path2494" d="M0 0H2e2V2e2H0V0z" style="fill:none;stroke:#fff;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2498" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2500" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2502" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2504" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2506" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2508" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:#000;fill-rule:nonzero;stroke:none"/></svg></span><span class="font-weight-bold">tangly OS Components</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="blog.tangly.net/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/ideas/" ><span>Ideas</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/expertise/" ><span>Expertise</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Repositories
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://github.com/tangly-team/tangly-os/">GitHub</a>
+	
+	<a class="dropdown-item" href="https://gitlab.com/marcelbaumann/tangly-os">GitLab</a>
+	
+	<a class="dropdown-item" href="https://bitbucket.org/tangly-team/tangly-os/">Bitbucket</a>
+	
+</div>
+
+			</li>
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/blog.tangly.net/offline-search-index.72cb1c62467a6d39fe4e23b79eb68cc5.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="50"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/blog.tangly.net/offline-search-index.72cb1c62467a6d39fe4e23b79eb68cc5.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="50"
+>
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="collapse td-sidebar-nav foldable-nav" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blogtanglynetdocs-li">
+  <a href="blog.tangly.net/docs/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-blogtanglynetdocs"><span class="">Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsbdd-li">
+  <input type="checkbox" id="m-blogtanglynetdocsbdd-check"/>
+  <label for="m-blogtanglynetdocsbdd-check"><a href="blog.tangly.net/docs/bdd/" title="BDD - Behavior Driven Development" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsbdd"><span class="">BDD</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsbddreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsbddreadme-check"/>
+  <label for="m-blogtanglynetdocsbddreadme-check"><a href="blog.tangly.net/docs/bdd/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsbddreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsbddreleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsbddreleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsbddreleasesnotes-check"><a href="blog.tangly.net/docs/bdd/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsbddreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsbdduserguidebdd-li">
+  <input type="checkbox" id="m-blogtanglynetdocsbdduserguidebdd-check"/>
+  <label for="m-blogtanglynetdocsbdduserguidebdd-check"><a href="blog.tangly.net/docs/bdd/userguidebdd/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsbdduserguidebdd"><span class="">User Guide Behavior Driven Design Library</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsbddbdd-report-li">
+  <input type="checkbox" id="m-blogtanglynetdocsbddbdd-report-check"/>
+  <label for="m-blogtanglynetdocsbddbdd-report-check"><a href="blog.tangly.net/docs/bdd/bdd-report/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsbddbdd-report"><span class="">bdd Report</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsbddadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsbddadr-check"/>
+  <label for="m-blogtanglynetdocsbddadr-check"><a href="blog.tangly.net/docs/bdd/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsbddadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocscommons-li">
+  <input type="checkbox" id="m-blogtanglynetdocscommons-check"/>
+  <label for="m-blogtanglynetdocscommons-check"><a href="blog.tangly.net/docs/commons/" title="Commons - Common utility libraries" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocscommons"><span class="">Commons</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocscommonsreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocscommonsreadme-check"/>
+  <label for="m-blogtanglynetdocscommonsreadme-check"><a href="blog.tangly.net/docs/commons/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocscommonsreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocscommonsreleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocscommonsreleasesnotes-check"/>
+  <label for="m-blogtanglynetdocscommonsreleasesnotes-check"><a href="blog.tangly.net/docs/commons/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocscommonsreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocscommonsreferencecodes-li">
+  <input type="checkbox" id="m-blogtanglynetdocscommonsreferencecodes-check"/>
+  <label for="m-blogtanglynetdocscommonsreferencecodes-check"><a href="blog.tangly.net/docs/commons/referencecodes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocscommonsreferencecodes"><span class="">Reference Codes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocscommonsadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocscommonsadr-check"/>
+  <label for="m-blogtanglynetdocscommonsadr-check"><a href="blog.tangly.net/docs/commons/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocscommonsadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocscore-li">
+  <input type="checkbox" id="m-blogtanglynetdocscore-check"/>
+  <label for="m-blogtanglynetdocscore-check"><a href="blog.tangly.net/docs/core/" title="Core - Core model abstractions" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocscore"><span class="">Core</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocscorereadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocscorereadme-check"/>
+  <label for="m-blogtanglynetdocscorereadme-check"><a href="blog.tangly.net/docs/core/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocscorereadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocscorereleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocscorereleasesnotes-check"/>
+  <label for="m-blogtanglynetdocscorereleasesnotes-check"><a href="blog.tangly.net/docs/core/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocscorereleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocscoremodels-li">
+  <input type="checkbox" id="m-blogtanglynetdocscoremodels-check"/>
+  <label for="m-blogtanglynetdocscoremodels-check"><a href="blog.tangly.net/docs/core/models/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocscoremodels"><span class="">Bounded Domain Models</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocscoreadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocscoreadr-check"/>
+  <label for="m-blogtanglynetdocscoreadr-check"><a href="blog.tangly.net/docs/core/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocscoreadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdev-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdev-check"/>
+  <label for="m-blogtanglynetdocsdev-check"><a href="blog.tangly.net/docs/dev/" title="Development" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdev"><span class="">Dev</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdevreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdevreadme-check"/>
+  <label for="m-blogtanglynetdocsdevreadme-check"><a href="blog.tangly.net/docs/dev/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdevreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdevreleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdevreleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsdevreleasesnotes-check"><a href="blog.tangly.net/docs/dev/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdevreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdevdevelopmentapproach-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdevdevelopmentapproach-check"/>
+  <label for="m-blogtanglynetdocsdevdevelopmentapproach-check"><a href="blog.tangly.net/docs/dev/developmentapproach/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdevdevelopmentapproach"><span class=""></span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsfsm-li">
+  <input type="checkbox" id="m-blogtanglynetdocsfsm-check"/>
+  <label for="m-blogtanglynetdocsfsm-check"><a href="blog.tangly.net/docs/fsm/" title="FSM - Hierarchical Finite State Machine" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsfsm"><span class="">FSM</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsfsmreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsfsmreadme-check"/>
+  <label for="m-blogtanglynetdocsfsmreadme-check"><a href="blog.tangly.net/docs/fsm/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsfsmreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsfsmreleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsfsmreleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsfsmreleasesnotes-check"><a href="blog.tangly.net/docs/fsm/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsfsmreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsfsmuserguidefsm-li">
+  <input type="checkbox" id="m-blogtanglynetdocsfsmuserguidefsm-check"/>
+  <label for="m-blogtanglynetdocsfsmuserguidefsm-check"><a href="blog.tangly.net/docs/fsm/userguidefsm/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsfsmuserguidefsm"><span class="">User Guide Finite State Machine</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsfsmuserguideactor-li">
+  <input type="checkbox" id="m-blogtanglynetdocsfsmuserguideactor-check"/>
+  <label for="m-blogtanglynetdocsfsmuserguideactor-check"><a href="blog.tangly.net/docs/fsm/userguideactor/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsfsmuserguideactor"><span class="">User Guide Actors</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsfsmdesign-li">
+  <input type="checkbox" id="m-blogtanglynetdocsfsmdesign-check"/>
+  <label for="m-blogtanglynetdocsfsmdesign-check"><a href="blog.tangly.net/docs/fsm/design/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsfsmdesign"><span class="">Design Considerations</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsfsmadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsfsmadr-check"/>
+  <label for="m-blogtanglynetdocsfsmadr-check"><a href="blog.tangly.net/docs/fsm/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsfsmadr"><span class="">ADR</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsfsmadrfsm-001-move-abstractions-to-jdk-classes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsfsmadrfsm-001-move-abstractions-to-jdk-classes-check"/>
+  <label for="m-blogtanglynetdocsfsmadrfsm-001-move-abstractions-to-jdk-classes-check"><a href="blog.tangly.net/docs/fsm/adr/fsm-001-move-abstractions-to-jdk-classes/" title="FSM 001: Move Abstractions to JDK Classes" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsfsmadrfsm-001-move-abstractions-to-jdk-classes"><span class="">Move Abstractions to JDK Classes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsfsmadrfsm-002-publish-maven-central-artifact-li">
+  <input type="checkbox" id="m-blogtanglynetdocsfsmadrfsm-002-publish-maven-central-artifact-check"/>
+  <label for="m-blogtanglynetdocsfsmadrfsm-002-publish-maven-central-artifact-check"><a href="blog.tangly.net/docs/fsm/adr/fsm-002-publish-maven-central-artifact/" title="FSM-002: Publish Maven Central Artifacts" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsfsmadrfsm-002-publish-maven-central-artifact"><span class="">Publish Maven Central Artifacts</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsgleam-li">
+  <input type="checkbox" id="m-blogtanglynetdocsgleam-check"/>
+  <label for="m-blogtanglynetdocsgleam-check"><a href="blog.tangly.net/docs/gleam/" title="Gleam - Library to import and export domain objects to TSV and JSON data files" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsgleam"><span class="">Gleam</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsgleamreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsgleamreadme-check"/>
+  <label for="m-blogtanglynetdocsgleamreadme-check"><a href="blog.tangly.net/docs/gleam/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsgleamreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsgleamreleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsgleamreleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsgleamreleasesnotes-check"><a href="blog.tangly.net/docs/gleam/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsgleamreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsgleamuserguide-li">
+  <input type="checkbox" id="m-blogtanglynetdocsgleamuserguide-check"/>
+  <label for="m-blogtanglynetdocsgleamuserguide-check"><a href="blog.tangly.net/docs/gleam/userguide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsgleamuserguide"><span class="">User Guide Gleam</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsgleamadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsgleamadr-check"/>
+  <label for="m-blogtanglynetdocsgleamadr-check"><a href="blog.tangly.net/docs/gleam/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsgleamadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsui-li">
+  <input type="checkbox" id="m-blogtanglynetdocsui-check"/>
+  <label for="m-blogtanglynetdocsui-check"><a href="blog.tangly.net/docs/ui/" title="Vaadin UI" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsui"><span class="">UI</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsuireadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsuireadme-check"/>
+  <label for="m-blogtanglynetdocsuireadme-check"><a href="blog.tangly.net/docs/ui/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsuireadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsuireleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsuireleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsuireleasesnotes-check"><a href="blog.tangly.net/docs/ui/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsuireleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsuiuserguide-li">
+  <input type="checkbox" id="m-blogtanglynetdocsuiuserguide-check"/>
+  <label for="m-blogtanglynetdocsuiuserguide-check"><a href="blog.tangly.net/docs/ui/userguide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsuiuserguide"><span class="">User Guide UI</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsuideveloperguide-li">
+  <input type="checkbox" id="m-blogtanglynetdocsuideveloperguide-check"/>
+  <label for="m-blogtanglynetdocsuideveloperguide-check"><a href="blog.tangly.net/docs/ui/developerguide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsuideveloperguide"><span class="">Developer Guide UI</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsuiuserguideerp-li">
+  <input type="checkbox" id="m-blogtanglynetdocsuiuserguideerp-check"/>
+  <label for="m-blogtanglynetdocsuiuserguideerp-check"><a href="blog.tangly.net/docs/ui/userguideerp/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsuiuserguideerp"><span class="">User Guide tangly ERP</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsuidesign-li">
+  <input type="checkbox" id="m-blogtanglynetdocsuidesign-check"/>
+  <label for="m-blogtanglynetdocsuidesign-check"><a href="blog.tangly.net/docs/ui/design/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsuidesign"><span class="">ERP Design</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blogtanglynetdocsdomains-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomains-check" checked/>
+  <label for="m-blogtanglynetdocsdomains-check"><a href="blog.tangly.net/docs/domains/" title="ERP Bounded Domains" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomains"><span class="">ERP Domains</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainsagile-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsagile-check"/>
+  <label for="m-blogtanglynetdocsdomainsagile-check"><a href="blog.tangly.net/docs/domains/agile/" title="Agile - Agile Bounded Domain" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsagile"><span class="">Agile</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsagilereadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsagilereadme-check"/>
+  <label for="m-blogtanglynetdocsdomainsagilereadme-check"><a href="blog.tangly.net/docs/domains/agile/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsagilereadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsagileadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsagileadr-check"/>
+  <label for="m-blogtanglynetdocsdomainsagileadr-check"><a href="blog.tangly.net/docs/domains/agile/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsagileadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainsapps-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsapps-check"/>
+  <label for="m-blogtanglynetdocsdomainsapps-check"><a href="blog.tangly.net/docs/domains/apps/" title="BDD - Behavior Driven Development" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsapps"><span class="">BDD</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsappsreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsappsreadme-check"/>
+  <label for="m-blogtanglynetdocsdomainsappsreadme-check"><a href="blog.tangly.net/docs/domains/apps/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsappsreadme"><span class="">Readme</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainscollaborators-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainscollaborators-check"/>
+  <label for="m-blogtanglynetdocsdomainscollaborators-check"><a href="blog.tangly.net/docs/domains/collaborators/" title="Collaborators - Collaborators Bounded Domain" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainscollaborators"><span class="">Collaborators</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainscollaboratorscollaborators-design-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainscollaboratorscollaborators-design-check"/>
+  <label for="m-blogtanglynetdocsdomainscollaboratorscollaborators-design-check"><a href="blog.tangly.net/docs/domains/collaborators/collaborators-design/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainscollaboratorscollaborators-design"><span class="">Collaborators Design</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainscollaboratorsreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainscollaboratorsreadme-check"/>
+  <label for="m-blogtanglynetdocsdomainscollaboratorsreadme-check"><a href="blog.tangly.net/docs/domains/collaborators/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainscollaboratorsreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainscollaboratorsadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainscollaboratorsadr-check"/>
+  <label for="m-blogtanglynetdocsdomainscollaboratorsadr-check"><a href="blog.tangly.net/docs/domains/collaborators/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainscollaboratorsadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainscrm-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainscrm-check"/>
+  <label for="m-blogtanglynetdocsdomainscrm-check"><a href="blog.tangly.net/docs/domains/crm/" title="CRM - CRM Bounded Domain" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainscrm"><span class="">CRM</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainscrmreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainscrmreadme-check"/>
+  <label for="m-blogtanglynetdocsdomainscrmreadme-check"><a href="blog.tangly.net/docs/domains/crm/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainscrmreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainscrmreleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainscrmreleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsdomainscrmreleasesnotes-check"><a href="blog.tangly.net/docs/domains/crm/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainscrmreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainscrmmodels-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainscrmmodels-check"/>
+  <label for="m-blogtanglynetdocsdomainscrmmodels-check"><a href="blog.tangly.net/docs/domains/crm/models/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainscrmmodels"><span class="">Bounded Domain CRM Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainscrmadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainscrmadr-check"/>
+  <label for="m-blogtanglynetdocsdomainscrmadr-check"><a href="blog.tangly.net/docs/domains/crm/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainscrmadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blogtanglynetdocsdomainsinvoices-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsinvoices-check" checked/>
+  <label for="m-blogtanglynetdocsdomainsinvoices-check"><a href="blog.tangly.net/docs/domains/invoices/" title="Invoices - Invoices Bounded Domain" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsinvoices"><span class="">Invoices</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsinvoicesreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsinvoicesreadme-check"/>
+  <label for="m-blogtanglynetdocsdomainsinvoicesreadme-check"><a href="blog.tangly.net/docs/domains/invoices/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsinvoicesreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsinvoicesreleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsinvoicesreleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsdomainsinvoicesreleasesnotes-check"><a href="blog.tangly.net/docs/domains/invoices/releasesnotes/" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsinvoicesreleasesnotes"><span class="td-sidebar-nav-active-item">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsinvoicesadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsinvoicesadr-check"/>
+  <label for="m-blogtanglynetdocsdomainsinvoicesadr-check"><a href="blog.tangly.net/docs/domains/invoices/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsinvoicesadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainsledger-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsledger-check"/>
+  <label for="m-blogtanglynetdocsdomainsledger-check"><a href="blog.tangly.net/docs/domains/ledger/" title="Ledger - Ledger Bounded Domain" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsledger"><span class="">Ledger</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsledgerreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsledgerreadme-check"/>
+  <label for="m-blogtanglynetdocsdomainsledgerreadme-check"><a href="blog.tangly.net/docs/domains/ledger/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsledgerreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsledgerreleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsledgerreleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsdomainsledgerreleasesnotes-check"><a href="blog.tangly.net/docs/domains/ledger/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsledgerreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsledgeruserguideports-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsledgeruserguideports-check"/>
+  <label for="m-blogtanglynetdocsdomainsledgeruserguideports-check"><a href="blog.tangly.net/docs/domains/ledger/userguideports/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsledgeruserguideports"><span class="">ERP Ports</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsledger-models-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsledger-models-check"/>
+  <label for="m-blogtanglynetdocsdomainsledger-models-check"><a href="blog.tangly.net/docs/domains/ledger/-models/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsledger-models"><span class="">Bounded Domain Invoice Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainsledgeradr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsledgeradr-check"/>
+  <label for="m-blogtanglynetdocsdomainsledgeradr-check"><a href="blog.tangly.net/docs/domains/ledger/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsledgeradr"><span class="">ADR</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsledgeradrled-001-ledger-tag-for-vat-costs-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsledgeradrled-001-ledger-tag-for-vat-costs-check"/>
+  <label for="m-blogtanglynetdocsdomainsledgeradrled-001-ledger-tag-for-vat-costs-check"><a href="blog.tangly.net/docs/domains/ledger/adr/led-001-ledger-tag-for-vat-costs/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsledgeradrled-001-ledger-tag-for-vat-costs"><span class="">LED 001</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainsproducts-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsproducts-check"/>
+  <label for="m-blogtanglynetdocsdomainsproducts-check"><a href="blog.tangly.net/docs/domains/products/" title="Products - Products Bounded Domain" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsproducts"><span class="">Products</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsproductsreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsproductsreadme-check"/>
+  <label for="m-blogtanglynetdocsdomainsproductsreadme-check"><a href="blog.tangly.net/docs/domains/products/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsproductsreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsproductsreleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsproductsreleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsdomainsproductsreleasesnotes-check"><a href="blog.tangly.net/docs/domains/products/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsproductsreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsproductsmodels-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsproductsmodels-check"/>
+  <label for="m-blogtanglynetdocsdomainsproductsmodels-check"><a href="blog.tangly.net/docs/domains/products/models/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsproductsmodels"><span class="">Bounded Domain Producgts Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainsproductsadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsproductsadr-check"/>
+  <label for="m-blogtanglynetdocsdomainsproductsadr-check"><a href="blog.tangly.net/docs/domains/products/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsproductsadr"><span class="">ADR</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsproductsadrprj-001-project-tag-for-project-costs-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsproductsadrprj-001-project-tag-for-project-costs-check"/>
+  <label for="m-blogtanglynetdocsdomainsproductsadrprj-001-project-tag-for-project-costs-check"><a href="blog.tangly.net/docs/domains/products/adr/prj-001-project-tag-for-project-costs/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsproductsadrprj-001-project-tag-for-project-costs"><span class="">PRJ 001</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainsshared-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsshared-check"/>
+  <label for="m-blogtanglynetdocsdomainsshared-check"><a href="blog.tangly.net/docs/domains/shared/" title="Shared - Shared Kernel" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsshared"><span class="">UI</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainssharedreadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainssharedreadme-check"/>
+  <label for="m-blogtanglynetdocsdomainssharedreadme-check"><a href="blog.tangly.net/docs/domains/shared/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainssharedreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainssharedreleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainssharedreleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsdomainssharedreleasesnotes-check"><a href="blog.tangly.net/docs/domains/shared/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainssharedreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainssharedmodels-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainssharedmodels-check"/>
+  <label for="m-blogtanglynetdocsdomainssharedmodels-check"><a href="blog.tangly.net/docs/domains/shared/models/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainssharedmodels"><span class="">Bounded Domain Shared Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainssharedadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainssharedadr-check"/>
+  <label for="m-blogtanglynetdocsdomainssharedadr-check"><a href="blog.tangly.net/docs/domains/shared/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainssharedadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainsui-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsui-check"/>
+  <label for="m-blogtanglynetdocsdomainsui-check"><a href="blog.tangly.net/docs/domains/ui/" title="ERP-UI - UI for ERP Bounded Domains" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsui"><span class="">ERP-UI</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsuireadme-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsuireadme-check"/>
+  <label for="m-blogtanglynetdocsdomainsuireadme-check"><a href="blog.tangly.net/docs/domains/ui/readme/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsuireadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsuireleasesnotes-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsuireleasesnotes-check"/>
+  <label for="m-blogtanglynetdocsdomainsuireleasesnotes-check"><a href="blog.tangly.net/docs/domains/ui/releasesnotes/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsuireleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsuimodels-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsuimodels-check"/>
+  <label for="m-blogtanglynetdocsdomainsuimodels-check"><a href="blog.tangly.net/docs/domains/ui/models/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsuimodels"><span class="">Bounded Domain UI Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-blogtanglynetdocsdomainsuiadr-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsuiadr-check"/>
+  <label for="m-blogtanglynetdocsdomainsuiadr-check"><a href="blog.tangly.net/docs/domains/ui/adr/" title="Architecture Design Record (ADR)" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-blogtanglynetdocsdomainsuiadr"><span class="">ADR</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainsuiadrerpui-001-markdown-for-all-texts-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainsuiadrerpui-001-markdown-for-all-texts-check"/>
+  <label for="m-blogtanglynetdocsdomainsuiadrerpui-001-markdown-for-all-texts-check"><a href="blog.tangly.net/docs/domains/ui/adr/erpui-001-markdown-for-all-texts/" title="ERPUI-001: Markdown for all Text Fields" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainsuiadrerpui-001-markdown-for-all-texts"><span class="">Markdown Support</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocsdomainserp-li">
+  <input type="checkbox" id="m-blogtanglynetdocsdomainserp-check"/>
+  <label for="m-blogtanglynetdocsdomainserp-check"><a href="blog.tangly.net/docs/domains/erp/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocsdomainserp"><span class="">Services ERP</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogtanglynetdocscontribution-guidelines-li">
+  <input type="checkbox" id="m-blogtanglynetdocscontribution-guidelines-check"/>
+  <label for="m-blogtanglynetdocscontribution-guidelines-check"><a href="blog.tangly.net/docs/contribution-guidelines/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-blogtanglynetdocscontribution-guidelines"><span class="">Contributing Guidelines</span></a></label>
+  
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a id="print" href="blog.tangly.net/docs/domains/invoices/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
+
+</div>
+
+            
+
+
+
+
+            
+
+	
+		
+			
+				
+			
+			
+
+
+
+  
+  
+    <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      
+        <h5 class="taxonomy-title">Tags</h5>
+      
+      <ul class="taxonomy-terms">
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">80</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">architecture</span><span class="taxonomy-count">12</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/crm/" data-taxonomy-term="crm"><span class="taxonomy-label">crm</span><span class="taxonomy-count">6</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/design/" data-taxonomy-term="design"><span class="taxonomy-label">design</span><span class="taxonomy-count">23</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">devops</span><span class="taxonomy-count">2</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/domain-driven-design/" data-taxonomy-term="domain-driven-design"><span class="taxonomy-label">domain-driven-design</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/git/" data-taxonomy-term="git"><span class="taxonomy-label">git</span><span class="taxonomy-count">4</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/hugo/" data-taxonomy-term="hugo"><span class="taxonomy-label">hugo</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">java</span><span class="taxonomy-count">31</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/less/" data-taxonomy-term="less"><span class="taxonomy-label">LeSS</span><span class="taxonomy-count">2</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/organization/" data-taxonomy-term="organization"><span class="taxonomy-label">organization</span><span class="taxonomy-count">10</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/series-agile-design/" data-taxonomy-term="series-agile-design"><span class="taxonomy-label">series-agile-design</span><span class="taxonomy-count">6</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/series-how-healthy/" data-taxonomy-term="series-how-healthy"><span class="taxonomy-label">series-how-healthy</span><span class="taxonomy-count">4</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/series-identifiers/" data-taxonomy-term="series-identifiers"><span class="taxonomy-label">series-identifiers</span><span class="taxonomy-count">5</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/series-students/" data-taxonomy-term="series-students"><span class="taxonomy-label">series-students</span><span class="taxonomy-count">15</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/series-swiss-agile-trends/" data-taxonomy-term="series-swiss-agile-trends"><span class="taxonomy-label">series-swiss-agile-trends</span><span class="taxonomy-count">6</span></a></li>
+        
+          <li><a class="taxonomy-term" href="blog.tangly.net/tags/tangly/" data-taxonomy-term="tangly"><span class="taxonomy-label">tangly</span><span class="taxonomy-count">6</span></a></li>
+        
+      </ul>
+    </div>
+  
+
+		
+	
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="blog.tangly.net/docs/">Documentation</a>
+    </li>
+  <li class="breadcrumb-item"><a href="blog.tangly.net/docs/domains/">ERP Domains</a>
+    </li>
+  <li class="breadcrumb-item"><a href="blog.tangly.net/docs/domains/invoices/">Invoices</a>
+    </li>
+  <li class="breadcrumb-item active">
+      <span>Release Notes</span>
+    </li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Release Notes</h1>
+	
+	<header class="article-meta">
+		
+
+  
+    
+      
+
+
+    
+  
+
+		
+	</header>    
+	<div class="sect1">
+<h2 id="_erp_invoices_library_change_logs">ERP Invoices Library Change Logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document provides a high-level view of the changes introduced in the ERP Invoices library by release.
+For a detailed view of what has changed, refer to the <a href="https://bitbucket.org/tangly-team/tangly-os">repository</a> commits.</p>
+</div>
+<div class="sect2">
+<h3 id="_0_2_6_2021_08_31">0.2.6 (2021-08-31)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>First version of the library packed as a DDD bounded domain</p>
+</li>
+<li>
+<p>Requires Java 16 or higher due to extensive usage of <em>records</em> and <em>sealed</em> classes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+	
+	
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+
+
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Issue Tracker" aria-label="Issue Tracker">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os/issues">
+      <i class="bitbucket-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Documentation" aria-label="Documentation">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://blog.tangly.net/">
+      <i class="bitbucker-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Groups" aria-label="Groups">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://groups.google.com/g/tangly-os-components">
+      <i class="users-cog"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Bitbucket" aria-label="Bitbucket">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os">
+      <i class="bitbucket"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 tangly llc - Attribution 4.0 International (CC BY 4.0)</small>
+        
+	
+		<p class="mt-2"><a href="blog.tangly.net/about/">About tangly OS Components</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/blog.tangly.net/js/main.min.91798a335c881f1b6b805085ba4aa22d1dbd2b0b18d105d05189fa104ddae350.js" integrity="sha256-kXmKM1yIHxtrgFCFukqiLR29KwsY0QXQUYn6EE3a41A=" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>

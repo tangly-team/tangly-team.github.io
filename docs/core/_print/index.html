@@ -1,0 +1,736 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta name="generator" content="Hugo 0.101.0" />
+<link href="blog.tangly.net/docs/core/" rel="canonical" type="text/html">
+<link href="blog.tangly.net/docs/core/index.xml" rel="alternate" type="application/rss&#43;xml">
+<meta content="noindex, nofollow" name="robots">
+
+
+<link rel="shortcut icon" href="/blog.tangly.net/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/blog.tangly.net/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/blog.tangly.net/favicons/android-192x192.png" sizes="192x192">
+
+<title>Core - Core model abstractions | tangly OS Components</title>
+<meta content="The readme, user manual, documentation of the component and architecture consideration of the components.
+The API documentation can be found under …" name="description">
+<meta property="og:title" content="Core - Core model abstractions" />
+<meta property="og:description" content="tangly llc Open Source Components" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="blog.tangly.net/docs/core/" /><meta property="og:site_name" content="tangly OS Components" />
+
+<meta itemprop="name" content="Core - Core model abstractions">
+<meta itemprop="description" content="tangly llc Open Source Components"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Core - Core model abstractions"/>
+<meta name="twitter:description" content="tangly llc Open Source Components"/>
+
+
+
+
+<link rel="preload" href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" as="style">
+<link href="/blog.tangly.net/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" rel="stylesheet" integrity="">
+
+<script
+    crossorigin="anonymous"
+    integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+    crossorigin="anonymous"
+    integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+    src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-90395055-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="blog.tangly.net/">
+		<span class="navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns="http://www.w3.org/2000/svg" width="200pt" height="200pt" viewBox="0 0 200 200" id="svg2486" sodipodi:version=".32" inkscape:version=".46" sodipodi:docname="Trefoil knot right.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape"><sodipodi:namedview inkscape:window-height="968" inkscape:window-width="1280" inkscape:pageshadow="2" inkscape:pageopacity="0" guidetolerance="10" gridtolerance="10" objecttolerance="10" borderopacity="1" bordercolor="#666666" pagecolor="#ffffff" id="base" showgrid="false" inkscape:zoom="1.3067333" inkscape:cx="249.63266" inkscape:cy="62.855447" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:current-layer="svg2486"/><defs id="defs2488"><inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 125 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="250 : 125 : 1" inkscape:persp3d-origin="125 : 83.333333 : 1" id="perspective2513"/><clipPath id="clip0"><rect width="200" height="200" id="rect2491"/></clipPath></defs><path id="path2494" d="M0 0H2e2V2e2H0V0z" style="fill:none;stroke:#fff;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2498" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2500" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2502" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2504" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2506" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2508" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:#000;fill-rule:nonzero;stroke:none"/></svg></span><span class="font-weight-bold">tangly OS Components</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="blog.tangly.net/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/ideas/" ><span>Ideas</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/expertise/" ><span>Expertise</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="blog.tangly.net/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Repositories
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://github.com/tangly-team/tangly-os/">GitHub</a>
+	
+	<a class="dropdown-item" href="https://gitlab.com/marcelbaumann/tangly-os">GitLab</a>
+	
+	<a class="dropdown-item" href="https://bitbucket.org/tangly-team/tangly-os/">Bitbucket</a>
+	
+</div>
+
+			</li>
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/blog.tangly.net/offline-search-index.72cb1c62467a6d39fe4e23b79eb68cc5.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="50"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="blog.tangly.net/docs/core/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Core - Core model abstractions</h1>
+
+
+
+
+
+
+<div class="content">
+      <p>The readme, user manual, documentation of the component and architecture consideration of the components.</p>
+<p>The API documentation can be found under <a href="/docs/core/api-core/index.html">Javadoc</a>.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-fe0f0bbc0238af6b509dee272c4024f9">1 - Readme</h1>
+    
+	<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Apache License 2.0"/></span>
+<span class="image"><img src="https://img.shields.io/maven-central/v/net.tangly/core.svg" alt="Maven Central"/></span>
+<a href="https://javadoc.io/doc/net.tangly/core"><span class="image"><img src="https://javadoc.io/badge2/net.tangly/core/javadoc.svg" alt="javadoc"/></span></a>
+<span class="image"><img src="https://img.shields.io/bitbucket/pipelines/tangly-team/tangly-os.svg" alt="Bitbucket Pipelines"/></span>
+<span class="image"><img src="https://img.shields.io/sonar/https/sonarcloud.io/tangly-os-at-tangly.net/coverage.svg" alt="Sonar Coverage"/></span>
+<span class="image"><img src="https://img.shields.io/bitbucket/issues-raw/tangly/tangly-os.svg" alt="Bitbucket open issues"/></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose">Purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>tangly core</strong> component provides key abstraction for domain driven development approach and entities with tags and comments.
+It requires <strong>Java 17 or higher</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_and_documentation">Download and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The library can be included in Maven as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"> <span style="color: #000080">&lt;dependency&gt;</span>
+ <span style="color: #000080">&lt;groupId&gt;</span>net.tangly<span style="color: #000080">&lt;/groupId&gt;</span>
+ <span style="color: #000080">&lt;artifactId&gt;</span>core<span style="color: #000080">&lt;/artifactId&gt;</span>
+ <span style="color: #000080">&lt;version&gt;</span>0.2.7<span style="color: #000080">&lt;/version&gt;</span>
+ <span style="color: #000080">&lt;/dependency&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The library can be included in Gradle as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy"> <span style="background-color: #f8f8f8">implementation</span> <span style="color: #d14">&#34;net.tangly:core:0.2.7&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation can be found under <a href="https://blog.tangly.net/docs/core/">Core</a></p>
+</div>
+<div class="paragraph">
+<p>For any further question and discussion you can use the forum <a href="https://groups.google.com/g/tangly-os-components">tangly-OS-Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution">Contribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are welcome to contribute to the product with pull requests on Bitbucket. You can download the source files from the
+<a href="https://bitbucket.org/tangly-team/tangly-os.git">bitbucket git repository</a> and build the library with the provided gradle configuration file.</p>
+</div>
+<div class="paragraph">
+<p>If you find a bug or want to request a feature, please use the <a href="https://bitbucket.org/tangly-team/tangly-os/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache license 2.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The documentation and examples are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Common (CC Attribution 4.0 International)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_awesome_sponsors_and_developers">Awesome Sponsors and Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Corporate sponsors are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.tangly.net">tangly llc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Individual developers are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linkedin.com/in/marcelbaumann">Marcel Baumann</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8e0ee6cdb09ce0c0a66630b80a9112a2">2 - Release Notes</h1>
+    
+	<div class="sect1">
+<h2 id="_core_library_change_logs">Core Library Change Logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document provides a high-level view of the changes introduced in the Core library by release.
+For a detailed view of what has changed, refer to the <a href="https://bitbucket.org/tangly-team/tangly-os">repository</a> commits.</p>
+</div>
+<div class="sect2">
+<h3 id="_0_2_7_2022_06_30">0.2.7 (2022-06-30)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Update of library dependencies, update to JDK-18, and modern Gradle approach to build solutions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_2_6_2021_08_31">0.2.6 (2021-08-31)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initial release of the library</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-110dc27b9293ac42466019777a3d809e">3 - Bounded Domain Models</h1>
+    
+	<div class="sect1">
+<h2 id="_bounded_domains_models">Bounded Domains Models</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_codes_model">Codes Model</h3>
+<div class="paragraph">
+<p>The abstraction of a reference table or reference codes.
+A code table is an extensible set of values.
+You can add values when needed and extend the model with temporal activation if desired.
+For example, currencies are typical code values with a temporal duration; well-known retired currencies are the European Currency Unit <em>ECU</em> or the German deutsche mark <em>DM</em>.
+New values can be added without recompiling the application.
+A code can have an optional validity period or simply a flag stating it is active or not.
+To guaranty consistency with exported datasets, a code format shall never be deleted, only be disabled.
+Code instances are immutable objects.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can smooth your transition from enumeration types to reference codes.
+Extend your enumeration types with the <em>Code</em> interface.</p>
+</div>
+<div class="paragraph">
+<p>Now you can transform your code to support generic reference codes and make your application more dynamic to domain model changes.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/bus-codes-uml.svg" alt="bus codes uml" width="359" height="291"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_core_model">Core Model</h3>
+<div class="sect3">
+<h4 id="_entity">Entity</h4>
+<div class="paragraph">
+<p>An entity and all subclasses have a set of attributes present in any CSV file.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">oid</dt>
+<dd>
+<p>object identifier of the entity instance as the string representation of a 64 bits long.
+The value is mandatory.</p>
+</dd>
+<dt class="hdlist1">id</dt>
+<dd>
+<p>identifier of the entity instance as a string.
+The value is optional.</p>
+</dd>
+<dt class="hdlist1">name</dt>
+<dd>
+<p>human-readable name of the entity instance as a string.
+The value is optional.</p>
+</dd>
+<dt class="hdlist1">text</dt>
+<dd>
+<p>human-readable description of the entity instance as a long string.
+The value is optional.</p>
+</dd>
+<dt class="hdlist1">fromDate</dt>
+<dd>
+<p>start date when the entity instance is active.
+The value is optional.</p>
+</dd>
+<dt class="hdlist1">toDate</dt>
+<dd>
+<p>end date when the entity instance is active.
+Upon the end date, the entity should be read-only and no more edited in the system.
+The value is optional.</p>
+</dd>
+</dl>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/bus-core-uml.svg" alt="bus core uml" width="748" height="606"/>
+</div>
+</div>
+<div class="paragraph">
+<p>See our blogs for a discussion concerning the cornerstone abstractions of the business core model:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../../blog/2020/entities-identifiers-external-identifiers-and-names">Entities, internal Identifiers, external Identifiers, and Names</a>,</p>
+</li>
+<li>
+<p><a href="../../../blog/2020/the-power-of-tags-and-comments">The Power of Tags and Comments</a>,</p>
+</li>
+<li>
+<p><a href="../../../blog/2020/reference-codes">Reference Codes</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_customer_relationship_model_crm">Customer Relationship Model CRM</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="../pics/bus-crmRealm-uml.svg" alt="bus crmRealm uml" width="1925" height="1467"/>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_invoices_model">Invoices Model</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_concepts">Concepts</h3>
+<div class="paragraph">
+<p>Invoices define a business bounded domain as defined in domain driven design approach.
+They are not constrained through external entities such as products, contracts or legal entities.
+External entities can provide hints to streamline the creation of regular invoices.
+The invoice article identifier is available as an external identifier to the article bounded domain.
+Similar identifiers are available for legal entities.</p>
+</div>
+<div class="paragraph">
+<p>VAT rates are defined within an article definition.
+Therefore, different VAT rates require different article definitions.
+For example, in Switzerland a service company has two VAT rates.
+One for regular services and one for services exempted from VAT taxes.</p>
+</div>
+<div class="paragraph">
+<p>The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_archiving">Archiving</h3>
+<div class="paragraph">
+<p>An invoice contains all the information to create a legally binding document and hove no dependencies to external systems.
+Invoices should have a unique identifier for accounting purposes.
+A good practice is to use the identifier as part of the archived file to streamline traceability.
+Invoices can be stored in a database, exported as a PDF file or as a JSON file.
+The PDF file is human-readable and adequate for document archiving and legal auditing.
+The JSON file is an adequate archive format which can digitally be processed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/bus-invoice-uml.svg" alt="bus invoice uml" width="1162" height="725"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ledger_model">Ledger Model</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/bus-ledger-uml.svg" alt="bus ledger uml" width="293" height="192"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_products_model">Products Model</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/bus-article-uml.svg" alt="bus article uml" width="213" height="175"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a402607cc625a338cdec44e30191e223">4 - Architecture Design Record (ADR)</h1>
+    
+	<p>The list of all architectural design record defined for the core component.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+
+
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Issue Tracker" aria-label="Issue Tracker">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os/issues">
+      <i class="bitbucket-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Documentation" aria-label="Documentation">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://blog.tangly.net/">
+      <i class="bitbucker-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Groups" aria-label="Groups">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://groups.google.com/g/tangly-os-components">
+      <i class="users-cog"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Bitbucket" aria-label="Bitbucket">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/tangly-team/tangly-os">
+      <i class="bitbucket"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 tangly llc - Attribution 4.0 International (CC BY 4.0)</small>
+        
+	
+		<p class="mt-2"><a href="blog.tangly.net/about/">About tangly OS Components</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/blog.tangly.net/js/main.min.91798a335c881f1b6b805085ba4aa22d1dbd2b0b18d105d05189fa104ddae350.js" integrity="sha256-kXmKM1yIHxtrgFCFukqiLR29KwsY0QXQUYn6EE3a41A=" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>
