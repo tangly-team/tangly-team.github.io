@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tangly OS Components – Documentation</title>
+    <title>tangly Components – Documentation</title>
     <link>https://blog.tangly.net/docs/</link>
-    <description>Recent content in Documentation on tangly OS Components</description>
+    <description>Recent content in Documentation on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
     
@@ -896,7 +896,7 @@ They shall have access to our libraries through official and well-documented cha
 A website shall be set up to provide an adequate documentation for users.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;a href=&#34;https://tangly-team.bitbucket.io&#34;&gt;Technical Documentation&lt;/a&gt; will use a static web approach to minimize costs and provide good legibility.
+&lt;p&gt;The &lt;a href=&#34;https://blog.tangly.net&#34;&gt;Technical Documentation&lt;/a&gt; will use a static web approach to minimize costs and provide good legibility.
 All open source components will be hosted on the same site.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -913,7 +913,7 @@ See &lt;a href=&#34;../../../ideas/components-publication&#34;&gt;release and pu
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;We have to establish a public website to host the documentation of public published libraries.
-The static website is &lt;a href=&#34;http://blog.tangly.net/&#34;&gt;Open Source Components&lt;/a&gt;&lt;/p&gt;
+The static website is &lt;a href=&#34;https://blog.tangly.net/&#34;&gt;Open Source Components&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;We have to support semantic versioning for all future releases of public published libraries.
@@ -1141,67 +1141,6 @@ This approach minimizes the costs for this functionality without impeding the qu
 MicroStream does not provide functions in this area.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Collaborators Design</title>
-      <link>https://blog.tangly.net/docs/domains/collaborators/collaborators-design/</link>
-      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/docs/domains/collaborators/collaborators-design/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_collaborators_bounded_domain&#34;&gt;Collaborators Bounded Domain&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_domain_model&#34;&gt;Domain Model&lt;/h3&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/collaborators-domain.svg&#34; alt=&#34;collaborators domain&#34; width=&#34;970&#34; height=&#34;442&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_scenario&#34;&gt;Scenario&lt;/h3&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_yearly_legal_salary_form&#34;&gt;Yearly Legal Salary Form&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;As a collaborator I have a work contract with an organization.
-The organization provides legal insurances, social insurances and pension funds.
-The minimal coverage is defined by law in Switzerland.
-Companies are free to provide additional services.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I shall receive a yearly legal salary form documenting my salary and paid insurances.
-The form is a key document for the Swiss tax declaration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_pension_fund_individual_rebate&#34;&gt;Pension Fund Individual Rebate&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Pension funds can offer a rebate for each collaborator based on non-documented rules.
-The pension funds must provide a rebate based on legal requirements to ease the burden of cotisations for older collaborators.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Our domain model shall provide a mechanism to track these yearly individual rebates.
-The rebates have an impact to some positions in the yearly legal salary form.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_social_insurances&#34;&gt;Social Insurances&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Social insurances are a percentage deducation of the salary of each collaborator.
-The percentages can be modified on a yearly basis.
-The percentages are dependant of the salary of the collaborator.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2739,8 +2678,9 @@ The first step is to build the Docker image with the provided configuration.
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew net.tangly.erp.ui:installDist &lt;span style=&#34;color: #000080&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode  &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-  docker build &lt;span style=&#34;color: #000080&#34;&gt;-t&lt;/span&gt; tanglyllc/tangly-erp:latest net.tangly.erp.ui/   &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-  docker push tanglyllc/tangly-erp:latest                          &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+  docker login &lt;span style=&#34;color: #000080&#34;&gt;-u&lt;/span&gt; tanglyllc &lt;span style=&#34;color: #000080&#34;&gt;-p&lt;/span&gt; &amp;lt;password&amp;gt;                          &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+  docker build &lt;span style=&#34;color: #000080&#34;&gt;-t&lt;/span&gt; tanglyllc/tangly-erp:latest net.tangly.erp.ui/   &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+  docker push tanglyllc/tangly-erp:latest                          &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;colist arabic&#34;&gt;
@@ -2751,10 +2691,14 @@ The first step is to build the Docker image with the provided configuration.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Generate a Docker image containing the binary application generated in the previous step.&lt;/td&gt;
+&lt;td&gt;Login into DockerHub with username and password.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Generate a Docker image containing the binary application generated in the previous step.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
 &lt;td&gt;Push the Docker image to the repository.
 Customers can retrieve the published Docker image and execute it in a container.&lt;/td&gt;
 &lt;/tr&gt;
@@ -3118,7 +3062,7 @@ owning the state machine is passed as context to all guards and actions,&lt;/p&g
 &lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;xml&#34;&gt;    &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
       &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;net.tangly&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
       &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;gleam&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-      &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.2.5&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.2.7&lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
     &lt;span style=&#34;color: #000080&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3127,7 +3071,7 @@ owning the state machine is passed as context to all guards and actions,&lt;/p&g
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;implementation&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;net.tangly:gleam:0.2.5&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;implementation&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;net.tangly:gleam:0.2.7&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -6193,6 +6137,176 @@ areas under repetitive change or often needing fixing. In parallel, the evolutio
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: User Guide Behavior Driven Design Library</title>
+      <link>https://blog.tangly.net/docs/bdd/userguidebdd/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/bdd/userguidebdd/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_features&#34;&gt;Features&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A behavior driven development &lt;em&gt;BDD&lt;/em&gt; library that provides a custom extension based on the JUnit 5 Jupiter Extension Model.
+This library can be used to create and run features, stories and behaviors as BDD specification tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library promotes a test engineer approach.
+The test cases are programmed against the system under development.
+Upon execution, the living documentation of all features, and their associated stories are generated.
+This document describes the behavior of the system as it is tested.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock warning&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-warning&#34; title=&#34;Warning&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We believe that agile teams should write source code and tests.
+Seldom can users or stakeholders invest the time and learn the capabilities to formulate maintainable and binding acceptance tests.
+They are domain know-how experts and rarely software specialists.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Software developers should write all acceptance tests together with domain experts.
+The acceptance tests should generate legible living documentation.
+Stakeholders use this documentation for feature review and acceptance decisions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library is implemented as an extension to the de facto standard JUnit5 for unit testing in the Java ecosystem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Tags and identifiers are supported for regulatory aspects and traceability.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_scenarios&#34;&gt;Scenarios&lt;/h3&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@ExtendWith&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;StoryExtension&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@Story&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;value&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Returns go back to the stockpile&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;description&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;As a store owner, in order to keep track of stock, I want to add items back to stock when they&amp;#39;re returned.&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;StoreTestStoryOne&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@Scenario&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Refunded items from the customer should be returned to stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;refundAndRestock&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Scene&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;scene&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;scene&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;given&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;that a customer previously bought a black sweater from me&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;put&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;store&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #009999&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;buyBlack&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;))).&lt;/span&gt;
+            &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;and&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;I have three black sweaters in stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;assertEquals&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;store&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;blacks&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Store should carry 3 black sweaters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)).&lt;/span&gt;
+
+            &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;when&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;the customer returns the black sweater for a refund&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;store&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;refundBlack&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)).&lt;/span&gt;
+
+            &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;then&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;I should have four black sweaters in stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;assertEquals&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;store&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;blacks&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Store should carry 4 black sweaters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)).&lt;/span&gt;
+            &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@Scenario&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Replaced items should be returned to stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;replaceAndRestock&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Scene&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;scene&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;scene&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;given&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;that a customer previously bought a blue garment from me&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;put&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;store&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #009999&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;buyBlue&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;))).&lt;/span&gt;
+                &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;and&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;I have two blue garments in stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;assertEquals&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;store&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;blues&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Store should carry 2 blue garments&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)).&lt;/span&gt;
+                &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;and&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;three black garments in stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;assertEquals&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;store&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;blacks&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Store should carry 3 black garments&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)).&lt;/span&gt;
+
+                &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;when&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;she returns the blue garment for a replacement in black&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;store&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;refundBlue&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;buyBlack&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)).&lt;/span&gt;
+
+                &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;then&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;I should have three blue garments in stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;assertEquals&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;store&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;blues&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Store should carry 3 blue garments&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)).&lt;/span&gt;
+                &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;and&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;two black garments in stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;assertEquals&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;store&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;blacks&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Store should carry 2 black garments&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)).&lt;/span&gt;
+                &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_get_started&#34;&gt;Get Started&lt;/h3&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Add the library to your gradle or maven build&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write your scenarios as test methods as shown in the above examples&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run your JUnit 5 tests&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The provided utilities generate JSON and AsciiDoc reports as living documentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_concepts&#34;&gt;Concepts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The behavior driven development library defines the following concepts:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;em&gt;feature&lt;/em&gt; describes a high-level functionality of the system.
+A feature annotation &lt;code&gt;@feature&lt;/code&gt; allows the textual description of a feature and supports additional information such as an identifier or a set of tags.
+A feature is defined a package level.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;em&gt;story&lt;/em&gt; describes a specific function of the system.
+A story annotation &lt;code&gt;@story&lt;/code&gt; allows the textual description of a story and supports additional information such as an identifier or a set of tags.
+A feature is defined a class level.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;em&gt;scenario&lt;/em&gt; describes a specific flow of a story.
+A scenario annotation &lt;code&gt;@scenario&lt;/code&gt; allows the textual description of a scenario.
+A scenario is defied at method level.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Acceptance criteria&lt;/em&gt; are documented together with the given and when stages inside the method using the bdd library.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We believe that the three level hierarchy &lt;strong&gt;feature - story - scenario&lt;/strong&gt; is enough to describe the requirements of regular software products.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware that feature and story as used in agile development approaches, such as Scrum are work break-down structures.
+They are not a requirement repository.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can change the content and the acceptance criteria of stories over the development cycle.
+No information is available in a backlog or JIRA which variant is now the one implemented in the system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;More examples are available as unit tests.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 

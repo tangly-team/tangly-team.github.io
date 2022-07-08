@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tangly OS Components – ERP-UI - UI for ERP Bounded Domains</title>
+    <title>tangly Components – ERP-UI - UI for ERP Bounded Domains</title>
     <link>https://blog.tangly.net/docs/domains/ui/</link>
-    <description>Recent content in ERP-UI - UI for ERP Bounded Domains on tangly OS Components</description>
+    <description>Recent content in ERP-UI - UI for ERP Bounded Domains on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate>
     
@@ -153,8 +153,9 @@ The first step is to build the Docker image with the provided configuration.
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew net.tangly.erp.ui:installDist &lt;span style=&#34;color: #000080&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode  &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-  docker build &lt;span style=&#34;color: #000080&#34;&gt;-t&lt;/span&gt; tanglyllc/tangly-erp:latest net.tangly.erp.ui/   &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-  docker push tanglyllc/tangly-erp:latest                          &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+  docker login &lt;span style=&#34;color: #000080&#34;&gt;-u&lt;/span&gt; tanglyllc &lt;span style=&#34;color: #000080&#34;&gt;-p&lt;/span&gt; &amp;lt;password&amp;gt;                          &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+  docker build &lt;span style=&#34;color: #000080&#34;&gt;-t&lt;/span&gt; tanglyllc/tangly-erp:latest net.tangly.erp.ui/   &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+  docker push tanglyllc/tangly-erp:latest                          &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;colist arabic&#34;&gt;
@@ -165,10 +166,14 @@ The first step is to build the Docker image with the provided configuration.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Generate a Docker image containing the binary application generated in the previous step.&lt;/td&gt;
+&lt;td&gt;Login into DockerHub with username and password.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Generate a Docker image containing the binary application generated in the previous step.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
 &lt;td&gt;Push the Docker image to the repository.
 Customers can retrieve the published Docker image and execute it in a container.&lt;/td&gt;
 &lt;/tr&gt;
