@@ -344,6 +344,26 @@ Guava needs years to support new concepts such as algebraic data types.&lt;/p&gt
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This decision is against good practices documented in the first decade of this millenium.
+The Guava library did not evolve as rapidly as the new Java versions released in the second and third decades.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We strongly advocate timely evolution.
+Try to avoid becoming laggards in your technology stack.
+As rule use the current Java release, or as minimal version the latest long term supported version of Java.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
@@ -683,7 +703,7 @@ We recommend the namespace &amp;#34;fin&amp;#34;, the name &amp;#34;segment&amp;
 The latest approach is to release a long-term supported version every two years.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Better approaches support clean code, less verbose source code and reduce programming errors.
+&lt;p&gt;Better approaches support clean code, less verbose source code and reduce programming  &lt;a href=&#34;#modern-java-development&#34;&gt;[5]&lt;/a&gt; &lt;a href=&#34;#immutability-in-java&#34;&gt;[2]&lt;/a&gt;.
 These constructs shall be used in our modules as soon as they are released to the developers.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -699,14 +719,15 @@ The other approach is to use an alternate distribution such as &lt;a href=&#34;h
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We use the current released JDK and all constructs provided in this JDK.
+&lt;p&gt;We use the current released JDK and all constructs provided in this JDK &lt;a href=&#34;#modernize-java-landscape&#34;&gt;[1]&lt;/a&gt;.
 We use preview features and incubating functionality present in this JDK.
 The main advantages are&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;olist arabic&#34;&gt;
 &lt;ol class=&#34;arabic&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Current JDK versions provide efficient and elegant implementation. See, for example, the record construct provided since JDK 14.&lt;/p&gt;
+&lt;p&gt;Current JDK versions provide efficient and elegant implementation &lt;a href=&#34;#jdk-17&#34;&gt;[3]&lt;/a&gt; &lt;a href=&#34;#jdk-16&#34;&gt;[4]&lt;/a&gt;.
+See, for example, the record construct provided since JDK 14.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;The source code is legible and has fewer errors.&lt;/p&gt;
@@ -742,6 +763,28 @@ The main advantages are&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;The &lt;em&gt;UncheckedIOException&lt;/em&gt; encourages the use of non-checked exceptions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modernize-java-landscape&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../../blog/2022/modernize-your-java-landscape/&#34;&gt;Modernize your Java Landscape&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;immutability-in-java&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../../blog/2022/immutability-in-java/&#34;&gt;Immutability in Java&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;jdk-17&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../../blog/2021/jdk-17/&#34;&gt;JDK 17&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;jdk-16&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../../blog/2021/jdk-16/&#34;&gt;JDK 16&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-development&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../../blog/2021/modern-java-development/&#34;&gt;Modern Java Development&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -827,12 +870,29 @@ The improvements in both tools were impressive the last year, but we have to upd
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Hugo themes styling for AsciiDoc is sketchy.
+&lt;p&gt;(ref-hugo) themes styling for AsciiDoc is sketchy.
 The visual quality is currently hindered due to faulty support of the standard or custom AsciiDoc stylesheet.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;AsciiDoc supports native rouge code highlighting module.
-All source code fragments are nicely displayed without special support from Hugo.&lt;/p&gt;
+All source code fragments are nicely displayed without special support from &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We documented our experience in various blogs &lt;a href=&#34;#creating-technical-website&#34;&gt;[1]&lt;/a&gt; &lt;a href=&#34;#support-comments&#34;&gt;[2]&lt;/a&gt;&amp;gt;.
+We use currently the Google sponsored theme &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; for our static website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;creating-technical-website&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../../blog/2020/creating-a-technical-website-with-hugo-and-asciidoc/&#34;&gt;Creating a Technical Website with Hugo and AsciiDoc&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;support-comments&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../../blog/2020/support-comments-for-static-hugo-website/&#34;&gt;Support Comments for Static Hugo Website&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -1102,7 +1162,7 @@ Conversions are inefficient, lead to enormous loss of performance and latencies,
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Knowledge in MicroStream library must be build-up.&lt;/p&gt;
+&lt;p&gt;Knowledge in MicroStream library &lt;a href=&#34;#microstream-4&#34;&gt;[1]&lt;/a&gt; must be build-up.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Software design must be slightly adapted to the MicroStream approach.&lt;/p&gt;
@@ -1141,6 +1201,16 @@ This approach minimizes the costs for this functionality without impeding the qu
 MicroStream does not provide functions in this area.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;microstream-4&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../../blog/2021/microstream-4.x/&#34;&gt;MicroStream 4.x&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

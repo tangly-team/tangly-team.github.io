@@ -4,9 +4,9 @@
     
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta name="generator" content="Hugo 0.101.0" />
-<meta name="robots" content="index, follow">
+<meta content="index, follow" name="robots">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>OS 003: Use Modern Java Constructs | tangly Components</title>
-<meta name="description" content="
+<meta content="
 OS-003 Remove usage of Google Guava Library
 
 
@@ -41,12 +41,12 @@ Context
 
 
 
-JDK is released every six months to all Java …">
+JDK is released every six months to all Java …" name="description">
 <meta property="og:title" content="OS 003: Use Modern Java Constructs" />
 <meta property="og:description" content="OS-003 Remove usage of Google Guava Library Date: 2020-01-01
 Status Implemented
 Context JDK is released every six months to all Java developers. The latest approach is to release a long-term supported version every two years.
-Better approaches support clean code, less verbose source code and reduce programming errors. These constructs shall be used in our modules as soon as they are released to the developers.
+Better approaches support clean code, less verbose source code and reduce programming [5] [2]. These constructs shall be used in our modules as soon as they are released to the developers.
 The advantage is better integration, always synchronized with the current release of the JDK and no incompatibilities." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/ideas/adr/os-003-use-modern-java-constructs/" /><meta property="article:section" content="ideas" />
@@ -57,16 +57,16 @@ The advantage is better integration, always synchronized with the current releas
 <meta itemprop="description" content="OS-003 Remove usage of Google Guava Library Date: 2020-01-01
 Status Implemented
 Context JDK is released every six months to all Java developers. The latest approach is to release a long-term supported version every two years.
-Better approaches support clean code, less verbose source code and reduce programming errors. These constructs shall be used in our modules as soon as they are released to the developers.
+Better approaches support clean code, less verbose source code and reduce programming [5] [2]. These constructs shall be used in our modules as soon as they are released to the developers.
 The advantage is better integration, always synchronized with the current release of the JDK and no incompatibilities."><meta itemprop="datePublished" content="2018-02-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2018-02-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="269">
+<meta itemprop="wordCount" content="293">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OS 003: Use Modern Java Constructs"/>
 <meta name="twitter:description" content="OS-003 Remove usage of Google Guava Library Date: 2020-01-01
 Status Implemented
 Context JDK is released every six months to all Java developers. The latest approach is to release a long-term supported version every two years.
-Better approaches support clean code, less verbose source code and reduce programming errors. These constructs shall be used in our modules as soon as they are released to the developers.
+Better approaches support clean code, less verbose source code and reduce programming [5] [2]. These constructs shall be used in our modules as soon as they are released to the developers.
 The advantage is better integration, always synchronized with the current release of the JDK and no incompatibilities."/>
 
 
@@ -79,10 +79,10 @@ The advantage is better integration, always synchronized with the current releas
     crossorigin="anonymous"
     integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
     src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script defer
-        src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+<script crossorigin="anonymous"
+        defer
         integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
-        crossorigin="anonymous"></script>
+        src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   messageStyle: "none",
@@ -98,6 +98,7 @@ MathJax.Hub.Config({
   TeX: { equationNumbers: { autoNumber: "none" } }
 });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -221,7 +222,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.453c46d5298ba2be0ecfb24748c9bd4a.json"
+  data-offline-search-index-json-src="/offline-search-index.055f822c09166f35b78e16b073306bcc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -243,7 +244,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.453c46d5298ba2be0ecfb24748c9bd4a.json"
+  data-offline-search-index-json-src="/offline-search-index.055f822c09166f35b78e16b073306bcc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -491,7 +492,7 @@ if (!doNotTrack) {
 The latest approach is to release a long-term supported version every two years.</p>
 </div>
 <div class="paragraph">
-<p>Better approaches support clean code, less verbose source code and reduce programming errors.
+<p>Better approaches support clean code, less verbose source code and reduce programming  <a href="#modern-java-development">[5]</a> <a href="#immutability-in-java">[2]</a>.
 These constructs shall be used in our modules as soon as they are released to the developers.</p>
 </div>
 <div class="paragraph">
@@ -507,14 +508,15 @@ The other approach is to use an alternate distribution such as <a href="https://
 <div class="sect2">
 <h3 id="_decision">Decision</h3>
 <div class="paragraph">
-<p>We use the current released JDK and all constructs provided in this JDK.
+<p>We use the current released JDK and all constructs provided in this JDK <a href="#modernize-java-landscape">[1]</a>.
 We use preview features and incubating functionality present in this JDK.
 The main advantages are</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Current JDK versions provide efficient and elegant implementation. See, for example, the record construct provided since JDK 14.</p>
+<p>Current JDK versions provide efficient and elegant implementation <a href="#jdk-17">[3]</a> <a href="#jdk-16">[4]</a>.
+See, for example, the record construct provided since JDK 14.</p>
 </li>
 <li>
 <p>The source code is legible and has fewer errors.</p>
@@ -550,6 +552,28 @@ The main advantages are</p>
 </li>
 <li>
 <p>The <em>UncheckedIOException</em> encourages the use of non-checked exceptions.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="modernize-java-landscape"></a>[1] <a href="../../../blog/2022/modernize-your-java-landscape/">Modernize your Java Landscape</a></p>
+</li>
+<li>
+<p><a id="immutability-in-java"></a>[2] <a href="../../../blog/2022/immutability-in-java/">Immutability in Java</a></p>
+</li>
+<li>
+<p><a id="jdk-17"></a>[3] <a href="../../../blog/2021/jdk-17/">JDK 17</a></p>
+</li>
+<li>
+<p><a id="jdk-16"></a>[4] <a href="../../../blog/2021/jdk-16/">JDK 16</a></p>
+</li>
+<li>
+<p><a id="modern-java-development"></a>[5] <a href="../../../blog/2021/modern-java-development/">Modern Java Development</a></p>
 </li>
 </ul>
 </div>

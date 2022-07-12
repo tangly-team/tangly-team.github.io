@@ -4,9 +4,9 @@
     
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta name="generator" content="Hugo 0.101.0" />
-<meta name="robots" content="index, follow">
+<meta content="index, follow" name="robots">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>OS 001: System Guava Removal | tangly Components</title>
-<meta name="description" content="
+<meta content="
 OS-001 Remove usage of Google Guava Library
 
 
@@ -41,7 +41,7 @@ Context
 
 
 
-Guava is an historical effort to provide much …">
+Guava is an historical effort to provide much …" name="description">
 <meta property="og:title" content="OS 001: System Guava Removal" />
 <meta property="og:description" content="OS-001 Remove usage of Google Guava Library Date: 2018-02-20
 Status Implemented
@@ -58,7 +58,7 @@ Status Implemented
 Context Guava is an historical effort to provide much needed functionalities to the Java community. The Java ecosystem evolves quite slowly at the beginning of the millennium. Later, stewardship clearly improved with six months release schedule approach. Preview and incubator initiatives allowed timely evaluation of new features and idioms in the Java language and ecosystem.
 JDK versions from release 8 often provide better replacement methods for a lot of Guava functions."><meta itemprop="datePublished" content="2018-02-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2018-02-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="346">
+<meta itemprop="wordCount" content="413">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OS 001: System Guava Removal"/>
 <meta name="twitter:description" content="OS-001 Remove usage of Google Guava Library Date: 2018-02-20
@@ -76,10 +76,10 @@ JDK versions from release 8 often provide better replacement methods for a lot o
     crossorigin="anonymous"
     integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
     src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script defer
-        src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+<script crossorigin="anonymous"
+        defer
         integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
-        crossorigin="anonymous"></script>
+        src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   messageStyle: "none",
@@ -95,6 +95,7 @@ MathJax.Hub.Config({
   TeX: { equationNumbers: { autoNumber: "none" } }
 });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -218,7 +219,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.453c46d5298ba2be0ecfb24748c9bd4a.json"
+  data-offline-search-index-json-src="/offline-search-index.055f822c09166f35b78e16b073306bcc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -240,7 +241,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.453c46d5298ba2be0ecfb24748c9bd4a.json"
+  data-offline-search-index-json-src="/offline-search-index.055f822c09166f35b78e16b073306bcc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -526,6 +527,26 @@ The main advantages are:</p>
 Guava needs years to support new concepts such as algebraic data types.</p>
 </li>
 </ol>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This decision is against good practices documented in the first decade of this millenium.
+The Guava library did not evolve as rapidly as the new Java versions released in the second and third decades.</p>
+</div>
+<div class="paragraph">
+<p>We strongly advocate timely evolution.
+Try to avoid becoming laggards in your technology stack.
+As rule use the current Java release, or as minimal version the latest long term supported version of Java.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 <div class="sect2">

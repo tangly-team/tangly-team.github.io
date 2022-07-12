@@ -4,11 +4,11 @@
     
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta name="generator" content="Hugo 0.101.0" />
-<link rel="canonical" type="text/html" href="https://blog.tangly.net/ideas/">
-<link rel="alternate" type="application/rss&#43;xml" href="https://blog.tangly.net/ideas/index.xml">
-<meta name="robots" content="noindex, nofollow">
+<link href="https://blog.tangly.net/ideas/" rel="canonical" type="text/html">
+<link href="https://blog.tangly.net/ideas/index.xml" rel="alternate" type="application/rss&#43;xml">
+<meta content="noindex, nofollow" name="robots">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -23,9 +23,9 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Ideas | tangly Components</title>
-<meta name="description" content="
+<meta content="
 Ideas and concepts the developers of tangly open source components are following.
-It is a collection of articles about our journey through agile …">
+It is a collection of articles about our journey through agile …" name="description">
 <meta property="og:title" content="Ideas" />
 <meta property="og:description" content="tangly llc Open Source Components" />
 <meta property="og:type" content="website" />
@@ -46,10 +46,10 @@ It is a collection of articles about our journey through agile …">
     crossorigin="anonymous"
     integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
     src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script defer
-        src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+<script crossorigin="anonymous"
+        defer
         integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
-        crossorigin="anonymous"></script>
+        src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   messageStyle: "none",
@@ -65,6 +65,7 @@ MathJax.Hub.Config({
   TeX: { equationNumbers: { autoNumber: "none" } }
 });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -188,7 +189,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.453c46d5298ba2be0ecfb24748c9bd4a.json"
+  data-offline-search-index-json-src="/offline-search-index.055f822c09166f35b78e16b073306bcc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -2526,8 +2527,8 @@ Marcel Baumann. 2020</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Functional</th>
-<th class="tableblock halign-left valign-top">Object-Oriented</th>
+<th class="tableblock halign-center valign-top">Functional</th>
+<th class="tableblock halign-center valign-top">Object-Oriented</th>
 </tr>
 </thead>
 <tbody>
@@ -2552,8 +2553,10 @@ Marcel Baumann. 2020</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">State changes are an important part of the execution.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary activity is writing new functions and <a href="https://en.wikipedia.org/wiki/Function_composition_(computer_science)">composing existing ones</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary activity is building, extending and <a href="https://en.wikipedia.org/wiki/Object_composition">composing objects</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary activity is writing new functions and<br/>
+<a href="https://en.wikipedia.org/wiki/Function_composition_(computer_science)">composing existing ones</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary activity is building, extending and<br/>
+<a href="https://en.wikipedia.org/wiki/Object_composition">composing objects</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3015,6 +3018,26 @@ Guava needs years to support new concepts such as algebraic data types.</p>
 </li>
 </ol>
 </div>
+<div class="admonitionblock caution">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This decision is against good practices documented in the first decade of this millenium.
+The Guava library did not evolve as rapidly as the new Java versions released in the second and third decades.</p>
+</div>
+<div class="paragraph">
+<p>We strongly advocate timely evolution.
+Try to avoid becoming laggards in your technology stack.
+As rule use the current Java release, or as minimal version the latest long term supported version of Java.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_consequences">Consequences</h3>
@@ -3169,7 +3192,7 @@ Therefore, we shall use libraries providing a workaround File instances either b
 The latest approach is to release a long-term supported version every two years.</p>
 </div>
 <div class="paragraph">
-<p>Better approaches support clean code, less verbose source code and reduce programming errors.
+<p>Better approaches support clean code, less verbose source code and reduce programming  <a href="#modern-java-development">[5]</a> <a href="#immutability-in-java">[2]</a>.
 These constructs shall be used in our modules as soon as they are released to the developers.</p>
 </div>
 <div class="paragraph">
@@ -3185,14 +3208,15 @@ The other approach is to use an alternate distribution such as <a href="https://
 <div class="sect2">
 <h3 id="_decision">Decision</h3>
 <div class="paragraph">
-<p>We use the current released JDK and all constructs provided in this JDK.
+<p>We use the current released JDK and all constructs provided in this JDK <a href="#modernize-java-landscape">[1]</a>.
 We use preview features and incubating functionality present in this JDK.
 The main advantages are</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Current JDK versions provide efficient and elegant implementation. See, for example, the record construct provided since JDK 14.</p>
+<p>Current JDK versions provide efficient and elegant implementation <a href="#jdk-17">[3]</a> <a href="#jdk-16">[4]</a>.
+See, for example, the record construct provided since JDK 14.</p>
 </li>
 <li>
 <p>The source code is legible and has fewer errors.</p>
@@ -3228,6 +3252,28 @@ The main advantages are</p>
 </li>
 <li>
 <p>The <em>UncheckedIOException</em> encourages the use of non-checked exceptions.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="modernize-java-landscape"></a>[1] <a href="../../../blog/2022/modernize-your-java-landscape/">Modernize your Java Landscape</a></p>
+</li>
+<li>
+<p><a id="immutability-in-java"></a>[2] <a href="../../../blog/2022/immutability-in-java/">Immutability in Java</a></p>
+</li>
+<li>
+<p><a id="jdk-17"></a>[3] <a href="../../../blog/2021/jdk-17/">JDK 17</a></p>
+</li>
+<li>
+<p><a id="jdk-16"></a>[4] <a href="../../../blog/2021/jdk-16/">JDK 16</a></p>
+</li>
+<li>
+<p><a id="modern-java-development"></a>[5] <a href="../../../blog/2021/modern-java-development/">Modern Java Development</a></p>
 </li>
 </ul>
 </div>
@@ -3317,12 +3363,29 @@ The improvements in both tools were impressive the last year, but we have to upd
 <div class="ulist">
 <ul>
 <li>
-<p>Hugo themes styling for AsciiDoc is sketchy.
+<p>(ref-hugo) themes styling for AsciiDoc is sketchy.
 The visual quality is currently hindered due to faulty support of the standard or custom AsciiDoc stylesheet.</p>
 </li>
 <li>
 <p>AsciiDoc supports native rouge code highlighting module.
-All source code fragments are nicely displayed without special support from Hugo.</p>
+All source code fragments are nicely displayed without special support from <a href="https://gohugo.io/">Hugo</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We documented our experience in various blogs <a href="#creating-technical-website">[1]</a> <a href="#support-comments">[2]</a>&gt;.
+We use currently the Google sponsored theme <a href="https://www.docsy.dev/">Docsy</a> for our static website.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="creating-technical-website"></a>[1] <a href="../../../blog/2020/creating-a-technical-website-with-hugo-and-asciidoc/">Creating a Technical Website with Hugo and AsciiDoc</a></p>
+</li>
+<li>
+<p><a id="support-comments"></a>[2] <a href="../../../blog/2020/support-comments-for-static-hugo-website/">Support Comments for Static Hugo Website</a></p>
 </li>
 </ul>
 </div>
@@ -3604,7 +3667,7 @@ Conversions are inefficient, lead to enormous loss of performance and latencies,
 <div class="ulist">
 <ul>
 <li>
-<p>Knowledge in MicroStream library must be build-up.</p>
+<p>Knowledge in MicroStream library <a href="#microstream-4">[1]</a> must be build-up.</p>
 </li>
 <li>
 <p>Software design must be slightly adapted to the MicroStream approach.</p>
@@ -3643,6 +3706,16 @@ This approach minimizes the costs for this functionality without impeding the qu
 MicroStream does not provide functions in this area.</p>
 </li>
 </ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="microstream-4"></a>[1] <a href="../../../blog/2021/microstream-4.x/">MicroStream 4.x</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
