@@ -188,7 +188,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.055f822c09166f35b78e16b073306bcc.json"
+  data-offline-search-index-json-src="/offline-search-index.914a0924233dce8ca0649ec1c0244e10.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -295,7 +295,7 @@ This is the multi-page printable view of this section.
 	<div class="td-byline mb-4">
 		
         
-		<time datetime="2022-07-04" class="text-muted">2022-07-04</time>
+		<time datetime="2022-08-15" class="text-muted">2022-08-15</time>
         
 	</div>
 	
@@ -325,6 +325,747 @@ This is the multi-page printable view of this section.
   
 
 <div class="td-content" style="">
+    <h1 id="pg-61c879254f370d7c1634926db27cf196">Transfer a Software Project</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2022-08-15" class="text-muted">2022-08-15</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_transfer_a_software_project">Transfer a Software Project</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2022-08-02-head.jpg" alt="2022 08 02 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>You developed a new digital product for an internal or external customer.
+Your solution is awesome.</p>
+</div>
+<div class="paragraph">
+<p>The product is released to delighted users.
+Your users love your solution.</p>
+</div>
+<div class="paragraph">
+<p>The project is now winding down and closing activities are initiated.
+The customer organization shall take ownership of all product related artifacts.
+The handover is a vital part of closing a project
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>Your customer paid for the development and own the produced artifacts.</p>
+</div>
+<div class="paragraph">
+<p>You are legally bound to deliver source code, binary artifacts defining the executable application, credentials and documentation to your customer.
+The ownership transfer is either an explicit part of your contract or implicit through the contract type you are working with.</p>
+</div>
+<div class="paragraph">
+<p>Remember, a product development is a work contract.</p>
+</div>
+<div class="paragraph">
+<p>Work contracts<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> are a legal and rather well-defined contractual item in Europe.
+Expected deliveries are already defined in legal texts or through jurisprudence.
+Your customer has the right to refuse final payment until delivery.</p>
+</div>
+<div class="paragraph">
+<p>How can you cleanly transfer your results to your customers?
+How can you document the transfer process and provide an acceptance protocol?</p>
+</div>
+<div class="paragraph">
+<p>Which steps shall you implement to delight your clients?</p>
+</div>
+<div class="sect2">
+<h3 id="_migration_steps">Migration Steps</h3>
+<div class="paragraph">
+<p>Most development initiatives are using  <a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a> or <a href="https://bitbucket.org/">Bitbucket</a>.
+The steps are the same for all these platforms.</p>
+</div>
+<div class="paragraph">
+<p>You should deliver a consistent
+<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup> repository to your client.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Verify that the repository contains the final state of your solution.<br/>
+<em>Talk with your developers to insure all changes are checked into the git repository</em>.</p>
+</li>
+<li>
+<p>Update your licenses and copyright.<br/>
+<em>Verify if you have to talk with your legal department</em>.</p>
+</li>
+<li>
+<p>Validate continuous integration and delivery pipeline.<br/>
+<em>Run your CI/CD pipeline and check the deliverables</em>
+<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.</p>
+</li>
+<li>
+<p>Validate static documentation website creation
+<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.</p>
+</li>
+<li>
+<p>+
+<em>Generate your static website.
+Use a spellchecker for orthography, and a link checker for your links</em>.</p>
+</li>
+<li>
+<p>Tag the artifacts to insure traceability between your binary delivery and the source code.<br/>
+You still need an official acceptance form from your client.<br/>
+<em>Do not forget to document your tagging conventions.
+Are you using semantic versioning?</em>.</p>
+</li>
+<li>
+<p>Transfer your repository to the new organization. You should formally document the acceptance of the produced artifacts and handover of all results.
+Good practice is to sign the transfer protocol.<br/>
+<em>Relinquish formally ownership of the repository and responsibility to your customer</em>.</p>
+</li>
+<li>
+<p>Celebrate the successful completion of your project.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_your_copyrights">Update Your Copyrights</h3>
+<div class="paragraph">
+<p>The chosen copyrights shall allow the new owner to take over and change all artifacts.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Repository Copyright</dt>
+<dd>
+<p>GitHub and GitLab strongly support the definition and publishing of the license under which the whole project is published.
+Examples of open source and closed source licenses are available on the Internet.
+Please never write your own license text for source code or documents
+<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>.
+You are not a lawyer and your text will most certainly contain legal errors or miss required statements.</p>
+</dd>
+<dt class="hdlist1">Source Code Copyright</dt>
+<dd>
+<p>Beware that source code is often under similar copyright rules as books and pieces of art.
+Regular infringement laws apply if you use, copy or modify source code.
+Therefore, any source code file has an implicit or an explicit copyright.
+Good practice is to have a banner in each source file stating the short version of your copyright.</p>
+</dd>
+<dt class="hdlist1">Documentation Copyright</dt>
+<dd>
+<p>Documentation, drawings and sketches are also under copyright legislation.
+Please add your copyright to all your documents <a href="#creative-commons">[3]</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Respect the licenses of the open source components you are using.</p>
+</div>
+<div class="paragraph">
+<p>The free software foundation and similar entities consequently sue organizations cheating on open source licenses.
+Avoid loosing your reputation and money for infringing copyrights.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_your_documentation">Update Your Documentation</h3>
+<div class="paragraph">
+<p>I strongly suggest using actual good practice documentation as static websites to publish your documentation.
+The huge gain is git based tracking to map a documentation set to a specific release of your solution.
+Auditability and tracing of the documents are implicitly provided through version management system features
+<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The transfer is more complex if your website is published under a custom domain.</p>
+</div>
+<div class="paragraph">
+<p>You must remove your <em>CNAME</em> redirection in your domain record.
+The receiving party can create a new <em>CNAME</em> redirection in their domain record associated with their company.</p>
+</div>
+<div class="paragraph">
+<p>Additional steps to validate the newly configured domain and enable <em>SSL</em> are well-described on the GitHub site.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Register your custom domain in the <a href="https://github.com/">GitHub</a> pages repository.</p>
+</li>
+<li>
+<p>Reserve your custom domain in <a href="https://github.com/">GitHub</a> to block other users to steel your domain if it is once down <a href="#configuring-custom-domain">[2]</a>.
+Beware you need to add a <a href="https://en.wikipedia.org/wiki/TXT_record">TXT</a> record in your domain.
+Bigger companies are quite slow to process such a request.</p>
+</li>
+<li>
+<p>Enable HTTPS to be compliant with good practices <a href="#configuring-custom-domain">[2]</a>.
+<a href="https://github.com/">GitHub</a> will generate and deploy at no costs a certificate for your custom domain.</p>
+</li>
+<li>
+<p>Once you have created a <a href="https://en.wikipedia.org/wiki/CNAME_record">CNAME</a> record mapping your custom domain to the GitHub pages website address, validate your custom domain in GitHub.</p>
+</li>
+<li>
+<p>Test your new site to check that all configuration changes are working.
+Upon successful deployment, add a redirect page on your old website to support all your users who stored an old link
+<sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Beware that DNS modifications need up to 24 hours to propagate.
+I strongly advocate performing such changes during the weekend.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Here is a simple example of a redirect page for your old website.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="html"><span style="color: #999999;font-weight: bold">&lt;!DOCTYPE html&gt;</span>
+<span style="color: #000080">&lt;html&gt;</span>
+<span style="color: #000080">&lt;head&gt;</span>
+<span style="color: #000080">&lt;meta</span> <span style="color: #008080">http-equiv=</span><span style="color: #d14">&#34;refresh&#34;</span> <span style="color: #008080">content=</span><span style="color: #d14">&#34;0; URL=https://blog.tangly.net&#34;</span> <span style="color: #000080">/&gt;</span>
+  <span style="color: #000080">&lt;title&gt;</span>Redirect to Our New tangly Components Website<span style="color: #000080">&lt;/title&gt;</span>
+<span style="color: #000080">&lt;/head&gt;</span>
+<span style="color: #000080">&lt;body&gt;</span>
+  <span style="color: #000080">&lt;p&gt;</span>This page has been moved. If you are not redirected within 3 seconds,
+     click <span style="color: #000080">&lt;a</span> <span style="color: #008080">href=</span><span style="color: #d14">&#34;https://blog.tangly.net&#34;</span><span style="color: #000080">&gt;</span>Redirect to our new tangly Components website<span style="color: #000080">&lt;/a&gt;&lt;/p&gt;</span>
+<span style="color: #000080">&lt;/body&gt;</span>
+<span style="color: #000080">&lt;/html&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_your_cicd_pipeline">Update Your CI/CD Pipeline</h3>
+<div class="paragraph">
+<p>The continuous integration and delivery pipelines [<a href="#continuous-delivery">1</a>] shall build all expected artifacts associated with the product.
+Ideally the process shall follow DevOps good practices and be automated.</p>
+</div>
+<div class="paragraph">
+<p>If not document thoroughly the manual steps.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_transfer_your_github_repository">Transfer Your GitHub Repository</h3>
+<div class="paragraph">
+<p>The transfer of a repository from one organization to another one is well-supported in GitHub <a href="#transferring-a-repository">[1]</a>.
+The whole transfer process is completed in less than five minutes.</p>
+</div>
+<div class="paragraph">
+<p>You need your credentials to log into GitHub and confirm the transfer action.
+The owner of the receiving organization must confirm the transfer to complete the process.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Developers shall update their git repository remote definition in their local repository.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">  git remote <span style="color: #000080">-v</span> <i class="conum" data-value="1"></i><b>(1)</b>
+  git remote set-url origin-github git@github.com:repository-name.git <i class="conum" data-value="2"></i><b>(2)</b>
+  git remote <span style="color: #000080">-v</span> <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>List all the remotes of your local git repository.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Sets the new URL of the remote <em>origin-github</em> using <em>ssh</em> as transfer protocol.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Check that the changes to your remotes are correct.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Now you can pull from and push to the new location.
+Your remote can have a different name such as <em>origin</em>.
+Look at the URL after the remote name to identify the adequate remote.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_good_practices">Good Practices</h3>
+<div class="paragraph">
+<p>Do not transfer a product with known security flaws to another party.
+Please correct the issues.</p>
+</div>
+<div class="paragraph">
+<p>GitHub, SonarQube <a href="#sonarqube">[4]</a> and other tools provide convenient ways to detect vulnerabilities.
+Integrate these tools to support the delivery of an application without known vulnerabilities or OWASP smells
+<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lessons_learnt">Lessons Learnt</h3>
+<div class="paragraph">
+<p>Development teams seldom understand the legal implications of copyright infringements.
+All source code files must have a clear copyright banner.
+Documentation artifacts shall also have an explicit copyright notice.
+Any files without a copyright will legally be handled as implicitly owned by the authors of the source code or documentation.
+The whole repository shall also carry an overall license files.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are using pictures in the documentation, clarify and track the copyrights of the used images.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>The copyright files for used components shall be made available in the repository as requested by the authors of these components.
+Care should be taken to avoid mixing non-compatible licenses in the same product.
+Beware especially of the consequences of using a GPL or AGPL library in your product.</p>
+</div>
+<div class="paragraph">
+<p>Tools such as GitHub or GitLab increase efficiency if you are adopting DevOps practices when working with them [<a href="#accelerate">2</a>, <a href="#devops-handbook">3</a>, <a href="#site-reliability-engineering">4</a>].</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="transferring-a-repository"></a>[1] <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository">Transferring a GitHub Repository</a></p>
+</li>
+<li>
+<p><a id="configuring-custom-domain"></a>[2] <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site">Configuring Custom Domain</a></p>
+</li>
+<li>
+<p><a id="creative-commons"></a>[3] <a href="https://creativecommons.org/">Creative Commons</a></p>
+</li>
+<li>
+<p><a id="sonarqube"></a>[4] <a href="https://www.sonarqube.org/">SonarQube</a></p>
+</li>
+<li>
+<p><a id="dependabot"></a>[5] <a href="https://github.com/dependabot/dependabot-core">GitHub Dependabot</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="paragraph">
+<p><a id="continuous-delivery"></a>[1] J. Humble and D. Farley, <em>Continuous Delivery</em>. Addison-Wesley Professional, 2010 [Online]. Available: <a href="https://www.amazon.com/dp/0321601912" class="bare">https://www.amazon.com/dp/0321601912</a></p>
+</div>
+<div class="paragraph">
+<p><a id="accelerate"></a>[2] N. Forsgren, J. Humble, and G. Kim, <em>Accelerate: The Science of Lean Software and DevOps</em>. IT Revolution Press [Online]. Available: <a href="https://www.amazon.com/dp/B07B9F83WM" class="bare">https://www.amazon.com/dp/B07B9F83WM</a></p>
+</div>
+<div class="paragraph">
+<p><a id="devops-handbook"></a>[3] G. Kim and N. Forsgren, <em>DevOps Handbook</em>, Second. IT Revolution Press, 2021 [Online]. Available: <a href="https://www.amazon.com/dp/B01M9ASFQ3" class="bare">https://www.amazon.com/dp/B01M9ASFQ3</a></p>
+</div>
+<div class="paragraph">
+<p><a id="site-reliability-engineering"></a>[4] B. Beyer, C. Jones, J. Petoff, and N. R. Murphy, <em>Site Reliability Engineering</em>. O’Reilly Media, Inc., 2016 [Online]. Available: <a href="https://www.amazon.com/dp/1492029505" class="bare">https://www.amazon.com/dp/1492029505</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. The handover is most of the time implied through the contract or the corporate governance processes of your customer.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. The German term is <em>Werkvertrag</em>. The French term is <em>contrat de travail</em>.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. The project does not contain any merge conflicts or merge requests. All development branches are merged into the main branch and closed.
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. If your delivery and deployment pipelines still contain manual steps, please exhaustively document these steps. Include examples and check lists to reduce the risk of errors.
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. If you are not using pages as a documentation approach, document your solution and how you tag your documentation with the corresponding source code.
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. Use an official license reviewed by professional copyright lawyers.
+</div>
+<div class="footnote" id="_footnotedef_7">
+<a href="#_footnoteref_7">7</a>. You should easily identify and retrieve the source code, binary artifacts and documentation for a specific release.
+</div>
+<div class="footnote" id="_footnotedef_8">
+<a href="#_footnoteref_8">8</a>. You also need to update your Google Analytics properties if you are using Google as a site usage analysis tool.
+</div>
+<div class="footnote" id="_footnotedef_9">
+<a href="#_footnoteref_9">9</a>. GitHub provides DependaBot <a href="#dependabot">[5]</a> to handle dependency updates for various ecosystems including Python technology stack.
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-2afe85c9b19f17069acf670af0bb9213">How to Detect Fake Scrum?</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2022-08-01" class="text-muted">2022-08-01</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_how_to_detect_fake_scrum">How to Detect Fake Scrum?</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2022-08-01-head.jpg" alt="2022 08 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>Some organisations are adopting agile and Scrum approaches simply because they see competitors doing it.
+In these situations, there is rarely a desire to adopt a new mindset and culture, or motivation for true change.</p>
+</div>
+<div class="paragraph">
+<p>A common pattern is the adoption of a new nomenclature.
+Project Managers are renamed as Scrum Masters.
+Business Analysts become Product Owners.</p>
+</div>
+<div class="paragraph">
+<p>Very little actually changes.
+Few benefits of agility are realised.</p>
+</div>
+<div class="paragraph">
+<p>If anything, the situation may become worse as some previous structures are lost, yet the discipline for Agile is just not there.</p>
+</div>
+<div class="sect2">
+<h3 id="_larmans_laws">Larman’s Laws</h3>
+<div class="paragraph">
+<p>Craig Larman is one of the founder of <a href="https://less.works/">LeSS</a>.
+He has formulated laws based on his observations.
+The laws reflect the difficulty of a sucessfull transformation.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Organizations are implicitly optimized to avoid changing the status quo of middle- and first-level manager and <em>specialist</em> positions.</p>
+</div>
+<div class="paragraph">
+<p>The corollaries are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Any change initiative will be reduced to redefining or overloading the new terminology to mean basically the same as status quo.</p>
+</li>
+<li>
+<p>Any change initiative will be derided as <em>purist</em>, <em>theoretical</em>, <em>revolutionary</em>, <em>religion</em> and <em>needing pragmatic customization for local concerns</em>.
+It deflects from addressing weaknesses, and manager or specialist status quo.</p>
+</li>
+<li>
+<p>If after changing the change some managers and single-specialists are still displaced, they become <em>coaches or trainers</em> for the change.
+They frequently reinforce (1) and (2).</p>
+</li>
+<li>
+<p>In large established organizations, culture follows structure.
+And in tiny young orgs, structure follows culture
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</li>
+</ol>
+</div>
+</blockquote>
+<div class="attribution">
+— Craig Larman
+</div>
+</div>
+<div class="paragraph">
+<p>Fake Scrum is around us everywhere we go.
+This dreadful situation is unavoidable.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_five_scrum_fake_indicators">Five Scrum Fake Indicators</h3>
+<div class="paragraph">
+<p>How to find out you are in a fake agile environment?
+Indicators you are in a fake agile or Scrum environment often are:</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="../pics/2022-08-01-values-principles-practices.png" alt="2022 08 01 values principles practices" width="60%" height="360"/>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_no_goals">No goals</h4>
+<div class="paragraph">
+<p>If a Scrum team has absolutely no goals, what is the purpose of its existence?</p>
+</div>
+<div class="paragraph">
+<p>All good teams have goals.
+Scrum bakes the concept of goals right into the framework.</p>
+</div>
+<div class="paragraph">
+<p>We have product goals, which are a commitment to the Product Backlog.
+And then we have Sprint Goals, which are a commitment to the Sprint Backlog.
+Those goals are designed to help us achieve focus, get stuff done, and get results.</p>
+</div>
+<div class="paragraph">
+<p>If you do not have goals, you got fake Scrum.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_no_self_management">No Self-management</h4>
+<div class="paragraph">
+<p>A team that cannot self-manage is a team that cannot be nimble.
+They are not going to be quick.
+They are going to stall.
+They are going to wait to ask questions.
+They will always be asking for their boss’s approval.</p>
+</div>
+<div class="paragraph">
+<p>Teams like this are very slow.
+The whole point of being agile is to be nimble, right?<br/>
+So, if it does not feel like they are being nimble, I should look a little deeper.<br/></p>
+</div>
+<div class="paragraph">
+<p>Self-management is a really common problem.</p>
+</div>
+<div class="paragraph">
+<p>It can happen from a lack of trust with the boss or your business stakeholders.
+It can come from a lack of trust for each other as team members.</p>
+</div>
+<div class="paragraph">
+<p>Wherever your problems are, self-management is crucial to have working in order for Scrum to work.
+If you do not have self-managing going on, it is probably fake Scrum.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_no_deliverables">No deliverables</h4>
+<div class="paragraph">
+<p>No increment at the end of the sprint.
+The entire point of Scrum is to have releasable increments for every single sprint.
+Without that, well, we are just cranking a bunch of levers.</p>
+</div>
+<div class="paragraph">
+<p>To get to a deliverable can sometimes be kind of challenging.
+You have to write requirements in such a way that something can be delivered in just a short timeframe.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_no_transparency">No transparency</h4>
+<div class="paragraph">
+<p>Without transparency, I cannot inspect, I cannot adapt.
+If I cannot inspect and adapt, the entire empirical process falls apart.
+If the entire empirical process is falling apart, you got fake Scrum.
+Scrum is built upon this engine.</p>
+</div>
+<div class="paragraph">
+<p>Scrum is built upon the idea that we make things transparent.</p>
+</div>
+<div class="paragraph">
+<p>We inspect and adapt at the appropriate frequency and that is how we manage all the complexity of product development.
+We certainly cannot eliminate complexity, but we can work with it.
+So, if you do not have transparency, you got fake Scrum.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_no_results">No results</h4>
+<div class="paragraph">
+<p>If you got stakeholders that do not see a difference.
+They do not care if they are not talking to your team.
+They are not talking to your product owner
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>If you are not delivering results then what is the point of your work in the first place.
+You are probably doing <em>fake Scrum</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_digital_software_product_development">Digital Software Product Development</h3>
+<div class="paragraph">
+<p>The software industry has created and promoted agile and Scrum approaches.
+A development department is responsible for delivering working software each sprint.
+Accordingly to the <a href="https://www.scrumguides.org/">Scrum Guide</a> a potentially shippable product is the increment result produced multiple times per week.</p>
+</div>
+<div class="paragraph">
+<p>You can easily detect fake Scrum and incompetent software development teams:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Git commit multiple times per day per developer</dt>
+<dd>
+<p>All your software development teams are working with git.
+Each developer creates multiple well-commented commits per day.
+Just use git history to check this hypothesis.<br/>
+<em>Here some links to how you can use git</em> <a href="#git-local-repositories-for-the-impatient">[2]</a><a href="#git-branches-for-the-impatient">[3]</a> <a href="#code-scene">[4]</a>.</p>
+</dd>
+<dt class="hdlist1">Deliver working applications multiple times a week</dt>
+<dd>
+<p>All teams deploy their digital increment multiple time per week.
+DevOps practices
+<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup> are lively in our organization [<a href="#accelerate">1</a>, <a href="#continuous-delivery-pipelines">2</a>].</p>
+</dd>
+<dt class="hdlist1">No errors older than a few days</dt>
+<dd>
+<p>Quality and craftsmanship are cornerstones of agile approaches.
+A way to check these good practices is to study errors reports <a href="#zero-bug-policy">[5]</a>.
+Another test is to look at the OWASP static analysis and the obsolete libraries reports.</p>
+</dd>
+<dt class="hdlist1">Living documentation</dt>
+<dd>
+<p>Professional developers provide adequate and actual documentation for their solution.
+Does the team have a living documentation.
+This documentation is often a generated static website <a href="#static-website">[6]</a>.
+Agile software architecture regularly uses domain driven design ideas <a href="#domain-driven-design">[7]</a>.
+Ask the team how they do software design activities?</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_final_thoughts">Final Thoughts</h3>
+<div class="paragraph">
+<p>Walk the talk.
+Become a professional Scrum master [<a href="#mastering-professional-scrum">3</a>], product owner [<a href="#professional-product-owner">4</a>], or team developer.</p>
+</div>
+<div class="paragraph">
+<p>A digital product development team shall be DevOps affine [<a href="#continuous-delivery">5</a>, <a href="#continuous-delivery-pipelines">2</a>, <a href="#devops-handbook">6</a>].</p>
+</div>
+<div class="paragraph">
+<p>See also another blog <a href="#detecting-agile-bullshit">[1]</a> describing how the department of defense of USA detects agile lies.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="detecting-agile-bullshit"></a>[1] <a href="../../2019/detecting-agile-bullshit/">Detecting Agile Bullshit</a>
+Marcel Baumann. 2019.</p>
+</li>
+<li>
+<p><a id="git-local-repositories-for-the-impatient"></a>[2] <a href="../../2017/git-local-repositories-for-the-impatient/">Git local repositories for the impatient</a>
+Marcel Baumann. 2017.</p>
+</li>
+<li>
+<p><a id="git-branches-for-the-impatient"></a>[3] <a href="../../2016/git-branches-for-the-impatient/">Git branches for the impatient</a>
+Marcel Baumann. 2016.</p>
+</li>
+<li>
+<p><a id="code-scene"></a>[4] <a href="../../2019/code-scene-as-crime-scene/">Code Scene as Crime Scene</a>
+Marcel Baumann. 2019.</p>
+</li>
+<li>
+<p><a id="zero-bug-policy"></a>[5] <a href="../../2020/advocate-zero-bug-policy-in-your-projects/">Advocate Zero Bug Policy in Your Projects</a>
+Marcel Baumann. 2020.</p>
+</li>
+<li>
+<p><a id="static-website"></a>[6] <a href="../../2020/creating-a-technical-website-with-hugo-and-asciidoc/">Creating a Techincal Website with Hugo and Asciidoc</a>
+Marcel Baumann. 2020.</p>
+</li>
+<li>
+<p><a id="domain-driven-design"></a>[7] <a href="../../2022/software-structure-with-ddd/">Software Structure with DDD</a>
+Marcel Baumann. 2022.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="paragraph">
+<p><a id="accelerate"></a>[1] N. Forsgren, J. Humble, and G. Kim, <em>Accelerate: The Science of Lean Software and DevOps</em>. IT Revolution Press [Online]. Available: <a href="https://www.amazon.com/dp/B07B9F83WM" class="bare">https://www.amazon.com/dp/B07B9F83WM</a></p>
+</div>
+<div class="paragraph">
+<p><a id="continuous-delivery-pipelines"></a>[2] D. Farley, <em>Continuous Delivery Pipelines</em>. 2021 [Online]. Available: <a href="https://www.amazon.com/dp/B096YGZVZ9" class="bare">https://www.amazon.com/dp/B096YGZVZ9</a></p>
+</div>
+<div class="paragraph">
+<p><a id="mastering-professional-scrum"></a>[3] S. Ockerman and S. Reindl, <em>Mastering Professional Scrum</em>. Addison Wesley, 2019 [Online]. Available: <a href="https://www.amazon.com/dp/B07XTLNPTC" class="bare">https://www.amazon.com/dp/B07XTLNPTC</a></p>
+</div>
+<div class="paragraph">
+<p><a id="professional-product-owner"></a>[4] D. McGreal and R. Jocham, <em>The Professional Product Owner</em>. Addison-Wesley Professional [Online]. Available: <a href="https://www.amazon.com/dp/B07D5ZPJBY" class="bare">https://www.amazon.com/dp/B07D5ZPJBY</a></p>
+</div>
+<div class="paragraph">
+<p><a id="continuous-delivery"></a>[5] J. Humble and D. Farley, <em>Continuous Delivery</em>. Addison-Wesley Professional, 2010 [Online]. Available: <a href="https://www.amazon.com/dp/0321601912" class="bare">https://www.amazon.com/dp/0321601912</a></p>
+</div>
+<div class="paragraph">
+<p><a id="devops-handbook"></a>[6] G. Kim and N. Forsgren, <em>DevOps Handbook</em>, Second. IT Revolution Press, 2021 [Online]. Available: <a href="https://www.amazon.com/dp/B01M9ASFQ3" class="bare">https://www.amazon.com/dp/B01M9ASFQ3</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. In big established groups, culture/behavior/mindset follows and is influenced by changes in the organizational system and design. In large established organizations, if you want to really change culture, you have to start with changing the organizational system because culture does not really change otherwise. Said another way, the organizational system is strongly influential on mindset and behavior.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Your product owner is not doing her job. One key reponsibility of a product owner is to involve and inform all stakeholders.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. Continuous integration and continuous delivery is <em>Dev</em> practices. Continuous deploymnet and infrastructure as code are <em>Ops</em> practices.
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
     <h1 id="pg-475968803d2593260e0db85256abc2d9">Would You Enjoy Being a Scrum Master?</h1>
 	
 	<div class="td-byline mb-4">
@@ -723,7 +1464,7 @@ Marcel Baumann. 2016</p>
 <p><a id="leading-quietly"></a>[18] J. Badaracco, <em>Leading Quietly</em>. Harvard Business School Press, 2002 [Online]. Available: <a href="https://www.amazon.com/dp/B005DI8XSK" class="bare">https://www.amazon.com/dp/B005DI8XSK</a></p>
 </div>
 <div class="paragraph">
-<p><a id="smart-leaders-smarter-teams"></a>[19] R. M. Schwarz, <em>Smart Leaders, Smarter Teams How You and Your Team Get Unstuck to Get Results</em>. Wiley &amp; Sons, Incorporated, John, 2013 [Online]. Available: <a href="https://www.amazon.com/dp/B00BMU3IC4" class="bare">https://www.amazon.com/dp/B00BMU3IC4</a></p>
+<p><a id="smart-leaders-smarter-teams"></a>[19] R. M. Schwarz, <em>Smart Leaders, Smarter Teams : How You and Your Team Get Unstuck to Get Results</em>. Wiley-Interscience, p. 272 [Online]. Available: <a href="https://www.amazon.com/dp/0787988731" class="bare">https://www.amazon.com/dp/0787988731</a></p>
 </div>
 <div class="paragraph">
 <p><a id="gold-mine"></a>[20] F. Ballé and M. Ballé, <em>The Gold Mine</em>. Lean Enterprises Inst Inc, 2005 [Online]. Available: <a href="https://www.amazon.com/dp/0974322563" class="bare">https://www.amazon.com/dp/0974322563</a></p>
@@ -27570,7 +28311,7 @@ I wrote down my comments in italics.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Manage team of software engineers: provide technical direction, schedule and delegate work, evaluate performance.
+<p>Manage team of software engineers: provide the technical direction, schedule and delegate work, evaluate performance.
 Advise on good practices and developing practice, review code.</p>
 <div class="ulist">
 <ul>
@@ -27578,7 +28319,7 @@ Advise on good practices and developing practice, review code.</p>
 <p><em>A Scrum master empowers a development team.
 The team schedules the work during each Sprint.
 The team members select the stories they will implement next.
-The Scrum master advices good practices, but he really should not perform code reviews and police the team.</em></p>
+The Scrum master advices good practices, but he should really not perform code reviews and police the team.</em></p>
 </li>
 <li>
 <p><em>He does not manage and certainly not micromanage engineers.
@@ -27591,13 +28332,13 @@ He shall not police the team by reviewing the source code.</em></p>
 <li>
 <p>Analyze requirements and provide time estimates: consume non-technical functional requirement documentation.
 Provide feedback when necessary, translating into the technical documentation when necessary.
-Provide feasibility assessment and estimate level of effort to implement</p>
+Provide feasibility assessment and estimate level of effort to implement.</p>
 <div class="ulist">
 <ul>
 <li>
 <p><em>The product owner and the team write and refine stories.
 Avoid requirements and move to stories and epics.
-Technical documentation and feasibility assessments shall be done by the team.
+The technical documentation and feasibility assessments shall be done by the team.
 Only the team has the right to estimate the effort needed to implement a story.</em></p>
 </li>
 <li>
@@ -27608,7 +28349,7 @@ Only the team has the right to estimate the effort needed to implement a story.<
 </li>
 <li>
 <p>Help develop, communicate and enforce workflows.
-Work with the development department head and QA to assure that clear workflows are established and followed within the team</p>
+Work with the development department head and QA to assure that clear workflows are established and followed within the team.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -27644,7 +28385,7 @@ His teams are self-organizing and directly communicate with all involved parties
 </li>
 <li>
 <p>Architecture: participate in technical design of new and expanding systems and infrastructure.
-Aid in creating documentation for new and existing systems</p>
+Aid in creating documentation for new and existing systems.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -27734,7 +28475,7 @@ They schedule meetings, moderate discussions, write progress reports and draw be
 Or worst, they collect extensive statistics about velocity, planned versus delivered story points or how precise story estimation was.</p>
 </div>
 <div class="paragraph">
-<p>At the end of the day, your job is to mentor your team to be champions and build awesome products :cite[great-scrum-master,scrum-pocket-guide-3rd,mastering-professional-scrum].</p>
+<p>At the end of the day, your job is to mentor your team to be champions and build awesome products [<a href="#great-scrum-master">1</a>, <a href="#scrum-pocket-guide-3rd">2</a>, <a href="#mastering-professional-scrum">3</a>].</p>
 </div>
 <div class="paragraph">
 <p><em>Wake up!</em> You are not a product manager, you shall be a catalyst.</p>
@@ -28138,7 +28879,7 @@ In case you are using the IntelliJ IDEA configure git in the IDE through the pre
 </div>
 </div>
 <div class="paragraph">
-<p>To add a specific file or all your source files to git</p>
+<p>To add a specific file or all your source files to git.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -28288,7 +29029,7 @@ Resetting with the hard option recursively discards all of your currently uncomm
 The situation arises because Microsoft OS uses CRLF for the end of lines instead of CR.</p>
 </div>
 <div class="paragraph">
-<p>You can configure git to handle it by running on Windows.</p>
+<p>You can configure git to handle it by running on Windows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -28296,7 +29037,7 @@ The situation arises because Microsoft OS uses CRLF for the end of lines instead
 </div>
 </div>
 <div class="paragraph">
-<p>or on Linux and macOS</p>
+<p>Or on Linux and macOS:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -28643,7 +29384,7 @@ Do you truly <a href="https://en.wikipedia.org/wiki/Theory_X_and_Theory_Y">trust
 <dt class="hdlist1">Customers are not involved or engaged</dt>
 <dd>
 <p>Customers are the center in the new world.
-Please involve them, talk to them, find out what they need</p>
+Please involve them, talk to them, find out what they need.</p>
 </dd>
 </dl>
 </div>
@@ -28666,7 +29407,7 @@ Read the book &#34;Reinventing Organizations&#34; from Frederic Laloux to unders
 Training is not a half-day introduction, it is days and days of training, workshops, and reading.</p>
 </div>
 <div class="paragraph">
-<p>The transition is painful, see the seminal articles of Steve Denning</p>
+<p>The transition is painful, see the seminal articles of Steve Denning:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -28687,7 +29428,7 @@ Training is not a half-day introduction, it is days and days of training, worksh
 <p>Products are value-driven and quality oriented</p>
 </li>
 <li>
-<p>Teams are focused to master their work and tools - Craftsmanship, <a href="http://www.extremeprogramming.org/">eXtreme Programming</a> -</p>
+<p>Teams are focused to master their work and tools – Craftsmanship, <a href="http://www.extremeprogramming.org/">eXtreme Programming</a> -</p>
 </li>
 <li>
 <p>For huge development departments consider using the <a href="https://less.works/">LeSS</a> approach.</p>
@@ -28700,7 +29441,7 @@ Training is not a half-day introduction, it is days and days of training, worksh
 <p>Psychological safety: Can we take risks on this team without feeling insecure or embarrassed?</p>
 </li>
 <li>
-<p>Dependability: Can we count on each other to do high quality work on time?</p>
+<p>Dependability: Can we count on each other to do high-quality work on time?</p>
 </li>
 <li>
 <p>Structure &amp; clarity: Are goals, roles, and execution plans on our team clear?</p>

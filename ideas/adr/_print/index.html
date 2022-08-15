@@ -188,7 +188,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.055f822c09166f35b78e16b073306bcc.json"
+  data-offline-search-index-json-src="/offline-search-index.914a0924233dce8ca0649ec1c0244e10.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -1157,6 +1157,245 @@ MicroStream does not provide functions in this area.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-1f58735d3d0c556d744acdecae2a8f91">9 - OS 008: Use log4j2 as default logging framework</h1>
+    
+	<div class="sect1">
+<h2 id="_os_008_use_log4j2_as_default_logging_framework">OS-008 Use log4j2 as default logging framework</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2021-06-15</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-008-head.png" alt="OS 008 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>The logging library <a href="https://en.wikipedia.org/wiki/SLF4J">slf4j</a> seems to be a dead project for at least one year.
+The last commit in the <a href="https://github.com/qos-ch/slf4j">GitHub slf4j repository</a> was performed two years ago.
+Version 2.0 of the library is an alpha release on <a href="https://mvnrepository.com/artifact/org.slf4j/slf4j-api">Maven Central</a> dating back to October 2019.</p>
+</div>
+<div class="paragraph">
+<p>The apache project log4j has made tremendous progress with the creation of the log4j2 library.
+All features provided in slf4j are now available in log4j2.
+In particular, the fluent interface which is only available in the beta version of slf4j is also supported.
+Additional features are also provided and performance is better than with other logging frameworks.</p>
+</div>
+<div class="paragraph">
+<p>The project is active and under the umbrella of the <a href="https://www.apache.org">Apache Foundation</a>.
+The library uses well-documented Java module names as any modern library shall provide.</p>
+</div>
+<div class="paragraph">
+<p>This situation raises the question to move our application to the apache logging framework.
+Both APIs are very similar in style and naming.
+the effort to migrate is quite reasonable.
+Usually, only the logger declaration needs a modification.
+The creation of logging records uses exactly the same syntax and calling conventions.</p>
+</div>
+<div class="paragraph">
+<p>The advantage is better integration with an actively supported and developed library.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>All components will be migrated to the log4j2 library
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>All components shall use the fluent interface to write logging records.
+This decision shall increase the legibility of the source code.</p>
+</div>
+<div class="paragraph">
+<p>Staying in a library no more under active development is too dangerous.
+Closing of security issues and support of current JDK versions are not guaranteed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>All source files must be modified to use the new library</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All logging record creations shall use a fluent interface.
+As in slf4j, no string concatenation shall happen in log record calls, use the message feature of the library.</p>
+</li>
+<li>
+<p>Logging level is specified by using the fluent interface</p>
+</li>
+<li>
+<p>No conditional statements shall be used to bracket logging statements</p>
+</li>
+<li>
+<p>Exceptions are always stated through the fluent user interface and are not an argument of the log message</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>All <a href="https://gradle.org/">Gradle</a> build files shall use the new library.
+The API is declared as an implementation dependency.
+The core library is declared as a test or runtime dependency.</p>
+</li>
+<li>
+<p>Testing shall be performed to verify correct behavior and correct configuration.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We shall explore if trouble arise from used components which are using other logging libraries.
+The risk is small because it is already existing wehn using slf4j liberary.
+The difference is only our new preferred library is now the Apache one.</p>
+</div>
+<div class="paragraph">
+<p>The architecture of log4j2 is described in <a href="https://logging.apache.org/log4j/2.x/manual/architecture.html">Log4j2 Main Components</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_learnings">Learnings</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The log4j2 community reacted professionally and fast in 2022 to correct a security attack in the library.
+The update of all libraries and applications with the patched version was done in a few minutes.
+A gradle plugin was used to infer which version of the library was used.
+The continuous implementation and delivery pipeline were used to generate hardened versions.</p>
+</li>
+<li>
+<p>A new feature of Gradle supports the definition of dependencies in a central file for all submodules.
+The project uses <em>libs.version.toml</em> configuration file to unify library usage through all components.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. It is sad that such a well-crafted library as slf4j is fading away. We assume that the community actively working on extensions was too small. Ceki Gülcü did a wonderful job to pave the way for modern and efficient logging concepts in the Java world.
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f8f72a7bbf6cd0c10d0c2e89425075e2">10 - OS 009: Use HSQLDB as SQL DB</h1>
+    
+	<div class="sect1">
+<h2 id="_os_009_use_hsqldb_as_sql_store">OS-009 Use HSQLDB as SQL store</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2022-01-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-009-head.jpg" alt="OS 009 head" width="420" height="360"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5774cc62fa7a9064f7aa379d79e33d1d">11 - OS 010: Archive as TSV Files</h1>
+    
+	<div class="sect1">
+<h2 id="_os_010_archive_data_as_tsv_files">OS-010 Archive Data as TSV Files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2022-01-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-010-head.jpg" alt="OS 010 head" width="420" height="360"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+
 </div>
 </div>
 </div>

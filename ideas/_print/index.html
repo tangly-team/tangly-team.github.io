@@ -189,7 +189,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.055f822c09166f35b78e16b073306bcc.json"
+  data-offline-search-index-json-src="/offline-search-index.914a0924233dce8ca0649ec1c0244e10.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -1727,525 +1727,7 @@ How you do it is up to you.</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-79b09a799a4116e30f4f38b34172283a">2 - Architecture Code Scene</h1>
-    <div class="lead">Analysis of source code as a code scene with specialized tools</div>
-	<div class="sect1">
-<h2 id="_architecture_code_scene">Architecture Code Scene</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>-
-=== Purpose</p>
-</div>
-<div class="paragraph">
-<p>Agile development teams shall manage and diminish their technical debt. We provide instruments to increase the pay-off of refactoring measures. The
-most relevant source code parts should be refactored first. But how can we identify them?</p>
-</div>
-<div class="paragraph">
-<p>Git is the de facto standard for version management systems. Git contains the whole evolution story of our source code. We use these data to identify
-areas under repetitive change or often needing fixing. In parallel, the evolution of the source code hints us for complexity hotspots.</p>
-</div>
-<div class="paragraph">
-<p>The three areas of statistical data are combined to identify the most promising area for refactoring.
-* History of commits reflecting the behavior and priorities of team members over time
-* Evolution of source code artifacts reflecting changes in complexity and legibility
-* Corrections of identified defects and their location identify non-quality hotspots</p>
-</div>
-<div class="paragraph">
-<p>The provided tools extract the requested indicators and present them graphically. The findings are used to support refactoring prioritization.</p>
-</div>
-<div class="sect2">
-<h3 id="_requirements">Requirements</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Gather changes in the repository artifacts over a specified time interval</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>the gathered data are date of change, the author of change, number of added lines and of removed lines</p>
-</li>
-<li>
-<p>each file change is gathered</p>
-</li>
-<li>
-<p>only the version management system <em>git</em> is supported</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Gather complexity metrics over source code artifacts – classes and packages – over a specified time interval</p>
-</li>
-<li>
-<p>Gather location and time when identified defects were fixed in the source code repository</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>use the official conventions to identify a closed ticket in a commit comment</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_modules_packages_classes_and_files">Modules, Packages, Classes and Files</h3>
-<div class="imageblock">
-<div class="content">
-<img src="../pics/architecture-code-scene-model.svg" alt="architecture code scene model" width="357" height="685"/>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-098acaee97b95fba0209e5fdbf5d7e03">3 - Components Publication</h1>
-    <div class="lead">Workflow to publish open source components</div>
-	<div class="sect1">
-<h2 id="_components_publication">Components Publication</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>-:sectnums:
-:toc:</p>
-</div>
-<div class="sect2">
-<h3 id="_regular_git_repository_update">Regular Git Repository Update</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Push the changes to the Bitbucket repository</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Verify the build job in the CI pipeline was successful</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Push the changes to the GitHub repository.
-<em>The statistics for developer activities will be automatically updated.</em></p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_maven_central_publication">Maven Central Publication</h3>
-<div class="paragraph">
-<p>The following process is used to publish <a href="https://www.tangly.net/">tangly</a> open source component on <a href="https://mvnrepository.com/repos/central">Maven Central</a>.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Publish artifacts of a component with the script <code>uploadToMavenCentral.sh</code>.
-Do not use the gradle task <code>gradle publishAllPublicationsToMavenRepository -Pmode=prod</code>.
-Sonatype cannot handle a parallel upload of multiple components and simply close the connections during upload (Status 2020-Q2).</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Pre activity: test publishing with <code>gradle publishToMavenLocal</code></p>
-</li>
-<li>
-<p>Pre activity: check on bitbucket the product compiles through the <strong>CI</strong> continuous integration pipeline</p>
-</li>
-<li>
-<p>Post activity: <strong>tag repository</strong> on git to identify the version of the published packages.
-The tag version semantic part <strong>must</strong> be the same as the package version on <a href="https://mvnrepository.com/repos/central">Maven Central</a>
-The tag is of the form -{AcronymComponent}-MajorVersion-MinorVersion-PatchVersion-</p>
-</li>
-<li>
-<p>Verify with <code>git tag label</code> and <code>git push origin --tags</code></p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Log into <a href="https://oss.sonatype.org/#welcome">Sonatype Maven Central Repository</a></p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Go to <a href="https://oss.sonatype.org/#stagingRepositories">Staging Repositories</a></p>
-</li>
-<li>
-<p>Find your temporary repository at the end of the list</p>
-</li>
-<li>
-<p>Review the content of the repository</p>
-</li>
-<li>
-<p>Close the repository -button on tool list-</p>
-</li>
-<li>
-<p>Close stage is initiated and checks are performed.
-If everything was fine, the content was published.</p>
-</li>
-<li>
-<p>Release the artifact -button on the tool list-</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>See <a href="#website-publication">Static Website Publication</a> to update the website</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>It takes up to one day until the component is visible in Maven Central website upon publication.</p>
-</div>
-<div class="paragraph">
-<p>On the positive side, the last publications were performed in less than 30 minutes.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="paragraph">
-<p>Below the dependencies between tangly open source components as defined in the multi-modules <a href="https://gradle.org/">Gradle Build Tool</a> build file.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../pics/tangly-componentsDependencies.svg" alt="tangly componentsDependencies" width="2289" height="185"/>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_decisions">Decisions</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The open source components are stored in a mono repository.
-Each component is declared as a gradle module.</p>
-</li>
-<li>
-<p>We use de facto standard Git.</p>
-</li>
-<li>
-<p>We are hosted at <a href="https://bitbucket.org">bitbucket</a>.</p>
-</li>
-<li>
-<p>The bitbucket repository is regularly synchronized with a GitHub mirror repository <a href="https://github.com/marcelbaumann/tangly-os.git">GitHub</a>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The synchronization is performed with the command</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">git push <span style="color: #000080">--prune</span> https://github.com/marcelbaumann/tangly-os.git +refs/remotes/origin/<span style="color: #000000;font-weight: bold">*</span>:refs/heads/<span style="color: #000000;font-weight: bold">*</span> +refs/tags/<span style="color: #000000;font-weight: bold">*</span>:refs/tags/<span style="color: #000000;font-weight: bold">*</span> <i class="conum" data-value="1"></i><b>(1)</b>
-
-git remote <i class="conum" data-value="2"></i><b>(2)</b>
-
-git push origin-bitbucket <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tbody><tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Pushes the repository with all remotes, references and tags to GitHub specified repository</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>List all remotes associated with this git repository</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Pushes the master branch to the <em>origin-bitbucket</em> remote repository.
-The push shall trigger the continuous integration pipeline</td>
-</tr>
-</tbody></table>
-</div>
-<div class="paragraph">
-<p>You must create a token for developer account to be able to push changes and trigger the CI pipeline.
-The username is your account username The password is the generated token
-<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
-Store it in a safe place.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_findings">Findings</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>We needed to manually publish the public key on <a href="http://keys.gnupg.net">keys.gnupg.net</a></p>
-</li>
-<li>
-<p>Gradle build file has a condition including disabling the signing plugin on the CI pipeline because keys and associated authentication are not available.
-I decided not to upload private keys to <a href="https://bitbucket.org/">bitbucket</a>.
-See the documentation at the beginning of the Gradle build file for details.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Set the property if you want to sign the component artifacts and publish to Maven Central.
-</td>
-</tr>
-</tbody></table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="website-publication">Static Website Publication</h3>
-<div class="sect3">
-<h4 id="_introduction">Introduction</h4>
-<div class="paragraph">
-<p>The static website uses <a href="https://asciidoc.org/">Asciidoc</a> to write all documents.</p>
-</div>
-<div class="paragraph">
-<p>The static website uses  <a href="https://gohugo.io/">Hugo</a> as site generator.
-The Hugo theme is <a href="https://www.docsy.dev/">Docsy</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_configure_asciidoctor">Configure Asciidoctor</h4>
-<div class="paragraph">
-<p>The new version of the <a href="https://gohugo.io/">Hugo</a> support configuration of <a href="https://asciidoctor.org/">Asciidoctor</a> through config.toml therefore no manipulation of asciidoctor is needed.
-As a bonus, the files generated by PlantUml are created in the correct folder.
-We still need to install the referenced packages.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell"><span style="color: #0086B3">sudo </span>gem <span style="color: #0086B3">install </span>asciidoctor-diagram <i class="conum" data-value="1"></i><b>(1)</b>
-<span style="color: #0086B3">sudo </span>gem <span style="color: #0086B3">install </span>asciidoctor-bibtex <i class="conum" data-value="2"></i><b>(2)</b>
-<span style="color: #0086B3">sudo </span>gem <span style="color: #0086B3">install </span>asciimath <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tbody><tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Provides support for all diagrams such as plantUML and mermaid.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Provides support for formal bibliography references.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Provides support for mathematical and logical expressions in documents.</td>
-</tr>
-</tbody></table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_docsy_tailoring">Docsy Tailoring</h3>
-<div class="paragraph">
-<p>The docsy theme is missing some features.
-It does not support asciidoc styling or commenting blogs.
-Our extensions follow the official rules how a theme can be tailored and expended.</p>
-</div>
-<div class="paragraph">
-<p>The major changes are:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Inclusion of the styling sheet <em>asciidoctor.scss</em> to style asciidoc documents
-<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
-</li>
-<li>
-<p>Inclusion of the shortcodes extension <em>shortcodes.html</em> layouts and the style file <em>shortcodes.scss</em> to support file attachments in the website
-<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
-</li>
-<li>
-<p>Extesnsion of the blog section with <em>comments-uttereances.html</em> to support comments on blog articles
-<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.</p>
-</li>
-<li>
-<p>Changes in the header and footer partials to display mathematical expressions and well-styled copyright
-<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>All chagnes are defined in the assets and layouts folders as part of our website content.
-Hugo algorithms select local overwritten files and ignore the corresponding theme files.\</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The current structure of our extensions follow the official approach how a Hugo module should be extended.
-We do not change any files in the theme.
-All changes are defined locally.
-We use the selection algorithm of Hugo to activate our tailoring and extensions.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="sect3">
-<h4 id="_create_website">Create Website</h4>
-<div class="paragraph">
-<p>The tangly open source components website is hosted under <a href="http://blog.tangly.net/docs">Documentation</a>.</p>
-</div>
-<div class="paragraph">
-<p>Read the instructions in the asciidoctor script file under the scripts&#39; folder.
-Four scripts are provided to generate the Hugo static site with associated structure and theme.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>the script <em>initiateHugo.sh</em> creates the layout of the site and retrieve the theme.</p>
-</li>
-<li>
-<p>the script <em>populateHugo.sh</em> populates the site with our content.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Upon completion of local development, you must start a local Hugo server and generate the indexing files for <a href="https://lunrjs.com/">lunr</a> search.
-Before uploading the site stop the Hugo local server.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>the script <em>completeHugo.sh</em> generates the static pictures and copies them to the static folder and publish the whole site on bitbucket.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Upon completion, the site is published on the web for all.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_set_jdk_version_under_macos">Set JDK Version under macOS</h4>
-<div class="paragraph">
-<p>Install regular Java JDK such as the Oracle or OpenJDK distribution.
-They will be located under <em>/Library/Java/JavaVirtualMachines</em>.</p>
-</div>
-<div class="paragraph">
-<p>If using bash shell, add following commands to your .bash_profile.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell"><span style="color: #0086B3">alias </span>java11 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 11<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span>
-<span style="color: #0086B3">alias </span>java17 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 17<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span>
-<span style="color: #0086B3">alias </span>java18 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 18<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span>
-<span style="color: #0086B3">alias </span>java19 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 19<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can set the exact version such as <em>17.0.1</em> to precisely select a JDK or set an overall version such as <em>17</em> to select a generic version.</p>
-</div>
-<div class="paragraph">
-<p>After restarting your terminal the command <em>java17</em> will set JDK 17 to default JDK (if installed on your macOS).</p>
-</div>
-<div class="paragraph">
-<p>The list of JDK can be found with</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">/usr/libexec/java_home <span style="color: #000080">-V</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_create_docker_distribution">Create Docker Distribution</h4>
-<div class="paragraph">
-<p>Generate the ERP application as a production release.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">gradle <span style="color: #0086B3">install</span> <span style="color: #000080">-DproductionMode</span><span style="color: #000000;font-weight: bold">=</span><span style="color: #0086B3">true <i class="conum" data-value="1"></i><b>(1)</b>
-</span>gradle <span style="color: #0086B3">install</span> <span style="color: #000080">-Pproduction</span>
-unzip ./build/distributions/net.tangly.erp.ui-&lt;version&gt;.zip <i class="conum" data-value="2"></i><b>(2)</b>
-docker build <span style="color: #000080">-t</span> erp-docker <span style="color: #0086B3">.</span> <i class="conum" data-value="3"></i><b>(3)</b>
-docker run <span style="color: #000080">-ti</span> <span style="color: #000080">-p</span> 8080:8080 erp-docker <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tbody><tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Generates a production distribution stored under ./build/distributions</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Unzip the packed distribution because the docker base image does not contain unzip utility</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Build the docker image named <em>erp-docker</em></td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Run the docker image <em>erp-docker</em> and map the image port to 8080</td>
-</tr>
-</tbody></table>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="footnotes">
-<hr/>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. This is necessary if you have enabled two factors authentication. The other approach is to generate an SSH key and perform all operations other SSH.
-</div>
-<div class="footnote" id="_footnotedef_2">
-<a href="#_footnoteref_2">2</a>. I asked for a change request on GitHub for Docsy to better support asciidoc documents. The Docsy team decided that their priorities are different and rejected the request.
-</div>
-<div class="footnote" id="_footnotedef_3">
-<a href="#_footnoteref_3">3</a>. This change is defined as a merge request. The pull request is quite old and seems to have a low priority.
-</div>
-<div class="footnote" id="_footnotedef_4">
-<a href="#_footnoteref_4">4</a>. The current setup of the template does not allow selection of a comment solution per configuration.
-</div>
-<div class="footnote" id="_footnotedef_5">
-<a href="#_footnoteref_5">5</a>. An issue report exists on GitHub about the copyright issue.
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-8dd6ad296f880d0f74a2fb7492dbf11e">4 - Development Good Practices for Enterprise Java Solutions</h1>
+	<h1 id="pg-8dd6ad296f880d0f74a2fb7492dbf11e">2 - Development Good Practices for Enterprise Java Solutions</h1>
     <div class="lead">good practices</div>
 	<div class="sect1">
 <h2 id="_development_good_practices_for_enterprise_java_solutions">Development Good Practices for Enterprise Java Solutions&#34;</h2>
@@ -2301,7 +1783,7 @@ docker run <span style="color: #000080">-ti</span> <span style="color: #000080">
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-959d5fa18068c2e59ac73b039974b779">5 - Design Conventions</h1>
+	<h1 id="pg-959d5fa18068c2e59ac73b039974b779">3 - Design Conventions</h1>
     <div class="lead">Design conventions for open source components</div>
 	<div class="sect1">
 <h2 id="_design_conventions">Design Conventions</h2>
@@ -2435,7 +1917,442 @@ Do not try to model the whole source code.</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-bcef2163949d7c7b708c0d9e19326add">6 - Extendable Models</h1>
+	<h1 id="pg-098acaee97b95fba0209e5fdbf5d7e03">4 - Components Publication</h1>
+    <div class="lead">Workflow to publish open source components</div>
+	<div class="sect1">
+<h2 id="_components_publication">Components Publication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>-:sectnums:
+:toc:</p>
+</div>
+<div class="sect2">
+<h3 id="_regular_git_repository_update">Regular Git Repository Update</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Push the changes to the Bitbucket repository</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Verify the build job in the CI pipeline was successful</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Push the changes to the GitHub repository.
+<em>The statistics for developer activities will be automatically updated.</em></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_maven_central_publication">Maven Central Publication</h3>
+<div class="paragraph">
+<p>The following process is used to publish <a href="https://www.tangly.net/">tangly</a> open source component on <a href="https://mvnrepository.com/repos/central">Maven Central</a>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Publish artifacts of a component with the script <code>uploadToMavenCentral.sh</code>.
+Do not use the gradle task <code>gradle publishAllPublicationsToMavenRepository -Pmode=prod</code>.
+Sonatype cannot handle a parallel upload of multiple components and simply close the connections during upload (Status 2020-Q2).</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Pre activity: test publishing with <code>gradle publishToMavenLocal</code></p>
+</li>
+<li>
+<p>Pre activity: check on bitbucket the product compiles through the <strong>CI</strong> continuous integration pipeline</p>
+</li>
+<li>
+<p>Post activity: <strong>tag repository</strong> on git to identify the version of the published packages.
+The tag version semantic part <strong>must</strong> be the same as the package version on <a href="https://mvnrepository.com/repos/central">Maven Central</a>
+The tag is of the form -{AcronymComponent}-MajorVersion-MinorVersion-PatchVersion-</p>
+</li>
+<li>
+<p>Verify with <code>git tag label</code> and <code>git push origin --tags</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Log into <a href="https://oss.sonatype.org/#welcome">Sonatype Maven Central Repository</a></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Go to <a href="https://oss.sonatype.org/#stagingRepositories">Staging Repositories</a></p>
+</li>
+<li>
+<p>Find your temporary repository at the end of the list</p>
+</li>
+<li>
+<p>Review the content of the repository</p>
+</li>
+<li>
+<p>Close the repository -button on tool list-</p>
+</li>
+<li>
+<p>Close stage is initiated and checks are performed.
+If everything was fine, the content was published.</p>
+</li>
+<li>
+<p>Release the artifact -button on the tool list-</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>See <a href="#website-publication">Static Website Publication</a> to update the website</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It takes up to one day until the component is visible in Maven Central website upon publication.</p>
+</div>
+<div class="paragraph">
+<p>On the positive side, the last publications were performed in less than 30 minutes.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Below the dependencies between tangly open source components as defined in the multi-modules <a href="https://gradle.org/">Gradle Build Tool</a> build file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/tangly-componentsDependencies.svg" alt="tangly componentsDependencies" width="2289" height="185"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decisions">Decisions</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The open source components are stored in a mono repository.
+Each component is declared as a gradle module.</p>
+</li>
+<li>
+<p>We use de facto standard Git.</p>
+</li>
+<li>
+<p>We are hosted at <a href="https://github.com/">GitHub</a>
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</li>
+<li>
+<p>The bitbucket repository is regularly synchronized with a GitHub mirror repository <a href="https://github.com/marcelbaumann/tangly-os.git">GitHub</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The synchronization is performed with the command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">git push <span style="color: #000080">--prune</span> https://github.com/marcelbaumann/tangly-os.git +refs/remotes/origin/<span style="color: #000000;font-weight: bold">*</span>:refs/heads/<span style="color: #000000;font-weight: bold">*</span> +refs/tags/<span style="color: #000000;font-weight: bold">*</span>:refs/tags/<span style="color: #000000;font-weight: bold">*</span> <i class="conum" data-value="1"></i><b>(1)</b>
+
+git remote <i class="conum" data-value="2"></i><b>(2)</b>
+
+git push origin-bitbucket <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Pushes the repository with all remotes, references and tags to GitHub specified repository</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>List all remotes associated with this git repository</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Pushes the master branch to the <em>origin-bitbucket</em> remote repository.
+The push shall trigger the continuous integration pipeline</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You must create a token for developer account to be able to push changes and trigger the CI pipeline.
+The username is your account username The password is the generated token
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.
+Store it in a safe place.</p>
+</div>
+<div class="sect3">
+<h4 id="_findings">Findings</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>We needed to manually publish the public key on <a href="http://keys.gnupg.net">keys.gnupg.net</a></p>
+</li>
+<li>
+<p>Gradle build file has a condition including disabling the signing plugin on the CI pipeline because keys and associated authentication are not available.
+I decided not to upload private keys to <a href="https://bitbucket.org/">bitbucket</a>.
+See the documentation at the beginning of the Gradle build file for details.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Set the property if you want to sign the component artifacts and publish to Maven Central.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="website-publication">Static Website Publication</h3>
+<div class="sect3">
+<h4 id="_introduction">Introduction</h4>
+<div class="paragraph">
+<p>The static website uses <a href="https://asciidoc.org/">Asciidoc</a> to write all documents.</p>
+</div>
+<div class="paragraph">
+<p>The static website uses  <a href="https://gohugo.io/">Hugo</a> as site generator.
+The Hugo theme is <a href="https://www.docsy.dev/">Docsy</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configure_asciidoctor">Configure Asciidoctor</h4>
+<div class="paragraph">
+<p>The new version of the <a href="https://gohugo.io/">Hugo</a> support configuration of <a href="https://asciidoctor.org/">Asciidoctor</a> through config.toml therefore no manipulation of asciidoctor is needed.
+As a bonus, the files generated by PlantUml are created in the correct folder.
+We still need to install the referenced packages.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell"><span style="color: #0086B3">sudo </span>gem <span style="color: #0086B3">install </span>asciidoctor-diagram <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #0086B3">sudo </span>gem <span style="color: #0086B3">install </span>asciidoctor-bibtex <i class="conum" data-value="2"></i><b>(2)</b>
+<span style="color: #0086B3">sudo </span>gem <span style="color: #0086B3">install </span>asciimath <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Provides support for all diagrams such as plantUML and mermaid.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Provides support for formal bibliography references.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Provides support for mathematical and logical expressions in documents.</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docsy_tailoring">Docsy Tailoring</h3>
+<div class="paragraph">
+<p>The docsy theme is missing some features.
+It does not support asciidoc styling or commenting blogs.
+Our extensions follow the official rules how a theme can be tailored and expended.</p>
+</div>
+<div class="paragraph">
+<p>The major changes are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Inclusion of the styling sheet <em>asciidoctor.scss</em> to style asciidoc documents
+<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
+</li>
+<li>
+<p>Inclusion of the shortcodes extension <em>shortcodes.html</em> layouts and the style file <em>shortcodes.scss</em> to support file attachments in the website
+<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.</p>
+</li>
+<li>
+<p>Extesnsion of the blog section with <em>comments-uttereances.html</em> to support comments on blog articles
+<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.</p>
+</li>
+<li>
+<p>Changes in the header and footer partials to display mathematical expressions and well-styled copyright
+<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All chagnes are defined in the assets and layouts folders as part of our website content.
+Hugo algorithms select local overwritten files and ignore the corresponding theme files.\</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The current structure of our extensions follow the official approach how a Hugo module should be extended.
+We do not change any files in the theme.
+All changes are defined locally.
+We use the selection algorithm of Hugo to activate our tailoring and extensions.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect3">
+<h4 id="_create_website">Create Website</h4>
+<div class="paragraph">
+<p>The tangly open source components website is hosted under <a href="http://blog.tangly.net/docs">Documentation</a>.</p>
+</div>
+<div class="paragraph">
+<p>Read the instructions in the asciidoctor script file under the scripts&#39; folder.
+Four scripts are provided to generate the Hugo static site with associated structure and theme.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the script <em>initiateHugo.sh</em> creates the layout of the site and retrieve the theme.</p>
+</li>
+<li>
+<p>the script <em>populateHugo.sh</em> populates the site with our content.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Upon completion of local development, you must start a local Hugo server and generate the indexing files for <a href="https://lunrjs.com/">lunr</a> search.
+Before uploading the site stop the Hugo local server.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the script <em>completeHugo.sh</em> generates the static pictures and copies them to the static folder and publish the whole site on bitbucket.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Upon completion, the site is published on the web for all.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_set_jdk_version_under_macos">Set JDK Version under macOS</h4>
+<div class="paragraph">
+<p>Install regular Java JDK such as the Oracle or OpenJDK distribution.
+They will be located under <em>/Library/Java/JavaVirtualMachines</em>.</p>
+</div>
+<div class="paragraph">
+<p>If using bash shell, add following commands to your .bash_profile.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell"><span style="color: #0086B3">alias </span>java11 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 11<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span>
+<span style="color: #0086B3">alias </span>java17 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 17<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span>
+<span style="color: #0086B3">alias </span>java18 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 18<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span>
+<span style="color: #0086B3">alias </span>java19 <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;export JAVA_HOME=</span><span style="color: #d14">`</span>/usr/libexec/java_home <span style="color: #000080">-v</span> 19<span style="color: #d14">`</span><span style="color: #d14">; java -version&#34;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can set the exact version such as <em>17.0.1</em> to precisely select a JDK or set an overall version such as <em>17</em> to select a generic version.</p>
+</div>
+<div class="paragraph">
+<p>After restarting your terminal the command <em>java17</em> will set JDK 17 to default JDK (if installed on your macOS).</p>
+</div>
+<div class="paragraph">
+<p>The list of JDK can be found with</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">/usr/libexec/java_home <span style="color: #000080">-V</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_create_docker_distribution">Create Docker Distribution</h4>
+<div class="paragraph">
+<p>Generate the ERP application as a production release.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">gradle <span style="color: #0086B3">install</span> <span style="color: #000080">-DproductionMode</span><span style="color: #000000;font-weight: bold">=</span><span style="color: #0086B3">true <i class="conum" data-value="1"></i><b>(1)</b>
+</span>gradle <span style="color: #0086B3">install</span> <span style="color: #000080">-Pproduction</span>
+unzip ./build/distributions/net.tangly.erp.ui-&lt;version&gt;.zip <i class="conum" data-value="2"></i><b>(2)</b>
+docker build <span style="color: #000080">-t</span> erp-docker <span style="color: #0086B3">.</span> <i class="conum" data-value="3"></i><b>(3)</b>
+docker run <span style="color: #000080">-ti</span> <span style="color: #000080">-p</span> 8080:8080 erp-docker <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Generates a production distribution stored under ./build/distributions</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Unzip the packed distribution because the docker base image does not contain unzip utility</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Build the docker image named <em>erp-docker</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Run the docker image <em>erp-docker</em> and map the image port to 8080</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. We moved from <a href="https://github.com/">GitHub</a> to <a href="https://github.com/">GitHub</a> in 2022. The reasons were that the new platform supports publishing of static website with a lot more functionalities. The new agile project management functionality with Scrum boards, sprint iterations and insights report is very interesting.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. This is necessary if you have enabled two factors authentication. The other approach is to generate an SSH key and perform all operations other SSH.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. I asked for a change request on GitHub for Docsy to better support asciidoc documents. The Docsy team decided that their priorities are different and rejected the request.
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. This change is defined as a merge request. The pull request is quite old and seems to have a low priority.
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. The current setup of the template does not allow selection of a comment solution per configuration.
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. An issue report exists on GitHub about the copyright issue.
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-bcef2163949d7c7b708c0d9e19326add">5 - Extendable Models</h1>
     <div class="lead">Extension mechanisms to domain driven models with the modern Java technology stack</div>
 	<div class="sect1">
 <h2 id="_extendable_domain_models">Extendable Domain Models</h2>
@@ -2514,7 +2431,1482 @@ Marcel Baumann. 2020</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-1047aae8609f62f3fa4456123d2e9f99">7 - Functional Programming</h1>
+	<h1 id="pg-79b09a799a4116e30f4f38b34172283a">6 - Architecture Code Scene</h1>
+    <div class="lead">Analysis of source code as a code scene with specialized tools</div>
+	<div class="sect1">
+<h2 id="_architecture_code_scene">Architecture Code Scene</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>-
+=== Purpose</p>
+</div>
+<div class="paragraph">
+<p>Agile development teams shall manage and diminish their technical debt. We provide instruments to increase the pay-off of refactoring measures. The
+most relevant source code parts should be refactored first. But how can we identify them?</p>
+</div>
+<div class="paragraph">
+<p>Git is the de facto standard for version management systems. Git contains the whole evolution story of our source code. We use these data to identify
+areas under repetitive change or often needing fixing. In parallel, the evolution of the source code hints us for complexity hotspots.</p>
+</div>
+<div class="paragraph">
+<p>The three areas of statistical data are combined to identify the most promising area for refactoring.
+* History of commits reflecting the behavior and priorities of team members over time
+* Evolution of source code artifacts reflecting changes in complexity and legibility
+* Corrections of identified defects and their location identify non-quality hotspots</p>
+</div>
+<div class="paragraph">
+<p>The provided tools extract the requested indicators and present them graphically. The findings are used to support refactoring prioritization.</p>
+</div>
+<div class="sect2">
+<h3 id="_requirements">Requirements</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Gather changes in the repository artifacts over a specified time interval</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>the gathered data are date of change, the author of change, number of added lines and of removed lines</p>
+</li>
+<li>
+<p>each file change is gathered</p>
+</li>
+<li>
+<p>only the version management system <em>git</em> is supported</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Gather complexity metrics over source code artifacts – classes and packages – over a specified time interval</p>
+</li>
+<li>
+<p>Gather location and time when identified defects were fixed in the source code repository</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>use the official conventions to identify a closed ticket in a commit comment</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_modules_packages_classes_and_files">Modules, Packages, Classes and Files</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/architecture-code-scene-model.svg" alt="architecture code scene model" width="357" height="685"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c07ac1cd936db295d815ed00336d79e2">7 - ADR</h1>
+    
+	<p>The [Architecture Design Records]https://en.wikipedia.org/wiki/Architectural_decision <em>ADR</em> for the overall open source products of tangly.</p>
+<p>These design decisions often define how we want to develop applications in Modern Java.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-3d97d9fbb1cbce47f5b5984a1ba8d398">7.1 - OS 008: Use log4j2 as default logging framework</h1>
+    
+	<div class="sect1">
+<h2 id="_os_008_use_log4j2_as_default_logging_framework">OS-008 Use log4j2 as default logging framework</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2021-06-15</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-008-head.png" alt="OS 008 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>The logging library <a href="https://en.wikipedia.org/wiki/SLF4J">slf4j</a> seems to be a dead project for at least one year.
+The last commit in the <a href="https://github.com/qos-ch/slf4j">GitHub slf4j repository</a> was performed two years ago.
+Version 2.0 of the library is an alpha release on <a href="https://mvnrepository.com/artifact/org.slf4j/slf4j-api">Maven Central</a> dating back to October 2019.</p>
+</div>
+<div class="paragraph">
+<p>The apache project log4j has made tremendous progress with the creation of the log4j2 library.
+All features provided in slf4j are now available in log4j2.
+In particular, the fluent interface which is only available in the beta version of slf4j is also supported.
+Additional features are also provided and performance is better than with other logging frameworks.</p>
+</div>
+<div class="paragraph">
+<p>The project is active and under the umbrella of the <a href="https://www.apache.org">Apache Foundation</a>.
+The library uses well-documented Java module names as any modern library shall provide.</p>
+</div>
+<div class="paragraph">
+<p>This situation raises the question to move our application to the apache logging framework.
+Both APIs are very similar in style and naming.
+the effort to migrate is quite reasonable.
+Usually, only the logger declaration needs a modification.
+The creation of logging records uses exactly the same syntax and calling conventions.</p>
+</div>
+<div class="paragraph">
+<p>The advantage is better integration with an actively supported and developed library.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>All components will be migrated to the log4j2 library
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>All components shall use the fluent interface to write logging records.
+This decision shall increase the legibility of the source code.</p>
+</div>
+<div class="paragraph">
+<p>Staying in a library no more under active development is too dangerous.
+Closing of security issues and support of current JDK versions are not guaranteed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>All source files must be modified to use the new library</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All logging record creations shall use a fluent interface.
+As in slf4j, no string concatenation shall happen in log record calls, use the message feature of the library.</p>
+</li>
+<li>
+<p>Logging level is specified by using the fluent interface</p>
+</li>
+<li>
+<p>No conditional statements shall be used to bracket logging statements</p>
+</li>
+<li>
+<p>Exceptions are always stated through the fluent user interface and are not an argument of the log message</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>All <a href="https://gradle.org/">Gradle</a> build files shall use the new library.
+The API is declared as an implementation dependency.
+The core library is declared as a test or runtime dependency.</p>
+</li>
+<li>
+<p>Testing shall be performed to verify correct behavior and correct configuration.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We shall explore if trouble arise from used components which are using other logging libraries.
+The risk is small because it is already existing wehn using slf4j liberary.
+The difference is only our new preferred library is now the Apache one.</p>
+</div>
+<div class="paragraph">
+<p>The architecture of log4j2 is described in <a href="https://logging.apache.org/log4j/2.x/manual/architecture.html">Log4j2 Main Components</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_learnings">Learnings</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The log4j2 community reacted professionally and fast in 2022 to correct a security attack in the library.
+The update of all libraries and applications with the patched version was done in a few minutes.
+A gradle plugin was used to infer which version of the library was used.
+The continuous implementation and delivery pipeline were used to generate hardened versions.</p>
+</li>
+<li>
+<p>A new feature of Gradle supports the definition of dependencies in a central file for all submodules.
+The project uses <em>libs.version.toml</em> configuration file to unify library usage through all components.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. It is sad that such a well-crafted library as slf4j is fading away. We assume that the community actively working on extensions was too small. Ceki Gülcü did a wonderful job to pave the way for modern and efficient logging concepts in the Java world.
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-29f6be12b49467134e454c04f8867f19">7.2 - OS 001: System Guava Removal</h1>
+    
+	<div class="sect1">
+<h2 id="_os_001_remove_usage_of_google_guava_library">OS-001 Remove usage of Google Guava Library</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2018-02-20</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-001-head.jpg" alt="OS 001 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>Guava is an historical effort to provide much needed functionalities to the Java community.
+The Java ecosystem evolves quite slowly at the beginning of the millennium.
+Later, stewardship clearly improved with six months release schedule approach.
+Preview and incubator initiatives allowed timely evaluation of new features and idioms in the Java language and ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>JDK versions from release 8 often provide better replacement methods for a lot of Guava functions.
+New JDKs are released every six months and provide regular improvements to the API.
+These improvements make Guava functions more and more obsolete.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/google/guava">Guava</a> is an external library of high quality but still an additional dependency in the application.
+We always follow the rule to use language and standard library constructs over using external libraries.
+Guava tries to support older JDKs and, therefore does not use more modern approaches defined in new API versions.
+We consider Guava has a legacy library.
+We are dedicated to writing modern Java using the latest official releases of the language and runtime environment.</p>
+</div>
+<div class="paragraph">
+<p>The advantage is better integration, always synchronized with a new release of the JDK and no incompatibilities.
+The drawback is sometimes a slightly more cumbersome syntax or solution.
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>All Guava usages shall be replaced by JDK standard functions.
+The main advantages are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Current JDK versions provide own implementation e.g. in the Objects class.</p>
+</li>
+<li>
+<p>Guava dependency is removed from our source code and compiled artifacts.</p>
+</li>
+<li>
+<p>Guava is not optimized for idioms used in current JDK such as streams and extensive use of lambdas.
+Guava needs years to support new concepts such as algebraic data types.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This decision is against good practices documented in the first decade of this millenium.
+The Guava library did not evolve as rapidly as the new Java versions released in the second and third decades.</p>
+</div>
+<div class="paragraph">
+<p>We strongly advocate timely evolution.
+Try to avoid becoming laggards in your technology stack.
+As rule use the current Java release, or as minimal version the latest long term supported version of Java.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Some operations are more complicated to implement because a solution is already provided in Guava.</p>
+</li>
+<li>
+<p>We have the huge advantage of being able to use the current approaches provided in JDK and associated standard API.</p>
+</li>
+<li>
+<p>Code uses the current constructs provided through last released JDK.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. If a specific function is only available in Guava and your project strongly relies on it, feel free to continue using Guava
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-14093df2ffd5f4792a44dfb8f962cd93">7.3 - OS 002: Unit Test Conventions</h1>
+    
+	<div class="sect1">
+<h2 id="_os_002_define_unit_test_conventions">OS-002 Define Unit Test Conventions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2020-06-15</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-002-head.jpg" alt="OS 002 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>Some libraries need to create files on a file system.
+For example, you want to generate human-readable paper invoices.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>We recommend the following conventions when writing unit tests creating files.
+Use Google Java in memory file system <a href="https://github.com/google/jimfs">Jimfs</a>.
+Additional file systems can only be used in Java if all operations are performed through Path objects.
+Path objects have a reference to the file system; File objects always referenced the default file system.
+When you are writing to the default file system use the root directory <code>/tmp/</code> available in all Unix like operating systems.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Avoid writing files to a local file system.
+This approach is slow, cumbersome and error-prone.
+Use in-memory file systems.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>We have a dependency on an open source product currently managed by Google.</p>
+</li>
+<li>
+<p>Use of <a href="https://github.com/google/jimfs">Jimfs</a> requires use of Path instances.
+We shall remove all references to File instances.
+File instances do not support alternative file systems.
+Therefore, we shall use libraries providing a workaround File instances either by using Path instances or reader and writer to access files.</p>
+</li>
+<li>
+<p>Operations to physical file system have the risk that rights problems could rise in some continuous integration environment.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a02276904f6edc9ecabee026b030747f">7.4 - OS 003: Use Modern Java Constructs</h1>
+    
+	<div class="sect1">
+<h2 id="_os_003_remove_usage_of_google_guava_library">OS-003 Remove usage of Google Guava Library</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2020-01-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-003-head.jpg" alt="OS 003 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>JDK is released every six months to all Java developers.
+The latest approach is to release a long-term supported version every two years.</p>
+</div>
+<div class="paragraph">
+<p>Better approaches support clean code, less verbose source code and reduce programming  <a href="#modern-java-development">[5]</a> <a href="#immutability-in-java">[2]</a>.
+These constructs shall be used in our modules as soon as they are released to the developers.</p>
+</div>
+<div class="paragraph">
+<p>The advantage is better integration, always synchronized with the current release of the JDK and no incompatibilities.
+The drawback is that our clients have to use the current JDK released version.</p>
+</div>
+<div class="paragraph">
+<p>The major advantage is that you are using the latest version you do not need to pay license fees for each server you have running.
+Older Oracle versions always require a support contract and associated fees.
+The other approach is to use an alternate distribution such as <a href="https://openjdk.java.net/">OpenJDK</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>We use the current released JDK and all constructs provided in this JDK <a href="#modernize-java-landscape">[1]</a>.
+We use preview features and incubating functionality present in this JDK.
+The main advantages are</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Current JDK versions provide efficient and elegant implementation <a href="#jdk-17">[3]</a> <a href="#jdk-16">[4]</a>.
+See, for example, the record construct provided since JDK 14.</p>
+</li>
+<li>
+<p>The source code is legible and has fewer errors.</p>
+</li>
+<li>
+<p>Our developers are up-to-date with Java evolution and enjoy writing modern code.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Clients are forced to use the current JDK version.</p>
+</li>
+<li>
+<p>Tooling is more brittle because a lot of tool maintainers are late to adapt actual version of JDK.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_examples_of_new_features">Examples of New Features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The <em>instanceof</em> operator supports in conditional statement deconstruction.</p>
+</li>
+<li>
+<p>The <em>record</em> construct simplifies data objects and encourages immutability.</p>
+</li>
+<li>
+<p>The <em>UncheckedIOException</em> encourages the use of non-checked exceptions.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="modernize-java-landscape"></a>[1] <a href="../../../blog/2022/modernize-your-java-landscape/">Modernize your Java Landscape</a></p>
+</li>
+<li>
+<p><a id="immutability-in-java"></a>[2] <a href="../../../blog/2022/immutability-in-java/">Immutability in Java</a></p>
+</li>
+<li>
+<p><a id="jdk-17"></a>[3] <a href="../../../blog/2021/jdk-17/">JDK 17</a></p>
+</li>
+<li>
+<p><a id="jdk-16"></a>[4] <a href="../../../blog/2021/jdk-16/">JDK 16</a></p>
+</li>
+<li>
+<p><a id="modern-java-development"></a>[5] <a href="../../../blog/2021/modern-java-development/">Modern Java Development</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ce63fd2314a829024f822be68d334f47">7.5 - OS 004: Publish Technical Documentation Through Static Website</h1>
+    
+	<div class="sect1">
+<h2 id="_os_004_publish_technical_documentation_through_static_website">OS-004 Publish Technical Documentation Through Static Website</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2020-01-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-004-head.png" alt="OS 004 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>A legible, well-structured and up-to-date technical documentation of released open source components is a service to all our users.
+Due to the small size of our team, we want a straight forward tool chain to generate the website.
+In the future, we could move our product to another hosting platform.
+The solution should be built on a standard to minimize porting overhead.</p>
+</div>
+<div class="paragraph">
+<p>I am personally a fan of <a href="https://asciidoc.org/">Asciidoc</a> and would promote a solution supporting this markup language.
+I will strongly fight against proprietary solutions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>All our technical documentation and blogs will be written in <a href="https://asciidoc.org/">Asciidoc</a>.</p>
+</li>
+<li>
+<p>The website is created using the <a href="https://gohugo.io/">Hugo</a> toolchain.</p>
+</li>
+<li>
+<p>The theme of hugo will be <a href="https://www.docsy.dev/">Docsy</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Committers are forced to document in <a href="https://asciidoc.org/">Asciidoc</a>.</p>
+</li>
+<li>
+<p>Tooling is slightly more brittle because <a href="https://asciidoctor.org/">Asciidoctor</a> integration in <a href="https://gohugo.io/">Hugo</a> is work in progress.
+<a href="https://asciidoctor.org/">Asciidoctor</a> is also undergoing changes such as the native support of rouge syntax highlighter.
+The improvements in both tools were impressive the last year, but we have to update regularly our toolchain and update all <a href="https://asciidoc.org/">Asciidoc</a> documents.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_learnings">Learnings</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>(ref-hugo) themes styling for AsciiDoc is sketchy.
+The visual quality is currently hindered due to faulty support of the standard or custom AsciiDoc stylesheet.</p>
+</li>
+<li>
+<p>AsciiDoc supports native rouge code highlighting module.
+All source code fragments are nicely displayed without special support from <a href="https://gohugo.io/">Hugo</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We documented our experience in various blogs <a href="#creating-technical-website">[1]</a> <a href="#support-comments">[2]</a>&gt;.
+We use currently the Google sponsored theme <a href="https://www.docsy.dev/">Docsy</a> for our static website.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="creating-technical-website"></a>[1] <a href="../../../blog/2020/creating-a-technical-website-with-hugo-and-asciidoc/">Creating a Technical Website with Hugo and AsciiDoc</a></p>
+</li>
+<li>
+<p><a id="support-comments"></a>[2] <a href="../../../blog/2020/support-comments-for-static-hugo-website/">Support Comments for Static Hugo Website</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-78015e669f9845a45b3b63d807da1855">7.6 - OS 005: Publish Maven Central Artifacts</h1>
+    
+	<div class="sect1">
+<h2 id="_os_005_publish_artifacts_on_public_java_components_repository">OS-005 Publish Artifacts on Public Java Components Repository</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2019-05-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="paragraph">
+<p>Supersede: <a href="../../../../docs/fsm/adr/fsm-002-publish-maven-central-artifact">FSM-0002</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-005-head.png" alt="OS 005 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>The <a href="https://www.tangly.net/">tangly</a> open source libraries are mature enough to be used in public commercial and academic projects.</p>
+</div>
+<div class="paragraph">
+<p>The libraries were used in internal projects and  refined to  fulfill these requirements.
+More customers will validate the usefulness of the library and identify extensions for further releases.</p>
+</div>
+<div class="paragraph">
+<p>We want to provide a standard and well-known approach for our customers.
+They shall have access to our libraries through official and well-documented channels.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>The libraries shall be published as artifacts on maven central and be accessible to a wide range of developers and organizations.
+A website shall be set up to provide an adequate documentation for users.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://blog.tangly.net">Technical Documentation</a> will use a static web approach to minimize costs and provide good legibility.
+All open source components will be hosted on the same site.</p>
+</div>
+<div class="paragraph">
+<p>The libraries will be published on Maven Central to maximize potential usage.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>We have to establish a publishing process at the company level to deploy signed artifacts to maven central repository.
+See <a href="../../../ideas/components-publication">release and publication process</a></p>
+</li>
+<li>
+<p>We have to establish a public website to host the documentation of public published libraries.
+The static website is <a href="https://blog.tangly.net/">Open Source Components</a></p>
+</li>
+<li>
+<p>We have to support semantic versioning for all future releases of public published libraries.
+See <a href="../../../ideas/components-publication">release and publication process</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-30f5a13e7009e135cfecf18bd3c5354f">7.7 - OS 006: Dependency Injection with Guice</h1>
+    
+	<div class="sect1">
+<h2 id="_os_006_dependency_injection_with_guice">OS-006 Dependency Injection with Guice</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2018-02-20</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-006-head.png" alt="OS 006 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>The modules provided as <a href="https://www.tangly.net/">tangly</a> open source components are used in more complex applications.</p>
+</div>
+<div class="paragraph">
+<p>These applications often use dependency injection frameworks to construct and initialize their instances.
+<a href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency injection</a> is is a technique in which an object receives other objects that it depends on, called dependencies.</p>
+</div>
+<div class="paragraph">
+<p>Typically, the receiving object is called a client and the passed-in <em>injected</em> object is called a service.
+The code that passes the service to the client is called the injector.</p>
+</div>
+<div class="paragraph">
+<p>Instead of the client specifying which service it will use, the injector tells the client what service to use.
+The <em>injection</em> refers to the passing of a dependency into the client that uses it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>Guice is selected as a dependency injection framework.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Guice is one of the industrial standards with Dagger and Sprint DI.</p>
+</li>
+<li>
+<p>Guice supports JDK standard <em>@inject</em> annotation used in other dependency frameworks.</p>
+</li>
+<li>
+<p>Guice supports the definition of modules to describe dependencies.
+The modules are also used as a documentation mechanism.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Care will be taken to allow users to use a different dependency injection framework.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>A dependency injection module shall be provided for each relevant module</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conventions">Conventions</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Constructor injection is the preferred mechanism.
+In the long term, it should be the only approach.</p>
+</li>
+<li>
+<p>Please avoid field injection as an injection approach.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-aa0cf0afa9366a3ec97adc94f9a5dd53">7.8 - OS 007: Persistence with MicroStream</h1>
+    
+	<div class="sect1">
+<h2 id="_os_007_persistence_with_microstream">OS-007: Persistence with MicroStream</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2020-11-13</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-007-head.jpg" alt="OS 007 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>The modules provided as <a href="https://www.tangly.net/">tangly</a> open source components are used in more complex applications.
+These applications require a reliable and performant persistence approach for their data.</p>
+</div>
+<div class="paragraph">
+<p>In Java, everything is an object.
+In contrast, all databases come with their own specific data structure that is incompatible with Java objects.</p>
+</div>
+<div class="paragraph">
+<p>This is called <a href="https://en.wikipedia.org/wiki/Object%E2%80%93relational_impedance_mismatch">impedance mismatch</a>.</p>
+</div>
+<div class="paragraph">
+<p>As a consequence, a mapping is required, which means all data must be converted behind the scenes.
+Conversions are inefficient, lead to enormous loss of performance and latencies, and are linked to further serious disadvantages.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p><a href="https://microstream.one/">MicroStream</a> was selected as persistence approach for the first versions of the ERP solution.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Almost no impedance mismatch between the Java application and persistence store</p>
+</li>
+<li>
+<p>Elegant approach to provide one persistence container per bounded domain the same application</p>
+</li>
+<li>
+<p>MicroStream has formally announced their software library will be published under an open source license</p>
+</li>
+<li>
+<p>The library supports current versions of the JDK and all constructs of the language including preview constructs</p>
+</li>
+<li>
+<p>The support of the company is good and the answers professional</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Care will be taken to provide a fallback to another persistence solution if performance or licensing problems occur.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Knowledge in MicroStream library <a href="#microstream-4">[1]</a> must be build-up.</p>
+</li>
+<li>
+<p>Software design must be slightly adapted to the MicroStream approach.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A clear separation of data from functions is required.</p>
+</li>
+<li>
+<p>Lambdas cannot currently be persisted.
+Therefore, all data containers with lambda variables must either be redesigned or declared as transient.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Work on a design enabling domain driven design with MicroStream approach.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The MicroStream approach supports a very effective way to persist data.
+The effort to define storage and map Java objects to a persistent representation are minimal.
+This approach minimizes the costs for this functionality without impeding the quality or completeness of the solution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conventions">Conventions</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Realm shall have a private data class to store all data to be persisted</p>
+</li>
+<li>
+<p>The application must generate unique object identifiers.
+MicroStream does not provide functions in this area.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="microstream-4"></a>[1] <a href="../../../blog/2021/microstream-4.x/">MicroStream 4.x</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-1f58735d3d0c556d744acdecae2a8f91">7.9 - OS 008: Use log4j2 as default logging framework</h1>
+    
+	<div class="sect1">
+<h2 id="_os_008_use_log4j2_as_default_logging_framework">OS-008 Use log4j2 as default logging framework</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2021-06-15</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-008-head.png" alt="OS 008 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>The logging library <a href="https://en.wikipedia.org/wiki/SLF4J">slf4j</a> seems to be a dead project for at least one year.
+The last commit in the <a href="https://github.com/qos-ch/slf4j">GitHub slf4j repository</a> was performed two years ago.
+Version 2.0 of the library is an alpha release on <a href="https://mvnrepository.com/artifact/org.slf4j/slf4j-api">Maven Central</a> dating back to October 2019.</p>
+</div>
+<div class="paragraph">
+<p>The apache project log4j has made tremendous progress with the creation of the log4j2 library.
+All features provided in slf4j are now available in log4j2.
+In particular, the fluent interface which is only available in the beta version of slf4j is also supported.
+Additional features are also provided and performance is better than with other logging frameworks.</p>
+</div>
+<div class="paragraph">
+<p>The project is active and under the umbrella of the <a href="https://www.apache.org">Apache Foundation</a>.
+The library uses well-documented Java module names as any modern library shall provide.</p>
+</div>
+<div class="paragraph">
+<p>This situation raises the question to move our application to the apache logging framework.
+Both APIs are very similar in style and naming.
+the effort to migrate is quite reasonable.
+Usually, only the logger declaration needs a modification.
+The creation of logging records uses exactly the same syntax and calling conventions.</p>
+</div>
+<div class="paragraph">
+<p>The advantage is better integration with an actively supported and developed library.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>All components will be migrated to the log4j2 library
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>All components shall use the fluent interface to write logging records.
+This decision shall increase the legibility of the source code.</p>
+</div>
+<div class="paragraph">
+<p>Staying in a library no more under active development is too dangerous.
+Closing of security issues and support of current JDK versions are not guaranteed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>All source files must be modified to use the new library</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All logging record creations shall use a fluent interface.
+As in slf4j, no string concatenation shall happen in log record calls, use the message feature of the library.</p>
+</li>
+<li>
+<p>Logging level is specified by using the fluent interface</p>
+</li>
+<li>
+<p>No conditional statements shall be used to bracket logging statements</p>
+</li>
+<li>
+<p>Exceptions are always stated through the fluent user interface and are not an argument of the log message</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>All <a href="https://gradle.org/">Gradle</a> build files shall use the new library.
+The API is declared as an implementation dependency.
+The core library is declared as a test or runtime dependency.</p>
+</li>
+<li>
+<p>Testing shall be performed to verify correct behavior and correct configuration.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We shall explore if trouble arise from used components which are using other logging libraries.
+The risk is small because it is already existing wehn using slf4j liberary.
+The difference is only our new preferred library is now the Apache one.</p>
+</div>
+<div class="paragraph">
+<p>The architecture of log4j2 is described in <a href="https://logging.apache.org/log4j/2.x/manual/architecture.html">Log4j2 Main Components</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_learnings">Learnings</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The log4j2 community reacted professionally and fast in 2022 to correct a security attack in the library.
+The update of all libraries and applications with the patched version was done in a few minutes.
+A gradle plugin was used to infer which version of the library was used.
+The continuous implementation and delivery pipeline were used to generate hardened versions.</p>
+</li>
+<li>
+<p>A new feature of Gradle supports the definition of dependencies in a central file for all submodules.
+The project uses <em>libs.version.toml</em> configuration file to unify library usage through all components.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. It is sad that such a well-crafted library as slf4j is fading away. We assume that the community actively working on extensions was too small. Ceki Gülcü did a wonderful job to pave the way for modern and efficient logging concepts in the Java world.
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f8f72a7bbf6cd0c10d0c2e89425075e2">7.10 - OS 009: Use HSQLDB as SQL DB</h1>
+    
+	<div class="sect1">
+<h2 id="_os_009_use_hsqldb_as_sql_store">OS-009 Use HSQLDB as SQL store</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2022-01-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-009-head.jpg" alt="OS 009 head" width="420" height="360"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5774cc62fa7a9064f7aa379d79e33d1d">7.11 - OS 010: Archive as TSV Files</h1>
+    
+	<div class="sect1">
+<h2 id="_os_010_archive_data_as_tsv_files">OS-010 Archive Data as TSV Files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2022-01-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-010-head.jpg" alt="OS 010 head" width="420" height="360"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-dacd0f79580434037542c523b58c2f23">8 - Agile Transformations</h1>
+    <div class="lead">Recipes for agile transformation initatives</div>
+	<div class="sect1">
+<h2 id="_agile_transformations">Agile Transformations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Agile transformation is as an act of transforming an organization’s form or nature gradually.
+The new form is able to thrive in a flexible, collaborative, self-organizing, fast changing environment.</p>
+</div>
+<div class="paragraph">
+<p>The Agile Manifesto values and principles can be taught and exercised throughout any type of organization as it is not limited to development teams.</p>
+</div>
+<div class="paragraph">
+<p>The entire organization needs to understand the values and principles of an agile transformation to benefit from the rewards of achieving healthy agility.
+The cultural and organizational mindset shall change to one that embraces a culture of self-organization and collaboration.</p>
+</div>
+<div class="paragraph">
+<p>Our approach to initiating and supporting an agile transformation is</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Establish leadership situation awareness, discovery of weaknesses and kickoff of transformation</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Conduct a <em>Go And See</em> - <a href="https://en.wikipedia.org/wiki/Gemba">Gemba</a> - to assess and understand your organization’s context and specific challenges.</p>
+</li>
+<li>
+<p>Work with leadership to make those challenges visible and define steps to address them.</p>
+</li>
+<li>
+<p>Identify urgency and core champions actively supporting the transformation.</p>
+</li>
+<li>
+<p>Launch leadership teams and communities of practices to guide your organization’s transformation.</p>
+</li>
+<li>
+<p>Enable leadership to deploy transformation incrementally and guide the scope and pace of change.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Organize your collaborators and workflow around your products and strategy</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Design a custom transformation approach with immediately actionable steps.</p>
+</li>
+<li>
+<p>Select a few pilot groups for launch and involve all participants – open space meeting, information radiators -.</p>
+</li>
+<li>
+<p>Create a coherent, actionable backlog which connects strategy to execution, so the entire organization is aligned around shared goals.</p>
+</li>
+<li>
+<p>Identify indicators to measure progress.</p>
+</li>
+<li>
+<p>Build team level backlogs so the entire organization is aligned around shared goals.</p>
+</li>
+<li>
+<p>Work with leadership to discover and address organizational pain points and challenges.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Launch your teams</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Train your pilot teams in the roles, artifacts, and events of <a href="https://scrumguides.org/">Scrum</a> and <a href="https://less.works/">LeSS</a>.</p>
+</li>
+<li>
+<p>Embed coaches to support your teams become high-performing.</p>
+</li>
+<li>
+<p>Establish team excellence and technical craftsmanship.</p>
+</li>
+<li>
+<p>Use specific, demonstrable success to train, launch, and coach additional teams.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Build team sustainability</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Build and extend communities of practice.</p>
+</li>
+<li>
+<p>Nurture internal coaching capabilities to sustain your agile practice beyond the pilot.</p>
+</li>
+<li>
+<p>Establish continuous improvement as culture in the organization.</p>
+</li>
+<li>
+<p>Provide additional follow-up as needed to continue to build business agility.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Focus on product delivery</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Value stream mapping and <a href="https://en.wikipedia.org/wiki/Lean_software_development">waste elimination</a>.</p>
+</li>
+<li>
+<p>Amplify learning.</p>
+</li>
+<li>
+<p>Late decision-making.</p>
+</li>
+<li>
+<p>Fast delivery - continuous integration, continuous delivery, continuous deployment, DevOps -.</p>
+</li>
+<li>
+<p>Team empowerment and technical fluency.
+Professional teams are required for awesome products.</p>
+</li>
+<li>
+<p>Built-in integrity.</p>
+</li>
+<li>
+<p>View applications as a whole.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>We reinforce learning theory, streamline how to apply agile principles and experiments, help you to develop a routine, promote awareness, boost ownership, facilitate barrier removal, and avoid painful or costly dead ends.
+Our goal is to shorten the learning curve and optimize human and financial investments.
+We truly believe in the first directive</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Regardless of what we discover, we understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f293380c26541107a2a2a280fa6185c4">9 - Pragmatic Agile</h1>
+    <div class="lead">Recipes for daily agile and successful product development</div>
+	<div class="sect1">
+<h2 id="_pragmatic_agile">Pragmatic Agile</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>To be written</em></p>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-1047aae8609f62f3fa4456123d2e9f99">10 - Functional Programming</h1>
     <div class="lead">Functional programming in modern Java</div>
 	
 <div class="sect1">
@@ -2781,1129 +4173,7 @@ Of course, in the case of Optional, type boundaries allow us to use more complex
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-c07ac1cd936db295d815ed00336d79e2">8 - ADR</h1>
-    
-	<p>The [Architecture Design Records]https://en.wikipedia.org/wiki/Architectural_decision <em>ADR</em> for the overall open source products of tangly.</p>
-<p>These design decisions often define how we want to develop applications in Modern Java.</p>
-
-</div>
-
-
-
-    
-      
-  
-  
-  
-  
-
-  
-  
-
-  
-    
-    
-	
-    
-
-<div class="td-content" style="">
-    
-	<h1 id="pg-3d97d9fbb1cbce47f5b5984a1ba8d398">8.1 - OS 008: Use log4j2 as default logging framework</h1>
-    
-	<div class="sect1">
-<h2 id="_os_008_use_log4j2_as_default_logging_framework">OS-008 Use log4j2 as default logging framework</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Date: 2021-06-15</p>
-</div>
-<div class="sect2">
-<h3 id="_status">Status</h3>
-<div class="paragraph">
-<p>Implemented</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_context">Context</h3>
-<div class="imageblock left">
-<div class="content">
-<img src="../pics/OS-008-head.png" alt="OS 008 head" width="420" height="360"/>
-</div>
-</div>
-<div class="paragraph">
-<p>The logging library <a href="https://en.wikipedia.org/wiki/SLF4J">slf4j</a> seems to be a dead project for at least one year.
-The last commit in the <a href="https://github.com/qos-ch/slf4j">GitHub slf4j repository</a> was performed two years ago.
-Version 2.0 of the library is an alpha release on <a href="https://mvnrepository.com/artifact/org.slf4j/slf4j-api">Maven Central</a> dating back to October 2019.</p>
-</div>
-<div class="paragraph">
-<p>The apache project log4j has made tremendous progress with the creation of the log4j2 library.
-All features provided in slf4j are now available in log4j2.
-In particular, the fluent interface which is only available in the beta version of slf4j is also supported.
-Additional features are also provided and performance is better than with other logging frameworks.</p>
-</div>
-<div class="paragraph">
-<p>The project is active and under the umbrella of the <a href="https://www.apache.org">Apache Foundation</a>.
-The library uses well-documented Java module names as any modern library shall provide.</p>
-</div>
-<div class="paragraph">
-<p>This situation raises the question to move our application to the apache logging framework.
-Both APIs are very similar in style and naming.
-the effort to migrate is quite reasonable.
-Usually, only the logger declaration needs a modification.
-The creation of logging records uses exactly the same syntax and calling conventions.</p>
-</div>
-<div class="paragraph">
-<p>The advantage is better integration with an actively supported and developed library.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_decision">Decision</h3>
-<div class="paragraph">
-<p>All components will be migrated to the log4j2 library
-<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
-</div>
-<div class="paragraph">
-<p>All components shall use the fluent interface to write logging records.
-This decision shall increase the legibility of the source code.</p>
-</div>
-<div class="paragraph">
-<p>Staying in a library no more under active development is too dangerous.
-Closing of security issues and support of current JDK versions are not guaranteed.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_consequences">Consequences</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>All source files must be modified to use the new library</p>
-<div class="ulist">
-<ul>
-<li>
-<p>All logging record creations shall use a fluent interface.
-As in slf4j, no string concatenation shall happen in log record calls, use the message feature of the library.</p>
-</li>
-<li>
-<p>Logging level is specified by using the fluent interface</p>
-</li>
-<li>
-<p>No conditional statements shall be used to bracket logging statements</p>
-</li>
-<li>
-<p>Exceptions are always stated through the fluent user interface and are not an argument of the log message</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>All <a href="https://gradle.org/">Gradle</a> build files shall use the new library.
-The API is declared as an implementation dependency.
-The core library is declared as a test or runtime dependency.</p>
-</li>
-<li>
-<p>Testing shall be performed to verify correct behavior and correct configuration.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>We shall explore if trouble arise from used components which are using other logging libraries.
-The risk is small because it is already existing wehn using slf4j liberary.
-The difference is only our new preferred library is now the Apache one.</p>
-</div>
-<div class="paragraph">
-<p>The architecture of log4j2 is described in <a href="https://logging.apache.org/log4j/2.x/manual/architecture.html">Log4j2 Main Components</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_learnings">Learnings</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>The log4j2 community reacted professionally and fast in 2022 to correct a security attack in the library.
-The update of all libraries and applications with the patched version was done in a few minutes.
-A gradle plugin was used to infer which version of the library was used.
-The continuous implementation and delivery pipeline were used to generate hardened versions.</p>
-</li>
-<li>
-<p>A new feature of Gradle supports the definition of dependencies in a central file for all submodules.
-The project uses <em>libs.version.toml</em> configuration file to unify library usage through all components.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id="footnotes">
-<hr/>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. It is sad that such a well-crafted library as slf4j is fading away. We assume that the community actively working on extensions was too small. Ceki Gülcü did a wonderful job to pave the way for modern and efficient logging concepts in the Java world.
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-29f6be12b49467134e454c04f8867f19">8.2 - OS 001: System Guava Removal</h1>
-    
-	<div class="sect1">
-<h2 id="_os_001_remove_usage_of_google_guava_library">OS-001 Remove usage of Google Guava Library</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Date: 2018-02-20</p>
-</div>
-<div class="sect2">
-<h3 id="_status">Status</h3>
-<div class="paragraph">
-<p>Implemented</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_context">Context</h3>
-<div class="imageblock left">
-<div class="content">
-<img src="../pics/OS-001-head.jpg" alt="OS 001 head" width="420" height="360"/>
-</div>
-</div>
-<div class="paragraph">
-<p>Guava is an historical effort to provide much needed functionalities to the Java community.
-The Java ecosystem evolves quite slowly at the beginning of the millennium.
-Later, stewardship clearly improved with six months release schedule approach.
-Preview and incubator initiatives allowed timely evaluation of new features and idioms in the Java language and ecosystem.</p>
-</div>
-<div class="paragraph">
-<p>JDK versions from release 8 often provide better replacement methods for a lot of Guava functions.
-New JDKs are released every six months and provide regular improvements to the API.
-These improvements make Guava functions more and more obsolete.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/google/guava">Guava</a> is an external library of high quality but still an additional dependency in the application.
-We always follow the rule to use language and standard library constructs over using external libraries.
-Guava tries to support older JDKs and, therefore does not use more modern approaches defined in new API versions.
-We consider Guava has a legacy library.
-We are dedicated to writing modern Java using the latest official releases of the language and runtime environment.</p>
-</div>
-<div class="paragraph">
-<p>The advantage is better integration, always synchronized with a new release of the JDK and no incompatibilities.
-The drawback is sometimes a slightly more cumbersome syntax or solution.
-<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_decision">Decision</h3>
-<div class="paragraph">
-<p>All Guava usages shall be replaced by JDK standard functions.
-The main advantages are:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Current JDK versions provide own implementation e.g. in the Objects class.</p>
-</li>
-<li>
-<p>Guava dependency is removed from our source code and compiled artifacts.</p>
-</li>
-<li>
-<p>Guava is not optimized for idioms used in current JDK such as streams and extensive use of lambdas.
-Guava needs years to support new concepts such as algebraic data types.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This decision is against good practices documented in the first decade of this millenium.
-The Guava library did not evolve as rapidly as the new Java versions released in the second and third decades.</p>
-</div>
-<div class="paragraph">
-<p>We strongly advocate timely evolution.
-Try to avoid becoming laggards in your technology stack.
-As rule use the current Java release, or as minimal version the latest long term supported version of Java.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_consequences">Consequences</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Some operations are more complicated to implement because a solution is already provided in Guava.</p>
-</li>
-<li>
-<p>We have the huge advantage of being able to use the current approaches provided in JDK and associated standard API.</p>
-</li>
-<li>
-<p>Code uses the current constructs provided through last released JDK.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id="footnotes">
-<hr/>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. If a specific function is only available in Guava and your project strongly relies on it, feel free to continue using Guava
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-14093df2ffd5f4792a44dfb8f962cd93">8.3 - OS 002: Unit Test Conventions</h1>
-    
-	<div class="sect1">
-<h2 id="_os_002_define_unit_test_conventions">OS-002 Define Unit Test Conventions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Date: 2020-06-15</p>
-</div>
-<div class="sect2">
-<h3 id="_status">Status</h3>
-<div class="paragraph">
-<p>Implemented</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_context">Context</h3>
-<div class="imageblock left">
-<div class="content">
-<img src="../pics/OS-002-head.jpg" alt="OS 002 head" width="420" height="360"/>
-</div>
-</div>
-<div class="paragraph">
-<p>Some libraries need to create files on a file system.
-For example, you want to generate human-readable paper invoices.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_decision">Decision</h3>
-<div class="paragraph">
-<p>We recommend the following conventions when writing unit tests creating files.
-Use Google Java in memory file system <a href="https://github.com/google/jimfs">Jimfs</a>.
-Additional file systems can only be used in Java if all operations are performed through Path objects.
-Path objects have a reference to the file system; File objects always referenced the default file system.
-When you are writing to the default file system use the root directory <code>/tmp/</code> available in all Unix like operating systems.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Avoid writing files to a local file system.
-This approach is slow, cumbersome and error-prone.
-Use in-memory file systems.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_consequences">Consequences</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>We have a dependency on an open source product currently managed by Google.</p>
-</li>
-<li>
-<p>Use of <a href="https://github.com/google/jimfs">Jimfs</a> requires use of Path instances.
-We shall remove all references to File instances.
-File instances do not support alternative file systems.
-Therefore, we shall use libraries providing a workaround File instances either by using Path instances or reader and writer to access files.</p>
-</li>
-<li>
-<p>Operations to physical file system have the risk that rights problems could rise in some continuous integration environment.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-a02276904f6edc9ecabee026b030747f">8.4 - OS 003: Use Modern Java Constructs</h1>
-    
-	<div class="sect1">
-<h2 id="_os_003_remove_usage_of_google_guava_library">OS-003 Remove usage of Google Guava Library</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Date: 2020-01-01</p>
-</div>
-<div class="sect2">
-<h3 id="_status">Status</h3>
-<div class="paragraph">
-<p>Implemented</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_context">Context</h3>
-<div class="imageblock left">
-<div class="content">
-<img src="../pics/OS-003-head.jpg" alt="OS 003 head" width="420" height="360"/>
-</div>
-</div>
-<div class="paragraph">
-<p>JDK is released every six months to all Java developers.
-The latest approach is to release a long-term supported version every two years.</p>
-</div>
-<div class="paragraph">
-<p>Better approaches support clean code, less verbose source code and reduce programming  <a href="#modern-java-development">[5]</a> <a href="#immutability-in-java">[2]</a>.
-These constructs shall be used in our modules as soon as they are released to the developers.</p>
-</div>
-<div class="paragraph">
-<p>The advantage is better integration, always synchronized with the current release of the JDK and no incompatibilities.
-The drawback is that our clients have to use the current JDK released version.</p>
-</div>
-<div class="paragraph">
-<p>The major advantage is that you are using the latest version you do not need to pay license fees for each server you have running.
-Older Oracle versions always require a support contract and associated fees.
-The other approach is to use an alternate distribution such as <a href="https://openjdk.java.net/">OpenJDK</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_decision">Decision</h3>
-<div class="paragraph">
-<p>We use the current released JDK and all constructs provided in this JDK <a href="#modernize-java-landscape">[1]</a>.
-We use preview features and incubating functionality present in this JDK.
-The main advantages are</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Current JDK versions provide efficient and elegant implementation <a href="#jdk-17">[3]</a> <a href="#jdk-16">[4]</a>.
-See, for example, the record construct provided since JDK 14.</p>
-</li>
-<li>
-<p>The source code is legible and has fewer errors.</p>
-</li>
-<li>
-<p>Our developers are up-to-date with Java evolution and enjoy writing modern code.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_consequences">Consequences</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Clients are forced to use the current JDK version.</p>
-</li>
-<li>
-<p>Tooling is more brittle because a lot of tool maintainers are late to adapt actual version of JDK.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_examples_of_new_features">Examples of New Features</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>The <em>instanceof</em> operator supports in conditional statement deconstruction.</p>
-</li>
-<li>
-<p>The <em>record</em> construct simplifies data objects and encourages immutability.</p>
-</li>
-<li>
-<p>The <em>UncheckedIOException</em> encourages the use of non-checked exceptions.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_links">Links</h3>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><a id="modernize-java-landscape"></a>[1] <a href="../../../blog/2022/modernize-your-java-landscape/">Modernize your Java Landscape</a></p>
-</li>
-<li>
-<p><a id="immutability-in-java"></a>[2] <a href="../../../blog/2022/immutability-in-java/">Immutability in Java</a></p>
-</li>
-<li>
-<p><a id="jdk-17"></a>[3] <a href="../../../blog/2021/jdk-17/">JDK 17</a></p>
-</li>
-<li>
-<p><a id="jdk-16"></a>[4] <a href="../../../blog/2021/jdk-16/">JDK 16</a></p>
-</li>
-<li>
-<p><a id="modern-java-development"></a>[5] <a href="../../../blog/2021/modern-java-development/">Modern Java Development</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-ce63fd2314a829024f822be68d334f47">8.5 - OS 004: Publish Technical Documentation Through Static Website</h1>
-    
-	<div class="sect1">
-<h2 id="_os_004_publish_technical_documentation_through_static_website">OS-004 Publish Technical Documentation Through Static Website</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Date: 2020-01-01</p>
-</div>
-<div class="sect2">
-<h3 id="_status">Status</h3>
-<div class="paragraph">
-<p>Implemented</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_context">Context</h3>
-<div class="imageblock left">
-<div class="content">
-<img src="../pics/OS-004-head.png" alt="OS 004 head" width="420" height="360"/>
-</div>
-</div>
-<div class="paragraph">
-<p>A legible, well-structured and up-to-date technical documentation of released open source components is a service to all our users.
-Due to the small size of our team, we want a straight forward tool chain to generate the website.
-In the future, we could move our product to another hosting platform.
-The solution should be built on a standard to minimize porting overhead.</p>
-</div>
-<div class="paragraph">
-<p>I am personally a fan of <a href="https://asciidoc.org/">Asciidoc</a> and would promote a solution supporting this markup language.
-I will strongly fight against proprietary solutions.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_decision">Decision</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>All our technical documentation and blogs will be written in <a href="https://asciidoc.org/">Asciidoc</a>.</p>
-</li>
-<li>
-<p>The website is created using the <a href="https://gohugo.io/">Hugo</a> toolchain.</p>
-</li>
-<li>
-<p>The theme of hugo will be <a href="https://www.docsy.dev/">Docsy</a>.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_consequences">Consequences</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Committers are forced to document in <a href="https://asciidoc.org/">Asciidoc</a>.</p>
-</li>
-<li>
-<p>Tooling is slightly more brittle because <a href="https://asciidoctor.org/">Asciidoctor</a> integration in <a href="https://gohugo.io/">Hugo</a> is work in progress.
-<a href="https://asciidoctor.org/">Asciidoctor</a> is also undergoing changes such as the native support of rouge syntax highlighter.
-The improvements in both tools were impressive the last year, but we have to update regularly our toolchain and update all <a href="https://asciidoc.org/">Asciidoc</a> documents.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_learnings">Learnings</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>(ref-hugo) themes styling for AsciiDoc is sketchy.
-The visual quality is currently hindered due to faulty support of the standard or custom AsciiDoc stylesheet.</p>
-</li>
-<li>
-<p>AsciiDoc supports native rouge code highlighting module.
-All source code fragments are nicely displayed without special support from <a href="https://gohugo.io/">Hugo</a>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>We documented our experience in various blogs <a href="#creating-technical-website">[1]</a> <a href="#support-comments">[2]</a>&gt;.
-We use currently the Google sponsored theme <a href="https://www.docsy.dev/">Docsy</a> for our static website.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_links">Links</h3>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><a id="creating-technical-website"></a>[1] <a href="../../../blog/2020/creating-a-technical-website-with-hugo-and-asciidoc/">Creating a Technical Website with Hugo and AsciiDoc</a></p>
-</li>
-<li>
-<p><a id="support-comments"></a>[2] <a href="../../../blog/2020/support-comments-for-static-hugo-website/">Support Comments for Static Hugo Website</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-78015e669f9845a45b3b63d807da1855">8.6 - OS 005: Publish Maven Central Artifacts</h1>
-    
-	<div class="sect1">
-<h2 id="_os_005_publish_artifacts_on_public_java_components_repository">OS-005 Publish Artifacts on Public Java Components Repository</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Date: 2019-05-01</p>
-</div>
-<div class="sect2">
-<h3 id="_status">Status</h3>
-<div class="paragraph">
-<p>Implemented</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_links">Links</h3>
-<div class="paragraph">
-<p>Supersede: <a href="../../../../docs/fsm/adr/fsm-002-publish-maven-central-artifact">FSM-0002</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_context">Context</h3>
-<div class="imageblock left">
-<div class="content">
-<img src="../pics/OS-005-head.png" alt="OS 005 head" width="420" height="360"/>
-</div>
-</div>
-<div class="paragraph">
-<p>The <a href="https://www.tangly.net/">tangly</a> open source libraries are mature enough to be used in public commercial and academic projects.</p>
-</div>
-<div class="paragraph">
-<p>The libraries were used in internal projects and  refined to  fulfill these requirements.
-More customers will validate the usefulness of the library and identify extensions for further releases.</p>
-</div>
-<div class="paragraph">
-<p>We want to provide a standard and well-known approach for our customers.
-They shall have access to our libraries through official and well-documented channels.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_decision">Decision</h3>
-<div class="paragraph">
-<p>The libraries shall be published as artifacts on maven central and be accessible to a wide range of developers and organizations.
-A website shall be set up to provide an adequate documentation for users.</p>
-</div>
-<div class="paragraph">
-<p>The <a href="https://blog.tangly.net">Technical Documentation</a> will use a static web approach to minimize costs and provide good legibility.
-All open source components will be hosted on the same site.</p>
-</div>
-<div class="paragraph">
-<p>The libraries will be published on Maven Central to maximize potential usage.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_consequences">Consequences</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>We have to establish a publishing process at the company level to deploy signed artifacts to maven central repository.
-See <a href="../../../ideas/components-publication">release and publication process</a></p>
-</li>
-<li>
-<p>We have to establish a public website to host the documentation of public published libraries.
-The static website is <a href="https://blog.tangly.net/">Open Source Components</a></p>
-</li>
-<li>
-<p>We have to support semantic versioning for all future releases of public published libraries.
-See <a href="../../../ideas/components-publication">release and publication process</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-30f5a13e7009e135cfecf18bd3c5354f">8.7 - OS 006: Dependency Injection with Guice</h1>
-    
-	<div class="sect1">
-<h2 id="_os_006_dependency_injection_with_guice">OS-006 Dependency Injection with Guice</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Date: 2018-02-20</p>
-</div>
-<div class="sect2">
-<h3 id="_status">Status</h3>
-<div class="paragraph">
-<p>Implemented</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_context">Context</h3>
-<div class="imageblock left">
-<div class="content">
-<img src="../pics/OS-006-head.png" alt="OS 006 head" width="420" height="360"/>
-</div>
-</div>
-<div class="paragraph">
-<p>The modules provided as <a href="https://www.tangly.net/">tangly</a> open source components are used in more complex applications.</p>
-</div>
-<div class="paragraph">
-<p>These applications often use dependency injection frameworks to construct and initialize their instances.
-<a href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency injection</a> is is a technique in which an object receives other objects that it depends on, called dependencies.</p>
-</div>
-<div class="paragraph">
-<p>Typically, the receiving object is called a client and the passed-in <em>injected</em> object is called a service.
-The code that passes the service to the client is called the injector.</p>
-</div>
-<div class="paragraph">
-<p>Instead of the client specifying which service it will use, the injector tells the client what service to use.
-The <em>injection</em> refers to the passing of a dependency into the client that uses it.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_decision">Decision</h3>
-<div class="paragraph">
-<p>Guice is selected as a dependency injection framework.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Guice is one of the industrial standards with Dagger and Sprint DI.</p>
-</li>
-<li>
-<p>Guice supports JDK standard <em>@inject</em> annotation used in other dependency frameworks.</p>
-</li>
-<li>
-<p>Guice supports the definition of modules to describe dependencies.
-The modules are also used as a documentation mechanism.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Care will be taken to allow users to use a different dependency injection framework.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_consequences">Consequences</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>A dependency injection module shall be provided for each relevant module</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_conventions">Conventions</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Constructor injection is the preferred mechanism.
-In the long term, it should be the only approach.</p>
-</li>
-<li>
-<p>Please avoid field injection as an injection approach.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-aa0cf0afa9366a3ec97adc94f9a5dd53">8.8 - OS 007: Persistence with MicroStream</h1>
-    
-	<div class="sect1">
-<h2 id="_os_007_persistence_with_microstream">OS-007: Persistence with MicroStream</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Date: 2020-11-13</p>
-</div>
-<div class="sect2">
-<h3 id="_status">Status</h3>
-<div class="paragraph">
-<p>Implemented</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_context">Context</h3>
-<div class="imageblock left">
-<div class="content">
-<img src="../pics/OS-007-head.jpg" alt="OS 007 head" width="420" height="360"/>
-</div>
-</div>
-<div class="paragraph">
-<p>The modules provided as <a href="https://www.tangly.net/">tangly</a> open source components are used in more complex applications.
-These applications require a reliable and performant persistence approach for their data.</p>
-</div>
-<div class="paragraph">
-<p>In Java, everything is an object.
-In contrast, all databases come with their own specific data structure that is incompatible with Java objects.</p>
-</div>
-<div class="paragraph">
-<p>This is called <a href="https://en.wikipedia.org/wiki/Object%E2%80%93relational_impedance_mismatch">impedance mismatch</a>.</p>
-</div>
-<div class="paragraph">
-<p>As a consequence, a mapping is required, which means all data must be converted behind the scenes.
-Conversions are inefficient, lead to enormous loss of performance and latencies, and are linked to further serious disadvantages.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_decision">Decision</h3>
-<div class="paragraph">
-<p><a href="https://microstream.one/">MicroStream</a> was selected as persistence approach for the first versions of the ERP solution.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Almost no impedance mismatch between the Java application and persistence store</p>
-</li>
-<li>
-<p>Elegant approach to provide one persistence container per bounded domain the same application</p>
-</li>
-<li>
-<p>MicroStream has formally announced their software library will be published under an open source license</p>
-</li>
-<li>
-<p>The library supports current versions of the JDK and all constructs of the language including preview constructs</p>
-</li>
-<li>
-<p>The support of the company is good and the answers professional</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Care will be taken to provide a fallback to another persistence solution if performance or licensing problems occur.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_consequences">Consequences</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Knowledge in MicroStream library <a href="#microstream-4">[1]</a> must be build-up.</p>
-</li>
-<li>
-<p>Software design must be slightly adapted to the MicroStream approach.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>A clear separation of data from functions is required.</p>
-</li>
-<li>
-<p>Lambdas cannot currently be persisted.
-Therefore, all data containers with lambda variables must either be redesigned or declared as transient.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Work on a design enabling domain driven design with MicroStream approach.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The MicroStream approach supports a very effective way to persist data.
-The effort to define storage and map Java objects to a persistent representation are minimal.
-This approach minimizes the costs for this functionality without impeding the quality or completeness of the solution.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_conventions">Conventions</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Realm shall have a private data class to store all data to be persisted</p>
-</li>
-<li>
-<p>The application must generate unique object identifiers.
-MicroStream does not provide functions in this area.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_links">Links</h3>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><a id="microstream-4"></a>[1] <a href="../../../blog/2021/microstream-4.x/">MicroStream 4.x</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-dacd0f79580434037542c523b58c2f23">9 - Agile Transformations</h1>
-    <div class="lead">Recipes for agile transformation initatives</div>
-	<div class="sect1">
-<h2 id="_agile_transformations">Agile Transformations</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Agile transformation is as an act of transforming an organization’s form or nature gradually to one that is able to thrive in a flexible, collaborative, self-organizing, fast changing environment.</p>
-</div>
-<div class="paragraph">
-<p>The Agile Manifesto values and principles can be taught and exercised throughout any type of organization as it is not limited to development teams.</p>
-</div>
-<div class="paragraph">
-<p>The entire organization needs to understand the values and principles of an agile transformation to benefit from the rewards of achieving healthy agility.
-The cultural and organizational mindset shall change to one that embraces a culture of self-organization and collaboration.</p>
-</div>
-<div class="paragraph">
-<p>Our approach to initiating and supporting an agile transformation is</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Establish leadership situation awareness, discovery of weaknesses and kickoff of transformation</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Conduct a <em>Go And See</em> - <a href="https://en.wikipedia.org/wiki/Gemba">Gemba</a> - to assess and understand your organization’s context and specific challenges.</p>
-</li>
-<li>
-<p>Work with leadership to make those challenges visible and define steps to address them.</p>
-</li>
-<li>
-<p>Identify urgency and core champions actively supporting the transformation.</p>
-</li>
-<li>
-<p>Launch leadership teams and communities of practices to guide your organization’s transformation.</p>
-</li>
-<li>
-<p>Enable leadership to deploy transformation incrementally and guide the scope and pace of change.</p>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Organize your collaborators and workflow around your products and strategy</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Design a custom transformation approach with immediately actionable steps.</p>
-</li>
-<li>
-<p>Select a few pilot groups for launch and involve all participants – open space meeting, information radiators -.</p>
-</li>
-<li>
-<p>Create a coherent, actionable backlog which connects strategy to execution, so the entire organization is aligned around shared goals.</p>
-</li>
-<li>
-<p>Identify indicators to measure progress.</p>
-</li>
-<li>
-<p>Build team level backlogs so the entire organization is aligned around shared goals.</p>
-</li>
-<li>
-<p>Work with leadership to discover and address organizational pain points and challenges.</p>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Launch your teams</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Train your pilot teams in the roles, artifacts, and events of <a href="https://scrumguides.org/">Scrum</a> and <a href="https://less.works/">LeSS</a>.</p>
-</li>
-<li>
-<p>Embed coaches to support your teams become high-performing.</p>
-</li>
-<li>
-<p>Establish team excellence and technical craftsmanship.</p>
-</li>
-<li>
-<p>Use specific, demonstrable success to train, launch, and coach additional teams.</p>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Build team sustainability</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Build and extend communities of practice.</p>
-</li>
-<li>
-<p>Nurture internal coaching capabilities to sustain your agile practice beyond the pilot.</p>
-</li>
-<li>
-<p>Establish continuous improvement as culture in the organization.</p>
-</li>
-<li>
-<p>Provide additional follow-up as needed to continue to build business agility.</p>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Focus on product delivery</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Value stream mapping and <a href="https://en.wikipedia.org/wiki/Lean_software_development">waste elimination</a>.</p>
-</li>
-<li>
-<p>Amplify learning.</p>
-</li>
-<li>
-<p>Late decision-making.</p>
-</li>
-<li>
-<p>Fast delivery - continuous integration, continuous delivery, continuous deployment, DevOps -.</p>
-</li>
-<li>
-<p>Team empowerment.</p>
-</li>
-<li>
-<p>Built-in integrity.</p>
-</li>
-<li>
-<p>View applications as a whole.</p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>We reinforce learning theory, streamline how to apply agile principles and experiments, help you to develop a routine, promote awareness, boost ownership, facilitate barrier removal, and avoid painful or costly dead ends.
-Our goal is to shorten the learning curve and optimize human and financial investments.
-We truly believe in the first directive</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Regardless of what we discover, we understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand.</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-9de06737fc29dfb434d2d23522db04da">10 - Learnings</h1>
+	<h1 id="pg-9de06737fc29dfb434d2d23522db04da">11 - Learnings</h1>
     
 	
 </div>
@@ -3928,7 +4198,7 @@ We truly believe in the first directive</p>
 
 <div class="td-content" style="">
     
-	<h1 id="pg-5f95e59f44636f67b8cf313328a8cee4">10.1 - Lectures</h1>
+	<h1 id="pg-5f95e59f44636f67b8cf313328a8cee4">11.1 - Lectures</h1>
     <div class="lead">Lectures and associated literature</div>
 	<h2 id="software-architecture-and-techniques-lectures">Software Architecture and Techniques Lectures</h2>
 <p><a href="https://en.wikipedia.org/wiki/Software_architecture">Software Architecture</a> and Techniques <em>SWAT</em> discuss approaches, methods and tools taught in the context
@@ -5361,7 +5631,7 @@ for the Modern Java and selected JVM languages lectures</div>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-11608bf1673e2c2d25551ad90e2c8318">10.2 - Books</h1>
+	<h1 id="pg-11608bf1673e2c2d25551ad90e2c8318">11.2 - Books</h1>
     <div class="lead">bibliography agile and technical excellence books</div>
 	Unknown reference: skilled-facilitator-resoruce
 Unknown reference: agile-produt-management
@@ -5733,7 +6003,7 @@ Unknown reference: agile-produt-management
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-420ce387a2a8048aafd748fa069ca8e0">10.3 - Links</h1>
+	<h1 id="pg-420ce387a2a8048aafd748fa069ca8e0">11.3 - Links</h1>
     <div class="lead">links to agile and technical excellence themes such as Scrum, XP, LeSS, Software Craftsmanship</div>
 	<div class="sect1">
 <h2 id="_agile_and_technical_excellence_links">Agile and Technical Excellence Links</h2>
@@ -5866,7 +6136,7 @@ Fascinating how our civilisation lost the belief in facts and science.</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-f55bdbe1e6a9d696df441f18f56fba0e">10.4 - Talks</h1>
+	<h1 id="pg-f55bdbe1e6a9d696df441f18f56fba0e">11.4 - Talks</h1>
     <div class="lead">links to public talks of Marcel Baumann discussing agile, Scrum, technical excellence</div>
 	<h2 id="talks">Talks</h2>
 <h3 id="scrum-user-groups">Scrum User Groups</h3>

@@ -92,7 +92,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="HasComments.html" title="interface in net.tangly.core">HasComments</a></code>, <code><a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a></code>, <code><a href="HasOid.html" title="interface in net.tangly.core">HasOid</a></code>, <code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code>, <code><a href="HasText.html" title="interface in net.tangly.core">HasText</a></code></dd>
+<dd><code><a href="HasComments.html" title="interface in net.tangly.core">HasComments</a></code>, <code><a href="HasOid.html" title="interface in net.tangly.core">HasOid</a></code>, <code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code>, <code><a href="HasText.html" title="interface in net.tangly.core">HasText</a></code>, <code><a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>All Known Subinterfaces:</dt>
@@ -104,7 +104,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Entity</span><span class="extends-implements">
-extends <a href="HasOid.html" title="interface in net.tangly.core">HasOid</a>, <a href="HasText.html" title="interface in net.tangly.core">HasText</a>, <a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a>, <a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>, <a href="HasComments.html" title="interface in net.tangly.core">HasComments</a></span></div>
+extends <a href="HasOid.html" title="interface in net.tangly.core">HasOid</a>, <a href="HasText.html" title="interface in net.tangly.core">HasText</a>, <a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a>, <a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>, <a href="HasComments.html" title="interface in net.tangly.core">HasComments</a></span></div>
 <div class="block">The named interface defines a powerful abstraction for entities in a domain model. The features are
  <ul>
  <li>oid: an optional internal identifier, an internal identifier is never visible to external systems or users. It
@@ -122,8 +122,8 @@ extends <a href="HasOid.html" title="interface in net.tangly.core">HasOid</a>, <
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
 <div class="inherited-list">
-<h2 id="nested-classes-inherited-from-class-net.tangly.core.HasInterval">Nested classes/interfaces inherited from interface&nbsp;net.tangly.core.<a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a></h2>
-<code><a href="HasInterval.DateFilter.html" title="class in net.tangly.core">HasInterval.DateFilter</a>, <a href="HasInterval.IntervalFilter.html" title="class in net.tangly.core">HasInterval.IntervalFilter</a>&lt;<a href="HasInterval.IntervalFilter.html" title="type parameter in HasInterval.IntervalFilter">T</a> extends <a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a>&gt;</code></div>
+<h2 id="nested-classes-inherited-from-class-net.tangly.core.HasTimeInterval">Nested classes/interfaces inherited from interface&nbsp;net.tangly.core.<a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a></h2>
+<code><a href="HasTimeInterval.DateFilter.html" title="class in net.tangly.core">HasTimeInterval.DateFilter</a>, <a href="HasTimeInterval.IntervalFilter.html" title="class in net.tangly.core">HasTimeInterval.IntervalFilter</a>&lt;<a href="HasTimeInterval.IntervalFilter.html" title="type parameter in HasTimeInterval.IntervalFilter">T</a> extends <a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a>&gt;</code></div>
 </section>
 </li>
 <!-- =========== FIELD SUMMARY =========== -->
@@ -158,9 +158,6 @@ extends <a href="HasOid.html" title="interface in net.tangly.core">HasOid</a>, <
 <h3 id="methods-inherited-from-class-net.tangly.core.HasComments">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a></h3>
 <code><a href="HasComments.html#add(net.tangly.core.Comment)">add</a>, <a href="HasComments.html#addAll(java.lang.Iterable)">addAll</a>, <a href="HasComments.html#comments()">comments</a>, <a href="HasComments.html#findByAuthor(java.lang.String)">findByAuthor</a>, <a href="HasComments.html#findByTag(java.lang.String,java.lang.String)">findByTag</a>, <a href="HasComments.html#findByTime(java.time.LocalDateTime,java.time.LocalDateTime)">findByTime</a>, <a href="HasComments.html#remove(net.tangly.core.Comment)">remove</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.tangly.core.HasInterval">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a></h3>
-<code><a href="HasInterval.html#from()">from</a>, <a href="HasInterval.html#from(java.time.LocalDate)">from</a>, <a href="HasInterval.html#isActive()">isActive</a>, <a href="HasInterval.html#isActive(java.time.LocalDate)">isActive</a>, <a href="HasInterval.html#to()">to</a>, <a href="HasInterval.html#to(java.time.LocalDate)">to</a></code></div>
-<div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasOid">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasOid.html" title="interface in net.tangly.core">HasOid</a></h3>
 <code><a href="HasOid.html#oid()">oid</a></code></div>
 <div class="inherited-list">
@@ -169,6 +166,9 @@ extends <a href="HasOid.html" title="interface in net.tangly.core">HasOid</a>, <
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasText">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a></h3>
 <code><a href="HasText.html#text()">text</a>, <a href="HasText.html#text(java.lang.String)">text</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasTimeInterval">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a></h3>
+<code><a href="HasTimeInterval.html#from()">from</a>, <a href="HasTimeInterval.html#from(java.time.LocalDate)">from</a>, <a href="HasTimeInterval.html#isActive()">isActive</a>, <a href="HasTimeInterval.html#isActive(java.time.LocalDate)">isActive</a>, <a href="HasTimeInterval.html#to()">to</a>, <a href="HasTimeInterval.html#to(java.time.LocalDate)">to</a></code></div>
 </section>
 </li>
 </ul>

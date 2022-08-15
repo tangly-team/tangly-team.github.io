@@ -95,7 +95,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="Entity.html" title="interface in net.tangly.core">Entity</a></code>, <code><a href="HasComments.html" title="interface in net.tangly.core">HasComments</a></code>, <code><a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a></code>, <code><a href="HasOid.html" title="interface in net.tangly.core">HasOid</a></code>, <code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code>, <code><a href="HasText.html" title="interface in net.tangly.core">HasText</a></code></dd>
+<dd><code><a href="Entity.html" title="interface in net.tangly.core">Entity</a></code>, <code><a href="HasComments.html" title="interface in net.tangly.core">HasComments</a></code>, <code><a href="HasOid.html" title="interface in net.tangly.core">HasOid</a></code>, <code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code>, <code><a href="HasText.html" title="interface in net.tangly.core">HasText</a></code>, <code><a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -122,8 +122,8 @@ implements <a href="Entity.html" title="interface in net.tangly.core">Entity</a>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
 <div class="inherited-list">
-<h2 id="nested-classes-inherited-from-class-net.tangly.core.HasInterval">Nested classes/interfaces inherited from interface&nbsp;net.tangly.core.<a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a></h2>
-<code><a href="HasInterval.DateFilter.html" title="class in net.tangly.core">HasInterval.DateFilter</a>, <a href="HasInterval.IntervalFilter.html" title="class in net.tangly.core">HasInterval.IntervalFilter</a>&lt;<a href="HasInterval.IntervalFilter.html" title="type parameter in HasInterval.IntervalFilter">T</a> extends <a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a>&gt;</code></div>
+<h2 id="nested-classes-inherited-from-class-net.tangly.core.HasTimeInterval">Nested classes/interfaces inherited from interface&nbsp;net.tangly.core.<a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a></h2>
+<code><a href="HasTimeInterval.DateFilter.html" title="class in net.tangly.core">HasTimeInterval.DateFilter</a>, <a href="HasTimeInterval.IntervalFilter.html" title="class in net.tangly.core">HasTimeInterval.IntervalFilter</a>&lt;<a href="HasTimeInterval.IntervalFilter.html" title="type parameter in HasTimeInterval.IntervalFilter">T</a> extends <a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a>&gt;</code></div>
 </section>
 </li>
 <!-- =========== FIELD SUMMARY =========== -->
@@ -248,11 +248,11 @@ implements <a href="Entity.html" title="interface in net.tangly.core">Entity</a>
 <h3 id="methods-inherited-from-class-net.tangly.core.HasComments">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a></h3>
 <code><a href="HasComments.html#addAll(java.lang.Iterable)">addAll</a>, <a href="HasComments.html#findByAuthor(java.lang.String)">findByAuthor</a>, <a href="HasComments.html#findByTag(java.lang.String,java.lang.String)">findByTag</a>, <a href="HasComments.html#findByTime(java.time.LocalDateTime,java.time.LocalDateTime)">findByTime</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.tangly.core.HasInterval">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a></h3>
-<code><a href="HasInterval.html#isActive()">isActive</a>, <a href="HasInterval.html#isActive(java.time.LocalDate)">isActive</a></code></div>
-<div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasTags">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></h3>
 <code><a href="HasTags.html#addTags(java.lang.Iterable)">addTags</a>, <a href="HasTags.html#containsTag(java.lang.String)">containsTag</a>, <a href="HasTags.html#containsTag(java.lang.String,java.lang.String)">containsTag</a>, <a href="HasTags.html#findBy(java.lang.String)">findBy</a>, <a href="HasTags.html#findBy(java.lang.String,java.lang.String)">findBy</a>, <a href="HasTags.html#findByNamespace(java.lang.String)">findByNamespace</a>, <a href="HasTags.html#rawTags()">rawTags</a>, <a href="HasTags.html#rawTags(java.lang.String)">rawTags</a>, <a href="HasTags.html#removeTagNamed(java.lang.String)">removeTagNamed</a>, <a href="HasTags.html#update(java.lang.String,java.lang.String)">update</a>, <a href="HasTags.html#update(net.tangly.core.Tag)">update</a>, <a href="HasTags.html#value(java.lang.String)">value</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasTimeInterval">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a></h3>
+<code><a href="HasTimeInterval.html#isActive()">isActive</a>, <a href="HasTimeInterval.html#isActive(java.time.LocalDate)">isActive</a></code></div>
 </section>
 </li>
 </ul>
@@ -336,17 +336,17 @@ implements <a href="Entity.html" title="interface in net.tangly.core">Entity</a>
 <section class="detail" id="from()">
 <h3>from</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></span>&nbsp;<span class="element-name">from</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasInterval.html#from()">HasInterval</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasTimeInterval.html#from()">HasTimeInterval</a></code></span></div>
 <div class="block">Returns the date from when the entity is existing and active.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="HasInterval.html#from()">from</a></code>&nbsp;in interface&nbsp;<code><a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a></code></dd>
+<dd><code><a href="HasTimeInterval.html#from()">from</a></code>&nbsp;in interface&nbsp;<code><a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a></code></dd>
 <dt>Returns:</dt>
 <dd>the start of the existing period of the entity</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="see-list">
-<li><a href="HasInterval.html#from(java.time.LocalDate)"><code>HasInterval.from(LocalDate)</code></a></li>
+<ul class="see-list-long">
+<li><a href="HasTimeInterval.html#from(java.time.LocalDate)"><code>HasTimeInterval.from(LocalDate)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -356,17 +356,17 @@ implements <a href="Entity.html" title="interface in net.tangly.core">Entity</a>
 <section class="detail" id="from(java.time.LocalDate)">
 <h3>from</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">from</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;fromDate)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasInterval.html#from(java.time.LocalDate)">HasInterval</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasTimeInterval.html#from(java.time.LocalDate)">HasTimeInterval</a></code></span></div>
 <div class="block">Sets the from date when the entity is existing and active.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="HasInterval.html#from(java.time.LocalDate)">from</a></code>&nbsp;in interface&nbsp;<code><a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a></code></dd>
+<dd><code><a href="HasTimeInterval.html#from(java.time.LocalDate)">from</a></code>&nbsp;in interface&nbsp;<code><a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>fromDate</code> - the new start of the existing period of the entity</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="HasInterval.html#from()"><code>HasInterval.from()</code></a></li>
+<li><a href="HasTimeInterval.html#from()"><code>HasTimeInterval.from()</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -376,17 +376,17 @@ implements <a href="Entity.html" title="interface in net.tangly.core">Entity</a>
 <section class="detail" id="to()">
 <h3>to</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></span>&nbsp;<span class="element-name">to</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasInterval.html#to()">HasInterval</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasTimeInterval.html#to()">HasTimeInterval</a></code></span></div>
 <div class="block">Returns the date until when the entity is existing and active.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="HasInterval.html#to()">to</a></code>&nbsp;in interface&nbsp;<code><a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a></code></dd>
+<dd><code><a href="HasTimeInterval.html#to()">to</a></code>&nbsp;in interface&nbsp;<code><a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a></code></dd>
 <dt>Returns:</dt>
 <dd>the end of the existing period of the entity</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="HasInterval.html#to(java.time.LocalDate)"><code>HasInterval.to(LocalDate)</code></a></li>
+<li><a href="HasTimeInterval.html#to(java.time.LocalDate)"><code>HasTimeInterval.to(LocalDate)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -396,17 +396,17 @@ implements <a href="Entity.html" title="interface in net.tangly.core">Entity</a>
 <section class="detail" id="to(java.time.LocalDate)">
 <h3>to</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">to</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;toDate)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasInterval.html#to(java.time.LocalDate)">HasInterval</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasTimeInterval.html#to(java.time.LocalDate)">HasTimeInterval</a></code></span></div>
 <div class="block">Sets the end date when the entity is existing and active.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="HasInterval.html#to(java.time.LocalDate)">to</a></code>&nbsp;in interface&nbsp;<code><a href="HasInterval.html" title="interface in net.tangly.core">HasInterval</a></code></dd>
+<dd><code><a href="HasTimeInterval.html#to(java.time.LocalDate)">to</a></code>&nbsp;in interface&nbsp;<code><a href="HasTimeInterval.html" title="interface in net.tangly.core">HasTimeInterval</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>toDate</code> - the new end of the existing period of the entity</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="HasInterval.html#to()"><code>()</code></a></li>
+<li><a href="HasTimeInterval.html#to()"><code>()</code></a></li>
 </ul>
 </dd>
 </dl>
