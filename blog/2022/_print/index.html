@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-<meta name="generator" content="Hugo 0.101.0" />
+<meta name="generator" content="Hugo 0.102.3" />
 <link href="https://blog.tangly.net/blog/2022/" rel="canonical" type="text/html">
 <link href="https://blog.tangly.net/blog/2022/index.xml" rel="alternate" type="application/rss&#43;xml">
 <meta content="noindex, nofollow" name="robots">
@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" as="style">
-<link href="/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.92ecfbc7c96da7f228427cabef1e6aaed8d2df0515143a25a26c85704e1a65da.css" as="style">
+<link href="/scss/main.min.92ecfbc7c96da7f228427cabef1e6aaed8d2df0515143a25a26c85704e1a65da.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -187,7 +187,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.914a0924233dce8ca0649ec1c0244e10.json"
+  data-offline-search-index-json-src="/offline-search-index.fceac461548bcb7709681ce75cb75518.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -251,6 +251,183 @@ This is the multi-page printable view of this section.
   
 
 <div class="td-content" style="">
+    <h1 id="pg-500e0e905e99afef32a4902323de0058">ArchUnit</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2022-09-01" class="text-muted">2022-09-01</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_verifying_software_design_constraints_with_archunit">Verifying Software Design Constraints with ArchUnit</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2022-09-01-head.png" alt="2022 09 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>How often have you experienced a well-defined and understood software architecture on paper?
+And it falls apart when developers start implementing it?</p>
+</div>
+<div class="paragraph">
+<p>While re-architecting recently legacy components in an application, I experienced the same.
+As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.</p>
+</div>
+<div class="paragraph">
+<p>I know some of you may say, <em>Why not control the implementation during code-review sessions?</em>.
+Technically you can, but in that case, the reviewer becomes the bottleneck in the whole <a href="https://en.wikipedia.org/wiki/Systems_development_life_cycle">SDLC</a> process.</p>
+</div>
+<div class="paragraph">
+<p>What if there was something that could enforce design constraints in the form of the test cases?
+The violation of the agreed-upon design principles is marked as a failed build.</p>
+</div>
+<div class="paragraph">
+<p>My quest led me to a test library for architecture called <a href="https://www.archunit.org/">ArchUnit</a>.
+It enforces architectural constraints in Java projects.</p>
+</div>
+<div class="sect2">
+<h3 id="_idea">Idea</h3>
+<div class="paragraph">
+<p>ArchUnit is a test library and allows us to validate whether a solution adheres to a given set of design considerations or architecture rules.</p>
+</div>
+<div class="paragraph">
+<p>The product is a free, simple and extensible library for checking the architecture of your Java code using any plain Java unit test framework.
+The license is the open source <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>.
+The support for <a href="https://junit.org/junit5/docs/current/user-guide/">JUnit 5</a> is very good.</p>
+</div>
+<div class="paragraph">
+<p>ArchUnit can check dependencies between packages and classes, layers and slices, detect cyclic dependencies and more.
+It does so by analyzing the given Java bytecode after importing all classes into a Java code structure.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_use_architectural_constraints">Use Architectural Constraints</h3>
+<div class="paragraph">
+<p>You first need to import the library in Gradle.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy"><span style="background-color: #f8f8f8">implementation</span> <span style="background-color: #f8f8f8">com</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">tngtech</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">archunit</span><span style="color: #000000;font-weight: bold">:</span><span style="color: #990000;font-weight: bold">archunit:</span><span style="color: #009999">1.0</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #009999">0</span>                             <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>For real projects you should describe your dependencies in a <a href="https://docs.gradle.org/current/userguide/platforms.html">catalog file</a>.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>The definition of a validation test is easy.</p>
+</div>
+<div class="paragraph">
+<p>Below an architectural rule to respect the <em>Domain-Driven Design</em> concepts in our project <a href="#software-structure-with-ddd">[1]</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java"><span style="color: #3c5d5d;font-weight: bold">@AnalyzeClasses</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">packages</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;net.tangly.erp.collaborators&#34;</span><span style="color: #000000;font-weight: bold">)</span>                     <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #000000;font-weight: bold">public</span> <span style="color: #000000;font-weight: bold">class</span> <span style="color: #445588;font-weight: bold">DomainRules</span> <span style="color: #000000;font-weight: bold">{</span>                                                     <i class="conum" data-value="2"></i><b>(2)</b>
+    <span style="color: #000000;font-weight: bold">static</span> <span style="color: #000000;font-weight: bold">final</span> <span style="color: #445588;font-weight: bold">String</span> <span style="color: #008080">SERVICES</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;Services&#34;</span><span style="color: #000000;font-weight: bold">;</span>
+    <span style="color: #000000;font-weight: bold">static</span> <span style="color: #000000;font-weight: bold">final</span> <span style="color: #445588;font-weight: bold">String</span> <span style="color: #008080">PORTS</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;Ports&#34;</span><span style="color: #000000;font-weight: bold">;</span>
+    <span style="color: #000000;font-weight: bold">static</span> <span style="color: #000000;font-weight: bold">final</span> <span style="color: #445588;font-weight: bold">String</span> <span style="color: #008080">DOMAIN</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;Domain&#34;</span><span style="color: #000000;font-weight: bold">;</span>
+
+    <span style="color: #3c5d5d;font-weight: bold">@ArchTest</span>
+    <span style="color: #000000;font-weight: bold">static</span> <span style="color: #000000;font-weight: bold">final</span> <span style="color: #445588;font-weight: bold">ArchRule</span> <span style="background-color: #f8f8f8">layersRule</span> <span style="color: #000000;font-weight: bold">=</span> <span style="background-color: #f8f8f8">layeredArchitecture</span><span style="color: #000000;font-weight: bold">().</span><span style="color: #008080">consideringAllDependencies</span><span style="color: #000000;font-weight: bold">()</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">layer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">DOMAIN</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">definedBy</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#34;..domain..&#34;</span><span style="color: #000000;font-weight: bold">)</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">layer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">SERVICES</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">definedBy</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#34;..services..&#34;</span><span style="color: #000000;font-weight: bold">)</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">layer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">PORTS</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">definedBy</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#34;..ports..&#34;</span><span style="color: #000000;font-weight: bold">)</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">whereLayer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">DOMAIN</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">mayOnlyBeAccessedByLayers</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">SERVICES</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #008080">PORTS</span><span style="color: #000000;font-weight: bold">)</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">whereLayer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">SERVICES</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">mayOnlyBeAccessedByLayers</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">PORTS</span><span style="color: #000000;font-weight: bold">)</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">whereLayer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">PORTS</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">mayNotBeAccessedByAnyLayer</span><span style="color: #000000;font-weight: bold">();</span>
+<span style="color: #000000;font-weight: bold">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Declare the root package for the bounded domain classes.
+The bounded domain should be defined as a Java module.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The domain rules class shall be declared as part of the domain library of your application.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>These rules are defined in the library component and enforced in all the <em>Bounded Domains</em> we implement through the following unit tests.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java"><span style="color: #3c5d5d;font-weight: bold">@AnalyzeClasses</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">packages</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;net.tangly.erp.collaborators&#34;</span><span style="color: #000000;font-weight: bold">)</span>
+<span style="color: #000000;font-weight: bold">public</span> <span style="color: #000000;font-weight: bold">class</span> <span style="color: #445588;font-weight: bold">ArchitectureTest</span> <span style="color: #000000;font-weight: bold">{</span>                                                <i class="conum" data-value="1"></i><b>(1)</b>
+    <span style="color: #3c5d5d;font-weight: bold">@ArchTest</span>
+    <span style="color: #000000;font-weight: bold">static</span> <span style="color: #000000;font-weight: bold">final</span> <span style="color: #445588;font-weight: bold">ArchTests</span> <span style="background-color: #f8f8f8">domainRules</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #445588;font-weight: bold">ArchTests</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">in</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #445588;font-weight: bold">DomainRules</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">class</span><span style="color: #000000;font-weight: bold">);</span>      <i class="conum" data-value="2"></i><b>(2)</b>
+<span style="color: #000000;font-weight: bold">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The class is located in the unit test folder and will be executed with JUnit 5 as part of the unit test CI step.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Import all the rules defined in the domain rules class and apply them to the bounded domain <em>collaborators</em>.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>We can insure architectural constraints to all bounded domains defined in a product.
+The constraints are defined only once in a common module.</p>
+</div>
+<div class="paragraph">
+<p>The huge advantage is the integration of architectural validations in the continuous integration pipeline <a href="#introducing-devops-ideas">[2]</a> <a href="#devops-for-sme">[3]</a>.
+No expensive human activities are required to enforce these rules.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="software-structure-with-ddd"></a>[1] <a href="../../2022/software-structure-with-ddd/">Software Structure with DDD</a></p>
+</li>
+<li>
+<p><a id="introducing-devops-ideas"></a>[2] <a href="../../2022/introducing-devops-ideas/">Introducing DevOps Ideas</a></p>
+</li>
+<li>
+<p><a id="devops-for-sme"></a>[3] <a href="../../2021/devops-for-small-applications/">DevOps for Small Applications</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
     <h1 id="pg-61c879254f370d7c1634926db27cf196">Transfer a Software Project</h1>
 	
 	<div class="td-byline mb-4">

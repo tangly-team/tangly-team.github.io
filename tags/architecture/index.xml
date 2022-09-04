@@ -4,7 +4,7 @@
     <link>https://blog.tangly.net/tags/architecture/</link>
     <description>Recent content in architecture on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,169 @@
         
       
     
+    
+    <item>
+      <title>Blog: ArchUnit</title>
+      <link>https://blog.tangly.net/blog/2022/archunit/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2022/archunit/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_verifying_software_design_constraints_with_archunit&#34;&gt;Verifying Software Design Constraints with ArchUnit&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-09-01-head.png&#34; alt=&#34;2022 09 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How often have you experienced a well-defined and understood software architecture on paper?
+And it falls apart when developers start implementing it?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;While re-architecting recently legacy components in an application, I experienced the same.
+As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I know some of you may say, &lt;em&gt;Why not control the implementation during code-review sessions?&lt;/em&gt;.
+Technically you can, but in that case, the reviewer becomes the bottleneck in the whole &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;SDLC&lt;/a&gt; process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;What if there was something that could enforce design constraints in the form of the test cases?
+The violation of the agreed-upon design principles is marked as a failed build.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;My quest led me to a test library for architecture called &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt;.
+It enforces architectural constraints in Java projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_idea&#34;&gt;Idea&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;ArchUnit is a test library and allows us to validate whether a solution adheres to a given set of design considerations or architecture rules.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The product is a free, simple and extensible library for checking the architecture of your Java code using any plain Java unit test framework.
+The license is the open source &lt;a href=&#34;https://www.apache.org/licenses/LICENSE-2.0&#34;&gt;Apache 2.0&lt;/a&gt;.
+The support for &lt;a href=&#34;https://junit.org/junit5/docs/current/user-guide/&#34;&gt;JUnit 5&lt;/a&gt; is very good.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;ArchUnit can check dependencies between packages and classes, layers and slices, detect cyclic dependencies and more.
+It does so by analyzing the given Java bytecode after importing all classes into a Java code structure.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_use_architectural_constraints&#34;&gt;Use Architectural Constraints&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You first need to import the library in Gradle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;implementation&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;com&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;tngtech&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;archunit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;archunit:&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;1.0&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;0&lt;/span&gt;                             &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;For real projects you should describe your dependencies in a &lt;a href=&#34;https://docs.gradle.org/current/userguide/platforms.html&#34;&gt;catalog file&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The definition of a validation test is easy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below an architectural rule to respect the &lt;em&gt;Domain-Driven Design&lt;/em&gt; concepts in our project &lt;a href=&#34;#software-structure-with-ddd&#34;&gt;[1]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@AnalyzeClasses&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;packages&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;net.tangly.erp.collaborators&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;                     &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;DomainRules&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;                                                     &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;SERVICES&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Services&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;PORTS&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Ports&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;DOMAIN&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Domain&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+
+    &lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@ArchTest&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ArchRule&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;layersRule&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;layeredArchitecture&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;consideringAllDependencies&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;layer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;DOMAIN&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;definedBy&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;..domain..&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;layer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;SERVICES&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;definedBy&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;..services..&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;layer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;PORTS&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;definedBy&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;..ports..&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;whereLayer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;DOMAIN&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;mayOnlyBeAccessedByLayers&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;SERVICES&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;PORTS&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;whereLayer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;SERVICES&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;mayOnlyBeAccessedByLayers&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;PORTS&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;whereLayer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;PORTS&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;mayNotBeAccessedByAnyLayer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Declare the root package for the bounded domain classes.
+The bounded domain should be defined as a Java module.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The domain rules class shall be declared as part of the domain library of your application.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;These rules are defined in the library component and enforced in all the &lt;em&gt;Bounded Domains&lt;/em&gt; we implement through the following unit tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@AnalyzeClasses&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;packages&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;net.tangly.erp.collaborators&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ArchitectureTest&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;                                                &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    &lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@ArchTest&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ArchTests&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;domainRules&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ArchTests&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;DomainRules&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;      &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The class is located in the unit test folder and will be executed with JUnit 5 as part of the unit test CI step.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Import all the rules defined in the domain rules class and apply them to the bounded domain &lt;em&gt;collaborators&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We can insure architectural constraints to all bounded domains defined in a product.
+The constraints are defined only once in a common module.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The huge advantage is the integration of architectural validations in the continuous integration pipeline &lt;a href=&#34;#introducing-devops-ideas&#34;&gt;[2]&lt;/a&gt; &lt;a href=&#34;#devops-for-sme&#34;&gt;[3]&lt;/a&gt;.
+No expensive human activities are required to enforce these rules.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;software-structure-with-ddd&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2022/software-structure-with-ddd/&#34;&gt;Software Structure with DDD&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;introducing-devops-ideas&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2022/introducing-devops-ideas/&#34;&gt;Introducing DevOps Ideas&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;devops-for-sme&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2021/devops-for-small-applications/&#34;&gt;DevOps for Small Applications&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Modular Monoliths are the new Graal</title>
@@ -1415,7 +1578,7 @@ One consequence is that students have a shallow understanding of more modern fra
 &lt;p&gt;The &lt;a href=&#34;../../../ideas/learnings/lectures&#34;&gt;slides of the SWAT course&lt;/a&gt; are available for all interested parties.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The course provides &lt;a href=&#34;../../../ideas/learnings/lectures/swat-literature&#34;&gt;mandatory and optional literature&lt;/a&gt; for studying.&lt;/p&gt;
+&lt;p&gt;The course provides &lt;a href=&#34;../../../ideas/learnings/lectures/#software-architecture-and-techniques-lectures&#34;&gt;mandatory and optional literature&lt;/a&gt; for studying.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The reference texts are [&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#refactoring&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#building-evolutionary-architectures&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#working-effectively-with-legacy-code&#34;&gt;4&lt;/a&gt;].&lt;/p&gt;

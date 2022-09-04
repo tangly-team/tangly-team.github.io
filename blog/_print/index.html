@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-<meta name="generator" content="Hugo 0.101.0" />
+<meta name="generator" content="Hugo 0.102.3" />
 <link href="https://blog.tangly.net/blog/" rel="canonical" type="text/html">
 <link href="https://blog.tangly.net/blog/index.xml" rel="alternate" type="application/rss&#43;xml">
 <meta content="noindex, nofollow" name="robots">
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" as="style">
-<link href="/scss/main.min.15c3c6ff766a10ffb19669de5b29ed760a798beff7ec7c22eae8057f3973877d.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.92ecfbc7c96da7f228427cabef1e6aaed8d2df0515143a25a26c85704e1a65da.css" as="style">
+<link href="/scss/main.min.92ecfbc7c96da7f228427cabef1e6aaed8d2df0515143a25a26c85704e1a65da.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -188,7 +188,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.914a0924233dce8ca0649ec1c0244e10.json"
+  data-offline-search-index-json-src="/offline-search-index.fceac461548bcb7709681ce75cb75518.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -295,7 +295,7 @@ This is the multi-page printable view of this section.
 	<div class="td-byline mb-4">
 		
         
-		<time datetime="2022-08-15" class="text-muted">2022-08-15</time>
+		<time datetime="2022-09-01" class="text-muted">2022-09-01</time>
         
 	</div>
 	
@@ -325,6 +325,183 @@ This is the multi-page printable view of this section.
   
 
 <div class="td-content" style="">
+    <h1 id="pg-500e0e905e99afef32a4902323de0058">ArchUnit</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2022-09-01" class="text-muted">2022-09-01</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_verifying_software_design_constraints_with_archunit">Verifying Software Design Constraints with ArchUnit</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2022-09-01-head.png" alt="2022 09 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>How often have you experienced a well-defined and understood software architecture on paper?
+And it falls apart when developers start implementing it?</p>
+</div>
+<div class="paragraph">
+<p>While re-architecting recently legacy components in an application, I experienced the same.
+As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.</p>
+</div>
+<div class="paragraph">
+<p>I know some of you may say, <em>Why not control the implementation during code-review sessions?</em>.
+Technically you can, but in that case, the reviewer becomes the bottleneck in the whole <a href="https://en.wikipedia.org/wiki/Systems_development_life_cycle">SDLC</a> process.</p>
+</div>
+<div class="paragraph">
+<p>What if there was something that could enforce design constraints in the form of the test cases?
+The violation of the agreed-upon design principles is marked as a failed build.</p>
+</div>
+<div class="paragraph">
+<p>My quest led me to a test library for architecture called <a href="https://www.archunit.org/">ArchUnit</a>.
+It enforces architectural constraints in Java projects.</p>
+</div>
+<div class="sect2">
+<h3 id="_idea">Idea</h3>
+<div class="paragraph">
+<p>ArchUnit is a test library and allows us to validate whether a solution adheres to a given set of design considerations or architecture rules.</p>
+</div>
+<div class="paragraph">
+<p>The product is a free, simple and extensible library for checking the architecture of your Java code using any plain Java unit test framework.
+The license is the open source <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>.
+The support for <a href="https://junit.org/junit5/docs/current/user-guide/">JUnit 5</a> is very good.</p>
+</div>
+<div class="paragraph">
+<p>ArchUnit can check dependencies between packages and classes, layers and slices, detect cyclic dependencies and more.
+It does so by analyzing the given Java bytecode after importing all classes into a Java code structure.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_use_architectural_constraints">Use Architectural Constraints</h3>
+<div class="paragraph">
+<p>You first need to import the library in Gradle.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy"><span style="background-color: #f8f8f8">implementation</span> <span style="background-color: #f8f8f8">com</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">tngtech</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">archunit</span><span style="color: #000000;font-weight: bold">:</span><span style="color: #990000;font-weight: bold">archunit:</span><span style="color: #009999">1.0</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #009999">0</span>                             <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>For real projects you should describe your dependencies in a <a href="https://docs.gradle.org/current/userguide/platforms.html">catalog file</a>.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>The definition of a validation test is easy.</p>
+</div>
+<div class="paragraph">
+<p>Below an architectural rule to respect the <em>Domain-Driven Design</em> concepts in our project <a href="#software-structure-with-ddd">[1]</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java"><span style="color: #3c5d5d;font-weight: bold">@AnalyzeClasses</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">packages</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;net.tangly.erp.collaborators&#34;</span><span style="color: #000000;font-weight: bold">)</span>                     <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #000000;font-weight: bold">public</span> <span style="color: #000000;font-weight: bold">class</span> <span style="color: #445588;font-weight: bold">DomainRules</span> <span style="color: #000000;font-weight: bold">{</span>                                                     <i class="conum" data-value="2"></i><b>(2)</b>
+    <span style="color: #000000;font-weight: bold">static</span> <span style="color: #000000;font-weight: bold">final</span> <span style="color: #445588;font-weight: bold">String</span> <span style="color: #008080">SERVICES</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;Services&#34;</span><span style="color: #000000;font-weight: bold">;</span>
+    <span style="color: #000000;font-weight: bold">static</span> <span style="color: #000000;font-weight: bold">final</span> <span style="color: #445588;font-weight: bold">String</span> <span style="color: #008080">PORTS</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;Ports&#34;</span><span style="color: #000000;font-weight: bold">;</span>
+    <span style="color: #000000;font-weight: bold">static</span> <span style="color: #000000;font-weight: bold">final</span> <span style="color: #445588;font-weight: bold">String</span> <span style="color: #008080">DOMAIN</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;Domain&#34;</span><span style="color: #000000;font-weight: bold">;</span>
+
+    <span style="color: #3c5d5d;font-weight: bold">@ArchTest</span>
+    <span style="color: #000000;font-weight: bold">static</span> <span style="color: #000000;font-weight: bold">final</span> <span style="color: #445588;font-weight: bold">ArchRule</span> <span style="background-color: #f8f8f8">layersRule</span> <span style="color: #000000;font-weight: bold">=</span> <span style="background-color: #f8f8f8">layeredArchitecture</span><span style="color: #000000;font-weight: bold">().</span><span style="color: #008080">consideringAllDependencies</span><span style="color: #000000;font-weight: bold">()</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">layer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">DOMAIN</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">definedBy</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#34;..domain..&#34;</span><span style="color: #000000;font-weight: bold">)</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">layer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">SERVICES</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">definedBy</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#34;..services..&#34;</span><span style="color: #000000;font-weight: bold">)</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">layer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">PORTS</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">definedBy</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#34;..ports..&#34;</span><span style="color: #000000;font-weight: bold">)</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">whereLayer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">DOMAIN</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">mayOnlyBeAccessedByLayers</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">SERVICES</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #008080">PORTS</span><span style="color: #000000;font-weight: bold">)</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">whereLayer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">SERVICES</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">mayOnlyBeAccessedByLayers</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">PORTS</span><span style="color: #000000;font-weight: bold">)</span>
+        <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">whereLayer</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #008080">PORTS</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">mayNotBeAccessedByAnyLayer</span><span style="color: #000000;font-weight: bold">();</span>
+<span style="color: #000000;font-weight: bold">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Declare the root package for the bounded domain classes.
+The bounded domain should be defined as a Java module.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The domain rules class shall be declared as part of the domain library of your application.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>These rules are defined in the library component and enforced in all the <em>Bounded Domains</em> we implement through the following unit tests.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java"><span style="color: #3c5d5d;font-weight: bold">@AnalyzeClasses</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">packages</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">&#34;net.tangly.erp.collaborators&#34;</span><span style="color: #000000;font-weight: bold">)</span>
+<span style="color: #000000;font-weight: bold">public</span> <span style="color: #000000;font-weight: bold">class</span> <span style="color: #445588;font-weight: bold">ArchitectureTest</span> <span style="color: #000000;font-weight: bold">{</span>                                                <i class="conum" data-value="1"></i><b>(1)</b>
+    <span style="color: #3c5d5d;font-weight: bold">@ArchTest</span>
+    <span style="color: #000000;font-weight: bold">static</span> <span style="color: #000000;font-weight: bold">final</span> <span style="color: #445588;font-weight: bold">ArchTests</span> <span style="background-color: #f8f8f8">domainRules</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #445588;font-weight: bold">ArchTests</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">in</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #445588;font-weight: bold">DomainRules</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">class</span><span style="color: #000000;font-weight: bold">);</span>      <i class="conum" data-value="2"></i><b>(2)</b>
+<span style="color: #000000;font-weight: bold">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The class is located in the unit test folder and will be executed with JUnit 5 as part of the unit test CI step.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Import all the rules defined in the domain rules class and apply them to the bounded domain <em>collaborators</em>.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>We can insure architectural constraints to all bounded domains defined in a product.
+The constraints are defined only once in a common module.</p>
+</div>
+<div class="paragraph">
+<p>The huge advantage is the integration of architectural validations in the continuous integration pipeline <a href="#introducing-devops-ideas">[2]</a> <a href="#devops-for-sme">[3]</a>.
+No expensive human activities are required to enforce these rules.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="software-structure-with-ddd"></a>[1] <a href="../../2022/software-structure-with-ddd/">Software Structure with DDD</a></p>
+</li>
+<li>
+<p><a id="introducing-devops-ideas"></a>[2] <a href="../../2022/introducing-devops-ideas/">Introducing DevOps Ideas</a></p>
+</li>
+<li>
+<p><a id="devops-for-sme"></a>[3] <a href="../../2021/devops-for-small-applications/">DevOps for Small Applications</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
     <h1 id="pg-61c879254f370d7c1634926db27cf196">Transfer a Software Project</h1>
 	
 	<div class="td-byline mb-4">
@@ -9140,7 +9317,7 @@ One consequence is that students have a shallow understanding of more modern fra
 <p>The <a href="../../../ideas/learnings/lectures">slides of the SWAT course</a> are available for all interested parties.</p>
 </div>
 <div class="paragraph">
-<p>The course provides <a href="../../../ideas/learnings/lectures/swat-literature">mandatory and optional literature</a> for studying.</p>
+<p>The course provides <a href="../../../ideas/learnings/lectures/#software-architecture-and-techniques-lectures">mandatory and optional literature</a> for studying.</p>
 </div>
 <div class="paragraph">
 <p>The reference texts are [<a href="#domain-driven-design">1</a>, <a href="#refactoring">2</a>, <a href="#building-evolutionary-architectures">3</a>, <a href="#working-effectively-with-legacy-code">4</a>].</p>
@@ -15602,7 +15779,7 @@ They predate agile development approaches.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Technical schools should provide in-depth experience in these areas to prepare their students for their future activities after completing their bachelor.</p>
+<p>Technical schools should provide an in-depth experience in these areas to prepare their students for their future activities after completing their bachelor.</p>
 </div>
 <div class="paragraph">
 <p>The below mind map consolidates concepts, tools and approaches based on the <a href="https://about.gitlab.com/">GitLab</a> tooling established in some universities.
@@ -15734,15 +15911,15 @@ Homebrew can download and install a huge set of Unix packages.To install git, yo
 <dl>
 <dt class="hdlist1">Working directory</dt>
 <dd>
-<p>The area that you will be doing all of your work in (creating, editing, deleting, and organizing files)</p>
+<p>The area that you will be doing all of your work in (creating, editing, deleting, and organizing files).</p>
 </dd>
 <dt class="hdlist1">Staging area</dt>
 <dd>
-<p>The area where you will list the changes that you have made to the working directory</p>
+<p>The area where you will list the changes that you have made to the working directory.</p>
 </dd>
 <dt class="hdlist1">Repository</dt>
 <dd>
-<p>Where Git permanently stores the changes you have made as different versions of the project</p>
+<p>Where Git permanently stores the changes you have made as different versions of the project.</p>
 </dd>
 </dl>
 </div>
@@ -15844,7 +16021,7 @@ Often you have just one remote to synchronize with.</td>
 </div>
 <div class="paragraph">
 <p>The initial build file for each module is the same as for a minimal gradle project.
-You can now compile, test and check your application</p>
+You can now compile, test and check your application.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -15977,7 +16154,7 @@ The quality is good enough and the feature empowers junior developers to learn m
 <div class="sect2">
 <h3 id="_how_to_write_unit_tests_for_a_java_application">How to Write Unit Tests for a Java Application</h3>
 <div class="paragraph">
-<p>You should write unit and integration tests for your Java application using</p>
+<p>You should write unit and integration tests for your Java application using:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -15999,7 +16176,7 @@ The quality is good enough and the feature empowers junior developers to learn m
 <p>Static code generators are becoming the standard approach for technical documentation.
 One huge advantage is you can check the whole documentation into your git repository.
 You have a synchronisation between a released version of your application and the corresponding documentation.
-Both are stored in the same repository and can be marked with a version label You can use</p>
+Both are stored in the same repository and can be marked with a version label You can use:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -16070,15 +16247,15 @@ git checkout trunk <i class="conum" data-value="2"></i><b>(2)</b>
 <table>
 <tbody><tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>…​develop some code and commit it in the currently selected my-branch</td>
+<td>Develop some code and commit it in the currently selected my-branch.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>switched to branch <em>trunk</em></td>
+<td>Switched to branch <em>trunk</em>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>merge the branch <em>my-branch</em> into <em>trunk</em></td>
+<td>Merge the branch <em>my-branch</em> into <em>trunk</em>.</td>
 </tr>
 </tbody></table>
 </div>
@@ -16143,7 +16320,7 @@ pick 474bf0c2 last commit</code></pre>
 This is in contrast with other ways such as <em>merge</em> and <em>rebase</em> which normally apply many commits onto another branch.</p>
 </div>
 <div class="paragraph">
-<p>You can display the hashes of your commits in <em>trunk</em> with the command</p>
+<p>You can display the hashes of your commits in the <em>trunk</em> with the command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -16169,7 +16346,9 @@ git cherry-pick &lt;commit-hash&gt;</code></pre>
 <div class="sect3">
 <h4 id="_pull_request">Pull Request</h4>
 <div class="paragraph">
-<p>Read the documentation of GitLab, BitBucket or GitHub.</p>
+<p>Read the documentation of GitLab, BitBucket or GitHub.
+You will use pull requests if you are working in a team for a project.
+Sadly, students rareley work teams during their studies.</p>
 </div>
 </div>
 </div>
@@ -18155,7 +18334,7 @@ For example, you can associate geographical coordinates – GIS – to pictures,
 This tag has a namespace <em>geo</em>, a name <em>longitude</em> and a double value <em>50.167958</em>.</p>
 </div>
 <div class="paragraph">
-<p>Additional information is available under link:../../docs/bus/businessmodels/ Below the source code in modern Java is</p>
+<p>Additional information is available under link:../../../docs/core/models/ Below the source code in modern Java is</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -18243,7 +18422,7 @@ The search features of the underlying database can be applied for selecting inst
 A set of tag types shall always be associated with a specific domain of the application.</p>
 </div>
 <div class="paragraph">
-<p>We provide a Java library <a href="../../docs/crm">BUS</a> implementing these constructs.
+<p>We provide a Java library <a href="../../../docs/domains/crm/">CRM</a> implementing these constructs.
 More information is available under <a href="http://blog.tangly.net/">tangly open source components</a>.</p>
 </div>
 <div class="paragraph">
@@ -22025,7 +22204,7 @@ Smart money goes in training your collaborators.</p>
   
 
 <div class="td-content" style="page-break-before: always">
-    <h1 id="pg-46ca7221ddd670425b3619ec3f6c87c8">Why I still love to use a MacBookPro and MacOS in 2019&#34;</h1>
+    <h1 id="pg-46ca7221ddd670425b3619ec3f6c87c8">Why I still love to use a MacBookPro and MacOS in 2019</h1>
 	
 	<div class="td-byline mb-4">
 		
@@ -22142,7 +22321,7 @@ I bought it as soon as the company stopped requesting higher prices for macOS th
 </div>
 <div class="paragraph">
 <p>I still have no need to use any Microsoft applications.
-My findings are inline with the ones in my <a href="../../2016/macbook-pro-love">older blog</a> in March 2016.
+My findings are inline with the ones in my <a href="../../2016/why-i-use-a-macbookpro-and-os-x/">older blog</a> in March 2016.
 I hope Apple will still produce high-quality hardware and software in the future.</p>
 </div>
 <div class="paragraph">
@@ -22688,7 +22867,7 @@ The long term implementation is the crux.</p>
 <p><a href="../../2018/how-healthy-is-your-product-delivery-pipeline-check">Delivery Pipeline Check</a></p>
 </li>
 <li>
-<p><a href="../../2018/how-healthy-is-your-product-strategy-check">Product Strategy Check Company</a></p>
+<p><a href="../../2018/how-healthy-is-your-product-product-strategy-check/">Product Strategy Check Company</a></p>
 </li>
 <li>
 <p><a href="../../2019/how-healthy-is-your-product-company-culture-check/">Company Culture Check</a></p>
@@ -23209,7 +23388,7 @@ The measures guarantee the continuous achievement of the constraints - often def
 <p><a href="../../2018/how-healthy-is-your-product-delivery-pipeline-check">Delivery Pipeline Check</a></p>
 </li>
 <li>
-<p><a href="../../2018/how-healthy-is-your-product-strategy-check">Product Strategy Check Company</a></p>
+<p><a href="../../2018/how-healthy-is-your-product-product-strategy-check/">Product Strategy Check Company</a></p>
 </li>
 <li>
 <p><a href="../../2019/how-healthy-is-your-product-company-culture-check/">Company Culture Check</a></p>
@@ -23573,16 +23752,16 @@ The goal is to have docker images, virtual network, and in-memory database to be
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="../../2018/how-healthy-is-your-product-source-code-check">Source Code Check</a>,</p>
+<p><a href="../../2018/how-healthy-is-your-product-source-code-check">Source Code Check</a></p>
 </li>
 <li>
-<p><a href="../../2018/how-healthy-is-your-product-delivery-pipeline-check">Delivery Pipeline Check</a>,</p>
+<p><a href="../../2018/how-healthy-is-your-product-delivery-pipeline-check">Delivery Pipeline Check</a></p>
 </li>
 <li>
-<p><a href="../../2018/how-healthy-is-your-product-strategy-check">Product Strategy Check Company</a>,</p>
+<p><a href="../../2018/how-healthy-is-your-product-product-strategy-check/">Product Strategy Check Company</a></p>
 </li>
 <li>
-<p><a href="../../2019/how-healthy-is-your-product-company-culture-check/">Company Culture Check</a>.</p>
+<p><a href="../../2019/how-healthy-is-your-product-company-culture-check/">Company Culture Check</a></p>
 </li>
 </ol>
 </div>
@@ -23736,6 +23915,35 @@ When a team has work that was not finished, then they ought to feel anxious and 
 <p>Teams should never leave work-in-progress at the end of the sprint and <em>carry over</em> to the next one.
 This causes a lack of transparency and reduces scope flexibility.
 If they forecast too much work, they need to remove completed items, which they have not started yet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scrum_guide_definition">Scrum Guide Definition</h3>
+<div class="paragraph">
+<p>The Scrum guide characterizes the <em>Definition of Done</em> as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <em>Definition of Done</em> is a <strong>formal description</strong> of the state of the <em>Increment</em> when it meets the <strong>quality measures required for the product</strong>.</p>
+</li>
+<li>
+<p>The moment a <em>Product Backlog Item</em> meets the <em>Definition of Done</em>, an <em>Increment</em> is born.</p>
+</li>
+<li>
+<p>The <em>Definition of Done</em> creates <strong>transparency</strong> by providing everyone a shared understanding of what work was completed as part of the <em>Increment</em>.
+If a <em>Product Backlog Item</em> does not meet the <em>Definition of Done</em>, <strong>it cannot be released or even presented</strong> at the <em>Sprint Review</em>.
+Instead, it returns to the <em>Product Backlog</em> for future consideration.</p>
+</li>
+<li>
+<p>If the <em>Definition of Done</em> for an increment is part of the standards of the organization, all <em>Scrum Teams</em> must follow it as <strong>a minimum</strong>.
+If it is not an organizational standard, the <em>Scrum Team</em> <strong>must</strong> create a <em>Definition of Done</em> appropriate for the product.</p>
+</li>
+<li>
+<p>The <em>Developers</em> are <strong>required to conform</strong> to the <em>Definition of Done</em>.
+If there are multiple <em>Scrum Teams working</em> together on a product, they must mutually define and comply with the samex <em>Definition of Done</em>.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -23983,16 +24191,16 @@ Expertise is needed to define values to measure if the source code of your produ
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="../../2018/how-healthy-is-your-product-source-code-check">Source Code Check</a>,</p>
+<p><a href="../../2018/how-healthy-is-your-product-source-code-check">Source Code Check</a></p>
 </li>
 <li>
-<p><a href="../../2018/how-healthy-is-your-product-delivery-pipeline-check">Delivery Pipeline Check</a>,</p>
+<p><a href="../../2018/how-healthy-is-your-product-delivery-pipeline-check">Delivery Pipeline Check</a></p>
 </li>
 <li>
-<p><a href="../../2018/how-healthy-is-your-product-strategy-check">Product Strategy Check Company</a>,</p>
+<p><a href="../../2018/how-healthy-is-your-product-product-strategy-check/">Product Strategy Check Company</a></p>
 </li>
 <li>
-<p><a href="../../2019/how-healthy-is-your-product-company-culture-check/">Company Culture Check</a>.</p>
+<p><a href="../../2019/how-healthy-is-your-product-company-culture-check/">Company Culture Check</a></p>
 </li>
 </ol>
 </div>
@@ -25094,7 +25302,7 @@ I am still recovering from the missing quality.</em></p>
 <p><a id="succeeding-with-agile"></a>[7] M. Cohn, <em>Succeeding with agile</em>. Addison-Wesley, 2010 [Online]. Available: <a href="https://www.amazon.com/dp/0321579364" class="bare">https://www.amazon.com/dp/0321579364</a></p>
 </div>
 <div class="paragraph">
-<p><a id="pragmatic-programmer-2nd"></a>[8] D. Thomas and A. Hunt, <em>The Pragmatic Programmer</em>, Second. Pragmatic Programmer - 20th Anniversary Edition, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135957052" class="bare">https://www.amazon.com/dp/0135957052</a></p>
+<p><a id="pragmatic-programmer-2nd"></a>[8] D. Thomas and A. Hunt, <em>The Pragmatic Programmer  - 20th Anniversary Edition</em>, Second. Addison Wesley, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135957052" class="bare">https://www.amazon.com/dp/0135957052</a></p>
 </div>
 </div>
 </div>
@@ -25352,7 +25560,8 @@ It then uses the same code analyzers, rules and settings locally that are used o
 code.</p>
 </div>
 <div class="paragraph">
-<p>And you have made a step to the journey to become a professional software developer and achieve <a href="../../2018/blog-2018-04-01">craftsmanship</a>.</p>
+<p>And you have made a step to the journey to become a professional software developer and achieve
+<a href="../../2018/pragmatic-craftsmanship-professional-software-developer/">craftsmanship</a>.</p>
 </div>
 </div>
 </div>
@@ -25542,7 +25751,8 @@ Just apply all your hard-earned learnings from your Scrum transformation.</p>
 		<time datetime="2018-04-12" class="text-muted">2018-04-12</time>
         
 	</div>
-	<div class="sect1">
+	Unknown reference: ppragmatic-programmer-2nd
+<div class="sect1">
 <h2 id="_pragmatic_craftsmanship_professional_software_developer">Pragmatic Craftsmanship – Professional Software Developer</h2>
 <div class="sectionbody">
 <div class="imageblock left">
@@ -25680,7 +25890,7 @@ You do not have to agree with them, just look what they are doing.</p>
 <p>Agile processes assume technical excellence and a professional attitude</p>
 </div>
 <div class="paragraph">
-<p>Software craftsmanship takes technical excellence and professionalism to a whole new level [<a href="#pragmatic-programmer-1st">12</a>, <a href="#pragmatic-programmer-2nd">10</a>].</p>
+<p>Software craftsmanship takes technical excellence and professionalism to a whole new level [<a href="#pragmatic-programmer-1st">12</a>, <a href="#ppragmatic-programmer-2nd">ppragmatic-programmer-2nd</a>].</p>
 </div>
 </blockquote>
 </div>
@@ -25742,13 +25952,16 @@ How you do it is up to you.</p>
 <p><a id="refactoring"></a>[9] M. Fowler, <em>Refactoring</em>, Second. Addision-Wesley, 2018 [Online]. Available: <a href="https://www.amazon.com/dp/0134757599" class="bare">https://www.amazon.com/dp/0134757599</a></p>
 </div>
 <div class="paragraph">
-<p><a id="pragmatic-programmer-2nd"></a>[10] D. Thomas and A. Hunt, <em>The Pragmatic Programmer</em>, Second. Pragmatic Programmer - 20th Anniversary Edition, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135957052" class="bare">https://www.amazon.com/dp/0135957052</a></p>
+<p><a id="pragmatic-programmer-2nd"></a>[10] D. Thomas and A. Hunt, <em>The Pragmatic Programmer  - 20th Anniversary Edition</em>, Second. Addison Wesley, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135957052" class="bare">https://www.amazon.com/dp/0135957052</a></p>
 </div>
 <div class="paragraph">
 <p><a id="extreme-programmking-explained"></a>[11] K. Beck and C. Andres, <em>Extreme Programming Explained</em>, Second. Addison-Wesley Professional, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321278658" class="bare">https://www.amazon.com/dp/0321278658</a></p>
 </div>
 <div class="paragraph">
-<p><a id="pragmatic-programmer-1st"></a>[12] A. Hunt and D. Thomas, <em>The Pragmatic Programmer</em>, First. Addison-Wesley Professional, 1999 [Online]. Available: <a href="https://www.amazon.com/dp/B003GCTQAE" class="bare">https://www.amazon.com/dp/B003GCTQAE</a></p>
+<p><a id="pragmatic-programmer-1st"></a>[12] D. Thomas and A. Hunt, <em>The Pragmatic Programmer</em>, First. Addison Wesley, 1999 [Online]. Available: <a href="https://www.amazon.com/dp/B003GCTQAE" class="bare">https://www.amazon.com/dp/B003GCTQAE</a></p>
+</div>
+<div class="paragraph">
+<p><a id="ppragmatic-programmer-2nd"></a>[13] ppragmatic-programmer-2nd</p>
 </div>
 </div>
 </div>
@@ -32092,7 +32305,7 @@ I am still unsure</p>
 </div>
 <div class="paragraph">
 <p>I am curious about books you recommend for agile or other approaches.
-You find a more complete book list under <a href="../../ideas/learnings/books">Books</a>.</p>
+You find a more complete book list under <a href="../../../ideas/learnings/books">Books</a>.</p>
 </div>
 <div class="paragraph">
 <p>Just drop me an email or leave a comment.</p>

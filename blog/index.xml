@@ -4,7 +4,7 @@
     <link>https://blog.tangly.net/blog/</link>
     <description>Recent content in tangly llc Blog on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,169 @@
         
       
     
+    
+    <item>
+      <title>Blog: ArchUnit</title>
+      <link>https://blog.tangly.net/blog/2022/archunit/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2022/archunit/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_verifying_software_design_constraints_with_archunit&#34;&gt;Verifying Software Design Constraints with ArchUnit&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-09-01-head.png&#34; alt=&#34;2022 09 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How often have you experienced a well-defined and understood software architecture on paper?
+And it falls apart when developers start implementing it?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;While re-architecting recently legacy components in an application, I experienced the same.
+As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I know some of you may say, &lt;em&gt;Why not control the implementation during code-review sessions?&lt;/em&gt;.
+Technically you can, but in that case, the reviewer becomes the bottleneck in the whole &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;SDLC&lt;/a&gt; process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;What if there was something that could enforce design constraints in the form of the test cases?
+The violation of the agreed-upon design principles is marked as a failed build.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;My quest led me to a test library for architecture called &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt;.
+It enforces architectural constraints in Java projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_idea&#34;&gt;Idea&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;ArchUnit is a test library and allows us to validate whether a solution adheres to a given set of design considerations or architecture rules.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The product is a free, simple and extensible library for checking the architecture of your Java code using any plain Java unit test framework.
+The license is the open source &lt;a href=&#34;https://www.apache.org/licenses/LICENSE-2.0&#34;&gt;Apache 2.0&lt;/a&gt;.
+The support for &lt;a href=&#34;https://junit.org/junit5/docs/current/user-guide/&#34;&gt;JUnit 5&lt;/a&gt; is very good.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;ArchUnit can check dependencies between packages and classes, layers and slices, detect cyclic dependencies and more.
+It does so by analyzing the given Java bytecode after importing all classes into a Java code structure.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_use_architectural_constraints&#34;&gt;Use Architectural Constraints&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You first need to import the library in Gradle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;implementation&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;com&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;tngtech&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;archunit&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;archunit:&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;1.0&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;0&lt;/span&gt;                             &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;For real projects you should describe your dependencies in a &lt;a href=&#34;https://docs.gradle.org/current/userguide/platforms.html&#34;&gt;catalog file&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The definition of a validation test is easy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below an architectural rule to respect the &lt;em&gt;Domain-Driven Design&lt;/em&gt; concepts in our project &lt;a href=&#34;#software-structure-with-ddd&#34;&gt;[1]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@AnalyzeClasses&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;packages&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;net.tangly.erp.collaborators&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;                     &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;DomainRules&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;                                                     &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;SERVICES&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Services&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;PORTS&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Ports&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;DOMAIN&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Domain&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+
+    &lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@ArchTest&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ArchRule&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;layersRule&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;layeredArchitecture&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;consideringAllDependencies&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;layer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;DOMAIN&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;definedBy&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;..domain..&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;layer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;SERVICES&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;definedBy&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;..services..&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;layer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;PORTS&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;definedBy&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;..ports..&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;whereLayer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;DOMAIN&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;mayOnlyBeAccessedByLayers&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;SERVICES&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;PORTS&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;whereLayer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;SERVICES&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;mayOnlyBeAccessedByLayers&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;PORTS&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;whereLayer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;PORTS&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;mayNotBeAccessedByAnyLayer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Declare the root package for the bounded domain classes.
+The bounded domain should be defined as a Java module.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The domain rules class shall be declared as part of the domain library of your application.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;These rules are defined in the library component and enforced in all the &lt;em&gt;Bounded Domains&lt;/em&gt; we implement through the following unit tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@AnalyzeClasses&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;packages&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;net.tangly.erp.collaborators&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ArchitectureTest&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;                                                &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    &lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@ArchTest&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ArchTests&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;domainRules&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ArchTests&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;DomainRules&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;      &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The class is located in the unit test folder and will be executed with JUnit 5 as part of the unit test CI step.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Import all the rules defined in the domain rules class and apply them to the bounded domain &lt;em&gt;collaborators&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We can insure architectural constraints to all bounded domains defined in a product.
+The constraints are defined only once in a common module.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The huge advantage is the integration of architectural validations in the continuous integration pipeline &lt;a href=&#34;#introducing-devops-ideas&#34;&gt;[2]&lt;/a&gt; &lt;a href=&#34;#devops-for-sme&#34;&gt;[3]&lt;/a&gt;.
+No expensive human activities are required to enforce these rules.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;software-structure-with-ddd&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2022/software-structure-with-ddd/&#34;&gt;Software Structure with DDD&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;introducing-devops-ideas&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2022/introducing-devops-ideas/&#34;&gt;Introducing DevOps Ideas&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;devops-for-sme&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2021/devops-for-small-applications/&#34;&gt;DevOps for Small Applications&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Transfer a Software Project</title>
@@ -8455,7 +8618,7 @@ One consequence is that students have a shallow understanding of more modern fra
 &lt;p&gt;The &lt;a href=&#34;../../../ideas/learnings/lectures&#34;&gt;slides of the SWAT course&lt;/a&gt; are available for all interested parties.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The course provides &lt;a href=&#34;../../../ideas/learnings/lectures/swat-literature&#34;&gt;mandatory and optional literature&lt;/a&gt; for studying.&lt;/p&gt;
+&lt;p&gt;The course provides &lt;a href=&#34;../../../ideas/learnings/lectures/#software-architecture-and-techniques-lectures&#34;&gt;mandatory and optional literature&lt;/a&gt; for studying.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The reference texts are [&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#refactoring&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#building-evolutionary-architectures&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#working-effectively-with-legacy-code&#34;&gt;4&lt;/a&gt;].&lt;/p&gt;
@@ -14595,7 +14758,7 @@ They predate agile development approaches.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Technical schools should provide in-depth experience in these areas to prepare their students for their future activities after completing their bachelor.&lt;/p&gt;
+&lt;p&gt;Technical schools should provide an in-depth experience in these areas to prepare their students for their future activities after completing their bachelor.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The below mind map consolidates concepts, tools and approaches based on the &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt; tooling established in some universities.
@@ -14727,15 +14890,15 @@ Homebrew can download and install a huge set of Unix packages.To install git, yo
 &lt;dl&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Working directory&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;The area that you will be doing all of your work in (creating, editing, deleting, and organizing files)&lt;/p&gt;
+&lt;p&gt;The area that you will be doing all of your work in (creating, editing, deleting, and organizing files).&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Staging area&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;The area where you will list the changes that you have made to the working directory&lt;/p&gt;
+&lt;p&gt;The area where you will list the changes that you have made to the working directory.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Repository&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;Where Git permanently stores the changes you have made as different versions of the project&lt;/p&gt;
+&lt;p&gt;Where Git permanently stores the changes you have made as different versions of the project.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
 &lt;/div&gt;
@@ -14837,7 +15000,7 @@ Often you have just one remote to synchronize with.&lt;/td&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The initial build file for each module is the same as for a minimal gradle project.
-You can now compile, test and check your application&lt;/p&gt;
+You can now compile, test and check your application.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
@@ -14970,7 +15133,7 @@ The quality is good enough and the feature empowers junior developers to learn m
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_how_to_write_unit_tests_for_a_java_application&#34;&gt;How to Write Unit Tests for a Java Application&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You should write unit and integration tests for your Java application using&lt;/p&gt;
+&lt;p&gt;You should write unit and integration tests for your Java application using:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
@@ -14992,7 +15155,7 @@ The quality is good enough and the feature empowers junior developers to learn m
 &lt;p&gt;Static code generators are becoming the standard approach for technical documentation.
 One huge advantage is you can check the whole documentation into your git repository.
 You have a synchronisation between a released version of your application and the corresponding documentation.
-Both are stored in the same repository and can be marked with a version label You can use&lt;/p&gt;
+Both are stored in the same repository and can be marked with a version label You can use:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
@@ -15063,15 +15226,15 @@ git checkout trunk &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&
 &lt;table&gt;
 &lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;…​develop some code and commit it in the currently selected my-branch&lt;/td&gt;
+&lt;td&gt;Develop some code and commit it in the currently selected my-branch.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;switched to branch &lt;em&gt;trunk&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;Switched to branch &lt;em&gt;trunk&lt;/em&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;merge the branch &lt;em&gt;my-branch&lt;/em&gt; into &lt;em&gt;trunk&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;Merge the branch &lt;em&gt;my-branch&lt;/em&gt; into &lt;em&gt;trunk&lt;/em&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
@@ -15136,7 +15299,7 @@ pick 474bf0c2 last commit&lt;/code&gt;&lt;/pre&gt;
 This is in contrast with other ways such as &lt;em&gt;merge&lt;/em&gt; and &lt;em&gt;rebase&lt;/em&gt; which normally apply many commits onto another branch.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can display the hashes of your commits in &lt;em&gt;trunk&lt;/em&gt; with the command&lt;/p&gt;
+&lt;p&gt;You can display the hashes of your commits in the &lt;em&gt;trunk&lt;/em&gt; with the command:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
@@ -15162,7 +15325,9 @@ git cherry-pick &amp;lt;commit-hash&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;sect3&#34;&gt;
 &lt;h4 id=&#34;_pull_request&#34;&gt;Pull Request&lt;/h4&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Read the documentation of GitLab, BitBucket or GitHub.&lt;/p&gt;
+&lt;p&gt;Read the documentation of GitLab, BitBucket or GitHub.
+You will use pull requests if you are working in a team for a project.
+Sadly, students rareley work teams during their studies.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -15381,271 +15546,6 @@ Beware of legal aspects when you are using government defined identifiers such a
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Avoid by all means to use an internal privately defined identifier as a public one.
 You will bear the burden of documenting, manage and evolve the scheme as soon as you do this.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Related concepts are discussed in our blog series&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2020/entities-identifiers-external-identifiers-and-names&#34;&gt;Entities, Identifiers, External identifiers and Names&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2020/the-power-of-tags-and-comments&#34;&gt;The power of Tags and Comments&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2020/reference-codes&#34;&gt;Reference Codes&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2021/value-objects-as-embedded-entities&#34;&gt;Value Objects as Embedded Entities&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2021/meaningful-identifiers&#34;&gt;Meaningful Identifiers&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Value Objects as Embedded Entities</title>
-      <link>https://blog.tangly.net/blog/2021/value-objects-as-embedded-entities/</link>
-      <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/value-objects-as-embedded-entities/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_value_objects_as_embedded_entities&#34;&gt;Value Objects as Embedded Entities&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-01-01-head.png&#34; alt=&#34;2021 01 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This post discusses the value object pattern, and the factory pattern which are tactical patterns in the domain driven design
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;DDD&lt;/a&gt; approach.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Value objects represent typed values that have no conceptual identity in your domain.
-They can help you write better codes that are less error-prone, more performant and more expressive.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Value objects define the second kind of domain objects besides entities.
-Their main characteristic is immutability:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;Attributes of a value object &lt;strong&gt;never&lt;/strong&gt; change&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A second characteristic is that they do not have external identifiers.
-Unlike an entity, two value objects with the exact same properties are considered equal.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A third one is they should be self-validating.
-A value object shall verify the validity of its attributes when being created.
-If any of its attributes are invalid, the object should not be created and an error or exception should be raised.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock tip&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Immutable value objects are defined as &lt;strong&gt;record&lt;/strong&gt; in Java. Use the constructor to validate your objects.
-Throw an &lt;em&gt;IllegalArgumentException&lt;/em&gt; if a validation error occurs.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Value_object&#34;&gt;Value Objects&lt;/a&gt; do have attributes and methods as entities.
-Attributes of value objects are immutable.
-Methods of value objects can only be queries without side effects.
-Operations never command a change to the internal state of a value object.
-We can pass value objects to clients without worrying they change them.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Many objects can be modeled as value objects instead of entities because they are defined through their attributes.
-These objects measure, quantify or describe things in the domain model.
-Because they are so easy to handle, we should model domain abstractions as value objects as often as possible.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_addresses_phone_numbers_email_addresses&#34;&gt;Addresses, Phone Numbers, Email Addresses&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Some value objects are part of any commercial application domain.
-Postal addresses, phone numbers and email addresses are canonical value objects.
-Other candidates are bank account IBAN numbers, job titles, job descriptions, company legal status.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This means that these objects do not have an object identifier and should not be stored in a separate table if stored in an SQL database.
-Value objects shall be embedded objects and be part of an object such as a person.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A person is an entity.
-It should have an external identifier and has a postal address, multiple phone numbers, and one or more email addresses.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Check your domain model and validate these assumptions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Postal address, phone numbers, email addresses are value objects and have no external or internal identifiers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;They are always owned by other value objects or more often by entities such as people, companies, delivery forms.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;They are immutable objects.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Business processes can replace such an object with a new instance without impeding other domain instances.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Programmed in modern Java, these value objects should be &lt;strong&gt;records&lt;/strong&gt; to guaranty immutability at the language level.
-As a bonus, you get the &lt;strong&gt;hashCode&lt;/strong&gt; and &lt;strong&gt;equals&lt;/strong&gt; methods for free.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock note&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A Java record class declaration is very compact.
-Often it is a one liner.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_invoice_lines&#34;&gt;Invoice Lines&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Invoice lines are lines containing details in an invoice.
-Invoice lines are always value objects belonging to exactly one invoice.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;To complicate matter, invoice lines have different types, such as a regular line with a specific article, quantity, unit price and computed price.
-Often VAT aspects must be considered and computed for the overall invoice.
-An invoice line can also be a subtotal for a set of regular invoice lines.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock warning&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-warning&#34; title=&#34;Warning&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;VAT definition and computation is often a murky domain.
-The VAT value can be dependent on the article, the company selling it and the client buying it.
-When public administration defines a domain and associated business rules, the world often becomes quite complicated and ambiguous.
-The VAT administrative laws in Switzerland are more than 2000 pages of an illegible text.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The complete definition of this business domain is not part of this article.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The following design challenges exist&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Serialization libraries such as JSON Jackson library cannot handle invoice lines with multiple Java class types.
-A workable approach is described and implemented with the open source component &lt;a href=&#34;http://blog.tangly.net/docs/gleam/&#34;&gt;Gleam&lt;/a&gt;.
-The solution is to define selectors to instantiate the correct Java class.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Invoices are complex objects and ideal candidates for a document-oriented persistent approach.
-Invoices should not be stored in a relation based persistence store, meaning an SQL database.
-To store them in a table, you have to model the various types of lines and add a technical identifier to each invoice line instance.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_factories&#34;&gt;Factories&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The factory pattern in Domain Driven Design &lt;em&gt;DDD&lt;/em&gt; can be seen as a super pattern for the Gang of Four (GoF) creation patterns.
-Factories are concerned with creating new entities and value objects.
-They also validate the invariants for the newly created objects.
-We can place a factory on the entity or value object itself or on an independent object.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock tip&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Java &lt;strong&gt;record&lt;/strong&gt; constructs support validation of properties as part of the constructor.
-Invalid objects cannot be constructed if the constructor validation detects a violation.
-This mechanism ensures only valid instances exist in the domain.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Factories that are declared on the same object they create are either factory methods or prototype methods.
-The factory method creates a completely new object from the method parameters.
-The prototype method uses an existing instance to derive a new object.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock tip&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The prototype method is supported with the keyword &lt;strong&gt;with&lt;/strong&gt; in C#.
-The JEPs for deconstruction and construction of objects in a &lt;strong&gt;switch&lt;/strong&gt; statement could provide a similar approach in the future for Java.
-The current version of Java &lt;em&gt;JDK 16&lt;/em&gt; does not support this feature.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;When the creation logic is complex or has dependencies that are not needed by the created object.
-It is best to create a separate factory.
-This factory could provide multiple ways to create new instances.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_value_objects_in_persistent_store&#34;&gt;Value Objects in Persistent Store&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We encourage experimenting with the &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; approach for small projects.
-The effort to persist a Java object graph is very small.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can always move to a no SQL solution when your application is successful and time comes to hardening it.
-Another standard but cumbersome approach is to move to JPA.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Related concepts are discussed in our blog series&lt;/p&gt;
