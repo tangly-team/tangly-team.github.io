@@ -189,7 +189,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5924fd4e6c5e9f65aee9058a631b7328.json"
+  data-offline-search-index-json-src="/offline-search-index.2109a742bc63e21cb17fb478213adf5d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -2567,9 +2567,9 @@ areas under repetitive change or often needing fixing. In parallel, the evolutio
 </div>
 </div>
 <div class="paragraph">
-<p>Guava is an historical effort to provide much needed functionalities to the Java community.
+<p>Guava is an historical effort to provide much-needed functionalities to the Java community.
 The Java ecosystem evolves quite slowly at the beginning of the millennium.
-Later, stewardship clearly improved with six months release schedule approach.
+Later stewardship clearly improved with a six-month release schedule approach.
 Preview and incubator initiatives allowed timely evaluation of new features and idioms in the Java language and ecosystem.</p>
 </div>
 <div class="paragraph">
@@ -2599,7 +2599,7 @@ The main advantages are:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Current JDK versions provide own implementation e.g. in the Objects class.</p>
+<p>Current JDK versions provide their own implementation e.g., in the Objects class.</p>
 </li>
 <li>
 <p>Guava dependency is removed from our source code and compiled artifacts.</p>
@@ -2618,13 +2618,13 @@ Guava needs years to support new concepts such as algebraic data types.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This decision is against good practices documented in the first decade of this millenium.
+<p>This decision is against good practices documented in the first decade of this millennium.
 The Guava library did not evolve as rapidly as the new Java versions released in the second and third decades.</p>
 </div>
 <div class="paragraph">
 <p>We strongly advocate timely evolution.
 Try to avoid becoming laggards in your technology stack.
-As rule use the current Java release, or as minimal version the latest long term supported version of Java.</p>
+As a rule, use the current Java release, or as a minimal version, the latest long-term supported version of Java.</p>
 </div>
 </td>
 </tr>
@@ -2736,7 +2736,7 @@ File instances do not support alternative file systems.
 Therefore, we shall use libraries providing a workaround File instances either by using Path instances or reader and writer to access files.</p>
 </li>
 <li>
-<p>Operations to physical file system have the risk that rights problems could rise in some continuous integration environment.</p>
+<p>Operations to the physical file system have the risk that rights problems could rise in some continuous integration environment.</p>
 </li>
 </ul>
 </div>
@@ -2818,6 +2818,9 @@ See, for example, the record construct provided since JDK 14.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>JDK 18 and 19 give improvements in pattern matching and thread programming.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_consequences">Consequences</h3>
@@ -2827,7 +2830,7 @@ See, for example, the record construct provided since JDK 14.</p>
 <p>Clients are forced to use the current JDK version.</p>
 </li>
 <li>
-<p>Tooling is more brittle because a lot of tool maintainers are late to adapt actual version of JDK.</p>
+<p>Tooling is more brittle because a lot of tool maintainers are late to adapt the actual version of JDK.</p>
 </li>
 </ul>
 </div>
@@ -3058,15 +3061,15 @@ All open source components will be hosted on the same site.</p>
 <ul>
 <li>
 <p>We have to establish a publishing process at the company level to deploy signed artifacts to maven central repository.
-See <a href="../../../ideas/components-publication">release and publication process</a></p>
+See <a href="../../../ideas/components-publication">release and publication process</a>.</p>
 </li>
 <li>
-<p>We have to establish a public website to host the documentation of public published libraries.
+<p>We have to establish a public website to host the documentation of public-published libraries.
 The static website is <a href="https://blog.tangly.net/">Open Source Components</a></p>
 </li>
 <li>
-<p>We have to support semantic versioning for all future releases of public published libraries.
-See <a href="../../../ideas/components-publication">release and publication process</a></p>
+<p>We have to support semantic versioning for all future releases of public-published libraries.
+See <a href="../../../ideas/components-publication">release and publication process</a>.</p>
 </li>
 </ul>
 </div>
@@ -3114,14 +3117,15 @@ See <a href="../../../ideas/components-publication">release and publication proc
 </div>
 <div class="paragraph">
 <p>These applications often use dependency injection frameworks to construct and initialize their instances.
-<a href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency injection</a> is is a technique in which an object receives other objects that it depends on, called dependencies.</p>
+<a href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency injection</a> is a technique in which an object receives other objects that it depends on, called dependencies.</p>
 </div>
 <div class="paragraph">
-<p>Typically, the receiving object is called a client and the passed-in <em>injected</em> object is called a service.
+<p>Typically, the receiving object is called a client.
+The passed-in <em>injected</em> object is called a service.
 The code that passes the service to the client is called the injector.</p>
 </div>
 <div class="paragraph">
-<p>Instead of the client specifying which service it will use, the injector tells the client what service to use.
+<p>Instead of the client specifying that service it will use, the injector tells the client what service should be used.
 The <em>injection</em> refers to the passing of a dependency into the client that uses it.</p>
 </div>
 </div>
@@ -3153,7 +3157,7 @@ The modules are also used as a documentation mechanism.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A dependency injection module shall be provided for each relevant module</p>
+<p>A dependency injection module shall be provided for each relevant module.</p>
 </li>
 </ul>
 </div>
@@ -3234,24 +3238,30 @@ Conversions are inefficient, lead to enormous loss of performance and latencies,
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Almost no impedance mismatch between the Java application and persistence store</p>
+<p>Almost no impedance mismatch between the Java application and persistence store.</p>
 </li>
 <li>
-<p>Elegant approach to provide one persistence container per bounded domain the same application</p>
+<p>An elegant approach to provide one persistence container for each bounded domain the same application.</p>
 </li>
 <li>
-<p>MicroStream has formally announced their software library will be published under an open source license</p>
+<p>MicroStream has formally announced their software library will be published under an open source license.</p>
 </li>
 <li>
-<p>The library supports current versions of the JDK and all constructs of the language including preview constructs</p>
+<p>The library supports current versions of the JDK and all constructs of the language including preview constructs.</p>
 </li>
 <li>
-<p>The support of the company is good and the answers professional</p>
+<p>The support of the company is good.
+The answers are fast and professional.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>Care will be taken to provide a fallback to another persistence solution if performance or licensing problems occur.</p>
+</div>
+<div class="paragraph">
+<p>A huge advantage is the ease of migrating a java model from Microstream to JPA.
+Experience shows that the effort is often less than five working days
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3291,11 +3301,14 @@ This approach minimizes the costs for this functionality without impeding the qu
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Realm shall have a private data class to store all data to be persisted</p>
+<p>Realm shall have a private data class to store all data to be persisted.</p>
 </li>
 <li>
 <p>The application must generate unique object identifiers.
 MicroStream does not provide functions in this area.</p>
+</li>
+<li>
+<p>Use specialized features of the library to implement <a href="../os-003-use-modern-java-constructs/">Modern Java Constructs ADR</a>.</p>
 </li>
 </ol>
 </div>
@@ -3310,6 +3323,12 @@ MicroStream does not provide functions in this area.</p>
 </ul>
 </div>
 </div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Under the assumption that enough unit and integration tests are available to validate the migrated solution.
 </div>
 </div>
 
@@ -3356,7 +3375,7 @@ Version 2.0 of the library is an alpha release on <a href="https://mvnrepository
 <div class="paragraph">
 <p>The apache project log4j has made tremendous progress with the creation of the log4j2 library.
 All features provided in slf4j are now available in log4j2.
-In particular, the fluent interface which is only available in the beta version of slf4j is also supported.
+In particular, the fluent interface, which is only available in the beta version of slf4j is also supported.
 Additional features are also provided and performance is better than with other logging frameworks.</p>
 </div>
 <div class="paragraph">
@@ -3366,7 +3385,7 @@ The library uses well-documented Java module names as any modern library shall p
 <div class="paragraph">
 <p>This situation raises the question to move our application to the apache logging framework.
 Both APIs are very similar in style and naming.
-the effort to migrate is quite reasonable.
+The effort to migrate is quite reasonable.
 Usually, only the logger declaration needs a modification.
 The creation of logging records uses exactly the same syntax and calling conventions.</p>
 </div>
@@ -3472,10 +3491,10 @@ The project uses <em>libs.version.toml</em> configuration file to unify library 
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-f8f72a7bbf6cd0c10d0c2e89425075e2">7.9 - OS 009: Use HSQLDB as SQL DB</h1>
+	<h1 id="pg-f8f72a7bbf6cd0c10d0c2e89425075e2">7.9 - OS 009: Use HSQLDB as an SQL DB</h1>
     
 	<div class="sect1">
-<h2 id="_os_009_use_hsqldb_as_sql_store">OS-009 Use HSQLDB as SQL store</h2>
+<h2 id="_os_009_use_hsqldb_as_an_sql_store">OS-009 Use HSQLDB as an SQL store</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Date: 2022-01-01</p>
@@ -3493,14 +3512,43 @@ The project uses <em>libs.version.toml</em> configuration file to unify library 
 <img src="../pics/OS-009-head.png" alt="OS 009 head" width="420" height="360"/>
 </div>
 </div>
+<div class="paragraph">
+<p>Applications regularly need to store information in a persistent store.
+A proven approach is to use an SQL database solution for such activities.
+The Java ecosystem supports a relational database with libraries.</p>
+</div>
+<div class="paragraph">
+<p>The JPA approach provides an object relational mapper.
+The JOOQL approach has a genuine mapping of SQL statements to type verified Java expressions.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_decision">Decision</h3>
-
+<div class="paragraph">
+<p>The HSQLDB SQL database java solution is the preferred choice when an application needs to store data in a relational store.</p>
+</div>
+<div class="paragraph">
+<p>Beware the preferred persistence mechanism is <a href="../adr/os-007-persistence-microstream/">Microstream</a>.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_consequences">Consequences</h3>
-
+<div class="paragraph">
+<p>The advantages of the solution are:
+* A simple java library packaged as a jar file provides all the need functionalities.
+* The implementation provides an SQL standard compliant solution
+* the application can embed the database server.
+This is a preferred approach in domain-driven design solutions.
+* No runtime license costs are required.
+The deployment on virtualized and cloud platforms is hugely simplified.</p>
+</div>
+<div class="paragraph">
+<p>The drawbacks are:
+* Best of breed products such PostgreSQL, Oracle, or SQL server are not preferred solutions.
+Operations departments have extensive experience with these products but none with HSQLDB.
+* The size of the database is limited.
+The current limitation is in the level of tens of terabytes.</p>
+</div>
 </div>
 </div>
 </div>
@@ -3519,10 +3567,10 @@ The project uses <em>libs.version.toml</em> configuration file to unify library 
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-5774cc62fa7a9064f7aa379d79e33d1d">7.10 - OS 010: Archive as TSV Files</h1>
+	<h1 id="pg-28c85f47f343526e6f2f90dac279882a">7.10 - OS 010: Archive Data using TSV and JSON</h1>
     
 	<div class="sect1">
-<h2 id="_os_010_archive_data_as_tsv_files">OS-010 Archive Data as TSV Files</h2>
+<h2 id="_os_010_archive_data_using_tsv_and_json">OS-010 Archive Data using TSV and JSON</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Date: 2022-01-01</p>
@@ -3540,14 +3588,223 @@ The project uses <em>libs.version.toml</em> configuration file to unify library 
 <img src="../pics/OS-010-head.jpg" alt="OS 010 head" width="420" height="360"/>
 </div>
 </div>
+<div class="paragraph">
+<p>Contrary to XML or JSON, TSV is perfectly suited to represent records with the least possible overhead.
+There are a lot of tools, like spreadsheet editors, which can read and modify TSV files.
+The file’s size is at the possible minimum, and the performance of the converter is significantly better than with the other formats.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_decision">Decision</h3>
-
+<div class="paragraph">
+<p>TSV is the preferred to import data into the application or export information from the solution.
+The format is also the preferred solution to import data into or export data from the solution.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_consequences">Consequences</h3>
+<div class="paragraph">
+<p>TSV files cannot express complex nested structures.
+Regular business models are often quite flat and translate well to a set of TSV files.</p>
+</div>
+<div class="paragraph">
+<p>We recommend JSON format for complex nested documents.</p>
+</div>
+<div class="paragraph">
+<p>The solution <em>tangly ERP</em> is a well-constructed solution using TSV format for import and export of bounded domain persistent data.</p>
+</div>
+<div class="paragraph">
+<p>The complex documents defining invoices are exported as imported using a JSON format.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>We use the <a href="https://commons.apache.org/proper/commons-csv/">Apache Commons CSV Library</a> to parse and write TSV files.</p>
+</div>
+<div class="paragraph">
+<p>The libray functions are good enough for our designs.
+The library is well-maintained and under Apache 2.0 open source license.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>We use the <a href="https://github.com/stleary/JSON-java">JSON Library</a> to parse and write JSON files.</p>
+</div>
+<div class="paragraph">
+<p>We use the <a href="https://github.com/networknt/json-schema-validator">JSON Validator Library</a> to validate JSON files against a <a href="https://json-schema.org/">JSON schema</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
 
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9bc7e023252fe9b15ac16488d2c82789">7.11 - OS 011: Vaadin User Interface</h1>
+    
+	<div class="sect1">
+<h2 id="_os_011_vaadin_user_interface">OS-011 Vaadin User Interface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Date: 2022-01-01</p>
+</div>
+<div class="sect2">
+<h3 id="_status">Status</h3>
+<div class="paragraph">
+<p>Implemented</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_context">Context</h3>
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/OS-011-head.svg" alt="OS 011 head" width="360" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>Our primary and almost exclusive technical stack is <a href="../os-003-use-modern-java-constructs/">Modern Java</a>.</p>
+</div>
+<div class="paragraph">
+<p>A major weakness of the Java ecosystem is the user interface aspects.
+<a href="https://en.wikipedia.org/wiki/Swing_(Java)">Swing</a> is old and no more actively supported by Oracle or other major players.
+<a href="https://openjfx.io/">JavaFX</a> has a small active community.
+The platform never had huge acceptance.</p>
+</div>
+<div class="paragraph">
+<p>We could use various JavaScript frameworks to realize our user interfaces.
+The drawback is supporting an additional technology stack.
+Complexity is added between the Java backend and the TypeScript frontend.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decision">Decision</h3>
+<div class="paragraph">
+<p>Our primary approach to realizing user interface is to use <a href="https://vaadin.com/">Vaadin</a>.</p>
+</div>
+<div class="paragraph">
+<p>The version of Vaadin should be higher than 14.</p>
+</div>
+<div class="paragraph">
+<p>Vaadin has some impressive aspects:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>User interface can fully be written in Java.</p>
+</li>
+<li>
+<p>Mobile first and progressive Web applications are natively supported with all visual components.</p>
+</li>
+<li>
+<p>The solution can be hosed in a docker image.</p>
+</li>
+<li>
+<p>User interface components are based on <a href="https://www.webcomponents.org/">Web Components</a> and <a href="https://lit.dev/">Lit HTML</a>.</p>
+</li>
+<li>
+<p>If desired, you can write user interface components in Typescript and connect them the Vaadin ecosystem.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A strength of Vaadin has extensive support for migrating legacy Java solutions to a modern Java technical stack.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consequences">Consequences</h3>
+<div class="paragraph">
+<p>The advantages are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java is our sole technology stack to realize complete applications.</p>
+</li>
+<li>
+<p>The major part of the framework is under Apache 2.0 open source license.</p>
+</li>
+<li>
+<p>Vaadin applications easily support a few hundreds of active users.
+If you respect some design considerations, Vaadin applications scale to a few thousands of active users.</p>
+</li>
+<li>
+<p>Active community provides additional user interface components.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>We use the <a href="https://vaadin.com/directory/component/so-charts">SO-Charts</a> components to draw our charts.
+The library is a wrapper around the Apache <a href="https://echarts.apache.org/en/index.html">ECharts</a> library.
+This library provides a huge number of high-quality graphs.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>The drawback is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You cannot currently write solutions supporting a hundred thousand of parallel users.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Our market is the creation of management and organization internal applications.</p>
+</div>
+<div class="paragraph">
+<p>These solutions have seldom more than five hundred of parallel users.
+Therefore, we never had scalabity or performance problems with Vaadin based programs.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 </div>
 </div>
 </div>
@@ -4211,7 +4468,7 @@ a small set of techniques enabling the participant to define a component or a sm
 
 
 
-(711.9 kB)
+(718.3 kB)
 </a>
             </li>
             
@@ -4330,7 +4587,7 @@ a small set of techniques enabling the participant to define a component or a sm
 
 
 
-(621.3 kB)
+(625.8 kB)
 </a>
             </li>
             
@@ -4432,7 +4689,7 @@ a small set of techniques enabling the participant to define a component or a sm
 
 
 
-(1.4 MB)
+(1.5 MB)
 </a>
             </li>
             

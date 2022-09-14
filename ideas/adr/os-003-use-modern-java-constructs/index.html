@@ -60,7 +60,7 @@ Context JDK is released every six months to all Java developers. The latest appr
 Better approaches support clean code, less verbose source code and reduce programming [5] [2]. These constructs shall be used in our modules as soon as they are released to the developers.
 The advantage is better integration, always synchronized with the current release of the JDK and no incompatibilities."><meta itemprop="datePublished" content="2018-02-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2018-02-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="293">
+<meta itemprop="wordCount" content="306">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OS 003: Use Modern Java Constructs"/>
 <meta name="twitter:description" content="OS-003 Remove usage of Google Guava Library Date: 2020-01-01
@@ -222,7 +222,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5924fd4e6c5e9f65aee9058a631b7328.json"
+  data-offline-search-index-json-src="/offline-search-index.2109a742bc63e21cb17fb478213adf5d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -244,7 +244,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5924fd4e6c5e9f65aee9058a631b7328.json"
+  data-offline-search-index-json-src="/offline-search-index.2109a742bc63e21cb17fb478213adf5d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -320,11 +320,15 @@ if (!doNotTrack) {
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-009-use-hsqldb-as-sql-store-li">
   <input type="checkbox" id="m-ideasadros-009-use-hsqldb-as-sql-store-check"/>
-  <label for="m-ideasadros-009-use-hsqldb-as-sql-store-check"><a href="/ideas/adr/os-009-use-hsqldb-as-sql-store/" title="OS 009: Use HSQLDB as SQL DB" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-009-use-hsqldb-as-sql-store"><span class="">Use HSQLDB as SQL store</span></a></label>
+  <label for="m-ideasadros-009-use-hsqldb-as-sql-store-check"><a href="/ideas/adr/os-009-use-hsqldb-as-sql-store/" title="OS 009: Use HSQLDB as an SQL DB" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-009-use-hsqldb-as-sql-store"><span class="">Use HSQLDB as SQL store</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-010-archive-data-as-tsv-li">
-  <input type="checkbox" id="m-ideasadros-010-archive-data-as-tsv-check"/>
-  <label for="m-ideasadros-010-archive-data-as-tsv-check"><a href="/ideas/adr/os-010-archive-data-as-tsv/" title="OS 010: Archive as TSV Files" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-010-archive-data-as-tsv"><span class="">Archive Data as TSV Files</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-010-archive-data-li">
+  <input type="checkbox" id="m-ideasadros-010-archive-data-check"/>
+  <label for="m-ideasadros-010-archive-data-check"><a href="/ideas/adr/os-010-archive-data/" title="OS 010: Archive Data using TSV and JSON" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-010-archive-data"><span class="">Archive Data</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-011-vaadin-as-user-interface-li">
+  <input type="checkbox" id="m-ideasadros-011-vaadin-as-user-interface-check"/>
+  <label for="m-ideasadros-011-vaadin-as-user-interface-check"><a href="/ideas/adr/os-011-vaadin-as-user-interface/" title="OS 011: Vaadin User Interface" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-011-vaadin-as-user-interface"><span class="">Vaadin User Interface</span></a></label>
   
 </li>
   </ul>
@@ -402,7 +406,7 @@ if (!doNotTrack) {
       
       <ul class="taxonomy-terms">
         
-          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">84</span></a></li>
+          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">85</span></a></li>
         
           <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">architecture</span><span class="taxonomy-count">12</span></a></li>
         
@@ -540,6 +544,9 @@ See, for example, the record construct provided since JDK 14.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>JDK 18 and 19 give improvements in pattern matching and thread programming.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_consequences">Consequences</h3>
@@ -549,7 +556,7 @@ See, for example, the record construct provided since JDK 14.</p>
 <p>Clients are forced to use the current JDK version.</p>
 </li>
 <li>
-<p>Tooling is more brittle because a lot of tool maintainers are late to adapt actual version of JDK.</p>
+<p>Tooling is more brittle because a lot of tool maintainers are late to adapt the actual version of JDK.</p>
 </li>
 </ul>
 </div>

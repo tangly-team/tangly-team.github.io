@@ -20,9 +20,9 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>OS 009: Use HSQLDB as SQL DB | tangly Components</title>
+<title>OS 009: Use HSQLDB as an SQL DB | tangly Components</title>
 <meta content="
-OS-009 Use HSQLDB as SQL store
+OS-009 Use HSQLDB as an SQL store
 
 
 Date: 2022-01-01
@@ -41,37 +41,33 @@ Context
 
 
 
-
-Decision
-
-
-
-Consequences
-
-
-
-
-" name="description">
-<meta property="og:title" content="OS 009: Use HSQLDB as SQL DB" />
-<meta property="og:description" content=" OS-009 Use HSQLDB as SQL store Date: 2022-01-01
+Applications regularly need to store information in a …" name="description">
+<meta property="og:title" content="OS 009: Use HSQLDB as an SQL DB" />
+<meta property="og:description" content="OS-009 Use HSQLDB as an SQL store Date: 2022-01-01
 Status Implemented
-Context Decision Consequences " />
+Context Applications regularly need to store information in a persistent store. A proven approach is to use an SQL database solution for such activities. The Java ecosystem supports a relational database with libraries.
+The JPA approach provides an object relational mapper. The JOOQL approach has a genuine mapping of SQL statements to type verified Java expressions.
+Decision The HSQLDB SQL database java solution is the preferred choice when an application needs to store data in a relational store." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/ideas/adr/os-009-use-hsqldb-as-sql-store/" /><meta property="article:section" content="ideas" />
 <meta property="article:published_time" content="2022-01-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-01-01T00:00:00+00:00" /><meta property="og:site_name" content="tangly Components" />
 
-<meta itemprop="name" content="OS 009: Use HSQLDB as SQL DB">
-<meta itemprop="description" content=" OS-009 Use HSQLDB as SQL store Date: 2022-01-01
+<meta itemprop="name" content="OS 009: Use HSQLDB as an SQL DB">
+<meta itemprop="description" content="OS-009 Use HSQLDB as an SQL store Date: 2022-01-01
 Status Implemented
-Context Decision Consequences "><meta itemprop="datePublished" content="2022-01-01T00:00:00+00:00" />
+Context Applications regularly need to store information in a persistent store. A proven approach is to use an SQL database solution for such activities. The Java ecosystem supports a relational database with libraries.
+The JPA approach provides an object relational mapper. The JOOQL approach has a genuine mapping of SQL statements to type verified Java expressions.
+Decision The HSQLDB SQL database java solution is the preferred choice when an application needs to store data in a relational store."><meta itemprop="datePublished" content="2022-01-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-01-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="13">
+<meta itemprop="wordCount" content="210">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="OS 009: Use HSQLDB as SQL DB"/>
-<meta name="twitter:description" content=" OS-009 Use HSQLDB as SQL store Date: 2022-01-01
+<meta name="twitter:title" content="OS 009: Use HSQLDB as an SQL DB"/>
+<meta name="twitter:description" content="OS-009 Use HSQLDB as an SQL store Date: 2022-01-01
 Status Implemented
-Context Decision Consequences "/>
+Context Applications regularly need to store information in a persistent store. A proven approach is to use an SQL database solution for such activities. The Java ecosystem supports a relational database with libraries.
+The JPA approach provides an object relational mapper. The JOOQL approach has a genuine mapping of SQL statements to type verified Java expressions.
+Decision The HSQLDB SQL database java solution is the preferred choice when an application needs to store data in a relational store."/>
 
 
 
@@ -226,7 +222,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5924fd4e6c5e9f65aee9058a631b7328.json"
+  data-offline-search-index-json-src="/offline-search-index.2109a742bc63e21cb17fb478213adf5d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -248,7 +244,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5924fd4e6c5e9f65aee9058a631b7328.json"
+  data-offline-search-index-json-src="/offline-search-index.2109a742bc63e21cb17fb478213adf5d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -324,11 +320,15 @@ if (!doNotTrack) {
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-ideasadros-009-use-hsqldb-as-sql-store-li">
   <input type="checkbox" id="m-ideasadros-009-use-hsqldb-as-sql-store-check" checked/>
-  <label for="m-ideasadros-009-use-hsqldb-as-sql-store-check"><a href="/ideas/adr/os-009-use-hsqldb-as-sql-store/" title="OS 009: Use HSQLDB as SQL DB" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-ideasadros-009-use-hsqldb-as-sql-store"><span class="td-sidebar-nav-active-item">Use HSQLDB as SQL store</span></a></label>
+  <label for="m-ideasadros-009-use-hsqldb-as-sql-store-check"><a href="/ideas/adr/os-009-use-hsqldb-as-sql-store/" title="OS 009: Use HSQLDB as an SQL DB" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-ideasadros-009-use-hsqldb-as-sql-store"><span class="td-sidebar-nav-active-item">Use HSQLDB as SQL store</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-010-archive-data-as-tsv-li">
-  <input type="checkbox" id="m-ideasadros-010-archive-data-as-tsv-check"/>
-  <label for="m-ideasadros-010-archive-data-as-tsv-check"><a href="/ideas/adr/os-010-archive-data-as-tsv/" title="OS 010: Archive as TSV Files" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-010-archive-data-as-tsv"><span class="">Archive Data as TSV Files</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-010-archive-data-li">
+  <input type="checkbox" id="m-ideasadros-010-archive-data-check"/>
+  <label for="m-ideasadros-010-archive-data-check"><a href="/ideas/adr/os-010-archive-data/" title="OS 010: Archive Data using TSV and JSON" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-010-archive-data"><span class="">Archive Data</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-011-vaadin-as-user-interface-li">
+  <input type="checkbox" id="m-ideasadros-011-vaadin-as-user-interface-check"/>
+  <label for="m-ideasadros-011-vaadin-as-user-interface-check"><a href="/ideas/adr/os-011-vaadin-as-user-interface/" title="OS 011: Vaadin User Interface" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-011-vaadin-as-user-interface"><span class="">Vaadin User Interface</span></a></label>
   
 </li>
   </ul>
@@ -406,7 +406,7 @@ if (!doNotTrack) {
       
       <ul class="taxonomy-terms">
         
-          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">84</span></a></li>
+          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">85</span></a></li>
         
           <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">architecture</span><span class="taxonomy-count">12</span></a></li>
         
@@ -471,7 +471,7 @@ if (!doNotTrack) {
 </nav>
             
 <div class="td-content">
-	<h1>OS 009: Use HSQLDB as SQL DB</h1>
+	<h1>OS 009: Use HSQLDB as an SQL DB</h1>
 	
 	<header class="article-meta">
 		
@@ -487,7 +487,7 @@ if (!doNotTrack) {
 		
 	</header>    
 	<div class="sect1">
-<h2 id="_os_009_use_hsqldb_as_sql_store">OS-009 Use HSQLDB as SQL store</h2>
+<h2 id="_os_009_use_hsqldb_as_an_sql_store">OS-009 Use HSQLDB as an SQL store</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Date: 2022-01-01</p>
@@ -505,14 +505,43 @@ if (!doNotTrack) {
 <img src="../pics/OS-009-head.png" alt="OS 009 head" width="420" height="360"/>
 </div>
 </div>
+<div class="paragraph">
+<p>Applications regularly need to store information in a persistent store.
+A proven approach is to use an SQL database solution for such activities.
+The Java ecosystem supports a relational database with libraries.</p>
+</div>
+<div class="paragraph">
+<p>The JPA approach provides an object relational mapper.
+The JOOQL approach has a genuine mapping of SQL statements to type verified Java expressions.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_decision">Decision</h3>
-
+<div class="paragraph">
+<p>The HSQLDB SQL database java solution is the preferred choice when an application needs to store data in a relational store.</p>
+</div>
+<div class="paragraph">
+<p>Beware the preferred persistence mechanism is <a href="../adr/os-007-persistence-microstream/">Microstream</a>.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_consequences">Consequences</h3>
-
+<div class="paragraph">
+<p>The advantages of the solution are:
+* A simple java library packaged as a jar file provides all the need functionalities.
+* The implementation provides an SQL standard compliant solution
+* the application can embed the database server.
+This is a preferred approach in domain-driven design solutions.
+* No runtime license costs are required.
+The deployment on virtualized and cloud platforms is hugely simplified.</p>
+</div>
+<div class="paragraph">
+<p>The drawbacks are:
+* Best of breed products such PostgreSQL, Oracle, or SQL server are not preferred solutions.
+Operations departments have extensive experience with these products but none with HSQLDB.
+* The size of the database is limited.
+The current limitation is in the level of tens of terabytes.</p>
+</div>
 </div>
 </div>
 </div>

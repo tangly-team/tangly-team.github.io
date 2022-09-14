@@ -62,7 +62,7 @@ In Java, everything is an object. In contrast, all databases come with their own
 This is called impedance mismatch.
 As a consequence, a mapping is required, which means all data must be converted behind the scenes."><meta itemprop="datePublished" content="2020-10-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="334">
+<meta itemprop="wordCount" content="395">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OS 007: Persistence with MicroStream"/>
 <meta name="twitter:description" content="OS-007: Persistence with MicroStream Date: 2020-11-13
@@ -225,7 +225,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5924fd4e6c5e9f65aee9058a631b7328.json"
+  data-offline-search-index-json-src="/offline-search-index.2109a742bc63e21cb17fb478213adf5d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -247,7 +247,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5924fd4e6c5e9f65aee9058a631b7328.json"
+  data-offline-search-index-json-src="/offline-search-index.2109a742bc63e21cb17fb478213adf5d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -323,11 +323,15 @@ if (!doNotTrack) {
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-009-use-hsqldb-as-sql-store-li">
   <input type="checkbox" id="m-ideasadros-009-use-hsqldb-as-sql-store-check"/>
-  <label for="m-ideasadros-009-use-hsqldb-as-sql-store-check"><a href="/ideas/adr/os-009-use-hsqldb-as-sql-store/" title="OS 009: Use HSQLDB as SQL DB" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-009-use-hsqldb-as-sql-store"><span class="">Use HSQLDB as SQL store</span></a></label>
+  <label for="m-ideasadros-009-use-hsqldb-as-sql-store-check"><a href="/ideas/adr/os-009-use-hsqldb-as-sql-store/" title="OS 009: Use HSQLDB as an SQL DB" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-009-use-hsqldb-as-sql-store"><span class="">Use HSQLDB as SQL store</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-010-archive-data-as-tsv-li">
-  <input type="checkbox" id="m-ideasadros-010-archive-data-as-tsv-check"/>
-  <label for="m-ideasadros-010-archive-data-as-tsv-check"><a href="/ideas/adr/os-010-archive-data-as-tsv/" title="OS 010: Archive as TSV Files" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-010-archive-data-as-tsv"><span class="">Archive Data as TSV Files</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-010-archive-data-li">
+  <input type="checkbox" id="m-ideasadros-010-archive-data-check"/>
+  <label for="m-ideasadros-010-archive-data-check"><a href="/ideas/adr/os-010-archive-data/" title="OS 010: Archive Data using TSV and JSON" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-010-archive-data"><span class="">Archive Data</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-011-vaadin-as-user-interface-li">
+  <input type="checkbox" id="m-ideasadros-011-vaadin-as-user-interface-check"/>
+  <label for="m-ideasadros-011-vaadin-as-user-interface-check"><a href="/ideas/adr/os-011-vaadin-as-user-interface/" title="OS 011: Vaadin User Interface" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-011-vaadin-as-user-interface"><span class="">Vaadin User Interface</span></a></label>
   
 </li>
   </ul>
@@ -405,7 +409,7 @@ if (!doNotTrack) {
       
       <ul class="taxonomy-terms">
         
-          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">84</span></a></li>
+          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">85</span></a></li>
         
           <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">architecture</span><span class="taxonomy-count">12</span></a></li>
         
@@ -528,24 +532,30 @@ Conversions are inefficient, lead to enormous loss of performance and latencies,
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Almost no impedance mismatch between the Java application and persistence store</p>
+<p>Almost no impedance mismatch between the Java application and persistence store.</p>
 </li>
 <li>
-<p>Elegant approach to provide one persistence container per bounded domain the same application</p>
+<p>An elegant approach to provide one persistence container for each bounded domain the same application.</p>
 </li>
 <li>
-<p>MicroStream has formally announced their software library will be published under an open source license</p>
+<p>MicroStream has formally announced their software library will be published under an open source license.</p>
 </li>
 <li>
-<p>The library supports current versions of the JDK and all constructs of the language including preview constructs</p>
+<p>The library supports current versions of the JDK and all constructs of the language including preview constructs.</p>
 </li>
 <li>
-<p>The support of the company is good and the answers professional</p>
+<p>The support of the company is good.
+The answers are fast and professional.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>Care will be taken to provide a fallback to another persistence solution if performance or licensing problems occur.</p>
+</div>
+<div class="paragraph">
+<p>A huge advantage is the ease of migrating a java model from Microstream to JPA.
+Experience shows that the effort is often less than five working days
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -585,11 +595,14 @@ This approach minimizes the costs for this functionality without impeding the qu
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Realm shall have a private data class to store all data to be persisted</p>
+<p>Realm shall have a private data class to store all data to be persisted.</p>
 </li>
 <li>
 <p>The application must generate unique object identifiers.
 MicroStream does not provide functions in this area.</p>
+</li>
+<li>
+<p>Use specialized features of the library to implement <a href="../os-003-use-modern-java-constructs/">Modern Java Constructs ADR</a>.</p>
 </li>
 </ol>
 </div>
@@ -604,6 +617,12 @@ MicroStream does not provide functions in this area.</p>
 </ul>
 </div>
 </div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Under the assumption that enough unit and integration tests are available to validate the migrated solution.
 </div>
 </div>
 

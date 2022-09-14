@@ -20,9 +20,9 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>OS 010: Archive as TSV Files | tangly Components</title>
+<title>OS 010: Archive Data using TSV and JSON | tangly Components</title>
 <meta content="
-OS-010 Archive Data as TSV Files
+OS-010 Archive Data using TSV and JSON
 
 
 Date: 2022-01-01
@@ -41,37 +41,30 @@ Context
 
 
 
-
-Decision
-
-
-
-Consequences
-
-
-
-
-" name="description">
-<meta property="og:title" content="OS 010: Archive as TSV Files" />
-<meta property="og:description" content=" OS-010 Archive Data as TSV Files Date: 2022-01-01
+Contrary to XML or JSON, TSV is perfectly suited to …" name="description">
+<meta property="og:title" content="OS 010: Archive Data using TSV and JSON" />
+<meta property="og:description" content="OS-010 Archive Data using TSV and JSON Date: 2022-01-01
 Status Implemented
-Context Decision Consequences " />
+Context Contrary to XML or JSON, TSV is perfectly suited to represent records with the least possible overhead. There are a lot of tools, like spreadsheet editors, which can read and modify TSV files. The file’s size is at the possible minimum, and the performance of the converter is significantly better than with the other formats.
+Decision TSV is the preferred to import data into the application or export information from the solution." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tangly.net/ideas/adr/os-010-archive-data-as-tsv/" /><meta property="article:section" content="ideas" />
+<meta property="og:url" content="https://blog.tangly.net/ideas/adr/os-010-archive-data/" /><meta property="article:section" content="ideas" />
 <meta property="article:published_time" content="2022-01-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-01-01T00:00:00+00:00" /><meta property="og:site_name" content="tangly Components" />
 
-<meta itemprop="name" content="OS 010: Archive as TSV Files">
-<meta itemprop="description" content=" OS-010 Archive Data as TSV Files Date: 2022-01-01
+<meta itemprop="name" content="OS 010: Archive Data using TSV and JSON">
+<meta itemprop="description" content="OS-010 Archive Data using TSV and JSON Date: 2022-01-01
 Status Implemented
-Context Decision Consequences "><meta itemprop="datePublished" content="2022-01-01T00:00:00+00:00" />
+Context Contrary to XML or JSON, TSV is perfectly suited to represent records with the least possible overhead. There are a lot of tools, like spreadsheet editors, which can read and modify TSV files. The file’s size is at the possible minimum, and the performance of the converter is significantly better than with the other formats.
+Decision TSV is the preferred to import data into the application or export information from the solution."><meta itemprop="datePublished" content="2022-01-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-01-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="13">
+<meta itemprop="wordCount" content="224">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="OS 010: Archive as TSV Files"/>
-<meta name="twitter:description" content=" OS-010 Archive Data as TSV Files Date: 2022-01-01
+<meta name="twitter:title" content="OS 010: Archive Data using TSV and JSON"/>
+<meta name="twitter:description" content="OS-010 Archive Data using TSV and JSON Date: 2022-01-01
 Status Implemented
-Context Decision Consequences "/>
+Context Contrary to XML or JSON, TSV is perfectly suited to represent records with the least possible overhead. There are a lot of tools, like spreadsheet editors, which can read and modify TSV files. The file’s size is at the possible minimum, and the performance of the converter is significantly better than with the other formats.
+Decision TSV is the preferred to import data into the application or export information from the solution."/>
 
 
 
@@ -226,7 +219,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5924fd4e6c5e9f65aee9058a631b7328.json"
+  data-offline-search-index-json-src="/offline-search-index.2109a742bc63e21cb17fb478213adf5d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -248,7 +241,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5924fd4e6c5e9f65aee9058a631b7328.json"
+  data-offline-search-index-json-src="/offline-search-index.2109a742bc63e21cb17fb478213adf5d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -324,11 +317,15 @@ if (!doNotTrack) {
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-009-use-hsqldb-as-sql-store-li">
   <input type="checkbox" id="m-ideasadros-009-use-hsqldb-as-sql-store-check"/>
-  <label for="m-ideasadros-009-use-hsqldb-as-sql-store-check"><a href="/ideas/adr/os-009-use-hsqldb-as-sql-store/" title="OS 009: Use HSQLDB as SQL DB" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-009-use-hsqldb-as-sql-store"><span class="">Use HSQLDB as SQL store</span></a></label>
+  <label for="m-ideasadros-009-use-hsqldb-as-sql-store-check"><a href="/ideas/adr/os-009-use-hsqldb-as-sql-store/" title="OS 009: Use HSQLDB as an SQL DB" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-009-use-hsqldb-as-sql-store"><span class="">Use HSQLDB as SQL store</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-ideasadros-010-archive-data-as-tsv-li">
-  <input type="checkbox" id="m-ideasadros-010-archive-data-as-tsv-check" checked/>
-  <label for="m-ideasadros-010-archive-data-as-tsv-check"><a href="/ideas/adr/os-010-archive-data-as-tsv/" title="OS 010: Archive as TSV Files" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-ideasadros-010-archive-data-as-tsv"><span class="td-sidebar-nav-active-item">Archive Data as TSV Files</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-ideasadros-010-archive-data-li">
+  <input type="checkbox" id="m-ideasadros-010-archive-data-check" checked/>
+  <label for="m-ideasadros-010-archive-data-check"><a href="/ideas/adr/os-010-archive-data/" title="OS 010: Archive Data using TSV and JSON" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-ideasadros-010-archive-data"><span class="td-sidebar-nav-active-item">Archive Data</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasadros-011-vaadin-as-user-interface-li">
+  <input type="checkbox" id="m-ideasadros-011-vaadin-as-user-interface-check"/>
+  <label for="m-ideasadros-011-vaadin-as-user-interface-check"><a href="/ideas/adr/os-011-vaadin-as-user-interface/" title="OS 011: Vaadin User Interface" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasadros-011-vaadin-as-user-interface"><span class="">Vaadin User Interface</span></a></label>
   
 </li>
   </ul>
@@ -406,7 +403,7 @@ if (!doNotTrack) {
       
       <ul class="taxonomy-terms">
         
-          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">84</span></a></li>
+          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">85</span></a></li>
         
           <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">architecture</span><span class="taxonomy-count">12</span></a></li>
         
@@ -465,13 +462,13 @@ if (!doNotTrack) {
     <a href="https://blog.tangly.net/ideas/adr/">ADR</a>
   </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://blog.tangly.net/ideas/adr/os-010-archive-data-as-tsv/" aria-disabled="true" class="btn-link disabled">Archive Data as TSV Files</a>
+    <a href="https://blog.tangly.net/ideas/adr/os-010-archive-data/" aria-disabled="true" class="btn-link disabled">Archive Data</a>
   </li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>OS 010: Archive as TSV Files</h1>
+	<h1>OS 010: Archive Data using TSV and JSON</h1>
 	
 	<header class="article-meta">
 		
@@ -487,7 +484,7 @@ if (!doNotTrack) {
 		
 	</header>    
 	<div class="sect1">
-<h2 id="_os_010_archive_data_as_tsv_files">OS-010 Archive Data as TSV Files</h2>
+<h2 id="_os_010_archive_data_using_tsv_and_json">OS-010 Archive Data using TSV and JSON</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Date: 2022-01-01</p>
@@ -505,14 +502,69 @@ if (!doNotTrack) {
 <img src="../pics/OS-010-head.jpg" alt="OS 010 head" width="420" height="360"/>
 </div>
 </div>
+<div class="paragraph">
+<p>Contrary to XML or JSON, TSV is perfectly suited to represent records with the least possible overhead.
+There are a lot of tools, like spreadsheet editors, which can read and modify TSV files.
+The file’s size is at the possible minimum, and the performance of the converter is significantly better than with the other formats.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_decision">Decision</h3>
-
+<div class="paragraph">
+<p>TSV is the preferred to import data into the application or export information from the solution.
+The format is also the preferred solution to import data into or export data from the solution.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_consequences">Consequences</h3>
-
+<div class="paragraph">
+<p>TSV files cannot express complex nested structures.
+Regular business models are often quite flat and translate well to a set of TSV files.</p>
+</div>
+<div class="paragraph">
+<p>We recommend JSON format for complex nested documents.</p>
+</div>
+<div class="paragraph">
+<p>The solution <em>tangly ERP</em> is a well-constructed solution using TSV format for import and export of bounded domain persistent data.</p>
+</div>
+<div class="paragraph">
+<p>The complex documents defining invoices are exported as imported using a JSON format.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>We use the <a href="https://commons.apache.org/proper/commons-csv/">Apache Commons CSV Library</a> to parse and write TSV files.</p>
+</div>
+<div class="paragraph">
+<p>The libray functions are good enough for our designs.
+The library is well-maintained and under Apache 2.0 open source license.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>We use the <a href="https://github.com/stleary/JSON-java">JSON Library</a> to parse and write JSON files.</p>
+</div>
+<div class="paragraph">
+<p>We use the <a href="https://github.com/networknt/json-schema-validator">JSON Validator Library</a> to validate JSON files against a <a href="https://json-schema.org/">JSON schema</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 </div>
 </div>
 </div>
