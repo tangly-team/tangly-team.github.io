@@ -4,7 +4,7 @@
     <link>https://blog.tangly.net/blog/</link>
     <description>Recent content in tangly llc Blog on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,190 @@
         
       
     
+    
+    <item>
+      <title>Blog: Vaadin</title>
+      <link>https://blog.tangly.net/blog/2022/vaadin/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2022/vaadin/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_developing_with_vaadin&#34;&gt;Developing with Vaadin&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-10-01-head.jpg&#34; alt=&#34;2022 10 01 head&#34; width=&#34;200&#34; height=&#34;200&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; is an ideal solution if you are a Java developer and wants to provide a user interface for your product.
+Vaadin is a framework to create graphical user interfaces using plain Java, or any JVM-based language for that matter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You develop in Java, and the framework takes care of all the rest.
+It generates the client-side code, and the communication between the client-side code in the browser and the backend code on the server.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your team only needs to program in the Java stack.
+Your developers focus on their key competencies.
+This is a huge advantage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Proficiency is difficult in one technology stack.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Only exceptional individuals really master multiple development environments.
+You can probably not afford to hire them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Vaadin framework is optimal for internal applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It scales up to a few thousands of active users.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_progressive_web_applications_pwa&#34;&gt;Progressive Web Applications &lt;a href=&#34;https://en.wikipedia.org/wiki/Progressive_web_app/&#34;&gt;PWA&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;User interfaces shall accommodate various screen resolutions.
+Ideally, you should support phone displays, tablets, and high-resolution workstations.
+Progressive Web applications provide the functionalities to realize such solutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Vaadin provides first-level support for &lt;a href=&#34;https://en.wikipedia.org/wiki/Progressive_web_app/&#34;&gt;PWA&lt;/a&gt; functions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The regular Vaadin distribution provides the expected regular visual components.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://vaadin.com/directory/search?author=Vaadin+++ComponentFactory&#34;&gt;Vaadin Component Factory&lt;/a&gt; distributes more specialized components.
+These components were before created for a particular customer and later released to the community.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I use the &lt;a href=&#34;https://vaadin.com/directory/component/so-charts&#34;&gt;SO-Charts&lt;/a&gt; components to draw various charts.
+This library is a thin wrapper for the Apache project &lt;a href=&#34;https://echarts.apache.org/en/index.html&#34;&gt;ECharts&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_developing_with_vaadin_2&#34;&gt;Developing with Vaadin&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The most popular IDE for Java is currently the &lt;em&gt;IntelliJ IDEA&lt;/em&gt; tool.
+You develop Vaadin applications just as regular Java applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I use &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; as build tool.
+This approach is well-supported in the IDE.
+The Vaadin company still seems to prefer &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt; as build tool.
+You find Gradle examples created by the developer of the Karibu library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I prefer to deploy Vaadin application with an embedded Web Server.
+The approach has two advantages.
+First, debugging the application is easier and snappier.
+Second, the modern production environment builds on Docker images and Kubernetes.
+You will never deploy more than one solution on a container instance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Vaadin components do not hinder domain-driven design approaches.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_testing_with_karibu&#34;&gt;Testing with &lt;a href=&#34;https://github.com/mvysny/karibu-testing/&#34;&gt;Karibu&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Digital solutions are developed using agile approaches.
+They are often deployed multiple times every week in production.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The unit and integration tests are run automatically before each deployment.
+The successful execution of the test suite guarantees no known errors are deployed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/mvysny/karibu-testing/&#34;&gt;Karibu&lt;/a&gt; test library efficiently supports developers writing Vaadin integration or end-to-end automated tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Karibu testing is here to perform:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Containerless testing&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;You do not need to launch the servlet container.
+Karibu creates a &lt;em&gt;Vaadin Session&lt;/em&gt;, the UI and other necessary Vaadin classes straight in the JVM, which runs your JUnit tests.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Browserless testing&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;You look up components straight from &lt;em&gt;UI.getCurrent()&lt;/em&gt;, bypassing the browser and the JavaScript bridge completely.
+You directly call methods on your server-side &lt;em&gt;View&lt;/em&gt; classes and on the server-side Java Vaadin components.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_learning_vaadin&#34;&gt;Learning Vaadin&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Vaadin provides &lt;a href=&#34;https://vaadin.com/learn/training/&#34;&gt;training videos&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A &lt;a href=&#34;https://vaadin.com/learn/training/&#34;&gt;certification program&lt;/a&gt; validates your learning.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://vaadin.com/docs/latest/&#34;&gt;Extensive documentation&lt;/a&gt; and tutorials are published on their website.
+The current examples emphasize the usage of &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt; as a build tool.
+I prefer &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; and had to search the Internet to find clues how to build the examples with Gradle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Concrete examples of how to realize specific functions with Vaadin are collected in the &lt;a href=&#34;https://cookbook.vaadin.com/&#34;&gt;cookbook&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware of selecting examples using the current version of the framework.
+Legacy code uses Vaadin 8 and is useless for modern solutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Very cool is the &lt;a href=&#34;https://vaadin.com/student-program/&#34;&gt;student program&lt;/a&gt;.
+I am currently trying to introduce computer science bachelor students to the advantages of Vaadin.
+Students are bombarded with various technology stacks.
+Java and Vaadin is a single Java-based approach to write more easily semester and bachelor development assignments.
+The drawback is it is less sexy than &lt;em&gt;React&lt;/em&gt;, &lt;em&gt;VueJS&lt;/em&gt;, or perhaps &lt;em&gt;Angular&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Vaadin supports the latest version of Java in a timely manner
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.
+I acknowledge that the Vaadin company is rather slow to adopt newer Java standards.
+It took them years to acknowledge the Jakarta renaming scheme
+footnot:[The renaming was necessary because Oracle screwed up. The delaying of Vaadin means you cannot use the latest version of Jetty or similar frameworks].&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.frankel.ch/why-love-vaadin/&#34;&gt;Why I (still) love Vaadin&lt;/a&gt;.
+Nicolas Fränkel. 2020.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://medium.com/@ankurmans/an-open-letter-to-all-enterprise-level-business-web-application-decision-makers-446527292627&#34;&gt;5 Reasons Why Enterprises Use Vaadin For Their Web Application UI Needs&lt;/a&gt;.
+Ankurman Shrestha .2018.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://vaadin.com/accessibility&#34;&gt;Vaadin Accessibility&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The same can be said for the &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; since it supports toolchains configuration.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Eliminate Your Printer</title>
@@ -6278,7 +6462,7 @@ I am looking for:&lt;/p&gt;
 (&lt;a href=&#34;https://www.omg.org/spec/UML/&#34;&gt;UML&lt;/a&gt;) or approaches can be used.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Explain continuous architecture improvements and how it is performed - see e.g. refactoring legacy systems -.&lt;/p&gt;
+&lt;p&gt;Explain continuous architecture improvements and how it is performed - see e.g., refactoring legacy systems -.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Explain technical debt concepts and how to mitigate technical debt in an application.&lt;/p&gt;
@@ -6385,7 +6569,7 @@ But please do not lie to me and invent capabilities you do not have.
 Such a fault is a killer during the interview.
 I always cross-check the CV during an interview.&lt;/p&gt;
 &lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Explain gaps in CV&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Explain gaps in your CV&lt;/dt&gt;
 &lt;dd&gt;
 &lt;p&gt;I truly respect people taking off time or having encountered problems during their careers.
 And I expect from you a hint to understand gaps in your career.&lt;/p&gt;
@@ -6482,7 +6666,7 @@ Which version of Typescript is she using?&lt;/p&gt;
 &lt;p&gt;Does he know standard &lt;a href=&#34;https://owasp.org/&#34;&gt;OWASP&lt;/a&gt; approaches and why they are important in a NodeJS environment?&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Examples of object-oriented, functional programming, asynchronous and reactive approaches in Typescript code&lt;/p&gt;
+&lt;p&gt;Examples of object-oriented, functional programming, asynchronous and reactive approaches in Typescript code.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Can senior developers discuss and explain threading, thread library, or async design approaches?&lt;/p&gt;
@@ -6877,7 +7061,7 @@ Code quality is an aggregation of several metrics that quantify the overall qual
 &lt;p&gt;This measures the amount of time that passes between the definition of the change, the first commit, and deployment.
 You need to study the time it takes to make changes to existing code and to solve problems without using quick fixes.
 If your engineers are spending hours fixing small bugs, you know that there is some technical debt lurking in your code.&lt;br/&gt;
-&lt;em&gt;Your agile and Scrum tool provides cycle time data &lt;a href=&#34;#metricsandkip&#34;&gt;[metricsandkip]&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;Your agile and Scrum tool provides cycle time data &lt;a href=&#34;#metricsandkpi&#34;&gt;[4]&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Code Coverage&lt;/dt&gt;
 &lt;dd&gt;
@@ -10078,7 +10262,7 @@ When security is the focus of everyone on a DevOps team, this is sometimes refer
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;These teams practice automating processes that historically have been manual and slow.
-They use a technology stack and tooling which help them operate and evolve applications quickly and reliably.
+They use a technology stack and tooling, which helps them operate and evolve applications quickly and reliably.
 These tools also help engineers independently carry out tasks that normally would have required help from other teams.
 This increases a team’s velocity.&lt;/p&gt;
 &lt;/div&gt;
@@ -10113,7 +10297,7 @@ For example, microservices and continuous delivery let teams take ownership of s
 &lt;dt class=&#34;hdlist1&#34;&gt;Rapid Delivery&lt;/dt&gt;
 &lt;dd&gt;
 &lt;p&gt;Increase the frequency and pace of releases, so you can innovate and improve your product faster.
-The quicker you can release new features and fix bugs, the faster you can respond to your customers’ needs and build competitive advantage.
+The quicker you can release new features and fix bugs, the faster you can respond to your customers’ needs and build a competitive advantage.
 Continuous integration and continuous delivery are practices that automate the software release process, from build to deploy.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Reliability&lt;/dt&gt;
@@ -10186,7 +10370,7 @@ You can use different frameworks or programming languages to write microservices
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;Infrastructure as Code&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;Infrastructure as code is a practice in which infrastructure is provisioned and managed using code and software development techniques.
+&lt;p&gt;Infrastructure as code is a practice in which infrastructure is provisioned and managed to use code and software development techniques.
 Examples are version control and continuous integration.
 The cloud’s API-driven model enables developers and system administrators to interact with infrastructure programmatically.
 They do need to interact manually set up and configure resources.
@@ -10198,7 +10382,7 @@ Because they are defined by code, infrastructure and servers can quickly be depl
 &lt;p&gt;Organizations monitor metrics and logs to see how application and infrastructure performance impacts the experience of their product’s end user.
 By capturing, categorizing, and then analyzing data and logs generated by applications and infrastructure, organizations understand how changes or updates impact users, shedding insights into the root causes of problems or unexpected changes.
 Active monitoring becomes increasingly important as services must be available 24/7 and as application and infrastructure update frequency increases.
-Creating alerts or performing real-time analysis of this data also helps organizations more proactively monitor their services.&lt;/p&gt;
+Creating alerts or performing real-time analysis of these data also helps organizations more proactively monitor their services.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Communication and Collaboration&lt;/dt&gt;
 &lt;dd&gt;
@@ -12148,7 +12332,7 @@ Discipline is king.&lt;/p&gt;
 &lt;p&gt;I discovered the anniversary offer to certify for Java SE 11 Developer.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This special certification has a cool logo with a remainder of the Java 25 years anniversary.
+&lt;p&gt;This special certification has a cool logo with a remainder of the Java 25-year anniversary.
 Oracle offers this certification for only 25 dollars &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt; and provides free access to their learning platform.
 The offer and logo availability are time limited.&lt;/p&gt;
 &lt;/div&gt;
@@ -14952,646 +15136,6 @@ The decision process is part of the Gitlab data and is auditable.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../../2021/gitlab-for-bachelor-students&#34;&gt;GitLab for Bachelor Students&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Gitlab for Bachelor Students</title>
-      <link>https://blog.tangly.net/blog/2021/gitlab-for-bachelor-students/</link>
-      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/gitlab-for-bachelor-students/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_gitlab_for_bachelor_students&#34;&gt;Gitlab for Bachelor Students&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-01-03-head.jpg&#34; alt=&#34;720&#34; width=&#34;480&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Computer science students shall be proficient with a basic set of software development techniques.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Technical excellence&lt;/em&gt; is a mandatory skill for all software developers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Agile development approaches&lt;/em&gt; are state of the industry and used in almost all software development initiatives.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;DevOps&lt;/em&gt; approaches are used in modern organizations.
-They predate agile development approaches.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Technical schools should provide an in-depth experience in these areas to prepare their students for their future activities after completing their bachelor.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The below mind map consolidates concepts, tools and approaches based on the &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt; tooling established in some universities.
-The approach emphasizes &lt;strong&gt;agile&lt;/strong&gt; and &lt;strong&gt;DevOps&lt;/strong&gt; concepts and approaches.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/students-proficiencies.svg&#34; alt=&#34;students proficiencies&#34; width=&#34;1317&#34; height=&#34;943&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Italic terms identify concrete tools.
-Green font marks Gitlab features.
-Light blue background concepts map to technical university guidelines.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You should develop software applications using agile and DevOps techniques.
-You shall put your source code under a version management system.
-The actual industrial standard is &lt;a href=&#34;https://git-scm.com/&#34;&gt;git&lt;/a&gt;, a distributed version control system - &lt;a href=&#34;https://en.wikipedia.org/wiki/Distributed_version_control&#34;&gt;DVCS&lt;/a&gt; -.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;More sophisticated source code management systems based on git with additional agile and DevOps functionalities are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; is a closed source solution and most well-known solution.
-Microsoft acquired them in 2020.
-Some Swiss technical universities - ZHAW, University of Bern - use the academic GitHub campus program.
-CI and CD pipelines are not part of the GitHub product and must be installed separately.
-The academic program means you receive GitHub licenses.
-Your organization is responsible for running the software on the premises.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://about.gitlab.com/&#34;&gt;Gitlab&lt;/a&gt; is an open source solution and strong contender to GitHub.
-CI and CD pipelines are part of the product.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://bitbucket.org/dashboard/overview&#34;&gt;Bitbucket&lt;/a&gt; is a closed source solution of Atlassian.
-CI and CD pipelines are part of the product.
-Atlassian also owns JIRA, Confluence and Trello.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/services/devops/&#34;&gt;Azure Devops&lt;/a&gt; is a closed source solution and Microsoft answers to .NET development.
-CI and CD pipelines access is under definition by Microsoft.
-They slowly open their product to additional development stacks such as Java, Python.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://gitea.io/&#34;&gt;Gitea&lt;/a&gt; is a community-managed lightweight code hosting solution written in Go.
-The project is hosed on GitHub.
-It is published under the MIT license.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://gogs.io/&#34;&gt;Gogs&lt;/a&gt; is a painless self-hosted Git service.
-The project is hosed on GitHub.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://gitolite.com/&#34;&gt;Gitolite&lt;/a&gt; allows you to set up git hosting on a central server.
-It has fine-grained access control and many more powerful features.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Schools often select &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt; due to his open source license and the tremendous DevOps functionality.
-The gitlab solution supports source code versioning, DevOps pipelines, agile development approaches, and quality insurance for the produced artifacts.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock note&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The technical university of Lucerne &lt;a href=&#34;https://www.hslu.ch/en/&#34;&gt;HSLU&lt;/a&gt; has selected &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;the GitLab&lt;/a&gt; platform as the standard DevOps environment.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Well-known companies in Switzerland such as Roche Diagnostics, UBS&lt;a href=&#34;#ubs-gitlab&#34;&gt;[1]&lt;/a&gt;, Siemens&lt;a href=&#34;#siemens-gitlab&#34;&gt;[2]&lt;/a&gt; have also standardized on this platform.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Our students can more easily bridge between academical teachings and industrial practices and acquire deeper understanding of DevOps and agile practices.
-Semester and bachelor theses are easier to realize through the use of known software development tool chains.
-Students can concentrate on the content of their thesis.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_basic_git_knowledge_for_students&#34;&gt;Basic Git Knowledge for Students&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Studying the history of software development practices shows the raise and fall of &lt;a href=&#34;https://en.wikipedia.org/wiki/Source_Code_Control_System&#34;&gt;SCCS&lt;/a&gt;,
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Concurrent_Versions_System&#34;&gt;CVS&lt;/a&gt;, ClearCase, Visual Source Safe, or
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Apache_Subversion&#34;&gt;Subversion&lt;/a&gt;.
-The current most popular and used tool is &lt;a href=&#34;https://en.wikipedia.org/wiki/Git&#34;&gt;Git&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Any software developer or web designer can create a git hosted project with a few commands in the shell.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock note&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Linux distributions often include the git application.
-If not use the package manager to download and install the git tools.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;MacOS users should use &lt;a href=&#34;https://brew.sh/&#34;&gt;homebrew&lt;/a&gt; as a package manager.
-Homebrew can download and install a huge set of Unix packages.To install git, you just have to execute &lt;em&gt;brew install git&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The huge advantage of package managers is the update function to install new versions of your applications without any configuration activities.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You are a Windows user you can find a Windows package on the &lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;git home page&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Git has 3 different &lt;em&gt;areas&lt;/em&gt; for your code:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Working directory&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The area that you will be doing all of your work in (creating, editing, deleting, and organizing files).&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Staging area&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The area where you will list the changes that you have made to the working directory.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Repository&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Where Git permanently stores the changes you have made as different versions of the project.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;git init &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-git clone https://gitlab.enterpriselab.ch/tangly/tangly-os.git &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-
-git add README.md &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-git add &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;*&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
-
-git commit &lt;span style=&#34;color: #000080&#34;&gt;-m&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;commit message, should be clear and legible&amp;#34;&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;5&#34;&gt;&lt;/i&gt;&lt;b&gt;(5)&lt;/b&gt;
-git push &lt;i class=&#34;conum&#34; data-value=&#34;6&#34;&gt;&lt;/i&gt;&lt;b&gt;(6)&lt;/b&gt;
-git pull &lt;i class=&#34;conum&#34; data-value=&#34;7&#34;&gt;&lt;/i&gt;&lt;b&gt;(7)&lt;/b&gt;
-
-git status &lt;i class=&#34;conum&#34; data-value=&#34;8&#34;&gt;&lt;/i&gt;&lt;b&gt;(8)&lt;/b&gt;
-git remote &lt;i class=&#34;conum&#34; data-value=&#34;9&#34;&gt;&lt;/i&gt;&lt;b&gt;(9)&lt;/b&gt;
-git &lt;span style=&#34;color: #000080&#34;&gt;--version&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;10&#34;&gt;&lt;/i&gt;&lt;b&gt;(10)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;colist arabic&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;Create&lt;/strong&gt; a new repository for the root folder of your project, the folder &lt;em&gt;.git&lt;/em&gt; is created and contains all the git tracking information.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;Clone&lt;/strong&gt; the repository &lt;em&gt;tangly-os&lt;/em&gt; and copy all files into the current folder.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Add the README file to git.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Add all files to git.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;5&#34;&gt;&lt;/i&gt;&lt;b&gt;5&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Commit files.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;6&#34;&gt;&lt;/i&gt;&lt;b&gt;6&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Push files to the remote repository you cloned in step 2.
-Your changes are now public and available to other developers.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;7&#34;&gt;&lt;/i&gt;&lt;b&gt;7&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Pull files from the remote repository you cloned in step 2.
-Your local repository contains the last public changes of other developers.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;8&#34;&gt;&lt;/i&gt;&lt;b&gt;8&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Returns status information about your local project.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;9&#34;&gt;&lt;/i&gt;&lt;b&gt;9&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Returns the list of remote repositories your project is connected to.
-Often you have just one remote to synchronize with.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;10&#34;&gt;&lt;/i&gt;&lt;b&gt;10&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Displays the version of your git installation.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;See our blog &lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient&#34;&gt;Git Local Repositories For the Impatient&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;See our blog &lt;a href=&#34;../../2016/git-branches-for-the-impatient&#34;&gt;Git Branches for the Impatient&lt;/a&gt; for more advanced commands.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_ci_pipelines_for_students&#34;&gt;CI Pipelines for Students&lt;/h3&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-01-03-cicd_pipeline.png&#34; alt=&#34;720&#34; width=&#34;480&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The minimal gradle build file of a Java project is very simple and compact&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;gradle&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;apply&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;plugin:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;java&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Multi-module Gradle build file requires an additional &lt;em&gt;gradle.settings&lt;/em&gt; file identifying your modules.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;gradle&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;net.tangly.bdd&amp;#39;&lt;/span&gt;
-&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;net.tangly.bus&amp;#39;&lt;/span&gt;
-&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;net.tangly.commons&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The initial build file for each module is the same as for a minimal gradle project.
-You can now compile, test and check your application.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;gradle build &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-gradle &lt;span style=&#34;color: #0086B3&#34;&gt;test &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-&lt;/span&gt;gradle check &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-gradle clean &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;colist arabic&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Compile the simple or multi-module Java project.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Execute the unit tests of the project.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Perform static analysis checks if you define them.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Clean the output folders and delete all generated files.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You are now ready to create a complete continuous integration pipeline of your project in gitlab.
-A complete &lt;em&gt;.gitlab-ci.yml&lt;/em&gt; configuration for a gradle project would be:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color: #008080&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;openjdk:15&lt;/span&gt;
-
-&lt;span style=&#34;color: #008080&#34;&gt;variables&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt;
-
-&lt;span style=&#34;color: #008080&#34;&gt;before_script&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt;
-  &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;export GRADLE_USER_HOME=`pwd`/.grade&lt;/span&gt;
-
-&lt;span style=&#34;color: #008080&#34;&gt;stages&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt;
-  &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;build&lt;/span&gt;
-  &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;test&lt;/span&gt;
-
-&lt;span style=&#34;color: #008080&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt;
-  &lt;span style=&#34;color: #008080&#34;&gt;stage&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;build&lt;/span&gt;
-  &lt;span style=&#34;color: #008080&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;./gradlew --build-cache assemble&lt;/span&gt;
-  &lt;span style=&#34;color: #008080&#34;&gt;cache&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt;
-    &lt;span style=&#34;color: #008080&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;$CI_COMMIT_REF_NAME&amp;#34;&lt;/span&gt;
-    &lt;span style=&#34;color: #008080&#34;&gt;policy&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;push&lt;/span&gt;
-    &lt;span style=&#34;color: #008080&#34;&gt;paths&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt;
-      &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;build&lt;/span&gt;
-      &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;.gradle&lt;/span&gt;
-
-&lt;span style=&#34;color: #008080&#34;&gt;test&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt;
-  &lt;span style=&#34;color: #008080&#34;&gt;stage&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;test&lt;/span&gt;
-  &lt;span style=&#34;color: #008080&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;./gradlew check&lt;/span&gt;
-  &lt;span style=&#34;color: #008080&#34;&gt;cache&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt;
-    &lt;span style=&#34;color: #008080&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;$CI_COMMIT_REF_NAME&amp;#34;&lt;/span&gt;
-    &lt;span style=&#34;color: #008080&#34;&gt;policy&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;pull&lt;/span&gt;
-    &lt;span style=&#34;color: #008080&#34;&gt;paths&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;:&lt;/span&gt;
-      &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;build&lt;/span&gt;
-      &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;.gradle&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_java_development_environment&#34;&gt;Java Development Environment&lt;/h3&gt;
-&lt;div class=&#34;admonitionblock warning&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-warning&#34; title=&#34;Warning&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Please prefer workstation powered with Linux or macOS if you are developing in Java, Groovy or Python.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You will be more efficient and avoid all the problems related to virus scanners, missing packages or arcane path length problems.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;Install the latest LTS JDK and the latest JDK on your workstation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Install IntelliJ IDEA IDE.
-Students can request a student license and work with the Ultimate edition.
-The community edition is free for everybody.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use the static analysis function of the IntelliJ IDEA has a static analysis feature.&lt;/p&gt;
-&lt;div class=&#34;olist loweralpha&#34;&gt;
-&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;Select the file or package to inspect in the project view.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click the right mouse button to display the context menu and select the menu item &lt;em&gt;Analyze/Inspect Code…​&lt;/em&gt;.
-The findings will teach you how to write better Java code and eliminate common errors.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Install Gradle to build your application&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;IntelliJ IDEA environment provides all the tools to work efficiently locally.
-All the tools identified in the above mindmap are supported in IDE and associated plugins.
-Students can work offline and learn the tools in a gentle manner.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The students can use the &lt;a href=&#34;https://www.jetbrains.com/help/idea/running-inspections.html&#34;&gt;IDEA Static Code Analyzer&lt;/a&gt; without any additional configuration.
-The quality is good enough and the feature empowers junior developers to learn modern and correct Java code.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;More advanced scenarios use &lt;a href=&#34;https://spotbugs.github.io/&#34;&gt;SpotBugs&lt;/a&gt; and the associated IDEA plugin.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_to_write_unit_tests_for_a_java_application&#34;&gt;How to Write Unit Tests for a Java Application&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You should write unit and integration tests for your Java application using:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://junit.org/junit5/&#34;&gt;JUnit 5&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://site.mockito.org/&#34;&gt;Mockito&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://assertj.github.io/doc/&#34;&gt;AssertJ&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_to_document_your_project&#34;&gt;How to Document Your Project&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Static code generators are becoming the standard approach for technical documentation.
-One huge advantage is you can check the whole documentation into your git repository.
-You have a synchronisation between a released version of your application and the corresponding documentation.
-Both are stored in the same repository and can be marked with a version label You can use:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;Markdown&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciidoc.org/&#34;&gt;AsciiDoc&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;IntelliJ has native support for markdown and an excellent plugin for Asciidoc.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Gitlab provides the &lt;a href=&#34;https://docs.gitlab.com/ee/user/project/pages/&#34;&gt;Pages&lt;/a&gt; concept to create and publish a complete documentation of a product.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_diagrams&#34;&gt;Diagrams&lt;/h3&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-01-03-diagrams.png&#34; alt=&#34;720&#34; width=&#34;480&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://plantuml.com/&#34;&gt;PlantUML&lt;/a&gt; is a simple and powerful tool for diagramming.
-The tool is compatible with git philosophy and static website generators.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The IntelliJ Asciidoc is used to write technical documentation and to display embedded PlantUML diagrams.
-Asciidoc format has native support for PlantUML diagrams.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Students have training in technical notation such as UML, BPNM, C4 and others.
-They can now apply these notations to their projects using plantUML.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_and_scrum&#34;&gt;Agile and Scrum&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Students have training in agile development and the Scrum framework.
-Gitlab allows them to apply these &lt;a href=&#34;https://about.gitlab.com/solutions/agile-delivery/&#34;&gt;Agile Delivery Concepts&lt;/a&gt; to their semester and bachelor projects.
-Lecturers have access to the agile and Scrum artifacts and can qualify the quality of the work.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_advanced_git_for_complex_team_development&#34;&gt;Advanced Git for Complex Team Development&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Once you master the basic commands, consider learning advanced commands like:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_merge&#34;&gt;Merge&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Merge your branch &lt;em&gt;my-branch&lt;/em&gt; back into &lt;em&gt;trunk&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;git commit –m &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Some commit message&amp;#34;&lt;/span&gt; &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-git checkout trunk &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-&lt;span style=&#34;color: #008080&#34;&gt;$ &lt;/span&gt;git merge my-branch &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;colist arabic&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Develop some code and commit it in the currently selected my-branch.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Switched to branch &lt;em&gt;trunk&lt;/em&gt;.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Merge the branch &lt;em&gt;my-branch&lt;/em&gt; into &lt;em&gt;trunk&lt;/em&gt;.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_rebase&#34;&gt;Rebase&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Rebase trunk into your branch &lt;em&gt;my-branch&lt;/em&gt;.
-Note that after a rebase, the commit ids of the rebased branch are new.
-A rebase is not simply a moving of commits around in history.
-Git actually creates brand-new commits with new commit ids and permanently deletes the old commits.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You should prefer to rebase only with local branches.
-Avoid rebasing shared branches.
-If you rebase a branch that was pulled from GitHub or GitLab, and then push it back, the server will reject it.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;git rebase my-branch trunk&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_squash&#34;&gt;Squash&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Git squash is a technique that helps you to take a series of commits and condense it to a few commits.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;So let’s see how to squash the last three commits to a single commit.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;git rebase &lt;span style=&#34;color: #000080&#34;&gt;-i&lt;/span&gt; HEAD~3&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The following content will be shown:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;pick 474bfdc2 3rd last commit
-pick 1bffc15c 2nd last commit
-pick 474bf0c2 last commit&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;For the commits that you want to squash, replace the pick instruction with fixup, so it becomes:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;fixup 474bfdc2 3rd last commit
-fixup 1bffc15c 2nd last commit
-pick 474bf0c2 last commit&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_cherry_picking&#34;&gt;Cherry Picking&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Cherry-picking in Git means choosing a commit from one branch and applying it onto another.
-This is in contrast with other ways such as &lt;em&gt;merge&lt;/em&gt; and &lt;em&gt;rebase&lt;/em&gt; which normally apply many commits onto another branch.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can display the hashes of your commits in the &lt;em&gt;trunk&lt;/em&gt; with the command:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;git log &lt;span style=&#34;color: #000080&#34;&gt;--oneline&lt;/span&gt; trunk&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Now you can cherry-pick the commit you are interested in and apply it into your branch.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;git checkout my-branch
-git cherry-pick &amp;lt;commit-hash&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_local_and_remote_branch&#34;&gt;Local and Remote Branch&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Read the post &lt;a href=&#34;../../2016/git-branches-for-the-impatient&#34;&gt;Git Branches for the Impatient&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_pull_request&#34;&gt;Pull Request&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Read the documentation of GitLab, BitBucket or GitHub.
-You will use pull requests if you are working in a team for a project.
-Sadly, students rareley work teams during their studies.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
-&lt;div class=&#34;ulist bibliography&#34;&gt;
-&lt;ul class=&#34;bibliography&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2020/creating-a-technical-website-with-hugo-and-asciidoc&#34;&gt;Creating a Technical Website with Hugo and AsciiDoc&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2020/support-comments-for-static-hugo-website&#34;&gt;Support Comments For Static Hugo Website&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;ubs-gitlab&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;https://www.inside-it.ch/de/post/ubs-schliesst-den-umzug-in-die-devcloud-ab-20210813&#34;&gt;UBS schliesst Umzug auf GitLab&lt;/a&gt;.
-&lt;a href=&#34;https://www.inside-it.ch/&#34;&gt;inside-it&lt;/a&gt;. 2021-08-13.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;siemens-gitlab&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;https://about.gitlab.com/customers/siemens/&#34;&gt;Siemens GitLab&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
