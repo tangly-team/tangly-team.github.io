@@ -188,7 +188,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.842360474f41f19fb1bbe23fdcc88a37.json"
+  data-offline-search-index-json-src="/offline-search-index.d89bda9e225c51f07aea84c2cd8c6db0.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="50"
 >
@@ -295,7 +295,7 @@ This is the multi-page printable view of this section.
 	<div class="td-byline mb-4">
 		
         
-		<time datetime="2022-10-01" class="text-muted">2022-10-01</time>
+		<time datetime="2022-10-12" class="text-muted">2022-10-12</time>
         
 	</div>
 	
@@ -325,6 +325,398 @@ This is the multi-page printable view of this section.
   
 
 <div class="td-content" style="">
+    <h1 id="pg-bee6a87d974516658c2bb89f6ad5a3fd">Modern Java Constructs</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2022-10-12" class="text-muted">2022-10-12</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_modern_java_constructs">Modern Java Constructs</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2022-10-02-head.jpg" alt="2022 10 02 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Modern Java</strong> is quite a departure from the traditional Java available at the beginning of the millennium.</p>
+</div>
+<div class="paragraph">
+<p>The most visible change is certainly lambda expressions and stream, enabling a more functional programming approach in Java.</p>
+</div>
+<div class="paragraph">
+<p>Functional programming is a paradigm that supports developers to think in terms of functions instead of classes.
+Functions are stateless and without side effects.
+Avoiding state can lead to better software, especially in high-performance, concurrent applications
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
+Functional programming is also a natural fit for multicore parallel programming.
+The paradigm is the best way to squeeze more performance out of modern CPUs.</p>
+</div>
+<div class="paragraph">
+<p>Java Streams library allows algorithms to be coded declaratively meaning the developer specifies what they want, not how they want it.
+This improves code quality because all the plumbing code is handled by the library itself.
+The fluent interface style is just a way to express streams algorithm in one continuous line.</p>
+</div>
+<div class="paragraph">
+<p>Additional modern constructs reduce boiler code and often eliminate known potential errors.</p>
+</div>
+<div class="paragraph">
+<p>Here a set of extensions we use daily in our code.</p>
+</div>
+<div class="paragraph">
+<p>You can find additional examples in the introductory book <em>Java by Comparison</em> [<a href="#java-by-comparison">1</a>] and the more advanced <em>Effective Java</em> [<a href="#effective-java-3rd">2</a>].</p>
+</div>
+<div class="sect2">
+<h3 id="_try_with_closeable_resources">Try with Closeable Resources</h3>
+<div class="paragraph">
+<p>Automatic resource management was introduced in Java 7 in 2011.
+Better handling of final variables was added in Java 9 in 2017.
+Local variable type inference with the <em>var</em> keyword was added to Java 10 in March 2018.</p>
+</div>
+<div class="paragraph">
+<p>The <em>AutoCloseable</em> interface is the API extension you should use to declare any resource type in your solution.</p>
+</div>
+<div class="paragraph">
+<p>A nice feature of the solution is the support of suppressed exception hierarchy to access all exceptions potentially thrown during the closing operations.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java">    <span style="color: #000000;font-weight: bold">try</span> <span style="color: #000000;font-weight: bold">(</span><span style="color: #445588;font-weight: bold">Writer</span> <span style="background-color: #f8f8f8">writer</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #445588;font-weight: bold">Files</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">newBufferedWriter</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">path</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #445588;font-weight: bold">StandardCharsets</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">UTF_8</span><span style="color: #000000;font-weight: bold">))</span> <span style="color: #000000;font-weight: bold">{</span>   <i class="conum" data-value="1"></i><b>(1)</b>
+            <span style="background-color: #f8f8f8">writer</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">write</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">features</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">toString</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #009999">4</span><span style="color: #000000;font-weight: bold">));</span>
+    <span style="color: #000000;font-weight: bold">}</span>                                                                               <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Declares an auto-closeable resource in the block context.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The auto-closeable resource is closed by Java runtime when leaving the block either through regular flow or when an exception is thrown.
+The programmer can never forget to close the resource.</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_streams">Streams</h3>
+<div class="paragraph">
+<p>You shall always use streams to manipulate data collections.
+Stream operators support similar functionality as SQL dialects.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java"><span style="color: #000000;font-weight: bold">public</span> <span style="color: #445588;font-weight: bold">String</span> <span style="color: #990000;font-weight: bold">firstname</span><span style="color: #000000;font-weight: bold">()</span> <span style="color: #000000;font-weight: bold">{</span>
+    <span style="color: #000000;font-weight: bold">return</span> <span style="background-color: #f8f8f8">card</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">getProperties</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #445588;font-weight: bold">Property</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">Id</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">FN</span><span style="color: #000000;font-weight: bold">).</span><span style="color: #008080">stream</span><span style="color: #000000;font-weight: bold">()</span>
+            <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">map</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #990000;font-weight: bold">Property:</span><span style="color: #000000;font-weight: bold">:</span><span style="background-color: #f8f8f8">getValue</span><span style="color: #000000;font-weight: bold">)</span>
+            <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">map</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">o</span> <span style="color: #000000;font-weight: bold">-&gt;</span> <span style="background-color: #f8f8f8">o</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">split</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#34;;&#34;</span><span style="color: #000000;font-weight: bold">)[</span><span style="color: #009999">1</span><span style="color: #000000;font-weight: bold">])</span>
+            <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">findAny</span><span style="color: #000000;font-weight: bold">()</span>
+            <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">orElse</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #000000;font-weight: bold">null</span><span style="color: #000000;font-weight: bold">);</span>
+    <span style="color: #000000;font-weight: bold">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sequences of values are also streams.
+Simply use the <em>Stream.iterate(…​)</em> method.
+Therefore, a <em>for</em> loop is easily transformed into a stream of operations.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Most imperative operations, such as conditional and loop statements, can be rewritten as stream operators.</p>
+</div>
+<div class="paragraph">
+<p>Streams are often more legible and compact.
+The approach moves the developers from imperative programming to a more functional programming style.</p>
+</div>
+<div class="paragraph">
+<p>Modern Java code has seldom loops and conditional statements.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_functional_programming">Functional Programming</h3>
+<div class="paragraph">
+<p>Null values are acknowledged as a language design fault in modern software engineering.</p>
+</div>
+<div class="paragraph">
+<p>You should never return a null value from any method.
+Either you give back an empty collection or an optional object for single values.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java"><span style="color: #445588;font-weight: bold">Optional</span><span style="color: #000000;font-weight: bold">&lt;</span><span style="color: #445588;font-weight: bold">Organization</span><span style="color: #000000;font-weight: bold">&gt;</span> <span style="color: #990000;font-weight: bold">findOrganizationById</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #445588;font-weight: bold">String</span> <span style="background-color: #f8f8f8">identifier</span><span style="color: #000000;font-weight: bold">)</span> <span style="color: #000000;font-weight: bold">{</span>                            <i class="conum" data-value="1"></i><b>(1)</b>
+    <span style="color: #000000;font-weight: bold">return</span> <span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">identifier</span> <span style="color: #000000;font-weight: bold">!=</span> <span style="color: #000000;font-weight: bold">null</span><span style="color: #000000;font-weight: bold">)</span> <span style="color: #000000;font-weight: bold">?</span>
+                <span style="color: #445588;font-weight: bold">Provider</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">findById</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">realm</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">organizations</span><span style="color: #000000;font-weight: bold">(),</span> <span style="background-color: #f8f8f8">identifier</span><span style="color: #000000;font-weight: bold">)</span> <span style="color: #000000;font-weight: bold">:</span> <span style="color: #445588;font-weight: bold">Optional</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">empty</span><span style="color: #000000;font-weight: bold">();</span>
+<span style="color: #000000;font-weight: bold">}</span>
+
+<span style="color: #445588;font-weight: bold">Collection</span><span style="color: #000000;font-weight: bold">&lt;</span><span style="color: #445588;font-weight: bold">Split</span><span style="color: #000000;font-weight: bold">&gt;</span> <span style="background-color: #f8f8f8">splites</span><span style="color: #000000;font-weight: bold">{</span>
+        <span style="color: #000000;font-weight: bold">this</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">splits</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">splits</span> <span style="color: #000000;font-weight: bold">!=</span> <span style="color: #000000;font-weight: bold">null</span><span style="color: #000000;font-weight: bold">)</span> <span style="color: #000000;font-weight: bold">?</span> <span style="color: #445588;font-weight: bold">List</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">copyOf</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">splits</span><span style="color: #000000;font-weight: bold">)</span> <span style="color: #000000;font-weight: bold">:</span> <span style="color: #445588;font-weight: bold">Collections</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">emptyList</span><span style="color: #000000;font-weight: bold">();</span>     <i class="conum" data-value="2"></i><b>(2)</b>
+    <span style="color: #000000;font-weight: bold">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Returns an optional with a value if found or an empty optional.
+The optional can be processed as a stream instead of using a conditional statement.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>returns either a list of items or an empty list.
+The result can be processed as a stream instead of using a conditional statement.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Streams provide the <em>flatmap</em> operator to elegantly handle optional values in collection processing.</p>
+</div>
+<div class="paragraph">
+<p>Remember that <em>Optional&lt;T&gt;</em> is almost an implementation of a monad.
+Time to study the concepts of functional programming and lambda calculus [<a href="#functional-programming-java">3</a>].</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You are really starting to program using functional programming idioms if you:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>pass lambda expressions or single abstract method <em>SAM</em> instances as parameters of some methods.</p>
+</li>
+<li>
+<p>return lambda expressions or single abstract method <em>SAM</em> instances in some methods.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Just scan your code and find out how often you write such constructs.</p>
+</div>
+<div class="paragraph">
+<p>Explore the <em>java.util.function</em> package to increase your functional programming skills.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pattern_matching">Pattern Matching</h3>
+<div class="paragraph">
+<p>Pattern matching is another approach for functional programming.
+New versions of Java support more related constructs.</p>
+</div>
+<div class="paragraph">
+<p>The extension of the <em>switch</em> statement into a powerful <em>switch</em> <strong>expression</strong> was a game changer.</p>
+</div>
+<div class="paragraph">
+<p>Pattern matching supports:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select a transformation based on the variable type using the <em>instanceof</em> operator.
+The simplified and type-aware variable declaration is provided.</p>
+</li>
+<li>
+<p>Refine the selection though <em>when</em> clause to differentiate the transformation.</p>
+</li>
+<li>
+<p>Record deconstruction gives access to field variables without having to call accessor methods.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java"></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_records_and_sealed_types">Records and Sealed Types</h3>
+<div class="paragraph">
+<p>Sealed types perfectly model a closed inheritance hierarchy.
+You can control your bounded domain and inhibit any client to change it.</p>
+</div>
+<div class="paragraph">
+<p>Records are immutable objects.
+Records are the perfect construct to implement value objects as described in domain-driven design.</p>
+</div>
+<div class="paragraph">
+<p>Business logic is implemented as additional methods.
+The fact that the value objects are also immutable makes the business operations both thread-safe and side effect free.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java"><span style="color: #000000;font-weight: bold">public</span> <span style="background-color: #f8f8f8">sealed</span> <span style="color: #000000;font-weight: bold">interface</span> <span style="color: #445588;font-weight: bold">LList</span><span style="color: #000000;font-weight: bold">&lt;</span><span style="color: #008080">T</span><span style="color: #000000;font-weight: bold">&gt;</span> <span style="background-color: #f8f8f8">permits</span> <span style="color: #445588;font-weight: bold">LList</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">Nil</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #445588;font-weight: bold">LList</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">ImmutableList</span> <span style="color: #000000;font-weight: bold">{</span>
+    <span style="color: #445588;font-weight: bold">boolean</span> <span style="color: #990000;font-weight: bold">isEmpty</span><span style="color: #000000;font-weight: bold">();</span>
+    <span style="color: #008080">T</span> <span style="color: #990000;font-weight: bold">first</span><span style="color: #000000;font-weight: bold">();</span>
+    <span style="color: #445588;font-weight: bold">LList</span><span style="color: #000000;font-weight: bold">&lt;</span><span style="color: #008080">T</span><span style="color: #000000;font-weight: bold">&gt;</span> <span style="color: #990000;font-weight: bold">rest</span><span style="color: #000000;font-weight: bold">();</span>
+<span style="color: #000000;font-weight: bold">}</span>
+
+<span style="background-color: #f8f8f8">record</span> <span style="color: #445588;font-weight: bold">ImmutableList</span><span style="color: #000000;font-weight: bold">&lt;</span><span style="color: #008080">T</span><span style="color: #000000;font-weight: bold">&gt;(</span><span style="color: #3c5d5d;font-weight: bold">@NotNull</span> <span style="color: #008080">T</span> <span style="background-color: #f8f8f8">first</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #3c5d5d;font-weight: bold">@NotNull</span> <span style="color: #445588;font-weight: bold">LList</span><span style="color: #000000;font-weight: bold">&lt;</span><span style="color: #008080">T</span><span style="color: #000000;font-weight: bold">&gt;</span> <span style="background-color: #f8f8f8">rest</span><span style="color: #000000;font-weight: bold">)</span> <span style="color: #000000;font-weight: bold">implements</span> <span style="color: #445588;font-weight: bold">LList</span><span style="color: #000000;font-weight: bold">&lt;</span><span style="color: #008080">T</span><span style="color: #000000;font-weight: bold">&gt;</span> <span style="color: #000000;font-weight: bold">{</span>
+        <span style="color: #3c5d5d;font-weight: bold">@Override</span>
+        <span style="color: #000000;font-weight: bold">public</span> <span style="color: #445588;font-weight: bold">boolean</span> <span style="color: #990000;font-weight: bold">isEmpty</span><span style="color: #000000;font-weight: bold">()</span> <span style="color: #000000;font-weight: bold">{</span>
+            <span style="color: #000000;font-weight: bold">return</span> <span style="color: #000000;font-weight: bold">false</span><span style="color: #000000;font-weight: bold">;</span>
+        <span style="color: #000000;font-weight: bold">}</span>
+
+        <span style="color: #3c5d5d;font-weight: bold">@Override</span>
+        <span style="color: #000000;font-weight: bold">public</span> <span style="color: #445588;font-weight: bold">String</span> <span style="color: #990000;font-weight: bold">toString</span><span style="color: #000000;font-weight: bold">()</span> <span style="color: #000000;font-weight: bold">{</span>
+            <span style="color: #000000;font-weight: bold">return</span> <span style="color: #990000;font-weight: bold">first</span><span style="color: #000000;font-weight: bold">()</span> <span style="color: #000000;font-weight: bold">+</span> <span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">rest</span><span style="color: #000000;font-weight: bold">().</span><span style="color: #008080">isEmpty</span><span style="color: #000000;font-weight: bold">()</span> <span style="color: #000000;font-weight: bold">?</span> <span style="color: #d14">&#34;&#34;</span> <span style="color: #000000;font-weight: bold">:</span> <span style="color: #d14">&#34;, &#34;</span> <span style="color: #000000;font-weight: bold">+</span> <span style="background-color: #f8f8f8">rest</span><span style="color: #000000;font-weight: bold">());</span>
+        <span style="color: #000000;font-weight: bold">}</span>
+<span style="color: #000000;font-weight: bold">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Factory methods can automatically be created using <a href="https://projectlombok.org/">Lombok</a> annotations.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_modules">Modules</h3>
+<div class="paragraph">
+<p>Modules were introduced with Java 9, which was released in September 2017.</p>
+</div>
+<div class="paragraph">
+<p>A module is a group of closely related packages and resources along with a new module descriptor file.</p>
+</div>
+<div class="paragraph">
+<p>When we create a module, we include a descriptor file that defines several aspects of our new module [<a href="#java-9-modularity">4</a>]:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Name</dt>
+<dd>
+<p>the name of our module.</p>
+</dd>
+<dt class="hdlist1">Dependencies</dt>
+<dd>
+<p>a list of other modules that this module depends on.</p>
+</dd>
+<dt class="hdlist1">Public Packages</dt>
+<dd>
+<p>a list of all packages we want accessible from outside the module.</p>
+</dd>
+<dt class="hdlist1">Services Offered</dt>
+<dd>
+<p>we can provide service implementations that can be consumed by other modules.</p>
+</dd>
+<dt class="hdlist1">Services Consumed</dt>
+<dd>
+<p>allow the current module to be a consumer of a service.</p>
+</dd>
+<dt class="hdlist1">Reflection Permissions</dt>
+<dd>
+<p>explicitly allows other classes to use reflection to access the private members of a package.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The approach describes in plain Java the coupling and cohesion principles.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java"><span style="background-color: #f8f8f8">module</span> <span style="background-color: #f8f8f8">net</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">tangly</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">fsm</span> <span style="color: #000000;font-weight: bold">{</span>
+    <span style="background-color: #f8f8f8">exports</span> <span style="background-color: #f8f8f8">net</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">tangly</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">fsm</span><span style="color: #000000;font-weight: bold">;</span>
+    <span style="background-color: #f8f8f8">exports</span> <span style="background-color: #f8f8f8">net</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">tangly</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">fsm</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">dsl</span><span style="color: #000000;font-weight: bold">;</span>
+    <span style="background-color: #f8f8f8">exports</span> <span style="background-color: #f8f8f8">net</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">tangly</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">fsm</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">utilities</span><span style="color: #000000;font-weight: bold">;</span>
+    <span style="background-color: #f8f8f8">exports</span> <span style="background-color: #f8f8f8">net</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">tangly</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">fsm</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">eventbus</span><span style="color: #000000;font-weight: bold">;</span>
+    <span style="background-color: #f8f8f8">exports</span> <span style="background-color: #f8f8f8">net</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">tangly</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">fsm</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">eventbus</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">imp</span><span style="color: #000000;font-weight: bold">;</span>
+
+    <span style="background-color: #f8f8f8">requires</span> <span style="background-color: #f8f8f8">org</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">apache</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">logging</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">log4j</span><span style="color: #000000;font-weight: bold">;</span>
+    <span style="background-color: #f8f8f8">requires</span> <span style="color: #000000;font-weight: bold">static</span> <span style="background-color: #f8f8f8">transitive</span> <span style="background-color: #f8f8f8">org</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">jetbrains</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">annotations</span><span style="color: #000000;font-weight: bold">;</span>
+<span style="color: #000000;font-weight: bold">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_goodies">Goodies</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="https://openjdk.org/projects/loom//">Loom</a> Threads</dt>
+<dd>
+<p>Java 19 introduces lightweight threads in the library.
+You can now program massively multithreaded applications with hundreds of thousands of threads without taxing the JVM or the operating system.</p>
+</dd>
+<dt class="hdlist1"><a href="https://openjdk.org/jeps/413/">JavaDoc code snippets</a></dt>
+<dd>
+<p>Code examples in your java documentation are declared as a code snippet in a regular Java class.
+Your unit tests ensure that all your documented code snippets compile and run without trouble.</p>
+</dd>
+<dt class="hdlist1">JShell</dt>
+<dd>
+<p>You have access to a Read-Evaluate-Print Loop <em>REPL</em> to test new Java code.</p>
+</dd>
+<dt class="hdlist1"><a href="https://openjdk.org/jeps/426/">Vector Optimizations</a></dt>
+<dd>
+<p>You have access to the SIMD modules in your CPU directly from your Java code.
+Speed-ups can be tremendous.
+The code is still portable for all supported Java platforms.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="paragraph">
+<p><a id="java-by-comparison"></a>[1] S. Harrer, J. Lenhard, and L. Dietz, <em>Java By Comparison</em>. Pragmatic Bookshelf, 2018 [Online]. Available: <a href="https://www.amazon.com/dp/B07CLFTVZS" class="bare">https://www.amazon.com/dp/B07CLFTVZS</a></p>
+</div>
+<div class="paragraph">
+<p><a id="effective-java-3rd"></a>[2] J. Bloch, <em>Effective Java</em>, Third. Addison-Wesley Professional, 2017 [Online]. Available: <a href="https://www.amazon.com/dp/B078H61SCH" class="bare">https://www.amazon.com/dp/B078H61SCH</a></p>
+</div>
+<div class="paragraph">
+<p><a id="functional-programming-java"></a>[3] V. Subramaniam, <em>Functional Programming In Java Harnessing The Power Of Java 8 Lambda Expressions</em>. The Pragmatic Programmers, 2014 [Online]. Available: <a href="https://www.amazon.com/dp/B00J8W0OTI" class="bare">https://www.amazon.com/dp/B00J8W0OTI</a></p>
+</div>
+<div class="paragraph">
+<p><a id="java-9-modularity"></a>[4] S. Mak, <em>Java 9 Modularity</em>. O’Reilly Media, 2017 [Online]. Available: <a href="https://www.amazon.com/dp/1491954167" class="bare">https://www.amazon.com/dp/1491954167</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. The <em>record</em> construct was added to Java 15 in March 2020. Records are shallow immutable objects. You can use them in pure functions to avoid unwanted side effects.
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
     <h1 id="pg-502b287857c1a5217c11257512542324">Vaadin</h1>
 	
 	<div class="td-byline mb-4">
@@ -2090,7 +2482,7 @@ Marcel Baumann. 2016</p>
 <p><a id="leading-quietly"></a>[18] J. Badaracco, <em>Leading Quietly</em>. Harvard Business School Press, 2002 [Online]. Available: <a href="https://www.amazon.com/dp/B005DI8XSK" class="bare">https://www.amazon.com/dp/B005DI8XSK</a></p>
 </div>
 <div class="paragraph">
-<p><a id="smart-leaders-smarter-teams"></a>[19] R. M. Schwarz, <em>Smart Leaders, Smarter Teams : How You and Your Team Get Unstuck to Get Results</em>. Wiley-Interscience, p. 272 [Online]. Available: <a href="https://www.amazon.com/dp/0787988731" class="bare">https://www.amazon.com/dp/0787988731</a></p>
+<p><a id="smart-leaders-smarter-teams"></a>[19] R. M. Schwarz, <em>Smart Leaders, Smarter Teams : How You and Your Team Get Unstuck to Get Results</em>. Wiley-Interscience [Online]. Available: <a href="https://www.amazon.com/dp/0787988731" class="bare">https://www.amazon.com/dp/0787988731</a></p>
 </div>
 <div class="paragraph">
 <p><a id="gold-mine"></a>[20] F. Ballé and M. Ballé, <em>The Gold Mine</em>. Lean Enterprises Inst Inc, 2005 [Online]. Available: <a href="https://www.amazon.com/dp/0974322563" class="bare">https://www.amazon.com/dp/0974322563</a></p>
@@ -25754,7 +26146,7 @@ I am still recovering from the missing quality.</em></p>
 <p><a id="succeeding-with-agile"></a>[7] M. Cohn, <em>Succeeding with agile</em>. Addison-Wesley, 2010 [Online]. Available: <a href="https://www.amazon.com/dp/0321579364" class="bare">https://www.amazon.com/dp/0321579364</a></p>
 </div>
 <div class="paragraph">
-<p><a id="pragmatic-programmer-2nd"></a>[8] D. Thomas and A. Hunt, <em>The Pragmatic Programmer  - 20th Anniversary Edition</em>, Second. Addison Wesley, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135957052" class="bare">https://www.amazon.com/dp/0135957052</a></p>
+<p><a id="pragmatic-programmer-2nd"></a>[8] D. Thomas and A. Hunt, <em>The Pragmatic Programmer - 20th Anniversary Edition</em>, Second. Addison Wesley, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135957052" class="bare">https://www.amazon.com/dp/0135957052</a></p>
 </div>
 </div>
 </div>
@@ -26405,7 +26797,7 @@ How you do it is up to you.</p>
 <p><a id="refactoring"></a>[9] M. Fowler, <em>Refactoring</em>, Second. Addision-Wesley, 2018 [Online]. Available: <a href="https://www.amazon.com/dp/0134757599" class="bare">https://www.amazon.com/dp/0134757599</a></p>
 </div>
 <div class="paragraph">
-<p><a id="pragmatic-programmer-2nd"></a>[10] D. Thomas and A. Hunt, <em>The Pragmatic Programmer  - 20th Anniversary Edition</em>, Second. Addison Wesley, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135957052" class="bare">https://www.amazon.com/dp/0135957052</a></p>
+<p><a id="pragmatic-programmer-2nd"></a>[10] D. Thomas and A. Hunt, <em>The Pragmatic Programmer - 20th Anniversary Edition</em>, Second. Addison Wesley, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135957052" class="bare">https://www.amazon.com/dp/0135957052</a></p>
 </div>
 <div class="paragraph">
 <p><a id="extreme-programmking-explained"></a>[11] K. Beck and C. Andres, <em>Extreme Programming Explained</em>, Second. Addison-Wesley Professional, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321278658" class="bare">https://www.amazon.com/dp/0321278658</a></p>

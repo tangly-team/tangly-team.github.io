@@ -4,7 +4,7 @@
     <link>https://blog.tangly.net/</link>
     <description>Recent content in tangly OS components on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -12,6 +12,384 @@
       
       
     
+    
+    <item>
+      <title>Blog: Modern Java Constructs</title>
+      <link>https://blog.tangly.net/blog/2022/modern-java-constructs/</link>
+      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2022/modern-java-constructs/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_modern_java_constructs&#34;&gt;Modern Java Constructs&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-10-02-head.jpg&#34; alt=&#34;2022 10 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Modern Java&lt;/strong&gt; is quite a departure from the traditional Java available at the beginning of the millennium.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The most visible change is certainly lambda expressions and stream, enabling a more functional programming approach in Java.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Functional programming is a paradigm that supports developers to think in terms of functions instead of classes.
+Functions are stateless and without side effects.
+Avoiding state can lead to better software, especially in high-performance, concurrent applications
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.
+Functional programming is also a natural fit for multicore parallel programming.
+The paradigm is the best way to squeeze more performance out of modern CPUs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java Streams library allows algorithms to be coded declaratively meaning the developer specifies what they want, not how they want it.
+This improves code quality because all the plumbing code is handled by the library itself.
+The fluent interface style is just a way to express streams algorithm in one continuous line.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Additional modern constructs reduce boiler code and often eliminate known potential errors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here a set of extensions we use daily in our code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can find additional examples in the introductory book &lt;em&gt;Java by Comparison&lt;/em&gt; [&lt;a href=&#34;#java-by-comparison&#34;&gt;1&lt;/a&gt;] and the more advanced &lt;em&gt;Effective Java&lt;/em&gt; [&lt;a href=&#34;#effective-java-3rd&#34;&gt;2&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_try_with_closeable_resources&#34;&gt;Try with Closeable Resources&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Automatic resource management was introduced in Java 7 in 2011.
+Better handling of final variables was added in Java 9 in 2017.
+Local variable type inference with the &lt;em&gt;var&lt;/em&gt; keyword was added to Java 10 in March 2018.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;em&gt;AutoCloseable&lt;/em&gt; interface is the API extension you should use to declare any resource type in your solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A nice feature of the solution is the support of suppressed exception hierarchy to access all exceptions potentially thrown during the closing operations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;try&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Writer&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;writer&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Files&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;newBufferedWriter&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;StandardCharsets&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;UTF_8&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;   &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+            &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;writer&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;write&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;features&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;));&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;                                                                               &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Declares an auto-closeable resource in the block context.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The auto-closeable resource is closed by Java runtime when leaving the block either through regular flow or when an exception is thrown.
+The programmer can never forget to close the resource.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_streams&#34;&gt;Streams&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You shall always use streams to manipulate data collections.
+Stream operators support similar functionality as SQL dialects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;firstname&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;card&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;getProperties&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Property&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Id&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;FN&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;stream&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;map&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Property:&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;getValue&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;map&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;o&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;split&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)[&lt;/span&gt;&lt;span style=&#34;color: #009999&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;])&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;findAny&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;orElse&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Sequences of values are also streams.
+Simply use the &lt;em&gt;Stream.iterate(…​)&lt;/em&gt; method.
+Therefore, a &lt;em&gt;for&lt;/em&gt; loop is easily transformed into a stream of operations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Most imperative operations, such as conditional and loop statements, can be rewritten as stream operators.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Streams are often more legible and compact.
+The approach moves the developers from imperative programming to a more functional programming style.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern Java code has seldom loops and conditional statements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_functional_programming&#34;&gt;Functional Programming&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Null values are acknowledged as a language design fault in modern software engineering.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You should never return a null value from any method.
+Either you give back an empty collection or an optional object for single values.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Optional&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Organization&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;findOrganizationById&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;identifier&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;                            &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;identifier&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;?&lt;/span&gt;
+                &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Provider&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;findById&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;realm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;organizations&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;identifier&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Optional&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;empty&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Collection&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Split&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;splites&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;splits&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;splits&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;copyOf&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;splits&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Collections&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;emptyList&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;     &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Returns an optional with a value if found or an empty optional.
+The optional can be processed as a stream instead of using a conditional statement.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;returns either a list of items or an empty list.
+The result can be processed as a stream instead of using a conditional statement.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Streams provide the &lt;em&gt;flatmap&lt;/em&gt; operator to elegantly handle optional values in collection processing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Remember that &lt;em&gt;Optional&amp;lt;T&amp;gt;&lt;/em&gt; is almost an implementation of a monad.
+Time to study the concepts of functional programming and lambda calculus [&lt;a href=&#34;#functional-programming-java&#34;&gt;3&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are really starting to program using functional programming idioms if you:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;pass lambda expressions or single abstract method &lt;em&gt;SAM&lt;/em&gt; instances as parameters of some methods.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;return lambda expressions or single abstract method &lt;em&gt;SAM&lt;/em&gt; instances in some methods.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Just scan your code and find out how often you write such constructs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Explore the &lt;em&gt;java.util.function&lt;/em&gt; package to increase your functional programming skills.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_pattern_matching&#34;&gt;Pattern Matching&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Pattern matching is another approach for functional programming.
+New versions of Java support more related constructs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The extension of the &lt;em&gt;switch&lt;/em&gt; statement into a powerful &lt;em&gt;switch&lt;/em&gt; &lt;strong&gt;expression&lt;/strong&gt; was a game changer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Pattern matching supports:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Select a transformation based on the variable type using the &lt;em&gt;instanceof&lt;/em&gt; operator.
+The simplified and type-aware variable declaration is provided.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Refine the selection though &lt;em&gt;when&lt;/em&gt; clause to differentiate the transformation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Record deconstruction gives access to field variables without having to call accessor methods.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_records_and_sealed_types&#34;&gt;Records and Sealed Types&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Sealed types perfectly model a closed inheritance hierarchy.
+You can control your bounded domain and inhibit any client to change it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Records are immutable objects.
+Records are the perfect construct to implement value objects as described in domain-driven design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Business logic is implemented as additional methods.
+The fact that the value objects are also immutable makes the business operations both thread-safe and side effect free.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;sealed&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;LList&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;permits&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;LList&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;Nil&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;LList&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;ImmutableList&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;boolean&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;isEmpty&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #008080&#34;&gt;T&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;first&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;LList&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;rest&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;record&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ImmutableList&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;(&lt;/span&gt;&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #008080&#34;&gt;T&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;first&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;LList&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;rest&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;implements&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;LList&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@Override&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;boolean&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;isEmpty&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+        &lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@Override&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;first&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;rest&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isEmpty&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;, &amp;#34;&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;rest&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;());&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Factory methods can automatically be created using &lt;a href=&#34;https://projectlombok.org/&#34;&gt;Lombok&lt;/a&gt; annotations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_modules&#34;&gt;Modules&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modules were introduced with Java 9, which was released in September 2017.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A module is a group of closely related packages and resources along with a new module descriptor file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;When we create a module, we include a descriptor file that defines several aspects of our new module [&lt;a href=&#34;#java-9-modularity&#34;&gt;4&lt;/a&gt;]:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Name&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;the name of our module.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Dependencies&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a list of other modules that this module depends on.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Public Packages&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a list of all packages we want accessible from outside the module.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Services Offered&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;we can provide service implementations that can be consumed by other modules.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Services Consumed&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;allow the current module to be a consumer of a service.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Reflection Permissions&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;explicitly allows other classes to use reflection to access the private members of a package.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The approach describes in plain Java the coupling and cohesion principles.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;module&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;net&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;tangly&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;fsm&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;exports&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;net&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;tangly&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;fsm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;exports&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;net&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;tangly&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;fsm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;dsl&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;exports&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;net&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;tangly&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;fsm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;utilities&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;exports&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;net&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;tangly&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;fsm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;eventbus&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;exports&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;net&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;tangly&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;fsm&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;eventbus&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;imp&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;requires&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;org&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;apache&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;logging&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;log4j&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;requires&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;transitive&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;org&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;jetbrains&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;annotations&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_goodies&#34;&gt;Goodies&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://openjdk.org/projects/loom//&#34;&gt;Loom&lt;/a&gt; Threads&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Java 19 introduces lightweight threads in the library.
+You can now program massively multithreaded applications with hundreds of thousands of threads without taxing the JVM or the operating system.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://openjdk.org/jeps/413/&#34;&gt;JavaDoc code snippets&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Code examples in your java documentation are declared as a code snippet in a regular Java class.
+Your unit tests ensure that all your documented code snippets compile and run without trouble.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;JShell&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;You have access to a Read-Evaluate-Print Loop &lt;em&gt;REPL&lt;/em&gt; to test new Java code.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://openjdk.org/jeps/426/&#34;&gt;Vector Optimizations&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;You have access to the SIMD modules in your CPU directly from your Java code.
+Speed-ups can be tremendous.
+The code is still portable for all supported Java platforms.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;java-by-comparison&#34;&gt;&lt;/a&gt;[1] S. Harrer, J. Lenhard, and L. Dietz, &lt;em&gt;Java By Comparison&lt;/em&gt;. Pragmatic Bookshelf, 2018 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B07CLFTVZS&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B07CLFTVZS&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;effective-java-3rd&#34;&gt;&lt;/a&gt;[2] J. Bloch, &lt;em&gt;Effective Java&lt;/em&gt;, Third. Addison-Wesley Professional, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B078H61SCH&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B078H61SCH&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;functional-programming-java&#34;&gt;&lt;/a&gt;[3] V. Subramaniam, &lt;em&gt;Functional Programming In Java Harnessing The Power Of Java 8 Lambda Expressions&lt;/em&gt;. The Pragmatic Programmers, 2014 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00J8W0OTI&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00J8W0OTI&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;java-9-modularity&#34;&gt;&lt;/a&gt;[4] S. Mak, &lt;em&gt;Java 9 Modularity&lt;/em&gt;. O’Reilly Media, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1491954167&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1491954167&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The &lt;em&gt;record&lt;/em&gt; construct was added to Java 15 in March 2020. Records are shallow immutable objects. You can use them in pure functions to avoid unwanted side effects.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Vaadin</title>
@@ -1709,7 +2087,7 @@ Marcel Baumann. 2016&lt;/p&gt;
 &lt;p&gt;&lt;a id=&#34;leading-quietly&#34;&gt;&lt;/a&gt;[18] J. Badaracco, &lt;em&gt;Leading Quietly&lt;/em&gt;. Harvard Business School Press, 2002 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B005DI8XSK&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B005DI8XSK&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;smart-leaders-smarter-teams&#34;&gt;&lt;/a&gt;[19] R. M. Schwarz, &lt;em&gt;Smart Leaders, Smarter Teams : How You and Your Team Get Unstuck to Get Results&lt;/em&gt;. Wiley-Interscience, p. 272 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0787988731&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0787988731&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;smart-leaders-smarter-teams&#34;&gt;&lt;/a&gt;[19] R. M. Schwarz, &lt;em&gt;Smart Leaders, Smarter Teams : How You and Your Team Get Unstuck to Get Results&lt;/em&gt;. Wiley-Interscience [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0787988731&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0787988731&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;gold-mine&#34;&gt;&lt;/a&gt;[20] F. Ballé and M. Ballé, &lt;em&gt;The Gold Mine&lt;/em&gt;. Lean Enterprises Inst Inc, 2005 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0974322563&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0974322563&lt;/a&gt;&lt;/p&gt;
@@ -14942,201 +15320,6 @@ He is responsible for teaching others how to adapt and evolve the component.&lt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Sadly, the Scrum Guide revision of 2020 removed this rule. They deleted this PDCA mechanism.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Software Development for Students</title>
-      <link>https://blog.tangly.net/blog/2021/software-development-for-students/</link>
-      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/software-development-for-students/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_software_development_for_students&#34;&gt;Software Development for Students&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-01-04-head.jpg&#34; alt=&#34;2021 01 04 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Computer science students shall achieve technical excellence when reaching bachelor level.
-They should be proficient with industry good practices.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Students understand the theory and principles behind these practices.
-Experience with one of the best of breed tools enforces learning and automatism.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The focus of a technical university is to teach the concepts and methods.
-The tools are used to practice and to increase student learning.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_source_code_version_management_with_git&#34;&gt;Source Code Version Management with Git&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; is the standard tool for the distributed source code management system.
-It is supported by all major development IDE and continuous integration environments.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;First-year undergraduates shall master the basic git commands to write their semester projects.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Second-year sophomores shall master the git commands used to work in teams.
-Pull requests are a standard approach to review team colleague works and to consolidate new functions into the application.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_modern_java_software_development&#34;&gt;Modern Java Software Development&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Java is the preferred programming language for the majority of teaching institutions around the world.
-The programming language has evolved the last ten years.
-Students should learn the current way of writing code in Java.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The actual Java approach is to use streams and renounce in most cases to use instructions such as &lt;em&gt;for&lt;/em&gt; or &lt;em&gt;while&lt;/em&gt; loops or conditional &lt;em&gt;if&lt;/em&gt; statements.
-Delegation and lambda constructs often replace inheritance design.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Since JDK 16 Java provides &lt;a href=&#34;https://en.wikipedia.org/wiki/Algebraic_data_type&#34;&gt;Algebraic Data Types&lt;/a&gt; with records and sealed classes.
-Records implement &lt;a href=&#34;https://en.wikipedia.org/wiki/Product_type&#34;&gt;Product Types&lt;/a&gt;.
-Sealed classes implement &lt;a href=&#34;https://en.wikipedia.org/wiki/Tagged_union&#34;&gt;Tagged Unions&lt;/a&gt; also called sum types.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;IntelliJ IDEA IDE&lt;/a&gt; is now the industrial standard for the Java and often Python world.
-The IDEA environment promotes the use of modern Java constructs.
-Currently, constructs such as records, sealed classes, closeable resources, switch instructions as expressions are new approaches to write legible Java code.
-Concepts such as Optional, Streams, immutable objects, and unchecked expressions promote more functional programming styles.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle&lt;/a&gt; is our preferred build tool for Java projects.
-The approach is straight forward.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_technical_excellence&#34;&gt;Technical Excellence&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The DevOps and software craftsmanship movement strongly promote technical excellence and intrinsic quality in software development.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-01-04-devOps.png&#34; alt=&#34;720&#34; width=&#34;480&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Students shall be fluent with&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Static code analysis.
-The Intellij IDEA provides an &lt;em&gt;analysis&lt;/em&gt; function for static code analysis.
-The IDE environment is free for students.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Unit tests and integration tests Use the seminal libraries &lt;em&gt;JUnit5&lt;/em&gt;, &lt;em&gt;Mockito&lt;/em&gt;, and &lt;em&gt;AssertJ&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Continuous integration pipeline uses the CI pipeline of your product management tool; either &lt;em&gt;GitLab&lt;/em&gt;, &lt;em&gt;GitHub&lt;/em&gt;, &lt;em&gt;Bitbucket&lt;/em&gt;, or &lt;em&gt;Azure DevOps&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_documentation&#34;&gt;Documentation&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You should only check text artifacts into a git repository.
-Modern approaches with &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt; and &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; syntax promote this axiom.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://plantuml.com/&#34;&gt;PlantUML&lt;/a&gt; is a text-based diagramming approach.
-Major diagram types are supported.
-ALl UML diagram types can be described with the tool.
-&lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; has native support for diagrams in general and PlantUML in particular.
-Asciidoc supports additional diagrams and diagramming tools such as &lt;a href=&#34;https://mermaid-js.github.io/mermaid&#34;&gt;Mermaid&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_and_scrum&#34;&gt;Agile and Scrum&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Agile and Scrum are the standard methods to develop software products in the industry.
-All students shall excel in agile development approaches.
-Scrum is the most used approach and should be taught to all computer science students.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Students shall understand the agile concepts and main constructs.
-When working in a Scrum environment, they have used the backlog, issues, stories, definition of done.
-They have planned their projects with a vision, a roadmap, epics, and sprints.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_gitlab_as_a_students_tool&#34;&gt;Gitlab as a Student’s Tool&lt;/h3&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-01-04-gitlab.png&#34; alt=&#34;2021 01 04 gitlab&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Gitlab is an integrated solution for software development in teams and DevOps approaches.
-It is the official tool provided in our &lt;a href=&#34;https://www.hslu.ch/en/lucerne-school-of-information-technology/&#34;&gt;Computer Science Department&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Students learn computer science principles and hands-on how to develop software applications.
-They will use their learning to develop commercial software components when working after the completion of their studies.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_gitlab_as_a_lecturers_tool&#34;&gt;Gitlab as a Lecturer’s Tool&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;All the source code and artifacts of a student class are available in Gitlab.
-The development history over a project or a semester is visible in Git.
-The lecturers can access the artifacts or use scripts to extract the data necessary to set the grades for the students.
-The grading process can be standardized.
-The decision process is part of the Gitlab data and is auditable.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The student series is a set of blogs showing how to use central tools for modern software development.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2021/software-development-for-students&#34;&gt;Software Development for Students&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2018/pragmatic-craftsmanship-professional-software-developer&#34;&gt;Pragmatic Craftsmanship&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2017/why-use-current-software-components&#34;&gt;Current Software Components&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient&#34;&gt;Git Local Repositories For the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2021/gitlab-for-bachelor-students&#34;&gt;Gitlab for Bachelor Students&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2020/advocate-zero-bug-policy-in-your-projects/&#34;&gt;Zero Bug Policy&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2020//creating-a-technical-website-with-hugo-and-asciidoc&#34;&gt;Creating a Technical Website with Hugo and AsciiDoc&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2021/gitlab-for-bachelor-students&#34;&gt;GitLab for Bachelor Students&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
