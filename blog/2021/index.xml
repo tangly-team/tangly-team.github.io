@@ -433,6 +433,33 @@ The binary report is no more supported by external tool.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle has finally new plugins to better generate unit tests and test coverage reports for a multi-module project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;test-report-aggregation&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;jacoco-report-aggregation&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The new approach to create aggregated reports is discribed in &lt;a href=&#34;../../2022/multi-module-test-reporting-with-gradle-7.x/&#34;&gt;Multi-module Test Reporting with Gradle 7&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_wishes&#34;&gt;Wishes&lt;/h3&gt;
@@ -3110,7 +3137,7 @@ For example, infrastructure as code helps you manage your development, testing a
 &lt;p&gt;Build more effective teams under a DevOps cultural model, which emphasizes values such as ownership and accountability.
 Developers and operations teams collaborate closely, share many responsibilities, and combine their workflows.
 This reduces handover inefficiencies and diminishes cycle-time.
-It reduces for example handover periods between developers and operations, writing code that takes into account the environment in which it is run.&lt;/p&gt;
+It reduces, for example, handover periods between developers and operations, writing code that takes into account the environment in which it is run.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Security&lt;/dt&gt;
 &lt;dd&gt;
@@ -3248,11 +3275,12 @@ With infrastructure as a code, servers and infrastructure are deployed fast, aut
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The motivations for what has become modern &lt;em&gt;DevOps&lt;/em&gt; and several standard DevOps practices such as automated build and test, continuous integration, and continuous delivery originated in the Agile world, which dates to the 1990s.
-Agile development teams using methods such as &lt;a href=&#34;http://www.extremeprogramming.org/&#34;&gt;eXtreme Programming&lt;/a&gt; could not &lt;em&gt;satisfy the customer through early and continuous delivery of valuable software&lt;/em&gt; unless they subsumed the operations responsibilities associated with their applications, many of which they automated.&lt;/p&gt;
+&lt;p&gt;The motivations for what has become modern &lt;em&gt;DevOps&lt;/em&gt; and several standard DevOps practices, such as automated build and test, continuous integration, and continuous delivery originated in the Agile world, which dates to the 1990s.
+Agile development teams using methods such as &lt;a href=&#34;http://www.extremeprogramming.org/&#34;&gt;eXtreme Programming&lt;/a&gt; could not &lt;em&gt;satisfy the customer through early and continuous delivery of valuable software&lt;/em&gt; unless they subsumed the operation responsibilities associated with their applications, many of which they automated.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Because &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; emerged as the dominant Agile framework in the early 2000s, and it omitted the engineering practices that were part of many Agile teams, the movement to automate operations functions splintered from Agile and expanded into what has become modern DevOps.[11] Today, DevOps focuses on the deployment of developed software, whether it is developed via Agile or other methodologies&lt;/p&gt;
+&lt;p&gt;Because &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; emerged as the dominant Agile framework in the early 2000s, and it omitted the engineering practices that were part of many Agile teams, the movement to automate operations functions splintered from Agile and expanded into what has become modern DevOps &lt;a href=&#34;#accelerate&#34;&gt;[1]&lt;/a&gt;.
+Today, DevOps focuses on the deployment of developed software, whether it is developed via Agile or other methodologies.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;To practice DevOps effectively, software applications have to meet a set of architecturally significant requirements such as: deployability, modifiability, testability, and monitorability.
@@ -3286,7 +3314,7 @@ The approaches, recipes and failures are similar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Although it is possible to practice DevOps with any architectural style, the microservices architectural style is becoming the standard for building continuously deployed systems.
-Small size service allows the architecture of an individual service to emerge through continuous refactoring,[69] hence reducing the need for a big upfront design, allows for releasing the software early[citation needed] and continuously.&lt;/p&gt;
+Small size service allows the architecture of an individual service to emerge through continuous refactoring &lt;a href=&#34;#continuous-delivery&#34;&gt;[4]&lt;/a&gt;  hence reducing the need for a big upfront design, allows for releasing the software early[citation needed] and continuously.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -4699,14 +4727,24 @@ The participants of the study confirmed these documented facts.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;It seems that hybrid methods are way less successful than agile based on SwissQ data.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/hybrid-methods-success-2021.svg&#34; alt=&#34;hybrid methods success 2021&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: Could not find the &amp;#39;mermaid&amp;#39; executable in PATH; add it to the PATH or specify its location using the &amp;#39;mermaid&amp;#39; document attribute
+pie
+    title Hybrid Methods Success 2021
+    &amp;#34;Successful&amp;#34; : 35.3
+    &amp;#34;Challenged&amp;#34; : 63.4
+    &amp;#34;Stopped&amp;#34; : 1.3&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/agile-methods-success-2021.svg&#34; alt=&#34;agile methods success 2021&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: no implicit conversion of nil into String
+pie
+    title Agile Methods Success 2021
+    &amp;#34;Successful&amp;#34; : 55.4
+    &amp;#34;Challenged&amp;#34; : 44.6
+    &amp;#34;Stopped&amp;#34; : 0.001&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -4718,14 +4756,35 @@ The good news is that many companies have started transformation initiatives or 
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_used_methods_in_switzerland&#34;&gt;Used Methods in Switzerland&lt;/h3&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/hybrid-methods-2021.svg&#34; alt=&#34;hybrid methods 2021&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: no implicit conversion of nil into String
+pie
+    title Hybrid Methods 2021
+    &amp;#34;Scrum&amp;#34; : 64.7
+    &amp;#34;Waterfall&amp;#34; : 58.9
+    &amp;#34;Kanban&amp;#34; : 40.2
+    &amp;#34;SAFe&amp;#34; : 25.9
+    &amp;#34;Hermes&amp;#34; : 18.8
+    &amp;#34;Scrumban&amp;#34; : 13.8
+    &amp;#34;DaD&amp;#34; : 3.1
+    &amp;#34;Unified Process&amp;#34; : 1.8
+    &amp;#34;Others&amp;#34; : 11.6&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/agile-methods-2021.svg&#34; alt=&#34;agile methods 2021&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: no implicit conversion of nil into String
+pie
+    title Agile Methods 2021
+    &amp;#34;Scrum&amp;#34; : 75.1
+    &amp;#34;SAFe&amp;#34; : 46.3
+    &amp;#34;Kanban&amp;#34; : 42.9
+    &amp;#34;Scrumban&amp;#34; : 15.3
+    &amp;#34;Hermes 5&amp;#34; : 4.5
+    &amp;#34;Waterfall&amp;#34; : 3.4
+    &amp;#34;DaD&amp;#34; : 1.7
+    &amp;#34;Others&amp;#34; : 7.9&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -5591,14 +5650,24 @@ The raise of digital and Internet affine banking solutions is such a transformat
 The agile approach seems to eliminate catastrophic development failures.
 It means an agile team has 25% higher relative probability to be victorious than classical teams (&lt;em&gt;50.5% versus 39.5%&lt;/em&gt;).&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/waterfall-methods-success-2020.svg&#34; alt=&#34;waterfall methods success 2020&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: Could not find the &amp;#39;mermaid&amp;#39; executable in PATH; add it to the PATH or specify its location using the &amp;#39;mermaid&amp;#39; document attribute
+pie
+    title Waterfall Methods Success 2020
+    &amp;#34;Successful&amp;#34; : 39.5
+    &amp;#34;Challenged&amp;#34; : 59.7
+    &amp;#34;Stopped&amp;#34; : 0.9&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/agile-methods-success-2020.svg&#34; alt=&#34;agile methods success 2020&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: no implicit conversion of nil into String
+pie
+    title Agile Methods Success 2020
+    &amp;#34;Successful&amp;#34; : 50.5
+    &amp;#34;Challenged&amp;#34; : 49.1
+    &amp;#34;Stopped&amp;#34; : 0.4&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;

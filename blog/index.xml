@@ -4,7 +4,7 @@
     <link>https://blog.tangly.net/blog/</link>
     <description>Recent content in tangly llc Blog on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Oct 2022 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,639 @@
         
       
     
+    
+    <item>
+      <title>Blog: First Steps DevOps</title>
+      <link>https://blog.tangly.net/blog/2022/first-steps-devops/</link>
+      <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2022/first-steps-devops/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_first_steps_devops&#34;&gt;First Steps DevOps&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-12-01-head.png&#34; alt=&#34;2022 12 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt; movement started to gather momentum with the first DevOps conference held in Ghent, Belgium in 2009
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The approach aims to shorten the system development life-cycle and to provide continuous delivery with high software quality.
+DevOps is complementary with &lt;a href=&#34;https://en.wikipedia.org/wiki/Agile_software_development&#34;&gt;agile software development&lt;/a&gt; approaches.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Several DevOps aspects came from the Agile method.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Seminal books [&lt;a href=&#34;#accelerate&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#devops-handbook&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#phoenix-project&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#site-reliability-engineering&#34;&gt;4&lt;/a&gt;] and good practices were published around the same time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The DevOps approach belongs to the regular instruments of professional software developers.
+Major development platforms, &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;, &lt;a href=&#34;https://gitlab.com/&#34;&gt;GitLab&lt;/a&gt;, &lt;a href=&#34;https://bitbucket.org/&#34;&gt;BitBucket&lt;/a&gt;
+and &lt;a href=&#34;https://azure.microsoft.com/de-de/services/devops/&#34;&gt;Microsoft Azure DevOps&lt;/a&gt; do support continuous integration, delivery and deployments for years.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The DORA metrics define a standard approach to measure the quality and efficiency of a DevOps or agile process implementation in an organization.
+They were published in 2016.
+The metrics for throughput are &lt;em&gt;deployment frequency, lead time for changes&lt;/em&gt;.
+The metrics for stability are &lt;em&gt;mean time to recover, change failure rate&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;They define a standard approach to measure the quality and efficiency of a DevOps or agile process implementation in an organization.
+An agile team shall be able to deploy a version of their digital platform multiple times per day.
+Frequent and economical deployments require the full automation of integration, delivery and deployment steps.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below, we provide a detailed possible approach to deploying DevOps concepts in your organization.
+These recipes are helpful for companies with little knowledge and experience in agile and DevOps approaches for digital product development &lt;a href=&#34;#detecting-agile-bullshit&#34;&gt;[5]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_continuous_integration&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration/&#34;&gt;Continuous integration&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In software engineering, continuous integration &lt;em&gt;CI&lt;/em&gt; is the practice of merging all developers&amp;#39; working copies to a shared mainline &lt;strong&gt;several times&lt;/strong&gt; a day
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The workflow is:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Write some code, compile and run test locally using a script.&lt;br/&gt;
+&lt;em&gt;No manual activities shall be required to compile the solution and run all tests.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Commit, push, and compile code in the continuous integration environment.&lt;br/&gt;
+&lt;em&gt;A continuous integration pipeline shall be available.&lt;/em&gt;
+&lt;em&gt;The environment is a clean new one each time the pipeline is triggered.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run static code analyzers, unit tests and integration in this integration environment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Optionally, trigger continuous delivery if the earlier steps were successful&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Classical questions and answers &lt;em&gt;FAQ&lt;/em&gt; are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;qlist qanda&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;How often shall a developer push new code to the shared repository?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Laggard developers should push multiple times a week.
+Professional developers push multiple times a day &lt;a href=&#34;#code-as-crime-scene&#34;&gt;[4]&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;What steps are part of a continuous integration script?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The script shall at least compile the solution.
+Static code checkers shall be called to validate the changes and ensure minimal code quality.&lt;br/&gt;
+Modern checkers detect syntactic, semantic or security violations.
+OWASP are readily available to start implementing DevSecOps.
+Unit tests and if reasonable integration shall be executed automatically to verify the changes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;When should the continuous integration script be executed?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Each time a git push is registered and the repository is updated
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;.
+You want to guaranty that the repository is in a consistent state.&lt;br/&gt;
+Any developer should be able to check out the repository and start working.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Can you add manual steps to your continuous integration script?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;No, manual steps are the death of continuous integration and automation.
+It is called &lt;strong&gt;continuous&lt;/strong&gt; because it is &lt;strong&gt;automated&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_continuous_delivery&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;Continuous delivery&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Continuous delivery &lt;em&gt;CD&lt;/em&gt; is a software engineering approach in which teams produce software in short cycles.
+It ensures that the software can be reliably released at any time and, when releasing the software, &lt;strong&gt;without doing so manually&lt;/strong&gt;.
+It aims at building, testing, and releasing software with greater speed and frequency.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The approach helps reduce the cost, time and risk of delivering changes by allowing for more incremental updates to applications in production.
+A straightforward and repeatable deployment process is important for continuous delivery.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Classical questions and answers &lt;em&gt;FAQ&lt;/em&gt; are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;qlist qanda&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;How can a new delivery package be generated?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Your continuous integration pipeline should have a delivery step and produce an executable artifact.
+Your hosting platform provides a service to upload versioned artifacts to a repository.
+Java artifacts are often stored in Maven Central.
+Docker images are often uploaded to Docker Hub.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Where should we store the migration scripts?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Migration and configuration scripts are part of the delivery.
+The installation process shall perform an unattended migration of the configuration and databases.
+&lt;strong&gt;Manual steps are not allowed&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;When is a new delivery package created?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Upon completion of compilation, static verification, unit tests and integration tests, you should create the delivery package.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Which preferred format should you use?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For complex solutions, the preferred format is a &lt;a href=&#34;https://www.docker.com/&#34;&gt;docker&lt;/a&gt; image or a &lt;a href=&#34;https://kubernetes.io/&#34;&gt;kubernetes&lt;/a&gt; pod.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;How do you identify a specific version of a package?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://semver.org/&#34;&gt;Semantic versioning&lt;/a&gt; is the standard approach to generating legible package identifiers.
+You are free to adopt another naming scheme for &lt;a href=&#34;https://en.wikipedia.org/wiki/Software_versioning&#34;&gt;software versioning&lt;/a&gt;.
+Just document your approach.&lt;br/&gt;
+Implement a function so that your users can find out the version of the product they are using.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_continuous_deployment&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_deployment&#34;&gt;Continuous deployment&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Continuous deployment &lt;em&gt;CD&lt;/em&gt; is a software engineering approach in which software functionalities are delivered frequently through automated deployments.
+Continuous deployment contrasts with continuous delivery.
+It is a similar approach in which software functionalities are also frequently delivered and deemed to be potentially capable of being deployed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;qlist qanda&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Are manual steps good practice for continuous deployment?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Never&lt;/strong&gt; perform manual steps.
+Continuous activities require full automation.
+Manual steps can only be performed if a trained collaborator is available.
+Manual activities are expensive, automated activities are cheap.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;What should you do if a deployment fails?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The environment should perform an automatic rollback to the last working configuration.
+It is the reason why DORA metrics &lt;a href=&#34;#dora-metrics&#34;&gt;[1]&lt;/a&gt; &lt;a href=&#34;#dora-google&#34;&gt;[2]&lt;/a&gt; measure &lt;em&gt;mean time to recover&lt;/em&gt;  and &lt;em&gt;change failure rate&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Are commercial platforms available for continuous deployment?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Major cloud services &lt;a href=&#34;https://aws.amazon.com/&#34;&gt;Amazon AWS&lt;/a&gt;, &lt;a href=&#34;https://cloud.google.com/&#34;&gt;Google Cloud&lt;/a&gt;, &lt;a href=&#34;https://azure.microsoft.com/&#34;&gt;Microsoft Azure&lt;/a&gt;,
+&lt;a href=&#34;https://www.heroku.com/&#34;&gt;Heroku&lt;/a&gt;, etc. provide continuous deployment pipelines and integration with product development platforms.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_logging_and_monitoring&#34;&gt;Logging and Monitoring&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Site_reliability_engineering&#34;&gt;Site reliability engineering&lt;/a&gt;
+and &lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt; practices are standard approaches in any professional organization running digital products productively.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Monitoring is used as a &lt;a href=&#34;https://en.wikipedia.org/wiki/PDCA&#34;&gt;PDCA&lt;/a&gt; loop to continuously improve the construction and delivery process of a productive solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Classical questions and answers &lt;em&gt;FAQ&lt;/em&gt; are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;qlist qanda&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;What should be logged?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The software architecture document of your solution should document how and what information you are logging.
+Mapped diagnostic contexts are used to track session and user related actions and log records
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_4&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_4&#34; title=&#34;View footnote.&#34;&gt;4&lt;/a&gt;]&lt;/sup&gt;
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_5&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_5&#34; title=&#34;View footnote.&#34;&gt;5&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Should logging information be archived?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The corporate governance guidelines shall prescribe how long logging information is stored and who can access the data.&lt;br/&gt;
+Logging information should be available to protect your company against legal complaints.
+The information is also invaluable for security incident analysis
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_6&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_6&#34; title=&#34;View footnote.&#34;&gt;6&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Should applications be monitored?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;All productive installations should be monitored through a professional solution.
+The monitoring approach should detect issues before they impede user processes.
+You shall document the alarming and recovery process.
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_7&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_7&#34; title=&#34;View footnote.&#34;&gt;7&lt;/a&gt;]&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_github_gitlab_bitbucket&#34;&gt;GitHub, GitLab, BitBucket&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern software development departments use these platforms for collaboration and implementation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock text-center&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-12-01-ci-vs-cd.png&#34; alt=&#34;2022 12 01 ci vs cd&#34; width=&#34;90%&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As stated on GitHub website, we have the following definitions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Automation&lt;/strong&gt; is a core principle for achieving DevOps success and CI/CD is a critical component.
+CI/CD consists of continuous integration and continuous delivery or continuous deployment.
+Put together, they form a &lt;em&gt;CI/CD/CD pipeline&lt;/em&gt;.
+&lt;strong&gt;Automated&lt;/strong&gt; workflows that help DevOps teams cut down on manual tasks:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Continuous integration (CI) automatically builds, tests and integrates code changes within a shared repository.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Continuous delivery (CD) automatically delivers code changes to production-ready environments for a final approval.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Continuous deployment (CD) automatically deploys code changes to customers directly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Multiple Toolchains&lt;/dt&gt;
+&lt;dd&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;GitHub supports multiple toolchain installation through successive steps in the pipeline.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;BitBucket can only install one toolchain for a pipeline.
+Additional toolchains must be installed using package management of the operating system of your Docker image.
+Beware that package managers are dependant of the used distribution.
+The openjdk regular image uses, for example, &lt;em&gt;microdnf&lt;/em&gt; as package manager.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Actual Java JDK Releases&lt;/dt&gt;
+&lt;dd&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;GitHub does not support the latest official Java releases on time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bitbucket supports all officially released Java versions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You need a platform and automatisation expert in your development team to harvest the advantages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;odoo.sh has selected GitHub as their preferred platform.
+We shall use GitHub CI/CD/CD approach as defined in odoo.sh to develop and deploy all our application development.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Github provides initial support for Security, DevOps, and agile approaches.
+We shall evaluate these tools and, if relevant, use them as standard tooling for our Odoo software tailoring and development.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The CI tools of GitHub are ideal to implement DevSecOps approaches on odoo modules and internal Python application development.
+The Sonar scanners verify for example compliance to OWASP vulnerabilitities.
+This verification step can be executed on a repository update to remove vulnerabilities in deployed oddo instances.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_legacy_system_variations&#34;&gt;Legacy System Variations&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Legacy systems must compromise how they implement their pipelines.
+Source code shall always follow the clean code and DevOps principles.
+Configuration information stored in the database must often be migrated between staging areas.
+Please document your &lt;strong&gt;automated&lt;/strong&gt; process and rules.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern systems have fully adopted the &lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_configuration_automation&#34;&gt;configuration&lt;/a&gt;
+and &lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;infrastructure as code&lt;/a&gt; approach.
+Migrate your approach to automated configuration scripts to configure and initialize your products.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Incremental migration of database schema and productive data is a well-understood software engineering problem [&lt;a href=&#34;#refactoring-databases&#34;&gt;5&lt;/a&gt;] for decades.
+Tools such as &lt;a href=&#34;https://flywaydb.org/&#34;&gt;FlyWay&lt;/a&gt; or &lt;a href=&#34;https://www.liquibase.org/&#34;&gt;LiquidBase&lt;/a&gt; provide enterprise grade productive solutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;exampleblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The open ERP Odoo platform uses &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; to offer a clean DevOps process for the &lt;a href=&#34;https://www.odoo.sh/&#34;&gt;Odoo.sh&lt;/a&gt; cloud platform.
+The approach has two components:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Source code and modules updates follow clean code and DevOps principles.
+You create new functions in the development branches, merge them in staging branches to test them and release the changes to the production branch for deployment.
+The approach is like the staging process of the Linux kernel.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Database updates are performed slightly differently between development and the other staging area.
+The staging area either gets a copy of the production database or a migrated version of the previous staging area database.
+This behavior can be configured.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Merging a staging branch in the production branch only merges the source code.
+Any configuration changes you made in the staging databases are not passed to the production database.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you test configuration changes in staging branches, and you want them to be applied in the production, you have to either:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Write the configuration changes in XML data files overriding the default configuration or views in your branches, and then increase the version of your module in its manifest (&lt;em&gt;manifest&lt;/em&gt;.py) to trigger the update of the module when you merge your staging branch in your production branch.
+This is the best practice for a better scalability of your developments as you use the Git versioning features for all your configuration changes.
+Therefore, you have traceability for your changes.&lt;/strong&gt;
+&lt;em&gt;This approach is compatible to clean code and DevOps&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pass them manually from your staging to your production database, by copying and pasting them.
+&lt;em&gt;This approach is probably a motive to fire the developer because traceability, auditability and reproducibility are not enforced&lt;/em&gt;.
+&lt;em&gt;Regular corporate governance rules are neglected and could have legal consequences in case of incidents on the production server.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;When you want to test the changes of your development branches with the production data, you can either:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Merge the development branch into your staging branch, by drag and dropping it onto the desired staging branch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Drag and dropping the development branch on the staging section title, to make it become a staging branch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;When your latest changes are ready for production, you can merge the staging branch onto your production branch to deploy in production your newest features.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The above process is documented for Odoo version 15 under &lt;a href=&#34;https://www.odoo.com/documentation/15.0/administration/odoo_sh/getting_started/branches.html&#34;&gt;branches&lt;/a&gt; section.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_unprofessional_odoo_approach&#34;&gt;Unprofessional Odoo Approach&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware that the odoo.sh environment does not hinder amateur developers to do foolish things with git.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The quote below is from the official website of &lt;a href=&#34;https://www.odoo.sh/&#34;&gt;Odoo.sh&lt;/a&gt;.
+The statement violates all the rules of clean code, DevOps and professional software development.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I wishfully hope Odoo organization will mature and remove these misleading statements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you are bold enough, you can merge your development branches into your production branch as well.&lt;br/&gt;
+It just means you skip the validation of your changes with the production data through a staging branch.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— odoo.sh&lt;br/&gt;
+&lt;cite&gt;2022&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_professional_odoo_approach&#34;&gt;Professional Odoo Approach&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;On the bright side, odoo.sh supports and advocates the following clean code compatible workflow:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Source code is developed and tested in the development branch.
+Good practice is to write unit tests and have demonstration data.
+Each time you push changes, a clean instance is created, the demonstration data loaded and all unit tests are executed.&lt;br/&gt;
+&lt;em&gt;odoo.sh good practices implement TDD, ATDD, and quality gates as expected from a professional approach&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Once you are successful, you merge your development branch to the staging branch.
+The environment will automatically provide a copy of the production database in the staging area.
+You can test your new functions with production data without impeding the production server.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Once you are satisfied with the behavior of the new application with the copy of the production data, you can merge to production.
+A new production server will be deployed.
+If the deployment is unsuccessful, it will be rolled back to minimise downtime and to improve mean-time to recover.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_tips_and_tricks&#34;&gt;Tips and Tricks&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Professional developers perform only code changes in the development branches.
+A development branch is often a &lt;strong&gt;feature&lt;/strong&gt; branch.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Staging and production branches are effectively deployment triggers in the &lt;em&gt;odoo.sh&lt;/em&gt; world.
+Staging branches shall only be used to &lt;strong&gt;validate&lt;/strong&gt; a new version of your product.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Logically, only &lt;strong&gt;one&lt;/strong&gt; production branch is available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;odoo.sh abuses git branches as triggers for deployment to staging and production&lt;/em&gt;.
+This approach could historically be justified due to the clumsy way database changes were done in the past.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Migration scripts shall be robust and test their constraints
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_8&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_8&#34; title=&#34;View footnote.&#34;&gt;8&lt;/a&gt;]&lt;/sup&gt;.
+For example, if the script expects the existence of a value or an identifier in the database, it should test this integrity rule and abort if an error happens.
+The goal is to avoid inconsistent states after an update or a migration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The new good practice is finally compatible with clean code, infrastructure as code and DevOps.
+This approach is promoted in the official odoo.sh documentation.
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_9&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_9&#34; title=&#34;View footnote.&#34;&gt;9&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As stated by Odoo, you shall write the configuration changes in XML data files overriding the default configuration or views in your branches.
+This is the best practice for a better scalability of your developments as you will use the Git versioning features for all your configuration changes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Clean code and DevOps good practices are around for almost two decades.
+Senior developers in your team should have read the seminal books in this area.
+These experienced senior designers shall coach younger team members.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The InfoQ DevOps and cloud graph shows DevOps themes investigated in companies during 2022.
+Your experts shall apply most or all the approaches documented in the two columns on the right side.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock text-center&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-12-01-devops-cloud-graph.png&#34; alt=&#34;2022 12 01 devops cloud graph&#34; width=&#34;780&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A professional organization shall have a continuous formation and training path for all collaborators.
+I currently often have to answer basic questions about DevOps, clean code or Scrum.
+Quite a few developers do not know basic definitions or how to use Git or GitHub.
+It is time to read the documentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock warning&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-warning&#34; title=&#34;Warning&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Please train and read the documentation.
+Do not be a &lt;a href=&#34;https://en.wikipedia.org/wiki/Newbie&#34;&gt;noob&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We politely ask you to read books and documentation.
+Avoid receiving a &lt;a href=&#34;https://en.wikipedia.org/wiki/RTFM&#34;&gt;RTFM&lt;/a&gt; injunction.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You need expertise in Docker, Kubernetes and in your development platform &lt;a href=&#34;#devops-sme&#34;&gt;[3]&lt;/a&gt;.
+We recommend initially using GitHub.
+It is the most used platform and most developers are versed how to use the provided features.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If your company is missing experienced DevOps and agile professionals, it is time to improve your recruitment process &lt;a href=&#34;#detecting-agile-bullshit&#34;&gt;[5]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All development platforms have extensive support for continuous integration, delivery and deployment.
+DevOps approaches are well-supported.
+Often, advanced concepts such as monitoring, DevSecOps or license management are supported.
+Extensive tutorials and good practices are available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Just use the provided tools and approaches to professionally develop and operate your digital platforms.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;dora-metrics&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;https://devops.com/how-dora-metrics-can-measure-and-improve-performance/&#34;&gt;How DORA metrics can measure and improve performance&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;dora-google&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance&#34;&gt;Using The Four Keys to Measure Your Devops Performance&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;devops-sme&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../blog/2021/devops-for-small-applications/&#34;&gt;DevOps for Small Applications&lt;/a&gt;
+Marcel Baumann. 2021&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;code-as-crime-scene&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2019/code-scene-as-crime-scene/&#34;&gt;Code Scene as a Crime Scene&lt;/a&gt;
+Marcel Baumann, 2019&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;detecting-agile-bullshit&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2019/detecting-agile-bullshit/&#34;&gt;Detecting Agile Bullshit&lt;/a&gt;
+Marcel Baumann, 2019&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;accelerate&#34;&gt;&lt;/a&gt;[1] N. Forsgren, J. Humble, and G. Kim, &lt;em&gt;Accelerate: The Science of Lean Software and DevOps&lt;/em&gt;. IT Revolution Press [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B07B9F83WM&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B07B9F83WM&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;devops-handbook&#34;&gt;&lt;/a&gt;[2] G. Kim and N. Forsgren, &lt;em&gt;DevOps Handbook&lt;/em&gt;, Second. IT Revolution Press, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01M9ASFQ3&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01M9ASFQ3&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;phoenix-project&#34;&gt;&lt;/a&gt;[3] G. Kim, &lt;em&gt;The Phoenix Project a novel about IT, DevOps, and helping your business win&lt;/em&gt;. IT Revolution Press [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0988262592&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0988262592&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;site-reliability-engineering&#34;&gt;&lt;/a&gt;[4] B. Beyer, C. Jones, J. Petoff, and N. R. Murphy, &lt;em&gt;Site Reliability Engineering&lt;/em&gt;. O’Reilly Media, Inc., 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1492029505&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1492029505&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;refactoring-databases&#34;&gt;&lt;/a&gt;[5] A. Scott and P. J. Sadalage, &lt;em&gt;Refactoring Databases&lt;/em&gt;. Addison-Wesley Professional, 2006 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B001QAP36E&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B001QAP36E&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Development organizations had around fifteen years to practice DevOps and adapt their application lifecycle management processes.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. &lt;a href=&#34;https://en.wikipedia.org/wiki/Grady_Booch&#34;&gt;Grady Booch&lt;/a&gt; first proposed the term Continuous Integration &lt;em&gt;CI&lt;/em&gt; in 1991. Analyze your git logs and find out if your developers are truly merging working copies to a shared mainlines several times a day. Laggard programmers use git as a backup tool and not as a collaborative development platform.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
+&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. You can either use &lt;a href=&#34;https://trunkbaseddevelopment.com/&#34;&gt;trunk based development&lt;/a&gt; or configure the build trigger for all your feature branches.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_4&#34;&gt;
+&lt;a href=&#34;#_footnoteref_4&#34;&gt;4&lt;/a&gt;. odoo.sh provides logging support for a deployed solution. Corporate governance often requires that log files are archived in a separate location. These files are needed when a forensic analysis of a security situation shall be investigated.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_5&#34;&gt;
+&lt;a href=&#34;#_footnoteref_5&#34;&gt;5&lt;/a&gt;. odoo has an audit module supporting auditing of critical actions initiated throug user interactions or external systems. The audit module is somethat primitive. The audit configuration is performed at the database level and not at functional level. The configuration responsible needs deep understanding which modules perform specific operations on the database.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_6&#34;&gt;
+&lt;a href=&#34;#_footnoteref_6&#34;&gt;6&lt;/a&gt;. The logging files and audit traces shall be stored on company premises to fulfill legal and corporate governance rules.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_7&#34;&gt;
+&lt;a href=&#34;#_footnoteref_7&#34;&gt;7&lt;/a&gt;. odoo.sh provides monitoring for deployed solutions. The monitoring is currently based on &lt;a href=&#34;https://www.elastic.co/kibana/&#34;&gt;Kibana&lt;/a&gt;. All productive servers shall be monitored with a similar approach. The monitoring approach shall be tuned based on production incidents.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_8&#34;&gt;
+&lt;a href=&#34;#_footnoteref_8&#34;&gt;8&lt;/a&gt;. If you write, for example, an SQL database schema migration script, you use clauses such &lt;strong&gt;DROP IF EXISTS&lt;/strong&gt;.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_9&#34;&gt;
+&lt;a href=&#34;#_footnoteref_9&#34;&gt;9&lt;/a&gt;. Manual editions through copy and paste are a violation of sound engineering development practices. You lose reproducibility, versioning of a single source of truth, and auditability. Assume that you violate development guidelines and corporate governance.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Modern Java Constructs</title>
@@ -46,7 +679,7 @@ Functional programming is also a natural fit for multicore parallel programming.
 The paradigm is the best way to squeeze more performance out of modern CPUs.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Java Streams library allows algorithms to be coded declaratively meaning the developer specifies what they want, not how they want it.
+&lt;p&gt;The &lt;em&gt;Java Streams&lt;/em&gt; library allows algorithms to be coded declaratively meaning the developer specifies what they want, not how they want it.
 This improves code quality because all the plumbing code is handled by the library itself.
 The fluent interface style is just a way to express streams algorithm in one continuous line.&lt;/p&gt;
 &lt;/div&gt;
@@ -167,7 +800,7 @@ The optional can be processed as a stream instead of using a conditional stateme
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;returns either a list of items or an empty list.
+&lt;td&gt;Returns either a list of items or an empty list.
 The result can be processed as a stream instead of using a conditional statement.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
@@ -192,10 +825,10 @@ Time to study the concepts of functional programming and lambda calculus [&lt;a 
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;pass lambda expressions or single abstract method &lt;em&gt;SAM&lt;/em&gt; instances as parameters of some methods.&lt;/p&gt;
+&lt;p&gt;Pass lambda expressions or single abstract method &lt;em&gt;SAM&lt;/em&gt; instances as parameters of some methods.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;return lambda expressions or single abstract method &lt;em&gt;SAM&lt;/em&gt; instances in some methods.&lt;/p&gt;
+&lt;p&gt;Return lambda expressions or single abstract method &lt;em&gt;SAM&lt;/em&gt; instances in some methods.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -3053,7 +3686,7 @@ Often because they read that DevOps approach puts customers and end-user satisfa
 &lt;p&gt;Or is it only the next &lt;a href=&#34;https://en.wikipedia.org/wiki/No_Silver_Bullet&#34;&gt;silver bullet&lt;/a&gt; fad used to increase the bonus of consultants and managers?&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You also find a simple way to boostrap your &lt;a href=&#34;#bootstrap-devops-adoption&#34;&gt;DevOps adoption&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You also find a simple way to boostrap your DevOps adoption &lt;a href=&#34;#bootstrap-devops-adoption&#34;&gt;Bootstrap Your DevOps Adoption&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_what_is_devops&#34;&gt;What is DevOps?&lt;/h3&gt;
@@ -3195,7 +3828,7 @@ Emphasize continuous monitoring and alarming, optimize time to recover metric.&l
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Your development teams shall have automatic continuous integration.
-This pipeline builds the software, runs static code analyzer and executes a reasonable set of unit and integration.
+This pipeline builds the software, runs static code analyzer and executes a reasonable set of unit and integration tests.
 If not, they are pretending to do DevOps and lying to you.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -3339,7 +3972,7 @@ Measure mean-time to recovery, production failure rate and change failure rate.&
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Each instance has a monitoring feature which enabled us to provide realtime information about resource usage, heartbeat, health status and warnings.
+&lt;p&gt;Each instance has a monitoring feature, which enabled us to provide realtime information about resource usage, heartbeat, health status and warnings.
 You can rely on an automated alert and response system to troubleshoot and monitor your enterprise servers.
 The developing team can quickly rectify errors or hiccups in the workflow without disturbing the operations teams.&lt;/p&gt;
 &lt;/li&gt;
@@ -3405,7 +4038,7 @@ I see the information such as priority, cycle-time of these issues and in which 
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;You give me read-only access to the health dashboard of any test and productive server on which the product runs.
-I see&lt;/p&gt;
+I see:&lt;/p&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -3964,7 +4597,7 @@ Therefore, product management is responsible for defining support policies, incl
 &lt;p&gt;You need to understand agile HR to nurture your collaborators.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;You should be savvy with product development processes and project controlling tools to deliver on time and on budget.&lt;/p&gt;
+&lt;p&gt;You should be savvy with product development processes and project-controlling tools to deliver on time and on budget.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;You need to chop your target markets to identify your customers and products.
@@ -4025,7 +4658,7 @@ Strategical aspects must be considered to optimize long-term revenues and minimi
 &lt;li&gt;
 &lt;p&gt;Provide interoperability to public interfaces.
 In the health sector, it could be the Health &lt;a href=&#34;https://en.wikipedia.org/wiki/Health_Level_7&#34;&gt;Level 7&lt;/a&gt; &lt;em&gt;HL7&lt;/em&gt; set of standards.
-Each government defines their API to provide mandatory information for social security, value added tax reporting, cyberattacks alarming, or statistics.&lt;/p&gt;
+Each government defines her API to provide mandatory information for social security, value-added tax reporting, cyberattacks alarming, or statistics.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Avoid technology obsolescence and define cost-effective migration paths.&lt;/p&gt;
@@ -4092,7 +4725,7 @@ These leaders master product development, collaborators nurturing, financial acu
 &lt;dd&gt;
 &lt;p&gt;Modern and agile approaches are still very young.
 The offerings are still quite old school and not well-tailored for digital companies.
-The still ill used term &lt;em&gt;human resources&lt;/em&gt; is quite the indicator how collaborators hiring and retainment is done wrong in old-fashioned organizations.&lt;br/&gt;
+The still used term &lt;em&gt;human resources&lt;/em&gt; is quite the indicator how collaborators hiring and retainment is done wrong in old-fashioned organizations.&lt;br/&gt;
 Persons can never be considered as resources.
 They are unique individuals to be nurtured and respected.&lt;/p&gt;
 &lt;/dd&gt;
@@ -8018,6 +8651,33 @@ The binary report is no more supported by external tool.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle has finally new plugins to better generate unit tests and test coverage reports for a multi-module project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;test-report-aggregation&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;jacoco-report-aggregation&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The new approach to create aggregated reports is discribed in &lt;a href=&#34;../../2022/multi-module-test-reporting-with-gradle-7.x/&#34;&gt;Multi-module Test Reporting with Gradle 7&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_wishes&#34;&gt;Wishes&lt;/h3&gt;
@@ -10695,7 +11355,7 @@ For example, infrastructure as code helps you manage your development, testing a
 &lt;p&gt;Build more effective teams under a DevOps cultural model, which emphasizes values such as ownership and accountability.
 Developers and operations teams collaborate closely, share many responsibilities, and combine their workflows.
 This reduces handover inefficiencies and diminishes cycle-time.
-It reduces for example handover periods between developers and operations, writing code that takes into account the environment in which it is run.&lt;/p&gt;
+It reduces, for example, handover periods between developers and operations, writing code that takes into account the environment in which it is run.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Security&lt;/dt&gt;
 &lt;dd&gt;
@@ -10833,11 +11493,12 @@ With infrastructure as a code, servers and infrastructure are deployed fast, aut
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The motivations for what has become modern &lt;em&gt;DevOps&lt;/em&gt; and several standard DevOps practices such as automated build and test, continuous integration, and continuous delivery originated in the Agile world, which dates to the 1990s.
-Agile development teams using methods such as &lt;a href=&#34;http://www.extremeprogramming.org/&#34;&gt;eXtreme Programming&lt;/a&gt; could not &lt;em&gt;satisfy the customer through early and continuous delivery of valuable software&lt;/em&gt; unless they subsumed the operations responsibilities associated with their applications, many of which they automated.&lt;/p&gt;
+&lt;p&gt;The motivations for what has become modern &lt;em&gt;DevOps&lt;/em&gt; and several standard DevOps practices, such as automated build and test, continuous integration, and continuous delivery originated in the Agile world, which dates to the 1990s.
+Agile development teams using methods such as &lt;a href=&#34;http://www.extremeprogramming.org/&#34;&gt;eXtreme Programming&lt;/a&gt; could not &lt;em&gt;satisfy the customer through early and continuous delivery of valuable software&lt;/em&gt; unless they subsumed the operation responsibilities associated with their applications, many of which they automated.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Because &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; emerged as the dominant Agile framework in the early 2000s, and it omitted the engineering practices that were part of many Agile teams, the movement to automate operations functions splintered from Agile and expanded into what has become modern DevOps.[11] Today, DevOps focuses on the deployment of developed software, whether it is developed via Agile or other methodologies&lt;/p&gt;
+&lt;p&gt;Because &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; emerged as the dominant Agile framework in the early 2000s, and it omitted the engineering practices that were part of many Agile teams, the movement to automate operations functions splintered from Agile and expanded into what has become modern DevOps &lt;a href=&#34;#accelerate&#34;&gt;[1]&lt;/a&gt;.
+Today, DevOps focuses on the deployment of developed software, whether it is developed via Agile or other methodologies.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;To practice DevOps effectively, software applications have to meet a set of architecturally significant requirements such as: deployability, modifiability, testability, and monitorability.
@@ -10871,7 +11532,7 @@ The approaches, recipes and failures are similar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Although it is possible to practice DevOps with any architectural style, the microservices architectural style is becoming the standard for building continuously deployed systems.
-Small size service allows the architecture of an individual service to emerge through continuous refactoring,[69] hence reducing the need for a big upfront design, allows for releasing the software early[citation needed] and continuously.&lt;/p&gt;
+Small size service allows the architecture of an individual service to emerge through continuous refactoring &lt;a href=&#34;#continuous-delivery&#34;&gt;[4]&lt;/a&gt;  hence reducing the need for a big upfront design, allows for releasing the software early[citation needed] and continuously.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -12284,14 +12945,24 @@ The participants of the study confirmed these documented facts.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;It seems that hybrid methods are way less successful than agile based on SwissQ data.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/hybrid-methods-success-2021.svg&#34; alt=&#34;hybrid methods success 2021&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: Could not find the &amp;#39;mermaid&amp;#39; executable in PATH; add it to the PATH or specify its location using the &amp;#39;mermaid&amp;#39; document attribute
+pie
+    title Hybrid Methods Success 2021
+    &amp;#34;Successful&amp;#34; : 35.3
+    &amp;#34;Challenged&amp;#34; : 63.4
+    &amp;#34;Stopped&amp;#34; : 1.3&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/agile-methods-success-2021.svg&#34; alt=&#34;agile methods success 2021&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: no implicit conversion of nil into String
+pie
+    title Agile Methods Success 2021
+    &amp;#34;Successful&amp;#34; : 55.4
+    &amp;#34;Challenged&amp;#34; : 44.6
+    &amp;#34;Stopped&amp;#34; : 0.001&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -12303,14 +12974,35 @@ The good news is that many companies have started transformation initiatives or 
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_used_methods_in_switzerland&#34;&gt;Used Methods in Switzerland&lt;/h3&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/hybrid-methods-2021.svg&#34; alt=&#34;hybrid methods 2021&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: no implicit conversion of nil into String
+pie
+    title Hybrid Methods 2021
+    &amp;#34;Scrum&amp;#34; : 64.7
+    &amp;#34;Waterfall&amp;#34; : 58.9
+    &amp;#34;Kanban&amp;#34; : 40.2
+    &amp;#34;SAFe&amp;#34; : 25.9
+    &amp;#34;Hermes&amp;#34; : 18.8
+    &amp;#34;Scrumban&amp;#34; : 13.8
+    &amp;#34;DaD&amp;#34; : 3.1
+    &amp;#34;Unified Process&amp;#34; : 1.8
+    &amp;#34;Others&amp;#34; : 11.6&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/agile-methods-2021.svg&#34; alt=&#34;agile methods 2021&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: no implicit conversion of nil into String
+pie
+    title Agile Methods 2021
+    &amp;#34;Scrum&amp;#34; : 75.1
+    &amp;#34;SAFe&amp;#34; : 46.3
+    &amp;#34;Kanban&amp;#34; : 42.9
+    &amp;#34;Scrumban&amp;#34; : 15.3
+    &amp;#34;Hermes 5&amp;#34; : 4.5
+    &amp;#34;Waterfall&amp;#34; : 3.4
+    &amp;#34;DaD&amp;#34; : 1.7
+    &amp;#34;Others&amp;#34; : 7.9&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -13176,14 +13868,24 @@ The raise of digital and Internet affine banking solutions is such a transformat
 The agile approach seems to eliminate catastrophic development failures.
 It means an agile team has 25% higher relative probability to be victorious than classical teams (&lt;em&gt;50.5% versus 39.5%&lt;/em&gt;).&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/waterfall-methods-success-2020.svg&#34; alt=&#34;waterfall methods success 2020&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: Could not find the &amp;#39;mermaid&amp;#39; executable in PATH; add it to the PATH or specify its location using the &amp;#39;mermaid&amp;#39; document attribute
+pie
+    title Waterfall Methods Success 2020
+    &amp;#34;Successful&amp;#34; : 39.5
+    &amp;#34;Challenged&amp;#34; : 59.7
+    &amp;#34;Stopped&amp;#34; : 0.9&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/agile-methods-success-2020.svg&#34; alt=&#34;agile methods success 2020&#34; width=&#34;784&#34; height=&#34;450&#34;/&gt;
+&lt;pre&gt;Failed to generate image: no implicit conversion of nil into String
+pie
+    title Agile Methods Success 2020
+    &amp;#34;Successful&amp;#34; : 50.5
+    &amp;#34;Challenged&amp;#34; : 49.1
+    &amp;#34;Stopped&amp;#34; : 0.4&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -14960,367 +15662,6 @@ This approach could break backward compatibility.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I regularly open issues in various open-source libraries to request an API extension to support Path. The maintainer of the library is often not aware you need &lt;em&gt;Path&lt;/em&gt; to unit test with in-memory file systems.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: LeSS Lessons Learnt</title>
-      <link>https://blog.tangly.net/blog/2021/less-lessons-learnt/</link>
-      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/less-lessons-learnt/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_less_lessons_learnt&#34;&gt;LeSS Lessons Learnt&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-02-01-head.svg&#34; alt=&#34;2021 02 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Scaling Agile, Lean and &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; to the whole product development department is hard work.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You start a change journey in murky waters.
-Best to communicate a lot, strengthen your teams and have total support of upper management.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Technical agile coaching usefully describes the work I do.
-Agile coaching helps your business to become more successful, often improve the way you plan and deliver software.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Technical agile coaching focuses on how people design products, write code and deliver high-quality products.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;My aim is the same as other agile coaches.
-I improve the agility of the organizations I work with.
-I use coaching, mentoring, teaching and facilitation techniques just as other coaches do.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;My main focus is how the source code is written, the design defined, and the architecture formulated.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Our goal is to deliver a highly successful product.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_approach&#34;&gt;Agile Approach&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;My own interpretation of agile as doctrine is:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Reduce the distance between problems and problem-solvers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Practice &lt;strong&gt;Gemba&lt;/strong&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Take small steps, collect data, validate every step, update your approach.
-Apply the &lt;em&gt;Plan-Do-Check-Act&lt;/em&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/PDCA&#34;&gt;PDCA loop&lt;/a&gt;.
-Clean up as you go.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Lead and cycle-time are measures of the organizational agility.
-Track them.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Do not ask for permission when you want to continuously improve.
-A professional is supposed to improve.
-This is a core responsibility of your teams and team members.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You have the retrospectives to identify and plan your improvements.
-You must allocate time for implementing the improvement in every sprint.
-&lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; is clear, at least one improvement measure is a high priority backlog item in the next sprint
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;If you can choose, do &lt;strong&gt;not&lt;/strong&gt; use SAFe.
-I observe organizations struggling with SAFe’s over-standardized, phase-gated processes.
-The top-down control generates waste in the value stream and discourages engineering talent creativity.
-It seriously limits autonomy and experimentation in the teams.
-It can promote silos in the organization, preventing platforms from becoming real business capabilities enablers.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock warning&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-warning&#34; title=&#34;Warning&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.thoughtworks.com/&#34;&gt;Thoughtworks&lt;/a&gt; put SAFe on hold in their &lt;a href=&#34;https://www.thoughtworks.com/radar&#34;&gt;Technology Radar&lt;/a&gt; Volume 24 released in April 2021.
-On hols means proceeding with caution.
-Said bluntly, just do not use it if you can choose.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_ways_of_working&#34;&gt;Ways of working&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The following three levels of coaching are commonly needed:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_organizational_less_coaching&#34;&gt;Organizational LeSS Coaching&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A coach works with multiple teams and the management to improve the organization and its structure.
-A clear vision of how a LeSS organization could be:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-02-01-coaching.png&#34; alt=&#34;2021 02 01 coaching&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Organizational structure and design,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt;,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Role of management,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Adoption and goals setting,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Managing an organizational improvement backlog,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Changing management practices from controlling day-to-day work to building capability,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Managing work: product backlogs and how the organization manages them,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Dealing with interruptions,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Human Resource practices such as appraisals and career paths,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Facilitating organizational release/roadmap planning and retrospectives.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_team_less_coaching&#34;&gt;Team LeSS Coaching&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A coach works with at most a few teams to improve their team-working and &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; practices.
-It is common for a coach to take on the Scrum Master role.
-A team coach typically focuses on:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Team responsibilities with self-managing teams.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Facilitation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Improving the team’s decision-making and conflict resolution.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Transparency in the team.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Making organizational impediments visible.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Improving the relationship between the &lt;em&gt;Development Team&lt;/em&gt; and the &lt;em&gt;Product Owner&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Product Ownership (of both the team, the PO, and other stakeholders).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Role and contribution of the team’s management.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Improve Scrum practices (and technical practices).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Educate and coach the team’s (future) Scrum Master.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_technical_practices_coaching&#34;&gt;Technical Practices Coaching&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A coach works with (or on) a team on their actual codebase in order to improve the technical practices and adopt agile development techniques.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph text-center&#34;&gt;
-&lt;p&gt;&lt;strong&gt;A technical coach is an expert on software development techniques&lt;/strong&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock center&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-02-01-technical-agility.png&#34; alt=&#34;2021 02 01 technical agility&#34; width=&#34;800&#34; height=&#34;600&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; strongly emphasizes technical agility and promotes associated good practices.
-High-quality products require well-trained professional developers and mastery.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Examples are simple design, refactoring, unit testing, test-driven development and acceptance test-driven development.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A coach typically focuses on:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Discovering “code/design smells”.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Places where code/design could be improved.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explaining modern, “clean” code that is simple and easier to change and maintain.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Refactoring “smells” into clean code.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Writing unit tests.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Test-driven development.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Test Automation Continuous integration and continuous delivery.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Specification by Example (Acceptance Test-Driven Development).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Efficient and effective working practices (IDE, automation).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Applying design patterns.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;In all our mandates, one major activity is improving the legacy code.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph text-center&#34;&gt;
-&lt;p&gt;Legacy code is &lt;strong&gt;Code without tests&lt;/strong&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph text-center&#34;&gt;
-&lt;p&gt;Legacy code is &lt;strong&gt;Profitable code that we feel afraid to change&lt;/strong&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_much_coaching&#34;&gt;How Much Coaching?&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The most successful &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; adoptions we have seen had the following structure:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph text-center&#34;&gt;
-&lt;p&gt;&lt;strong&gt;One internal and one external coach&lt;/strong&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This pair provides the overview of the &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; adoption.
-They together coach management.
-They are also involved with team and technical coaching.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;External team coaches who help the teams become better and focus on training the Scrum Masters.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;External technical coaches who focus on training internal technical coaches&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Have some technical coaches work with the teams, but let them focus on training internal coaches.
-After that reduce (not eliminate!) the external technical coaching or let the external coach move to a new area.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_be_patient_the_time_horizon_is_years&#34;&gt;Be Patient, The Time Horizon is Years&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Trust your people.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Create opportunities.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Establish a learning culture.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Thrive for craftsmanship.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Let the team use internal social pressure.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Eliminate specialization, push mastery.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;At the beginning, follow the &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; rules.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Extended responsibility, rounded products provide a room and freedom for better decisions.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_remember&#34;&gt;Remember&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; is &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt;, it is Large Scaled Scrum Feature teams are economical.
-Cross-functional Technical excellence is the essence of a quality solution.
-One product owner for the whole product provides focus.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The product owner is where the money is.
-Depending on your organization put him where the budget comes from.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Move from a component owner to become a component mentor.
-He is responsible for teaching others how to adapt and evolve the component.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2018/agile-introduction-success-criteria-through-the-less-lens&#34;&gt;Agile Introduction Success Criteria Through The LeSS Lens&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://fansofless.com/&#34;&gt;Fans of LeSS&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://scrumteamsurvey.org/&#34;&gt;Scrum Teams Survey&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Sadly, the Scrum Guide revision of 2020 removed this rule. They deleted this PDCA mechanism.
 &lt;/div&gt;
 &lt;/div&gt;
 
