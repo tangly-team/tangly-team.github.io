@@ -4,7 +4,7 @@
     <link>https://blog.tangly.net/tags/java/</link>
     <description>Recent content in java on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,213 @@
         
       
     
+    
+    <item>
+      <title>Blog: Behavior Driven Design</title>
+      <link>https://blog.tangly.net/blog/2022/behavior-driven-design/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2022/behavior-driven-design/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_behavior_driven_design&#34;&gt;Behavior Driven Design&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-11-01-head.jpg&#34; alt=&#34;2022 11 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Domain-Driven Design &lt;em&gt;DDD&lt;/em&gt; has been around since Eric Evans published his book about the subject in 2003 [&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;].
+Vernon Vaugh published powerful approaches how to implement DDD concepts [&lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#domain-driven-design-distilled&#34;&gt;3&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Behavior Driven Design &lt;em&gt;BDD&lt;/em&gt; is an inversion how systems are often developed.
+In some ways, it is an extension of Test Driven Development &lt;em&gt;TDD&lt;/em&gt; approach to the whole application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Acceptance criteria are coded as automated acceptance tests.
+The software is written to fulfill these acceptance tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach integrates well with agile frameworks.
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.
+The product owner can accept the story based on the test description enforcing his acceptance criteria.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The documentation describing the acceptance tests is automatically generated.
+These documented acceptance tests are the requirements of the application.
+This approach is often called specification by example [&lt;a href=&#34;#bridging-communication-gap&#34;&gt;4&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I strongly advocate that the developers write the acceptance tests and generate the legible description of the tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_constraints&#34;&gt;Constraints&lt;/h3&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-11-01-ddd-clean-architecture.png&#34; alt=&#34;2022 11 01 ddd clean architecture&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The BDD approach works well when &lt;a href=&#34;https://martinfowler.com/bliki/DomainDrivenDesign.html&#34;&gt;Domain Driven Design&lt;/a&gt; is applied as described in the seminal reference texts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The acceptance tests are often specified against a &lt;a href=&#34;https://martinfowler.com/bliki/BoundedContext.html&#34;&gt;Bounded Context&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It is cumbersome and difficult to test &lt;a href=&#34;https://martinfowler.com/bliki/AnemicDomainModel.html&#34;&gt;Anemic Domain Model&lt;/a&gt;.
+Rich Domains are models that have full control of their data and do not rely on external objects to manipulate them.
+Anemic Domains are models that rely on other classes to validate their data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An elegant design approach such as &lt;a href=&#34;https://martinfowler.com/bliki/CQRS.html&#34;&gt;CQRS&lt;/a&gt; hugely simplifies the definition and implementation of acceptance tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I want to keep the understanding of the strategies simple.
+The Domain Events strategy is nothing more than an event fired from a Context X microservice with information that may interest other contexts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This strategy is used when we would like to have asynchronous behavior between our contexts, since the context responsible for publishing the message will not expect a return.
+For instance, the action that the consumer will take based on this event does not matter to him.
+For it is always important to think about notifying past actions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_evolution&#34;&gt;Evolution&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A tension exists who is in charge to write the acceptance tests.
+Experts initially advocated that the product owner or the business analysts should write the tests to validate the work of the development team.
+Solutions such as Gherkin and Fitnesse were developed to support this approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Experience showed the difficulty of maintaining and refactor test sets written by non-developers.
+I strongly advocate product owners shall formulate the acceptance criteria.
+Developers shall always write the acceptance tests and guarantee a reasonable quality of the created code.
+Use frameworks based on a programming language instead of structured text approaches.
+Modern development platforms provide powerful refactoring tools for source code but almost none for a regular text.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Refactoring and clean code principles shall permeate a modern software development approach.
+Avoid archaic solutions requiring expensive manual activities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_experiments&#34;&gt;Experiments&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We are using a small framework to write acceptance criteria automated tests and create the associated documentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library is available as a Java &lt;em&gt;net.tangly:bdd:&amp;lt;version&amp;gt;&lt;/em&gt; Java distribution.
+It is published on maven central.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A documentation is available under &lt;a href=&#34;../../../docs/bdd/&#34;&gt;BDD Documenation&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A test uses the &lt;em&gt;given, when, then&lt;/em&gt; structure and has the following form:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@Scenario&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Sell some black sweaters in stock to a customer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;sellBlackSweaters&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #3c5d5d;font-weight: bold&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Scene&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;scene&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrBlueSweaters&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #009999&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrBlackSweaters&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #009999&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrSoldBlackSweaters&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #009999&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;scene&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;given&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;The store is stocked with sweaters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt;
+                                &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;create&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrBlackSweaters&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrBlueSweaters&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;))&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;and&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;has 5 black sweaters in stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;assertThat&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;blacks&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;())&lt;/span&gt;
+                &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;as&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Store should carry 5 black sweaters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isEqualTo&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrBlackSweaters&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)).&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;and&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;4 blue sweaters in stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;assertThat&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;blues&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;())&lt;/span&gt;
+                &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;as&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Store should carry 4 blue sweaters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isEqualTo&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrBlueSweaters&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)).&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;when&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;The customer buys 3 black sweaters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;sellBlack&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrSoldBlackSweaters&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;))&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;then&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;The store should have 2 black sweaters in stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt;
+                                &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;assertThat&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;blacks&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;())&lt;/span&gt;
+                &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;as&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Store should carry 1 black sweaters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+                                &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isEqualTo&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrBlackSweaters&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrSoldBlackSweaters&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;))&lt;/span&gt;
+            &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;and&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;4 blue sweaters in stock&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;assertThat&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;store&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;blues&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;())&lt;/span&gt;
+                &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;as&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#34;Store should carry 4 blue sweaters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;isEqualTo&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;NrBlueSweaters&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;))&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Tests are executed as regular JUnit tests.
+You can easily integrate them in your CI/CD pipeline as integration tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The generated documentation is
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 100%;&#34;/&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;div class=&#34;content&#34;&gt;&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As a store owner, I want to update the stock when I am selling sweaters to customers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;tags:&lt;/strong&gt; &amp;#39;Release 1.0&amp;#39;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Scenario: Sell some blue sweaters in stock to a customer&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;given&lt;/strong&gt; The store is stocked with sweaters &lt;strong&gt;and&lt;/strong&gt; has 5 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 4 blue sweaters in stock&lt;br/&gt;
+&lt;strong&gt;when&lt;/strong&gt; The customer buys 3 blue sweaters&lt;br/&gt;
+&lt;strong&gt;then&lt;/strong&gt; The store should have 5 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 1 blue sweater in stock.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A report example is available under &lt;a href=&#34;../../../docs/bdd/bdd-report/&#34;&gt;Report Example&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We are experimenting with projects to find out if this approach nurtures legibility and conversation between developers and users.
+The results are mixed.
+The integration tests are not easier to write with the library instead of regular &lt;a href=&#34;https://junit.org/junit5/docs/current/user-guide/&#34;&gt;JUnit 5&lt;/a&gt; tests.
+The generated documentation and available JSON reports are valuable.
+The question is how valueable are they?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We still try to define metrics to valuate the usefulness of living documentation describing the requirements of the product.
+The usual approach is either to write a huge Microsoft Word document or use a specification tool storing the information in a database.
+The advantages of living documentation still need to be quantified.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[1] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[2] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design-distilled&#34;&gt;&lt;/a&gt;[3] V. Vernon, &lt;em&gt;Domain-Driven Design Distilled&lt;/em&gt;. Addison-Wesley Professional, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01JJSGE5S/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01JJSGE5S/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;bridging-communication-gap&#34;&gt;&lt;/a&gt;[4] G. Adzic, &lt;em&gt;Bridging the Communication Gap&lt;/em&gt;. Neuri Limited, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B008YZ993W/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B008YZ993W/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Scrum advocates recognize the compatibility with their framework. Each story in the product backlog shall have acceptance criteria defined under the product owner’s responsibility. The key is to formulate the acceptance criteria so that they can be coded as automated tests.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. A JSON export is also available to tailor the generated documentation to your project needs.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Modern Java Constructs</title>
