@@ -4,7 +4,7 @@
     <link>https://blog.tangly.net/tags/gradle/</link>
     <description>Recent content in gradle on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,169 @@
         
       
     
+    
+    <item>
+      <title>Blog: Multi-Module Test Reporting with Gradle 7.x</title>
+      <link>https://blog.tangly.net/blog/2022/multi-module-test-reporting-with-gradle-7.x/</link>
+      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2022/multi-module-test-reporting-with-gradle-7.x/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_multi_module_test_reporting_with_gradle_7_x&#34;&gt;Multi-Module Test Reporting with Gradle 7.x&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-11-02-head.jpg&#34; alt=&#34;2022 11 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I love Gradle as the building tool for all my Java projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;But sometimes I was discouraged about how spotty or cumbersome the support for multi-module project is.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I struggled for years to generate test and code overage reports over modules included in a &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle finally provides a better approach to generate aggregated test and code coverage reports over multiple modules belonging to the same project.
+The solution is a huge improvement against the previous quite cumbersome approach described in &lt;a href=&#34;#gradle-7&#34;&gt;[1]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Two plugins nicely solve this daunting problem for all Java developers preferring &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; over &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I hope similar solutions will be provided for static code analysers such as SpotBugs, PMD or Checkstyle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_selected_approach&#34;&gt;Selected Approach&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We use the documented approach to define a separate module to generate the aggregation reports.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;plugins&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;                                           &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;id&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;test-report-aggregation&amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;id&lt;/span&gt; &lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;jacoco-report-aggregation&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;dependencies&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;                                      &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;testReportAggregation&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;project&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;:net.tangly.bdd&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;testReportAggregation&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;project&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;:net.tangly.commons&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;testReportAggregation&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;project&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;:net.tangly.core&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;testReportAggregation&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;project&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;:net.tangly.dev&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;jacocoAggregation&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;project&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;:net.tangly.bdd&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;jacocoAggregation&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;project&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;:net.tangly.commons&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;jacocoAggregation&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;project&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;:net.tangly.core&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;jacocoAggregation&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;project&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #d14&#34;&gt;&amp;#39;:net.tangly.dev&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt;
+ &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;reporting&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;                                         &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+    &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;reports&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;testAggregateTestReport&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;AggregateTestReport&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;testType&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;TestSuiteType&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;UNIT_TEST&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+        &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;testCodeCoverageReport&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #f8f8f8&#34;&gt;JacocoCoverageReport&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;testType&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;TestSuiteType&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #008080&#34;&gt;UNIT_TEST&lt;/span&gt;
+        &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Load the plugin for test aggregation report and the test coverage aggregation report.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Declare the modules which results should be aggregated. We have to declare the same subprojects for each plugin separately.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Configure the aggregation reports.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We call the following goals to generate the aggregation results:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;./gradlew testAggregateTestReport &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+./gradlew testCodeCoverageReport  &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Generates an aggregate report over all unit tests. Run first gradle test.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Generates a code coverage aggregate report over all unit tests. Run first gradle jacocoTestReport.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_learnings&#34;&gt;Learnings&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle provides test results aggregation and test coverage aggregation as two separate plugins.
+The drawback is that we have to configure both plugins with the same information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The plugins make the assumption that modules are called from an application subproject.
+The scenario of a mono repository containing a set of libraries is not covered.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We would encourage the plugin authors to provide a default configuration option based on the gradle settings defined in &lt;em&gt;settings.gradle&lt;/em&gt;.
+The modules are defined in the file and could be retrieved by the plugin using the Gradle API.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Apply the cardinal rule of good user interface design.
+Do not ask the user to give information already available to the application.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The new plugins are a huge simplification over the cumbersome and almost magic statements we needed before to create these reports.
+Gradle ecosystem is still work in progress to support multi-module Java projects &lt;a href=&#34;#gradle-7&#34;&gt;[1]&lt;/a&gt; &lt;a href=&#34;#gradle-6&#34;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;gradle-7&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2021/gradle-7/&#34;&gt;Gradle 7 Goodies&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;gradle-6&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../..2020/gradle-6.4-finally-supports-java-modules/&#34;&gt;Gradle 6.4 Finally Supports Java Modules&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Gradle 7</title>

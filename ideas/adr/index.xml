@@ -895,6 +895,21 @@ The core library is declared as a test or runtime dependency.&lt;/p&gt;
 The risk is small because it is already existing wehn using slf4j liberary.
 The difference is only our new preferred library is now the Apache one.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Configure slf4j API to use the log4j2 backend to write logging statements.
+This configuration is important if some of your libraries are using slf4j.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The architecture of log4j2 is described in &lt;a href=&#34;https://logging.apache.org/log4j/2.x/manual/architecture.html&#34;&gt;Log4j2 Main Components&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -906,7 +921,7 @@ The difference is only our new preferred library is now the Apache one.&lt;/p&gt
 &lt;li&gt;
 &lt;p&gt;The log4j2 community reacted professionally and fast in 2022 to correct a security attack in the library.
 The update of all libraries and applications with the patched version was done in a few minutes.
-A gradle plugin was used to infer which version of the library was used.
+A gradle plugin was used to infer, which version of the library was used.
 The continuous implementation and delivery pipeline were used to generate hardened versions.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;

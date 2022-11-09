@@ -129,7 +129,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.c34ead0aad4b106721665d9fa92f7c6b.json"
+    data-offline-search-index-json-src="/offline-search-index.f730e5b62ce11909c9dcae3094c0f053.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -194,6 +194,831 @@ This is the multi-page printable view of this section.
   
 
 <div class="td-content" style="">
+    <h1 id="pg-8cffdb0c49ce0f4dbcc2abd8a7c6abac">First Steps DevOps</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2022-11-08" class="text-muted">2022-11-08</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_first_steps_devops">First Steps DevOps</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2022-12-01-head.png" alt="2022 12 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>The <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a> movement started to gather momentum with the first DevOps conference held in Ghent, Belgium in 2009
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>The approach aims to shorten the system development life-cycle and to provide continuous delivery with high software quality.
+DevOps is complementary with <a href="https://en.wikipedia.org/wiki/Agile_software_development">agile software development</a> approaches.</p>
+</div>
+<div class="paragraph">
+<p>Several DevOps aspects came from the Agile method.</p>
+</div>
+<div class="paragraph">
+<p>Seminal books [<a href="#accelerate">1</a>, <a href="#devops-handbook">2</a>, <a href="#phoenix-project">3</a>, <a href="#site-reliability-engineering">4</a>] and good practices were published around the same time.</p>
+</div>
+<div class="paragraph">
+<p>The DevOps approach belongs to the regular instruments of professional software developers.
+Major development platforms, <a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a>, <a href="https://bitbucket.org/">BitBucket</a>
+and <a href="https://azure.microsoft.com/de-de/services/devops/">Microsoft Azure DevOps</a> do support continuous integration, delivery and deployments for years.</p>
+</div>
+<div class="paragraph">
+<p>The DORA metrics define a standard approach to measure the quality and efficiency of a DevOps or agile process implementation in an organization.
+They were published in 2016.
+The metrics for throughput are <em>deployment frequency, and lead time for changes</em>.
+The metrics for stability are <em>mean time to recover, and change failure rate</em>.</p>
+</div>
+<div class="paragraph">
+<p>They define a standard approach to measure the quality and efficiency of a DevOps or agile process implementation in an organization.
+An agile team shall be able to deploy a version of their digital platform multiple times per day.
+Frequent and economical deployments require the full automation of the integration, delivery and deployment steps.</p>
+</div>
+<div class="paragraph">
+<p>Below, we provide a detailed possible approach to deploying DevOps concepts in your organization.
+These recipes are helpful for companies with little knowledge and experience in agile and DevOps approaches for digital product development <a href="#detecting-agile-bullshit">[5]</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_continuous_integration"><a href="https://en.wikipedia.org/wiki/Continuous_integration/">Continuous integration</a></h3>
+<div class="paragraph">
+<p>In software engineering, continuous integration <em>CI</em> is the practice of merging all developers&#39; working copies to a shared mainline <strong>several times</strong> a day
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>The workflow is:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write some code, compile and run test locally using a script.<br/>
+<em>No manual activities shall be required to compile the solution and run all tests.</em></p>
+</li>
+<li>
+<p>Commit, push, and compile code in the continuous integration environment.<br/>
+<em>A continuous integration pipeline shall be available.</em>
+<em>The environment is a clean new one each time the pipeline is triggered.</em></p>
+</li>
+<li>
+<p>Run static code analyzers, unit tests and integration in this integration environment.</p>
+</li>
+<li>
+<p><em>Optionally, trigger continuous delivery if the earlier steps were successful</em>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Classical questions and answers <em>FAQ</em> are:</p>
+</div>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em>How often shall a developer push new code to the shared repository?</em></p>
+<p>Laggard developers should push multiple times a week.
+Professional developers push multiple times a day <a href="#code-as-crime-scene">[4]</a>.</p>
+</li>
+<li>
+<p><em>What steps are part of a continuous integration script?</em></p>
+<p>The script shall at least compile the solution.
+Static code checkers shall be called to validate the changes and ensure minimal code quality.<br/>
+Modern checkers detect syntactic, semantic or security violations.
+OWASP are readily available to start implementing DevSecOps.
+Unit tests and if reasonable integration shall be executed automatically to verify the changes.</p>
+</li>
+<li>
+<p><em>When should the continuous integration script be executed?</em></p>
+<p>Each time a git push is registered and the repository is updated
+<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.
+You want to guaranty that the repository is in a consistent state.<br/>
+Any developer should be able to check out the repository and start working.</p>
+</li>
+<li>
+<p><em>Can you add manual steps to your continuous integration script?</em></p>
+<p>No, manual steps are the death of continuous integration and automation.
+It is called <strong>continuous</strong> because it is <strong>automated</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_continuous_delivery"><a href="https://en.wikipedia.org/wiki/Continuous_delivery">Continuous delivery</a></h3>
+<div class="paragraph">
+<p>Continuous delivery <em>CD</em> is a software engineering approach in which teams produce software in short cycles.
+It ensures that the software can be reliably released at any time and, when releasing the software, <strong>without doing so manually</strong>.
+It aims at building, testing, and releasing software with greater speed and frequency.</p>
+</div>
+<div class="paragraph">
+<p>The approach helps reduce the cost, time and risk of delivering changes by allowing for more incremental updates to applications in production.
+A straightforward and repeatable deployment process is important for continuous delivery.</p>
+</div>
+<div class="paragraph">
+<p>Classical questions and answers <em>FAQ</em> are:</p>
+</div>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em>How can a new delivery package be generated?</em></p>
+<p>Your continuous integration pipeline should have a delivery step and produce an executable artifact.
+Your hosting platform provides a service to upload versioned artifacts to a repository.
+Java artifacts are often stored in Maven Central.
+Docker images are often uploaded to Docker Hub.</p>
+</li>
+<li>
+<p><em>Where should we store the migration scripts?</em></p>
+<p>Migration and configuration scripts are part of the delivery.
+The installation process shall perform an unattended migration of the configuration and databases.
+<strong>Manual steps are not allowed</strong>.</p>
+</li>
+<li>
+<p><em>When is a new delivery package created?</em></p>
+<p>Upon completion of compilation, static verification, unit tests and integration tests, you should create the delivery package.</p>
+</li>
+<li>
+<p><em>Which preferred format should you use?</em></p>
+<p>For complex solutions, the preferred format is a <a href="https://www.docker.com/">docker</a> image or a <a href="https://kubernetes.io/">kubernetes</a> pod.</p>
+</li>
+<li>
+<p><em>How do you identify a specific version of a package?</em></p>
+<p><a href="https://semver.org/">Semantic versioning</a> is the standard approach to generating legible package identifiers.
+You are free to adopt another naming scheme for <a href="https://en.wikipedia.org/wiki/Software_versioning">software versioning</a>.
+Just document your approach.<br/>
+Implement a function so that your users can find out the version of the product they are using.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_continuous_deployment"><a href="https://en.wikipedia.org/wiki/Continuous_deployment">Continuous deployment</a></h3>
+<div class="paragraph">
+<p>Continuous deployment <em>CD</em> is a software engineering approach in which software functionalities are delivered frequently through automated deployments.
+Continuous deployment contrasts with continuous delivery.
+It is a similar approach in which software functionalities are also frequently delivered and deemed to be potentially capable of being deployed.</p>
+</div>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em>Are manual steps good practice for continuous deployment?</em></p>
+<p><strong>Never</strong> perform manual steps.
+Continuous activities require full automation.
+Manual steps can only be performed if a trained collaborator is available.
+Manual activities are expensive, automated activities are cheap.</p>
+</li>
+<li>
+<p><em>What should you do if a deployment fails?</em></p>
+<p>The environment should perform an automatic rollback to the last working configuration.
+It is the reason why DORA metrics <a href="#dora-metrics">[1]</a> <a href="#dora-google">[2]</a> measure <em>mean time to recover</em>  and <em>change failure rate</em>.</p>
+</li>
+<li>
+<p><em>Are commercial platforms available for continuous deployment?</em></p>
+<p>Major cloud services <a href="https://aws.amazon.com/">Amazon AWS</a>, <a href="https://cloud.google.com/">Google Cloud</a>, <a href="https://azure.microsoft.com/">Microsoft Azure</a>,
+<a href="https://www.heroku.com/">Heroku</a>, etc. provide continuous deployment pipelines and integration with product development platforms.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_logging_and_monitoring">Logging and Monitoring</h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Site_reliability_engineering">Site reliability engineering</a>
+and <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a> practices are standard approaches in any professional organization running digital products productively.</p>
+</div>
+<div class="paragraph">
+<p>Monitoring is used as a <a href="https://en.wikipedia.org/wiki/PDCA">PDCA</a> loop to continuously improve the construction and delivery process of a productive solution.</p>
+</div>
+<div class="paragraph">
+<p>Classical questions and answers <em>FAQ</em> are:</p>
+</div>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em>What should be logged?</em></p>
+<p>The software architecture document of your solution should document how and what information you are logging.
+Mapped diagnostic contexts are used to track session and user related actions and log records
+<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>
+<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.</p>
+</li>
+<li>
+<p><em>Should logging information be archived?</em></p>
+<p>The corporate governance guidelines shall prescribe how long logging information is stored and who can access the data.<br/>
+Logging information should be available to protect your company against legal complaints.
+The information is also invaluable for security incident analysis
+<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>.</p>
+</li>
+<li>
+<p><em>Should applications be monitored?</em></p>
+<p>All productive installations should be monitored through a professional solution.
+The monitoring approach should detect issues before they impede user processes.
+You shall document the alarming and recovery process.
+<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_github_gitlab_bitbucket">GitHub, GitLab, BitBucket</h3>
+<div class="paragraph">
+<p>Modern software development departments use these platforms for collaboration and implementation.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="../pics/2022-12-01-ci-vs-cd.png" alt="2022 12 01 ci vs cd" width="90%" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>As stated on GitHub website, we have the following definitions.</p>
+</div>
+<div class="paragraph">
+<p><strong>Automation</strong> is a core principle for achieving DevOps success and CI/CD is a critical component.
+CI/CD consists of continuous integration and continuous delivery or continuous deployment.
+Put together, they form a <em>CI/CD/CD pipeline</em>.
+<strong>Automated</strong> workflows that help DevOps teams cut down on manual tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Continuous integration (CI) automatically builds, tests and integrates code changes within a shared repository.</p>
+</li>
+<li>
+<p>Continuous delivery (CD) automatically delivers code changes to production-ready environments for a final approval.</p>
+</li>
+<li>
+<p>Continuous deployment (CD) automatically deploys code changes to customers directly.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Multiple Toolchains</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>GitHub supports multiple toolchain installation through successive steps in the pipeline.</p>
+</li>
+<li>
+<p>BitBucket can only install one toolchain for a pipeline.
+Additional toolchains must be installed using package management of the operating system of your Docker image.
+Beware that package managers are dependant of the used distribution.
+The openjdk regular image uses, for example, <em>microdnf</em> as package manager.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Actual Java JDK Releases</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>GitHub does not support the latest official Java releases on time.</p>
+</li>
+<li>
+<p>Bitbucket supports all officially released Java versions.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You need a platform and automation expert in your development team to harvest the advantages.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>odoo.sh has selected GitHub as their preferred platform.
+We shall use the GitHub CI/CD/CD approach as defined in odoo.sh to develop and deploy all our application development.</p>
+</div>
+<div class="paragraph">
+<p>Github provides initial support for Security, DevOps, and agile approaches.
+We shall evaluate these tools and, if relevant, use them as standard tooling for our Odoo software tailoring and development.</p>
+</div>
+<div class="paragraph">
+<p>The CI tools of GitHub are ideal to implement DevSecOps approaches on odoo modules and internal Python application development.
+The Sonar scanners verify for example compliance to OWASP vulnerabilities.
+This verification step can be executed on a repository update to remove vulnerabilities in deployed oddo instances.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_legacy_system_variations">Legacy System Variations</h3>
+<div class="paragraph">
+<p>Legacy systems must compromise how they implement their pipelines.
+Source code shall always follow the clean code and DevOps principles.
+Configuration information stored in the database must often be migrated between staging areas.
+Please document your <strong>automated</strong> process and rules.</p>
+</div>
+<div class="paragraph">
+<p>Modern systems have fully adopted the <a href="https://en.wikipedia.org/wiki/Continuous_configuration_automation">configuration</a>
+and <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code">infrastructure as code</a> approach.
+Migrate your approach to automated configuration scripts to configure and initialize your products.</p>
+</div>
+<div class="paragraph">
+<p>Incremental migration of database schema and productive data is a well-understood software engineering problem [<a href="#refactoring-databases">5</a>] for decades.
+Tools such as <a href="https://flywaydb.org/">FlyWay</a> or <a href="https://www.liquibase.org/">LiquidBase</a> provide enterprise grade productive solutions.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>The open ERP Odoo platform uses <a href="https://github.com/">GitHub</a> to offer a clean DevOps process for the <a href="https://www.odoo.sh/">Odoo.sh</a> cloud platform.
+The approach has two components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Source code and modules updates follow clean code and DevOps principles.
+You create new functions in the development branches, merge them in staging branches to test them and release the changes to the production branch for deployment.
+The approach is like the staging process of the Linux kernel.</p>
+</li>
+<li>
+<p>Database updates are performed slightly differently between development and the other staging area.
+The staging area either gets a copy of the production database or a migrated version of the previous staging area database.
+This behavior can be configured.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Merging a staging branch in the production branch only merges the source code.
+Any configuration changes you made in the staging databases are not passed to the production database.</p>
+</div>
+<div class="paragraph">
+<p>If you test configuration changes in staging branches, and you want them to be applied in the production, you have to either:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Write the configuration changes in XML data files overriding the default configuration or views in your branches, and then increase the version of your module in its manifest (<em>manifest</em>.py) to trigger the update of the module when you merge your staging branch in your production branch.
+This is the best practice for a better scalability of your developments as you use the Git versioning features for all your configuration changes.
+Therefore, you have traceability for your changes.</strong>
+<em>This approach is compatible with clean code and DevOps</em>.</p>
+</li>
+<li>
+<p>Pass them manually from your staging to your production database, by copying and pasting them.
+<em>This approach is probably a motive to fire the developer because traceability, auditability and reproducibility are not enforced</em>.
+<em>Regular corporate governance rules are neglected and could have legal consequences in case of incidents on the production server.</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you want to test the changes of your development branches with the production data, you can either:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Merge the development branch into your staging branch, by dragging and dropping it onto the desired staging branch.</p>
+</li>
+<li>
+<p>Drag and dropping the development branch on the staging section title, to make it become a staging branch.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When your latest changes are ready for production, you can merge the staging branch onto your production branch to deploy in production your newest features.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The above process is documented for Odoo version 15 under <a href="https://www.odoo.com/documentation/15.0/administration/odoo_sh/getting_started/branches.html">branches</a> section.</p>
+</div>
+<div class="sect3">
+<h4 id="_unprofessional_odoo_approach">Unprofessional Odoo Approach</h4>
+<div class="paragraph">
+<p>Beware that the odoo.sh environment does not hinder amateur developers to do foolish things with git.</p>
+</div>
+<div class="paragraph">
+<p>The quote below is from the official website of <a href="https://www.odoo.sh/">Odoo.sh</a>.
+The statement violates all the rules of clean code, DevOps and professional software development.</p>
+</div>
+<div class="paragraph">
+<p>I wishfully hope Odoo organization will mature and remove these misleading statements.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>If you are bold enough, you can merge your development branches into your production branch as well.<br/>
+It just means you skip the validation of your changes with the production data through a staging branch.</p>
+</div>
+</blockquote>
+<div class="attribution">
+— odoo.sh<br/>
+<cite>2022</cite>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_professional_odoo_approach">Professional Odoo Approach</h4>
+<div class="paragraph">
+<p>On the bright side, odoo.sh supports and advocates the following clean code compatible workflow:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Source code is developed and tested in the development branch.
+Good practice is to write unit tests and have demonstration data.
+Each time you push changes, a clean instance is created, the demonstration data loaded and all unit tests are executed.<br/>
+<em>odoo.sh good practices implement TDD, ATDD, and quality gates as expected from a professional approach</em>.</p>
+</li>
+<li>
+<p>Once you are successful, you merge your development branch to the staging branch.
+The environment will automatically provide a copy of the production database in the staging area.
+You can test your new functions with production data without impeding the production server.</p>
+</li>
+<li>
+<p>Once you are satisfied with the behavior of the new application with the copy of the production data, you can merge to production.
+A new production server will be deployed.
+If the deployment is unsuccessful, it will be rolled back to minimise downtime and to improve mean-time to recover.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tips_and_tricks">Tips and Tricks</h3>
+<div class="paragraph">
+<p>Professional developers perform only code changes in the development branches.
+A development branch is often a <strong>feature</strong> branch.</p>
+</div>
+<div class="paragraph">
+<p>Staging and production branches are effectively deployment triggers in the <em>odoo.sh</em> world.
+Staging branches shall only be used to <strong>validate</strong> a new version of your product.</p>
+</div>
+<div class="paragraph">
+<p>Logically, only <strong>one</strong> production branch is available.</p>
+</div>
+<div class="paragraph">
+<p><em>odoo.sh abuses git branches as triggers for deployment to staging and production</em>.
+This approach could historically be justified due to the clumsy way database changes were done in the past.</p>
+</div>
+<div class="paragraph">
+<p>Migration scripts shall be robust and test their constraints
+<sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup>.
+For example, if the script expects the existence of a value or an identifier in the database, it should test this integrity rule and abort if an error happens.
+The goal is to avoid inconsistent states after an update or a migration.</p>
+</div>
+<div class="paragraph">
+<p>The new good practice is finally compatible with clean code, infrastructure as code and DevOps.
+This approach is promoted in the official odoo.sh documentation.
+<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>As stated by Odoo, you shall write the configuration changes in XML data files overriding the default configuration or views in your branches.
+This is the best practice for a better scalability of your developments as you will use the Git versioning features for all your configuration changes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lessons_learnt">Lessons Learnt</h3>
+<div class="paragraph">
+<p>Clean code and DevOps good practices are around for almost two decades.
+Senior developers in your team should have read the seminal books in this area.
+These experienced senior designers shall coach younger team members.</p>
+</div>
+<div class="paragraph">
+<p>The InfoQ DevOps and cloud graph show DevOps themes investigated in companies during 2022.
+Your experts shall apply most or all the approaches documented in the two columns on the right side.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="../pics/2022-12-01-devops-cloud-graph.png" alt="2022 12 01 devops cloud graph" width="780" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>A professional organization shall have a continuous formation and training path for all collaborators.
+I currently often have to answer basic questions about DevOps, clean code or Scrum.
+Quite a few developers do not know basic definitions or how to use Git or GitHub.
+It is time to read the documentation.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Please train and read the documentation.
+Do not be a <a href="https://en.wikipedia.org/wiki/Newbie">noob</a>.</p>
+</div>
+<div class="paragraph">
+<p>We politely ask you to read books and documentation.
+Avoid receiving an <a href="https://en.wikipedia.org/wiki/RTFM">RTFM</a> injunction.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You need expertise in Docker, Kubernetes and in your development platform <a href="#devops-sme">[3]</a>.
+We recommend initially using GitHub.
+It is the most used platform.
+Most developers are versed how to use the provided features.</p>
+</div>
+<div class="paragraph">
+<p>If your company is missing experienced DevOps and agile professionals, it is time to improve your recruitment process <a href="#detecting-agile-bullshit">[5]</a>.</p>
+</div>
+<div class="paragraph">
+<p>All development platforms have extensive support for continuous integration, delivery and deployment.
+DevOps approaches are well-supported.
+Often, advanced concepts such as monitoring, DevSecOps or license management are supported.
+Extensive tutorials and good practices are available.</p>
+</div>
+<div class="paragraph">
+<p>Just use the provided tools and approaches to professionally develop and operate your digital platforms.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="dora-metrics"></a>[1] <a href="https://devops.com/how-dora-metrics-can-measure-and-improve-performance/">How DORA metrics can measure and improve performance</a></p>
+</li>
+<li>
+<p><a id="dora-google"></a>[2] <a href="https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance">Using The Four Keys to Measure Your Devops Performance</a></p>
+</li>
+<li>
+<p><a id="devops-sme"></a>[3] <a href="../../blog/2021/devops-for-small-applications/">DevOps for Small Applications</a>
+Marcel Baumann. 2021</p>
+</li>
+<li>
+<p><a id="code-as-crime-scene"></a>[4] <a href="../../2019/code-scene-as-crime-scene/">Code Scene as a Crime Scene</a>
+Marcel Baumann, 2019</p>
+</li>
+<li>
+<p><a id="detecting-agile-bullshit"></a>[5] <a href="../../2019/detecting-agile-bullshit/">Detecting Agile Bullshit</a>
+Marcel Baumann, 2019</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="paragraph">
+<p><a id="accelerate"></a>[1] N. Forsgren, J. Humble, and G. Kim, <em>Accelerate: The Science of Lean Software and DevOps</em>. IT Revolution Press [Online]. Available: <a href="https://www.amazon.com/dp/B07B9F83WM" class="bare">https://www.amazon.com/dp/B07B9F83WM</a></p>
+</div>
+<div class="paragraph">
+<p><a id="devops-handbook"></a>[2] G. Kim and N. Forsgren, <em>DevOps Handbook</em>, Second. IT Revolution Press, 2021 [Online]. Available: <a href="https://www.amazon.com/dp/B01M9ASFQ3" class="bare">https://www.amazon.com/dp/B01M9ASFQ3</a></p>
+</div>
+<div class="paragraph">
+<p><a id="phoenix-project"></a>[3] G. Kim, <em>The Phoenix Project a novel about IT, DevOps, and helping your business win</em>. IT Revolution Press [Online]. Available: <a href="https://www.amazon.com/dp/0988262592" class="bare">https://www.amazon.com/dp/0988262592</a></p>
+</div>
+<div class="paragraph">
+<p><a id="site-reliability-engineering"></a>[4] B. Beyer, C. Jones, J. Petoff, and N. R. Murphy, <em>Site Reliability Engineering</em>. O’Reilly Media, Inc., 2016 [Online]. Available: <a href="https://www.amazon.com/dp/1492029505" class="bare">https://www.amazon.com/dp/1492029505</a></p>
+</div>
+<div class="paragraph">
+<p><a id="refactoring-databases"></a>[5] A. Scott and P. J. Sadalage, <em>Refactoring Databases</em>. Addison-Wesley Professional, 2006 [Online]. Available: <a href="https://www.amazon.com/dp/B001QAP36E" class="bare">https://www.amazon.com/dp/B001QAP36E</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Development organizations had around fifteen years to practice DevOps and adapt their application lifecycle management processes.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://en.wikipedia.org/wiki/Grady_Booch">Grady Booch</a> first proposed the term Continuous Integration <em>CI</em> in 1991. Analyze your git logs and find out if your developers are truly merging working copies to a shared mainlines several times a day. Laggard programmers use git as a backup tool and not as a collaborative development platform.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. You can either use <a href="https://trunkbaseddevelopment.com/">trunk based development</a> or configure the build trigger for all your feature branches.
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. odoo.sh provides logging support for a deployed solution. Corporate governance often requires that the log files be archived in a separate location. These files are needed when a forensic analysis of a security situation shall be investigated.
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. odoo has an audit module supporting auditing of critical actions initiated through user interactions or external systems. The audit module is somewhat primitive. The audit configuration is performed at the database level and not at functional level. The configuration responsible needs deep understanding which modules perform specific operations on the database.
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. The logging files and audit traces shall be stored on company premises to fulfill legal and corporate governance rules.
+</div>
+<div class="footnote" id="_footnotedef_7">
+<a href="#_footnoteref_7">7</a>. odoo.sh provides monitoring for deployed solutions. The monitoring is currently based on <a href="https://www.elastic.co/kibana/">Kibana</a>. All productive servers shall be monitored with a similar approach. The monitoring approach shall be tuned based on production incidents.
+</div>
+<div class="footnote" id="_footnotedef_8">
+<a href="#_footnoteref_8">8</a>. If you write, for example, an SQL database schema migration script, you use clauses such as <strong>DROP IF EXISTS</strong>.
+</div>
+<div class="footnote" id="_footnotedef_9">
+<a href="#_footnoteref_9">9</a>. Manual editions through copy and paste are a violation of sound engineering development practices. You lose reproducibility, versioning of a single source of truth, and auditability. Assume that you violate development guidelines and corporate governance.
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-c42f4fbc450219de06340db630fd1831">Multi-Module Test Reporting with Gradle 7.x</h1>
+	
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2022-11-07" class="text-muted">2022-11-07</time>
+        
+	</div>
+	<div class="sect1">
+<h2 id="_multi_module_test_reporting_with_gradle_7_x">Multi-Module Test Reporting with Gradle 7.x</h2>
+<div class="sectionbody">
+<div class="imageblock left">
+<div class="content">
+<img src="../pics/2022-11-02-head.jpg" alt="2022 11 02 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>I love Gradle as the building tool for all my Java projects.</p>
+</div>
+<div class="paragraph">
+<p>But sometimes I was discouraged about how spotty or cumbersome the support for multi-module project is.</p>
+</div>
+<div class="paragraph">
+<p>I struggled for years to generate test and code overage reports over modules included in a <a href="https://gradle.org/">Gradle Build Tool</a> project.</p>
+</div>
+<div class="paragraph">
+<p>Gradle finally provides a better approach to generate aggregated test and code coverage reports over multiple modules belonging to the same project.
+The solution is a huge improvement against the previous quite cumbersome approach described in <a href="#gradle-7">[1]</a>.</p>
+</div>
+<div class="paragraph">
+<p>Two plugins nicely solve this daunting problem for all Java developers preferring <a href="https://gradle.org/">Gradle Build Tool</a> over <a href="https://maven.apache.org/">Maven</a>.</p>
+</div>
+<div class="paragraph">
+<p>I hope similar solutions will be provided for static code analysers such as SpotBugs, PMD or Checkstyle.</p>
+</div>
+<div class="sect2">
+<h3 id="_selected_approach">Selected Approach</h3>
+<div class="paragraph">
+<p>We use the documented approach to define a separate module to generate the aggregation reports.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="groovy"><span style="background-color: #f8f8f8">plugins</span> <span style="color: #000000;font-weight: bold">{</span>                                           <i class="conum" data-value="1"></i><b>(1)</b>
+    <span style="background-color: #f8f8f8">id</span> <span style="color: #d14">&#39;test-report-aggregation&#39;</span>
+    <span style="background-color: #f8f8f8">id</span> <span style="color: #d14">&#39;jacoco-report-aggregation&#39;</span>
+<span style="color: #000000;font-weight: bold">}</span>
+
+<span style="background-color: #f8f8f8">dependencies</span> <span style="color: #000000;font-weight: bold">{</span>                                      <i class="conum" data-value="2"></i><b>(2)</b>
+    <span style="background-color: #f8f8f8">testReportAggregation</span> <span style="color: #990000;font-weight: bold">project</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#39;:net.tangly.bdd&#39;</span><span style="color: #000000;font-weight: bold">)</span>
+    <span style="background-color: #f8f8f8">testReportAggregation</span> <span style="color: #990000;font-weight: bold">project</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#39;:net.tangly.commons&#39;</span><span style="color: #000000;font-weight: bold">)</span>
+    <span style="background-color: #f8f8f8">testReportAggregation</span> <span style="color: #990000;font-weight: bold">project</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#39;:net.tangly.core&#39;</span><span style="color: #000000;font-weight: bold">)</span>
+    <span style="background-color: #f8f8f8">testReportAggregation</span> <span style="color: #990000;font-weight: bold">project</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#39;:net.tangly.dev&#39;</span><span style="color: #000000;font-weight: bold">)</span>
+
+    <span style="background-color: #f8f8f8">jacocoAggregation</span> <span style="color: #990000;font-weight: bold">project</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#39;:net.tangly.bdd&#39;</span><span style="color: #000000;font-weight: bold">)</span>
+    <span style="background-color: #f8f8f8">jacocoAggregation</span> <span style="color: #990000;font-weight: bold">project</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#39;:net.tangly.commons&#39;</span><span style="color: #000000;font-weight: bold">)</span>
+    <span style="background-color: #f8f8f8">jacocoAggregation</span> <span style="color: #990000;font-weight: bold">project</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#39;:net.tangly.core&#39;</span><span style="color: #000000;font-weight: bold">)</span>
+    <span style="background-color: #f8f8f8">jacocoAggregation</span> <span style="color: #990000;font-weight: bold">project</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">&#39;:net.tangly.dev&#39;</span><span style="color: #000000;font-weight: bold">)</span>
+ <span style="color: #000000;font-weight: bold">}</span>
+
+<span style="background-color: #f8f8f8">reporting</span> <span style="color: #000000;font-weight: bold">{</span>                                         <i class="conum" data-value="3"></i><b>(3)</b>
+    <span style="background-color: #f8f8f8">reports</span> <span style="color: #000000;font-weight: bold">{</span>
+        <span style="background-color: #f8f8f8">testAggregateTestReport</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">AggregateTestReport</span><span style="color: #000000;font-weight: bold">)</span> <span style="color: #000000;font-weight: bold">{</span>
+            <span style="background-color: #f8f8f8">testType</span> <span style="color: #000000;font-weight: bold">=</span> <span style="background-color: #f8f8f8">TestSuiteType</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">UNIT_TEST</span>
+        <span style="color: #000000;font-weight: bold">}</span>
+        <span style="background-color: #f8f8f8">testCodeCoverageReport</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">JacocoCoverageReport</span><span style="color: #000000;font-weight: bold">)</span> <span style="color: #000000;font-weight: bold">{</span>
+            <span style="background-color: #f8f8f8">testType</span> <span style="color: #000000;font-weight: bold">=</span> <span style="background-color: #f8f8f8">TestSuiteType</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">UNIT_TEST</span>
+        <span style="color: #000000;font-weight: bold">}</span>
+    <span style="color: #000000;font-weight: bold">}</span>
+<span style="color: #000000;font-weight: bold">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Load the plugin for test aggregation report and the test coverage aggregation report.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Declare the modules which results should be aggregated. We have to declare the same subprojects for each plugin separately.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Configure the aggregation reports.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>We call the following goals to generate the aggregation results:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="shell">./gradlew testAggregateTestReport <i class="conum" data-value="1"></i><b>(1)</b>
+./gradlew testCodeCoverageReport  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Generates an aggregate report over all unit tests. Run first gradle test.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Generates a code coverage aggregate report over all unit tests. Run first gradle jacocoTestReport.</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_learnings">Learnings</h3>
+<div class="paragraph">
+<p>Gradle provides test results aggregation and test coverage aggregation as two separate plugins.
+The drawback is that we have to configure both plugins with the same information.</p>
+</div>
+<div class="paragraph">
+<p>The plugins make the assumption that modules are called from an application subproject.
+The scenario of a mono repository containing a set of libraries is not covered.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>We would encourage the plugin authors to provide a default configuration option based on the gradle settings defined in <em>settings.gradle</em>.
+The modules are defined in the file and could be retrieved by the plugin using the Gradle API.</p>
+</div>
+<div class="paragraph">
+<p><em>Apply the cardinal rule of good user interface design.
+Do not ask the user to give information already available to the application.</em></p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>The new plugins are a huge simplification over the cumbersome and almost magic statements we needed before to create these reports.
+Gradle ecosystem is still work in progress to support multi-module Java projects <a href="#gradle-7">[1]</a> <a href="#gradle-6">[2]</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="gradle-7"></a>[1] <a href="../../2021/gradle-7/">Gradle 7 Goodies</a></p>
+</li>
+<li>
+<p><a id="gradle-6"></a>[2] <a href="../..2020/gradle-6.4-finally-supports-java-modules/">Gradle 6.4 Finally Supports Java Modules</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
     <h1 id="pg-dab2a81471b405a1f33d3bb5e101100a">Behavior Driven Design</h1>
 	
 	<div class="td-byline mb-4">

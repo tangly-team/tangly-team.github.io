@@ -130,7 +130,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.c34ead0aad4b106721665d9fa92f7c6b.json"
+    data-offline-search-index-json-src="/offline-search-index.f730e5b62ce11909c9dcae3094c0f053.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1093,6 +1093,21 @@ The core library is declared as a test or runtime dependency.</p>
 The risk is small because it is already existing wehn using slf4j liberary.
 The difference is only our new preferred library is now the Apache one.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Configure slf4j API to use the log4j2 backend to write logging statements.
+This configuration is important if some of your libraries are using slf4j.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 <div class="paragraph">
 <p>The architecture of log4j2 is described in <a href="https://logging.apache.org/log4j/2.x/manual/architecture.html">Log4j2 Main Components</a>.</p>
 </div>
@@ -1104,7 +1119,7 @@ The difference is only our new preferred library is now the Apache one.</p>
 <li>
 <p>The log4j2 community reacted professionally and fast in 2022 to correct a security attack in the library.
 The update of all libraries and applications with the patched version was done in a few minutes.
-A gradle plugin was used to infer which version of the library was used.
+A gradle plugin was used to infer, which version of the library was used.
 The continuous implementation and delivery pipeline were used to generate hardened versions.</p>
 </li>
 <li>

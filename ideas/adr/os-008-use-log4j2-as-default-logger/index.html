@@ -58,7 +58,7 @@ Status Implemented
 Context The logging library slf4j seems to be a dead project for at least one year. The last commit in the GitHub slf4j repository was performed two years ago. Version 2.0 of the library is an alpha release on Maven Central dating back to October 2019.
 The apache project log4j has made tremendous progress with the creation of the log4j2 library."><meta itemprop="datePublished" content="2021-06-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-06-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="563">
+<meta itemprop="wordCount" content="587">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OS 008: Use log4j2 as default logging framework"/>
 <meta name="twitter:description" content="OS-008 Use log4j2 as default logging framework Date: 2021-06-15
@@ -161,7 +161,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.c34ead0aad4b106721665d9fa92f7c6b.json"
+    data-offline-search-index-json-src="/offline-search-index.f730e5b62ce11909c9dcae3094c0f053.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -186,7 +186,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.c34ead0aad4b106721665d9fa92f7c6b.json"
+    data-offline-search-index-json-src="/offline-search-index.f730e5b62ce11909c9dcae3094c0f053.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -206,7 +206,7 @@ if (!doNotTrack) {
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasdevelopment-good-practices-li">
   <input type="checkbox" id="m-ideasdevelopment-good-practices-check"/>
-  <label for="m-ideasdevelopment-good-practices-check"><a href="/ideas/development-good-practices/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasdevelopment-good-practices"><span class="">Development Good Practices for Enterprise Java Solutions</span></a></label>
+  <label for="m-ideasdevelopment-good-practices-check"><a href="/ideas/development-good-practices/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-ideasdevelopment-good-practices"><span class="">Good Practices for Enterprise Java Solutions</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ideasdesign-conventions-li">
   <input type="checkbox" id="m-ideasdesign-conventions-check"/>
@@ -345,7 +345,7 @@ if (!doNotTrack) {
       
       <ul class="taxonomy-terms">
         
-          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">85</span></a></li>
+          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">86</span></a></li>
         
           <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">architecture</span><span class="taxonomy-count">15</span></a></li>
         
@@ -353,17 +353,17 @@ if (!doNotTrack) {
         
           <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/design/" data-taxonomy-term="design"><span class="taxonomy-label">design</span><span class="taxonomy-count">23</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">devops</span><span class="taxonomy-count">4</span></a></li>
+          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">devops</span><span class="taxonomy-count">5</span></a></li>
         
           <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/domain-driven-design/" data-taxonomy-term="domain-driven-design"><span class="taxonomy-label">domain-driven-design</span><span class="taxonomy-count">5</span></a></li>
         
           <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/git/" data-taxonomy-term="git"><span class="taxonomy-label">git</span><span class="taxonomy-count">4</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/gradle/" data-taxonomy-term="gradle"><span class="taxonomy-label">gradle</span><span class="taxonomy-count">2</span></a></li>
+          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/gradle/" data-taxonomy-term="gradle"><span class="taxonomy-label">gradle</span><span class="taxonomy-count">3</span></a></li>
         
           <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/hugo/" data-taxonomy-term="hugo"><span class="taxonomy-label">hugo</span><span class="taxonomy-count">3</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">java</span><span class="taxonomy-count">34</span></a></li>
+          <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">java</span><span class="taxonomy-count">35</span></a></li>
         
           <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/organization/" data-taxonomy-term="organization"><span class="taxonomy-label">organization</span><span class="taxonomy-count">10</span></a></li>
         
@@ -522,6 +522,21 @@ The core library is declared as a test or runtime dependency.</p>
 The risk is small because it is already existing wehn using slf4j liberary.
 The difference is only our new preferred library is now the Apache one.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Configure slf4j API to use the log4j2 backend to write logging statements.
+This configuration is important if some of your libraries are using slf4j.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 <div class="paragraph">
 <p>The architecture of log4j2 is described in <a href="https://logging.apache.org/log4j/2.x/manual/architecture.html">Log4j2 Main Components</a>.</p>
 </div>
@@ -533,7 +548,7 @@ The difference is only our new preferred library is now the Apache one.</p>
 <li>
 <p>The log4j2 community reacted professionally and fast in 2022 to correct a security attack in the library.
 The update of all libraries and applications with the patched version was done in a few minutes.
-A gradle plugin was used to infer which version of the library was used.
+A gradle plugin was used to infer, which version of the library was used.
 The continuous implementation and delivery pipeline were used to generate hardened versions.</p>
 </li>
 <li>
