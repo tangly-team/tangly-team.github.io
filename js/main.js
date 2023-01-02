@@ -7277,14 +7277,11 @@ limitations under the License.
             });
 
             $targetSearchInput
-                .data('content', $html[0].outerHTML)
+                .data('content', $html[0])
                 .popover('show');
         };
     });
 })(jQuery);
-
-;
-
 
 ;
 

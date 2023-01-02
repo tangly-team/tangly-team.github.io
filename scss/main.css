@@ -1,10 +1,14 @@
-/*
-
-Nothing defined here. The Hugo project that uses this theme can override theme variables by adding a file to:
-
-assets/scss/_variables_project.scss
-
-*/
+/*!
+ * Copyright 2022 Marcel Baumann
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ *          http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+ * OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ */
 /*
 
 Bootstrap variables overrides for theme.
@@ -16763,6 +16767,8 @@ readers do not read off random characters that represent icons */
   .td-navbar .nav-link {
     text-transform: none;
     font-weight: 700; }
+  .td-navbar .navbar-nav {
+    white-space: nowrap; }
   .td-navbar .dropdown {
     min-width: 100px; }
   @media (max-width: 991.98px) {
@@ -16781,7 +16787,6 @@ readers do not read off random characters that represent icons */
         .td-navbar .td-navbar-nav-scroll .navbar-nav {
           padding-bottom: 2rem;
           overflow-x: auto;
-          white-space: nowrap;
           -webkit-overflow-scrolling: touch; } }
 #main_navbar li i {
   padding-right: 0.5em; }
@@ -24006,6 +24011,7 @@ body:lang(ar) {
   width: 100%; }
   .admonitionblock > table td.icon {
     text-align: center;
+    vertical-align: middle;
     width: 80px; }
     .admonitionblock > table td.icon img {
       max-width: none; }
@@ -24022,8 +24028,8 @@ body:lang(ar) {
     .admonitionblock > table td.content > :last-child > :last-child {
       margin-bottom: 0; }
 
-admonitionblock td.icon [class^="fa icon-"] {
-  font-size: 2.5em !important;
+.admonitionblock td.icon [class^="fa icon-"] {
+  font-size: 2.5em;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   cursor: default; }
 
@@ -24055,7 +24061,7 @@ admonitionblock td.icon [class^="fa icon-"] {
     margin-left: -1.5em;
     margin-bottom: 0.75em; }
   .quoteblock blockquote, .quoteblock p {
-    color: #5d5d5d;
+    color: rgba(0, 0, 0, 0.6);
     line-height: 1.5;
     word-spacing: 0.1em;
     letter-spacing: 0;
@@ -24090,10 +24096,10 @@ admonitionblock td.icon [class^="fa icon-"] {
   margin-bottom: 0; }
 
 .imageblock.left {
-  margin: 0.25em 0.625em 1.25em 0; }
+  margin: 0.25em 1.25em 0.25em 0.25em; }
 
 .imageblock.right {
-  margin: 0.25em 0 1.25em 0.625em; }
+  margin: 0.25em 0.25em 0.25em 1.25em; }
 
 .imageblock.thumb {
   border-width: 6px; }
@@ -24106,18 +24112,14 @@ admonitionblock td.icon [class^="fa icon-"] {
     padding: 0 0.125em; }
 
 .image.left {
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
+  margin: 0.25em 0.25em 0.25em 0.25em;
   display: inline-block;
-  line-height: 0;
-  margin-right: 0.625em; }
+  line-height: 0; }
 
 .image.right {
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
+  margin: 0.25em 0.25em 0.25em 0.25em;
   display: inline-block;
-  line-height: 0;
-  margin-left: 0.625em; }
+  line-height: 0; }
 
 a.image {
   text-decoration: none;
@@ -24187,6 +24189,27 @@ td.hdlist1 {
 
 td.hdlist2 {
   word-wrap: anywhere; }
+
+table.tableblock, th.tableblock, td.tableblock {
+  border: 0 solid #ddd; }
+
+table.grid-all > * > tr > * {
+  border-width: 1px; }
+
+table.grid-cols > * > tr > * {
+  border-width: 0 1px; }
+
+table.grid-rows > * > tr > * {
+  border-width: 1px 0; }
+
+table.frame-all {
+  border-width: 1px; }
+
+table.frame-ends {
+  border-width: 1px 0; }
+
+table.frame-sides {
+  border-width: 0 1px; }
 
 /*!
  * Copyright 2021-2022 Marcel Baumann

@@ -617,6 +617,21 @@ The modules are also used as a documentation mechanism.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Honestly we are not providing the module for our modules.
+Our applications are quite simple and use a handful of services.
+This simple solution of a static repository works fine.
+This approach is muchj simpler to reason about, much faster to start, much easier to debug and to maintain.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;Services&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;Services&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{}&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;LoginService&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;getLoginService&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{}&lt;/span&gt;
+    &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;ThatService&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;getThatService&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{}&lt;/span&gt;
+&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_conventions&#34;&gt;Conventions&lt;/h3&gt;

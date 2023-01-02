@@ -96,7 +96,16 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Provider&lt;T&gt;</span></div>
-<div class="block">Defines the provider abstraction responsible for handling all instances of a specific type.</div>
+<div class="block">Defines the provider abstraction responsible for handling all instances of a specific type.
+ The provider declares the regular CRUD operations: <i>Create, Read, Update, and Delete</i>.
+ The provider is the repository and often the factory in the domain-driven design terminology.
+ <dl>
+     <dt>Create</dt><dd>The creation operation is integrated with the update operation <a href="#update(T)"><code>update(Object)</code></a></dd>
+     <dt>Read</dt><dd>The read all items operation maps to the <a href="#items()"><code>items()</code></a> operation.
+     The read an item with a unique key operation maps to <a href="#findBy(java.util.function.Function,U)"><code>findBy(Function, Object)</code></a>. </dd>
+     <dt>Update</dt><dd>The update operation maps to the operation <a href="#update(T)"><code>update(Object)</code></a>. </dd>
+     <dt>Delete</dt><dd>The delete operation maps to the operation <a href="#delete(T)"><code>delete(Object)</code></a>.</dd>
+ </dl></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -117,7 +126,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Deletes the data associated with the entity.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;U&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findBy(java.util.function.Function,U)" class="member-name-link">findBy</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>,<wbr>U&gt;&nbsp;getter,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findBy(java.util.function.Function,U)" class="member-name-link">findBy</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>,<wbr>U&gt;&nbsp;getter,
  U&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the first entity which property matches the value.</div>
@@ -176,6 +185,7 @@ Long&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/
 <div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="../HasId.html" title="interface in net.tangly.core">HasId</a>,<wbr>
 String&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;E&gt;</span>&nbsp;<span class="element-name">findById</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;E&gt;&nbsp;provider,
+ @NotNull
  String&nbsp;id)</span></div>
 </section>
 </li>
@@ -230,7 +240,8 @@ String&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.co
 <li>
 <section class="detail" id="findBy(java.util.function.Function,U)">
 <h3 id="findBy(java.util.function.Function,java.lang.Object)">findBy</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;U&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>&gt;</span>&nbsp;<span class="element-name">findBy</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>,<wbr>U&gt;&nbsp;getter,
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;U&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>&gt;</span>&nbsp;<span class="element-name">findBy</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>,<wbr>U&gt;&nbsp;getter,
  U&nbsp;value)</span></div>
 <div class="block">Returns the first entity which property matches the value.</div>
 <dl class="notes">
