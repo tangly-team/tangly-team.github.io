@@ -1,0 +1,714 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly Components – Architecture and Design</title>
+    <link>https://blog.tangly.net/docs/domains/-design/</link>
+    <description>Recent content in Architecture and Design on tangly Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://blog.tangly.net/docs/domains/-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/01-introduction-and-goals/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/01-introduction-and-goals/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-introduction-and-goals&#34;&gt;Introduction and Goals&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The open source &lt;em&gt;tangly OS ERP&lt;/em&gt; is a showcase for modern Java software development in an agile context.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The application shall be used to run a software engineering consulting boutique.
+This benchmark is the proof the solution is usable in an economical context.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;No expectations currently exist to ramp up the solution to a full-fledged enterprise resource planning system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_requirements_overview&#34;&gt;Requirements Overview&lt;/h3&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_quality_goals&#34;&gt;Quality Goals&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Legibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The application is an example of modern java software engineering based on domain-driven design.
+It is used as an example in teaching and coaching.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Maintainability&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The solution shall regularly be updated to current technical stacks and library versions.
+The effort for the upgrades shall be reasonable.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_stakeholders&#34;&gt;Stakeholders&lt;/h3&gt;
+&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 25%;&#34;/&gt;
+&lt;col style=&#34;width: 75%;&#34;/&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Role&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Expectations&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Product Developer&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Fill work activities for invoicing purposes&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Product Responsible&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Generate monthly reports and invoicing&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Controller&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Track the invoiced work agains the contract&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Marketing&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Have an overview of all product development for a customer&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Human Resources&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Can generate salary related forms&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Sponsor ERP&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;A usable ERP to run the company daily business on it&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/02-architecture-constraints/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/02-architecture-constraints/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-architecture-constraints&#34;&gt;Architecture Constraints&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following organizational constraints are identified:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Development Stack&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The programming stack is modern Java.
+The current released version shall be used for all development.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;User Interface&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The user interface stack is &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; Flow.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Development Environment&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The primary development platform is &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;.
+All artifacts are under &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; source code management.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Documentation Language&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The primary language for all documents is International US English.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Supported Languages&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The primary language for the user interface is International US English.
+Localization capabilities of reports shall be provided.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Copyright&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;All source code and documentation shall be published under a permissive copyright.
+The used libraries shall conform to such copyrights.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/03-system-scope-and-context/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/03-system-scope-and-context/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-system-scope-and-context&#34;&gt;System Scope and Context&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_business_context&#34;&gt;Business Context&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&amp;lt;Diagram or Table&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&amp;lt;optionally: Explanation of external domain interfaces&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_technical_context&#34;&gt;Technical Context&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&amp;lt;Diagram or Table&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&amp;lt;optionally: Explanation of technical interfaces&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&amp;lt;Mapping Input/Output to Channels&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/04-solution-strategy/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/04-solution-strategy/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-solution-strategy&#34;&gt;Solution Strategy&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_internal_identifiers_external_identifiers_and_names&#34;&gt;Internal Identifiers, external Identifiers, and Names&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Internal Identifier&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;External Identifier&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Name&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;=== Codes, Tags, and Comments&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Codes&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Tags&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Comments&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;=== Entities and Value Objects&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Entity&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Extended Entity&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;External Entity&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Value Object&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;=== Providers&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Persistence Provider&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;In-Memory Provider&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;=== Links&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../blog/2020/entities-identifiers-external-identifiers-and-names/&#34;&gt;Entities, Identifiers, and Names&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../blog/2021/meaningful-identifiers/&#34;&gt;Meaningful Identifiers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../../..blog/2020/reference-codes/&#34;&gt;Reference Codes&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../blog/2020/the-power-of-tags-and-comments/&#34;&gt;The Power of Tags and Comments&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../blog/2024/domain-entities/&#34;&gt;Domain Entities&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../blog/2021/value-objects-as-embedded-entities/&#34;&gt;Value Objects as Embedded Entities&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;link../../../../blog/2021/microstream-4.x/[Microstream 4.x]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/05-building-block-view/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/05-building-block-view/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-building-block-view&#34;&gt;Building Block View&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_whitebox_overall_system&#34;&gt;Whitebox Overall System&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&amp;lt;Overview Diagram&amp;gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Motivation&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;text explanation&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Contained Building Blocks&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;Description of contained building block (black boxes)&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Important Interfaces&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;Description of important interfaces&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_name_black_box_1&#34;&gt;&amp;lt;Name black box 1&amp;gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;Purpose/Responsibility&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;Interface(s)&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;(Optional) Quality/Performance Characteristics&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;(Optional) Directory/File Location&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;(Optional) Fulfilled Requirements&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;(optional) Open Issues/Problems/Risks&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_name_black_box_2&#34;&gt;&amp;lt;Name black box 2&amp;gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;black box template&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_name_black_box_n&#34;&gt;&amp;lt;Name black box n&amp;gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;black box template&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_name_interface_1&#34;&gt;&amp;lt;Name interface 1&amp;gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;…​
+==== &amp;lt;Name interface m&amp;gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_level_2&#34;&gt;Level 2&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_white_box_building_block_1&#34;&gt;White Box &lt;em&gt;&amp;lt;building block 1&amp;gt;&lt;/em&gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;white box template&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_white_box_building_block_2&#34;&gt;White Box &lt;em&gt;&amp;lt;building block 2&amp;gt;&lt;/em&gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;white box template&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;…​
+==== White Box &lt;em&gt;&amp;lt;building block m&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;white box template&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_level_3&#34;&gt;Level 3&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_white_box_building_block_x_1&#34;&gt;White Box &amp;lt;_building block x.1_&amp;gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;white box template&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_white_box_building_block_x_2&#34;&gt;White Box &amp;lt;_building block x.2_&amp;gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;white box template&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_white_box_building_block_y_1&#34;&gt;White Box &amp;lt;_building block y.1_&amp;gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;white box template&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/06-runtime-view/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/06-runtime-view/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-runtime-view&#34;&gt;Runtime View&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_runtime_scenario_1&#34;&gt;&amp;lt;Runtime Scenario 1&amp;gt;&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;insert runtime diagram or textual description of the scenario&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;insert description of the notable aspects of the interactions between the building block instances depicted in this diagram.&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_runtime_scenario_2&#34;&gt;&amp;lt;Runtime Scenario 2&amp;gt;&lt;/h3&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;&#34;&gt;…​&lt;/h3&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_runtime_scenario_n&#34;&gt;&amp;lt;Runtime Scenario n&amp;gt;&lt;/h3&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/07-deployment-view/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/07-deployment-view/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-deployment-view&#34;&gt;Deployment View&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_infrastructure_level_1&#34;&gt;Infrastructure Level 1&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&amp;lt;Overview Diagram&amp;gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Motivation&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;explanation in text form&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Quality and/or Performance Features&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;explanation in text form&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Mapping of Building Blocks to Infrastructure&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;description of the mapping&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_infrastructure_level_2&#34;&gt;Infrastructure Level 2&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_infrastructure_element_1&#34;&gt;&lt;em&gt;&amp;lt;Infrastructure Element 1&amp;gt;&lt;/em&gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;diagram + explanation&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_infrastructure_element_2&#34;&gt;&lt;em&gt;&amp;lt;Infrastructure Element 2&amp;gt;&lt;/em&gt;&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;diagram + explanation&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;…​
+==== &lt;em&gt;&amp;lt;Infrastructure Element n&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;diagram + explanation&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/08-crosscutting-concepts/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/08-crosscutting-concepts/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-concepts&#34;&gt;Cross-cutting Concepts&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_persistence&#34;&gt;Persistence&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;explanation&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_import_and_export&#34;&gt;Import and Export&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;explanation&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_logging&#34;&gt;Logging&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;explanation&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/09-architecture-decisions/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/09-architecture-decisions/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-design-decisions&#34;&gt;Architecture Decisions&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-001-system-guava-removal&#34;&gt;OS-001 System Guava Removal&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-002-unit-test-conventions&#34;&gt;OS-002 Unit Test Conventions&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-003-use-modern-java-constructs&#34;&gt;OS-003 Use Modern Java Constructs&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-004-publish-technical-documentation-through-static-website&#34;&gt;OS-004 Publish Technical Documentation Through Static Website&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-005-publish-maven-central-artifact&#34;&gt;OS-005 Publish Maven Central Artifact&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-006-dependency-injection-guice&#34;&gt;OS-006 Dependency Injection Guice&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-007-persistence-microstream&#34;&gt;OS-007 Persistence Microstream&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-008-use-log4j2-as-default-logger&#34;&gt;OS-008 Use Log4j2 as Default Logger&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-009-use-hsqldb-as-sql-store&#34;&gt;OS-009 Use HSQLDB as SQL Store&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-010-archive-data&#34;&gt;OS-010 Archive Data&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;adr/OS-011-vaadin-as-user-interface&#34;&gt;OS-011 Vaadin as User Interface&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/10-quality-requirements/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/10-quality-requirements/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-quality-scenarios&#34;&gt;Quality Requirements&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_quality_tree&#34;&gt;Quality Tree&lt;/h3&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_quality_scenarios&#34;&gt;Quality Scenarios&lt;/h3&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/11-technical-risks/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/11-technical-risks/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-technical-risks&#34;&gt;Risks and Technical Debts&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/12-glossary/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/12-glossary/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-glossary&#34;&gt;Glossary&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 33.3333%;&#34;/&gt;
+&lt;col style=&#34;width: 66.6667%;&#34;/&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Term&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Definition&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;ATDD&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;Acceptance Test Driven Developmnent&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;TDD&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;Test Driven Design&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;UI&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;User Interface&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;a11y&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;accessibility&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;i18n&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;Internationalization&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;l16n&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;Localization&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: </title>
+      <link>https://blog.tangly.net/docs/domains/-design/13-user-interface/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/-design/13-user-interface/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;section-user-interface&#34;&gt;User Interface&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

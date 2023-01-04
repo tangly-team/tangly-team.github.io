@@ -4,6 +4,7 @@
     <link>https://blog.tangly.net/tags/domain-driven-design/</link>
     <description>Recent content in domain-driven-design on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/domain-driven-design/index.xml" rel="self" type="application/rss+xml" />
@@ -35,7 +36,7 @@
 &lt;p&gt;A modular monolith is a software design approach in which a monolith is designed with an emphasis on interchangeable and potentially reusable modules.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A modular monolith can be splitted in the future into a set of microservices.&lt;/p&gt;
+&lt;p&gt;A modular monolith can be split in the future into a set of microservices.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Delay the split as long as you can.
@@ -145,7 +146,7 @@ Whether that means making dependencies more manageable within the application, i
 &lt;p&gt;Of course, just as microservices are not one size fits all solutions, neither is modularity.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;For developers working on small projects with small development teams, developing their code in a modular way may not be worth the added time, or formality.&lt;/p&gt;
+&lt;p&gt;For developers working on small projects with small development teams, developing their code in a modular way may not be worth the added time or formality.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -181,7 +182,7 @@ Marcel Baumann. 2022.&lt;/p&gt;
 &lt;p&gt;&lt;a id=&#34;clean-architecture&#34;&gt;&lt;/a&gt;[2] R. C. Martin, &lt;em&gt;Clean Architecture&lt;/em&gt;. Pearson, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134494164&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134494164&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[3] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, Second. Addision-Wesley, 2018 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134757599&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134757599&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[3] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, First. Addision-Wesley, 1999 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B004PQQRK2&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B004PQQRK2&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;refactoring-databases&#34;&gt;&lt;/a&gt;[4] A. Scott and P. J. Sadalage, &lt;em&gt;Refactoring Databases&lt;/em&gt;. Addison-Wesley Professional, 2006 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B001QAP36E&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B001QAP36E&lt;/a&gt;&lt;/p&gt;
@@ -288,7 +289,7 @@ Domain
 &lt;/td&gt;
 &lt;td class=&#34;hdlist2&#34;&gt;
 &lt;p&gt;The heart of the software, this layer holds domain logic and business knowledge.&lt;br/&gt;
-&lt;em&gt;A major gaal is to avoid any tainting of the core domain model from other layers.&lt;/em&gt;
+&lt;em&gt;A major goal is to avoid any tainting of the core domain model from other layers.&lt;/em&gt;
 &lt;em&gt;Try to avoid extending domain entities with implementation specific root classes or to a lesser degree annotations.&lt;/em&gt;&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -299,9 +300,9 @@ Infrastructure
 &lt;td class=&#34;hdlist2&#34;&gt;
 &lt;p&gt;A supporting layer for the other layers.
 This layer contains supporting libraries or external services like a database or UI supporting library.&lt;br/&gt;
-&lt;em&gt;I use libraries to minimize effort in support functions such as persistence, JSON transformation, archiving and reporting.
+&lt;em&gt;I use libraries to minimize effort in support functions such as persistence, JSON transformation, archiving, and reporting.
 The microstream library is a good example of this approach.
-The persistence capability is less than fifty lines of codes.
+The persistence capability is less than fifty lines of code.
 No changes in the domain model was necessary.
 We did not have to add a root persistent class or use annotations.&lt;/em&gt;&lt;/p&gt;
 &lt;/td&gt;
@@ -385,9 +386,9 @@ Care is taken to define resilient and legible domain abstractions.&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;imageblock text-center&#34;&gt;
+&lt;div class=&#34;imageblock text-center kroki&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/bounded-domain-structure.svg&#34; alt=&#34;bounded domain structure&#34; width=&#34;328&#34; height=&#34;181&#34;/&gt;
+&lt;img src=&#34;https://kroki.io/plantuml/svg/eNqNkUEKwkAMRfc9xaxbbK9QRMGFCxEvkM7EGphmZJIKUry7Yyu4EFvJJiQv-T-kFoWoAl6zIRtOWWEYtVTg1t_LPG9Czw7dyoUOiPM8KxaAckoSV5iqsh5EUIxDsZEa4tboBQ00ohGsUmAx4TzWprmqWla4hmT4LfDdXm1ZSQllXPWD2Tn_j5JgvJHFGbHNx_UPYt0LMYrsQ0t21hOw8xjnkEO6fK5_RPBdAh4pamT3eusToIuaUw==&#34; alt=&#34;bounded-domain-structure&#34;/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -399,7 +400,7 @@ The names with the regular font are package names, the ones in italics are class
 These classes shall be defined in a separate Java module and imported with regular dependency declaration.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We use the &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt; tool to insure the expected structure is provided for each bounded domain.&lt;/p&gt;
+&lt;p&gt;We use the &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt; tool to ensure the expected structure is provided for each bounded domain.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The user interface for a bounded domain is stored in a separate package and often in its own Java module.
@@ -407,7 +408,7 @@ The bounded domain implementation shall not constrain the technologies used to p
 Different approaches for user interface realization are available and no clear winner can currently be identified.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I mainly use &lt;a href=&#34;https://www.vaadin.com&#34;&gt;Vaadin&lt;/a&gt; to realize browser or mobile first internal applications.&lt;/p&gt;
+&lt;p&gt;I mainly use &lt;a href=&#34;https://www.vaadin.com&#34;&gt;Vaadin&lt;/a&gt; to realize browser- or mobile-first internal applications.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -477,6 +478,24 @@ Anemic domains are a smell in the domain-driven design world.&lt;/p&gt;
 It avoids side effects and guarantees the same output for certain inputs, meaning it needs to be completely deterministic.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Spring project has added support for bounded domain in their framework with the &lt;a href=&#34;https://github.com/spring-projects/spring-modulith&#34;&gt;Modulith&lt;/a&gt; extension.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle modules are a natural mapping for bounded domains.
+Use either Java modules or archUnit to enforce that communication always goes through bounded domain interfaces.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -551,7 +570,7 @@ Shared Kernel
 Customer-supplier
 &lt;/td&gt;
 &lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;a connection between two contexts, where one context (upstream) produces data, and the other (downstream) consume it.
+&lt;p&gt;a connection between two contexts, where one context (upstream) produces data, and the other (downstream) consumes it.
 In this relationship, both sides are interested in establishing the best possible communication.&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -606,8 +625,8 @@ The principle of bounded contexts from DDD can help us here.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The DDD approach emphasizes systematic refactoring and code improvements [&lt;a href=&#34;#refactoring&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#clean-code&#34;&gt;8&lt;/a&gt;, &lt;a href=&#34;#clean-coder&#34;&gt;9&lt;/a&gt;, &lt;a href=&#34;#clean-architecture&#34;&gt;5&lt;/a&gt;].
-It recommends test driven approach for bounded domain development [&lt;a href=&#34;#agile-testing&#34;&gt;10&lt;/a&gt;, &lt;a href=&#34;#more-agile-testing&#34;&gt;11&lt;/a&gt;, &lt;a href=&#34;#bridging-communication-gap&#34;&gt;12&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;The DDD approach emphasizes systematic refactoring and code improvements [&lt;a href=&#34;#refactoring-2nd&#34;&gt;8&lt;/a&gt;, &lt;a href=&#34;#clean-code&#34;&gt;9&lt;/a&gt;, &lt;a href=&#34;#clean-coder&#34;&gt;10&lt;/a&gt;, &lt;a href=&#34;#clean-architecture&#34;&gt;5&lt;/a&gt;].
+It recommends test driven approach for bounded domain development [&lt;a href=&#34;#agile-testing&#34;&gt;11&lt;/a&gt;, &lt;a href=&#34;#more-agile-testing&#34;&gt;12&lt;/a&gt;, &lt;a href=&#34;#bridging-communication-gap&#34;&gt;13&lt;/a&gt;].&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -628,25 +647,28 @@ It recommends test driven approach for bounded domain development [&lt;a href=&#
 &lt;p&gt;&lt;a id=&#34;clean-architecture&#34;&gt;&lt;/a&gt;[5] R. C. Martin, &lt;em&gt;Clean Architecture&lt;/em&gt;. Pearson, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134494164&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134494164&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[6] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, Second. Addision-Wesley, 2018 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134757599&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134757599&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[6] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, First. Addision-Wesley, 1999 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B004PQQRK2&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B004PQQRK2&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;refactoring-databases&#34;&gt;&lt;/a&gt;[7] A. Scott and P. J. Sadalage, &lt;em&gt;Refactoring Databases&lt;/em&gt;. Addison-Wesley Professional, 2006 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B001QAP36E&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B001QAP36E&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-code&#34;&gt;&lt;/a&gt;[8] R. C. Martin, &lt;em&gt;Clean Code&lt;/em&gt;. Prentice Hall, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0132350882&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0132350882&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;refactoring-2nd&#34;&gt;&lt;/a&gt;[8] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, Second. Addision-Wesley, 2018 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134757599&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134757599&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-coder&#34;&gt;&lt;/a&gt;[9] R. C. Martin, &lt;em&gt;The Clean Coder&lt;/em&gt;. Prentice Hall, 2011 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0137081073&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0137081073&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;clean-code&#34;&gt;&lt;/a&gt;[9] R. C. Martin, &lt;em&gt;Clean Code&lt;/em&gt;. Prentice Hall, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0132350882&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0132350882&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;agile-testing&#34;&gt;&lt;/a&gt;[10] L. Crispin, &lt;em&gt;Agile testing&lt;/em&gt;. Addison-Wesley, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321534468&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321534468&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;clean-coder&#34;&gt;&lt;/a&gt;[10] R. C. Martin, &lt;em&gt;The Clean Coder&lt;/em&gt;. Prentice Hall, 2011 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0137081073&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0137081073&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;more-agile-testing&#34;&gt;&lt;/a&gt;[11] J. G. Gregory and L. Crispin, &lt;em&gt;More Agile Testing&lt;/em&gt;. Addison-Wesley Professional [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321967054&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321967054&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;agile-testing&#34;&gt;&lt;/a&gt;[11] L. Crispin, &lt;em&gt;Agile testing&lt;/em&gt;. Addison-Wesley, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321534468&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321534468&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;bridging-communication-gap&#34;&gt;&lt;/a&gt;[12] G. Adzic, &lt;em&gt;Bridging the Communication Gap&lt;/em&gt;. Neuri Limited, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B008YZ993W/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B008YZ993W/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;more-agile-testing&#34;&gt;&lt;/a&gt;[12] J. G. Gregory and L. Crispin, &lt;em&gt;More Agile Testing&lt;/em&gt;. Addison-Wesley Professional [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321967054&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321967054&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;bridging-communication-gap&#34;&gt;&lt;/a&gt;[13] G. Adzic, &lt;em&gt;Bridging the Communication Gap&lt;/em&gt;. Neuri Limited, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B008YZ993W/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B008YZ993W/&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -683,7 +705,7 @@ It recommends test driven approach for bounded domain development [&lt;a href=&#
 They permeate how our modern civilization functions.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Could you imagine a country without car registration number of vehicles, internet addresses, postal addresses or social security numbers?&lt;/p&gt;
+&lt;p&gt;Could you imagine a country without a car registration number of vehicles, internet addresses, postal addresses or social security numbers?&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Identifiers are &lt;strong&gt;identifiers&lt;/strong&gt;.&lt;/p&gt;
@@ -800,9 +822,9 @@ It should support all interested parties and guaranty their identifiers can be t
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Beware if you export internal managed identifiers, you become a source of truth.
-You are responsible for documenting these identifiers, and the process to create new ones.
+You are responsible for documenting these identifiers and the process to create new ones.
 You shall also guaranty that existing identifiers are never recycled.
-If your identifiers are strings, you shall clearly define the supported languages, and character sets.&lt;/p&gt;
+If your identifiers are strings, you shall clearly define the supported languages and character sets.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -813,7 +835,7 @@ Some key rules are related to identity.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;dlist&#34;&gt;
 &lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Entity has a wel-defined identity&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Entity has a well-defined identity&lt;/dt&gt;
 &lt;dd&gt;
 &lt;p&gt;An entity is an object that is not defined by its attributes, but rather by a thread of continuity and its identity.
 Any instance of an entity abstraction must have a unique identifier.&lt;/p&gt;
@@ -827,12 +849,12 @@ An aggregate is found and referenced through the identifier of the aggregate roo
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Reference over aggregate through identity&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;An aggregate shall reference other aggregate through the identity of their root entity instance.&lt;/p&gt;
+&lt;p&gt;An aggregate shall reference another aggregate through the identity of their root entity instance.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The concept of identity is therefore central to the domain driven design approach.&lt;/p&gt;
+&lt;p&gt;The concept of identity is therefore central to the domain-driven design approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -842,7 +864,7 @@ An aggregate is found and referenced through the identifier of the aggregate roo
 Beware of legal aspects when you are using government defined identifiers such as social security numbers, passport numbers or car numbers.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Avoid by all means to use an internal privately defined identifier as a public one.
+&lt;p&gt;Avoid by all means to using an internal privately defined identifier as a public one.
 You will bear the burden of documenting, manage and evolve the scheme as soon as you do this.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -892,7 +914,7 @@ You will bear the burden of documenting, manage and evolve the scheme as soon as
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This post discusses the value object pattern, and the factory pattern which are tactical patterns in the domain driven design
+&lt;p&gt;This post discusses the value object pattern, and the factory pattern, which are tactical patterns in the domain-driven design
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;DDD&lt;/a&gt; approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -993,7 +1015,7 @@ As a bonus, you get the &lt;strong&gt;hashCode&lt;/strong&gt; and &lt;strong&gt;
 &lt;td class=&#34;content&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;A Java record class declaration is very compact.
-Often it is a one liner.&lt;/p&gt;
+Often it is a one-liner.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -1038,12 +1060,12 @@ The VAT administrative laws in Switzerland are more than 2000 pages of an illegi
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Serialization libraries such as JSON Jackson library cannot handle invoice lines with multiple Java class types.
-A workable approach is described and implemented with the open source component &lt;a href=&#34;http://blog.tangly.net/docs/gleam/&#34;&gt;Gleam&lt;/a&gt;.
+A workable approach is described and implemented with the open source component &lt;a href=&#34;https://blog.tangly.net/docs/gleam/&#34;&gt;Gleam&lt;/a&gt;.
 The solution is to define selectors to instantiate the correct Java class.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Invoices are complex objects and ideal candidates for a document-oriented persistent approach.
-Invoices should not be stored in a relation based persistence store, meaning an SQL database.
+Invoices should not be stored in a relation-based persistence store, meaning an SQL database.
 To store them in a table, you have to model the various types of lines and add a technical identifier to each invoice line instance.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1107,7 +1129,7 @@ This factory could provide multiple ways to create new instances.&lt;/p&gt;
 The effort to persist a Java object graph is very small.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can always move to a no SQL solution when your application is successful and time comes to hardening it.
+&lt;p&gt;You can always move to a no SQL solution when your application is successful and time comes to harden it.
 Another standard but cumbersome approach is to move to JPA.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -1158,11 +1180,11 @@ Another standard but cumbersome approach is to move to JPA.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;A software architect models customer domains and maps them to powerful software abstractions.
-Soon you correlate internal efficient identifiers, meaningful external identifiers and domain entities.
+Soon you correlate internal efficient identifiers, meaningful external identifiers, and domain entities.
 You enjoy our long conversations with the enterprise data architect and find out the system owning a specific external identifier.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;How do you relate with external systems and communicate with other companies?&lt;/p&gt;
+&lt;p&gt;How do you relate to external systems and communicate with other companies?&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;How do you define internal identifiers, which grow with application success?&lt;/p&gt;
@@ -1237,12 +1259,12 @@ The drawback is that UUID is not a numerical value and cumbersome for a develope
 &lt;td class=&#34;content&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;An interesting approach is to support unique identifiers in the context of a bounded domain.
-All entities of the domain will have a unique object identifiers.
+All entities of the domain will have unique object identifier.
 The implementation can use a sequence from the domain database or schema.
 A programmatic identity generator can also be established in the domain.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Because the &lt;em&gt;oid&lt;/em&gt; is never exported, the solution is a powerful and simple to realize.&lt;/p&gt;
+&lt;p&gt;Because the &lt;em&gt;oid&lt;/em&gt; is never exported, the solution is as powerful and simple to realize.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -1277,9 +1299,9 @@ This process is part of the enterprise architecture activities of your ecosystem
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;External identifier ownership is often a murky situation when working with legacy systems.
-You often have multiple sources of external identifiers, sometimes overlapping and sometimes no covering all instances.
+You often have multiple sources of external identifiers, sometimes overlapping and sometimes not covering all instances.
 You have to formulate a long-term strategy to clean up your landscape and handle the problems until these clean-up activities are completed.
-By handling we mean administrative and import rules matching the various external identifiers to the same object.&lt;/p&gt;
+By handling, we mean administrative and import rules matching the various external identifiers to the same object.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;One possible solution is to use tags.
@@ -1287,7 +1309,7 @@ Store externally defined identifiers as tags.
 Document these tags as specific for the external system.
 This approach scales to multiple external identifiers, and multiple systems managing the same external identifier.
 So you have a scalable approach and do not pollute your domain model with spurious information defined in external systems.
-Upon completion of refactoring these tags document historical information and could safely be removed.&lt;/p&gt;
+Upon completion of refactoring, these tags document historical information and could safely be removed.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Multiple external object identifiers imply the existence of mapping functions to identify the object referenced.
@@ -1363,26 +1385,26 @@ All these external identifiers shall reference the same natural person.&lt;/p&gt
 The external identifier and name features can be grouped into one interface.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Additional information is available under link:../../docs/bus/businessmodels/.
+&lt;p&gt;Additional information is available under &lt;a href=&#34;../../../docs/core/models/&#34;&gt;models&lt;/a&gt;.
 Below the source code in modern Java is:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;background-color: #f8f8f8&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;HasOid&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
-    &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;oid&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
-&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;HasOid&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;oid&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
 
-&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;HasId&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;HasOid&lt;/span&gt; &lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;{&lt;/span&gt;
-    &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
-    &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
-    &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;();&lt;/span&gt;
-    &lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #990000;font-weight: bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #445588;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;background-color: #f8f8f8&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;);&lt;/span&gt;
-&lt;span style=&#34;color: #000000;font-weight: bold&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;HasId&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;HasOid&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We provide a Java library BUS implementing these constructs.
-More information is available under &lt;a href=&#34;http://blog.tangly.net/&#34;&gt;tangly open source components&lt;/a&gt;.&lt;/p&gt;
+More information is available under &lt;a href=&#34;https://blog.tangly.net/&#34;&gt;tangly open source components&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;

@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height='314pt' preserveAspectRatio='xMidYMid meet' viewBox='0.00 0.00 475.00 314.05' width='475pt' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>
+<g class='graph' id='graph0' transform='scale(1 1) rotate(0) translate(4 310.05)'>
+<title>state transitions</title>
+<polygon fill='white' points='-4,4 -4,-310.05 471,-310.05 471,4 -4,4' stroke='none'/>
+<g class='cluster state regular' id='clust1'>
+<title>cluster_Root</title>
+<path d='M20,-8C20,-8 447,-8 447,-8 453,-8 459,-14 459,-20 459,-20 459,-286.05 459,-286.05 459,-292.05 453,-298.05 447,-298.05 447,-298.05 20,-298.05 20,-298.05 14,-298.05 8,-292.05 8,-286.05 8,-286.05 8,-20 8,-20 8,-14 14,-8 20,-8' fill='none' stroke='black' stroke-width='2'/>
+<text font-family='Helvetica,sans-Serif' font-size='12.00' text-anchor='start' x='220.75' y='-278.65'>Root</text>
+</g>
+<g class='cluster state regular' id='clust2'>
+<title>cluster_Running</title>
+<path d='M28,-16C28,-16 170,-16 170,-16 176,-16 182,-22 182,-28 182,-28 182,-211.25 182,-211.25 182,-217.25 176,-223.25 170,-223.25 170,-223.25 28,-223.25 28,-223.25 22,-223.25 16,-217.25 16,-211.25 16,-211.25 16,-28 16,-28 16,-22 22,-16 28,-16' fill='none' stroke='black' stroke-width='2'/>
+<text font-family='Helvetica,sans-Serif' font-size='12.00' text-anchor='start' x='76.12' y='-203.85'>Running</text>
+</g>
+
+
+<g class='node state initial' id='node2'>
+<title>Running.initial</title>
+<ellipse cx='174' cy='-255.9' fill='black' rx='5.4' ry='5.4' stroke='black' stroke-width='2'/>
+</g>
+
+
+<g class='edge transition' id='edge4'>
+<title>Running.initial&#45;&gt;Running</title>
+<path d='M174,-249.81C174,-246.07 174,-240.51 174,-234.04' fill='none' stroke='black'/>
+<polygon fill='black' points='177.5,-234.25 174,-224.25 170.5,-234.25 177.5,-234.25' stroke='black'/>
+<text font-family='Helvetica,sans-Serif' font-size='10.00' text-anchor='middle' x='175.5' y='-233'> </text>
+</g>
+
+<g class='node state regular' id='node3'>
+<title>End</title>
+<polygon fill='#ffffff' fill-opacity='0.003922' points='246,-123.25 190,-123.25 190,-87.25 246,-87.25 246,-123.25' stroke='none' stroke-width='2'/>
+<text font-family='Helvetica,sans-Serif' font-size='12.00' text-anchor='start' x='207.12' y='-100.22'>End</text>
+<path d='M201.92,-88.88C201.92,-88.88 234.08,-88.88 234.08,-88.88 239.54,-88.88 245,-94.33 245,-99.79 245,-99.79 245,-110.71 245,-110.71 245,-116.17 239.54,-121.62 234.08,-121.62 234.08,-121.62 201.92,-121.62 201.92,-121.62 196.46,-121.62 191,-116.17 191,-110.71 191,-110.71 191,-99.79 191,-99.79 191,-94.33 196.46,-88.88 201.92,-88.88' fill='none' stroke='black' stroke-width='2'/>
+</g>
+
+<g class='node state regular' id='node4'>
+<title>PowerOff</title>
+<polygon fill='#ffffff' fill-opacity='0.003922' points='353.75,-123.25 282.25,-123.25 282.25,-87.25 353.75,-87.25 353.75,-123.25' stroke='none' stroke-width='2'/>
+<text font-family='Helvetica,sans-Serif' font-size='12.00' text-anchor='start' x='293.25' y='-100.22'>PowerOff</text>
+<path d='M294.17,-88.88C294.17,-88.88 341.83,-88.88 341.83,-88.88 347.29,-88.88 352.75,-94.33 352.75,-99.79 352.75,-99.79 352.75,-110.71 352.75,-110.71 352.75,-116.17 347.29,-121.62 341.83,-121.62 341.83,-121.62 294.17,-121.62 294.17,-121.62 288.71,-121.62 283.25,-116.17 283.25,-110.71 283.25,-110.71 283.25,-99.79 283.25,-99.79 283.25,-94.33 288.71,-88.88 294.17,-88.88' fill='none' stroke='black' stroke-width='2'/>
+</g>
+
+<g class='edge transition' id='edge3'>
+<title>PowerOff&#45;&gt;Running</title>
+<path d='M282.32,-116.71C274.04,-118.99 265.24,-121.31 257,-123.25 238.82,-127.54 232.54,-123.07 215.75,-131.25 206.08,-135.96 196.88,-143.49 189.59,-150.46' fill='none' stroke='black'/>
+<polygon fill='black' points='187.5,-147.61 183,-157.2 192.5,-152.52 187.5,-147.61' stroke='black'/>
+<text font-family='Helvetica,sans-Serif' font-size='10.00' text-anchor='start' x='215' y='-133'>RestorePower &#160;&#160;</text>
+</g>
+
+<g class='edge transition' id='edge1'>
+<title>Running&#45;&gt;End</title>
+<path d='M173.96,-167.36C173.56,-166.01 170.1,-155.05 163,-150.5' fill='none' stroke='black'/>
+<polygon fill='black' points='184.99,-132.41 189.35,-122.75 179.92,-127.58 184.99,-132.41' stroke='black'/>
+<text font-family='Helvetica,sans-Serif' font-size='10.00' text-anchor='start' x='107' y='-133'>Stop &#160;&#160;</text>
+</g>
+
+<g class='edge transition' id='edge5'>
+<title>Running&#45;&gt;End</title>
+<path d='M173.94,-167.43C172.79,-166.1 154.42,-144.52 182,-124.47' fill='none' stroke='black'/>
+<polygon fill='black' points='181.11,-128.17 189.19,-121.32 178.6,-121.64 181.11,-128.17' stroke='black'/>
+<text font-family='Helvetica,sans-Serif' font-size='10.00' text-anchor='start' x='163' y='-133'>Stop &#160;&#160;</text>
+</g>
+
+<g class='edge transition' id='edge2'>
+<title>Running&#45;&gt;PowerOff</title>
+<path d='M182,-167.71C202.18,-167.88 256.12,-165.94 292,-142.5 296.39,-139.63 300.27,-135.75 303.62,-131.58' fill='none' stroke='black'/>
+<polygon fill='black' points='306.84,-134.08 309.7,-123.88 301.1,-130.07 306.84,-134.08' stroke='black'/>
+<text font-family='Helvetica,sans-Serif' font-size='10.00' text-anchor='start' x='303' y='-133'>CutPower &#160;&#160;</text>
+</g>
+
+<g class='edge transition' id='edge6'>
+<title>Running&#45;&gt;PowerOff</title>
+<path d='M182,-167.75C214.64,-168.57 337.12,-169.79 361,-142.5 365.02,-137.91 364.51,-133.4 361.45,-129.2' fill='none' stroke='black'/>
+<polygon fill='black' points='364.35,-127.2 354.61,-123.04 359.63,-132.37 364.35,-127.2' stroke='black'/>
+<text font-family='Helvetica,sans-Serif' font-size='10.00' text-anchor='start' x='363' y='-133'>CutPower &#160;&#160;</text>
+</g>
+
+<g class='node state regular' id='node6'>
+<title>Washing</title>
+<polygon fill='#ffffff' fill-opacity='0.003922' points='151.62,-186.5 82.38,-186.5 82.38,-150.5 151.62,-150.5 151.62,-186.5' stroke='none' stroke-width='2'/>
+<text font-family='Helvetica,sans-Serif' font-size='12.00' text-anchor='start' x='93.38' y='-163.47'>Washing</text>
+<path d='M94.29,-152.12C94.29,-152.12 139.71,-152.12 139.71,-152.12 145.17,-152.12 150.62,-157.58 150.62,-163.04 150.62,-163.04 150.62,-173.96 150.62,-173.96 150.62,-179.42 145.17,-184.88 139.71,-184.88 139.71,-184.88 94.29,-184.88 94.29,-184.88 88.83,-184.88 83.38,-179.42 83.38,-173.96 83.38,-173.96 83.38,-163.04 83.38,-163.04 83.38,-157.58 88.83,-152.12 94.29,-152.12' fill='none' stroke='black' stroke-width='2'/>
+</g>
+
+<g class='node state regular' id='node7'>
+<title>Rinsing</title>
+<polygon fill='#ffffff' fill-opacity='0.003922' points='87.62,-123.25 24.38,-123.25 24.38,-87.25 87.62,-87.25 87.62,-123.25' stroke='none' stroke-width='2'/>
+<text font-family='Helvetica,sans-Serif' font-size='12.00' text-anchor='start' x='35.38' y='-100.22'>Rinsing</text>
+<path d='M36.29,-88.88C36.29,-88.88 75.71,-88.88 75.71,-88.88 81.17,-88.88 86.62,-94.33 86.62,-99.79 86.62,-99.79 86.62,-110.71 86.62,-110.71 86.62,-116.17 81.17,-121.62 75.71,-121.62 75.71,-121.62 36.29,-121.62 36.29,-121.62 30.83,-121.62 25.38,-116.17 25.38,-110.71 25.38,-110.71 25.38,-99.79 25.38,-99.79 25.38,-94.33 30.83,-88.88 36.29,-88.88' fill='none' stroke='black' stroke-width='2'/>
+</g>
+
+<g class='edge transition' id='edge7'>
+<title>Washing&#45;&gt;Rinsing</title>
+<path d='M82.57,-153.96C78.7,-152.68 74.79,-151.5 71,-150.5 60.22,-147.67 28.72,-150.98 21.5,-142.5 18.48,-138.95 18.24,-135.3 19.74,-131.75' fill='none' stroke='black'/>
+<polygon fill='black' points='23.03,-134.24 26.49,-124.22 17.54,-129.89 23.03,-134.24' stroke='black'/>
+<text font-family='Helvetica,sans-Serif' font-size='10.00' text-anchor='start' x='21' y='-133'>Rinse &#160;&#160;</text>
+</g>
+
+<g class='node state regular' id='node8'>
+<title>Drying</title>
+<polygon fill='#ffffff' fill-opacity='0.003922' points='84.62,-60 27.38,-60 27.38,-24 84.62,-24 84.62,-60' stroke='none' stroke-width='2'/>
+<text font-family='Helvetica,sans-Serif' font-size='12.00' text-anchor='start' x='38.38' y='-36.98'>Drying</text>
+<path d='M39.29,-25.62C39.29,-25.62 72.71,-25.62 72.71,-25.62 78.17,-25.62 83.62,-31.08 83.62,-36.54 83.62,-36.54 83.62,-47.46 83.62,-47.46 83.62,-52.92 78.17,-58.38 72.71,-58.38 72.71,-58.38 39.29,-58.38 39.29,-58.38 33.83,-58.38 28.38,-52.92 28.38,-47.46 28.38,-47.46 28.38,-36.54 28.38,-36.54 28.38,-31.08 33.83,-25.62 39.29,-25.62' fill='none' stroke='black' stroke-width='2'/>
+</g>
+
+<g class='edge transition' id='edge8'>
+<title>Rinsing&#45;&gt;Drying</title>
+<path d='M56,-87.51C56,-82.25 56,-76.28 56,-70.48' fill='none' stroke='black'/>
+<polygon fill='black' points='59.5,-70.72 56,-60.72 52.5,-70.72 59.5,-70.72' stroke='black'/>
+<text font-family='Helvetica,sans-Serif' font-size='10.00' text-anchor='start' x='56' y='-69.75'>Dry &#160;&#160;</text>
+</g>
+
+<g class='node state history' id='node9'>
+<title>Running.history</title>
+<ellipse cx='42' cy='-168.5' fill='#ffffff' fill-opacity='0.003922' rx='18' ry='18' stroke='black' stroke-width='2'/>
+<text font-family='Helvetica,sans-Serif' font-size='12.00' text-anchor='middle' x='42' y='-163.47'>H</text>
+</g>
+</g>
+</svg>

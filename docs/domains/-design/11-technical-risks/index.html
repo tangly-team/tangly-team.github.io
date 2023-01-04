@@ -1,0 +1,924 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta name="generator" content="Hugo 0.117.0">
+<meta content="index, follow" name="robots">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>tangly Components</title>
+<meta content="
+Risks and Technical Debts
+
+
+
+
+" name="description">
+<meta property="og:title" content="" />
+<meta property="og:description" content=" Risks and Technical Debts " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tangly.net/docs/domains/-design/11-technical-risks/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-01-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-01-01T00:00:00+00:00" />
+<meta itemprop="name" content="">
+<meta itemprop="description" content=" Risks and Technical Debts "><meta itemprop="datePublished" content="2023-01-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-01-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="4">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=" Risks and Technical Debts "/>
+
+
+
+
+<link rel="preload" href="/scss/main.min.659c0e810c9fa87c2939377cc30356a2a8db6f31c189867a6c4435b5f209db91.css" as="style">
+<link href="/scss/main.min.659c0e810c9fa87c2939377cc30356a2a8db6f31c189867a6c4435b5f209db91.css" rel="stylesheet" integrity="">
+
+<script
+    crossorigin="anonymous"
+    integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script crossorigin="anonymous"
+        defer
+        integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+        src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EYDTXKRW9J"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-EYDTXKRW9J', { 'anonymize_ip': false });
+}
+</script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar navbar-dark js-navbar-scroll">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns="http://www.w3.org/2000/svg" width="200pt" height="200pt" viewBox="0 0 200 200" id="svg2486" sodipodi:version=".32" inkscape:version=".46" sodipodi:docname="Trefoil knot right.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape"><sodipodi:namedview inkscape:window-height="968" inkscape:window-width="1280" inkscape:pageshadow="2" inkscape:pageopacity="0" guidetolerance="10" gridtolerance="10" objecttolerance="10" borderopacity="1" bordercolor="#666666" pagecolor="#ffffff" id="base" showgrid="false" inkscape:zoom="1.3067333" inkscape:cx="249.63266" inkscape:cy="62.855447" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:current-layer="svg2486"/><defs id="defs2488"><inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 125 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="250 : 125 : 1" inkscape:persp3d-origin="125 : 83.333333 : 1" id="perspective2513"/><clipPath id="clip0"><rect width="200" height="200" id="rect2491"/></clipPath></defs><path id="path2494" d="M0 0H2e2V2e2H0V0z" style="fill:none;stroke:#fff;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2498" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2500" d="M106.85867 15.599747c-14.729491-2.823746-29.734691 4.789444-38.898431 16.089828-11.2752 13.429062-16.36232 31.051804-17.24366 48.329178C50.273619 92.943802 52.764369 105.88356 57.469789 117.90243c7.27585 17.56566 17.83165 34.24682 32.89299 46.13654C92.774669 162.65706 95.146419 161.21078 97.483739 159.70999 91.839799 154.72711 86.030529 149.83615 81.470919 143.7885c-11.95516-15.56272-20.77463-34.08617-22.53252-53.810442C57.763899 72.451004 61.470369 54.040878 71.904329 39.640686c6.35866-8.886368 16.18092-15.879822 27.32333-16.636078C109.70795 22.590134 119.36897 28.52504 126.06642 36.202667 135.46762 47.182343 140.01814 61.524445 141.41617 75.728561 144.15082 76.552887 146.83908 77.522247 149.48434 78.597549 148.92412 64.577164 145.10776 50.545502 137.73999 38.553406 130.79414 27.439133 119.99826 18.11586 106.85867 15.599747z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2502" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2504" d="M147.92093 82.339767C131.77606 75.120453 113.79208 73.507401 96.303759 73.905609 85.048489 73.990738 73.609479 74.787079 62.846889 78.303467 62.585619 81.068481 62.482769 83.845367 62.584029 86.622925 74.710829 82.641434 87.569059 81.684677 100.25792 81.772141 113.50754 81.890411 126.97086 82.983246 139.50018 87.595261 157.45923 94.051147 173.82596 106.4809 182.72287 123.61052 186.66615 131.79286 189.29823 141.33128 186.59438 150.31045 183.96136 161.84018 173.8479 170.27501 162.8233 173.47672 146.12602 178.84361 128.00018 175.09146 112.28542 168.32153 109.99901 170.22192 107.58809 171.96417 105.16579 173.68845 118.4902 180.36499 133.32307 184.38042 148.29408 183.98366 160.19354 183.5498 172.38863 180.04552 181.66887 172.35745 191.52075 164.49789 196.71576 151.47577 195.46858 138.98613 194.34821 126.40183 188.08609 114.79196 179.96773 105.32024 171.14966 95.430832 160.12868 87.505219 147.92093 82.339767z" style="fill:#000;fill-rule:nonzero;stroke:none"/><path id="path2506" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:none;stroke:#000;stroke-width:.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10"/><path id="path2508" d="M46.629119 84.875732c-12.34204 6.034424-23.07669 15.279798-31.06384 26.443698C9.4463191 120.39208 4.8568891 130.90591 4.6191091 141.99255 4.3088991 154.18378 9.6498891 166.40074 19.226879 174.05405 30.863189 183.4154 46.564129 186.80774 61.231369 185.18527 76.521519 183.93057 91.262929 178.20692 103.94504 169.67574c15.42198-10.32111 26.77313-25.72197 34.64747-42.34339C143.58676 117.50302 146.98578 106.88367 148.78705 96.014374 146.33258 94.672745 143.78627 93.510117 141.19965 92.448105 139.15714 108.13388 132.8307 122.93907 124.5491 136.30702c-9.7752 16.03943-24.631971 29.12305-42.272661 35.79912C70.286409 176.75475 57.068559 178.78275 44.310439 176.69435 33.478819 174.66122 22.617129 169.09863 16.935429 159.2899c-4.9854-8.68340999999998-5.57909-19.50679-2.16509-28.85867 5.50911-15.87531 17.89813-28.74034 32.43022-36.794496C47.155519 90.708817 46.872389 87.790955 46.629119 84.875732z" style="fill:#000;fill-rule:nonzero;stroke:none"/></svg></span><span class="navbar-brand__name">tangly Components</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/about/"><span>About</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Documentation</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/ideas/"><span>Ideas</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/expertise/"><span>Expertise</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/community/"><span>Community</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Repositories</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="https://github.com/tangly-team/tangly-os/">GitHub</a></li>
+    <li><a class="dropdown-item" href="https://gitlab.com/marcelbaumann/tangly-os">GitLab</a></li>
+    <li><a class="dropdown-item" href="https://bitbucket.org/tangly-team/tangly-os/">Bitbucket</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.31fd0bfcd9d63d0bae5aad3826a5a65d.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="50"
+  >
+</div>
+
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.31fd0bfcd9d63d0bae5aad3826a5a65d.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="50"
+  >
+</div>
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="collapse td-sidebar-nav foldable-nav" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
+  <a href="/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsbdd-li">
+  <input type="checkbox" id="m-docsbdd-check"/>
+  <label for="m-docsbdd-check"><a href="/docs/bdd/" title="BDD - Behavior Driven Development" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsbdd"><span class="">BDD</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbddreadme-li">
+  <input type="checkbox" id="m-docsbddreadme-check"/>
+  <label for="m-docsbddreadme-check"><a href="/docs/bdd/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsbddreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbddreleasesnotes-li">
+  <input type="checkbox" id="m-docsbddreleasesnotes-check"/>
+  <label for="m-docsbddreleasesnotes-check"><a href="/docs/bdd/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsbddreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbdduserguidebdd-li">
+  <input type="checkbox" id="m-docsbdduserguidebdd-check"/>
+  <label for="m-docsbdduserguidebdd-check"><a href="/docs/bdd/userguidebdd/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsbdduserguidebdd"><span class="">User Guide Behavior Driven Design Library</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbddbdd-report-li">
+  <input type="checkbox" id="m-docsbddbdd-report-check"/>
+  <label for="m-docsbddbdd-report-check"><a href="/docs/bdd/bdd-report/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsbddbdd-report"><span class="">bdd Report</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsbddadr-li">
+  <input type="checkbox" id="m-docsbddadr-check"/>
+  <label for="m-docsbddadr-check"><a href="/docs/bdd/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsbddadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docscommons-li">
+  <input type="checkbox" id="m-docscommons-check"/>
+  <label for="m-docscommons-check"><a href="/docs/commons/" title="Commons - Common utility libraries" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docscommons"><span class="">Commons</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscommonsreadme-li">
+  <input type="checkbox" id="m-docscommonsreadme-check"/>
+  <label for="m-docscommonsreadme-check"><a href="/docs/commons/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docscommonsreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscommonsreleasesnotes-li">
+  <input type="checkbox" id="m-docscommonsreleasesnotes-check"/>
+  <label for="m-docscommonsreleasesnotes-check"><a href="/docs/commons/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docscommonsreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscommonsreferencecodes-li">
+  <input type="checkbox" id="m-docscommonsreferencecodes-check"/>
+  <label for="m-docscommonsreferencecodes-check"><a href="/docs/commons/referencecodes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docscommonsreferencecodes"><span class="">Reference Codes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscommonsadr-li">
+  <input type="checkbox" id="m-docscommonsadr-check"/>
+  <label for="m-docscommonsadr-check"><a href="/docs/commons/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docscommonsadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docscore-li">
+  <input type="checkbox" id="m-docscore-check"/>
+  <label for="m-docscore-check"><a href="/docs/core/" title="Core - Core model abstractions" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docscore"><span class="">Core</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscorereadme-li">
+  <input type="checkbox" id="m-docscorereadme-check"/>
+  <label for="m-docscorereadme-check"><a href="/docs/core/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docscorereadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscorereleasesnotes-li">
+  <input type="checkbox" id="m-docscorereleasesnotes-check"/>
+  <label for="m-docscorereleasesnotes-check"><a href="/docs/core/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docscorereleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscoremodels-li">
+  <input type="checkbox" id="m-docscoremodels-check"/>
+  <label for="m-docscoremodels-check"><a href="/docs/core/models/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docscoremodels"><span class="">Bounded Domain Models</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscoreadr-li">
+  <input type="checkbox" id="m-docscoreadr-check"/>
+  <label for="m-docscoreadr-check"><a href="/docs/core/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docscoreadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdev-li">
+  <input type="checkbox" id="m-docsdev-check"/>
+  <label for="m-docsdev-check"><a href="/docs/dev/" title="Development" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdev"><span class="">Dev</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdevreadme-li">
+  <input type="checkbox" id="m-docsdevreadme-check"/>
+  <label for="m-docsdevreadme-check"><a href="/docs/dev/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdevreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdevreleasesnotes-li">
+  <input type="checkbox" id="m-docsdevreleasesnotes-check"/>
+  <label for="m-docsdevreleasesnotes-check"><a href="/docs/dev/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdevreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdevdevelopmentapproach-li">
+  <input type="checkbox" id="m-docsdevdevelopmentapproach-check"/>
+  <label for="m-docsdevdevelopmentapproach-check"><a href="/docs/dev/developmentapproach/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdevdevelopmentapproach"><span class=""></span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsfsm-li">
+  <input type="checkbox" id="m-docsfsm-check"/>
+  <label for="m-docsfsm-check"><a href="/docs/fsm/" title="FSM - Hierarchical Finite State Machine" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsfsm"><span class="">FSM</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmreadme-li">
+  <input type="checkbox" id="m-docsfsmreadme-check"/>
+  <label for="m-docsfsmreadme-check"><a href="/docs/fsm/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmreleasesnotes-li">
+  <input type="checkbox" id="m-docsfsmreleasesnotes-check"/>
+  <label for="m-docsfsmreleasesnotes-check"><a href="/docs/fsm/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmuserguidefsm-li">
+  <input type="checkbox" id="m-docsfsmuserguidefsm-check"/>
+  <label for="m-docsfsmuserguidefsm-check"><a href="/docs/fsm/userguidefsm/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmuserguidefsm"><span class="">User Guide Finite State Machine</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmuserguideactor-li">
+  <input type="checkbox" id="m-docsfsmuserguideactor-check"/>
+  <label for="m-docsfsmuserguideactor-check"><a href="/docs/fsm/userguideactor/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmuserguideactor"><span class="">User Guide Actors</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmdesign-li">
+  <input type="checkbox" id="m-docsfsmdesign-check"/>
+  <label for="m-docsfsmdesign-check"><a href="/docs/fsm/design/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmdesign"><span class="">Design Considerations</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsfsmadr-li">
+  <input type="checkbox" id="m-docsfsmadr-check"/>
+  <label for="m-docsfsmadr-check"><a href="/docs/fsm/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsfsmadr"><span class="">ADR</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmadrfsm-001-move-abstractions-to-jdk-classes-li">
+  <input type="checkbox" id="m-docsfsmadrfsm-001-move-abstractions-to-jdk-classes-check"/>
+  <label for="m-docsfsmadrfsm-001-move-abstractions-to-jdk-classes-check"><a href="/docs/fsm/adr/fsm-001-move-abstractions-to-jdk-classes/" title="FSM 001: Move Abstractions to JDK Classes" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmadrfsm-001-move-abstractions-to-jdk-classes"><span class="">Move Abstractions to JDK Classes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmadrfsm-002-publish-maven-central-artifact-li">
+  <input type="checkbox" id="m-docsfsmadrfsm-002-publish-maven-central-artifact-check"/>
+  <label for="m-docsfsmadrfsm-002-publish-maven-central-artifact-check"><a href="/docs/fsm/adr/fsm-002-publish-maven-central-artifact/" title="FSM-002: Publish Maven Central Artifacts" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmadrfsm-002-publish-maven-central-artifact"><span class="">Publish Maven Central Artifacts</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsfsmexamples-li">
+  <input type="checkbox" id="m-docsfsmexamples-check"/>
+  <label for="m-docsfsmexamples-check"><a href="/docs/fsm/examples/" title="FSM Documentation Examples" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsfsmexamples"><span class="">Examples</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmexamplesfsm-tests-li">
+  <input type="checkbox" id="m-docsfsmexamplesfsm-tests-check"/>
+  <label for="m-docsfsmexamplesfsm-tests-check"><a href="/docs/fsm/examples/fsm-tests/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmexamplesfsm-tests"><span class="">FSM tests</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmexamplesfsm-bbv-li">
+  <input type="checkbox" id="m-docsfsmexamplesfsm-bbv-check"/>
+  <label for="m-docsfsmexamplesfsm-bbv-check"><a href="/docs/fsm/examples/fsm-bbv/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmexamplesfsm-bbv"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmexamplesfsm-test-li">
+  <input type="checkbox" id="m-docsfsmexamplesfsm-test-check"/>
+  <label for="m-docsfsmexamplesfsm-test-check"><a href="/docs/fsm/examples/fsm-test/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmexamplesfsm-test"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmexamplesfsm-washer-li">
+  <input type="checkbox" id="m-docsfsmexamplesfsm-washer-check"/>
+  <label for="m-docsfsmexamplesfsm-washer-check"><a href="/docs/fsm/examples/fsm-washer/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmexamplesfsm-washer"><span class=""></span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgleam-li">
+  <input type="checkbox" id="m-docsgleam-check"/>
+  <label for="m-docsgleam-check"><a href="/docs/gleam/" title="Gleam - Library to import and export domain objects to TSV and JSON data files" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsgleam"><span class="">Gleam</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgleamreadme-li">
+  <input type="checkbox" id="m-docsgleamreadme-check"/>
+  <label for="m-docsgleamreadme-check"><a href="/docs/gleam/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsgleamreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgleamreleasesnotes-li">
+  <input type="checkbox" id="m-docsgleamreleasesnotes-check"/>
+  <label for="m-docsgleamreleasesnotes-check"><a href="/docs/gleam/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsgleamreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgleamuserguide-li">
+  <input type="checkbox" id="m-docsgleamuserguide-check"/>
+  <label for="m-docsgleamuserguide-check"><a href="/docs/gleam/userguide/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsgleamuserguide"><span class="">User Guide Gleam</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsgleamadr-li">
+  <input type="checkbox" id="m-docsgleamadr-check"/>
+  <label for="m-docsgleamadr-check"><a href="/docs/gleam/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsgleamadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsui-li">
+  <input type="checkbox" id="m-docsui-check"/>
+  <label for="m-docsui-check"><a href="/docs/ui/" title="Vaadin UI" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsui"><span class="">UI</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsuireadme-li">
+  <input type="checkbox" id="m-docsuireadme-check"/>
+  <label for="m-docsuireadme-check"><a href="/docs/ui/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsuireadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsuireleasesnotes-li">
+  <input type="checkbox" id="m-docsuireleasesnotes-check"/>
+  <label for="m-docsuireleasesnotes-check"><a href="/docs/ui/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsuireleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsuiuserguide-li">
+  <input type="checkbox" id="m-docsuiuserguide-check"/>
+  <label for="m-docsuiuserguide-check"><a href="/docs/ui/userguide/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsuiuserguide"><span class="">User Guide UI</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsuideveloperguide-li">
+  <input type="checkbox" id="m-docsuideveloperguide-check"/>
+  <label for="m-docsuideveloperguide-check"><a href="/docs/ui/developerguide/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsuideveloperguide"><span class="">Developer Guide UI</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsuiuserguideerp-li">
+  <input type="checkbox" id="m-docsuiuserguideerp-check"/>
+  <label for="m-docsuiuserguideerp-check"><a href="/docs/ui/userguideerp/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsuiuserguideerp"><span class="">User Guide tangly ERP</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsuidesign-li">
+  <input type="checkbox" id="m-docsuidesign-check"/>
+  <label for="m-docsuidesign-check"><a href="/docs/ui/design/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsuidesign"><span class="">ERP Design</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdomains-li">
+  <input type="checkbox" id="m-docsdomains-check" checked/>
+  <label for="m-docsdomains-check"><a href="/docs/domains/" title="ERP Bounded Domains" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomains"><span class="">ERP Domains</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdomains-design-li">
+  <input type="checkbox" id="m-docsdomains-design-check" checked/>
+  <label for="m-docsdomains-design-check"><a href="/docs/domains/-design/" title="Architecture and Design" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomains-design"><span class="">Architecture</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design01-introduction-and-goals-li">
+  <input type="checkbox" id="m-docsdomains-design01-introduction-and-goals-check"/>
+  <label for="m-docsdomains-design01-introduction-and-goals-check"><a href="/docs/domains/-design/01-introduction-and-goals/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design01-introduction-and-goals"><span class="">01 Introduction</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design02-architecture-constraints-li">
+  <input type="checkbox" id="m-docsdomains-design02-architecture-constraints-check"/>
+  <label for="m-docsdomains-design02-architecture-constraints-check"><a href="/docs/domains/-design/02-architecture-constraints/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design02-architecture-constraints"><span class="">02 Constraints</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design03-system-scope-and-context-li">
+  <input type="checkbox" id="m-docsdomains-design03-system-scope-and-context-check"/>
+  <label for="m-docsdomains-design03-system-scope-and-context-check"><a href="/docs/domains/-design/03-system-scope-and-context/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design03-system-scope-and-context"><span class="">03 Scope</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design04-solution-strategy-li">
+  <input type="checkbox" id="m-docsdomains-design04-solution-strategy-check"/>
+  <label for="m-docsdomains-design04-solution-strategy-check"><a href="/docs/domains/-design/04-solution-strategy/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design04-solution-strategy"><span class="">04 Solution</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design05-building-block-view-li">
+  <input type="checkbox" id="m-docsdomains-design05-building-block-view-check"/>
+  <label for="m-docsdomains-design05-building-block-view-check"><a href="/docs/domains/-design/05-building-block-view/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design05-building-block-view"><span class="">05 Block View</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design06-runtime-view-li">
+  <input type="checkbox" id="m-docsdomains-design06-runtime-view-check"/>
+  <label for="m-docsdomains-design06-runtime-view-check"><a href="/docs/domains/-design/06-runtime-view/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design06-runtime-view"><span class="">06 Runtime View</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design07-deployment-view-li">
+  <input type="checkbox" id="m-docsdomains-design07-deployment-view-check"/>
+  <label for="m-docsdomains-design07-deployment-view-check"><a href="/docs/domains/-design/07-deployment-view/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design07-deployment-view"><span class="">07 Deploy View</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design08-crosscutting-concepts-li">
+  <input type="checkbox" id="m-docsdomains-design08-crosscutting-concepts-check"/>
+  <label for="m-docsdomains-design08-crosscutting-concepts-check"><a href="/docs/domains/-design/08-crosscutting-concepts/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design08-crosscutting-concepts"><span class="">08 Concepts</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design09-architecture-decisions-li">
+  <input type="checkbox" id="m-docsdomains-design09-architecture-decisions-check"/>
+  <label for="m-docsdomains-design09-architecture-decisions-check"><a href="/docs/domains/-design/09-architecture-decisions/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design09-architecture-decisions"><span class="">09 Decisions</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design10-quality-requirements-li">
+  <input type="checkbox" id="m-docsdomains-design10-quality-requirements-check"/>
+  <label for="m-docsdomains-design10-quality-requirements-check"><a href="/docs/domains/-design/10-quality-requirements/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design10-quality-requirements"><span class="">10 Quality</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsdomains-design11-technical-risks-li">
+  <input type="checkbox" id="m-docsdomains-design11-technical-risks-check" checked/>
+  <label for="m-docsdomains-design11-technical-risks-check"><a href="/docs/domains/-design/11-technical-risks/" title="" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design11-technical-risks"><span class="td-sidebar-nav-active-item">11 Risks</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design12-glossary-li">
+  <input type="checkbox" id="m-docsdomains-design12-glossary-check"/>
+  <label for="m-docsdomains-design12-glossary-check"><a href="/docs/domains/-design/12-glossary/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design12-glossary"><span class="">12 Glossary</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design13-user-interface-li">
+  <input type="checkbox" id="m-docsdomains-design13-user-interface-check"/>
+  <label for="m-docsdomains-design13-user-interface-check"><a href="/docs/domains/-design/13-user-interface/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design13-user-interface"><span class="">13 UI</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsagile-li">
+  <input type="checkbox" id="m-docsdomainsagile-check"/>
+  <label for="m-docsdomainsagile-check"><a href="/docs/domains/agile/" title="Agile - Agile Bounded Domain" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsagile"><span class="">Agile</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsagilereadme-li">
+  <input type="checkbox" id="m-docsdomainsagilereadme-check"/>
+  <label for="m-docsdomainsagilereadme-check"><a href="/docs/domains/agile/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsagilereadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsagilereleasesnotes-li">
+  <input type="checkbox" id="m-docsdomainsagilereleasesnotes-check"/>
+  <label for="m-docsdomainsagilereleasesnotes-check"><a href="/docs/domains/agile/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsagilereleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsagileadr-li">
+  <input type="checkbox" id="m-docsdomainsagileadr-check"/>
+  <label for="m-docsdomainsagileadr-check"><a href="/docs/domains/agile/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsagileadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsapps-li">
+  <input type="checkbox" id="m-docsdomainsapps-check"/>
+  <label for="m-docsdomainsapps-check"><a href="/docs/domains/apps/" title="Applications - Apps Bounded Domain" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsapps"><span class="">Apps</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsappsreadme-li">
+  <input type="checkbox" id="m-docsdomainsappsreadme-check"/>
+  <label for="m-docsdomainsappsreadme-check"><a href="/docs/domains/apps/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsappsreadme"><span class="">Readme</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainscollaborators-li">
+  <input type="checkbox" id="m-docsdomainscollaborators-check"/>
+  <label for="m-docsdomainscollaborators-check"><a href="/docs/domains/collaborators/" title="Collaborators - Collaborators Bounded Domain" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainscollaborators"><span class="">Collaborators</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainscollaboratorsreadme-li">
+  <input type="checkbox" id="m-docsdomainscollaboratorsreadme-check"/>
+  <label for="m-docsdomainscollaboratorsreadme-check"><a href="/docs/domains/collaborators/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainscollaboratorsreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainscollaboratorscollaborators-design-li">
+  <input type="checkbox" id="m-docsdomainscollaboratorscollaborators-design-check"/>
+  <label for="m-docsdomainscollaboratorscollaborators-design-check"><a href="/docs/domains/collaborators/collaborators-design/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainscollaboratorscollaborators-design"><span class="">Collaborators Design</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainscollaboratorsadr-li">
+  <input type="checkbox" id="m-docsdomainscollaboratorsadr-check"/>
+  <label for="m-docsdomainscollaboratorsadr-check"><a href="/docs/domains/collaborators/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainscollaboratorsadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainscrm-li">
+  <input type="checkbox" id="m-docsdomainscrm-check"/>
+  <label for="m-docsdomainscrm-check"><a href="/docs/domains/crm/" title="CRM - CRM Bounded Domain" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainscrm"><span class="">CRM</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainscrmreadme-li">
+  <input type="checkbox" id="m-docsdomainscrmreadme-check"/>
+  <label for="m-docsdomainscrmreadme-check"><a href="/docs/domains/crm/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainscrmreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainscrmreleasesnotes-li">
+  <input type="checkbox" id="m-docsdomainscrmreleasesnotes-check"/>
+  <label for="m-docsdomainscrmreleasesnotes-check"><a href="/docs/domains/crm/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainscrmreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainscrmmodels-li">
+  <input type="checkbox" id="m-docsdomainscrmmodels-check"/>
+  <label for="m-docsdomainscrmmodels-check"><a href="/docs/domains/crm/models/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainscrmmodels"><span class="">Bounded Domain CRM Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainscrmadr-li">
+  <input type="checkbox" id="m-docsdomainscrmadr-check"/>
+  <label for="m-docsdomainscrmadr-check"><a href="/docs/domains/crm/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainscrmadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsinvoices-li">
+  <input type="checkbox" id="m-docsdomainsinvoices-check"/>
+  <label for="m-docsdomainsinvoices-check"><a href="/docs/domains/invoices/" title="Invoices - Invoices Bounded Domain" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsinvoices"><span class="">Invoices</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsinvoicesreadme-li">
+  <input type="checkbox" id="m-docsdomainsinvoicesreadme-check"/>
+  <label for="m-docsdomainsinvoicesreadme-check"><a href="/docs/domains/invoices/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsinvoicesreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsinvoicesreleasesnotes-li">
+  <input type="checkbox" id="m-docsdomainsinvoicesreleasesnotes-check"/>
+  <label for="m-docsdomainsinvoicesreleasesnotes-check"><a href="/docs/domains/invoices/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsinvoicesreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsinvoicesadr-li">
+  <input type="checkbox" id="m-docsdomainsinvoicesadr-check"/>
+  <label for="m-docsdomainsinvoicesadr-check"><a href="/docs/domains/invoices/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsinvoicesadr"><span class="">ADR</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsledger-li">
+  <input type="checkbox" id="m-docsdomainsledger-check"/>
+  <label for="m-docsdomainsledger-check"><a href="/docs/domains/ledger/" title="Ledger - Ledger Bounded Domain" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsledger"><span class="">Ledger</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsledgerreadme-li">
+  <input type="checkbox" id="m-docsdomainsledgerreadme-check"/>
+  <label for="m-docsdomainsledgerreadme-check"><a href="/docs/domains/ledger/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsledgerreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsledgerreleasesnotes-li">
+  <input type="checkbox" id="m-docsdomainsledgerreleasesnotes-check"/>
+  <label for="m-docsdomainsledgerreleasesnotes-check"><a href="/docs/domains/ledger/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsledgerreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsledgeruserguideports-li">
+  <input type="checkbox" id="m-docsdomainsledgeruserguideports-check"/>
+  <label for="m-docsdomainsledgeruserguideports-check"><a href="/docs/domains/ledger/userguideports/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsledgeruserguideports"><span class="">ERP Ports</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsledger-models-li">
+  <input type="checkbox" id="m-docsdomainsledger-models-check"/>
+  <label for="m-docsdomainsledger-models-check"><a href="/docs/domains/ledger/-models/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsledger-models"><span class="">Bounded Domain Invoice Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsledgeradr-li">
+  <input type="checkbox" id="m-docsdomainsledgeradr-check"/>
+  <label for="m-docsdomainsledgeradr-check"><a href="/docs/domains/ledger/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsledgeradr"><span class="">ADR</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsledgeradrled-001-ledger-tag-for-vat-costs-li">
+  <input type="checkbox" id="m-docsdomainsledgeradrled-001-ledger-tag-for-vat-costs-check"/>
+  <label for="m-docsdomainsledgeradrled-001-ledger-tag-for-vat-costs-check"><a href="/docs/domains/ledger/adr/led-001-ledger-tag-for-vat-costs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsledgeradrled-001-ledger-tag-for-vat-costs"><span class="">LED 001</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsproducts-li">
+  <input type="checkbox" id="m-docsdomainsproducts-check"/>
+  <label for="m-docsdomainsproducts-check"><a href="/docs/domains/products/" title="Products - Products Bounded Domain" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsproducts"><span class="">Products</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsproductsreadme-li">
+  <input type="checkbox" id="m-docsdomainsproductsreadme-check"/>
+  <label for="m-docsdomainsproductsreadme-check"><a href="/docs/domains/products/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsproductsreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsproductsreleasesnotes-li">
+  <input type="checkbox" id="m-docsdomainsproductsreleasesnotes-check"/>
+  <label for="m-docsdomainsproductsreleasesnotes-check"><a href="/docs/domains/products/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsproductsreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsproductsmodels-li">
+  <input type="checkbox" id="m-docsdomainsproductsmodels-check"/>
+  <label for="m-docsdomainsproductsmodels-check"><a href="/docs/domains/products/models/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsproductsmodels"><span class="">Bounded Domain Producgts Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsproductsadr-li">
+  <input type="checkbox" id="m-docsdomainsproductsadr-check"/>
+  <label for="m-docsdomainsproductsadr-check"><a href="/docs/domains/products/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsproductsadr"><span class="">ADR</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsproductsadrprj-001-project-tag-for-project-costs-li">
+  <input type="checkbox" id="m-docsdomainsproductsadrprj-001-project-tag-for-project-costs-check"/>
+  <label for="m-docsdomainsproductsadrprj-001-project-tag-for-project-costs-check"><a href="/docs/domains/products/adr/prj-001-project-tag-for-project-costs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsproductsadrprj-001-project-tag-for-project-costs"><span class="">PRJ 001</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsshared-li">
+  <input type="checkbox" id="m-docsdomainsshared-check"/>
+  <label for="m-docsdomainsshared-check"><a href="/docs/domains/shared/" title="Shared - Shared Kernel" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared"><span class="">Shared</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainssharedreadme-li">
+  <input type="checkbox" id="m-docsdomainssharedreadme-check"/>
+  <label for="m-docsdomainssharedreadme-check"><a href="/docs/domains/shared/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainssharedreadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainssharedreleasesnotes-li">
+  <input type="checkbox" id="m-docsdomainssharedreleasesnotes-check"/>
+  <label for="m-docsdomainssharedreleasesnotes-check"><a href="/docs/domains/shared/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainssharedreleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainssharedadr-li">
+  <input type="checkbox" id="m-docsdomainssharedadr-check"/>
+  <label for="m-docsdomainssharedadr-check"><a href="/docs/domains/shared/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainssharedadr"><span class="">ADR</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design01-introduction-and-goals01-introduction-and-goals-li">
+  <input type="checkbox" id="m-docsdomainsshared_design01-introduction-and-goals01-introduction-and-goals-check"/>
+  <label for="m-docsdomainsshared_design01-introduction-and-goals01-introduction-and-goals-check"><a href="/docs/domains/shared/_design/01-introduction-and-goals/01-introduction-and-goals/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design01-introduction-and-goals01-introduction-and-goals"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design02-architecture-constraints02-architecture-constraints-li">
+  <input type="checkbox" id="m-docsdomainsshared_design02-architecture-constraints02-architecture-constraints-check"/>
+  <label for="m-docsdomainsshared_design02-architecture-constraints02-architecture-constraints-check"><a href="/docs/domains/shared/_design/02-architecture-constraints/02-architecture-constraints/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design02-architecture-constraints02-architecture-constraints"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design03-system-scope-and-context03-system-scope-and-context-li">
+  <input type="checkbox" id="m-docsdomainsshared_design03-system-scope-and-context03-system-scope-and-context-check"/>
+  <label for="m-docsdomainsshared_design03-system-scope-and-context03-system-scope-and-context-check"><a href="/docs/domains/shared/_design/03-system-scope-and-context/03-system-scope-and-context/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design03-system-scope-and-context03-system-scope-and-context"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design04-solution-strategy04-solution-strategy-li">
+  <input type="checkbox" id="m-docsdomainsshared_design04-solution-strategy04-solution-strategy-check"/>
+  <label for="m-docsdomainsshared_design04-solution-strategy04-solution-strategy-check"><a href="/docs/domains/shared/_design/04-solution-strategy/04-solution-strategy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design04-solution-strategy04-solution-strategy"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design05-building-block-view05-building-block-view-li">
+  <input type="checkbox" id="m-docsdomainsshared_design05-building-block-view05-building-block-view-check"/>
+  <label for="m-docsdomainsshared_design05-building-block-view05-building-block-view-check"><a href="/docs/domains/shared/_design/05-building-block-view/05-building-block-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design05-building-block-view05-building-block-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design06-runtime-view06-runtime-view-li">
+  <input type="checkbox" id="m-docsdomainsshared_design06-runtime-view06-runtime-view-check"/>
+  <label for="m-docsdomainsshared_design06-runtime-view06-runtime-view-check"><a href="/docs/domains/shared/_design/06-runtime-view/06-runtime-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design06-runtime-view06-runtime-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design07-deployment-view07-deployment-view-li">
+  <input type="checkbox" id="m-docsdomainsshared_design07-deployment-view07-deployment-view-check"/>
+  <label for="m-docsdomainsshared_design07-deployment-view07-deployment-view-check"><a href="/docs/domains/shared/_design/07-deployment-view/07-deployment-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design07-deployment-view07-deployment-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design08-crosscuting-concepts08-crosscutting-concepts-li">
+  <input type="checkbox" id="m-docsdomainsshared_design08-crosscuting-concepts08-crosscutting-concepts-check"/>
+  <label for="m-docsdomainsshared_design08-crosscuting-concepts08-crosscutting-concepts-check"><a href="/docs/domains/shared/_design/08-crosscuting-concepts/08-crosscutting-concepts/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design08-crosscuting-concepts08-crosscutting-concepts"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design09-architecture-decisions09-architecture-decisions-li">
+  <input type="checkbox" id="m-docsdomainsshared_design09-architecture-decisions09-architecture-decisions-check"/>
+  <label for="m-docsdomainsshared_design09-architecture-decisions09-architecture-decisions-check"><a href="/docs/domains/shared/_design/09-architecture-decisions/09-architecture-decisions/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design09-architecture-decisions09-architecture-decisions"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design10-quality-requirements10-quality-requirements-li">
+  <input type="checkbox" id="m-docsdomainsshared_design10-quality-requirements10-quality-requirements-check"/>
+  <label for="m-docsdomainsshared_design10-quality-requirements10-quality-requirements-check"><a href="/docs/domains/shared/_design/10-quality-requirements/10-quality-requirements/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design10-quality-requirements10-quality-requirements"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design11-technical-risks11-technical-risks-li">
+  <input type="checkbox" id="m-docsdomainsshared_design11-technical-risks11-technical-risks-check"/>
+  <label for="m-docsdomainsshared_design11-technical-risks11-technical-risks-check"><a href="/docs/domains/shared/_design/11-technical-risks/11-technical-risks/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design11-technical-risks11-technical-risks"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design12-user-manual12-user-manual-li">
+  <input type="checkbox" id="m-docsdomainsshared_design12-user-manual12-user-manual-check"/>
+  <label for="m-docsdomainsshared_design12-user-manual12-user-manual-check"><a href="/docs/domains/shared/_design/12-user-manual/12-user-manual/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design12-user-manual12-user-manual"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design13-glossary13-glossary-li">
+  <input type="checkbox" id="m-docsdomainsshared_design13-glossary13-glossary-check"/>
+  <label for="m-docsdomainsshared_design13-glossary13-glossary-check"><a href="/docs/domains/shared/_design/13-glossary/13-glossary/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design13-glossary13-glossary"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designarchitecture-li">
+  <input type="checkbox" id="m-docsdomainsshared_designarchitecture-check"/>
+  <label for="m-docsdomainsshared_designarchitecture-check"><a href="/docs/domains/shared/_design/architecture/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designarchitecture"><span class=""></span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsui-li">
+  <input type="checkbox" id="m-docsdomainsui-check"/>
+  <label for="m-docsdomainsui-check"><a href="/docs/domains/ui/" title="ERP-UI - UI for ERP Bounded Domains" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsui"><span class="">ERP-UI</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsuireadme-li">
+  <input type="checkbox" id="m-docsdomainsuireadme-check"/>
+  <label for="m-docsdomainsuireadme-check"><a href="/docs/domains/ui/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsuireadme"><span class="">Readme</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsuireleasesnotes-li">
+  <input type="checkbox" id="m-docsdomainsuireleasesnotes-check"/>
+  <label for="m-docsdomainsuireleasesnotes-check"><a href="/docs/domains/ui/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsuireleasesnotes"><span class="">Release Notes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsuimodels-li">
+  <input type="checkbox" id="m-docsdomainsuimodels-check"/>
+  <label for="m-docsdomainsuimodels-check"><a href="/docs/domains/ui/models/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsuimodels"><span class="">Bounded Domain UI Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsuiadr-li">
+  <input type="checkbox" id="m-docsdomainsuiadr-check"/>
+  <label for="m-docsdomainsuiadr-check"><a href="/docs/domains/ui/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsuiadr"><span class="">ADR</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsuiadrerpui-001-markdown-for-all-texts-li">
+  <input type="checkbox" id="m-docsdomainsuiadrerpui-001-markdown-for-all-texts-check"/>
+  <label for="m-docsdomainsuiadrerpui-001-markdown-for-all-texts-check"><a href="/docs/domains/ui/adr/erpui-001-markdown-for-all-texts/" title="ERPUI-001: Markdown for all Text Fields" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsuiadrerpui-001-markdown-for-all-texts"><span class="">Markdown Support</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design01-introduction-and-goals01-introduction-and-goals-li">
+  <input type="checkbox" id="m-docsdomains_design01-introduction-and-goals01-introduction-and-goals-check"/>
+  <label for="m-docsdomains_design01-introduction-and-goals01-introduction-and-goals-check"><a href="/docs/domains/_design/01-introduction-and-goals/01-introduction-and-goals/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design01-introduction-and-goals01-introduction-and-goals"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design02-architecture-constraints02-architecture-constraints-li">
+  <input type="checkbox" id="m-docsdomains_design02-architecture-constraints02-architecture-constraints-check"/>
+  <label for="m-docsdomains_design02-architecture-constraints02-architecture-constraints-check"><a href="/docs/domains/_design/02-architecture-constraints/02-architecture-constraints/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design02-architecture-constraints02-architecture-constraints"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design03-system-scope-and-context03-system-scope-and-context-li">
+  <input type="checkbox" id="m-docsdomains_design03-system-scope-and-context03-system-scope-and-context-check"/>
+  <label for="m-docsdomains_design03-system-scope-and-context03-system-scope-and-context-check"><a href="/docs/domains/_design/03-system-scope-and-context/03-system-scope-and-context/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design03-system-scope-and-context03-system-scope-and-context"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design04-solution-strategy04-solution-strategy-li">
+  <input type="checkbox" id="m-docsdomains_design04-solution-strategy04-solution-strategy-check"/>
+  <label for="m-docsdomains_design04-solution-strategy04-solution-strategy-check"><a href="/docs/domains/_design/04-solution-strategy/04-solution-strategy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design04-solution-strategy04-solution-strategy"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design05-building-block-view05-building-block-view-li">
+  <input type="checkbox" id="m-docsdomains_design05-building-block-view05-building-block-view-check"/>
+  <label for="m-docsdomains_design05-building-block-view05-building-block-view-check"><a href="/docs/domains/_design/05-building-block-view/05-building-block-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design05-building-block-view05-building-block-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design06-runtime-view06-runtime-view-li">
+  <input type="checkbox" id="m-docsdomains_design06-runtime-view06-runtime-view-check"/>
+  <label for="m-docsdomains_design06-runtime-view06-runtime-view-check"><a href="/docs/domains/_design/06-runtime-view/06-runtime-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design06-runtime-view06-runtime-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design07-deployment-view07-deployment-view-li">
+  <input type="checkbox" id="m-docsdomains_design07-deployment-view07-deployment-view-check"/>
+  <label for="m-docsdomains_design07-deployment-view07-deployment-view-check"><a href="/docs/domains/_design/07-deployment-view/07-deployment-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design07-deployment-view07-deployment-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design08-crosscuting-concepts08-crosscutting-concepts-li">
+  <input type="checkbox" id="m-docsdomains_design08-crosscuting-concepts08-crosscutting-concepts-check"/>
+  <label for="m-docsdomains_design08-crosscuting-concepts08-crosscutting-concepts-check"><a href="/docs/domains/_design/08-crosscuting-concepts/08-crosscutting-concepts/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design08-crosscuting-concepts08-crosscutting-concepts"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design09-architecture-decisions09-architecture-decisions-li">
+  <input type="checkbox" id="m-docsdomains_design09-architecture-decisions09-architecture-decisions-check"/>
+  <label for="m-docsdomains_design09-architecture-decisions09-architecture-decisions-check"><a href="/docs/domains/_design/09-architecture-decisions/09-architecture-decisions/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design09-architecture-decisions09-architecture-decisions"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design10-quality-requirements10-quality-requirements-li">
+  <input type="checkbox" id="m-docsdomains_design10-quality-requirements10-quality-requirements-check"/>
+  <label for="m-docsdomains_design10-quality-requirements10-quality-requirements-check"><a href="/docs/domains/_design/10-quality-requirements/10-quality-requirements/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design10-quality-requirements10-quality-requirements"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design11-technical-risks11-technical-risks-li">
+  <input type="checkbox" id="m-docsdomains_design11-technical-risks11-technical-risks-check"/>
+  <label for="m-docsdomains_design11-technical-risks11-technical-risks-check"><a href="/docs/domains/_design/11-technical-risks/11-technical-risks/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design11-technical-risks11-technical-risks"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design12-user-manual12-user-manual-li">
+  <input type="checkbox" id="m-docsdomains_design12-user-manual12-user-manual-check"/>
+  <label for="m-docsdomains_design12-user-manual12-user-manual-check"><a href="/docs/domains/_design/12-user-manual/12-user-manual/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design12-user-manual12-user-manual"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design13-glossary13-glossary-li">
+  <input type="checkbox" id="m-docsdomains_design13-glossary13-glossary-check"/>
+  <label for="m-docsdomains_design13-glossary13-glossary-check"><a href="/docs/domains/_design/13-glossary/13-glossary/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design13-glossary13-glossary"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_designarchitecture-li">
+  <input type="checkbox" id="m-docsdomains_designarchitecture-check"/>
+  <label for="m-docsdomains_designarchitecture-check"><a href="/docs/domains/_design/architecture/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_designarchitecture"><span class=""></span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelines-li">
+  <input type="checkbox" id="m-docscontribution-guidelines-check"/>
+  <label for="m-docscontribution-guidelines-check"><a href="/docs/contribution-guidelines/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docscontribution-guidelines"><span class="">Contributing Guidelines</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdevelopment-environment-li">
+  <input type="checkbox" id="m-docsdevelopment-environment-check"/>
+  <label for="m-docsdevelopment-environment-check"><a href="/docs/development-environment/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdevelopment-environment"><span class="">Development Environment</span></a></label>
+  
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+<div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            
+            <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">93</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">architecture</span><span class="taxonomy-count">16</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/crm/" data-taxonomy-term="crm"><span class="taxonomy-label">crm</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/design/" data-taxonomy-term="design"><span class="taxonomy-label">design</span><span class="taxonomy-count">23</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">devops</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/domain-driven-design/" data-taxonomy-term="domain-driven-design"><span class="taxonomy-label">domain-driven-design</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/git/" data-taxonomy-term="git"><span class="taxonomy-label">git</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/gradle/" data-taxonomy-term="gradle"><span class="taxonomy-label">gradle</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/hugo/" data-taxonomy-term="hugo"><span class="taxonomy-label">hugo</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">java</span><span class="taxonomy-count">37</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/jvm-languages/" data-taxonomy-term="jvm-languages"><span class="taxonomy-label">jvm-languages</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/organization/" data-taxonomy-term="organization"><span class="taxonomy-label">organization</span><span class="taxonomy-count">15</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/series-agile-design/" data-taxonomy-term="series-agile-design"><span class="taxonomy-label">series-agile-design</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/series-how-healthy/" data-taxonomy-term="series-how-healthy"><span class="taxonomy-label">series-how-healthy</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/series-identifiers/" data-taxonomy-term="series-identifiers"><span class="taxonomy-label">series-identifiers</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/series-students/" data-taxonomy-term="series-students"><span class="taxonomy-label">series-students</span><span class="taxonomy-count">20</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/series-swiss-agile-trends/" data-taxonomy-term="series-swiss-agile-trends"><span class="taxonomy-label">series-swiss-agile-trends</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/tangly/" data-taxonomy-term="tangly"><span class="taxonomy-label">tangly</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/vaadin/" data-taxonomy-term="vaadin"><span class="taxonomy-label">vaadin</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="https://blog.tangly.net/docs/">Documentation</a></li>
+  <li class="breadcrumb-item">
+    <a href="https://blog.tangly.net/docs/domains/">ERP Domains</a></li>
+  <li class="breadcrumb-item">
+    <a href="https://blog.tangly.net/docs/domains/-design/">Architecture</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    11 Risks</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1></h1>
+	
+	<header class="article-meta">
+		
+</header>
+	<div class="sect1">
+<h2 id="section-technical-risks">Risks and Technical Debts</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+
+
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Issue Tracker" aria-label="Issue Tracker">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://github.com/tangly-team/tangly-os/issues">
+      <i class="github-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Documentation" aria-label="Documentation">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://blog.tangly.net/">
+      <i class="github-square"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Groups" aria-label="Groups">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://groups.google.com/g/tangly-os-components">
+      <i class="users-cog"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Github" aria-label="Github">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://github.com/tangly-team/tangly-os/">
+      <i class="github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2023 tangly llc - Attribution 4.0 International (CC BY 4.0)</small>
+        
+	
+		<p class="mt-2"><a href="/about/">About tangly OS Components</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+  <script src="/js/main.min.99abe30f7fb05785a480d405ee1665ebd520cec6bbadffe966b7737e103675b8.js" integrity="sha256-mavjD3&#43;wV4WkgNQF7hZl69Ugzsa7rf/pZrdzfhA2dbg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.f724d3de49218995223b7316aa2e53e2b34bf42026bf399ebb21bb02212402d1.js" integrity="sha256-9yTT3kkhiZUiO3MWqi5T4rNL9CAmvzmeuyG7AiEkAtE=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

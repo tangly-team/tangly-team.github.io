@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.tangly.ui.app.domain"},{"l":"net.tangly.ui.canvases"},{"l":"net.tangly.ui.canvases.events"},{"l":"net.tangly.ui.components"},{"l":"net.tangly.ui.grids"},{"l":"net.tangly.ui.markdown"},{"l":"net.tangly.ui.pdf"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.tangly.ui.app.domain"},{"l":"net.tangly.ui.asciidoc"},{"l":"net.tangly.ui.components"},{"l":"net.tangly.ui.daterange"},{"l":"net.tangly.ui.pdf"}];updateSearchResults();
