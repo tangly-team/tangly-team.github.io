@@ -5,7 +5,7 @@
     <description>Recent content in tangly llc Blog on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,712 @@
         
       
     
+    
+    <item>
+      <title>Blog: Git Rebase and Merge for the Impatient</title>
+      <link>https://blog.tangly.net/blog/2023/git-rebase-and-merge-for-the-impatient/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/git-rebase-and-merge-for-the-impatient/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_git_rebase_and_merge_for_the_impatient&#34;&gt;Git Rebase and Merge for the Impatient&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-09-03-head.png&#34; alt=&#34;2023 09 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Both the rebase and merge commands provide similar functionalities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;They combine the work of multiple developers into a single entity, integrating changes between branches.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;That about sums up their similarities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The operation &lt;em&gt;git merge&lt;/em&gt; is a way of combining changes from one source branch into another target branch.
+The operation leaves commit messages in the history.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The operation &lt;em&gt;git rebase&lt;/em&gt; is a way of moving the changes from one branch onto another branch.
+The operation does not leave any commit message in the history.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A simple and powerful approach governing the use of these commands is:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Local branches shall be updated using rebase.
+The commit history of the branch stays clean.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Local feature branches shall be regularly synchronized against the default remote branch.
+Therefore, team members will have less merge conflicts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Remote branches shall be updated using merge.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Before a merge request is created, you can clean up your commit history with an interactive rebase.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Feature branches should be short-lived.&lt;br/&gt;
+The implementation of a feature shall be shorter than a Scrum sprint, meaning less than two weeks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_regular_rebase&#34;&gt;Regular Rebase&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Rebasing a branch in &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; is a way to move the entirety of a branch to another point in the tree.
+The simplest example is moving a branch further up in the tree.
+As a developer, you want to regularly integrate the latest changes from the default branch into your feature branch&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In Git, a rebase updates your feature branch with the contents of another branch.
+This step is important for Git-based development strategies.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use a rebase to confirm that your branch’s changes do not conflict with any changes added to your target branch after you created your feature branch.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;When you rebase:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Git imports all the commits submitted to your target branch after you initially created your feature branch from it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Git stacks the commits you have in your feature branch on top of all the commits it imported from that branch:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock center&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-09-03-rebase.png&#34; alt=&#34;2023 09 03 rebase&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To rebase, make sure you have all the commits you want in the rebase in your main branch.
+Check out the branch you want to rebase and type&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Standard rebase replays the previous commits on a branch without changes, stopping only if merge conflicts occur.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Fetch the latest changes from main: git fetch origin main&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check out your feature branch: git checkout my-feature&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Rebase it against main: git rebase origin/main&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Force push to your remote branch with:&lt;/p&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git push --force-with-lease origin my-feature   &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+git push --force origin my-feature              &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;lease option preserves any new commits added to the remote branch by other people.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;force does not preserve any new commits added to the remote branch by other people.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If there are merge conflicts, Git prompts you to fix them before continuing the rebase.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git rebase main                                 &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;em&gt;main&lt;/em&gt; branch is the branch you want to rebase on.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;git rebase rewrites the commit history.
+It can be harmful to do it in shared branches.
+It can cause complex and hard to resolve merge conflicts.
+In these cases, instead of rebasing your branch against the default branch, consider pulling it with &lt;em&gt;git pull origin main&lt;/em&gt;.
+Pulling has similar effects with less risk of compromising the work of your contributors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_merge&#34;&gt;Merge&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The git merge command will merge any changes that were made to the code base on a separate branch to your current branch as a new commit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The command syntax is as follows:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git merge BRANCH-NAME&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For example, if you are currently working in a branch named dev and would like to merge any new changes that were made in a branch named new-features, you would issue the following command:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git merge new-features&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If there are any uncommitted changes on your current branch, Git will not allow you to merge until all changes in your current branch have been committed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To handle those changes, you can temporarily stash them:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git stash                                       &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+git merge new-feature                           &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+git stash pop                                   &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;add them to the stash&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;do your merge&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;get the changes back into your working tree&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_interactive_rebase&#34;&gt;Interactive Rebase&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use an interactive rebase (the --interactive flag, or -i) to simultaneously update a branch while you modify how its commits are handled.
+For example, to edit the last five commits in your branch (HEAD~5), run:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git rebase -i HEAD~5&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Git opens the last five commits in your terminal text editor, the oldest commit first.
+Each commit shows the action to take on it, the SHA, and the commit title:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;pick 111111111111 Second round of structural revisions
+pick 222222222222 Update inbound link to this changed page
+pick 333333333333 Shifts from H4 to H3
+pick 444444444444 Adds revisions from editorial
+pick 555555555555 Revisions continue to build the concept part out
+
+&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;Rebase 111111111111..222222222222 onto zzzzzzzzzzzz &lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;5 commands&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;Commands:
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;p, pick &amp;lt;commit&amp;gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; use commit
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;r, reword &amp;lt;commit&amp;gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; use commit, but edit the commit message
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;e, edit &amp;lt;commit&amp;gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; use commit, but stop &lt;span style=&#34;color: #cf222e&#34;&gt;for &lt;/span&gt;amending
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;s, squash &amp;lt;commit&amp;gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; use commit, but meld into previous commit
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;f, fixup &lt;span style=&#34;color: #0550ae&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;-C&lt;/span&gt; | &lt;span style=&#34;color: #116329&#34;&gt;-c&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;]&lt;/span&gt; &amp;lt;commit&amp;gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; like &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;squash&amp;#34;&lt;/span&gt; but keep only the previous&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;After the list of commits, a commented-out section shows some common actions you can take on a commit:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pick&lt;/strong&gt; a commit to use it with no changes.
+The default option.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reword&lt;/strong&gt; a commit message.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Edit&lt;/strong&gt; a commit to use it, but pause the rebase to amend (add changes to) it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Squash&lt;/strong&gt; multiple commits together to simplify the commit history of your feature branch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Replace the keyword pick according to the operation you want to perform in each commit.
+To do so, edit the commits in your text editor.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_force_push&#34;&gt;Force push&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Complex operations in Git require you to force an update to the remote branch.
+Operations like squashing commits, resetting a branch, or rebasing a branch rewrite the history of your branch.
+Git requires a forced update to help safeguard against these more destructive changes from happening accidentally.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Force pushing is not recommended on shared branches, as you risk destroying the changes of others.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;--force-with-lease flag&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The &lt;em&gt;--force-with-lease&lt;/em&gt; flag force pushes.
+Because it preserves any new commits added to the remote branch by other people, it is safer than &lt;em&gt;--force&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git push --force-with-lease origin my-feature&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;--force flag&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The &lt;em&gt;--force flag&lt;/em&gt; forces pushes, but does not preserve any new commits added to the remote branch by other people.
+To use this method, pass the flag &lt;em&gt;--force&lt;/em&gt; or &lt;em&gt;-f&lt;/em&gt; to the push command:&lt;/p&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git push --force origin my-feature&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Both &lt;em&gt;git merge&lt;/em&gt; and &lt;em&gt;git rebase&lt;/em&gt; are very useful commands.
+One is not better than the other.
+However, there are some very important differences between the two commands that you and your team should take into consideration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Whenever &lt;em&gt;git merge&lt;/em&gt; is run, an extra merge commit is created.
+Whenever you are working in your local repository, having too many merge commits can make the commit history look confusing.
+One way to avoid the merge commit is to use &lt;em&gt;git rebase&lt;/em&gt; instead.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;git rebase&lt;/em&gt; is a very powerful feature.
+It is risky as well if it is not used in the right way.
+The command alters the commit history, so use it with care.
+If rebasing is done in the remote repository, then it can create a lot of issues when other developers try to pull the latest code changes.
+Remember to only run &lt;em&gt;git rebase&lt;/em&gt; in a local repository.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can find a lot of information on &lt;a href=&#34;https://stackoverflow.com/questions/tagged/git&#34;&gt;Stack Overflow&lt;/a&gt;.
+Beware when reading the answers on Stack Overflow that Git commands have changed over time.
+Select new posts to find the best answers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The nifty-gritty details can be found in the official &lt;a href=&#34;https://git-scm.com/book/en/v2&#34;&gt;Git documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;em&gt;Pro Git&lt;/em&gt; book can be downloaded from &lt;a href=&#34;https://git-scm.com&#34;&gt;Git SCM&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2017/2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Git Tag for the Impatient</title>
+      <link>https://blog.tangly.net/blog/2023/git-tag-for-the-impatient/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/git-tag-for-the-impatient/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_git_tag_for_the_impatient&#34;&gt;Git Tag for the Impatient&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-12-02-head.png&#34; alt=&#34;2023 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The development software team has reached a milestone.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A working application with a set of features is available.
+All tests are green.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The application can potentially be shipped to internal or external customers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How can you mark this event in the git repository of the application?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use tags to recognize this state in the list of changes of your shared &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; repository.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_listing_your_tags&#34;&gt;Listing Your Tags&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Listing the existing tags in Git is straightforward.
+Just type git tag (with optional -l or --list):&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;git tag
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;v1.0
+v2.0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This command lists the tags in alphabetical order; the order in which they are displayed has no real importance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_creating_tags&#34;&gt;Creating Tags&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Git supports two types of tags: lightweight and annotated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Annotated tags, however, are stored as full objects in the Git database.
+They have a check sum.
+They contain the tagger name, email, and date.
+THey have a tagging message, and can be signed and verified with GNU Privacy Guard (GPG).
+It is generally recommended that you create annotated tags, so you can have all this information; but if you want a temporary tag or for some reason do not want to keep the other information, lightweight tags are available too.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Annotated Tags Creating an annotated tag in Git is simple.
+The easiest way is to specify -a when you run the tag command:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;git tag &lt;span style=&#34;color: #116329&#34;&gt;-a&lt;/span&gt; v1.4.0 &lt;span style=&#34;color: #116329&#34;&gt;-m&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;1.4.0 (2020.2)&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;git tag
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;v0.1
+v1.3.1
+v1.4.0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;em&gt;-m&lt;/em&gt; specifies a tagging message, which is stored with the tag.
+If you do not specify a message for an annotated tag, Git launches your editor, and you can type it in.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_sharing_tags&#34;&gt;Sharing Tags&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;By default, the git push command does not transfer tags to remote servers.
+You will have to explicitly push tags to a shared server after you have created them.
+This process is just like sharing remote branches you can run:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git push origin --tags&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can find a lot of information on &lt;a href=&#34;https://stackoverflow.com/questions/tagged/git&#34;&gt;Stack Overflow&lt;/a&gt;.
+Beware when reading the answers on Stack Overflow that Git commands have changed over time.
+Select new posts to find the best answers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The nifty-gritty details can be found in the official &lt;a href=&#34;https://git-scm.com/book/en/v2&#34;&gt;Git documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;em&gt;Pro Git&lt;/em&gt; book can be downloaded from &lt;a href=&#34;https://git-scm.com&#34;&gt;Git SCM&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/git-rebase-and-merge-for-the-impatient/&#34;&gt;Git Rebase and Merge for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Are Certifications Useful?</title>
+      <link>https://blog.tangly.net/blog/2023/are-certifications-useful/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/are-certifications-useful/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_are_certifications_useful&#34;&gt;Are Certifications Useful?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-09-01-head.jpg&#34; alt=&#34;2023 09 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;There are several benefits to getting an IT certification, and several associated costs too.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Certifications can give you the chance to learn needed skills, and be a quick way to show employers you have those skills.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;On the other hand, certifications can require studying or coursework.
+You will invest a significant amount of time to master the material.
+They cost up to several hundred dollars to take.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;So how do you know that the benefits will outweigh the costs for you?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Certification or no certification, in the end, what matters most is your actual ability to do the job.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here are a few things to consider as you decide whether to get an IT certification.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_java_certifications&#34;&gt;Java Certifications&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you are a young and ambitious Java developer, ypu must acquire the Oracle certified Java developer certification [&lt;a href=&#34;#ocp-java-17&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#ocp-java-11&#34;&gt;2&lt;/a&gt;].
+I do not think you will be a better programmer after getting a certificate.
+The certification program will push you to learn the details of the programming language and the details of the standard libraries.
+This knowledge is the difference between a professional engineer and an amateur one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The question is if you want to update your certification each time a new long-term solution is delivered.
+Over the years, I acquired the certification for Java 2, 7,8, and 11 releases.
+The exam objectives certainly forced me to learn the new features of the language and libraries.
+I also discovered some arcane idioms I never used in productive code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I think a young developer should be certified for her main programming language and technology stack she is using daily.
+I also acquired the &lt;a href=&#34;https://vaadin.com/learn?version=v14&#34;&gt;Vaadin certification&lt;/a&gt; because I regularly developed full-stack applications with Java and &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_software_architecture_certifications&#34;&gt;Software Architecture Certifications&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A software architect certainly should possess a certification showing his architectural capabilities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The TOGAF standard is still the seminal reference for all software enterprise architecture activities.
+On the bright side, the steward &lt;a href=&#34;https://www.opengroup.org/togaf&#34;&gt;Open Group&lt;/a&gt; of the TOGAF certification &lt;a href=&#34;#togaf-certification&#34;&gt;[7]&lt;/a&gt; has realized that agile is the way to develop digital products &lt;a href=&#34;#togaf-certification&#34;&gt;[7]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The iSAQB certification is well-known in Europe and especially in the German-speaking countries.
+The foundation now also provides training in agile software architecture in their advanced track &lt;a href=&#34;#agile-architecture&#34;&gt;[agile-architecture]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Another approach is a master degree in software engineering or computer science.
+The curriculum should teach modern ideas [&lt;a href=&#34;#modern-software-engineering&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#continuous-delivery&#34;&gt;4&lt;/a&gt;, &lt;a href=&#34;#building-evolutionary-architectures-2nd&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;#domain-driven-design&#34;&gt;6&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_agile_certifications&#34;&gt;Agile Certifications&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Agile approaches and Scrum framework are the regular approach to successfully developer software and digital products.
+I expect a professional software developer to have a formal training how to apply correctly the Scrum approach [&lt;a href=&#34;#professional-product-owner&#34;&gt;7&lt;/a&gt;, &lt;a href=&#34;#mastering-professional-scrum&#34;&gt;8&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The two biggest Scrum associations &lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt; and &lt;a href=&#34;https://www.scrum.org/&#34;&gt;Scrum.org&lt;/a&gt; provide similar certification paths for Scrum.
+For each role, you can progress from beginner, over advanced and finally reach the professional certification level.
+You should at least pursue the beginner and advanced level to reflect your professionalism.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I often suggest pursuing the certifications of &lt;a href=&#34;https://www.scrum.org/&#34;&gt;Scrum.org&lt;/a&gt; because you do need to renew them.
+&lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt; requests you to renew your certification every two years and provide proof of continuous training.
+This approach is similar to PMI.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can find more information in these articles about Scrum master &lt;a href=&#34;#scrum-master-certification&#34;&gt;[1]&lt;/a&gt;, product owner &lt;a href=&#34;#product-owner-certification&#34;&gt;[2]&lt;/a&gt; and developer
+&lt;a href=&#34;#developer-certification&#34;&gt;[3]&lt;/a&gt; certification paths.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I strongly advocate to avoid &lt;a href=&#34;https://www.scaledagileframework.com/&#34;&gt;SAFe&lt;/a&gt; trainings because this approach is flawed.
+I recognize that sadly &lt;a href=&#34;https://www.scaledagileframework.com/&#34;&gt;SAFe&lt;/a&gt; is very popular in big companies.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you are interested in scaling agile, please consider first a formation and certification in &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt;.
+I strongly recommend to first master Scrum and lean approaches before tackling scaling approaches in software product development.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_other_certifications&#34;&gt;Other Certifications&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The PMI-ACP &lt;a href=&#34;#pmi-acp-certification&#34;&gt;[4]&lt;/a&gt; is the agile certification from the project management institute.
+It has value in North America.
+It is quite unknown in Europe.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A certification is a proof that a professional software engineer invested in his continuous formation.
+Consider acquiring a certification to show your commitment to a specific field in our industry.
+But it cannot replace a formal bachelor or master level education in computer science or software engineering.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Training on the job is nice and efficient.
+A few lecture days before taking a multiple choice test and receiving a nice certificate is also worth the time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It definitively cannot replace university level formation.
+No country in the world would accept only training on the job for a physician, a surgeon, or a structural engineer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Why does our industry still believe you can work as a professional developer without any formal training?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;scrum-master-certification&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2021/scrum-master-formation/&#34;&gt;Scrum Master Certification&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;product-owner-certification&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2021/product-owner-formation/&#34;&gt;Product Owner Certification&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;developer-certification&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2021/scrum-developer-formation/&#34;&gt;Scrum Developer Certification&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;pmi-acp-certification&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2016/pmi-acp-certification/&#34;&gt;PMI ACP Certification&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;java-certification&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2023/java-certification/&#34;&gt;Java Certification&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;agile-architecture&#34;&gt;&lt;/a&gt;] &lt;a href=&#34;../../2021/agile-software-architecture-is-mainstream/&#34;&gt;Agile Software Architecture is Mainstream&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;togaf-certification&#34;&gt;&lt;/a&gt;[7] &lt;a href=&#34;https://www.opengroup.org/certifications/togaf-certification-portfolio&#34;&gt;TOGAF Certification&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;ocp-java-17&#34;&gt;&lt;/a&gt;[1] J. Boyarsky and S. Selikoff, &lt;em&gt;OCP Oracle Certified Professional Java SE 17 Study Guide&lt;/em&gt;. Wiley &amp;amp; Sons, Limited, John, 2022 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B09WJP11JL&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B09WJP11JL&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;ocp-java-11&#34;&gt;&lt;/a&gt;[2] J. Boyarsky and S. Selikoff, &lt;em&gt;OCP Oracle Certified Professional Java SE 11 Developer Complete Study Guide&lt;/em&gt;. Wiley &amp;amp; Sons, Incorporated, John, 2020 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B08DF4R2V9&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B08DF4R2V9&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;modern-software-engineering&#34;&gt;&lt;/a&gt;[3] D. Farley, &lt;em&gt;Modern Software Engineering&lt;/em&gt;. Pearson Education, Limited, 2022 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B09GG6XKS4&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B09GG6XKS4&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;continuous-delivery&#34;&gt;&lt;/a&gt;[4] J. Humble and D. Farley, &lt;em&gt;Continuous Delivery&lt;/em&gt;. Addison-Wesley Professional, 2010 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321601912&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321601912&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;building-evolutionary-architectures-2nd&#34;&gt;&lt;/a&gt;[5] N. Ford, R. Parsons, and P. Kua, &lt;em&gt;Building Evolutionary Architectures: Automated Software Governance&lt;/em&gt;, Second. O’Reilly Media, 2023 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B0BN4T1P27&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B0BN4T1P27&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[6] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;professional-product-owner&#34;&gt;&lt;/a&gt;[7] D. McGreal and R. Jocham, &lt;em&gt;The Professional Product Owner&lt;/em&gt;. Addison-Wesley Professional [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B07D5ZPJBY&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B07D5ZPJBY&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;mastering-professional-scrum&#34;&gt;&lt;/a&gt;[8] S. Ockerman and S. Reindl, &lt;em&gt;Mastering Professional Scrum&lt;/em&gt;. Addison Wesley, 2019 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B07XTLNPTC&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B07XTLNPTC&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Corporate Governance for Software Products</title>
@@ -2042,7 +2748,9 @@ gem &lt;span style=&#34;color: #953800&#34;&gt;install &lt;/span&gt;asciidoctor-
 
 brew &lt;span style=&#34;color: #953800&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;--cask&lt;/span&gt; netnewswire                                       &lt;i class=&#34;conum&#34; data-value=&#34;9&#34;&gt;&lt;/i&gt;&lt;b&gt;(9)&lt;/b&gt;
 brew &lt;span style=&#34;color: #953800&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;--cask&lt;/span&gt; asciidocfx                                        &lt;i class=&#34;conum&#34; data-value=&#34;10&#34;&gt;&lt;/i&gt;&lt;b&gt;(10)&lt;/b&gt;
-npm &lt;span style=&#34;color: #953800&#34;&gt;install&lt;/span&gt; @mermaid-js/mermaid-cli&lt;/code&gt;&lt;/pre&gt;
+npm &lt;span style=&#34;color: #953800&#34;&gt;install&lt;/span&gt; @mermaid-js/mermaid-cli
+
+brew &lt;span style=&#34;color: #953800&#34;&gt;install &lt;/span&gt;cmake ninja doxygen                                      &lt;i class=&#34;conum&#34; data-value=&#34;11&#34;&gt;&lt;/i&gt;&lt;b&gt;(11)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;colist arabic&#34;&gt;
@@ -2091,6 +2799,10 @@ It is also used to check if &lt;a href=&#34;https://blog.tangly.net&#34;&gt;tang
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;10&#34;&gt;&lt;/i&gt;&lt;b&gt;10&lt;/b&gt;&lt;/td&gt;
 &lt;td&gt;Install &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; editor and support for &lt;a href=&#34;https://plantuml.com/&#34;&gt;plantUML&lt;/a&gt; and &lt;a href=&#34;https://mermaid.js.org/&#34;&gt;Mermaid&lt;/a&gt; diagram support.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;11&#34;&gt;&lt;/i&gt;&lt;b&gt;11&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Development tools for C++ projects.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
@@ -16185,823 +16897,6 @@ Gene Kim &amp;amp; Kevin Behr. 2013&lt;/p&gt;
 &lt;p&gt;&lt;a id=&#34;continuous-delivery&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;https://www.amazon.com/dp/0321601912&#34;&gt;Continuous Delivery: Reliable Software Releases through Build, Test and Deployment
 Automation&lt;/a&gt;.
 Jez Humble &amp;amp; David Farley. 2011&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Agile Leadership</title>
-      <link>https://blog.tangly.net/blog/2021/agile-leadership/</link>
-      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/agile-leadership/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_agile_leadership&#34;&gt;Agile Leadership&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-08-01-head.jpg&#34; alt=&#34;2021 08 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Everybody is talking about being agile&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Companies institutionalize agile change programs and send all their collaborators in training to learn the agile way.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;What does that mean?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;How should I as a manager work the agile way?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Does this agile way exist, or is it simply a fad created by the consulting industry?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This article provides some pointers and hypotheses what agile leadership could be.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Feel free to experiment and refine your successful approach to be agile as an organization.
-You must experiment, learn and train to become a successful agile leader [&lt;a href=&#34;#great-scrum-master&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#scrum-pocket-guide-3rd&#34;&gt;2&lt;/a&gt;].
-It is a job, not a hobby.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Organizational agility cannot exceed the level of personal leadership agility of those with the most influence in an organization.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Because agile leadership involves ongoing personal development, it is not something that can be mastered in a single training course.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_leaders_engage_and_serve_the_team_at_the_place_of_work&#34;&gt;Agile Leaders engage, and serve the team at the place of work&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Serving the team is all the rage these days.
-You hear or read about Servant Leadership at every turn.
-But serving the team is too often interpreted as waiting for the team to ask for help.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Rather than wait for the team, go to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Gemba&#34;&gt;Gemba&lt;/a&gt; — the actual place of work.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Get out of your office and engage with the team.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Help them as they deliver.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;See their problems first hand.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;You will know exactly what they are working on.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;It will become obvious how you can help.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You start helping and playing the part only you as a leader can fill.
-This is a true service to the team by being a contributing member of the team.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_growing_your_team_is_critical&#34;&gt;Growing your team is critical&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;By engaging shoulder to shoulder with your teams, you can help them grow.
-As a leader, you can teach them how to navigate complexity.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You must engender an ability in your team members to think using the scientific method.
-It is impossible to teach every possible scenario your teams will encounter.
-Teach them how to probe, sense, and respond.
-This will give them critical abilities to solve complex problems on their own.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;It builds self-organizing skills in your teams.
-&lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; framework provides hints what the minimal expected behaviors you should expect.
-There are several references to self-management in the &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt; as in the current version of 2020.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Adaptation becomes more difficult when the people involved are not empowered or self-managing.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;Scrum Teams&lt;/em&gt; are also self-managing, meaning they internally decide who does what, when, and how.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;They are structured and empowered by the organization to manage their own work.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Scrum Master serves the Scrum Team in several ways, including coaching the team members in self-management and cross-functionality.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;Sprint Planning: How will the chosen work get done?&lt;/em&gt; How this is done is at the sole discretion of the Developers.
-No one else tells them how to turn Product Backlog items into Increments of value.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Developers can select whatever structure and techniques they want, as long as their Daily Scrum focuses on progress toward the Sprint Goal and produces an actionable plan for the next day of work.
-This creates focus and improves self-management.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Sprint Backlog is a plan by and for the Developers.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— https://www.scrumguides.org/[Scrum Guide]
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can use various indicators to detect the self-management requirement at the Scrum team level is no more than lip service:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;You assign specific tasks directly to Developers, thus bypassing the Product Owner.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Alternatively, you remove a Developer from the Scrum team (temporarily) to work on such a task.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Developers are assigned to support other organization members while ignoring their commitment to achieving the Sprint Goal.
-Examples are supporting sales in a pitch, or being an expert in management meetings.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Scrum is rolled back in a moment of crisis to a traditional form of command &amp;amp; control, exercised, for example, by dispatching jobs directly to individual Developers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Ignoring self-management does not only violate Scrum’s first principles.
-It also indicates that a manager cannot let go of command and control practices.
-They continue to micromanage subordinates, although a Scrum team could accomplish the task themselves.
-This behavior demonstrates a level of ignorance that may require support from a higher management level to address.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_leading_by_example_to_nurture_resilient_change&#34;&gt;Leading by Example to nurture resilient change&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Co-select with the teams proficient and experienced agile coaches and Scrum masters&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Promote purpose, autonomy, mastery, accountability, strong social connection, small wins&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Put emphasis on &lt;a href=&#34;https://en.wikipedia.org/wiki/Agile_software_development&#34;&gt;Information Radiators&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Think about&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Collocation,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Radical transparency,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Job rotations,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Team liaisons,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Community of practices,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Servant leader.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Management is doing things right; leadership is doing the right things.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Peter Drucker
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You should&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Be knowledgeable about agile values, approaches and practices Understand and apply the Scrum, Kanban and lean, Spotify model frameworks.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Develop people and teams with self-organizing teams Leadership styles, coaching and mentoring, and facilitation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Manage products with agility.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Forecast and perform release planing based on product value and business strategy.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Develop and deliver products professionally.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Evolve the agile organization through organizational design and structure, and evidence based management.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Take a collaborative continuous improvement approach to organizational effectiveness.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You should avoid hindering value stream organizations and cross-functional teams by&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Defining component teams.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Give tasks to individual collaborators instead of going through the product owner.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Ask progress or control questions during daily Scrum.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Ask control questions or systematically participate to.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Promote the mindset that people are exchangeable - see mythical man month [&lt;a href=&#34;#mythical-man-month&#34;&gt;3&lt;/a&gt;].&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;State anybody can be a good Scrum master.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Criticize craftsmanship approaches such as TDD, DDD, pair programming, continuous integration and delivery.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Exceptional agile leaders&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Are trained in agile values and approaches.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;They hold certifications.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Advocate technical excellence.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Trust their teams.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Work actively to remove impediments by supporting the process and structural changes in value streams.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Remember&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;First Rule of Leadership&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Put your mission above your ego.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Second Rule of Leadership&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;If you do not care about your people, they will not care about your mission.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Third Rule of Leadership&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;If someone has to tell you the first two rules, you are not ready to lead yet.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Adam Grant
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Please look at the agile leadership program from &lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt; and &lt;a href=&#34;https://www.scrum.org/&#34;&gt;Scrum.org&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Read the &lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;Agile Manifesto&lt;/a&gt; text and the &lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;Twelve Principles behind the Agile Manifesto&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Beware of the &lt;a href=&#34;../../2021/reflections-on-agile-fluency-model/&#34;&gt;Agile Fluency Model&lt;/a&gt;.
-Be patient.
-Change takes time, a lot of time.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
-&lt;div class=&#34;ulist bibliography&#34;&gt;
-&lt;ul class=&#34;bibliography&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;bill-of-rights&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2020/calibrate-your-agile-approach-bill-of-rights&#34;&gt;Calibrate Your Agile Approach: Bill of Rights&lt;/a&gt;.
-Marcel Baumann. 2020&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;agile-fluency-model&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2021/reflections-on-agile-fluency-model/&#34;&gt;Agile Fluency Model&lt;/a&gt;.
-Marcel Baumann. 2020&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;pragmatic-craftsmanship&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2018/pragmatic-craftsmanship-professional-software-developer&#34;&gt;Pragmatic Craftsmanship - Professional Software
-Developer&lt;/a&gt;.
-Marcel Baumann. 2018&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;great-scrum-master&#34;&gt;&lt;/a&gt;[1] Z. Sochova, &lt;em&gt;The Great ScrumMaster&lt;/em&gt;. Addison Wesley, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/013465711X&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/013465711X&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-pocket-guide-3rd&#34;&gt;&lt;/a&gt;[2] G. Verheyen, &lt;em&gt;Scrum - A Pocket Guide&lt;/em&gt;, Third. Van Haren Publishing, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B08XWQ7DG9&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B08XWQ7DG9&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;mythical-man-month&#34;&gt;&lt;/a&gt;[3] F. P. Brooks, &lt;em&gt;The Mythical Man-Month&lt;/em&gt;. Addison-Wesley Professional, 1995 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0201835959&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0201835959&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Technical Team Lead</title>
-      <link>https://blog.tangly.net/blog/2021/technical-team-lead/</link>
-      <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/technical-team-lead/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_technical_team_lead&#34;&gt;Technical Team Lead&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-07-03-head.png&#34; alt=&#34;2021 07 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I lately had to explain to customers what are the responsibilities of a technical team lead.
-Managers often grasp the people aspects embedded in the words &lt;strong&gt;team lead&lt;/strong&gt;.
-The understanding of the word &lt;strong&gt;technical&lt;/strong&gt; is strangely often missing.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A technical team leads coaches and teaches the subtleties of the used technology stack to his team and organization.
-This person should be able to create or review a software architecture.
-He has a deep understanding of technological concepts.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;More importantly, he can write productive source code.
-Ideally, she should &lt;a href=&#34;https://en.wikipedia.org/wiki/Pair_programming&#34;&gt;Pair Program&lt;/a&gt; with team members or
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Mob_programming&#34;&gt;Mob Program&lt;/a&gt; with her whole team.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph text-center&#34;&gt;
-&lt;p&gt;&lt;em&gt;A technical team lead must be technically savvy&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_job_description&#34;&gt;Job Description&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Here is a standard &lt;a href=&#34;https://en.wikipedia.org/wiki/Job_description&#34;&gt;Job Description&lt;/a&gt; for a Java technical team lead as often published on job platforms.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We are looking for an experienced Java technical lead to be responsible for providing solutions for technical issues which may affect product delivery.
-The Java technical lead will facilitate requirement analyzes, conduct peer reviews and provide feedback, and enhance frameworks.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;To be successful as a Java technical lead, you should demonstrate sound knowledge of industry best practices, good organizational and leadership skills, and proficiency in Java technologies.
-A top-notch Java technical lead should have good analytical skills, the ability to anticipate issues and frame remedial actions, and excellent teamwork skills.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_java_technical_lead_responsibilities&#34;&gt;Java Technical Lead Responsibilities&lt;/h4&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Performing requirement analyzes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Developing high-quality and detailed designs.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Conducting unit testing using automated unit test frameworks.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Identifying risk and conducting mitigation action planning.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Conducting configuration of your own work.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Reviewing the work of other developers and providing feedback.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Using coding standards and best practices ensuring quality.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_java_technical_lead_requirements&#34;&gt;Java Technical Lead Requirements&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The candidate has a bachelor or master degree in engineering, information systems or related.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Extensive experience in the IT industry.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Sound knowledge of estimation techniques.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Excellent knowledge of Java and web services.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Sound knowledge of Java technologies.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Good understanding of unit testing methodologies and agile approaches.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Excellent analytical skills.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Exceptional communication skills.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;As an Internet example, please see &lt;a href=&#34;https://www.betterteam.com/java-technical-lead-job-description&#34;&gt;Java Technical Lead Job Description&lt;/a&gt;.
-You can also find job descriptions under &lt;a href=&#34;https://www.indeed.com&#34;&gt;Indeed&lt;/a&gt; and &lt;a href=&#34;https://www.glassdoor.com&#34;&gt;Glassdoor&lt;/a&gt;.
-Similar examples can also be found under &lt;a href=&#34;https://www.linkedin.com&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_responsibilities&#34;&gt;Responsibilities&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Below a description of the responsibilities for a technical lead.
-A technical lead is responsible for the following tasks:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Hiring and training technical personnel&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Delegating work to team members&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Collaborating with their team to identify and fix technical problems&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Analyzing users&amp;#39; needs and then finding applications to serve them&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Creating end goals for their team&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Checking that software and applications are updated&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Supervising system modifications&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Conducting security and governance audits to identify areas of improvement&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Guiding their team through technical issues and challenges&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A technical lead is responsible for helping their team members with the technical aspects of their jobs, such as coding and programming.
-They may also explain new projects to their team and troubleshoot any problems that occur.
-In comparison, an engineering manager is more focused on managing their employees.
-They are responsible for business growth and team deadlines, and they typically serve as their team’s representative to the rest of the company.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;As an engineering manager, you need to have excellent people management skills and be able to assess your team’s long-term goals.
-While you are more likely to work hands-on and focus on day-to-day tasks as a technical lead.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Why Enterprise Architecture?</title>
-      <link>https://blog.tangly.net/blog/2021/why-enterprise-architecture/</link>
-      <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/why-enterprise-architecture/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_why_enterprise_architecture&#34;&gt;Why Enterprise Architecture?&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-07-02-head.jpg&#34; alt=&#34;2021 07 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Architecture principles hold true in agile environments.
-The major difference between older traditional approaches and modern agile ones is the way of performing enterprise architecture.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The last years have shown a promising evolution of plan-based, centralist enterprise architecture approaches to more agile, decentralized, meritocracy driven processes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;These new approaches are way more compatible with modern and agile software product development framework such as &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt;, &lt;a href=&#34;http://www.extremeprogramming.org/&#34;&gt;eXtreme Programming&lt;/a&gt;, and &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Traditional processes use dedicated persons or departments to define architecture principles in a top-down approach.
-Thick standards such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Enterprise_Architecture_Body_of_Knowledge&#34;&gt;Enterprise Architecture Body of Knowledge&lt;/a&gt; codifies wisdom.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Guide to the Enterprise Architecture Body of Knowledge (EABOK) organizes and characterizes the knowledge content of the Enterprise Architecture (EA) discipline.
-This organization and characterization promotes a consistent view of EA, establishes the scope and bounds of the EA discipline, and places the discipline in the context of related disciplines.
-The EABOK subdivides EA into knowledge areas and topics within each area, presents an overview of the topic, and provides the reader references for further information.
-The EABOK is a guide to EA, not the body of knowledge itself.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— EABOK
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The enterprise architects community has realized over the years that the centralist approach is too slow and cumbersome for the digital age.
-The &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Open_Group&#34;&gt;Open Group&lt;/a&gt; promotes the official enterprise architecture method
-&lt;a href=&#34;https://en.wikipedia.org/wiki/The_Open_Group_Architecture_Framework&#34;&gt;TOGAF&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Open Group published a series of white papers &lt;a href=&#34;#agile-architecture&#34;&gt;[1]&lt;/a&gt;, &lt;a href=&#34;#open-agile-architecture&#34;&gt;[2]&lt;/a&gt; to bridge the gap between classical enterprise architecture and agile digital product development.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Agile frameworks tend to define and promote agile receipts through collaborative structures.
-Examples are &lt;a href=&#34;https://en.wikipedia.org/wiki/Community_of_practice&#34;&gt;Community of Practice&lt;/a&gt;, design workshop, event storming, pair designing.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_concepts&#34;&gt;Concepts&lt;/h3&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-07-02-togaf.png&#34; alt=&#34;2021 07 02 togaf&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Enterprise_architecture&#34;&gt;Enterprise Architecture&lt;/a&gt; &lt;em&gt;EA&lt;/em&gt; , when performed in an agile manner, is an important enabler of agile software delivery.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This is true for several reasons:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Common architecture enables agile teams to focus on value creation&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A common enterprise architecture enables reuse across delivery teams.
-When agile teams have high-quality assets – such as microservices, legacy data sources, and frameworks – they are able to focus on creating new value.
-They should not waste money on reinventing new versions of existing infrastructure.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Common technical guidance enables greater consistency&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;When teams follow effective, common conventions, it results in greater quality.
-This makes it easier to learn about assets that are new to them, in particular existing source code, and to evolve those assets as needed.
-Greater consistency also makes it easier for people to move between teams.
-It will be easier for them to come up to speed on what the new team is doing and to share their skills with those team members.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Agile architectures enable disaggregation&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;When your solutions are built from loosely coupled, highly cohesive components, it is easier to spread development work across smaller teams.
-This reduces overall risk and organizational complexity, which in turn reduces time-to-delivery.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Common infrastructure enables continuous delivery&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A common technical infrastructure empowers delivery teams to deploy into it.
-The easier it is to deploy, the more often it makes sense to deploy.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Enterprise architecture scales agile&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;An agile approach to enterprise architecture enables organizations to scale agile strategies “horizontally” across their entire IT department.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_the_ea_process&#34;&gt;The EA Process&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Some methods will choose to prescribe a single approach.
-Such as capturing architectural requirements in the form of epics or pre-building &lt;em&gt;architectural runways&lt;/em&gt;.
-The agile toolkit promotes an adaptive, context-sensitive strategy.
-A goal-driven approach that indicates the process decision points you need to consider.
-Have a range of techniques or strategies for you to address each decision point, and the advantages and disadvantages of each technique.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The following diagram overviews the potential activities associated with &lt;em&gt;Agile Enterprise Architecture&lt;/em&gt;.
-image::2021-07-02-enterprise-architecture-process.png[width=800,height=800,role=center]
-The process decision points that you need to consider for enterprise architecture are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Support stakeholders&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Enterprise architects will work with business and IT stakeholders on a regular basis to understand their needs and to help them develop a vision for the organization.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Support delivery teams&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Enterprise architects will work with IT delivery teams, and ideally be active members of IT delivery teams, on a regular basis.
-They may guide the teams in the business and technical roadmaps, help them to identify potentially reusable assets, to identify technical debt.
-They should transfer their skills and knowledge to team members.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Negotiate technical dependencies&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Like it or not, there are dependencies between the solutions that we create.
-For example, if your system invokes a web service, or calls an API, provided by another system, then you have a dependency on that system.
-Enterprise architects will often find that they need to negotiate these dependencies with other teams, either at a high-level in their role of Enterprise Architect or sometimes at a detailed level in their role of Architecture Owner on a delivery team.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Explore architectural views&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Organizations are complex and as a result, they must be understood from a variety of view points.
-It is not just a matter of writing “architectural epics” on a collection of index cards.
-The enterprise architecture team may choose to adopt, and likely tailor, an existing enterprise architecture framework.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Tailor the chosen architecture framework&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;These frameworks typically suggest a multi-view collection of artifacts to create and techniques for doing so.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Evolve enterprise architecture&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Enterprise architects will collaborate with one another, and with their stakeholders, in a variety of ways.
-They may choose to hold architecture envisioning/modeling sessions or regular meetings where they share their learning with one another.
-They will often work together, or with IT delivery teams, to investigate new technologies or identify candidate architecture strategies.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Evolve roadmap(s)&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;An important output of your enterprise architecture effort will be one or more roadmaps.
-They describe your technology strategies and your architectural strategies.
-The roadmaps are updated in a rolling wave approach where the roadmap(s) are updated regularly.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Capture enterprise architecture&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;There are two broad categories for how enterprise architects can capture their work: as documents or as working/executable examples.
-High-level models work well for the documentation.
-Executable artifacts, such as executable reference architectures or architectural runways, are usually preferred over documentation by delivery teams.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Govern architecture&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Architectural activities within your organization should be governed in a lightweight, collaborative manner.
-This is an important activity for enterprise architects as well as for your IT governance team.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_team_workflow&#34;&gt;Team Workflow&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The workflow within an agile enterprise architecture team is depicted in the following diagram.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock center&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-07-02-team-workflow.jpg&#34; alt=&#34;2021 07 02 team workflow&#34; width=&#34;800&#34; height=&#34;400&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;There are four major activities:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Envision initial architecture&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The enterprise architects will spend several days developing initial, high-level models of the enterprise architecture.
-This will be a face-to-face, initial architecture envisioning session where the scope is the entire organization, not just a single IT solution.
-Ideally, this is done in an agile modeling room to streamline the communication and collaborative modeling efforts.
-Such a room is large with lots of whiteboard space, enabling the team to work on several models in parallel.
-each of which has its own section of wall space.
-The primary purpose of this session is for the EA team to develop a common understanding, at least a high level, for the current state of the enterprise architecture and a vision for how the team would like to see it evolve.
-Secondary outcomes include creating some initial artifacts.
-The enterprise architects will evolve these artifacts over time, meeting one another for the first time, and building bonds between the team members.
-Potential challenges to this activity include getting an agile modeling room, and the logistics of getting the right people together at the same time.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Collaborate with business stakeholders&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;On a regular basis, enterprise architects work with business stakeholders to understand their needs.
-They work with them to envision the future, and help educate them on the possibilities and constraints of technology.
-This collaboration may be in the form of working sessions, presentations, or one-on-one conversations.
-These sessions occur as needed, and at times it can be difficult to gain access to stakeholders as they are often very busy people.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Collaborate with IT stakeholders&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Disciplined agile EAs will spend the majority of their time, 80 to 90% of it typically, working as members of IT delivery teams.
-By doing this, they bring their knowledge, vision, and skills to the team in a pragmatic, hands-on manner.
-The teams will often take on the role of &lt;em&gt;architecture owners&lt;/em&gt;.
-Enterprise architects will also work with other IT stakeholders, including operations engineers, support staff, and the data management team.
-They need to understand their needs.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Evolve architecture assets&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The enterprise architecture team, or at least the portion of the team who is currently available, will meet on a regular basis.
-They evolve the enterprise architecture assets based on their learning.
-A common pattern we have seen it for the team to meet every Friday afternoon for two hours.
-They discuss what they have learned that week from working on delivery teams and working with their various stakeholders.
-The result of the meeting often is that the enterprise architects may take on action items to update existing artifacts.
-These artifacts may include EA models, reference architectures, development guidelines, and white papers.
-When a new major topic arises, such as the potential adoption of a new platform or a merger with another organization, they schedule agile modeling sessions.
-They explore the newly discovered topics during these sessions.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
-&lt;div class=&#34;imageblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-07-02-aeaf.png&#34; alt=&#34;2021 07 02 aeaf&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Various organizations are trying to redefine enterprise architecture in the context of agile approaches.
-Such an example would be the &lt;em&gt;Agile Enterprise Architecture Framework&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Often you see the tension between more agility and the drag of traditional complex enterprise architecture frameworks.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The regular enterprise architecture frameworks are too complicated to be applied in nimble product development.
-The approach is cumbersome and slow.
-The processes are based on the assumption documents are written and later a group of experts review them.
-Agile approaches are too nimble and fast to mesh with such workflows.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The techniques used in these frameworks are powerful ones.
-Software designers should master and use them accordingly.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I strongly prefer the architecture work techniques described in &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt;.
-The &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; framework uses good practices to improve architecture and design.
-Their approach is highly compatible with agile practices and speed of development.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I do not use the bloated TOGAF architecture standard.
-I also avoid bloated agile methodologies such as &lt;a href=&#34;https://www.scaledagileframework.com/&#34;&gt;SAFe&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I recommend using all these proven architecture techniques and tools.
-Apply them on your software product development using agile approaches like &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; and &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Study the rules of &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_software_development&#34;&gt;Lean Software Development&lt;/a&gt; to optimize the value of your product.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
-&lt;div class=&#34;ulist bibliography&#34;&gt;
-&lt;ul class=&#34;bibliography&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;agile-architecture&#34;&gt;&lt;/a&gt;[1] Agile Architecture in the Digital Age.
-Open Group. 2018&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;open-agile-architecture&#34;&gt;&lt;/a&gt;[2]
-&lt;a href=&#34;https://pubs.opengroup.org/architecture/o-aa-standard-single/&#34;&gt;Open Agile Architecture&lt;/a&gt;.
-Open Group. 2019. (ISBN: 1-947754-62-1)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;

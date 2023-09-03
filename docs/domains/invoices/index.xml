@@ -166,6 +166,59 @@ For a detailed view of what has changed, refer to the &lt;a href=&#34;https://bi
     </item>
     
     <item>
+      <title>Docs: Bounded Domain Invoice Model</title>
+      <link>https://blog.tangly.net/docs/domains/invoices/models/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/invoices/models/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_invoices_model&#34;&gt;Invoices Model&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_concepts&#34;&gt;Concepts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Invoices define a business bounded domain as defined in domain-driven design approach.
+They are not constrained through external entities such as products, contracts or legal entities.
+External entities can provide hints to streamline the creation of regular invoices.
+The invoice article identifier is available as an external identifier to the article bounded domain.
+Similar identifiers are available for legal entities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;VAT rates are defined within an article definition.
+Therefore, different VAT rates require different article definitions.
+For example, in Switzerland, a service company has two VAT rates.
+One for regular services and one for services exempted from VAT taxes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_archiving&#34;&gt;Archiving&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An invoice contains all the information to create a legally binding document and hove no dependencies to external systems.
+Invoices should have a unique identifier for accounting purposes.
+A good practice is to use the identifier as part of the archived file to streamline traceability.
+Invoices can be stored in a database, exported as a PDF file or as a JSON file.
+The PDF file is human-readable and adequate for document archiving and legal auditing.
+The JSON file is an adequate archive format which can digitally be processed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock kroki&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;https://kroki.io/plantuml/svg/eNqNVMFu2zAMvesrdNyKxR8QBEHRdIcAGVCkX6BIjENUpgKJDmqk-fdRtuPZXovNF9vke3yPFO3HxCZyXXmlzsa-mRI0ARdsqPRNcahTYWO1B-MrfVVaLutNSnoHpfE_iZEbfb2pUebJ0NsmEIFlDKRXK_1t_yNEe0L3Xa_XfZV8vXJEKjUeDM1jB7R_wSiJWs3QJiaSIsfRWM5Obl_2gXQJaCGJg472EoOrhfWFxV733KG2bhx0kGzEc-6wDT9h-QwWK-N1TcgvUYTG-BycAy-G90baEcedn21ncCqPE13bd9q72QVr_LMUEUMeLxCb_DJL9X27T1KuhiG6qWMEso22_cNYl-GdJ0MxTQXEMniHeQgpd0FBSkYsT7wcGdWYNJ_EhhMCHhGiPobYhu6g9mwN2ey1TWz2v3R_ioVS97k8LBb3Ge2QQC-1l1sa8mGxWE8Wc9n3Lo67yL-h4GbIh4yc7fSo7p-oUkgM8WiENHZ5nZ_vlqH6ZOduQ6MtbfVRFGPGkG3p4n9Y36WWDxith7vOa33gwLJh_ydyh6uBF6aDVvlwH4Gc_CV-A5BVYJc=&#34; alt=&#34;bus-invoice-uml&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Architecture Design Record (ADR)</title>
       <link>https://blog.tangly.net/docs/domains/invoices/adr/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
