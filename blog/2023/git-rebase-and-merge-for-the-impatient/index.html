@@ -51,7 +51,7 @@ That about sums up their similarities.
 The operation git merge is a way of combining changes from one source branch into another target branch. The operation leaves commit messages in the history.
 The operation git rebase is a way of moving the changes from one branch onto another branch."><meta itemprop="datePublished" content="2023-09-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-09-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1298">
+<meta itemprop="wordCount" content="1289">
 <meta itemprop="keywords" content="agile,git,series-students," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Rebase and Merge for the Impatient"/>
 <meta name="twitter:description" content="Git Rebase and Merge for the Impatient Both the rebase and merge commands provide similar functionalities.
@@ -149,7 +149,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.b151c85d2d2089466e139dab41e8e8ad.json"
+    data-offline-search-index-json-src="/offline-search-index.1222ae051252fb3fd95d31cb1604b256.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -174,7 +174,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.b151c85d2d2089466e139dab41e8e8ad.json"
+    data-offline-search-index-json-src="/offline-search-index.1222ae051252fb3fd95d31cb1604b256.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -205,13 +205,13 @@ if (!doNotTrack) {
   <label for="m-blog2023-check"><a href="/blog/2023/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-blog2023"><span class="">2023</span></a></label>
   
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-blog2023git-rebase-and-merge-for-the-impatient-li">
-  <input type="checkbox" id="m-blog2023git-rebase-and-merge-for-the-impatient-check" checked/>
-  <label for="m-blog2023git-rebase-and-merge-for-the-impatient-check"><a href="/blog/2023/git-rebase-and-merge-for-the-impatient/" title="Git Rebase and Merge for the Impatient" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-blog2023git-rebase-and-merge-for-the-impatient"><span class="td-sidebar-nav-active-item">Git Rebase</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023git-tag-for-the-impatient-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023git-tag-for-the-impatient-li">
   <input type="checkbox" id="m-blog2023git-tag-for-the-impatient-check"/>
   <label for="m-blog2023git-tag-for-the-impatient-check"><a href="/blog/2023/git-tag-for-the-impatient/" title="Git Tag for the Impatient" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-blog2023git-tag-for-the-impatient"><span class="">Git Tag</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-blog2023git-rebase-and-merge-for-the-impatient-li">
+  <input type="checkbox" id="m-blog2023git-rebase-and-merge-for-the-impatient-check" checked/>
+  <label for="m-blog2023git-rebase-and-merge-for-the-impatient-check"><a href="/blog/2023/git-rebase-and-merge-for-the-impatient/" title="Git Rebase and Merge for the Impatient" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-blog2023git-rebase-and-merge-for-the-impatient"><span class="td-sidebar-nav-active-item">Git Rebase</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023are-certifications-useful-li">
   <input type="checkbox" id="m-blog2023are-certifications-useful-check"/>
@@ -1026,13 +1026,28 @@ Check out the branch you want to rebase and type</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Fetch the latest changes from main: git fetch origin main</p>
+<p>Fetch the latest changes from main:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git fetch origin main</span></code></pre>
+</div>
+</div>
 </li>
 <li>
-<p>Check out your feature branch: git checkout my-feature</p>
+<p>Check out your feature branch:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git checkout my-feature</span></code></pre>
+</div>
+</div>
 </li>
 <li>
-<p>Rebase it against main: git rebase origin/main</p>
+<p>Rebase it against main:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git rebase origin/main</span></code></pre>
+</div>
+</div>
 </li>
 <li>
 <p>Force push to your remote branch with:</p>
@@ -1098,14 +1113,6 @@ Pulling has similar effects with less risk of compromising the work of your cont
 <h3 id="_merge">Merge</h3>
 <div class="paragraph">
 <p>The git merge command will merge any changes that were made to the code base on a separate branch to your current branch as a new commit.</p>
-</div>
-<div class="paragraph">
-<p>The command syntax is as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git merge BRANCH-NAME</span></code></pre>
-</div>
 </div>
 <div class="paragraph">
 <p>For example, if you are currently working in a branch named dev and would like to merge any new changes that were made in a branch named new-features, you would issue the following command:</p>
@@ -1317,10 +1324,10 @@ Select new posts to find the best answers.</p>
 
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
-    <a href="/blog/2023/git-tag-for-the-impatient/" aria-label="Previous - Git Tag for the Impatient" class="btn btn-primary"><span class="me-1">←</span>Previous</a>
+    <a href="/blog/2023/are-certifications-useful/" aria-label="Previous - Are Certifications Useful?" class="btn btn-primary"><span class="me-1">←</span>Previous</a>
   </li>
   <li>
-    <a class="btn btn-primary disabled">Next<span class="ms-1">→</span></a>
+    <a href="/blog/2023/git-tag-for-the-impatient/" aria-label="Next - Git Tag for the Impatient" class="btn btn-primary">Next<span class="ms-1">→</span></a>
   </li>
 </ul>
 

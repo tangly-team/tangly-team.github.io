@@ -47,7 +47,7 @@ Subversion was a great tool and should now be retired." />
 The actual industrial standard for version control system is git, a distributed version control system - DVCS -. It tracks changes in any set of computer files, usually used for coordinating work among programmers who are collaboratively developing source code during software development.
 Subversion was a great tool and should now be retired."><meta itemprop="datePublished" content="2017-05-17T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2017-05-17T00:00:00+00:00" />
-<meta itemprop="wordCount" content="965">
+<meta itemprop="wordCount" content="1072">
 <meta itemprop="keywords" content="agile,git,series-students," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Local Repositories for the Impatient"/>
 <meta name="twitter:description" content="Git Local Repositories for the Impatient You shall put your source code and text documentation under a version management system.
@@ -143,7 +143,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.b151c85d2d2089466e139dab41e8e8ad.json"
+    data-offline-search-index-json-src="/offline-search-index.1222ae051252fb3fd95d31cb1604b256.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -168,7 +168,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.b151c85d2d2089466e139dab41e8e8ad.json"
+    data-offline-search-index-json-src="/offline-search-index.1222ae051252fb3fd95d31cb1604b256.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -199,13 +199,13 @@ if (!doNotTrack) {
   <label for="m-blog2023-check"><a href="/blog/2023/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-blog2023"><span class="">2023</span></a></label>
   
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023git-rebase-and-merge-for-the-impatient-li">
-  <input type="checkbox" id="m-blog2023git-rebase-and-merge-for-the-impatient-check"/>
-  <label for="m-blog2023git-rebase-and-merge-for-the-impatient-check"><a href="/blog/2023/git-rebase-and-merge-for-the-impatient/" title="Git Rebase and Merge for the Impatient" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-blog2023git-rebase-and-merge-for-the-impatient"><span class="">Git Rebase</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023git-tag-for-the-impatient-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023git-tag-for-the-impatient-li">
   <input type="checkbox" id="m-blog2023git-tag-for-the-impatient-check"/>
   <label for="m-blog2023git-tag-for-the-impatient-check"><a href="/blog/2023/git-tag-for-the-impatient/" title="Git Tag for the Impatient" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-blog2023git-tag-for-the-impatient"><span class="">Git Tag</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023git-rebase-and-merge-for-the-impatient-li">
+  <input type="checkbox" id="m-blog2023git-rebase-and-merge-for-the-impatient-check"/>
+  <label for="m-blog2023git-rebase-and-merge-for-the-impatient-check"><a href="/blog/2023/git-rebase-and-merge-for-the-impatient/" title="Git Rebase and Merge for the Impatient" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-blog2023git-rebase-and-merge-for-the-impatient"><span class="">Git Rebase</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023are-certifications-useful-li">
   <input type="checkbox" id="m-blog2023are-certifications-useful-check"/>
@@ -952,6 +952,10 @@ It is more cumbersome on Microsoft Windows systems.</p>
 <div class="paragraph">
 <p>In case you are using the IntelliJ IDEA configure <a href="https://git-scm.com/">Git</a> in the IDE through the preference pane.</p>
 </div>
+<div class="paragraph">
+<p>Graphical <a href="https://git-scm.com/">Git</a> clients are available.
+I sometimes use the free available <a href="https://www.sourcetreeapp.com/">SourceTree</a>.</p>
+</div>
 <div class="sect2">
 <h3 id="_create_a_local_repository">Create a Local Repository</h3>
 <div class="paragraph">
@@ -1042,11 +1046,20 @@ See <a href="https://git-scm.com/docs/gitignore">gitignore</a> for details.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git commit -m &#34;commit message, should be clear and legible&#34;</span></code></pre>
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git commit -m &#34;commit message, should be clear and legible&#34;         <i class="conum" data-value="1"></i><b>(1)</b>
+</span></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Development platforms such as <a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a> orhttps://bitbucket.org/[Bitbucket] often support linking commit messages containing keywords with work items and tickets.</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
-<p>You can perform these operations directly in IntelliJ IDEA (VCS functions) with these instructions.
+<p>You can perform these operations directly in IntelliJ IDEA  using the provided VCS functions.
 Switch to the Version Control tool window and switch to the Local Changes tab.</p>
 </div>
 <div class="olist arabic">
@@ -1087,7 +1100,7 @@ Use Git as a history of all successful changes you implement, and simply roll ba
 <table>
 <tbody><tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Please do not amend a shared commits.
+<td>Please do not amend shared commits.
 Amending a commit that is shared with another user will potentially require confusing and lengthy merge conflict resolutions.</td>
 </tr>
 </tbody></table>
@@ -1108,8 +1121,27 @@ Amending a commit that is shared with another user will potentially require conf
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git status</span></code></pre>
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git status                                      <i class="conum" data-value="1"></i><b>(1)</b>
+git log                                         <i class="conum" data-value="2"></i><b>(2)</b>
+git diff                                        <i class="conum" data-value="3"></i><b>(3)</b>
+</span></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>status of your local copy with modified files, and untracked files.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>list of commits with detailed information.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>shows the changes in edited files.</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
 <p>The same information is available in IntelliJ IDEA under</p>
@@ -1138,7 +1170,7 @@ It is also the one with the least waste of effort.</p>
 </div>
 <div class="paragraph">
 <p>If your team decides to work with branches, make them short-lived!.
-See How to <a href="../../2016/git-branches-for-the-impatient/">Git Branches for the Impatient</a> post.</p>
+See how you can do it in the <a href="../../2016/git-branches-for-the-impatient/">Git Branches for the Impatient</a> post.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1147,10 +1179,30 @@ See How to <a href="../../2016/git-branches-for-the-impatient/">Git Branches for
 <p>You find the changes you made locally were not a good decision.
 No problem, you can erase these changes with:</p>
 </div>
+<div class="paragraph">
+<p>Undo last commit putting everything back into the staging area:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git reset --hard</span></code></pre>
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git reset --soft HEAD^</span></code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Undo last and remove changes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git reset --hard HEAD^          <i class="conum" data-value="1"></i><b>(1)</b>
+</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Short form is <em>git reset --hard</em>.</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
 <p>You revert to the last save-committed set of files.
@@ -1191,7 +1243,8 @@ The situation arises because Microsoft OS uses CRLF for the end of lines instead
 <div class="sect2">
 <h3 id="_thoughts">Thoughts</h3>
 <div class="paragraph">
-<p>When using an IDE, consider the <a href="https://editorconfig.org">Editor Configuration</a> approach for the end of line, indentation, and tabs versus spaces.</p>
+<p>When using an IDE, consider the <a href="https://editorconfig.org">Editor Configuration</a> approach for the end of line, indentation, and tabs versus spaces.
+All major integrated development environments support this configuration approach.</p>
 </div>
 <div class="paragraph">
 <p>You can find a lot of information on <a href="https://stackoverflow.com/questions/tagged/git">Stack Overflow</a>.

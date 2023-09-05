@@ -1605,6 +1605,10 @@ It is more cumbersome on Microsoft Windows systems.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;In case you are using the IntelliJ IDEA configure &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; in the IDE through the preference pane.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Graphical &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; clients are available.
+I sometimes use the free available &lt;a href=&#34;https://www.sourcetreeapp.com/&#34;&gt;SourceTree&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_create_a_local_repository&#34;&gt;Create a Local Repository&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -1695,11 +1699,20 @@ See &lt;a href=&#34;https://git-scm.com/docs/gitignore&#34;&gt;gitignore&lt;/a&g
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git commit -m &amp;#34;commit message, should be clear and legible&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git commit -m &amp;#34;commit message, should be clear and legible&amp;#34;         &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Development platforms such as &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;, &lt;a href=&#34;https://gitlab.com/&#34;&gt;GitLab&lt;/a&gt; orhttps://bitbucket.org/[Bitbucket] often support linking commit messages containing keywords with work items and tickets.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can perform these operations directly in IntelliJ IDEA (VCS functions) with these instructions.
+&lt;p&gt;You can perform these operations directly in IntelliJ IDEA  using the provided VCS functions.
 Switch to the Version Control tool window and switch to the Local Changes tab.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;olist arabic&#34;&gt;
@@ -1740,7 +1753,7 @@ Use Git as a history of all successful changes you implement, and simply roll ba
 &lt;table&gt;
 &lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Please do not amend a shared commits.
+&lt;td&gt;Please do not amend shared commits.
 Amending a commit that is shared with another user will potentially require confusing and lengthy merge conflict resolutions.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
@@ -1761,8 +1774,27 @@ Amending a commit that is shared with another user will potentially require conf
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git status&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git status                                      &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+git log                                         &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+git diff                                        &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;status of your local copy with modified files, and untracked files.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;list of commits with detailed information.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;shows the changes in edited files.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The same information is available in IntelliJ IDEA under&lt;/p&gt;
@@ -1791,7 +1823,7 @@ It is also the one with the least waste of effort.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;If your team decides to work with branches, make them short-lived!.
-See How to &lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt; post.&lt;/p&gt;
+See how you can do it in the &lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt; post.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -1800,10 +1832,30 @@ See How to &lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Gi
 &lt;p&gt;You find the changes you made locally were not a good decision.
 No problem, you can erase these changes with:&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Undo last commit putting everything back into the staging area:&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git reset --hard&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git reset --soft HEAD^&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Undo last and remove changes:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git reset --hard HEAD^          &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Short form is &lt;em&gt;git reset --hard&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You revert to the last save-committed set of files.
@@ -1844,7 +1896,8 @@ The situation arises because Microsoft OS uses CRLF for the end of lines instead
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;When using an IDE, consider the &lt;a href=&#34;https://editorconfig.org&#34;&gt;Editor Configuration&lt;/a&gt; approach for the end of line, indentation, and tabs versus spaces.&lt;/p&gt;
+&lt;p&gt;When using an IDE, consider the &lt;a href=&#34;https://editorconfig.org&#34;&gt;Editor Configuration&lt;/a&gt; approach for the end of line, indentation, and tabs versus spaces.
+All major integrated development environments support this configuration approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You can find a lot of information on &lt;a href=&#34;https://stackoverflow.com/questions/tagged/git&#34;&gt;Stack Overflow&lt;/a&gt;.

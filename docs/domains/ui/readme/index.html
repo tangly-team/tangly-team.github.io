@@ -156,7 +156,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.b151c85d2d2089466e139dab41e8e8ad.json"
+    data-offline-search-index-json-src="/offline-search-index.1222ae051252fb3fd95d31cb1604b256.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -181,7 +181,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.b151c85d2d2089466e139dab41e8e8ad.json"
+    data-offline-search-index-json-src="/offline-search-index.1222ae051252fb3fd95d31cb1604b256.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -941,8 +941,8 @@ The component is using records and requires <strong>Java 17 or higher</strong>.<
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="shell">  ./gradlew build installDist <span style="color: #116329">-Pvaadin</span>.productionMode <i class="conum" data-value="1"></i><b>(1)</b>
-  net.tangly.erp.ui/build/install/net.tangly.erp.ui/bin/net.tangly.erp.ui  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="shell">  ./gradlew build installDist <span style="color: #116329">-Pvaadin</span>.productionMode                       <i class="conum" data-value="1"></i><b>(1)</b>
+  net.tangly.erp.ui/build/install/net.tangly.erp.ui/bin/net.tangly.erp.ui   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 </div>
@@ -953,7 +953,7 @@ The component is using records and requires <strong>Java 17 or higher</strong>.<
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="shell">  ./gradlew build installShadowDist <span style="color: #116329">-Pvaadin</span>.productionMode <i class="conum" data-value="3"></i><b>(3)</b>
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="shell">  ./gradlew build installShadowDist <span style="color: #116329">-Pvaadin</span>.productionMode                 <i class="conum" data-value="3"></i><b>(3)</b>
   net.tangly.erp.ui/build/install/net.tangly.erp.ui-shadow/bin/net.tangly.erp.ui <i class="conum" data-value="2"></i><b>(2)</b>
   java <span style="color: #0550ae">$JVM_OPTS</span> <span style="color: #116329">-jar</span> net.tangly.erp.ui/build/install/net.tangly.erp.ui-shadow/lib/net.tangly.erp.ui-all.jar <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
@@ -994,10 +994,10 @@ The first step is to build the Docker image with the provided configuration.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="shell">  ./gradlew net.tangly.erp.ui:installDist <span style="color: #116329">-Pvaadin</span>.productionMode  <i class="conum" data-value="1"></i><b>(1)</b>
-  docker login <span style="color: #116329">-u</span> tanglyllc <span style="color: #116329">-p</span> &lt;password&gt;                          <i class="conum" data-value="2"></i><b>(2)</b>
-  docker build <span style="color: #116329">-t</span> tanglyllc/tangly-erp:latest net.tangly.erp.ui/   <i class="conum" data-value="3"></i><b>(3)</b>
-  docker push tanglyllc/tangly-erp:latest                          <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="shell">  ./gradlew net.tangly.erp.ui:installDist <span style="color: #116329">-Pvaadin</span>.productionMode   <i class="conum" data-value="1"></i><b>(1)</b>
+  docker login <span style="color: #116329">-u</span> tanglyllc <span style="color: #116329">-p</span> &lt;password&gt;                           <i class="conum" data-value="2"></i><b>(2)</b>
+  docker build <span style="color: #116329">-t</span> tanglyllc/tangly-erp:latest net.tangly.erp.ui/    <i class="conum" data-value="3"></i><b>(3)</b>
+  docker push tanglyllc/tangly-erp:latest                           <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">

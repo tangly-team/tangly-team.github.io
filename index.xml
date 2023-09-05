@@ -5,7 +5,7 @@
     <description>Recent content in tangly OS components on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Sep 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,135 @@
       
       
     
+    
+    <item>
+      <title>Blog: Git Tag for the Impatient</title>
+      <link>https://blog.tangly.net/blog/2023/git-tag-for-the-impatient/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/git-tag-for-the-impatient/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_git_tag_for_the_impatient&#34;&gt;Git Tag for the Impatient&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-12-02-head.png&#34; alt=&#34;2023 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The development software team has reached a milestone.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A working application with a set of features is available.
+All tests are green.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The application can potentially be shipped to internal or external customers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How can you mark this event in the git repository of the application?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use tags to recognize this state in the list of changes of your shared &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; repository.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_listing_your_tags&#34;&gt;Listing Your Tags&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Listing the existing tags in Git is straightforward.
+Just type git tag (with optional -l or --list):&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;git tag
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;v1.0
+v2.0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This command lists the tags in alphabetical order; the order in which they are displayed has no real importance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_creating_tags&#34;&gt;Creating Tags&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Git supports two types of tags: lightweight and annotated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Annotated tags, however, are stored as full objects in the Git database.
+They have a check sum.
+They contain the tagger name, email, and date.
+THey have a tagging message, and can be signed and verified with GNU Privacy Guard (GPG).
+It is generally recommended that you create annotated tags, so you can have all this information; but if you want a temporary tag or for some reason do not want to keep the other information, lightweight tags are available too.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Annotated Tags Creating an annotated tag in Git is simple.
+The easiest way is to specify -a when you run the tag command:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;git tag &lt;span style=&#34;color: #116329&#34;&gt;-a&lt;/span&gt; v1.4.0 &lt;span style=&#34;color: #116329&#34;&gt;-m&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;1.4.0 (2020.2)&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;git tag
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;v0.1
+v1.3.1
+v1.4.0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;em&gt;-m&lt;/em&gt; specifies a tagging message, which is stored with the tag.
+If you do not specify a message for an annotated tag, Git launches your editor, and you can type it in.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_sharing_tags&#34;&gt;Sharing Tags&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;By default, the git push command does not transfer tags to remote servers.
+You will have to explicitly push tags to a shared server after you have created them.
+This process is just like sharing remote branches you can run:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git push origin --tags&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can find a lot of information on &lt;a href=&#34;https://stackoverflow.com/questions/tagged/git&#34;&gt;Stack Overflow&lt;/a&gt;.
+Beware when reading the answers on Stack Overflow that Git commands have changed over time.
+Select new posts to find the best answers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The nifty-gritty details can be found in the official &lt;a href=&#34;https://git-scm.com/book/en/v2&#34;&gt;Git documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;em&gt;Pro Git&lt;/em&gt; book can be downloaded from &lt;a href=&#34;https://git-scm.com&#34;&gt;Git SCM&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/git-rebase-and-merge-for-the-impatient/&#34;&gt;Git Rebase and Merge for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Git Rebase and Merge for the Impatient</title>
@@ -126,13 +255,28 @@ Check out the branch you want to rebase and type&lt;/p&gt;
 &lt;div class=&#34;olist arabic&#34;&gt;
 &lt;ol class=&#34;arabic&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Fetch the latest changes from main: git fetch origin main&lt;/p&gt;
+&lt;p&gt;Fetch the latest changes from main:&lt;/p&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git fetch origin main&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Check out your feature branch: git checkout my-feature&lt;/p&gt;
+&lt;p&gt;Check out your feature branch:&lt;/p&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git checkout my-feature&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Rebase it against main: git rebase origin/main&lt;/p&gt;
+&lt;p&gt;Rebase it against main:&lt;/p&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git rebase origin/main&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Force push to your remote branch with:&lt;/p&gt;
@@ -198,14 +342,6 @@ Pulling has similar effects with less risk of compromising the work of your cont
 &lt;h3 id=&#34;_merge&#34;&gt;Merge&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The git merge command will merge any changes that were made to the code base on a separate branch to your current branch as a new commit.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The command syntax is as follows:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git merge BRANCH-NAME&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;For example, if you are currently working in a branch named dev and would like to merge any new changes that were made in a branch named new-features, you would issue the following command:&lt;/p&gt;
@@ -390,135 +526,6 @@ Select new posts to find the best answers.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;../../2017/2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Git Tag for the Impatient</title>
-      <link>https://blog.tangly.net/blog/2023/git-tag-for-the-impatient/</link>
-      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2023/git-tag-for-the-impatient/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_git_tag_for_the_impatient&#34;&gt;Git Tag for the Impatient&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2023-12-02-head.png&#34; alt=&#34;2023 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The development software team has reached a milestone.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A working application with a set of features is available.
-All tests are green.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The application can potentially be shipped to internal or external customers.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;How can you mark this event in the git repository of the application?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Use tags to recognize this state in the list of changes of your shared &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; repository.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_listing_your_tags&#34;&gt;Listing Your Tags&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Listing the existing tags in Git is straightforward.
-Just type git tag (with optional -l or --list):&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;git tag
-&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;v1.0
-v2.0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This command lists the tags in alphabetical order; the order in which they are displayed has no real importance.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_creating_tags&#34;&gt;Creating Tags&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Git supports two types of tags: lightweight and annotated.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Annotated tags, however, are stored as full objects in the Git database.
-They have a check sum.
-They contain the tagger name, email, and date.
-THey have a tagging message, and can be signed and verified with GNU Privacy Guard (GPG).
-It is generally recommended that you create annotated tags, so you can have all this information; but if you want a temporary tag or for some reason do not want to keep the other information, lightweight tags are available too.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Annotated Tags Creating an annotated tag in Git is simple.
-The easiest way is to specify -a when you run the tag command:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;git tag &lt;span style=&#34;color: #116329&#34;&gt;-a&lt;/span&gt; v1.4.0 &lt;span style=&#34;color: #116329&#34;&gt;-m&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;1.4.0 (2020.2)&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;git tag
-&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;v0.1
-v1.3.1
-v1.4.0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;em&gt;-m&lt;/em&gt; specifies a tagging message, which is stored with the tag.
-If you do not specify a message for an annotated tag, Git launches your editor, and you can type it in.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_sharing_tags&#34;&gt;Sharing Tags&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;By default, the git push command does not transfer tags to remote servers.
-You will have to explicitly push tags to a shared server after you have created them.
-This process is just like sharing remote branches you can run:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;git push origin --tags&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can find a lot of information on &lt;a href=&#34;https://stackoverflow.com/questions/tagged/git&#34;&gt;Stack Overflow&lt;/a&gt;.
-Beware when reading the answers on Stack Overflow that Git commands have changed over time.
-Select new posts to find the best answers.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The nifty-gritty details can be found in the official &lt;a href=&#34;https://git-scm.com/book/en/v2&#34;&gt;Git documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;em&gt;Pro Git&lt;/em&gt; book can be downloaded from &lt;a href=&#34;https://git-scm.com&#34;&gt;Git SCM&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2023/git-rebase-and-merge-for-the-impatient/&#34;&gt;Git Rebase and Merge for the Impatient&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;

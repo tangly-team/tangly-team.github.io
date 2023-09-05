@@ -100,8 +100,8 @@ The component is using records and requires &lt;strong&gt;Java 17 or higher&lt;/
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew build installDist &lt;span style=&#34;color: #116329&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-  net.tangly.erp.ui/build/install/net.tangly.erp.ui/bin/net.tangly.erp.ui  &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew build installDist &lt;span style=&#34;color: #116329&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode                       &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+  net.tangly.erp.ui/build/install/net.tangly.erp.ui/bin/net.tangly.erp.ui   &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -112,7 +112,7 @@ The component is using records and requires &lt;strong&gt;Java 17 or higher&lt;/
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew build installShadowDist &lt;span style=&#34;color: #116329&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew build installShadowDist &lt;span style=&#34;color: #116329&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode                 &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
   net.tangly.erp.ui/build/install/net.tangly.erp.ui-shadow/bin/net.tangly.erp.ui &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
   java &lt;span style=&#34;color: #0550ae&#34;&gt;$JVM_OPTS&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;-jar&lt;/span&gt; net.tangly.erp.ui/build/install/net.tangly.erp.ui-shadow/lib/net.tangly.erp.ui-all.jar &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -153,10 +153,10 @@ The first step is to build the Docker image with the provided configuration.
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew net.tangly.erp.ui:installDist &lt;span style=&#34;color: #116329&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode  &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-  docker login &lt;span style=&#34;color: #116329&#34;&gt;-u&lt;/span&gt; tanglyllc &lt;span style=&#34;color: #116329&#34;&gt;-p&lt;/span&gt; &amp;lt;password&amp;gt;                          &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-  docker build &lt;span style=&#34;color: #116329&#34;&gt;-t&lt;/span&gt; tanglyllc/tangly-erp:latest net.tangly.erp.ui/   &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-  docker push tanglyllc/tangly-erp:latest                          &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew net.tangly.erp.ui:installDist &lt;span style=&#34;color: #116329&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode   &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+  docker login &lt;span style=&#34;color: #116329&#34;&gt;-u&lt;/span&gt; tanglyllc &lt;span style=&#34;color: #116329&#34;&gt;-p&lt;/span&gt; &amp;lt;password&amp;gt;                           &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+  docker build &lt;span style=&#34;color: #116329&#34;&gt;-t&lt;/span&gt; tanglyllc/tangly-erp:latest net.tangly.erp.ui/    &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+  docker push tanglyllc/tangly-erp:latest                           &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;colist arabic&#34;&gt;

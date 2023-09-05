@@ -49,7 +49,7 @@ This repository is used to share source code and documentation artifacts.
 You use the actual industrial standard for version control systems is git.
 You decided to use branches to implement new features or fix errors instead of using Trunk-Based Development."><meta itemprop="datePublished" content="2016-07-21T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2016-07-21T00:00:00+00:00" />
-<meta itemprop="wordCount" content="886">
+<meta itemprop="wordCount" content="946">
 <meta itemprop="keywords" content="agile,git,series-students," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Branches for the Impatient"/>
 <meta name="twitter:description" content="Git Branches for the Impatient You are working in a small mostly collocated development team. Sometimes a team member works from a remote location.
@@ -147,7 +147,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.b151c85d2d2089466e139dab41e8e8ad.json"
+    data-offline-search-index-json-src="/offline-search-index.1222ae051252fb3fd95d31cb1604b256.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -172,7 +172,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.b151c85d2d2089466e139dab41e8e8ad.json"
+    data-offline-search-index-json-src="/offline-search-index.1222ae051252fb3fd95d31cb1604b256.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -203,13 +203,13 @@ if (!doNotTrack) {
   <label for="m-blog2023-check"><a href="/blog/2023/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-blog2023"><span class="">2023</span></a></label>
   
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023git-rebase-and-merge-for-the-impatient-li">
-  <input type="checkbox" id="m-blog2023git-rebase-and-merge-for-the-impatient-check"/>
-  <label for="m-blog2023git-rebase-and-merge-for-the-impatient-check"><a href="/blog/2023/git-rebase-and-merge-for-the-impatient/" title="Git Rebase and Merge for the Impatient" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-blog2023git-rebase-and-merge-for-the-impatient"><span class="">Git Rebase</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023git-tag-for-the-impatient-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023git-tag-for-the-impatient-li">
   <input type="checkbox" id="m-blog2023git-tag-for-the-impatient-check"/>
   <label for="m-blog2023git-tag-for-the-impatient-check"><a href="/blog/2023/git-tag-for-the-impatient/" title="Git Tag for the Impatient" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-blog2023git-tag-for-the-impatient"><span class="">Git Tag</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023git-rebase-and-merge-for-the-impatient-li">
+  <input type="checkbox" id="m-blog2023git-rebase-and-merge-for-the-impatient-check"/>
+  <label for="m-blog2023git-rebase-and-merge-for-the-impatient-check"><a href="/blog/2023/git-rebase-and-merge-for-the-impatient/" title="Git Rebase and Merge for the Impatient" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-blog2023git-rebase-and-merge-for-the-impatient"><span class="">Git Rebase</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2023are-certifications-useful-li">
   <input type="checkbox" id="m-blog2023are-certifications-useful-check"/>
@@ -974,10 +974,10 @@ Ideally branches should be short-lived to avoid waste.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In an agile working setup, a branch should be merged before the end of the sprint it was started.</p>
+<p>In an agile working setup, a branch should be merged before the end of the sprint.</p>
 </div>
 <div class="paragraph">
-<p>Stories should be completed inside a sprint time slot.</p>
+<p>All stories should be completed inside a sprint time slot.</p>
 </div>
 </td>
 </tr>
@@ -1014,19 +1014,56 @@ I prefer pair programming and pair check-in sessions against the trunk.</p>
 <div class="sect2">
 <h3 id="_create_the_branch">Create the Branch</h3>
 <div class="paragraph">
+<p>You get a list of branches with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git branch                                      <i class="conum" data-value="1"></i><b>(1)</b>
+git fetch                                       <i class="conum" data-value="2"></i><b>(2)</b>
+</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>List of all branches in the local repository.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Retrieve all changes from the remote repository including new branches and store them in the local repository.
+Your working directory is not modified.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
 <p>Create new branch feat-#42 locally.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git checkout -b feat-#</span>42</code></pre>
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git checkout -b feat-#</span>42                        <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #24292f;background-color: #f6f8fa">git checkout feat-#</span>42                           <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Create a new local branch.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Select an existing branch.</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
 <p>Create the remote branch with the same name and initiate tracking, assuming your remote uses the standard default name origin.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">git push -u origin feat-#</span>42</code></pre>
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">
+</span><span style="color: #24292f;background-color: #f6f8fa">git push -u origin feat-#</span>42</code></pre>
 </div>
 </div>
 <div class="admonitionblock caution">
@@ -1205,7 +1242,7 @@ Now you are ready to implement the next feature.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_view_local_and_remote_branches">View local and remote Branches</h3>
+<h3 id="_view_local_and_remote_branches">View Local and Remote Branches</h3>
 <div class="paragraph">
 <p>If you want to view branches, use the following commands for the local branches.</p>
 </div>
@@ -1224,9 +1261,9 @@ git branch --no-merged</span></code></pre>
 git branch -r --no-merged</span></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Checkout remote Branch.</p>
 </div>
+<div class="sect2">
+<h3 id="_checkout_remote_branch">Checkout Remote Branch.</h3>
 <div class="paragraph">
 <p>The -p parameter means --prune</p>
 </div>
