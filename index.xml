@@ -5,7 +5,7 @@
     <description>Recent content in tangly OS components on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,248 @@
       
       
     
+    
+    <item>
+      <title>Blog: Semantic Commits for the Impatient</title>
+      <link>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_semantic_commits_for_the_impatient&#34;&gt;Semantic Commits for the Impatient&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-12-02-head.png&#34; alt=&#34;2023 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;strong&gt;conventional commits&lt;/strong&gt; specification is a lightweight convention on top of commit messages.
+The additional information classifies the type of work performed in the commit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A developer infers the importance of the task by looking to the type of the commit.
+The message communicates the nature of changes to teammates, the public, and other stakeholders.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Contributors of project repositories know that a well-designed Git commit message is the best way to communicate the context about a change to other developers.
+And in fact, they help themselves in the future.
+A diff will tell you what has changed, but only the confirmation message can say why.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It provides an easy set of rules for creating an explicit commit history which makes it easier to write automated tools on top of.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The development team can use scripts to filter and aggregate commit information based on the tags in the commit message.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This convention dovetails with &lt;a href=&#34;http://semver.org/&#34;&gt;SemVer&lt;/a&gt;, by describing the features, fixes, and breaking changes made in commit messages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_structure&#34;&gt;Structure&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The commit message should be structured as follows:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;[&lt;/span&gt;optional scope]: &amp;lt;description&amp;gt;           &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;
+[optional body]
+
+[optional footer(s)]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Use the body to explain what and why.
+Do not explain how.
+That is the code.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The commit contains the following structural elements to communicate intent to the consumers of your library:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;fix&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a commit of the type fix patches a bug in your codebase.
+This correlates with &lt;strong&gt;PATCH&lt;/strong&gt; in Semantic Versioning.
+It is used to identify production changes related to backward-compatible bug fixes.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;feature&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a commit of the type feat introduces a new feature to the codebase.
+It is used to identify production changes related to new backward-compatible abilities or functionality.
+This correlates with &lt;strong&gt;MINOR&lt;/strong&gt; in Semantic Versioning.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;BREAKING CHANGE&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change.
+This correlates with &lt;strong&gt;MAJOR&lt;/strong&gt; in Semantic Versioning.
+A BREAKING CHANGE can be part of commits of any type.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Other types are allowed, for example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;build&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The build type is used to identify development changes related to the build system.
+They involve scripts, configurations or tools, and package dependencies.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;ci&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The ci type is used to identify development changes related to the continuous integration and deployment system.
+They involve scripts, configurations or tools.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;doc&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The doc type is used to identify documentation changes related to the project.
+Whether intended externally for the end users (in case of a library) or internally for the developers.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;refactor&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The refactor type is used to identify development changes related to modifying the codebase, which neither adds a feature nor fixes a bug.
+Examples are removing redundant code, simplifying the code, or renaming variables.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;test&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The test type is used to identify development changes related to tests.
+chore:
+Activities not adding new features or fixing a fault.
+This type is used when you do not know which other tag you could use.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;footers other than BREAKING CHANGE: &amp;lt;description&amp;gt; may be provided and follow a convention similar to git trailer format.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_how_to_create_a_semantic_commit_with_git&#34;&gt;How to Create a Semantic Commit with Git&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The command line for a complex git commit message is simple:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre&gt;git commit -m &amp;#34;fix(core): remove deprecated and defunct wtf* apis&amp;#34;                              &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt; &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+           -m &amp;#34;These apis have been deprecated in v8, so they should stick around till v10.&amp;#34;
+           -m &amp;#34;PR Close #33949&amp;#34;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;We use multiple &lt;em&gt;-m&lt;/em&gt; in order to concatenate paragraphs instead of simple lines.
+The header and body are supposed to be separated by a blank line.
+That is distinctly true due to the paragraphs.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Summary in present tense.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your IDE probably provides a comfortable user interface to create a commit message as a set of paragraphs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Simply use your preferred IDE to write semantic commits with multiple blocks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Please start with a small list and extend it if needed.
+I suggest: feature, refactor, fix, build, chore
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Ask yourself if identifying the subsystem where the changes were performed makes sense for your application.
+Often changes are not local to a specific component.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Some teams put a ticker number instead of the subsystem name.
+It makes sense if your platform transforms the ticket number into a link to the ticket content.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I use the tags &lt;em&gt;feature&lt;/em&gt;, &lt;em&gt;refactor&lt;/em&gt;, &lt;em&gt;build&lt;/em&gt;, and &lt;em&gt;chore&lt;/em&gt;.
+I do not put component or ticket information in the parenthesis after the tag.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I put the ticket number in the summary of the commit message.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I seldom use the footer for breaking change information.
+I handle this information through semantic versioning in tags.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/git-rebase-and-merge-for-the-impatient/&#34;&gt;Git Rebase and Merge for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023//git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/semantic-commits-for-the-impatient/&#34;&gt;Semantic Commits for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I never needed the &lt;em&gt;doc&lt;/em&gt; tag. Feel free to use it if you find it useful for your product.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Git Tag for the Impatient</title>
@@ -28,7 +270,7 @@
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2023-12-02-head.png&#34; alt=&#34;2023 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;img src=&#34;../pics/2023-09-04-head.png&#34; alt=&#34;2023 09 04 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -153,6 +395,12 @@ Select new posts to find the best answers.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;../../2023/git-rebase-and-merge-for-the-impatient/&#34;&gt;Git Rebase and Merge for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023//git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/semantic-commits-for-the-impatient/&#34;&gt;Semantic Commits for the Impatient&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -545,7 +793,16 @@ Select new posts to find the best answers.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2017/2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/git-rebase-and-merge-for-the-impatient/&#34;&gt;Git Rebase and Merge for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023//git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/semantic-commits-for-the-impatient/&#34;&gt;Semantic Commits for the Impatient&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -673,6 +930,25 @@ It is quite unknown in Europe.&lt;/p&gt;
 &lt;p&gt;A certification is a proof that a professional software engineer invested in his continuous formation.
 Consider acquiring a certification to show your commitment to a specific field in our industry.
 But it cannot replace a formal bachelor or master level education in computer science or software engineering.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Certifications are quite meaningful for junior engineers.
+They learnt the theory and prove they understood the concepts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Experienced engineers are seldom challenged when learning for a certification.
+It is more of a memorization exercise and less of learning new techniques.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Training on the job is nice and efficient.
@@ -10031,12 +10307,35 @@ RUP belongs to the family of &lt;a href=&#34;https://en.wikipedia.org/wiki/Unifi
 &lt;/div&gt;
 &lt;div class=&#34;imageblock text-center&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-04-02-rup-phases.jpg&#34; alt=&#34;2022 04 02 rup phases&#34; width=&#34;480&#34; height=&#34;380&#34;/&gt;
+&lt;img src=&#34;../pics/2022-04-02-rup-phases.jpg&#34; alt=&#34;2022 04 02 rup phases&#34; width=&#34;640&#34; height=&#34;380&#34;/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The four phases or gates are inception, elaboration, construction, and transition.
-If you are using &lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt; approaches, you certainly do not need an inception or a transition phase.&lt;/p&gt;
+&lt;p&gt;The four phases or gates are
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Inception&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;approximate vision, business case, scope, and vague estimates.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Elaboration&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;refined vision, iterative implementation of the core architecture, resolution of high risks, identification of most requirements and scope, more realistic estimates.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Construction&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;iterative implementation of the remaining lower risk and easier elements, and preparation for deployment.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Transition&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;beta tests, deployment.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you are using &lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt; approaches, you certainly do not need an inception or a transition phase.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;These approaches are obsolete.
@@ -10068,7 +10367,7 @@ Scrum is currently the most used agile approach in the industry.&lt;/p&gt;
 &lt;div class=&#34;quoteblock&#34;&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;HERMES 2021&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt; corresponds to the current requirements of federal and state administration.
+&lt;p&gt;HERMES 2021&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt; corresponds to the current requirements of federal and state administration.
 They are mainly organized &lt;strong&gt;hierarchically&lt;/strong&gt; and have to handle projects taking governance into account.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/blockquote&gt;
@@ -10079,7 +10378,7 @@ They are mainly organized &lt;strong&gt;hierarchically&lt;/strong&gt; and have t
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The major problem is that Hermes is mandatory for a set of governmental projects.
 You are forced to use this method as a software company if you want to work on some government initiatives
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The method is Swiss and completely unknown in Europe or abroad.
@@ -10116,7 +10415,7 @@ Rather, it is an important, significant, enabling step in the direction of bette
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Agile approaches as described in &lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;Agile Manifesto&lt;/a&gt; and &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; are the winners
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;.
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_4&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_4&#34; title=&#34;View footnote.&#34;&gt;4&lt;/a&gt;]&lt;/sup&gt;.
 Eighty percent of all new software development initiatives are based on an agile approach.
 The most used agile approach is &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -10291,13 +10590,16 @@ Marcel Baumann. 2021&lt;/p&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. &lt;a href=&#34;https://www.hermes.admin.ch/de/faq/projektmanagement-2021/umfeld.html&#34;&gt;Hermes FAQ&lt;/a&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The description Craig Larman book &lt;em&gt;Applying UML and Patterns&lt;/em&gt;.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
-&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. The fact the method is only used in Switzerland and only when it is a mandatory requirement is a testament to its lack of success.
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. &lt;a href=&#34;https://www.hermes.admin.ch/de/faq/projektmanagement-2021/umfeld.html&#34;&gt;Hermes FAQ&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
-&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. &lt;a href=&#34;https://www.pmi.org/&#34;&gt;PMI&lt;/a&gt; has adopted disciplined agile. &lt;a href=&#34;https://www.opengroup.org/&#34;&gt;OpenGroup&lt;/a&gt; has updated TOGAF to support agile approaches. Major certification authorities such as &lt;a href=&#34;https://www.isaqb.org/&#34;&gt;ISAQB&lt;/a&gt;, &lt;a href=&#34;https://www.ireb.org/&#34;&gt;IREB&lt;/a&gt;, &lt;a href=&#34;https://www.istqb.org/&#34;&gt;ISTQB&lt;/a&gt; offer a track of agile certifications. You as a responsible organization shall train your collaborators in agile approaches. Stop clinging to obsolete approaches used in the last millennium.
+&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. The fact the method is only used in Switzerland and only when it is a mandatory requirement is a testament to its lack of success.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_4&#34;&gt;
+&lt;a href=&#34;#_footnoteref_4&#34;&gt;4&lt;/a&gt;. &lt;a href=&#34;https://www.pmi.org/&#34;&gt;PMI&lt;/a&gt; has adopted disciplined agile. &lt;a href=&#34;https://www.opengroup.org/&#34;&gt;OpenGroup&lt;/a&gt; has updated TOGAF to support agile approaches. Major certification authorities such as &lt;a href=&#34;https://www.isaqb.org/&#34;&gt;ISAQB&lt;/a&gt;, &lt;a href=&#34;https://www.ireb.org/&#34;&gt;IREB&lt;/a&gt;, &lt;a href=&#34;https://www.istqb.org/&#34;&gt;ISTQB&lt;/a&gt; offer a track of agile certifications. You as a responsible organization shall train your collaborators in agile approaches. Stop clinging to obsolete approaches used in the last millennium.
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -16607,326 +16909,6 @@ Jeff Sutherland, Ken Schwaber. 2020.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The examination is only available in English.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: DevOps for Small Applications</title>
-      <link>https://blog.tangly.net/blog/2021/devops-for-small-applications/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/devops-for-small-applications/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_devops_for_small_applications&#34;&gt;DevOps for Small Applications&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-08-02-head.png&#34; alt=&#34;2021 08 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt; is the combination of cultural philosophies, practices and tools that increase an organization’s ability to deliver at high velocity.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;It evolves and improves products at a faster pace than organizations using traditional software development and infrastructure management processes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This speed enables organizations to better serve their customers.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A surprising side effect of this speed-up is a documented improvement of the delivered quality.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_it_works&#34;&gt;How It Works&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Under a DevOps model, development and operations teams are no longer &lt;em&gt;siloed&lt;/em&gt;.
-Sometimes, these two teams are merged into a single team where the engineers work across the entire application lifecycle.
-The work is from development through test, deployment to operations.
-The range of skills is not limited to a single function.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;In some DevOps models, quality assurance and security teams may also become more tightly integrated with development and operations.
-When security is the focus of everyone on a DevOps team, this is sometimes referred to as &lt;em&gt;DevSecOps&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-08-02-devops-cycle.png&#34; alt=&#34;2021 08 02 devops cycle&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;These teams practice automating processes that historically have been manual and slow.
-They use a technology stack and tooling, which helps them operate and evolve applications quickly and reliably.
-These tools also help engineers independently carry out tasks that normally would have required help from other teams.
-This increases a team’s velocity.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock important&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You will &lt;strong&gt;automate&lt;/strong&gt; every workflow in the long term to achieve speed and &lt;strong&gt;reliability&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You will merge your Scrum software development teams, quality assurance groups, operations teams and testing groups into single product teams.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;You will define cross-functional teams as documented in the &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_benefits&#34;&gt;Benefits&lt;/h3&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Speed&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Move at high velocity, so you can innovate for customers faster, adapt to changing markets better, and grow more efficient at driving business results.
-The DevOps model enables your developers and operations teams to achieve these results.
-For example, microservices and continuous delivery let teams take ownership of services and then release updates to them quicker.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Rapid Delivery&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Increase the frequency and pace of releases, so you can innovate and improve your product faster.
-The quicker you can release new features and fix bugs, the faster you can respond to your customers’ needs and build a competitive advantage.
-Continuous integration and continuous delivery are practices that automate the software release process, from build to deploy.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Reliability&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Ensure the quality of application updates and infrastructure changes, so you can reliably deliver at a more rapid pace while maintaining a positive experience.
-Use practices like continuous integration and continuous delivery to test that each change is functional and safe.
-Monitoring and logging practices help you stay informed of performance in real-time.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Scale&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Operate and manage your infrastructure and development processes at scale.
-Automation and consistency help you manage complex or changing systems efficiently and with reduced risk.
-For example, infrastructure as code helps you manage your development, testing and production environments in a repeatable and more efficient manner.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Improved Collaboration&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Build more effective teams under a DevOps cultural model, which emphasizes values such as ownership and accountability.
-Developers and operations teams collaborate closely, share many responsibilities, and combine their workflows.
-This reduces handover inefficiencies and diminishes cycle-time.
-It reduces, for example, handover periods between developers and operations, writing code that takes into account the environment in which it is run.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Security&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Move quickly while retaining control and preserving compliance.
-You can adopt a DevOps model without sacrificing security by using automated compliance policies.
-For example, using infrastructure as code and policy as code, you can define and then track compliance at scale.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_devops_adoption&#34;&gt;DevOps Adoption&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Transitioning to DevOps requires a change in culture and mindset.
-At its simplest, DevOps is about removing the barriers between two traditionally siloed teams, development and operations.
-In some organizations, there may not even be separate development and operations teams; engineers may do both.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;With DevOps, the two teams work together to optimize both the productivity of developers and the reliability of operations.
-They strive to communicate frequently, increase efficiencies, and improve the quality of services they provide to customers.
-They take full ownership of their services, often beyond where their stated roles or titles have traditionally been scoped.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Quality assurance and security teams may also become tightly integrated with these teams.
-Organizations using a DevOps model have teams that view the entire development and infrastructure lifecycle as part of their responsibilities.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_devops_practices&#34;&gt;DevOps Practices&lt;/h3&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;Continuous Integration&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Continuous integration is a software development practice where developers regularly merge their code changes into a central repository.
-Automated builds and tests are run upon changes in the repository.
-The key goals of continuous integration are to find and address bugs quicker, improve software quality, and reduce the time it takes to validate software updates.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;Continuous Delivery&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Continuous delivery is a software development practice where code changes are automatically built, tested, and prepared for a release to production.
-It expands upon continuous integration by deploying all code changes to a testing environment or a production environment after the build stage.
-When continuous delivery is implemented properly, developers will always have a deployment-ready build artifact.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Modular Systems and Microservices&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The microservice’s architecture is a design approach to build a single application as a set of small services.
-Each service runs in its own process and communicates with other services through a well-defined interface using a lightweight mechanism.
-Microservices are built around business capabilities; each service is scoped to a single purpose.
-You can use different frameworks or programming languages to write microservices and deploy them independently, as a single service, or as a group of services.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;Infrastructure as Code&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Infrastructure as code is a practice in which infrastructure is provisioned and managed to use code and software development techniques.
-Examples are version control and continuous integration.
-The cloud’s API-driven model enables developers and system administrators to interact with infrastructure programmatically.
-They do need to interact manually set up and configure resources.
-Engineers can interface with infrastructure using code-based tools and treat infrastructure in a manner similar to how they treat application code.
-Because they are defined by code, infrastructure and servers can quickly be deployed using standardized patterns, updated with the latest patches and versions.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Monitoring and Logging&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Organizations monitor metrics and logs to see how application and infrastructure performance impacts the experience of their product’s end user.
-By capturing, categorizing, and then analyzing data and logs generated by applications and infrastructure, organizations understand how changes or updates impact users, shedding insights into the root causes of problems or unexpected changes.
-Active monitoring becomes increasingly important as services must be available 24/7 and as application and infrastructure update frequency increases.
-Creating alerts or performing real-time analysis of these data also helps organizations more proactively monitor their services.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Communication and Collaboration&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Increased communication and collaboration in an organization is one of the key cultural aspects of DevOps.
-The use of DevOps tooling and automation for the software delivery process establishes collaboration.
-They physically bring together the workflows and responsibilities of development and operations.
-Building on top of that, these teams set strong cultural norms around information sharing and facilitating communication through the use of chat applications, issue or project tracking systems, and wikis.
-This helps speed up communication across developers, operations, and even other teams like marketing or sales, allowing all parts of the organization to align more closely on goals and projects.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_devops_tools&#34;&gt;DevOps Tools&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A DevOps toolchain is a set or combination of tools that aid in the delivery, development, and management of software applications throughout the system development life cycle, as coordinated by an organisation that uses DevOps practices.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;span class=&#34;image center&#34;&gt;&lt;img src=&#34;../pics/2021-08-02-ci-cd-pipeline.png&#34; alt=&#34;2021 08 02 ci cd pipeline&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Generally, DevOps tools fit into one or more activities, which support specific DevOps initiatives: Plan, Create, Verify, Package, Release, Configure, Monitor, and Version Control.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_what_is_java_devops&#34;&gt;What is Java DevOps?&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Java DevOps is simply applying DevOps practices and philosophies to Java app development.
-That means that compartmentalized teams are no longer needed when creating Java applications.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You should understand these principles:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;Continuous integration&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;This practice requires developers to periodically merge the code that they have written into a central repository.
-After the merge, tests and automated builds are executed.
-This allows a team to find issues and quickly quash out bugs, improve the application’s quality and then cut the time needed to validate your apps.
-Often the step of &lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;Continuous Delivery&lt;/a&gt; is added to the pipeline.&lt;br/&gt;
-&lt;em&gt;Use a platform such as gitLab, gitHub, BitBucket, or Azure DevOps.
-Use Gradle as your build tool.&lt;/em&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_deployment&#34;&gt;Continuous delivery&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;This practice requires your team to release into production all code changes after it is written and then automatically built, and tested.
-If continuous integration puts your code changes onto a testing environment, continuous delivery puts it into a production environment.
-What does this mean?
-You will always have a production-ready Java application!&lt;br/&gt;
-&lt;em&gt;Use Gradle to create your application.
-Use Docker, Ansible to deploy.&lt;/em&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Microservices&#34;&gt;Microservices&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;DevOps makes use of microservices.
-Instead of having one big monolithic Java application, your application is made up of smaller and independent applications.&lt;br/&gt;
-&lt;em&gt;Use domain driven design DDD as your architecture method.
-Prefer standalone applications embedding your application server.&lt;/em&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;Infrastructure as a code&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;This practice means that infrastructure is allocated and then managed by using code and development techniques.
-Cloud services can help your development and operations teams interact with infrastructure at a scale they are comfortable with.
-With infrastructure as a code, servers and infrastructure are deployed fast, automatically patched and can easily be duplicated.&lt;br/&gt;
-&lt;em&gt;Use Docker and Ansible to automate your deployment.&lt;/em&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The motivations for what has become modern &lt;em&gt;DevOps&lt;/em&gt; and several standard DevOps practices, such as automated build and test, continuous integration, and continuous delivery originated in the Agile world, which dates to the 1990s.
-Agile development teams using methods such as &lt;a href=&#34;http://www.extremeprogramming.org/&#34;&gt;eXtreme Programming&lt;/a&gt; could not &lt;em&gt;satisfy the customer through early and continuous delivery of valuable software&lt;/em&gt; unless they subsumed the operation responsibilities associated with their applications, many of which they automated.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Because &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; emerged as the dominant Agile framework in the early 2000s, and it omitted the engineering practices that were part of many Agile teams, the movement to automate operations functions splintered from Agile and expanded into what has become modern DevOps &lt;a href=&#34;#accelerate&#34;&gt;[1]&lt;/a&gt;.
-Today, DevOps focuses on the deployment of developed software, whether it is developed via Agile or other methodologies.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;To practice DevOps effectively, software applications have to meet a set of architecturally significant requirements such as: deployability, modifiability, testability, and monitorability.
-You must continuously monitor your infrastructure, network and application.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock caution&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You need a cultural change to successfully implement DevOps workflows.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Bigger companies often have trouble with the changes.
-Command and control cultures always fail.
-It boils down if your culture trusts your collaborators - often called &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_X_and_Theory_Y&#34;&gt;Theory X and Theory Y&lt;/a&gt; beliefs.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Interestingly, the DevOps transformation is similar to an agile transformation.
-The approaches, recipes and failures are similar.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Smaller organizations are often more affine with trust.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Although it is possible to practice DevOps with any architectural style, the microservices architectural style is becoming the standard for building continuously deployed systems.
-Small size service allows the architecture of an individual service to emerge through continuous refactoring &lt;a href=&#34;#continuous-delivery&#34;&gt;[4]&lt;/a&gt;  hence reducing the need for a big upfront design, allows for releasing the software early[citation needed] and continuously.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_literature&#34;&gt;Literature&lt;/h3&gt;
-&lt;div class=&#34;ulist bibliography&#34;&gt;
-&lt;ul class=&#34;bibliography&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;accelerate&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;https://www.amazon.com/dp/B07B9F83WM&#34;&gt;Accelerate: Building and Scaling High Performing Technology Organizations&lt;/a&gt;.
-Nicole Forsgren &amp;amp; Jez Humble &amp;amp; Gene Kene.
-IT Revolution. 2018&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;devops-handbook&#34;&gt;&lt;/a&gt;[2]  &lt;a href=&#34;https://www.amazon.com/dp/B01M9ASFQ3&#34;&gt;The DevOps Handbook: How to create World-Class Agility, Reliability, Security in Technology
-Organizations&lt;/a&gt;.
-Gene Kim &amp;amp; Jez Humble &amp;amp; Patrick Debois &amp;amp; John Willis.
-IT Revolution. 2016&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;phoenix-project&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;https://www.amazon.com/dp/0988262592&#34;&gt;The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win&lt;/a&gt;.
-Gene Kim &amp;amp; Kevin Behr. 2013&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;continuous-delivery&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;https://www.amazon.com/dp/0321601912&#34;&gt;Continuous Delivery: Reliable Software Releases through Build, Test and Deployment
-Automation&lt;/a&gt;.
-Jez Humble &amp;amp; David Farley. 2011&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
