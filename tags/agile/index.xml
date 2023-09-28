@@ -5,7 +5,7 @@
     <description>Recent content in agile on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/agile/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,251 +16,9 @@
     
     
     <item>
-      <title>Blog: Semantic Commits for the Impatient</title>
-      <link>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</link>
-      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_semantic_commits_for_the_impatient&#34;&gt;Semantic Commits for the Impatient&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2023-12-02-head.png&#34; alt=&#34;2023 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;strong&gt;conventional commits&lt;/strong&gt; specification is a lightweight convention on top of commit messages.
-The additional information classifies the type of work performed in the commit.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A developer infers the importance of the task by looking to the type of the commit.
-The message communicates the nature of changes to teammates, the public, and other stakeholders.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Contributors of project repositories know that a well-designed Git commit message is the best way to communicate the context about a change to other developers.
-And in fact, they help themselves in the future.
-A diff will tell you what has changed, but only the confirmation message can say why.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;It provides an easy set of rules for creating an explicit commit history which makes it easier to write automated tools on top of.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The development team can use scripts to filter and aggregate commit information based on the tags in the commit message.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This convention dovetails with &lt;a href=&#34;http://semver.org/&#34;&gt;SemVer&lt;/a&gt;, by describing the features, fixes, and breaking changes made in commit messages.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_structure&#34;&gt;Structure&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The commit message should be structured as follows:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;[&lt;/span&gt;optional scope]: &amp;lt;description&amp;gt;           &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;
-[optional body]
-
-[optional footer(s)]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;colist arabic&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Use the body to explain what and why.
-Do not explain how.
-That is the code.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The commit contains the following structural elements to communicate intent to the consumers of your library:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;fix&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;a commit of the type fix patches a bug in your codebase.
-This correlates with &lt;strong&gt;PATCH&lt;/strong&gt; in Semantic Versioning.
-It is used to identify production changes related to backward-compatible bug fixes.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;feature&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;a commit of the type feat introduces a new feature to the codebase.
-It is used to identify production changes related to new backward-compatible abilities or functionality.
-This correlates with &lt;strong&gt;MINOR&lt;/strong&gt; in Semantic Versioning.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;BREAKING CHANGE&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change.
-This correlates with &lt;strong&gt;MAJOR&lt;/strong&gt; in Semantic Versioning.
-A BREAKING CHANGE can be part of commits of any type.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Other types are allowed, for example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;build&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The build type is used to identify development changes related to the build system.
-They involve scripts, configurations or tools, and package dependencies.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;ci&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The ci type is used to identify development changes related to the continuous integration and deployment system.
-They involve scripts, configurations or tools.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;doc&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The doc type is used to identify documentation changes related to the project.
-Whether intended externally for the end users (in case of a library) or internally for the developers.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;refactor&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The refactor type is used to identify development changes related to modifying the codebase, which neither adds a feature nor fixes a bug.
-Examples are removing redundant code, simplifying the code, or renaming variables.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;test&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The test type is used to identify development changes related to tests.
-chore:
-Activities not adding new features or fixing a fault.
-This type is used when you do not know which other tag you could use.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;footers other than BREAKING CHANGE: &amp;lt;description&amp;gt; may be provided and follow a convention similar to git trailer format.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_to_create_a_semantic_commit_with_git&#34;&gt;How to Create a Semantic Commit with Git&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The command line for a complex git commit message is simple:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre&gt;git commit -m &amp;#34;fix(core): remove deprecated and defunct wtf* apis&amp;#34;                              &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt; &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-           -m &amp;#34;These apis have been deprecated in v8, so they should stick around till v10.&amp;#34;
-           -m &amp;#34;PR Close #33949&amp;#34;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;colist arabic&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;We use multiple &lt;em&gt;-m&lt;/em&gt; in order to concatenate paragraphs instead of simple lines.
-The header and body are supposed to be separated by a blank line.
-That is distinctly true due to the paragraphs.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Summary in present tense.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock tip&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Your IDE probably provides a comfortable user interface to create a commit message as a set of paragraphs.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Simply use your preferred IDE to write semantic commits with multiple blocks.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Please start with a small list and extend it if needed.
-I suggest: feature, refactor, fix, build, chore
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Ask yourself if identifying the subsystem where the changes were performed makes sense for your application.
-Often changes are not local to a specific component.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Some teams put a ticker number instead of the subsystem name.
-It makes sense if your platform transforms the ticket number into a link to the ticket content.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock tip&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I use the tags &lt;em&gt;feature&lt;/em&gt;, &lt;em&gt;refactor&lt;/em&gt;, &lt;em&gt;build&lt;/em&gt;, and &lt;em&gt;chore&lt;/em&gt;.
-I do not put component or ticket information in the parenthesis after the tag.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I put the ticket number in the summary of the commit message.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I seldom use the footer for breaking change information.
-I handle this information through semantic versioning in tags.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2023/git-rebase-and-merge-for-the-impatient/&#34;&gt;Git Rebase and Merge for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2023//git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2023/semantic-commits-for-the-impatient/&#34;&gt;Semantic Commits for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I never needed the &lt;em&gt;doc&lt;/em&gt; tag. Feel free to use it if you find it useful for your product.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Blog: Git Tag for the Impatient</title>
       <link>https://blog.tangly.net/blog/2023/git-tag-for-the-impatient/</link>
-      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tangly.net/blog/2023/git-tag-for-the-impatient/</guid>
       <description>
@@ -415,7 +173,7 @@ Select new posts to find the best answers.&lt;/p&gt;
     <item>
       <title>Blog: Git Rebase and Merge for the Impatient</title>
       <link>https://blog.tangly.net/blog/2023/git-rebase-and-merge-for-the-impatient/</link>
-      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 26 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tangly.net/blog/2023/git-rebase-and-merge-for-the-impatient/</guid>
       <description>
@@ -815,6 +573,248 @@ Select new posts to find the best answers.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Blog: Semantic Commits for the Impatient</title>
+      <link>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_semantic_commits_for_the_impatient&#34;&gt;Semantic Commits for the Impatient&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-12-02-head.png&#34; alt=&#34;2023 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;strong&gt;conventional commits&lt;/strong&gt; specification is a lightweight convention on top of commit messages.
+The additional information classifies the type of work performed in the commit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A developer infers the importance of the task by looking to the type of the commit.
+The message communicates the nature of changes to teammates, the public, and other stakeholders.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Contributors of project repositories know that a well-designed Git commit message is the best way to communicate the context about a change to other developers.
+And in fact, they help themselves in the future.
+A diff will tell you what has changed, but only the confirmation message can say why.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It provides an easy set of rules for creating an explicit commit history which makes it easier to write automated tools on top of.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The development team can use scripts to filter and aggregate commit information based on the tags in the commit message.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This convention dovetails with &lt;a href=&#34;http://semver.org/&#34;&gt;SemVer&lt;/a&gt;, by describing the features, fixes, and breaking changes made in commit messages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_structure&#34;&gt;Structure&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The commit message should be structured as follows:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;[&lt;/span&gt;optional scope]: &amp;lt;description&amp;gt;           &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;
+[optional body]
+
+[optional footer(s)]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Use the body to explain what and why.
+Do not explain how.
+That is the code.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The commit contains the following structural elements to communicate intent to the consumers of your library:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;fix&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a commit of the type fix patches a bug in your codebase.
+This correlates with &lt;strong&gt;PATCH&lt;/strong&gt; in Semantic Versioning.
+It is used to identify production changes related to backward-compatible bug fixes.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;feature&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a commit of the type feat introduces a new feature to the codebase.
+It is used to identify production changes related to new backward-compatible abilities or functionality.
+This correlates with &lt;strong&gt;MINOR&lt;/strong&gt; in Semantic Versioning.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;BREAKING CHANGE&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change.
+This correlates with &lt;strong&gt;MAJOR&lt;/strong&gt; in Semantic Versioning.
+A BREAKING CHANGE can be part of commits of any type.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Other types are allowed, for example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;build&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The build type is used to identify development changes related to the build system.
+They involve scripts, configurations or tools, and package dependencies.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;ci&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The ci type is used to identify development changes related to the continuous integration and deployment system.
+They involve scripts, configurations or tools.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;doc&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The doc type is used to identify documentation changes related to the project.
+Whether intended externally for the end users (in case of a library) or internally for the developers.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;refactor&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The refactor type is used to identify development changes related to modifying the codebase, which neither adds a feature nor fixes a bug.
+Examples are removing redundant code, simplifying the code, or renaming variables.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;test&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The test type is used to identify development changes related to tests.
+chore:
+Activities not adding new features or fixing a fault.
+This type is used when you do not know which other tag you could use.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;footers other than BREAKING CHANGE: &amp;lt;description&amp;gt; may be provided and follow a convention similar to git trailer format.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_how_to_create_a_semantic_commit_with_git&#34;&gt;How to Create a Semantic Commit with Git&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The command line for a complex git commit message is simple:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre&gt;git commit -m &amp;#34;fix(core): remove deprecated and defunct wtf* apis&amp;#34;                              &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt; &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+           -m &amp;#34;These apis have been deprecated in v8, so they should stick around till v10.&amp;#34;
+           -m &amp;#34;PR Close #33949&amp;#34;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;We use multiple &lt;em&gt;-m&lt;/em&gt; in order to concatenate paragraphs instead of simple lines.
+The header and body are supposed to be separated by a blank line.
+That is distinctly true due to the paragraphs.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Summary in present tense.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your IDE probably provides a comfortable user interface to create a commit message as a set of paragraphs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Simply use your preferred IDE to write semantic commits with multiple blocks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Please start with a small list and extend it if needed.
+I suggest: feature, refactor, fix, build, chore
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Ask yourself if identifying the subsystem where the changes were performed makes sense for your application.
+Often changes are not local to a specific component.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Some teams put a ticker number instead of the subsystem name.
+It makes sense if your platform transforms the ticket number into a link to the ticket content.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I use the tags &lt;em&gt;feature&lt;/em&gt;, &lt;em&gt;refactor&lt;/em&gt;, &lt;em&gt;build&lt;/em&gt;, and &lt;em&gt;chore&lt;/em&gt;.
+I do not put component or ticket information in the parenthesis after the tag.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I put the ticket number in the summary of the commit message.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I seldom use the footer for breaking change information.
+I handle this information through semantic versioning in tags.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/git-rebase-and-merge-for-the-impatient/&#34;&gt;Git Rebase and Merge for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023//git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/semantic-commits-for-the-impatient/&#34;&gt;Semantic Commits for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I never needed the &lt;em&gt;doc&lt;/em&gt; tag. Feel free to use it if you find it useful for your product.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Are Certifications Useful?</title>
       <link>https://blog.tangly.net/blog/2023/are-certifications-useful/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
@@ -881,7 +881,7 @@ On the bright side, the steward &lt;a href=&#34;https://www.opengroup.org/togaf&
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The iSAQB certification is well-known in Europe and especially in the German-speaking countries.
-The foundation now also provides training in agile software architecture in their advanced track &lt;a href=&#34;#agile-architecture&#34;&gt;[agile-architecture]&lt;/a&gt;.&lt;/p&gt;
+The foundation now also provides training in agile software architecture in their advanced track &lt;a href=&#34;#agile-architecture&#34;&gt;[6]&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Another approach is a master degree in software engineering or computer science.
@@ -941,7 +941,7 @@ But it cannot replace a formal bachelor or master level education in computer sc
 &lt;td class=&#34;content&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Certifications are quite meaningful for junior engineers.
-They learnt the theory and prove they understood the concepts.&lt;/p&gt;
+They learnt the theory and proved they understood the concepts.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Experienced engineers are seldom challenged when learning for a certification.
@@ -983,7 +983,7 @@ No country in the world would accept only training on the job for a physician, a
 &lt;p&gt;&lt;a id=&#34;java-certification&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2023/java-certification/&#34;&gt;Java Certification&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;agile-architecture&#34;&gt;&lt;/a&gt;] &lt;a href=&#34;../../2021/agile-software-architecture-is-mainstream/&#34;&gt;Agile Software Architecture is Mainstream&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;agile-architecture&#34;&gt;&lt;/a&gt;[6] &lt;a href=&#34;../../2021/agile-software-architecture-is-mainstream/&#34;&gt;Agile Software Architecture is Mainstream&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a id=&#34;togaf-certification&#34;&gt;&lt;/a&gt;[7] &lt;a href=&#34;https://www.opengroup.org/certifications/togaf-certification-portfolio&#34;&gt;TOGAF Certification&lt;/a&gt;&lt;/p&gt;
@@ -13351,12 +13351,12 @@ The participants of the study confirmed these documented facts.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;imageblock kroki&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;svg aria-labelledby=&#34;chart-title-container&#34; aria-roledescription=&#34;pie&#34; role=&#34;graphics-document document&#34; viewBox=&#34;0 0 584 450&#34; style=&#34;max-width: 584px;&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;100%&#34; id=&#34;container&#34;&gt;&lt;title id=&#34;chart-title-container&#34;&gt;Hybrid Methods Success 2021&lt;/title&gt;&lt;style&gt;#container{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;fill:#333;}#container .error-icon{fill:#552222;}#container .error-text{fill:#552222;stroke:#552222;}#container .edge-thickness-normal{stroke-width:2px;}#container .edge-thickness-thick{stroke-width:3.5px;}#container .edge-pattern-solid{stroke-dasharray:0;}#container .edge-pattern-dashed{stroke-dasharray:3;}#container .edge-pattern-dotted{stroke-dasharray:2;}#container .marker{fill:#333333;stroke:#333333;}#container .marker.cross{stroke:#333333;}#container svg{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;}#container .pieCircle{stroke:black;stroke-width:2px;opacity:0.7;}#container .pieOuterCircle{stroke:black;stroke-width:2px;fill:none;}#container .pieTitleText{text-anchor:middle;font-size:25px;fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}#container .slice{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;fill:#333;font-size:17px;}#container .legend text{fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:17px;}#container :root{--mermaid-font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g transform=&#34;translate(292,225)&#34;&gt;&lt;circle class=&#34;pieOuterCircle&#34; r=&#34;186&#34; cy=&#34;0&#34; cx=&#34;0&#34;&gt;&lt;/circle&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ECECFF&#34; d=&#34;M1.1327982892113017e-14,-185A185,185,0,0,1,147.5919713146356,111.54196521246959L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ffffde&#34; d=&#34;M147.5919713146356,111.54196521246959A185,185,0,1,1,-15.094263140109064,-184.38319668629552L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;hsl(80, 100%, 56.2745098039%)&#34; d=&#34;M-15.094263140109064,-184.38319668629552A185,185,0,0,1,1.303290589681841e-13,-185L0,0Z&#34;&gt;&lt;/path&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(124.21533370506762,-61.82324297979435)&#34;&gt;35%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-121.58755185608607,66.84332228161298)&#34;&gt;63%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-5.665072587018182,-138.63430114002745)&#34;&gt;1%&lt;/text&gt;&lt;text class=&#34;pieTitleText&#34; y=&#34;-200&#34; x=&#34;0&#34;&gt;Hybrid Methods Success 2021&lt;/text&gt;&lt;g transform=&#34;translate(216,-33)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Successful&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,-11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Challenged&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Stopped&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;svg aria-labelledby=&#34;chart-title-container&#34; aria-roledescription=&#34;pie&#34; role=&#34;graphics-document document&#34; style=&#34;max-width: 584px;&#34; viewBox=&#34;0 0 584 450&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;100%&#34; id=&#34;container&#34;&gt;&lt;title id=&#34;chart-title-container&#34;&gt;Hybrid Methods Success 2021&lt;/title&gt;&lt;style&gt;#container{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;fill:#333;}#container .error-icon{fill:#552222;}#container .error-text{fill:#552222;stroke:#552222;}#container .edge-thickness-normal{stroke-width:2px;}#container .edge-thickness-thick{stroke-width:3.5px;}#container .edge-pattern-solid{stroke-dasharray:0;}#container .edge-pattern-dashed{stroke-dasharray:3;}#container .edge-pattern-dotted{stroke-dasharray:2;}#container .marker{fill:#333333;stroke:#333333;}#container .marker.cross{stroke:#333333;}#container svg{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;}#container .pieCircle{stroke:black;stroke-width:2px;opacity:0.7;}#container .pieOuterCircle{stroke:black;stroke-width:2px;fill:none;}#container .pieTitleText{text-anchor:middle;font-size:25px;fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}#container .slice{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;fill:#333;font-size:17px;}#container .legend text{fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:17px;}#container :root{--mermaid-font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g transform=&#34;translate(292,225)&#34;&gt;&lt;circle class=&#34;pieOuterCircle&#34; r=&#34;186&#34; cy=&#34;0&#34; cx=&#34;0&#34;&gt;&lt;/circle&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ECECFF&#34; d=&#34;M-137.99911190347376,123.2121954753365A185,185,0,0,1,-15.094263140109064,-184.38319668629552L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ffffde&#34; d=&#34;M1.1327982892113017e-14,-185A185,185,0,1,1,-137.99911190347376,123.2121954753365L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;hsl(80, 100%, 56.2745098039%)&#34; d=&#34;M-15.094263140109064,-184.38319668629552A185,185,0,0,1,1.303290589681841e-13,-185L0,0Z&#34;&gt;&lt;/path&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-128.84538704706614,-51.48231479539085)&#34;&gt;35%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(126.63595775223601,56.70005911966846)&#34;&gt;63%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-5.665072587018182,-138.63430114002745)&#34;&gt;1%&lt;/text&gt;&lt;text class=&#34;pieTitleText&#34; y=&#34;-200&#34; x=&#34;0&#34;&gt;Hybrid Methods Success 2021&lt;/text&gt;&lt;g transform=&#34;translate(216,-33)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Successful&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,-11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Challenged&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Stopped&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;imageblock kroki&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;svg aria-labelledby=&#34;chart-title-container&#34; aria-roledescription=&#34;pie&#34; role=&#34;graphics-document document&#34; viewBox=&#34;0 0 584 450&#34; style=&#34;max-width: 584px;&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;100%&#34; id=&#34;container&#34;&gt;&lt;title id=&#34;chart-title-container&#34;&gt;Agile Methods Success 2021&lt;/title&gt;&lt;style&gt;#container{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;fill:#333;}#container .error-icon{fill:#552222;}#container .error-text{fill:#552222;stroke:#552222;}#container .edge-thickness-normal{stroke-width:2px;}#container .edge-thickness-thick{stroke-width:3.5px;}#container .edge-pattern-solid{stroke-dasharray:0;}#container .edge-pattern-dashed{stroke-dasharray:3;}#container .edge-pattern-dotted{stroke-dasharray:2;}#container .marker{fill:#333333;stroke:#333333;}#container .marker.cross{stroke:#333333;}#container svg{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;}#container .pieCircle{stroke:black;stroke-width:2px;opacity:0.7;}#container .pieOuterCircle{stroke:black;stroke-width:2px;fill:none;}#container .pieTitleText{text-anchor:middle;font-size:25px;fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}#container .slice{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;fill:#333;font-size:17px;}#container .legend text{fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:17px;}#container :root{--mermaid-font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g transform=&#34;translate(292,225)&#34;&gt;&lt;circle class=&#34;pieOuterCircle&#34; r=&#34;186&#34; cy=&#34;0&#34; cx=&#34;0&#34;&gt;&lt;/circle&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ECECFF&#34; d=&#34;M1.1327982892113017e-14,-185A185,185,0,1,1,-61.56554324378868,174.45539224998802L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ffffde&#34; d=&#34;M-61.56554324378868,174.45539224998802A185,185,0,0,1,-0.011623776572970887,-184.99999963483194L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;hsl(80, 100%, 56.2745098039%)&#34; d=&#34;M-0.011623776572970887,-184.99999963483194A185,185,0,0,1,-3.398394867633905e-14,-185L0,0Z&#34;&gt;&lt;/path&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(136.7585952618964,23.4232602767593)&#34;&gt;55%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-136.75933105047548,-23.41896391018293)&#34;&gt;45%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-0.004358916217027822,-138.749999931531)&#34;&gt;0%&lt;/text&gt;&lt;text class=&#34;pieTitleText&#34; y=&#34;-200&#34; x=&#34;0&#34;&gt;Agile Methods Success 2021&lt;/text&gt;&lt;g transform=&#34;translate(216,-33)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Successful&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,-11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Challenged&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Stopped&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;svg aria-labelledby=&#34;chart-title-container&#34; aria-roledescription=&#34;pie&#34; role=&#34;graphics-document document&#34; style=&#34;max-width: 584px;&#34; viewBox=&#34;0 0 584 450&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;100%&#34; id=&#34;container&#34;&gt;&lt;title id=&#34;chart-title-container&#34;&gt;Agile Methods Success 2021&lt;/title&gt;&lt;style&gt;#container{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;fill:#333;}#container .error-icon{fill:#552222;}#container .error-text{fill:#552222;stroke:#552222;}#container .edge-thickness-normal{stroke-width:2px;}#container .edge-thickness-thick{stroke-width:3.5px;}#container .edge-pattern-solid{stroke-dasharray:0;}#container .edge-pattern-dashed{stroke-dasharray:3;}#container .edge-pattern-dotted{stroke-dasharray:2;}#container .marker{fill:#333333;stroke:#333333;}#container .marker.cross{stroke:#333333;}#container svg{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;}#container .pieCircle{stroke:black;stroke-width:2px;opacity:0.7;}#container .pieOuterCircle{stroke:black;stroke-width:2px;fill:none;}#container .pieTitleText{text-anchor:middle;font-size:25px;fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}#container .slice{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;fill:#333;font-size:17px;}#container .legend text{fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:17px;}#container :root{--mermaid-font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g transform=&#34;translate(292,225)&#34;&gt;&lt;circle class=&#34;pieOuterCircle&#34; r=&#34;186&#34; cy=&#34;0&#34; cx=&#34;0&#34;&gt;&lt;/circle&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ECECFF&#34; d=&#34;M1.1327982892113017e-14,-185A185,185,0,1,1,-61.56554324378868,174.45539224998802L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ffffde&#34; d=&#34;M-61.56554324378868,174.45539224998802A185,185,0,0,1,-0.011623776572970887,-184.99999963483194L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;hsl(80, 100%, 56.2745098039%)&#34; d=&#34;M-0.011623776572970887,-184.99999963483194A185,185,0,0,1,-3.398394867633905e-14,-185L0,0Z&#34;&gt;&lt;/path&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(136.7585952618964,23.4232602767593)&#34;&gt;55%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-136.75933105047548,-23.41896391018293)&#34;&gt;45%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-0.004358916217027822,-138.749999931531)&#34;&gt;0%&lt;/text&gt;&lt;text class=&#34;pieTitleText&#34; y=&#34;-200&#34; x=&#34;0&#34;&gt;Agile Methods Success 2021&lt;/text&gt;&lt;g transform=&#34;translate(216,-33)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Successful&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,-11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Challenged&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Stopped&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -14243,12 +14243,12 @@ It means an agile team has 25% higher relative probability to be victorious than
 &lt;/div&gt;
 &lt;div class=&#34;imageblock kroki&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;svg aria-labelledby=&#34;chart-title-container&#34; aria-roledescription=&#34;pie&#34; role=&#34;graphics-document document&#34; viewBox=&#34;0 0 584 450&#34; style=&#34;max-width: 584px;&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;100%&#34; id=&#34;container&#34;&gt;&lt;title id=&#34;chart-title-container&#34;&gt;Waterfall Methods Success 2020&lt;/title&gt;&lt;style&gt;#container{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;fill:#333;}#container .error-icon{fill:#552222;}#container .error-text{fill:#552222;stroke:#552222;}#container .edge-thickness-normal{stroke-width:2px;}#container .edge-thickness-thick{stroke-width:3.5px;}#container .edge-pattern-solid{stroke-dasharray:0;}#container .edge-pattern-dashed{stroke-dasharray:3;}#container .edge-pattern-dotted{stroke-dasharray:2;}#container .marker{fill:#333333;stroke:#333333;}#container .marker.cross{stroke:#333333;}#container svg{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;}#container .pieCircle{stroke:black;stroke-width:2px;opacity:0.7;}#container .pieOuterCircle{stroke:black;stroke-width:2px;fill:none;}#container .pieTitleText{text-anchor:middle;font-size:25px;fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}#container .slice{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;fill:#333;font-size:17px;}#container .legend text{fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:17px;}#container :root{--mermaid-font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g transform=&#34;translate(292,225)&#34;&gt;&lt;circle class=&#34;pieOuterCircle&#34; r=&#34;186&#34; cy=&#34;0&#34; cx=&#34;0&#34;&gt;&lt;/circle&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ECECFF&#34; d=&#34;M1.1327982892113017e-14,-185A185,185,0,0,1,113.74988835517061,145.89709695256522L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ffffde&#34; d=&#34;M113.74988835517061,145.89709695256522A185,185,0,1,1,-10.445494515495682,-184.70487715360076L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;hsl(80, 100%, 56.2745098039%)&#34; d=&#34;M-10.445494515495682,-184.70487715360076A185,185,0,0,1,-1.982969563208622e-13,-185L0,0Z&#34;&gt;&lt;/path&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(131.21352664955378,-45.10624041290561)&#34;&gt;39%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-129.88728091751386,48.79402377192145)&#34;&gt;60%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-3.9186235595819006,-138.69465342758633)&#34;&gt;1%&lt;/text&gt;&lt;text class=&#34;pieTitleText&#34; y=&#34;-200&#34; x=&#34;0&#34;&gt;Waterfall Methods Success 2020&lt;/text&gt;&lt;g transform=&#34;translate(216,-33)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Successful&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,-11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Challenged&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Stopped&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;svg aria-labelledby=&#34;chart-title-container&#34; aria-roledescription=&#34;pie&#34; role=&#34;graphics-document document&#34; style=&#34;max-width: 584px;&#34; viewBox=&#34;0 0 584 450&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;100%&#34; id=&#34;container&#34;&gt;&lt;title id=&#34;chart-title-container&#34;&gt;Waterfall Methods Success 2020&lt;/title&gt;&lt;style&gt;#container{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;fill:#333;}#container .error-icon{fill:#552222;}#container .error-text{fill:#552222;stroke:#552222;}#container .edge-thickness-normal{stroke-width:2px;}#container .edge-thickness-thick{stroke-width:3.5px;}#container .edge-pattern-solid{stroke-dasharray:0;}#container .edge-pattern-dashed{stroke-dasharray:3;}#container .edge-pattern-dotted{stroke-dasharray:2;}#container .marker{fill:#333333;stroke:#333333;}#container .marker.cross{stroke:#333333;}#container svg{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;}#container .pieCircle{stroke:black;stroke-width:2px;opacity:0.7;}#container .pieOuterCircle{stroke:black;stroke-width:2px;fill:none;}#container .pieTitleText{text-anchor:middle;font-size:25px;fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}#container .slice{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;fill:#333;font-size:17px;}#container .legend text{fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:17px;}#container :root{--mermaid-font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g transform=&#34;translate(292,225)&#34;&gt;&lt;circle class=&#34;pieOuterCircle&#34; r=&#34;186&#34; cy=&#34;0&#34; cx=&#34;0&#34;&gt;&lt;/circle&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ECECFF&#34; d=&#34;M-105.33076664233968,152.08691461969033A185,185,0,0,1,-10.445494515495682,-184.70487715360076L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ffffde&#34; d=&#34;M1.1327982892113017e-14,-185A185,185,0,1,1,-105.33076664233968,152.08691461969033L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;hsl(80, 100%, 56.2745098039%)&#34; d=&#34;M-10.445494515495682,-184.70487715360076A185,185,0,0,1,-1.982969563208622e-13,-185L0,0Z&#34;&gt;&lt;/path&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-133.551001662401,-37.625688764052725)&#34;&gt;39%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(132.4350917480173,41.38247181711403)&#34;&gt;60%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-3.9186235595819006,-138.69465342758633)&#34;&gt;1%&lt;/text&gt;&lt;text class=&#34;pieTitleText&#34; y=&#34;-200&#34; x=&#34;0&#34;&gt;Waterfall Methods Success 2020&lt;/text&gt;&lt;g transform=&#34;translate(216,-33)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Successful&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,-11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Challenged&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Stopped&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;imageblock kroki&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;svg aria-labelledby=&#34;chart-title-container&#34; aria-roledescription=&#34;pie&#34; role=&#34;graphics-document document&#34; viewBox=&#34;0 0 584 450&#34; style=&#34;max-width: 584px;&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;100%&#34; id=&#34;container&#34;&gt;&lt;title id=&#34;chart-title-container&#34;&gt;Agile Methods Success 2020&lt;/title&gt;&lt;style&gt;#container{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;fill:#333;}#container .error-icon{fill:#552222;}#container .error-text{fill:#552222;stroke:#552222;}#container .edge-thickness-normal{stroke-width:2px;}#container .edge-thickness-thick{stroke-width:3.5px;}#container .edge-pattern-solid{stroke-dasharray:0;}#container .edge-pattern-dashed{stroke-dasharray:3;}#container .edge-pattern-dotted{stroke-dasharray:2;}#container .marker{fill:#333333;stroke:#333333;}#container .marker.cross{stroke:#333333;}#container svg{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;}#container .pieCircle{stroke:black;stroke-width:2px;opacity:0.7;}#container .pieOuterCircle{stroke:black;stroke-width:2px;fill:none;}#container .pieTitleText{text-anchor:middle;font-size:25px;fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}#container .slice{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;fill:#333;font-size:17px;}#container .legend text{fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:17px;}#container :root{--mermaid-font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g transform=&#34;translate(292,225)&#34;&gt;&lt;circle class=&#34;pieOuterCircle&#34; r=&#34;186&#34; cy=&#34;0&#34; cx=&#34;0&#34;&gt;&lt;/circle&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ECECFF&#34; d=&#34;M1.1327982892113017e-14,-185A185,185,0,1,1,-5.810990429453772,184.90871366766035L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ffffde&#34; d=&#34;M-5.810990429453772,184.90871366766035A185,185,0,0,1,-4.649067657017342,-184.9415750174105L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;hsl(80, 100%, 56.2745098039%)&#34; d=&#34;M-4.649067657017342,-184.9415750174105A185,185,0,0,1,1.303290589681841e-13,-185L0,0Z&#34;&gt;&lt;/path&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(138.7328827568304,2.179390277015137)&#34;&gt;51%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-138.74931529675783,-0.4358952636658685)&#34;&gt;49%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-1.7435380338150912,-138.7390448832795)&#34;&gt;0%&lt;/text&gt;&lt;text class=&#34;pieTitleText&#34; y=&#34;-200&#34; x=&#34;0&#34;&gt;Agile Methods Success 2020&lt;/text&gt;&lt;g transform=&#34;translate(216,-33)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Successful&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,-11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Challenged&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Stopped&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;svg aria-labelledby=&#34;chart-title-container&#34; aria-roledescription=&#34;pie&#34; role=&#34;graphics-document document&#34; style=&#34;max-width: 584px;&#34; viewBox=&#34;0 0 584 450&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;100%&#34; id=&#34;container&#34;&gt;&lt;title id=&#34;chart-title-container&#34;&gt;Agile Methods Success 2020&lt;/title&gt;&lt;style&gt;#container{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;fill:#333;}#container .error-icon{fill:#552222;}#container .error-text{fill:#552222;stroke:#552222;}#container .edge-thickness-normal{stroke-width:2px;}#container .edge-thickness-thick{stroke-width:3.5px;}#container .edge-pattern-solid{stroke-dasharray:0;}#container .edge-pattern-dashed{stroke-dasharray:3;}#container .edge-pattern-dotted{stroke-dasharray:2;}#container .marker{fill:#333333;stroke:#333333;}#container .marker.cross{stroke:#333333;}#container svg{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;}#container .pieCircle{stroke:black;stroke-width:2px;opacity:0.7;}#container .pieOuterCircle{stroke:black;stroke-width:2px;fill:none;}#container .pieTitleText{text-anchor:middle;font-size:25px;fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}#container .slice{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;fill:#333;font-size:17px;}#container .legend text{fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:17px;}#container :root{--mermaid-font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g transform=&#34;translate(292,225)&#34;&gt;&lt;circle class=&#34;pieOuterCircle&#34; r=&#34;186&#34; cy=&#34;0&#34; cx=&#34;0&#34;&gt;&lt;/circle&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ECECFF&#34; d=&#34;M1.1327982892113017e-14,-185A185,185,0,1,1,-5.810990429453772,184.90871366766035L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ffffde&#34; d=&#34;M-5.810990429453772,184.90871366766035A185,185,0,0,1,-4.649067657017342,-184.9415750174105L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;hsl(80, 100%, 56.2745098039%)&#34; d=&#34;M-4.649067657017342,-184.9415750174105A185,185,0,0,1,1.303290589681841e-13,-185L0,0Z&#34;&gt;&lt;/path&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(138.7328827568304,2.179390277015137)&#34;&gt;51%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-138.74931529675783,-0.4358952636658685)&#34;&gt;49%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-1.7435380338150912,-138.7390448832795)&#34;&gt;0%&lt;/text&gt;&lt;text class=&#34;pieTitleText&#34; y=&#34;-200&#34; x=&#34;0&#34;&gt;Agile Methods Success 2020&lt;/text&gt;&lt;g transform=&#34;translate(216,-33)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Successful&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,-11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Challenged&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Stopped&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -14285,13 +14285,13 @@ As our numbers show, it is becoming more and more popular.
 Remember, it is not Kanban if it doesn’t have WIP limits.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;There is also a trend towards stable product teams that extend their responsibilities beyond those of &lt;em&gt;just&lt;/em&gt; the development of a solution or service.&lt;/p&gt;
+&lt;p&gt;There is also a trend towards stable product teams that extend their responsibilities beyond those of &lt;em&gt;just&lt;/em&gt; the development for a solution or service.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_findings&#34;&gt;Findings&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The conclusion of the main article of the report is enlightening.&lt;/p&gt;
+&lt;p&gt;The conclusion of the main article is enlightening.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;quoteblock&#34;&gt;
 &lt;blockquote&gt;
@@ -14301,7 +14301,7 @@ Only individual elements of the third wave, such as portfolio management, have b
 At the same time, transformation has often only occurred on the surface; the company’s DNA and culture have not (yet) adapted to the new era.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Executives must now take on the hard topics, such as new organizational forms, management behaviour, dedicated agile executives.
+&lt;p&gt;Executives must now take on the hard topics, such as new organizational forms, management behavior, dedicated agile executives.
 They must make difficult and painful decisions regarding new leadership teams.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/blockquote&gt;

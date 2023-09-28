@@ -5,7 +5,7 @@
     <description>Recent content in tangly llc Blog on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,251 +16,9 @@
     
     
     <item>
-      <title>Blog: Semantic Commits for the Impatient</title>
-      <link>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</link>
-      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_semantic_commits_for_the_impatient&#34;&gt;Semantic Commits for the Impatient&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2023-12-02-head.png&#34; alt=&#34;2023 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;strong&gt;conventional commits&lt;/strong&gt; specification is a lightweight convention on top of commit messages.
-The additional information classifies the type of work performed in the commit.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A developer infers the importance of the task by looking to the type of the commit.
-The message communicates the nature of changes to teammates, the public, and other stakeholders.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Contributors of project repositories know that a well-designed Git commit message is the best way to communicate the context about a change to other developers.
-And in fact, they help themselves in the future.
-A diff will tell you what has changed, but only the confirmation message can say why.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;It provides an easy set of rules for creating an explicit commit history which makes it easier to write automated tools on top of.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The development team can use scripts to filter and aggregate commit information based on the tags in the commit message.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This convention dovetails with &lt;a href=&#34;http://semver.org/&#34;&gt;SemVer&lt;/a&gt;, by describing the features, fixes, and breaking changes made in commit messages.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_structure&#34;&gt;Structure&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The commit message should be structured as follows:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;[&lt;/span&gt;optional scope]: &amp;lt;description&amp;gt;           &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;
-[optional body]
-
-[optional footer(s)]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;colist arabic&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Use the body to explain what and why.
-Do not explain how.
-That is the code.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The commit contains the following structural elements to communicate intent to the consumers of your library:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;fix&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;a commit of the type fix patches a bug in your codebase.
-This correlates with &lt;strong&gt;PATCH&lt;/strong&gt; in Semantic Versioning.
-It is used to identify production changes related to backward-compatible bug fixes.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;feature&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;a commit of the type feat introduces a new feature to the codebase.
-It is used to identify production changes related to new backward-compatible abilities or functionality.
-This correlates with &lt;strong&gt;MINOR&lt;/strong&gt; in Semantic Versioning.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;BREAKING CHANGE&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change.
-This correlates with &lt;strong&gt;MAJOR&lt;/strong&gt; in Semantic Versioning.
-A BREAKING CHANGE can be part of commits of any type.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Other types are allowed, for example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;build&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The build type is used to identify development changes related to the build system.
-They involve scripts, configurations or tools, and package dependencies.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;ci&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The ci type is used to identify development changes related to the continuous integration and deployment system.
-They involve scripts, configurations or tools.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;doc&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The doc type is used to identify documentation changes related to the project.
-Whether intended externally for the end users (in case of a library) or internally for the developers.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;refactor&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The refactor type is used to identify development changes related to modifying the codebase, which neither adds a feature nor fixes a bug.
-Examples are removing redundant code, simplifying the code, or renaming variables.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;test&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The test type is used to identify development changes related to tests.
-chore:
-Activities not adding new features or fixing a fault.
-This type is used when you do not know which other tag you could use.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;footers other than BREAKING CHANGE: &amp;lt;description&amp;gt; may be provided and follow a convention similar to git trailer format.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_to_create_a_semantic_commit_with_git&#34;&gt;How to Create a Semantic Commit with Git&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The command line for a complex git commit message is simple:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre&gt;git commit -m &amp;#34;fix(core): remove deprecated and defunct wtf* apis&amp;#34;                              &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt; &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-           -m &amp;#34;These apis have been deprecated in v8, so they should stick around till v10.&amp;#34;
-           -m &amp;#34;PR Close #33949&amp;#34;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;colist arabic&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;We use multiple &lt;em&gt;-m&lt;/em&gt; in order to concatenate paragraphs instead of simple lines.
-The header and body are supposed to be separated by a blank line.
-That is distinctly true due to the paragraphs.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Summary in present tense.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock tip&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Your IDE probably provides a comfortable user interface to create a commit message as a set of paragraphs.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Simply use your preferred IDE to write semantic commits with multiple blocks.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Please start with a small list and extend it if needed.
-I suggest: feature, refactor, fix, build, chore
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Ask yourself if identifying the subsystem where the changes were performed makes sense for your application.
-Often changes are not local to a specific component.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Some teams put a ticker number instead of the subsystem name.
-It makes sense if your platform transforms the ticket number into a link to the ticket content.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock tip&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I use the tags &lt;em&gt;feature&lt;/em&gt;, &lt;em&gt;refactor&lt;/em&gt;, &lt;em&gt;build&lt;/em&gt;, and &lt;em&gt;chore&lt;/em&gt;.
-I do not put component or ticket information in the parenthesis after the tag.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I put the ticket number in the summary of the commit message.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I seldom use the footer for breaking change information.
-I handle this information through semantic versioning in tags.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2023/git-rebase-and-merge-for-the-impatient/&#34;&gt;Git Rebase and Merge for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2023//git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2023/semantic-commits-for-the-impatient/&#34;&gt;Semantic Commits for the Impatient&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I never needed the &lt;em&gt;doc&lt;/em&gt; tag. Feel free to use it if you find it useful for your product.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Blog: Git Tag for the Impatient</title>
       <link>https://blog.tangly.net/blog/2023/git-tag-for-the-impatient/</link>
-      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tangly.net/blog/2023/git-tag-for-the-impatient/</guid>
       <description>
@@ -415,7 +173,7 @@ Select new posts to find the best answers.&lt;/p&gt;
     <item>
       <title>Blog: Git Rebase and Merge for the Impatient</title>
       <link>https://blog.tangly.net/blog/2023/git-rebase-and-merge-for-the-impatient/</link>
-      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 26 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tangly.net/blog/2023/git-rebase-and-merge-for-the-impatient/</guid>
       <description>
@@ -815,6 +573,525 @@ Select new posts to find the best answers.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Blog: Java 21</title>
+      <link>https://blog.tangly.net/blog/2023/java-21/</link>
+      <pubDate>Mon, 25 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/java-21/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_java_21_lts&#34;&gt;Java 21 LTS&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-09-02-head.jpg&#34; alt=&#34;2023 09 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java 21 LTS was released on time to the public.
+The release is available for download since 21&lt;sup&gt;st&lt;/sup&gt; September 2023.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Pattern matching is maturing nicely.
+The hope is that more solutions will more advanced data stream manipulation and functional programming algorithms.
+Complex inheritance structure are no more considered as good practices in regular application.
+The pattern matching extensions nicely provide idioms to solve similar design problems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The support for virtual threads is reaching full integration in the official Java distribution.
+Extensions such as scoped values are available as preview feature.
+The tail-call optimization for recursive calls is sadly still missing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_amber_project&#34;&gt;Amber Project&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://openjdk.org/projects/amber/&#34;&gt;amber&lt;/a&gt; initiative is completing the changes with pattern matching.
+Start adapting your coding idioms and use pattern matching.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The visitor pattern can simply be implemented as switch expression with pattern matching.
+As a bonus, the compiler will verify completeness if your class hierarchy uses sealed inheritance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/440&#34;&gt;Record Patterns&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/441&#34;&gt;Patten Matching for switch&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/443&#34;&gt;Unnamed Patterns and Variables (Preview)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The syntactic improvements initiated by Amber and core group are;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/430&#34;&gt;String Templates&lt;/a&gt; &lt;em&gt;Preview&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/431&#34;&gt;Sequenced Collections&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The string template feature is worth the effort to study the provided functions.
+My code could be considerably simplified when using this functionality.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_loom_project&#34;&gt;Loom Project&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://openjdk.org/projects/loom/&#34;&gt;loom&lt;/a&gt; initiative is completing the major changes associated with virtual threads.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/444&#34;&gt;Virtual Threads&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/446&#34;&gt;Scoped Values&lt;/a&gt; &lt;em&gt;Preview&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/453&#34;&gt;Structured Concurrency&lt;/a&gt; &lt;em&gt;Preview&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Virtual threads are now official part of the Java universe.
+Your design can create as much threads as you want without restrictions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Most of the Java developers never create directly thread instances.&lt;/em&gt;
+&lt;em&gt;The feature is useful for library and framework creators.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_panama_project&#34;&gt;Panama Project&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The panama initiative is iterating through their interfaces.
+They synchronize as much as possible their interfaces with the Valhalla and Lilliput activities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/448&#34;&gt;Vector API&lt;/a&gt; &lt;em&gt;Sixth Incubator&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/442&#34;&gt;Foreign Function &amp;amp; Memory API&lt;/a&gt; &lt;em&gt;Third Preview&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_valhalla_project&#34;&gt;Valhalla Project&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As usual, the &lt;a href=&#34;https://openjdk.org/projects/valhalla/&#34;&gt;Valhalla&lt;/a&gt; initiative did not release any improvements in the current release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;It is time that value objects are proposed in the near future.&lt;/em&gt;
+&lt;em&gt;The project is going for ten years.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_lilliput_and_leyden_projects&#34;&gt;Lilliput and Leyden Projects&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://openjdk.org/projects/lilliput/&#34;&gt;lilliput&lt;/a&gt; initiative aims to reduce memory usage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_miscellaneous_improvements&#34;&gt;Miscellaneous Improvements&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Obsolete features are removed:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/449&#34;&gt;Deprecate the Windows 32-bit x86 Port for Removal&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/451&#34;&gt;Prepare to Disallow the Dynamic Loading of Agents&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Extensions to existing features:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/439&#34;&gt;Generational ZGC&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/445&#34;&gt;Unnamed Classes and Instance Main Methods (Preview)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://openjdk.org/jeps/452&#34;&gt;Key Encapsulation Mechanism API&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_stumbling_blocks&#34;&gt;Stumbling Blocks&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Once again &lt;a href=&#34;https://projectlombok.org/&#34;&gt;Lombok&lt;/a&gt; up to version 1.18.28 is not working with JDK 21
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.
+The project uses internal unsafe functions, which are no more supported in this Java release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The edge snapshot release has experimental support for JDK 21.
+You need the following additions in your gradle configuration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;add the repository &lt;em&gt;maven { url &amp;#34;https://projectlombok.org/edge-releases&amp;#34;}&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;use the dependency &lt;em&gt;org.projectlombok:lombok:edge-SNAPSHOT&lt;/em&gt; for the library and the annotation processor&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All other libraries and tools I am using worked without troubles.
+Major libraries test their current release with early-accesses and solve the problems before the official release a new Java version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle toolchain feature simplifies experimenting with a new Java version.
+The current version of &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; runs under Java 21.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;IntelliJ IDE provides support for newer JDK before their official release.
+It tremendously simplifies exploration of new features.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Often you can use the continuous integration pipelines of &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; or &lt;a href=&#34;https://gitlab.com/&#34;&gt;GitLab&lt;/a&gt; platforms.
+No virtual machines with an experimental Java version are available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use different distributions to harden your code and explore alternative solutions.
+The &lt;a href=&#34;https://www.eclipse.org/&#34;&gt;Eclipse&lt;/a&gt; foundation &lt;a href=&#34;https://adoptium.net/temurin/&#34;&gt;temurin&lt;/a&gt; distribution is very nice.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Migrate all your active products to the new Java version.
+Invest effort to enhance source code and use the new features.
+So, you will avoid technical obsolesce and geriatric applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;java-20&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2023/java-20/&#34;&gt;Java 20&lt;/a&gt;.
+Marcel Baumann. 2022.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;vaadin&#34;&gt;&lt;/a&gt;[2]  &lt;a href=&#34;../../2022/vaadin/&#34;&gt;Vaadin&lt;/a&gt;.
+Marcel Baumann. 2022.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;java-19&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2021/jdk-17/&#34;&gt;Java 17&lt;/a&gt;.
+Marcel Baumann. 2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;java-16&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2021/jdk-16/&#34;&gt;Java 16&lt;/a&gt;.
+Marcel Baumann. 2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;java-10&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2018/java-10-aka-18.3-changes/&#34;&gt;Java 10 aka 18.3 Changes&lt;/a&gt;.
+Marcel Baumann. 2018.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;java-immutability&#34;&gt;&lt;/a&gt;[6] &lt;a href=&#34;../../2022/immutability-in-java/&#34;&gt;Immutability in Java&lt;/a&gt;.
+Marcel Baumann. 2022.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-construcdts&#34;&gt;&lt;/a&gt;[7] &lt;a href=&#34;../../2022/modern-java-constructs/&#34;&gt;Modern Java Constructs&lt;/a&gt;.
+Marcel Baumann. 2022&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-development&#34;&gt;&lt;/a&gt;[8] &lt;a href=&#34;../../2021/modern-java-development/&#34;&gt;Modern Java Development&lt;/a&gt;.
+Marcel Baumann. 2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Version 1.18.30 was released in 2023-09-20 and provides initial support for JDK 21. Late but it still saves the day.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Semantic Commits for the Impatient</title>
+      <link>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_semantic_commits_for_the_impatient&#34;&gt;Semantic Commits for the Impatient&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-12-02-head.png&#34; alt=&#34;2023 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;strong&gt;conventional commits&lt;/strong&gt; specification is a lightweight convention on top of commit messages.
+The additional information classifies the type of work performed in the commit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A developer infers the importance of the task by looking to the type of the commit.
+The message communicates the nature of changes to teammates, the public, and other stakeholders.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Contributors of project repositories know that a well-designed Git commit message is the best way to communicate the context about a change to other developers.
+And in fact, they help themselves in the future.
+A diff will tell you what has changed, but only the confirmation message can say why.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It provides an easy set of rules for creating an explicit commit history which makes it easier to write automated tools on top of.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The development team can use scripts to filter and aggregate commit information based on the tags in the commit message.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This convention dovetails with &lt;a href=&#34;http://semver.org/&#34;&gt;SemVer&lt;/a&gt;, by describing the features, fixes, and breaking changes made in commit messages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_structure&#34;&gt;Structure&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The commit message should be structured as follows:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;[&lt;/span&gt;optional scope]: &amp;lt;description&amp;gt;           &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;
+[optional body]
+
+[optional footer(s)]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Use the body to explain what and why.
+Do not explain how.
+That is the code.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The commit contains the following structural elements to communicate intent to the consumers of your library:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;fix&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a commit of the type fix patches a bug in your codebase.
+This correlates with &lt;strong&gt;PATCH&lt;/strong&gt; in Semantic Versioning.
+It is used to identify production changes related to backward-compatible bug fixes.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;feature&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a commit of the type feat introduces a new feature to the codebase.
+It is used to identify production changes related to new backward-compatible abilities or functionality.
+This correlates with &lt;strong&gt;MINOR&lt;/strong&gt; in Semantic Versioning.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;BREAKING CHANGE&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change.
+This correlates with &lt;strong&gt;MAJOR&lt;/strong&gt; in Semantic Versioning.
+A BREAKING CHANGE can be part of commits of any type.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Other types are allowed, for example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;build&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The build type is used to identify development changes related to the build system.
+They involve scripts, configurations or tools, and package dependencies.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;ci&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The ci type is used to identify development changes related to the continuous integration and deployment system.
+They involve scripts, configurations or tools.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;doc&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The doc type is used to identify documentation changes related to the project.
+Whether intended externally for the end users (in case of a library) or internally for the developers.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;refactor&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The refactor type is used to identify development changes related to modifying the codebase, which neither adds a feature nor fixes a bug.
+Examples are removing redundant code, simplifying the code, or renaming variables.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;test&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The test type is used to identify development changes related to tests.
+chore:
+Activities not adding new features or fixing a fault.
+This type is used when you do not know which other tag you could use.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;footers other than BREAKING CHANGE: &amp;lt;description&amp;gt; may be provided and follow a convention similar to git trailer format.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_how_to_create_a_semantic_commit_with_git&#34;&gt;How to Create a Semantic Commit with Git&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The command line for a complex git commit message is simple:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre&gt;git commit -m &amp;#34;fix(core): remove deprecated and defunct wtf* apis&amp;#34;                              &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt; &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+           -m &amp;#34;These apis have been deprecated in v8, so they should stick around till v10.&amp;#34;
+           -m &amp;#34;PR Close #33949&amp;#34;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;We use multiple &lt;em&gt;-m&lt;/em&gt; in order to concatenate paragraphs instead of simple lines.
+The header and body are supposed to be separated by a blank line.
+That is distinctly true due to the paragraphs.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Summary in present tense.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your IDE probably provides a comfortable user interface to create a commit message as a set of paragraphs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Simply use your preferred IDE to write semantic commits with multiple blocks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Please start with a small list and extend it if needed.
+I suggest: feature, refactor, fix, build, chore
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Ask yourself if identifying the subsystem where the changes were performed makes sense for your application.
+Often changes are not local to a specific component.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Some teams put a ticker number instead of the subsystem name.
+It makes sense if your platform transforms the ticket number into a link to the ticket content.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I use the tags &lt;em&gt;feature&lt;/em&gt;, &lt;em&gt;refactor&lt;/em&gt;, &lt;em&gt;build&lt;/em&gt;, and &lt;em&gt;chore&lt;/em&gt;.
+I do not put component or ticket information in the parenthesis after the tag.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I put the ticket number in the summary of the commit message.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I seldom use the footer for breaking change information.
+I handle this information through semantic versioning in tags.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2016/git-branches-for-the-impatient/&#34;&gt;Git Branches for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2017/git-local-repositories-for-the-impatient/&#34;&gt;Git Local Repositories for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/git-rebase-and-merge-for-the-impatient/&#34;&gt;Git Rebase and Merge for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023//git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/semantic-commits-for-the-impatient/&#34;&gt;Semantic Commits for the Impatient&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I never needed the &lt;em&gt;doc&lt;/em&gt; tag. Feel free to use it if you find it useful for your product.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Are Certifications Useful?</title>
       <link>https://blog.tangly.net/blog/2023/are-certifications-useful/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
@@ -881,7 +1158,7 @@ On the bright side, the steward &lt;a href=&#34;https://www.opengroup.org/togaf&
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The iSAQB certification is well-known in Europe and especially in the German-speaking countries.
-The foundation now also provides training in agile software architecture in their advanced track &lt;a href=&#34;#agile-architecture&#34;&gt;[agile-architecture]&lt;/a&gt;.&lt;/p&gt;
+The foundation now also provides training in agile software architecture in their advanced track &lt;a href=&#34;#agile-architecture&#34;&gt;[6]&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Another approach is a master degree in software engineering or computer science.
@@ -941,7 +1218,7 @@ But it cannot replace a formal bachelor or master level education in computer sc
 &lt;td class=&#34;content&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Certifications are quite meaningful for junior engineers.
-They learnt the theory and prove they understood the concepts.&lt;/p&gt;
+They learnt the theory and proved they understood the concepts.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Experienced engineers are seldom challenged when learning for a certification.
@@ -983,7 +1260,7 @@ No country in the world would accept only training on the job for a physician, a
 &lt;p&gt;&lt;a id=&#34;java-certification&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2023/java-certification/&#34;&gt;Java Certification&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;agile-architecture&#34;&gt;&lt;/a&gt;] &lt;a href=&#34;../../2021/agile-software-architecture-is-mainstream/&#34;&gt;Agile Software Architecture is Mainstream&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;agile-architecture&#34;&gt;&lt;/a&gt;[6] &lt;a href=&#34;../../2021/agile-software-architecture-is-mainstream/&#34;&gt;Agile Software Architecture is Mainstream&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a id=&#34;togaf-certification&#34;&gt;&lt;/a&gt;[7] &lt;a href=&#34;https://www.opengroup.org/certifications/togaf-certification-portfolio&#34;&gt;TOGAF Certification&lt;/a&gt;&lt;/p&gt;
@@ -3016,7 +3293,7 @@ The official Swiss railway company does not provide Internet access in the train
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;sudo &lt;/span&gt;apachectl start&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;sudo apachectl start&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/td&gt;
@@ -3036,24 +3313,25 @@ The official Swiss railway company does not provide Internet access in the train
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;brew &lt;span style=&#34;color: #953800&#34;&gt;install &lt;/span&gt;maven gradle git git-lfs node pmd                        &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-brew &lt;span style=&#34;color: #953800&#34;&gt;install &lt;/span&gt;hugo asciidoctor graphviz plantuml mermaid-cli python    &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-brew &lt;span style=&#34;color: #953800&#34;&gt;install &lt;/span&gt;clojure leiningen                                        &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-brew &lt;span style=&#34;color: #953800&#34;&gt;install &lt;/span&gt;wget rsync ghostscript                                   &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
-brew &lt;span style=&#34;color: #953800&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;--cask&lt;/span&gt; asciidocfx                                        &lt;i class=&#34;conum&#34; data-value=&#34;5&#34;&gt;&lt;/i&gt;&lt;b&gt;(5)&lt;/b&gt;
-brew &lt;span style=&#34;color: #953800&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;--cask&lt;/span&gt; jabref                                            &lt;i class=&#34;conum&#34; data-value=&#34;6&#34;&gt;&lt;/i&gt;&lt;b&gt;(6)&lt;/b&gt;
-xattr &lt;span style=&#34;color: #116329&#34;&gt;-d&lt;/span&gt; com.apple.quarantine /Applications/JabRef.app
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;brew install maven gradle git git-lfs node pmd                        &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+brew install hugo asciidoctor graphviz plantuml mermaid-cli python    &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+brew install clojure leiningen                                        &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+brew install wget rsync ghostscript                                   &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
+brew install --cask asciidocfx                                        &lt;i class=&#34;conum&#34; data-value=&#34;5&#34;&gt;&lt;/i&gt;&lt;b&gt;(5)&lt;/b&gt;
+brew install --cask jabref                                            &lt;i class=&#34;conum&#34; data-value=&#34;6&#34;&gt;&lt;/i&gt;&lt;b&gt;(6)&lt;/b&gt;
+xattr -d com.apple.quarantine /Applications/JabRef.app
 
-npm &lt;span style=&#34;color: #953800&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;--global&lt;/span&gt; state-machine-cat                                &lt;i class=&#34;conum&#34; data-value=&#34;7&#34;&gt;&lt;/i&gt;&lt;b&gt;(7)&lt;/b&gt;
+npm install --global state-machine-cat                                &lt;i class=&#34;conum&#34; data-value=&#34;7&#34;&gt;&lt;/i&gt;&lt;b&gt;(7)&lt;/b&gt;
 
-gem &lt;span style=&#34;color: #953800&#34;&gt;install &lt;/span&gt;asciidoctor-bibtex asciidoctor-diagram asciidoctor-chart  &lt;i class=&#34;conum&#34; data-value=&#34;8&#34;&gt;&lt;/i&gt;&lt;b&gt;(8)&lt;/b&gt;
-gem &lt;span style=&#34;color: #953800&#34;&gt;install &lt;/span&gt;asciidoctor-rouge asciidoctor-kroki asciidoctor-revealjs
+gem install asciidoctor-bibtex asciidoctor-diagram asciidoctor-chart  &lt;i class=&#34;conum&#34; data-value=&#34;8&#34;&gt;&lt;/i&gt;&lt;b&gt;(8)&lt;/b&gt;
+gem install asciidoctor-rouge asciidoctor-kroki asciidoctor-revealjs
 
-brew &lt;span style=&#34;color: #953800&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;--cask&lt;/span&gt; netnewswire                                       &lt;i class=&#34;conum&#34; data-value=&#34;9&#34;&gt;&lt;/i&gt;&lt;b&gt;(9)&lt;/b&gt;
-brew &lt;span style=&#34;color: #953800&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;--cask&lt;/span&gt; asciidocfx                                        &lt;i class=&#34;conum&#34; data-value=&#34;10&#34;&gt;&lt;/i&gt;&lt;b&gt;(10)&lt;/b&gt;
-npm &lt;span style=&#34;color: #953800&#34;&gt;install&lt;/span&gt; @mermaid-js/mermaid-cli
+brew install --cask netnewswire                                       &lt;i class=&#34;conum&#34; data-value=&#34;9&#34;&gt;&lt;/i&gt;&lt;b&gt;(9)&lt;/b&gt;
+brew install --cask asciidocfx                                        &lt;i class=&#34;conum&#34; data-value=&#34;10&#34;&gt;&lt;/i&gt;&lt;b&gt;(10)&lt;/b&gt;
+npm install @mermaid-js/mermaid-cli
 
-brew &lt;span style=&#34;color: #953800&#34;&gt;install &lt;/span&gt;cmake ninja doxygen                                      &lt;i class=&#34;conum&#34; data-value=&#34;11&#34;&gt;&lt;/i&gt;&lt;b&gt;(11)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+brew install cmake ninja doxygen                                      &lt;i class=&#34;conum&#34; data-value=&#34;11&#34;&gt;&lt;/i&gt;&lt;b&gt;(11)&lt;/b&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;colist arabic&#34;&gt;
@@ -3115,7 +3393,8 @@ The link checker is a python package.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;sudo&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;-H&lt;/span&gt; pip3 &lt;span style=&#34;color: #953800&#34;&gt;install &lt;/span&gt;linkchecker                                &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;sudo -H pip3 install linkchecker                                &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;colist arabic&#34;&gt;
@@ -3150,14 +3429,81 @@ Try the following changes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;sudo chown&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;-R&lt;/span&gt; &amp;lt;user&amp;gt; ~/.ssh
-&lt;span style=&#34;color: #953800&#34;&gt;chmod &lt;/span&gt;700 ~/.ssh
-&lt;span style=&#34;color: #953800&#34;&gt;chmod &lt;/span&gt;600 ~/.ssh/&lt;span style=&#34;color: #cf222e&#34;&gt;*&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;sudo chown -R &amp;lt;user&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;~/.ssh
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;chmod 700 ~/.ssh
+chmod 600 ~/.ssh/*&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_local_configuration&#34;&gt;Local Configuration&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_folders&#34;&gt;Folders&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Collaborators shall store projects under a well-defined path.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;mkdir /Users/Shared/Projects&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The official company open-source project is under &lt;em&gt;/Users/Shared/Projects/tangly-os&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://blog.tangly.net/&#34;&gt;tangly blog&lt;/a&gt; is under &lt;em&gt;/Users/Shared/Projects/tangly-os-site&lt;/em&gt;.
+The site folder is where the site content is generated using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_configuration&#34;&gt;Configuration&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here the startup script&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;plugins=(ssh-agent)
+
+
+&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;export PATH=&amp;#34;/opt/homebrew/bin:/opt/homebrew/opt/ruby/bin:$&lt;/span&gt;PATH&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;                &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;
+export MAVEN_OPTS=&amp;#34;--enable-preview&amp;#34;
+export GRADLE_OPTS=&amp;#34;--enable-preview&amp;#34;
+export JAVA_HOME=`/usr/libexec/java_home`
+export GRAPHVIZ_DOT=&amp;#34;/opt/homebrew/bin/dot&amp;#34;
+
+alias la=&amp;#34;ls -al&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;alias brewup=&amp;#39;brew update;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;brew upgrade&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;;&lt;/span&gt; brew cleanup&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;;&lt;/span&gt; brew doctor&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;alias java17=&amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 17`;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;java &lt;span style=&#34;color: #116329&#34;&gt;-version&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;   &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;alias java20=&amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 20`;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;java -version&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;alias java21=&amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 21`;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;java &lt;span style=&#34;color: #116329&#34;&gt;-version&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;alias java22=&amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 22`;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;java -version&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;
+java20                                                                          &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Add homebrew to the path.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Command to select a JDK version and set it as default under macOS.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Select the default JDK version.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -3229,7 +3575,7 @@ The build-in loudspeakers are an audible improvement against the sound of the pr
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I am using Apple products for the last thirty-five years. I am certainly not objective when discussing the advantages and drawbacks of Apple computers. I also used Linux based workstations and regularly compiled kernels and configured drivers. Some companies forced me to use Windows computers. I learnt to hate virus scanners and firewalls impeding my daily developer tasks.
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I am using Apple products for the last thirty-five years. I am certainly not objective when discussing the advantages and drawbacks of Apple computers. I also used Linux-based workstations and regularly compiled kernels and configured drivers. Some companies forced me to use Windows computers. I learnt to hate virus scanners and firewalls impeding my daily developer tasks.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
 &lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. If you are forced to work with a &lt;em&gt;full HD&lt;/em&gt; display instead of a 4K display, it is probably time either to bring your own display or move to a company not being stingy. I really mean it. A good 4K display costs around 600 Euros. If your company cannot afford it, they are undoubtedly penny-pinching.
@@ -3250,7 +3596,7 @@ The build-in loudspeakers are an audible improvement against the sound of the pr
 &lt;a href=&#34;#_footnoteref_7&#34;&gt;7&lt;/a&gt;. Amazon still has not released an ARM native application. Shame on them. The worst missing feature is bulk download of purchased books. I like to explore my library during commute train travel. You do not have wireless access to trains in Switzerland. The books shall be stored in the notebook otherwise you cannot read them.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_8&#34;&gt;
-&lt;a href=&#34;#_footnoteref_8&#34;&gt;8&lt;/a&gt;. I always install the last long term support &lt;em&gt;LTS&lt;/em&gt; Java version, the last official release, and the version under development. I use the development version to validate all projects to ensure they will run when the new version is officially released. I only use the LTS version for legacy activities. I am not aware of any scenarios why an organization should use an older Java version and have an advantage.
+&lt;a href=&#34;#_footnoteref_8&#34;&gt;8&lt;/a&gt;. I always install the last long-term support &lt;em&gt;LTS&lt;/em&gt; Java version, the last official release, and the version under development. I use the development version to validate all projects to ensure they will run when the new version is officially released. I only use the LTS version for legacy activities. I am not aware of any scenarios why an organization should use an older Java version and have an advantage.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_9&#34;&gt;
 &lt;a href=&#34;#_footnoteref_9&#34;&gt;9&lt;/a&gt;. Professional programmers shall have access to a terminal and have local administrator rights.
@@ -13305,7 +13651,7 @@ We all want that, don’t we?&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Thread Safety&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;After creation any number of threads can access immutable objects simultaneously, without any synchronization mechanism.
+&lt;p&gt;After creation, any number of threads can access immutable objects simultaneously, without any synchronization mechanism.
 It is a huge advantage in the modern world of multicore processors.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
@@ -16374,7 +16720,7 @@ The declarations for such a diagram could be:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre&gt;[plantuml,dependencies,svg, width=&amp;#34;100%&amp;#34;,,opts=&amp;#34;inline&amp;#34;,svg-type=&amp;#34;inline&amp;#34;]     &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;pre&gt;[plantuml,target=dependencies,format=svg, width=&amp;#34;100%&amp;#34;,,opts=&amp;#34;inline&amp;#34;,svg-type=&amp;#34;inline&amp;#34;]     &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
 
 ....
 @startuml
@@ -16471,445 +16817,6 @@ For example the presentation of a speech is made available directly in the stati
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_4&#34;&gt;
 &lt;a href=&#34;#_footnoteref_4&#34;&gt;4&lt;/a&gt;. This feature removed my dependency to Google drive to host downloadable artifacts.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Scrum Master Formation</title>
-      <link>https://blog.tangly.net/blog/2021/scrum-master-formation/</link>
-      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/scrum-master-formation/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_scrum_master_formation&#34;&gt;Scrum Master Formation&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-08-03-head.png&#34; alt=&#34;2021 08 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You work as a Scrum master.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Congratulations, working as a professional &lt;a href=&#34;https://scrumguides.org/scrum-guide.html#scrum-master&#34;&gt;Scrum master&lt;/a&gt; is a fulfilling and exciting job.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You should attend professional training.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Not only attend the two-day training to receive a shiny diploma.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Being a Scrum master and coach is a profession, not a fancy title!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Please reflect on your goals and ethics.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_scrum_master_role&#34;&gt;Scrum Master Role&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Here the official definition of the product owner role taken from the &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;strong&gt;Scrum Master&lt;/strong&gt; is accountable for establishing &lt;strong&gt;Scrum&lt;/strong&gt; as defined in the Scrum Guide.
-They do this by helping everyone understand Scrum theory and practice, both within the Scrum Team and the organization.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;a href=&#34;https://scrumguides.org/scrum-guide.html#scrum-master&#34;&gt;Scrum Master&lt;/a&gt; is accountable for the Scrum Team’s effectiveness.
-They do this by enabling the Scrum Team to improve its practices within the Scrum framework.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Scrum Masters are true leaders who serve the Scrum Team and the larger organization.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Scrum Master serves the Scrum Team in several ways, including:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Coaching the team members in &lt;strong&gt;self-management&lt;/strong&gt; and &lt;strong&gt;cross-functionality&lt;/strong&gt;;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Helping the Scrum Team focus on creating high-value &lt;strong&gt;Increments&lt;/strong&gt; that meet the &lt;strong&gt;Definition of Done&lt;/strong&gt;;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Causing the removal of impediments to the Scrum Team’s progress; and,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Ensuring that all Scrum events take place and are &lt;strong&gt;positive, productive, and kept within the time box&lt;/strong&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Scrum Master serves the Product Owner in several ways, including:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Helping find techniques for effective Product Goal definition and Product Backlog management;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Helping the Scrum Team understand the need for clear and concise Product Backlog items;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Helping establish empirical product planning for a complex environment; and,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Facilitating stakeholder collaboration as requested or needed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Scrum Master serves the organization in several ways, including:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Leading, training, and coaching the organization in its Scrum adoption;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Planning and advising Scrum implementations within the organization;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Helping employees and stakeholders understand and enact an empirical approach for complex work; and,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Removing barriers between stakeholders and Scrum Teams.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_certifications&#34;&gt;Certifications&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The two big Scrum organizations &lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt; and &lt;a href=&#34;https://www.scrum.org/&#34;&gt;Scrum.org&lt;/a&gt; provide a certification path for Scrum masters.
-The certification path has three levels:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Certified Scrum Master&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Introduction course for those who are closest to the &lt;em&gt;organization&lt;/em&gt; of the project.&lt;br/&gt;
-&lt;em&gt;It is usually two days of training.
-The &lt;a href=&#34;https://www.scrum.org&#34;&gt;Scrum.org&lt;/a&gt; allows taking the certification examination without attending a course&lt;/em&gt;
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Certified Advanced Scrum Master&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Advanced course for Scrum Masters who already have one year of experience on a Scrum team.&lt;br/&gt;
-&lt;em&gt;It is at least two days training.
-You should read the recommended books to have a greater probability to pass the examination on the first try.&lt;/em&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Certified Scrum Professional Scrum Master&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Pinnacle course for experts wishing to master the Scrum Master track.&lt;br/&gt;
-&lt;em&gt;The third level requires more training, experience, and reading books.
-You often must participate in workshops before being allowed to graduate.
-Each certification organization has her own rules and conditions.&lt;/em&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Beware if you select the &lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt;, you must renew your certification every two years.
-The conditions are similar to the renewal of a PMI certification.
-You must provide proof of training and pay a fee.
-The &lt;a href=&#34;https://www.scrum.org&#34;&gt;Scrum.org&lt;/a&gt; certifications never expire.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;em&gt;Scrum Master&lt;/em&gt; learning objectives for the first level are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Lean, Agile, and Scrum&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;olist loweralpha&#34;&gt;
-&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;list at least three rights and five responsibilities of the Product Owner, Development Team and Scrum Master.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;discuss at least two reasons why the Product Owner is a single person and not a group or a committee.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;discuss how and why the Product Owner maintains authority over the product while working collaboratively with the Development Team and stakeholders.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;list at least five characteristics of the Development Team.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;give one example of how a Scrum Team will inspect and adapt and increase transparency at each of the Scrum events.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;describe at least three responsibilities for the Development Team, Product Owner, and Scrum Master during
-&lt;a href=&#34;https://scrumguides.org/scrum-guide.html#sprint-planning&#34;&gt;Sprint Planning&lt;/a&gt;, &lt;a href=&#34;https://scrumguides.org/scrum-guide.html#daily-scrum&#34;&gt;Daily Scrum&lt;/a&gt;,
-&lt;a href=&#34;https://scrumguides.org/scrum-guide.html#sprint-review&#34;&gt;Sprint Review&lt;/a&gt;, and &lt;a href=&#34;https://scrumguides.org/scrum-guide.html#sprint-retrospective&#34;&gt;Sprint Retrospective&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;describe why the Sprint Goal does not change during a &lt;a href=&#34;https://scrumguides.org/scrum-guide.html#the-sprint&#34;&gt;Sprint&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;define the outcome of every Sprint.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;discuss at least three reasons why the increment must be brought to the current definition of &lt;em&gt;Done&lt;/em&gt; regardless of whether the Product Owner chooses to release the increment.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;discuss the focus of the activities for the Product Owner and Development Team during the two topics of Sprint Planning: the &lt;em&gt;What&lt;/em&gt; and the &lt;em&gt;How&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;practice writing a Sprint Goal.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;discuss at least three ways the Daily Scrum differs from a status meeting and why the various constraints exist to support the Development Team.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;describe at least three activities that occur during the Sprint Review other than a demonstration of the
-&lt;a href=&#34;https://scrumguides.org/scrum-guide.html#increment&#34;&gt;increment&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;identify at least three potential outcomes for a Sprint Review.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;describe at least two approaches to conduct a Sprint Retrospective.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;identify at least three essential characteristics of the &lt;a href=&#34;https://scrumguides.org/scrum-guide.html#product-backlog&#34;&gt;Product Backlog&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;list at least four attributes of a &lt;a href=&#34;https://scrumguides.org/scrum-guide.html#product-backlog&#34;&gt;Product Backlog&lt;/a&gt; item.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;identify at least three essential characteristics of the &lt;a href=&#34;https://scrumguides.org/scrum-guide.html#sprint-backlog&#34;&gt;Sprint Backlog&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;demonstrate how the Sprint Backlog can be changed without endangering the Sprint Goal.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;explain the importance of a strong definition for &lt;em&gt;Done&lt;/em&gt; and describe at least two risks associated with a weaker definition of &lt;em&gt;Done&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;outline at least one way to create a definition of &lt;em&gt;Done&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;identify at least two reasons why multiple teams working on the same &lt;a href=&#34;https://scrumguides.org/scrum-guide.html#product-backlog&#34;&gt;Product Backlog&lt;/a&gt; have a shared and consistent definition of &lt;em&gt;Done&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Scrum Master Core Competencies&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;olist loweralpha&#34;&gt;
-&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;describe at least three situations in which the Scrum Master could serve the needs of the Scrum Team or organization through facilitation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;demonstrate at least three techniques for facilitating group decision-making.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Coaching&lt;/p&gt;
-&lt;div class=&#34;olist loweralpha&#34;&gt;
-&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;restate how facilitating, teaching, mentoring, and coaching are different.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;apply at least one technique that could help resolve a challenge faced by a Scrum Team.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Scrum Master as Servant-Leader&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;olist loweralpha&#34;&gt;
-&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;define servant-leadership.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;describe three scenarios where the Scrum Master acts as the servant-leader for the Development Team.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;identify possible violations of Scrum by a Product Owner or stakeholder who is applying excessive time pressure and illustrate how to address them.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;define technical debt and explain the impact of accumulating technical debt.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;list at least three development practices that will help Scrum Teams deliver a high-quality&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Product Increment and reduce technical debt each Sprint&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;olist loweralpha&#34;&gt;
-&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;explain at least three ways the Scrum Master could support the Product Owner.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;list at least two benefits that arise if a Product Owner participates in the Sprint Retrospective.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Service to the Organization&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;olist loweralpha&#34;&gt;
-&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;discuss at least two ways that the Scrum Master assists the Scrum Team with impediments.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;describe at least three organizational impediments that can affect Scrum Teams.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;describe at least one example of an organizational design change caused by adopting Scrum.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;discuss why Scrum does not have a project manager and what happens to traditional project management activities&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can self-study the Scrum Master objectives &lt;a href=&#34;#scrum-master-learning-objectives&#34;&gt;[1]&lt;/a&gt;, &lt;a href=&#34;#scrum-master-advanced-learning-objectives&#34;&gt;[2]&lt;/a&gt; with the official scrum team book &lt;a href=&#34;#professional-scrum-team&#34;&gt;[4]&lt;/a&gt;.
-The book is well-written and covers all required topics.
-Be a professional knowledge worker and support your organization on the agile path &lt;a href=&#34;#detecting-agile-bullshit&#34;&gt;[8]&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A reading list can be found under
-&lt;a href=&#34;https://www.scrum.org/resources/suggested-reading-professional-scrum-master&#34;&gt;Suggested Reading Professional Scrum Master&lt;/a&gt;. Seminal cited books are
-[&lt;a href=&#34;#scrum-managing-for-results&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#scrum-pocket-guide-3rd&#34;&gt;2&lt;/a&gt;].&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I published a list of seminal works for interested Scrum masters under &lt;a href=&#34;../../../ideas/learnings/books/&#34;&gt;Books&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_project_leadership_trainings&#34;&gt;Project Leadership Trainings&lt;/h3&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-08-03-pmi-talent-triangle.png&#34; alt=&#34;2021 08 03 pmi talent triangle&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;An interesting development is the addition of tailored project management training emphasizing agile approaches.
-The biggest organization &lt;a href=&#34;https://www.pmi.org&#34;&gt;PMI&lt;/a&gt; has a whole set of agile certifications based on
-&lt;a href=&#34;https://www.pmi.org/certifications/agile-certifications&#34;&gt;Disciplined Agile Design&lt;/a&gt; &lt;em&gt;DAD&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I expect the emphasis on agile approaches to markedly increase in the next years.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_university_formal_trainings&#34;&gt;University Formal Trainings&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Technical universities in Switzerland provide formal training in project leadership, project management and related fields.
-The formation provides a certificate of advanced study CAS in the field.
-Current available certificates of advanced study offering are, for example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;FHNW &lt;a href=&#34;https://www.fhnw.ch/de/weiterbildung/wirtschaft/cas-agile-leadership&#34;&gt;CAS Agile Leadership&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;FHNW &lt;a href=&#34;https://www.fhnw.ch/de/weiterbildung/technik/cas-agile-organisation&#34;&gt;CAS Agile Organization&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;FFHS &lt;a href=&#34;https://www.ffhs.ch/en/degree-programmes/continuing-education/cas-agile-organisation&#34;&gt;CAS Agile Organization&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ZHAW &lt;a href=&#34;https://www.zhaw.ch/de/psychologie/weiterbildung/detail/kurs/cas-agile-fuehrung-flex/&#34;&gt;CAS Agile Leadership&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ZHAW &lt;a href=&#34;https://www.zhaw.ch/de/sml/weiterbildung/detail/kurs/cas-agiles-it-projektmanagement/&#34;&gt;CAS Agile Project Management&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;IKF &lt;a href=&#34;https://www.ikf.ch/de/kurse/cas-agiles-leadership-der-digitalen-transformation&#34;&gt;CAS Agile Leadership of Digital Transformation&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
-&lt;div class=&#34;ulist bibliography&#34;&gt;
-&lt;ul class=&#34;bibliography&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-master-learning-objectives&#34;&gt;&lt;/a&gt;[1]
-&lt;a href=&#34;https://www.scrumalliance.org/ScrumRedesignDEVSite/media/ScrumAllianceMedia/Files%20and%20PDFs/Learning%20Objectives/E_CSM_LO_5-20-21.pdf&#34;&gt;Scrum Alliance
-Certified Scrum Master Learning Objectives&lt;/a&gt;.
-Scrum Alliance. 2021.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-master-advanced-learning-objectives&#34;&gt;&lt;/a&gt;[2]
-&lt;a href=&#34;https://www.scrumalliance.org/ScrumRedesignDEVSite/media/ScrumAllianceMedia/Files%20and%20PDFs/Certifications/CSM/csm_learningobjectives_Advanced.pdf&#34;&gt;Scrum
- Alliance Advanced Certified Scrum Master Learning Objectives&lt;/a&gt;.
-Scrum Alliance. 2017.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;agile-software-architecture&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2021/agile-software-architecture-is-mainstream/&#34;&gt;Agile Software Architecture is Mainstream&lt;/a&gt;.
-Marcel Baumann. 2021.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;professional-scrum-team&#34;&gt;&lt;/a&gt;[4]
-&lt;a href=&#34;https://www.amazon.com/dp/B08BW6HP7G&#34;&gt;The professional Scrum team: Growing and Empowering Cross-Functionality and Resiliency
- in a Complex World&lt;/a&gt;.
-Peter Götz, Uwe Schirmer, Kurt Bittner.
-Addison-Wesley. 2021.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-master-formation&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2021/scrum-master-formation&#34;&gt;Scrum Master Formation&lt;/a&gt;.
-Marcel Baumann. 2021.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;product-owner-formation&#34;&gt;&lt;/a&gt;[6] &lt;a href=&#34;../../2021/product-owner-formation&#34;&gt;Product Owner Formation&lt;/a&gt;.
-Marcel Baumann. 2021.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-developer-formation&#34;&gt;&lt;/a&gt;[7] &lt;a href=&#34;../../2021/scrum-developer-formation&#34;&gt;Scrum Developer Formation&lt;/a&gt;.
-Marcel Baumann. 2021.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;detecting-agile-bullshit&#34;&gt;&lt;/a&gt;[8] &lt;a href=&#34;../../2019/detecting-agile-bullshit/&#34;&gt;Detecting Agile Bullshit&lt;/a&gt;.
-Marcel Baumann. 2019.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-guide&#34;&gt;&lt;/a&gt;[9] &lt;a href=&#34;https://scrumguides.org/scrum-guide.html&#34;&gt;Scrum Guide&lt;/a&gt;
-Jeff Sutherland, Ken Schwaber. 2020.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-managing-for-results&#34;&gt;&lt;/a&gt;[1] H. Doshi, &lt;em&gt;Scrum Insights for Practitioners : The Scrum Guide Companion&lt;/em&gt;. Practiceagile.com. &lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-pocket-guide-3rd&#34;&gt;&lt;/a&gt;[2] G. Verheyen, &lt;em&gt;Scrum - A Pocket Guide&lt;/em&gt;, Third. Van Haren Publishing, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B08XWQ7DG9&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B08XWQ7DG9&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The examination is only available in English.
 &lt;/div&gt;
 &lt;/div&gt;
 
