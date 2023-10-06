@@ -5,7 +5,7 @@
     <description>Recent content in agile on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/agile/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,504 @@
         
       
     
+    
+    <item>
+      <title>Blog: Software Architecture Themes and Questions</title>
+      <link>https://blog.tangly.net/blog/2023/software-architecture-themes-and-questions/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/software-architecture-themes-and-questions/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_software_architecture_themes_and_questions&#34;&gt;Software Architecture Themes and Questions&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-10-02-head.png&#34; alt=&#34;2023 10 02 head&#34; width=&#34;320&#34; height=&#34;320&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A software architect works with a development team to define how features shall be realized.
+The selected approach should support corporate governance and legal constraints.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A new digital product must fulfill a set of technical aspects to be usable.
+Technical constraints are the non-functional requirements of the product
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Some of these technical requirements are encountered again and again when developing digital products.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Any software product must provide solutions to standard problems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Typical aspects are user interface, persistence, configuration and compatibility issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Experienced software designers often have a list of questions any software architecture should answer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below the questions I answered every time when implementing a new application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_user_experience&#34;&gt;User Experience&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How should the users interact with the product?
+How can the application streamline customer activities and diminish user mistakes?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Usability&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The navigability of the visual components shall follow standards
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Internationalization_and_localization&#34;&gt;Internationalization and localization&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The application shall be usable in various countries through i18n and l16n.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Corporate identity&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The user interface shall follow corporate identity such as color palette, logo, and navigation.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Translation&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;All human-readable texts shall be translated in the supported languages.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Accessibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The solution shall be accessible to various groups of users.
+Accessibility laws exist in most of the countries.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;User manual&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;A user manual shall be provided to the users.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Hire a professional interface and usability expert.
+Trained collaborators are key to designing world-class user interfaces.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_configuration&#34;&gt;Configuration&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How should the product be configured during production and at customer site?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Deployment configuration&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Defines how the application is deployed on the target system.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Parametrization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Parametrizes the application to a specific country and customer.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Configuration persistence&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The configuration of the application through the producing company and the user shall be persisted.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Configuration migration&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Existing configurations need to be migrated to new versions of the solutions.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;XML is an obsolete technology.
+Do not use it in new projects.
+Consider JSON or TOML.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Avoid storing configuration parameters into a relational database.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_data_management&#34;&gt;Data Management&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How are data persisted in the application?
+Which information should be persisted is a requirement.
+The manner to persist data is a design decision.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Persistence&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How does the application persist data?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Archiving&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How is older information archived?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Data migration&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How is persisted data migrated when a new application version is deployed?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Backwards compatibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Sometimes the application shall handle older persisted information or configuration without explicit migration.
+The same constraints can often be requested when communicating with external systems.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Data is often the most valuable asset of an organization.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Organizations often store information over decades.
+This data must be accessible in the future.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_internal_communication&#34;&gt;Internal Communication&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How do the application components communicate inside the software?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Task communication, synchronization and parallelization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do threads communicate inside the system?
+How do components communicate inside the software?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Interprocess communication&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How does the application communicate with external systems?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Transaction handling&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How are transactions handled to provide atomic changes of a set of related data?
+Scalability:
+How to scale the system when more requests must be processed?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Response times&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we guaranty soft and hard response deadlines?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Availability&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we ensure that the application is available when needed?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Internal communication shall always use asynchronous communication implemented through the actor model.
+It provides scalability, availability, and response time.
+Transaction handling is provided through eventual consistency and storno approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;By all means avoid the global lock approach which probably will kill your application in the long term.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_errors&#34;&gt;Errors&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How are runtime faults and errors handled in the product?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Interface data validation&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Input information shall always be validated to avoid data corruption.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Plausibility checks&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Which information is plausible?
+Which data values hint to an error or corruption?
+Plausibility checks are also applicable for internal data.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Error and exception handling&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we detect errors?
+How do we propagate them through the system and outside?
+How do we recover from an error?
+How do we log any error for further offsite analysis?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Error handling is a crosscutting concept in the application.
+Try using the same approach through the whole system to diminish semantic complexity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_integration&#34;&gt;Integration&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How can you integrate the product into a landscape?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Deployment&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How should the solution be deployed in a landscape?
+Is incremental update requested?
+How do we update the configuration of a subset of the landscape in a consistent way?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Authentication&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we authenticate the users of the application?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Authorization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we limit access to specific functionality or data to selected users?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;External interfaces&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we document and validate interfaces to external applications?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Batch processing&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Should we process batches of requests?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Business rules&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How can our application be integrated in the processes of the organizational landscape?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modular monolith approach is currently the most cost-effective approach to structure a software application.
+Communication between bounded domains is primary asynchronous and message based.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use standards for authentication and authorization to minimize security risks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_monitoring&#34;&gt;Monitoring&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How could the organization infer that happened during the product use in the field?
+What are the operational processes?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Logging&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How should you trace interesting activities?
+Log all exceptions, errors, all data received or sent to another system as a minimum.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Monitoring and data collection for offsite analysis&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How should you monitor activities of interest in the system?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Auditing&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Legal and governance relevant activities should be audited.
+Audit logs should often be human-readable due to legal considerations.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Reporting&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How can a user create reports?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Disaster recovery&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How should our system recover after a catastrophic crash with data or configuration loss?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Monitoring is essential in a successful product.
+Do not skip it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The solution should support automatic offsite processing to extract relevant scenarios from huge data sets.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_development_practices&#34;&gt;Development Practices&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How should the development team work to produce the right product with the right quality?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Coding guidelines&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How should you write source code?
+The selected guidelines shall be automatically enforced with tools.
+Use available guidelines for your technology stack to increase quality.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Design patterns&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How can you design and implement recurring functionalities found in most systems?
+Use well-documented design patterns and code idioms.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Functional requirement verification&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How can you ensure all functional requirements are implemented?
+Consider automatic acceptance testing.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Non-functional requirements verification&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How can ensure all non-functional requirements are correctly implemented?
+Consider using fitness functions.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Code legibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How to encourage your developers to write legible and maintainable source code?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The standard digital development approach is agile.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use the current version of your technology stack.
+Laggards are losers in the technology field.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_legal_aspects&#34;&gt;Legal Aspects&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Which legal restrictions apply to the product
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Industry norms&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Which standards should you fulfill to avoid being sued?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Data confidentiality&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Which confidentiality regulations should you implement to avoid being sued?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Accessibility laws&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Which user interface functions should you provide to avoid being sued?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each architect has preferred solutions for these themes.
+You can freely select your approach as long as the non-functional requirements are fulfilled.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware that the capabilities of your development team will influence which answers should be selected.
+Avoid solutions overwhelming your developers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Consider choosing well-known approaches to reduce training and coaching effort.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Invest effort to create an evolvable architecture.
+The chosen architecture shall adapt to encompass newly discovered requirements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The ISO standard 25010, 25012, 25040 and 25059 is a family of software and data quality standards. They are an example of non-functional requirement nomenclature.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. Major platforms such as macOS or Android have extensive visual and usability guidelines.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
+&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. Senior designers should be aware of legal and copyright aspects for digital products.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Agile Visual Tools</title>
@@ -15949,296 +16447,6 @@ And if not, why should I buy your product?&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.crisp.se/2018/02/05/yassalsundman/stop-managing-bugs-start-focusing-on-quality&#34;&gt;Stop Managing Bugs, Start Focusing on Quality&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: The Quest for an Agile Company: Five Years tangly llc</title>
-      <link>https://blog.tangly.net/blog/2020/the-quest-for-an-agile-company-five-years-tangly-llc/</link>
-      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2020/the-quest-for-an-agile-company-five-years-tangly-llc/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_the_quest_for_an_agile_company_five_years_tangly_llc&#34;&gt;The Quest for an Agile Company: Five Years tangly llc&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2020-11-02-head.png&#34; alt=&#34;2020 11 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;An agile company is a business with the ability to quickly adapt to market changes [&lt;a href=&#34;#reinventing-organizations&#34;&gt;1&lt;/a&gt;].&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.tangly.net/&#34;&gt;tangly&lt;/a&gt; is an agile and digital development boutique.
-We must swiftly react to market changes to survive.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Agility is woven into our culture and processes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Agile organizations must be fast-moving and flexible, have rapid response to unexpected obstacles, lead change, be in touch with customers.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;They have a continuous competitive advantage, and a flat organizational structure for quick communication [&lt;a href=&#34;#future-of-management&#34;&gt;2&lt;/a&gt;].&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Life isn’t about finding yourself.
-Life is about creating yourself.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— George Bernard Shaw
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;In other words, an agile organization is optimized for a
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Volatility,_uncertainty,_complexity_and_ambiguity&#34;&gt;VUCA&lt;/a&gt; - &lt;em&gt;V&lt;/em&gt;olatile, &lt;em&gt;U&lt;/em&gt;ncertain, &lt;em&gt;C&lt;/em&gt;omplex, &lt;em&gt;A&lt;/em&gt;mbiguous - environment.
-The organization should provide vision, understanding, courage and adaptability.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;There is simply no way to build tomorrow’s essential organizational capabilities – resilience, innovation and employee engagement – atop the scaffolding of 20&lt;sup&gt;th&lt;/sup&gt; century management principles.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Gary Hamel&lt;br/&gt;
-&lt;cite&gt;2007&lt;/cite&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_culture&#34;&gt;Agile Culture&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; movement states the main approach clearly:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Culture follows Structure.&lt;/strong&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Craig Larman
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The successful steps are always:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Change the structure&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;One approach is value streams organization and product development with cross-functional teams advocated in &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt;.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Change the processes&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Work using agile approaches such as &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Kanban&#34;&gt;Kanban&lt;/a&gt;, &lt;a href=&#34;http://www.extremeprogramming.org/&#34;&gt;eXtreme Programming&lt;/a&gt;.
-Study the advices of the &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; guys.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Culture will follow&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The organization must nurture the change process and eliminate barriers.
-The servant-leader approach is ideal.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock text-center&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2020-11-02-waisfisz-levels-of-culture.png&#34; alt=&#34;2020 11 02 waisfisz levels of culture&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;To Waisfisz, an organization’s culture is defined by how its parts relate to each other.
-Moreover, it refutes &lt;em&gt;the way we do things here&lt;/em&gt; model by reinforcing that your internal culture is defined by its differences from other organizations.
-This model lends to group dynamics where groups are not only defined by their internal identity but also by their differences to other groups.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Recognize clearly that not changing the structure and just renaming roles and processes will not trigger any change.
-See the Larman laws:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;Organizations are implicitly optimized to avoid changing the status quo middle- and first-level manager and &lt;strong&gt;specialist&lt;/strong&gt; positions and power structures.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;As a corollary to (1), any change initiative will be reduced to redefining or overloading the new terminology to mean basically the same as status quo.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;As a corollary to (1), any change initiative will be derided as &lt;strong&gt;purist&lt;/strong&gt;, &lt;strong&gt;theoretical&lt;/strong&gt;, &lt;strong&gt;revolutionary&lt;/strong&gt;, &lt;strong&gt;religion&lt;/strong&gt;, and &lt;strong&gt;needing pragmatic customization for local concerns&lt;/strong&gt; — which deflects from addressing weaknesses and manager/specialist status quo.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;As a corollary to (1), if after changing the change, some managers and single-specialists are still displaced, they become &lt;strong&gt;coaches/trainers&lt;/strong&gt; for the change, frequently reinforcing (2) and (3).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Culture follows structure.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Craig Larman
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;In the language of social psychology &lt;a href=&#34;#culturalPerspective&#34;&gt;[1]&lt;/a&gt; we can state:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;It turns out that if we engage in a behavior, and particularly one we had not expected that we would have, our thoughts and feelings toward that behavior are likely to change.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This might not seem intuitive, but it represents another example of how the principles of social psychology, in this case the principle of attitude consistently lead us to make predictions that
-would not otherwise be that obvious.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Principles of Social Psychology&lt;br/&gt;
-&lt;cite&gt;1st Internation Edition&lt;/cite&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_anti_patterns&#34;&gt;Agile Anti-Patterns&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You have to acknowledge you must change the structure of your company.
-The current approach is to remove functional silos and reorganize along value streams.
-A stream is in charge of a set of related products and directly communicates with the users of these products.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Attempting to change an organization’s culture is a folly.
-It always fails.
-Peoples’ behavior &lt;em&gt;the culture&lt;/em&gt; is a product of the system; &lt;strong&gt;when you change the system, peoples’ behavior changes.&lt;/strong&gt;&amp;#34;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— John Seddon
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The major anti-pattern is the refusal to change the structure of your organization.
-Without changing structure, you will fail.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Your organization is unique but not esoteric.
-The actual approaches will work.
-You need to tailor them.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Agile is around for a quarter of a century.
-Accept that if you are changing now, you are late.
-You will find thousands of experience reports.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Accept it will take time.
-The &lt;a href=&#34;https://martinfowler.com/articles/agileFluency.html&#34;&gt;Agile Fluency Model&lt;/a&gt; provides a potential roadmap.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Agile transformation works only if your organization thrives to satisfy the customer’s needs and achieve technical excellence.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Please compare your change process against these anti-patterns.
-Correct if needed.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Agile is now mainstream.
-More than 80% of all software development initiatives claim to be agile.
-A digital and agile enterprise is two sides of the same coin.
-Almost all research and development departments are implementing agile processes to achieve faster and better results.
-The organizations moving now to agile approaches are laggards.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2020-11-02-agile-digital-architecture.png&#34; alt=&#34;2020 11 02 agile digital architecture&#34; width=&#34;360&#34; height=&#34;480&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Beware that laggards will fight against any change.
-I still hear upper management statements such as:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;I do not like and do not want to hear the word &lt;em&gt;agile&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;We are a different industry.
-Agile cannot work in our environment.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;We have our processes, we cannot change them.
-And, agile is anyway chaos.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Find a champion and get rid of the most vocal laggards.
-If no champion can be found, either move to another company or renounce agile approaches.
-Be realistic, you will fail to have any lasting success in such an environment.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Embrace reality.
-At least eighty percent of all software and research activities claim to follow agile approaches.
-This war is won.
-We are moping the last islands of resistance.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;For me, it is similar to the introduction of object-oriented approaches in analysis, design, and realisation of software projects.
-In the late nineties of the last century, the object-oriented movement won.
-It took more than ten years to take care of the last luddites.&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;Our company &lt;a href=&#34;https://www.tangly.net/&#34;&gt;tangly llc&lt;/a&gt; works steadily and continuously to advance agile and lean values.
-Our structure and processes actively support agile values.
-We are very happy with the current results.&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
-&lt;div class=&#34;ulist bibliography&#34;&gt;
-&lt;ul class=&#34;bibliography&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.crisp.se/2021/06/30/mikaelbrodd/why-professional-coaching-matters-to-an-agile-coach&#34;&gt;Why Professional Coaching Matters to an Agile Coach&lt;/a&gt;.
-Mikael Brodd.
-Crisp. 2021.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;culturalPerspective&#34;&gt;&lt;/a&gt;[1] An Organizational Cultural Perspective.
-Waisfisz Bob. 2015. Hofstede Culture Center Strategy, ITIM International.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;reinventing-organizations&#34;&gt;&lt;/a&gt;[1] F. Laloux, &lt;em&gt;Reinventing Organizations&lt;/em&gt;. Nelson Parker, 2014 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/2960133501&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/2960133501&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;future-of-management&#34;&gt;&lt;/a&gt;[2] H. Hamel and B. Breen, &lt;em&gt;The Future of Management&lt;/em&gt;. Harvard Business Review Press, 2007 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1422102505&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1422102505&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

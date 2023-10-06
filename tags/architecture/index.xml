@@ -5,7 +5,7 @@
     <description>Recent content in architecture on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,504 @@
         
       
     
+    
+    <item>
+      <title>Blog: Software Architecture Themes and Questions</title>
+      <link>https://blog.tangly.net/blog/2023/software-architecture-themes-and-questions/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/software-architecture-themes-and-questions/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_software_architecture_themes_and_questions&#34;&gt;Software Architecture Themes and Questions&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-10-02-head.png&#34; alt=&#34;2023 10 02 head&#34; width=&#34;320&#34; height=&#34;320&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A software architect works with a development team to define how features shall be realized.
+The selected approach should support corporate governance and legal constraints.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A new digital product must fulfill a set of technical aspects to be usable.
+Technical constraints are the non-functional requirements of the product
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Some of these technical requirements are encountered again and again when developing digital products.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Any software product must provide solutions to standard problems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Typical aspects are user interface, persistence, configuration and compatibility issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Experienced software designers often have a list of questions any software architecture should answer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below the questions I answered every time when implementing a new application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_user_experience&#34;&gt;User Experience&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How should the users interact with the product?
+How can the application streamline customer activities and diminish user mistakes?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Usability&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The navigability of the visual components shall follow standards
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Internationalization_and_localization&#34;&gt;Internationalization and localization&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The application shall be usable in various countries through i18n and l16n.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Corporate identity&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The user interface shall follow corporate identity such as color palette, logo, and navigation.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Translation&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;All human-readable texts shall be translated in the supported languages.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Accessibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The solution shall be accessible to various groups of users.
+Accessibility laws exist in most of the countries.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;User manual&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;A user manual shall be provided to the users.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Hire a professional interface and usability expert.
+Trained collaborators are key to designing world-class user interfaces.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_configuration&#34;&gt;Configuration&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How should the product be configured during production and at customer site?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Deployment configuration&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Defines how the application is deployed on the target system.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Parametrization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Parametrizes the application to a specific country and customer.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Configuration persistence&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The configuration of the application through the producing company and the user shall be persisted.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Configuration migration&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Existing configurations need to be migrated to new versions of the solutions.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;XML is an obsolete technology.
+Do not use it in new projects.
+Consider JSON or TOML.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Avoid storing configuration parameters into a relational database.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_data_management&#34;&gt;Data Management&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How are data persisted in the application?
+Which information should be persisted is a requirement.
+The manner to persist data is a design decision.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Persistence&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How does the application persist data?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Archiving&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How is older information archived?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Data migration&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How is persisted data migrated when a new application version is deployed?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Backwards compatibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Sometimes the application shall handle older persisted information or configuration without explicit migration.
+The same constraints can often be requested when communicating with external systems.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Data is often the most valuable asset of an organization.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Organizations often store information over decades.
+This data must be accessible in the future.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_internal_communication&#34;&gt;Internal Communication&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How do the application components communicate inside the software?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Task communication, synchronization and parallelization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do threads communicate inside the system?
+How do components communicate inside the software?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Interprocess communication&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How does the application communicate with external systems?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Transaction handling&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How are transactions handled to provide atomic changes of a set of related data?
+Scalability:
+How to scale the system when more requests must be processed?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Response times&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we guaranty soft and hard response deadlines?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Availability&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we ensure that the application is available when needed?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Internal communication shall always use asynchronous communication implemented through the actor model.
+It provides scalability, availability, and response time.
+Transaction handling is provided through eventual consistency and storno approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;By all means avoid the global lock approach which probably will kill your application in the long term.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_errors&#34;&gt;Errors&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How are runtime faults and errors handled in the product?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Interface data validation&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Input information shall always be validated to avoid data corruption.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Plausibility checks&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Which information is plausible?
+Which data values hint to an error or corruption?
+Plausibility checks are also applicable for internal data.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Error and exception handling&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we detect errors?
+How do we propagate them through the system and outside?
+How do we recover from an error?
+How do we log any error for further offsite analysis?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Error handling is a crosscutting concept in the application.
+Try using the same approach through the whole system to diminish semantic complexity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_integration&#34;&gt;Integration&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How can you integrate the product into a landscape?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Deployment&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How should the solution be deployed in a landscape?
+Is incremental update requested?
+How do we update the configuration of a subset of the landscape in a consistent way?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Authentication&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we authenticate the users of the application?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Authorization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we limit access to specific functionality or data to selected users?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;External interfaces&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How do we document and validate interfaces to external applications?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Batch processing&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Should we process batches of requests?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Business rules&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How can our application be integrated in the processes of the organizational landscape?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modular monolith approach is currently the most cost-effective approach to structure a software application.
+Communication between bounded domains is primary asynchronous and message based.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use standards for authentication and authorization to minimize security risks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_monitoring&#34;&gt;Monitoring&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How could the organization infer that happened during the product use in the field?
+What are the operational processes?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Logging&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How should you trace interesting activities?
+Log all exceptions, errors, all data received or sent to another system as a minimum.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Monitoring and data collection for offsite analysis&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How should you monitor activities of interest in the system?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Auditing&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Legal and governance relevant activities should be audited.
+Audit logs should often be human-readable due to legal considerations.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Reporting&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How can a user create reports?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Disaster recovery&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How should our system recover after a catastrophic crash with data or configuration loss?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Monitoring is essential in a successful product.
+Do not skip it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The solution should support automatic offsite processing to extract relevant scenarios from huge data sets.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_development_practices&#34;&gt;Development Practices&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How should the development team work to produce the right product with the right quality?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Coding guidelines&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How should you write source code?
+The selected guidelines shall be automatically enforced with tools.
+Use available guidelines for your technology stack to increase quality.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Design patterns&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How can you design and implement recurring functionalities found in most systems?
+Use well-documented design patterns and code idioms.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Functional requirement verification&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How can you ensure all functional requirements are implemented?
+Consider automatic acceptance testing.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Non-functional requirements verification&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How can ensure all non-functional requirements are correctly implemented?
+Consider using fitness functions.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Code legibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;How to encourage your developers to write legible and maintainable source code?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The standard digital development approach is agile.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use the current version of your technology stack.
+Laggards are losers in the technology field.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_legal_aspects&#34;&gt;Legal Aspects&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Which legal restrictions apply to the product
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Industry norms&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Which standards should you fulfill to avoid being sued?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Data confidentiality&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Which confidentiality regulations should you implement to avoid being sued?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Accessibility laws&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Which user interface functions should you provide to avoid being sued?&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each architect has preferred solutions for these themes.
+You can freely select your approach as long as the non-functional requirements are fulfilled.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware that the capabilities of your development team will influence which answers should be selected.
+Avoid solutions overwhelming your developers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Consider choosing well-known approaches to reduce training and coaching effort.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Invest effort to create an evolvable architecture.
+The chosen architecture shall adapt to encompass newly discovered requirements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The ISO standard 25010, 25012, 25040 and 25059 is a family of software and data quality standards. They are an example of non-functional requirement nomenclature.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. Major platforms such as macOS or Android have extensive visual and usability guidelines.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
+&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. Senior designers should be aware of legal and copyright aspects for digital products.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Software Developer Assumptions</title>
