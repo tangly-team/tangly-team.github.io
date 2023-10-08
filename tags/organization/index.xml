@@ -59,7 +59,7 @@ Brian Goetz and Per Minborg made a big impression on how competent they are
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;My favorite tool companies &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;jebrains&lt;/a&gt;, &lt;a href=&#34;https://vaadin.com/&#34;&gt;vaadin}&amp;gt;&lt;/a&gt;, and &lt;a href=&#34;https://www.oracle.com/java/&#34;&gt;Oracle Java&lt;/a&gt; were exhibitors.&lt;/p&gt;
+&lt;p&gt;My favorite tool companies &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;jetbrains&lt;/a&gt;, &lt;a href=&#34;https://vaadin.com/&#34;&gt;vaadin}&amp;gt;&lt;/a&gt;, and &lt;a href=&#34;https://www.oracle.com/java/&#34;&gt;Oracle Java&lt;/a&gt; were exhibitors.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_day_one&#34;&gt;Day One&lt;/h3&gt;
@@ -108,7 +108,17 @@ You can write your setup code in Java, but it requires quite knowledge about the
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;em&gt;I am still not convinced the gains using test containers are worth learning a new library.&lt;/em&gt;
-&lt;em&gt;The assumption is you are already proficient with &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; and &lt;a href=&#34;https://docs.docker.com/compose/&#34;&gt;Docker Compose&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;The assumption is that you are already proficient with &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; and &lt;a href=&#34;https://docs.docker.com/compose/&#34;&gt;Docker Compose&lt;/a&gt;.&lt;/em&gt;
+&lt;em&gt;Test containers are certainly useful when you have a complex ecosystem with databases, servers, and a lot of microservices.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;I often have a modular monolithic application.&lt;/em&gt;
+&lt;em&gt;I use &lt;a href=&#34;https://eclipsestore.io/&#34;&gt;Eclipse Store&lt;/a&gt; and embedded &lt;a href=&#34;https://hsqldb.org/&#34;&gt;HyperSQL&lt;/a&gt; for persistence.&lt;/em&gt;
+&lt;em&gt;I use &lt;a href=&#34;https://flywaydb.org/&#34;&gt;Flyway&lt;/a&gt; to populate the database.&lt;/em&gt;
+&lt;em&gt;My docker compose file is simple and straightforward.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Why should I add the complexity of test containers?&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect3&#34;&gt;
@@ -133,16 +143,20 @@ This approach is against core concepts of object-oriented programming.&lt;/p&gt;
 But honestly what are the costs of compiling in a modern &lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt; environment?&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The advantage of declaring a static method instead of a default method in the interface is not visible for me.&lt;/p&gt;
+&lt;p&gt;The advantage of declaring a static method instead of a default method in the interface is not visible to me.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Use sealed class hierarchies, pattern matching in switch expressions to delegate complex business logic inside business classes.
-Consider using records to write less code and move in the direction of immutable instances.
-Deconstruction patterns and unnamed variables make the algorithms more legible.&lt;/p&gt;
+&lt;p&gt;Use sealed class hierarchies, pattern matching in switch expressions to delegate complex business logic inside business classes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Consider using records to write less code and move in the direction of immutable instances.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Deconstruction patterns and unnamed variables make the algorithms more legible.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Avoid &lt;a href=&#34;https://en.wikipedia.org/wiki/Anemic_domain_model&#34;&gt;Anemic Domain Model&lt;/a&gt;.
-I acknowledge there is a tension between behavior which should be part of a class and complex business logic which should be defined separately from the core domain.&lt;/p&gt;
+I acknowledge there is a tension between behavior which should be part of a class and complex business logic which should be defined separately from the core domain abstractions.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;admonitionblock caution&#34;&gt;
 &lt;table&gt;
@@ -171,7 +185,8 @@ I acknowledge there is a tension between behavior which should be part of a clas
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The above constraint clearly defines the tension in designing the abstractions for a bounded domain.&lt;/p&gt;
+&lt;p&gt;The above constraint clearly defines the tension in designing the abstractions for a bounded domain.
+Both variants are mutually exclusive in modern programming languages.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;An experienced architect with domain knowledge should hint which functionalities belong to a class and which ones are better located in business logic abstractions.&lt;/p&gt;
@@ -203,7 +218,8 @@ Interestingly, the optimization is only done at runtime.&lt;/p&gt;
 &lt;p&gt;Modern Java programmers implement the &lt;em&gt;equals(Object obj)&lt;/em&gt; method with &lt;em&gt;instanceof&lt;/em&gt; and not &lt;em&gt;if&lt;/em&gt; statement.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The statement &lt;em&gt;if (this == obj)&lt;/em&gt; is a performance killer when compared with the modern approach.&lt;/p&gt;
+&lt;p&gt;The statement &lt;em&gt;if (this == obj)&lt;/em&gt; is a performance killer when compared with the modern approach.
+Stop using conditional statements when implementing &lt;em&gt;equals&lt;/em&gt; method.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -278,7 +294,8 @@ Loaded with caffeine and sugar, I am ready to tackle the second conference day.&
 &lt;h4 id=&#34;_know_your_java&#34;&gt;Know Your Java?&lt;/h4&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Entertaining and professional presentation of Java quirks.
-The examples show Java software archeology.&lt;/p&gt;
+The examples show Java software archeology.
+Old coding and naming decisions coming back to bite you.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;quoteblock&#34;&gt;
 &lt;blockquote&gt;
@@ -304,10 +321,12 @@ The examples show Java software archeology.&lt;/p&gt;
 &lt;/td&gt;
 &lt;td class=&#34;content&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Learn the language and the standard API.&lt;/p&gt;
+&lt;p&gt;Learn the language and the standard API.
+Stop programming &lt;em&gt;for&lt;/em&gt; instructions to iterate through collections.
+Use the &lt;em&gt;streams&lt;/em&gt; API.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Study functional programming, pure function, immutable data structure concepts.
+&lt;p&gt;Study functional programming, pure function, and immutable data structure concepts.
 Java mixes object-orientation and functional programming.
 The compiler performs limited checks if your functional code behaves correctly.&lt;/p&gt;
 &lt;/div&gt;
@@ -364,7 +383,7 @@ The event sourcing runtime should ensure the approach.&lt;/p&gt;
 Execute the commands sequentially on your model.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Mutate the state by applying the events&lt;/p&gt;
+&lt;p&gt;Mutate the state by applying the events.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Persist the events Do not use Java serialization.
@@ -399,8 +418,10 @@ A trend is to offer PaaS solutions built around a kubernetes cluster.&lt;/p&gt;
 &lt;h4 id=&#34;_with_java_21_your_code_runs_even_faster_but_how_is_that_possible&#34;&gt;With Java 21, Your Code Runs Even Faster. But How is that Possible?&lt;/h4&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The presentation was fun, instructive and well-done.
-The details were inspiring and of high-quality.
-The speaker showed multiple areas where the JVM was locally massively improved through clever refactoring.
+The details were inspiring and of high-quality.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The speaker showed multiple areas where the JVM was locally massively improved through clever refactoring.
 Worth every second and a nice way to complete the day.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -661,7 +682,7 @@ Tutorials how to set up a machine learning environment, train the models, and pr
 &lt;div class=&#34;sect3&#34;&gt;
 &lt;h4 id=&#34;awesome-speech-llm&#34;&gt;Java Meets AI: A Hands-On Guide to Building LLM-Powered Applications with LangChain4j&lt;/h4&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This presentation was the coolest of the whole Devoxx 2023.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This presentation was the coolest of the whole Devoxx 2023&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The speaker is an active developer of &lt;a href=&#34;https://github.com/langchain4j/langchain4j&#34;&gt;LangChain4J&lt;/a&gt;.
@@ -694,8 +715,8 @@ After training, the chat can answer questions about your own documents or source
 &lt;p&gt;Solid presentation of &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;Jetbrains IntelliJ IDEA&lt;/a&gt; debugger features with hands-on examples.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I seldom use the debugger.
-The tips were good but not really relevant for me.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I seldom use the debugger.&lt;/em&gt;
+&lt;em&gt;The tips were good but not really relevant for me.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect3&#34;&gt;
@@ -704,7 +725,7 @@ The tips were good but not really relevant for me.&lt;/p&gt;
 &lt;p&gt;The speaker presented a solid introduction to &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; and &lt;a href=&#34;https://armeria.dev/&#34;&gt;Armeria&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The frameworks provide needed services for a highly scalable applications based on microservices.
+&lt;p&gt;The frameworks provide needed services for highly scalable applications based on microservices.
 &lt;a href=&#34;https://armeria.dev/&#34;&gt;Armeria&lt;/a&gt; industrializes &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; services.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -760,7 +781,7 @@ I am surprised how tiring it was to listen to so many presentations and trying t
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I decided to leave earlier to be sure to catch my flight.
-The yesterday experience with the strikes made me worried.
+The yesterday experience with the strikes worried me.
 It worked well, and I was ahead on time at the airport.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sidebarblock&#34;&gt;
@@ -795,7 +816,7 @@ The ThoughtWorks technology radar mentioned &lt;a href=&#34;https://www.jobrunr.
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;He made 90&amp;#39;000 EUR in 2022.
 The forecast for 2023 is around 260&amp;#39;000 EUR.
-This year is hired his first employee.&lt;/p&gt;
+He hired his first employee.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The whole approach is cute, hands-on, and most importantly working.
@@ -814,7 +835,7 @@ All segments allocated in the arena share the same lifetime.
 Multiple arena types are provided for different scenarios.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Memory layouts describe contents of a memory region programmatically.&lt;/p&gt;
+&lt;p&gt;Memory layouts describe the contents of a memory region programmatically.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sidebarblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
@@ -853,7 +874,7 @@ I am not sure organizations take the initiative seriously.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Speakers are professional engineers.
 Almost all of them have Apple notebooks.
-Professional Java developers are using &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;Jetbrains IntelliJ IDEA&lt;/a&gt; from &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;jebrains&lt;/a&gt;.
+Professional Java developers are using &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;Jetbrains IntelliJ IDEA&lt;/a&gt; from &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;jetbrains&lt;/a&gt;.
 More than 80% of conference participants use it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -892,7 +913,7 @@ Marcel Baumann. 2022.&lt;/p&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I still think that Oracle Java license conditions are crazy. You have to pay 250 USD per collaborator. Nothing to do with how many developers you have or how many applications you are running.
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I still think that Oracle Java license conditions are lunatic. You have to pay 250 USD per collaborator. Nothing to do with how many developers you have or how many applications you are running.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
 &lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. Agile conferences have often a real coffee machine and a barista. I promise it is not the reason why I also attend agile congresses.
@@ -904,7 +925,7 @@ Marcel Baumann. 2022.&lt;/p&gt;
 &lt;a href=&#34;#_footnoteref_4&#34;&gt;4&lt;/a&gt;. Exactly once is only available for local services using a transactional backend.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_5&#34;&gt;
-&lt;a href=&#34;#_footnoteref_5&#34;&gt;5&lt;/a&gt;. I do not care too much about the inertia. I am mainly developing web-based applications with &lt;a href=&#34;https://vaadin.com/&#34;&gt;vaadin}&amp;gt;&lt;/a&gt;. &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;jebrains&lt;/a&gt; is doing an incredible job to update Swing and Java 2D subsystems to changes. The &lt;a href=&#34;https://openjdk.org/projects/lanai/&#34;&gt;Lanai&lt;/a&gt; and &lt;a href=&#34;https://openjdk.org/projects/wakefield/&#34;&gt;Wakefield&lt;/a&gt; projects are awesome.
+&lt;a href=&#34;#_footnoteref_5&#34;&gt;5&lt;/a&gt;. I do not care too much about the inertia. I am mainly developing web-based applications with &lt;a href=&#34;https://vaadin.com/&#34;&gt;vaadin}&amp;gt;&lt;/a&gt;. &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;jetbrains&lt;/a&gt; is doing an incredible job to update Swing and Java 2D subsystems to changes. The &lt;a href=&#34;https://openjdk.org/projects/lanai/&#34;&gt;Lanai&lt;/a&gt; and &lt;a href=&#34;https://openjdk.org/projects/wakefield/&#34;&gt;Wakefield&lt;/a&gt; projects are awesome.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_6&#34;&gt;
 &lt;a href=&#34;#_footnoteref_6&#34;&gt;6&lt;/a&gt;. You can only create an installer for the platform where you are running &lt;em&gt;jpackage&lt;/em&gt;. Use a continuous delivery platform to build installer for all the platforms you want to support.

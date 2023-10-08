@@ -49,7 +49,7 @@ Building on the success of the previous year, which attracted over 3,200 attende
 The fresh release of Java 21 is a hot topic. Renowned speakers share their knowledge and discuss the enhancements that this new version brings, providing a valuable learning opportunity.
 Attending Devoxx Belgium presents a remarkable opportunity to broaden your knowledge, refine your skills, and gain firsthand experience with the most recent technologies."><meta itemprop="datePublished" content="2023-10-06T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-10-06T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3765">
+<meta itemprop="wordCount" content="3863">
 <meta itemprop="keywords" content="java,organization," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="20th Devoxx Belgium Conference 2023"/>
 <meta name="twitter:description" content="20th Devoxx Belgium Conference 2023 I attended the highly anticipated 20th edition of Devoxx Belgium 2023.
@@ -146,7 +146,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.e871d96eb26c80cfb9c16c8797710c75.json"
+    data-offline-search-index-json-src="/offline-search-index.a6f4476a88271b04adfbb5c65bf54ee3.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -171,7 +171,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.e871d96eb26c80cfb9c16c8797710c75.json"
+    data-offline-search-index-json-src="/offline-search-index.a6f4476a88271b04adfbb5c65bf54ee3.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -974,7 +974,7 @@ Brian Goetz and Per Minborg made a big impression on how competent they are
 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 <div class="paragraph">
-<p>My favorite tool companies <a href="https://www.jetbrains.com/">jebrains</a>, <a href="https://vaadin.com/">vaadin}&gt;</a>, and <a href="https://www.oracle.com/java/">Oracle Java</a> were exhibitors.</p>
+<p>My favorite tool companies <a href="https://www.jetbrains.com/">jetbrains</a>, <a href="https://vaadin.com/">vaadin}&gt;</a>, and <a href="https://www.oracle.com/java/">Oracle Java</a> were exhibitors.</p>
 </div>
 <div class="sect2">
 <h3 id="_day_one">Day One</h3>
@@ -1023,7 +1023,17 @@ You can write your setup code in Java, but it requires quite knowledge about the
 </div>
 <div class="paragraph">
 <p><em>I am still not convinced the gains using test containers are worth learning a new library.</em>
-<em>The assumption is you are already proficient with <a href="https://www.docker.com/">Docker</a> and <a href="https://docs.docker.com/compose/">Docker Compose</a>.</em></p>
+<em>The assumption is that you are already proficient with <a href="https://www.docker.com/">Docker</a> and <a href="https://docs.docker.com/compose/">Docker Compose</a>.</em>
+<em>Test containers are certainly useful when you have a complex ecosystem with databases, servers, and a lot of microservices.</em></p>
+</div>
+<div class="paragraph">
+<p><em>I often have a modular monolithic application.</em>
+<em>I use <a href="https://eclipsestore.io/">Eclipse Store</a> and embedded <a href="https://hsqldb.org/">HyperSQL</a> for persistence.</em>
+<em>I use <a href="https://flywaydb.org/">Flyway</a> to populate the database.</em>
+<em>My docker compose file is simple and straightforward.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Why should I add the complexity of test containers?</em></p>
 </div>
 </div>
 <div class="sect3">
@@ -1048,16 +1058,20 @@ This approach is against core concepts of object-oriented programming.</p>
 But honestly what are the costs of compiling in a modern <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a> environment?</p>
 </div>
 <div class="paragraph">
-<p>The advantage of declaring a static method instead of a default method in the interface is not visible for me.</p>
+<p>The advantage of declaring a static method instead of a default method in the interface is not visible to me.</p>
 </div>
 <div class="paragraph">
-<p>Use sealed class hierarchies, pattern matching in switch expressions to delegate complex business logic inside business classes.
-Consider using records to write less code and move in the direction of immutable instances.
-Deconstruction patterns and unnamed variables make the algorithms more legible.</p>
+<p>Use sealed class hierarchies, pattern matching in switch expressions to delegate complex business logic inside business classes.</p>
+</div>
+<div class="paragraph">
+<p>Consider using records to write less code and move in the direction of immutable instances.</p>
+</div>
+<div class="paragraph">
+<p>Deconstruction patterns and unnamed variables make the algorithms more legible.</p>
 </div>
 <div class="paragraph">
 <p>Avoid <a href="https://en.wikipedia.org/wiki/Anemic_domain_model">Anemic Domain Model</a>.
-I acknowledge there is a tension between behavior which should be part of a class and complex business logic which should be defined separately from the core domain.</p>
+I acknowledge there is a tension between behavior which should be part of a class and complex business logic which should be defined separately from the core domain abstractions.</p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -1086,7 +1100,8 @@ I acknowledge there is a tension between behavior which should be part of a clas
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>The above constraint clearly defines the tension in designing the abstractions for a bounded domain.</p>
+<p>The above constraint clearly defines the tension in designing the abstractions for a bounded domain.
+Both variants are mutually exclusive in modern programming languages.</p>
 </div>
 <div class="paragraph">
 <p>An experienced architect with domain knowledge should hint which functionalities belong to a class and which ones are better located in business logic abstractions.</p>
@@ -1118,7 +1133,8 @@ Interestingly, the optimization is only done at runtime.</p>
 <p>Modern Java programmers implement the <em>equals(Object obj)</em> method with <em>instanceof</em> and not <em>if</em> statement.</p>
 </div>
 <div class="paragraph">
-<p>The statement <em>if (this == obj)</em> is a performance killer when compared with the modern approach.</p>
+<p>The statement <em>if (this == obj)</em> is a performance killer when compared with the modern approach.
+Stop using conditional statements when implementing <em>equals</em> method.</p>
 </div>
 </td>
 </tr>
@@ -1193,7 +1209,8 @@ Loaded with caffeine and sugar, I am ready to tackle the second conference day.<
 <h4 id="_know_your_java">Know Your Java?</h4>
 <div class="paragraph">
 <p>Entertaining and professional presentation of Java quirks.
-The examples show Java software archeology.</p>
+The examples show Java software archeology.
+Old coding and naming decisions coming back to bite you.</p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -1219,10 +1236,12 @@ The examples show Java software archeology.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Learn the language and the standard API.</p>
+<p>Learn the language and the standard API.
+Stop programming <em>for</em> instructions to iterate through collections.
+Use the <em>streams</em> API.</p>
 </div>
 <div class="paragraph">
-<p>Study functional programming, pure function, immutable data structure concepts.
+<p>Study functional programming, pure function, and immutable data structure concepts.
 Java mixes object-orientation and functional programming.
 The compiler performs limited checks if your functional code behaves correctly.</p>
 </div>
@@ -1279,7 +1298,7 @@ The event sourcing runtime should ensure the approach.</p>
 Execute the commands sequentially on your model.</p>
 </li>
 <li>
-<p>Mutate the state by applying the events</p>
+<p>Mutate the state by applying the events.</p>
 </li>
 <li>
 <p>Persist the events Do not use Java serialization.
@@ -1314,8 +1333,10 @@ A trend is to offer PaaS solutions built around a kubernetes cluster.</p>
 <h4 id="_with_java_21_your_code_runs_even_faster_but_how_is_that_possible">With Java 21, Your Code Runs Even Faster. But How is that Possible?</h4>
 <div class="paragraph">
 <p>The presentation was fun, instructive and well-done.
-The details were inspiring and of high-quality.
-The speaker showed multiple areas where the JVM was locally massively improved through clever refactoring.
+The details were inspiring and of high-quality.</p>
+</div>
+<div class="paragraph">
+<p>The speaker showed multiple areas where the JVM was locally massively improved through clever refactoring.
 Worth every second and a nice way to complete the day.</p>
 </div>
 </div>
@@ -1576,7 +1597,7 @@ Tutorials how to set up a machine learning environment, train the models, and pr
 <div class="sect3">
 <h4 id="awesome-speech-llm">Java Meets AI: A Hands-On Guide to Building LLM-Powered Applications with LangChain4j</h4>
 <div class="paragraph">
-<p>This presentation was the coolest of the whole Devoxx 2023.</p>
+<p><strong>This presentation was the coolest of the whole Devoxx 2023</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The speaker is an active developer of <a href="https://github.com/langchain4j/langchain4j">LangChain4J</a>.
@@ -1609,8 +1630,8 @@ After training, the chat can answer questions about your own documents or source
 <p>Solid presentation of <a href="https://www.jetbrains.com/idea/">Jetbrains IntelliJ IDEA</a> debugger features with hands-on examples.</p>
 </div>
 <div class="paragraph">
-<p>I seldom use the debugger.
-The tips were good but not really relevant for me.</p>
+<p><em>I seldom use the debugger.</em>
+<em>The tips were good but not really relevant for me.</em></p>
 </div>
 </div>
 <div class="sect3">
@@ -1619,7 +1640,7 @@ The tips were good but not really relevant for me.</p>
 <p>The speaker presented a solid introduction to <a href="https://grpc.io/">gRPC</a> and <a href="https://armeria.dev/">Armeria</a>.</p>
 </div>
 <div class="paragraph">
-<p>The frameworks provide needed services for a highly scalable applications based on microservices.
+<p>The frameworks provide needed services for highly scalable applications based on microservices.
 <a href="https://armeria.dev/">Armeria</a> industrializes <a href="https://grpc.io/">gRPC</a> services.</p>
 </div>
 <div class="paragraph">
@@ -1675,7 +1696,7 @@ I am surprised how tiring it was to listen to so many presentations and trying t
 </div>
 <div class="paragraph">
 <p>I decided to leave earlier to be sure to catch my flight.
-The yesterday experience with the strikes made me worried.
+The yesterday experience with the strikes worried me.
 It worked well, and I was ahead on time at the airport.</p>
 </div>
 <div class="sidebarblock">
@@ -1710,7 +1731,7 @@ The ThoughtWorks technology radar mentioned <a href="https://www.jobrunr.io/en/"
 <div class="paragraph">
 <p>He made 90&#39;000 EUR in 2022.
 The forecast for 2023 is around 260&#39;000 EUR.
-This year is hired his first employee.</p>
+He hired his first employee.</p>
 </div>
 <div class="paragraph">
 <p>The whole approach is cute, hands-on, and most importantly working.
@@ -1729,7 +1750,7 @@ All segments allocated in the arena share the same lifetime.
 Multiple arena types are provided for different scenarios.</p>
 </div>
 <div class="paragraph">
-<p>Memory layouts describe contents of a memory region programmatically.</p>
+<p>Memory layouts describe the contents of a memory region programmatically.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1768,7 +1789,7 @@ I am not sure organizations take the initiative seriously.</p>
 <div class="paragraph">
 <p>Speakers are professional engineers.
 Almost all of them have Apple notebooks.
-Professional Java developers are using <a href="https://www.jetbrains.com/idea/">Jetbrains IntelliJ IDEA</a> from <a href="https://www.jetbrains.com/">jebrains</a>.
+Professional Java developers are using <a href="https://www.jetbrains.com/idea/">Jetbrains IntelliJ IDEA</a> from <a href="https://www.jetbrains.com/">jetbrains</a>.
 More than 80% of conference participants use it.</p>
 </div>
 <div class="paragraph">
@@ -1807,7 +1828,7 @@ Marcel Baumann. 2022.</p>
 <div id="footnotes">
 <hr/>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. I still think that Oracle Java license conditions are crazy. You have to pay 250 USD per collaborator. Nothing to do with how many developers you have or how many applications you are running.
+<a href="#_footnoteref_1">1</a>. I still think that Oracle Java license conditions are lunatic. You have to pay 250 USD per collaborator. Nothing to do with how many developers you have or how many applications you are running.
 </div>
 <div class="footnote" id="_footnotedef_2">
 <a href="#_footnoteref_2">2</a>. Agile conferences have often a real coffee machine and a barista. I promise it is not the reason why I also attend agile congresses.
@@ -1819,7 +1840,7 @@ Marcel Baumann. 2022.</p>
 <a href="#_footnoteref_4">4</a>. Exactly once is only available for local services using a transactional backend.
 </div>
 <div class="footnote" id="_footnotedef_5">
-<a href="#_footnoteref_5">5</a>. I do not care too much about the inertia. I am mainly developing web-based applications with <a href="https://vaadin.com/">vaadin}&gt;</a>. <a href="https://www.jetbrains.com/">jebrains</a> is doing an incredible job to update Swing and Java 2D subsystems to changes. The <a href="https://openjdk.org/projects/lanai/">Lanai</a> and <a href="https://openjdk.org/projects/wakefield/">Wakefield</a> projects are awesome.
+<a href="#_footnoteref_5">5</a>. I do not care too much about the inertia. I am mainly developing web-based applications with <a href="https://vaadin.com/">vaadin}&gt;</a>. <a href="https://www.jetbrains.com/">jetbrains</a> is doing an incredible job to update Swing and Java 2D subsystems to changes. The <a href="https://openjdk.org/projects/lanai/">Lanai</a> and <a href="https://openjdk.org/projects/wakefield/">Wakefield</a> projects are awesome.
 </div>
 <div class="footnote" id="_footnotedef_6">
 <a href="#_footnoteref_6">6</a>. You can only create an installer for the platform where you are running <em>jpackage</em>. Use a continuous delivery platform to build installer for all the platforms you want to support.
