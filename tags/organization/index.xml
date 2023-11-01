@@ -59,7 +59,7 @@ Brian Goetz and Per Minborg made a big impression on how competent they are
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;My favorite tool companies &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;jetbrains&lt;/a&gt;, &lt;a href=&#34;https://vaadin.com/&#34;&gt;vaadin}&amp;gt;&lt;/a&gt;, and &lt;a href=&#34;https://www.oracle.com/java/&#34;&gt;Oracle Java&lt;/a&gt; were exhibitors.&lt;/p&gt;
+&lt;p&gt;My favorite tool companies &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;Jetbrains&lt;/a&gt;, &lt;a href=&#34;https://vaadin.com/&#34;&gt;vaadin}&amp;gt;&lt;/a&gt;, and &lt;a href=&#34;https://www.oracle.com/java/&#34;&gt;Oracle Java&lt;/a&gt; were exhibitors.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_day_one&#34;&gt;Day One&lt;/h3&gt;
@@ -860,6 +860,12 @@ Promote immutable objects and collections in your source code.
 These design solutions naturally scale with more processing cores.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Virtual threads&lt;/strong&gt; are here.
+Use them.
+Concurrent collections shall be used to implement back pressure with virtual thread designs.
+The performance of concurrent collections will be fabulous with Java 22.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Advanced discussions were heard in some talks.
 How should and would Java evolve in the next years?
 Current &lt;a href=&#34;https://openjdk.org/&#34;&gt;openJDK&lt;/a&gt; projects cover all ideas I heard during the conference.
@@ -874,7 +880,7 @@ I am not sure organizations take the initiative seriously.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Speakers are professional engineers.
 Almost all of them have Apple notebooks.
-Professional Java developers are using &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;Jetbrains IntelliJ IDEA&lt;/a&gt; from &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;jetbrains&lt;/a&gt;.
+Professional Java developers are using &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;Jetbrains IntelliJ IDEA&lt;/a&gt; from &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;Jetbrains&lt;/a&gt;.
 More than 80% of conference participants use it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -925,7 +931,7 @@ Marcel Baumann. 2022.&lt;/p&gt;
 &lt;a href=&#34;#_footnoteref_4&#34;&gt;4&lt;/a&gt;. Exactly once is only available for local services using a transactional backend.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_5&#34;&gt;
-&lt;a href=&#34;#_footnoteref_5&#34;&gt;5&lt;/a&gt;. I do not care too much about the inertia. I am mainly developing web-based applications with &lt;a href=&#34;https://vaadin.com/&#34;&gt;vaadin}&amp;gt;&lt;/a&gt;. &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;jetbrains&lt;/a&gt; is doing an incredible job to update Swing and Java 2D subsystems to changes. The &lt;a href=&#34;https://openjdk.org/projects/lanai/&#34;&gt;Lanai&lt;/a&gt; and &lt;a href=&#34;https://openjdk.org/projects/wakefield/&#34;&gt;Wakefield&lt;/a&gt; projects are awesome.
+&lt;a href=&#34;#_footnoteref_5&#34;&gt;5&lt;/a&gt;. I do not care too much about the inertia. I am mainly developing web-based applications with &lt;a href=&#34;https://vaadin.com/&#34;&gt;vaadin}&amp;gt;&lt;/a&gt;. &lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;Jetbrains&lt;/a&gt; is doing an incredible job to update Swing and Java 2D subsystems to changes. The &lt;a href=&#34;https://openjdk.org/projects/lanai/&#34;&gt;Lanai&lt;/a&gt; and &lt;a href=&#34;https://openjdk.org/projects/wakefield/&#34;&gt;Wakefield&lt;/a&gt; projects are awesome.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_6&#34;&gt;
 &lt;a href=&#34;#_footnoteref_6&#34;&gt;6&lt;/a&gt;. You can only create an installer for the platform where you are running &lt;em&gt;jpackage&lt;/em&gt;. Use a continuous delivery platform to build installer for all the platforms you want to support.
@@ -1326,6 +1332,29 @@ java20                                                                          
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
 &lt;td&gt;Select the default JDK version.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Remember to install newly released JDKs containing security fixes every three months.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Regularly run the following commands to update your homebrew and ruby packages&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;brewup
+gem update&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;

@@ -257,6 +257,163 @@ Removed all dependencies to maven.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_relationship_components&#34;&gt;Relationship Components&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;These components allow the display and handling of relations between objects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All changes of a relation are done in the buffered values of the user interface.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Changes are only performed on the model if the &lt;em&gt;save&lt;/em&gt; action is called.
+Mandatory relations are enforced with validation rules.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_one2one_component&#34;&gt;One2One Component&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The component displays a relation from one object to another one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect4&#34;&gt;
+&lt;h5 id=&#34;_referenced_object&#34;&gt;Referenced Object&lt;/h5&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The functions are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Display the relation and show key attributes of the referenced item as a composite field.
+The item is a subclass of entity.
+The attributes of an entity are displayed&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Remove the referenced object from the relation.
+The object is not deleted, only the relation to it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Update the relation to a new referenced item.
+The user can select an instance from a set of available objects.
+This set of objects is provided through a provider.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect4&#34;&gt;
+&lt;h5 id=&#34;_owned_object&#34;&gt;Owned Object&lt;/h5&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This mode is not supported through the &lt;em&gt;One2One&lt;/em&gt; component.
+Implement custom controls to display the object and to create a new one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_one2many_component&#34;&gt;One2Many Component&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The component displays regular objects or instances for a subclass of entity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect4&#34;&gt;
+&lt;h5 id=&#34;_referenced_objects&#34;&gt;Referenced Objects&lt;/h5&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The functions are for referenced objects:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Display all objects referenced and show key attributes of the referenced items as a grid.
+A provided view displays selected properties in columns.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Remove a referenced object from the instances which are part of the relation.
+The object is not deleted, only the relation to it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add an existing object to the instances which are part of the relation.
+The user can select an instance from a set of available objects displayed in a view.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The view to display referenced objects shall be provided to the component.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The view to select objects which are added to the relation should be provided to the component.
+A dialog will open with the view and the &lt;em&gt;cancel&lt;/em&gt; or &lt;em&gt;add&lt;/em&gt; options.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An example of referenced object is an employee list of companies she is working for.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_owned_objects&#34;&gt;Owned Objects&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The functions are for owned objects:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Display all objects referenced and show key attributes of the referenced items as a grid.
+A provided view displays selected properties in columns.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Remove a referenced object from the instances which are part of the relation.
+The object is removed from the relation and deleted.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create an object and add it to the instances which are part of the relation.
+The user can select an instance from a set of available objects displayed in a view.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The view to display referenced objects shall be provided to the component.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The view to create a new object to add to the relation should be provided to the component.
+A dialog will open with the view and the &lt;em&gt;cancel&lt;/em&gt; or &lt;em&gt;add&lt;/em&gt; options.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Examples of owned objects are comments and tags of an entity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Entities should generally not be handled as owned objects.
+An entity instance should be created through the view handling all objects of this entity type.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_reflections&#34;&gt;Reflections&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;One key decision is that the user interface library does not require the use of annotations, interfaces, or inheritance in the business model.&lt;/p&gt;
@@ -271,7 +428,7 @@ Removed all dependencies to maven.&lt;/p&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Readonly access allow a user to view an entity and associated properties.
+&lt;p&gt;Readonly access allows a user to view an entity and associated properties.
 The update, delete and create operations are disabled.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
