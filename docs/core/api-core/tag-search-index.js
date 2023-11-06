@@ -1,1 +1,1 @@
-tagSearchIndex = [{"l":"Constant Field Values","h":"","u":"constant-values.html"},{"l":"Serialized Form","h":"","u":"serialized-form.html"}];updateSearchResults();
+tagSearchIndex = [{"l":"Constant Field Values","h":"","u":"constant-values.html"},{"l":"Mixins","h":"package net.tangly.core","d":"Section","u":"net/tangly/core/package-summary.html#mixins-heading"},{"l":"Serialized Form","h":"","u":"serialized-form.html"}];updateSearchResults();

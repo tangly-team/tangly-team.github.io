@@ -232,6 +232,29 @@ Removed all dependencies to maven.&lt;/p&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_views&#34;&gt;Views&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Views display a set of instances of an entity.
+The view provides the regular &lt;a href=&#34;https://en.wikipedia.org/wiki/Create,_read,_update_and_delete&#34;&gt;CRUD&lt;/a&gt; operations:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;View details of an entity instance.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Modify an entity instance.
+The user can edit all properties of an object in the user interface.&lt;br/&gt;
+All changes are buffered in the user interface components.
+She can decide to propage the changes to the model or discard them through &lt;em&gt;save&lt;/em&gt; or &lt;em&gt;cancel&lt;/em&gt; operations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Delete an entity instance.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create an entity instance.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 &lt;div class=&#34;sect3&#34;&gt;
 &lt;h4 id=&#34;_item_view&#34;&gt;Item View&lt;/h4&gt;
 
@@ -258,6 +281,9 @@ Removed all dependencies to maven.&lt;/p&gt;
 &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The comments and the tags of an entity are modelled as a &lt;em&gt;one2many&lt;/em&gt; immutable owned object relations.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -272,10 +298,15 @@ Removed all dependencies to maven.&lt;/p&gt;
 &lt;p&gt;Changes are only performed on the model if the &lt;em&gt;save&lt;/em&gt; action is called.
 Mandatory relations are enforced with validation rules.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&#34;imageblock text-center kroki-format-svg kroki&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;https://kroki.io/plantuml/svg/eNqdU8FOAyEQvfMVc2yj9uC1jdnYaOLB1mjjHZepIWGHBobWRvvvsit2acUeSkJY5s28eTzYyrN0HBojRG2k9zANnm1zr9GoyeIGPne_wJzwOs6EAH4wkvJwR6x5GxMFxHEF0za5rcQO6LYJenJ2rRW6Fl2l7wQtIl3HDFarP7FCiGSDKXgbmC1BWCnJKLrgxYHaQTWzPAvGwAs7Te_g0EjWli5hj5RkZ3BJ-lDsROYWTL5Go4O-uXOPkrbPuESHVKM_x8RxwUWPBmuWbwb38A_Vq8ZNm7CO6zj3pKBjcI4JWed_fSj0OrZkviFU_WNLZ3hgbE6eoC_rxR8XDSPdCWE9hRBVvIT4C3wDgBUAjw==&#34; alt=&#34;one2one&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class=&#34;sect3&#34;&gt;
 &lt;h4 id=&#34;_one2one_component&#34;&gt;One2One Component&lt;/h4&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The component displays a relation from one object to another one.&lt;/p&gt;
+&lt;p&gt;The component displays a relation from one object to another entity instance.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect4&#34;&gt;
 &lt;h5 id=&#34;_referenced_object&#34;&gt;Referenced Object&lt;/h5&gt;
@@ -300,12 +331,22 @@ This set of objects is provided through a provider.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The provider for selectabe instance is provided to the constructor of the &lt;em&gt;one2one&lt;/em&gt; control.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Providers support composition with _ProviderView&lt;/em&gt; to define selection on the eligible instances.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect4&#34;&gt;
 &lt;h5 id=&#34;_owned_object&#34;&gt;Owned Object&lt;/h5&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This mode is not supported through the &lt;em&gt;One2One&lt;/em&gt; component.
+&lt;p&gt;This mode is &lt;strong&gt;not&lt;/strong&gt; supported through the &lt;em&gt;One2One&lt;/em&gt; component.
 Implement custom controls to display the object and to create a new one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Custom controls cannot be defined in a generic way.&lt;/em&gt;
+&lt;em&gt;Expected controls for an entity are well-defined in the framework.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -323,7 +364,8 @@ Implement custom controls to display the object and to create a new one.&lt;/p&g
 &lt;div class=&#34;sect4&#34;&gt;
 &lt;h5 id=&#34;_referenced_objects&#34;&gt;Referenced Objects&lt;/h5&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The functions are for referenced objects:&lt;/p&gt;
+&lt;p&gt;The component is &lt;em&gt;One2ManyReferencesField&lt;/em&gt;.
+The functions are for referenced objects:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
@@ -367,7 +409,8 @@ A dialog will open with the view and the &lt;em&gt;cancel&lt;/em&gt; or &lt;em&g
 &lt;div class=&#34;sect3&#34;&gt;
 &lt;h4 id=&#34;_owned_objects&#34;&gt;Owned Objects&lt;/h4&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The functions are for owned objects:&lt;/p&gt;
+&lt;p&gt;The component is &lt;em&gt;One2ManyOwnedField&lt;/em&gt;.
+The functions are for owned objects:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
@@ -380,8 +423,7 @@ A provided view displays selected properties in columns.&lt;/p&gt;
 The object is removed from the relation and deleted.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Create an object and add it to the instances which are part of the relation.
-The user can select an instance from a set of available objects displayed in a view.&lt;/p&gt;
+&lt;p&gt;Create an object and add it to the instances which are part of the relation.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -393,11 +435,18 @@ The user can select an instance from a set of available objects displayed in a v
 &lt;/td&gt;
 &lt;td class=&#34;content&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The view to display referenced objects shall be provided to the component.&lt;/p&gt;
+&lt;p&gt;The view to display referenced objects shall be provided to the component.
+The view is an item view with the create method&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The view to create a new object to add to the relation should be provided to the component.
-A dialog will open with the view and the &lt;em&gt;cancel&lt;/em&gt; or &lt;em&gt;add&lt;/em&gt; options.&lt;/p&gt;
+&lt;p&gt;The provider is a shallow copy of the collection for referenced objects belonging to the relation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Because the copy is shallow, we should not provide an update operation modifying the shared object.
+The object is shared between the model and the user interface buffering.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We recommend that owned objects are immutable.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;

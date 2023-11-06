@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-<meta name="generator" content="Hugo 0.120.2">
+<meta name="generator" content="Hugo 0.120.3">
 <meta content="index, follow" name="robots">
 
 
@@ -28,45 +28,39 @@ User Guide Commons Vaadin UI
 
 Views
 
-Item View
+Views display a set of instances of an entity.
+The view provides the regular CRUD operations:
 
 
 
-Entity View
 
-A domain entity shall be displayed and manipulated using the entity view.
-
-
-A domain …" name="description">
+View details …" name="description">
 <meta property="og:title" content="User Guide UI" />
-<meta property="og:description" content="User Guide Commons Vaadin UI Views Item View Entity View A domain entity shall be displayed and manipulated using the entity view.
-A domain entity has an internal object identifier, an external identifier, a human-readable name, a temporaral period when the entity is active, and a textual description.
-The entity can optionally have a set of tags and a list of comments.
-public class MyEntityView extends EntityView&lt;MyEntity&gt; { static class MyEntityForm extends EntityForm&lt;MyEntity, MyEntityView&gt; { MyEntityForm(@NotNull MyEntityView parent) { super(parent); } } } Relationship Components These components allow the display and handling of relations between objects." />
+<meta property="og:description" content="User Guide Commons Vaadin UI Views Views display a set of instances of an entity. The view provides the regular CRUD operations:
+View details of an entity instance.
+Modify an entity instance. The user can edit all properties of an object in the user interface. All changes are buffered in the user interface components. She can decide to propage the changes to the model or discard them through save or cancel operations." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/docs/ui/userguide/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2019-06-30T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-06-30T00:00:00+00:00" />
 
 <meta itemprop="name" content="User Guide UI">
-<meta itemprop="description" content="User Guide Commons Vaadin UI Views Item View Entity View A domain entity shall be displayed and manipulated using the entity view.
-A domain entity has an internal object identifier, an external identifier, a human-readable name, a temporaral period when the entity is active, and a textual description.
-The entity can optionally have a set of tags and a list of comments.
-public class MyEntityView extends EntityView&lt;MyEntity&gt; { static class MyEntityForm extends EntityForm&lt;MyEntity, MyEntityView&gt; { MyEntityForm(@NotNull MyEntityView parent) { super(parent); } } } Relationship Components These components allow the display and handling of relations between objects."><meta itemprop="datePublished" content="2019-06-30T00:00:00+00:00" />
+<meta itemprop="description" content="User Guide Commons Vaadin UI Views Views display a set of instances of an entity. The view provides the regular CRUD operations:
+View details of an entity instance.
+Modify an entity instance. The user can edit all properties of an object in the user interface. All changes are buffered in the user interface components. She can decide to propage the changes to the model or discard them through save or cancel operations."><meta itemprop="datePublished" content="2019-06-30T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2019-06-30T00:00:00+00:00" />
-<meta itemprop="wordCount" content="747">
+<meta itemprop="wordCount" content="906">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="User Guide UI"/>
-<meta name="twitter:description" content="User Guide Commons Vaadin UI Views Item View Entity View A domain entity shall be displayed and manipulated using the entity view.
-A domain entity has an internal object identifier, an external identifier, a human-readable name, a temporaral period when the entity is active, and a textual description.
-The entity can optionally have a set of tags and a list of comments.
-public class MyEntityView extends EntityView&lt;MyEntity&gt; { static class MyEntityForm extends EntityForm&lt;MyEntity, MyEntityView&gt; { MyEntityForm(@NotNull MyEntityView parent) { super(parent); } } } Relationship Components These components allow the display and handling of relations between objects."/>
+<meta name="twitter:description" content="User Guide Commons Vaadin UI Views Views display a set of instances of an entity. The view provides the regular CRUD operations:
+View details of an entity instance.
+Modify an entity instance. The user can edit all properties of an object in the user interface. All changes are buffered in the user interface components. She can decide to propage the changes to the model or discard them through save or cancel operations."/>
 
 
 
 
-<link rel="preload" href="/scss/main.min.aa6ed2568a9e290565afe636e88438d61513caf76ff19b7472bc1772e61006c1.css" as="style">
-<link href="/scss/main.min.aa6ed2568a9e290565afe636e88438d61513caf76ff19b7472bc1772e61006c1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.e0781053033967c04878c74bd55e27f3095862f5962c67faaa45a6f6c4f999a2.css" as="style">
+<link href="/scss/main.min.e0781053033967c04878c74bd55e27f3095862f5962c67faaa45a6f6c4f999a2.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -151,7 +145,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.8971df9110a9235e2e5efd0aea8eb696.json"
+    data-offline-search-index-json-src="/offline-search-index.62d0164689827aca445708f807a23d5d.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -176,7 +170,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.8971df9110a9235e2e5efd0aea8eb696.json"
+    data-offline-search-index-json-src="/offline-search-index.62d0164689827aca445708f807a23d5d.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -406,62 +400,113 @@ if (!doNotTrack) {
   <label for="m-docsdomains-check"><a href="/docs/domains/" title="ERP Bounded Domains" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomains"><span class="">ERP Domains</span></a></label>
   
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomains-design-li">
-  <input type="checkbox" id="m-docsdomains-design-check"/>
-  <label for="m-docsdomains-design-check"><a href="/docs/domains/-design/" title="Architecture and Design" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomains-design"><span class="">Architecture</span></a></label>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsarchitecture-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture-check"/>
+  <label for="m-docsdomainsarchitecture-check"><a href="/docs/domains/architecture/" title="ERP Architecture" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsarchitecture"><span class="">Architecture</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design01-introduction-and-goals-li">
-  <input type="checkbox" id="m-docsdomains-design01-introduction-and-goals-check"/>
-  <label for="m-docsdomains-design01-introduction-and-goals-check"><a href="/docs/domains/-design/01-introduction-and-goals/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design01-introduction-and-goals"><span class="">01 Introduction</span></a></label>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsarchitectureadr-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadr-check"/>
+  <label for="m-docsdomainsarchitectureadr-check"><a href="/docs/domains/architecture/adr/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsarchitectureadr"><span class="">ADR</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design02-architecture-constraints-li">
-  <input type="checkbox" id="m-docsdomains-design02-architecture-constraints-check"/>
-  <label for="m-docsdomains-design02-architecture-constraints-check"><a href="/docs/domains/-design/02-architecture-constraints/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design02-architecture-constraints"><span class="">02 Constraints</span></a></label>
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-001-system-guava-removal-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-001-system-guava-removal-check"/>
+  <label for="m-docsdomainsarchitectureadros-001-system-guava-removal-check"><a href="/docs/domains/architecture/adr/os-001-system-guava-removal/" title="OS 001: System Guava Removal" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-001-system-guava-removal"><span class="">Guava Removal</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design03-system-scope-and-context-li">
-  <input type="checkbox" id="m-docsdomains-design03-system-scope-and-context-check"/>
-  <label for="m-docsdomains-design03-system-scope-and-context-check"><a href="/docs/domains/-design/03-system-scope-and-context/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design03-system-scope-and-context"><span class="">03 Scope</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-002-unit-test-conventions-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-002-unit-test-conventions-check"/>
+  <label for="m-docsdomainsarchitectureadros-002-unit-test-conventions-check"><a href="/docs/domains/architecture/adr/os-002-unit-test-conventions/" title="OS 002: Unit Test Conventions" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-002-unit-test-conventions"><span class="">Unit Test Conventions</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design04-solution-strategy-li">
-  <input type="checkbox" id="m-docsdomains-design04-solution-strategy-check"/>
-  <label for="m-docsdomains-design04-solution-strategy-check"><a href="/docs/domains/-design/04-solution-strategy/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design04-solution-strategy"><span class="">04 Solution</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-003-use-modern-java-constructs-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-003-use-modern-java-constructs-check"/>
+  <label for="m-docsdomainsarchitectureadros-003-use-modern-java-constructs-check"><a href="/docs/domains/architecture/adr/os-003-use-modern-java-constructs/" title="OS 003: Use Modern Java Constructs" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-003-use-modern-java-constructs"><span class="">Use Modern Java Constructs</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design05-building-block-view-li">
-  <input type="checkbox" id="m-docsdomains-design05-building-block-view-check"/>
-  <label for="m-docsdomains-design05-building-block-view-check"><a href="/docs/domains/-design/05-building-block-view/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design05-building-block-view"><span class="">05 Block View</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-004-publish-technical-documentation-through-static-website-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-004-publish-technical-documentation-through-static-website-check"/>
+  <label for="m-docsdomainsarchitectureadros-004-publish-technical-documentation-through-static-website-check"><a href="/docs/domains/architecture/adr/os-004-publish-technical-documentation-through-static-website/" title="OS 004: Publish Technical Documentation Through Static Website" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-004-publish-technical-documentation-through-static-website"><span class="">Static Website</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design06-runtime-view-li">
-  <input type="checkbox" id="m-docsdomains-design06-runtime-view-check"/>
-  <label for="m-docsdomains-design06-runtime-view-check"><a href="/docs/domains/-design/06-runtime-view/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design06-runtime-view"><span class="">06 Runtime View</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-005-publish-maven-central-artifact-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-005-publish-maven-central-artifact-check"/>
+  <label for="m-docsdomainsarchitectureadros-005-publish-maven-central-artifact-check"><a href="/docs/domains/architecture/adr/os-005-publish-maven-central-artifact/" title="OS 005: Publish Maven Central Artifacts" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-005-publish-maven-central-artifact"><span class="">Publish Maven Central Artifacts</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design07-deployment-view-li">
-  <input type="checkbox" id="m-docsdomains-design07-deployment-view-check"/>
-  <label for="m-docsdomains-design07-deployment-view-check"><a href="/docs/domains/-design/07-deployment-view/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design07-deployment-view"><span class="">07 Deploy View</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-006-dependency-injection-guice-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-006-dependency-injection-guice-check"/>
+  <label for="m-docsdomainsarchitectureadros-006-dependency-injection-guice-check"><a href="/docs/domains/architecture/adr/os-006-dependency-injection-guice/" title="OS 006: Dependency Injection with Guice" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-006-dependency-injection-guice"><span class="">DI Guice</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design08-crosscutting-concepts-li">
-  <input type="checkbox" id="m-docsdomains-design08-crosscutting-concepts-check"/>
-  <label for="m-docsdomains-design08-crosscutting-concepts-check"><a href="/docs/domains/-design/08-crosscutting-concepts/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design08-crosscutting-concepts"><span class="">08 Concepts</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-007-persistence-microstream-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-007-persistence-microstream-check"/>
+  <label for="m-docsdomainsarchitectureadros-007-persistence-microstream-check"><a href="/docs/domains/architecture/adr/os-007-persistence-microstream/" title="OS 007: Persistence with MicroStream" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-007-persistence-microstream"><span class="">MicroStream</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design09-architecture-decisions-li">
-  <input type="checkbox" id="m-docsdomains-design09-architecture-decisions-check"/>
-  <label for="m-docsdomains-design09-architecture-decisions-check"><a href="/docs/domains/-design/09-architecture-decisions/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design09-architecture-decisions"><span class="">09 Decisions</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-008-use-log4j2-as-default-logger-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-008-use-log4j2-as-default-logger-check"/>
+  <label for="m-docsdomainsarchitectureadros-008-use-log4j2-as-default-logger-check"><a href="/docs/domains/architecture/adr/os-008-use-log4j2-as-default-logger/" title="OS 008: Use log4j2 as default logging framework" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-008-use-log4j2-as-default-logger"><span class="">Log4j2</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design10-quality-requirements-li">
-  <input type="checkbox" id="m-docsdomains-design10-quality-requirements-check"/>
-  <label for="m-docsdomains-design10-quality-requirements-check"><a href="/docs/domains/-design/10-quality-requirements/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design10-quality-requirements"><span class="">10 Quality</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-009-use-hsqldb-as-sql-store-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-009-use-hsqldb-as-sql-store-check"/>
+  <label for="m-docsdomainsarchitectureadros-009-use-hsqldb-as-sql-store-check"><a href="/docs/domains/architecture/adr/os-009-use-hsqldb-as-sql-store/" title="OS 009: Use HSQLDB as an SQL DB" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-009-use-hsqldb-as-sql-store"><span class="">Use HSQLDB as SQL store</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design11-technical-risks-li">
-  <input type="checkbox" id="m-docsdomains-design11-technical-risks-check"/>
-  <label for="m-docsdomains-design11-technical-risks-check"><a href="/docs/domains/-design/11-technical-risks/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design11-technical-risks"><span class="">11 Risks</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-010-archive-data-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-010-archive-data-check"/>
+  <label for="m-docsdomainsarchitectureadros-010-archive-data-check"><a href="/docs/domains/architecture/adr/os-010-archive-data/" title="OS 010: Archive Data using TSV and JSON" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-010-archive-data"><span class="">Archive Data</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design12-glossary-li">
-  <input type="checkbox" id="m-docsdomains-design12-glossary-check"/>
-  <label for="m-docsdomains-design12-glossary-check"><a href="/docs/domains/-design/12-glossary/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design12-glossary"><span class="">12 Glossary</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-011-vaadin-as-user-interface-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadros-011-vaadin-as-user-interface-check"/>
+  <label for="m-docsdomainsarchitectureadros-011-vaadin-as-user-interface-check"><a href="/docs/domains/architecture/adr/os-011-vaadin-as-user-interface/" title="OS 011: Vaadin User Interface" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-011-vaadin-as-user-interface"><span class="">Vaadin User Interface</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains-design13-user-interface-li">
-  <input type="checkbox" id="m-docsdomains-design13-user-interface-check"/>
-  <label for="m-docsdomains-design13-user-interface-check"><a href="/docs/domains/-design/13-user-interface/" title="" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains-design13-user-interface"><span class="">13 UI</span></a></label>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture01-introduction-and-goals-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture01-introduction-and-goals-check"/>
+  <label for="m-docsdomainsarchitecture01-introduction-and-goals-check"><a href="/docs/domains/architecture/01-introduction-and-goals/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture01-introduction-and-goals"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture02-architecture-constraints-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture02-architecture-constraints-check"/>
+  <label for="m-docsdomainsarchitecture02-architecture-constraints-check"><a href="/docs/domains/architecture/02-architecture-constraints/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture02-architecture-constraints"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture03-system-scope-and-context-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture03-system-scope-and-context-check"/>
+  <label for="m-docsdomainsarchitecture03-system-scope-and-context-check"><a href="/docs/domains/architecture/03-system-scope-and-context/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture03-system-scope-and-context"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture04-solution-strategy-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture04-solution-strategy-check"/>
+  <label for="m-docsdomainsarchitecture04-solution-strategy-check"><a href="/docs/domains/architecture/04-solution-strategy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture04-solution-strategy"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture05-building-block-view-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture05-building-block-view-check"/>
+  <label for="m-docsdomainsarchitecture05-building-block-view-check"><a href="/docs/domains/architecture/05-building-block-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture05-building-block-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture06-runtime-view-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture06-runtime-view-check"/>
+  <label for="m-docsdomainsarchitecture06-runtime-view-check"><a href="/docs/domains/architecture/06-runtime-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture06-runtime-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture07-deployment-view-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture07-deployment-view-check"/>
+  <label for="m-docsdomainsarchitecture07-deployment-view-check"><a href="/docs/domains/architecture/07-deployment-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture07-deployment-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture08-crosscutting-concepts-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture08-crosscutting-concepts-check"/>
+  <label for="m-docsdomainsarchitecture08-crosscutting-concepts-check"><a href="/docs/domains/architecture/08-crosscutting-concepts/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture08-crosscutting-concepts"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture09-architecture-decisions-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture09-architecture-decisions-check"/>
+  <label for="m-docsdomainsarchitecture09-architecture-decisions-check"><a href="/docs/domains/architecture/09-architecture-decisions/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture09-architecture-decisions"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture10-quality-requirements-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture10-quality-requirements-check"/>
+  <label for="m-docsdomainsarchitecture10-quality-requirements-check"><a href="/docs/domains/architecture/10-quality-requirements/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture10-quality-requirements"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture11-technical-risks-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture11-technical-risks-check"/>
+  <label for="m-docsdomainsarchitecture11-technical-risks-check"><a href="/docs/domains/architecture/11-technical-risks/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture11-technical-risks"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture12-user-manual-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture12-user-manual-check"/>
+  <label for="m-docsdomainsarchitecture12-user-manual-check"><a href="/docs/domains/architecture/12-user-manual/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture12-user-manual"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitecture13-glossary-li">
+  <input type="checkbox" id="m-docsdomainsarchitecture13-glossary-check"/>
+  <label for="m-docsdomainsarchitecture13-glossary-check"><a href="/docs/domains/architecture/13-glossary/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitecture13-glossary"><span class=""></span></a></label>
   
 </li>
   </ul>
@@ -629,7 +674,117 @@ if (!doNotTrack) {
   <label for="m-docsdomainsshared-check"><a href="/docs/domains/shared/" title="Shared - Shared Kernel" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared"><span class="">Shared</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainssharedreadme-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsshared_design-li">
+  <input type="checkbox" id="m-docsdomainsshared_design-check"/>
+  <label for="m-docsdomainsshared_design-check"><a href="/docs/domains/shared/_design/" title="ERP Architecture" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared_design"><span class="">Architecture</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsshared_designadr-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadr-check"/>
+  <label for="m-docsdomainsshared_designadr-check"><a href="/docs/domains/shared/_design/adr/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared_designadr"><span class="">ADR</span></a></label>
+  
+  <ul class="ul-5 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-001-system-guava-removal-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-001-system-guava-removal-check"/>
+  <label for="m-docsdomainsshared_designadros-001-system-guava-removal-check"><a href="/docs/domains/shared/_design/adr/os-001-system-guava-removal/" title="OS 001: System Guava Removal" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-001-system-guava-removal"><span class="">Guava Removal</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-002-unit-test-conventions-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-002-unit-test-conventions-check"/>
+  <label for="m-docsdomainsshared_designadros-002-unit-test-conventions-check"><a href="/docs/domains/shared/_design/adr/os-002-unit-test-conventions/" title="OS 002: Unit Test Conventions" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-002-unit-test-conventions"><span class="">Unit Test Conventions</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-003-use-modern-java-constructs-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-003-use-modern-java-constructs-check"/>
+  <label for="m-docsdomainsshared_designadros-003-use-modern-java-constructs-check"><a href="/docs/domains/shared/_design/adr/os-003-use-modern-java-constructs/" title="OS 003: Use Modern Java Constructs" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-003-use-modern-java-constructs"><span class="">Use Modern Java Constructs</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-004-publish-technical-documentation-through-static-website-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-004-publish-technical-documentation-through-static-website-check"/>
+  <label for="m-docsdomainsshared_designadros-004-publish-technical-documentation-through-static-website-check"><a href="/docs/domains/shared/_design/adr/os-004-publish-technical-documentation-through-static-website/" title="OS 004: Publish Technical Documentation Through Static Website" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-004-publish-technical-documentation-through-static-website"><span class="">Static Website</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-005-publish-maven-central-artifact-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-005-publish-maven-central-artifact-check"/>
+  <label for="m-docsdomainsshared_designadros-005-publish-maven-central-artifact-check"><a href="/docs/domains/shared/_design/adr/os-005-publish-maven-central-artifact/" title="OS 005: Publish Maven Central Artifacts" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-005-publish-maven-central-artifact"><span class="">Publish Maven Central Artifacts</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-006-dependency-injection-guice-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-006-dependency-injection-guice-check"/>
+  <label for="m-docsdomainsshared_designadros-006-dependency-injection-guice-check"><a href="/docs/domains/shared/_design/adr/os-006-dependency-injection-guice/" title="OS 006: Dependency Injection with Guice" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-006-dependency-injection-guice"><span class="">DI Guice</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-007-persistence-microstream-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-007-persistence-microstream-check"/>
+  <label for="m-docsdomainsshared_designadros-007-persistence-microstream-check"><a href="/docs/domains/shared/_design/adr/os-007-persistence-microstream/" title="OS 007: Persistence with MicroStream" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-007-persistence-microstream"><span class="">MicroStream</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-008-use-log4j2-as-default-logger-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-008-use-log4j2-as-default-logger-check"/>
+  <label for="m-docsdomainsshared_designadros-008-use-log4j2-as-default-logger-check"><a href="/docs/domains/shared/_design/adr/os-008-use-log4j2-as-default-logger/" title="OS 008: Use log4j2 as default logging framework" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-008-use-log4j2-as-default-logger"><span class="">Log4j2</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-009-use-hsqldb-as-sql-store-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-009-use-hsqldb-as-sql-store-check"/>
+  <label for="m-docsdomainsshared_designadros-009-use-hsqldb-as-sql-store-check"><a href="/docs/domains/shared/_design/adr/os-009-use-hsqldb-as-sql-store/" title="OS 009: Use HSQLDB as an SQL DB" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-009-use-hsqldb-as-sql-store"><span class="">Use HSQLDB as SQL store</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-010-archive-data-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-010-archive-data-check"/>
+  <label for="m-docsdomainsshared_designadros-010-archive-data-check"><a href="/docs/domains/shared/_design/adr/os-010-archive-data/" title="OS 010: Archive Data using TSV and JSON" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-010-archive-data"><span class="">Archive Data</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-011-vaadin-as-user-interface-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadros-011-vaadin-as-user-interface-check"/>
+  <label for="m-docsdomainsshared_designadros-011-vaadin-as-user-interface-check"><a href="/docs/domains/shared/_design/adr/os-011-vaadin-as-user-interface/" title="OS 011: Vaadin User Interface" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-011-vaadin-as-user-interface"><span class="">Vaadin User Interface</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design01-introduction-and-goals-li">
+  <input type="checkbox" id="m-docsdomainsshared_design01-introduction-and-goals-check"/>
+  <label for="m-docsdomainsshared_design01-introduction-and-goals-check"><a href="/docs/domains/shared/_design/01-introduction-and-goals/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design01-introduction-and-goals"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design02-architecture-constraints-li">
+  <input type="checkbox" id="m-docsdomainsshared_design02-architecture-constraints-check"/>
+  <label for="m-docsdomainsshared_design02-architecture-constraints-check"><a href="/docs/domains/shared/_design/02-architecture-constraints/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design02-architecture-constraints"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design03-system-scope-and-context-li">
+  <input type="checkbox" id="m-docsdomainsshared_design03-system-scope-and-context-check"/>
+  <label for="m-docsdomainsshared_design03-system-scope-and-context-check"><a href="/docs/domains/shared/_design/03-system-scope-and-context/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design03-system-scope-and-context"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design04-solution-strategy-li">
+  <input type="checkbox" id="m-docsdomainsshared_design04-solution-strategy-check"/>
+  <label for="m-docsdomainsshared_design04-solution-strategy-check"><a href="/docs/domains/shared/_design/04-solution-strategy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design04-solution-strategy"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design05-building-block-view-li">
+  <input type="checkbox" id="m-docsdomainsshared_design05-building-block-view-check"/>
+  <label for="m-docsdomainsshared_design05-building-block-view-check"><a href="/docs/domains/shared/_design/05-building-block-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design05-building-block-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design06-runtime-view-li">
+  <input type="checkbox" id="m-docsdomainsshared_design06-runtime-view-check"/>
+  <label for="m-docsdomainsshared_design06-runtime-view-check"><a href="/docs/domains/shared/_design/06-runtime-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design06-runtime-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design07-deployment-view-li">
+  <input type="checkbox" id="m-docsdomainsshared_design07-deployment-view-check"/>
+  <label for="m-docsdomainsshared_design07-deployment-view-check"><a href="/docs/domains/shared/_design/07-deployment-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design07-deployment-view"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design08-crosscutting-concepts-li">
+  <input type="checkbox" id="m-docsdomainsshared_design08-crosscutting-concepts-check"/>
+  <label for="m-docsdomainsshared_design08-crosscutting-concepts-check"><a href="/docs/domains/shared/_design/08-crosscutting-concepts/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design08-crosscutting-concepts"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design09-architecture-decisions-li">
+  <input type="checkbox" id="m-docsdomainsshared_design09-architecture-decisions-check"/>
+  <label for="m-docsdomainsshared_design09-architecture-decisions-check"><a href="/docs/domains/shared/_design/09-architecture-decisions/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design09-architecture-decisions"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design10-quality-requirements-li">
+  <input type="checkbox" id="m-docsdomainsshared_design10-quality-requirements-check"/>
+  <label for="m-docsdomainsshared_design10-quality-requirements-check"><a href="/docs/domains/shared/_design/10-quality-requirements/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design10-quality-requirements"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design11-technical-risks-li">
+  <input type="checkbox" id="m-docsdomainsshared_design11-technical-risks-check"/>
+  <label for="m-docsdomainsshared_design11-technical-risks-check"><a href="/docs/domains/shared/_design/11-technical-risks/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design11-technical-risks"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design12-user-manual-li">
+  <input type="checkbox" id="m-docsdomainsshared_design12-user-manual-check"/>
+  <label for="m-docsdomainsshared_design12-user-manual-check"><a href="/docs/domains/shared/_design/12-user-manual/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design12-user-manual"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design13-glossary-li">
+  <input type="checkbox" id="m-docsdomainsshared_design13-glossary-check"/>
+  <label for="m-docsdomainsshared_design13-glossary-check"><a href="/docs/domains/shared/_design/13-glossary/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design13-glossary"><span class=""></span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainssharedreadme-li">
   <input type="checkbox" id="m-docsdomainssharedreadme-check"/>
   <label for="m-docsdomainssharedreadme-check"><a href="/docs/domains/shared/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainssharedreadme"><span class="">Readme</span></a></label>
   
@@ -640,62 +795,6 @@ if (!doNotTrack) {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainssharedadr-li">
   <input type="checkbox" id="m-docsdomainssharedadr-check"/>
   <label for="m-docsdomainssharedadr-check"><a href="/docs/domains/shared/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainssharedadr"><span class="">ADR</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design01-introduction-and-goals01-introduction-and-goals-li">
-  <input type="checkbox" id="m-docsdomainsshared_design01-introduction-and-goals01-introduction-and-goals-check"/>
-  <label for="m-docsdomainsshared_design01-introduction-and-goals01-introduction-and-goals-check"><a href="/docs/domains/shared/_design/01-introduction-and-goals/01-introduction-and-goals/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design01-introduction-and-goals01-introduction-and-goals"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design02-architecture-constraints02-architecture-constraints-li">
-  <input type="checkbox" id="m-docsdomainsshared_design02-architecture-constraints02-architecture-constraints-check"/>
-  <label for="m-docsdomainsshared_design02-architecture-constraints02-architecture-constraints-check"><a href="/docs/domains/shared/_design/02-architecture-constraints/02-architecture-constraints/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design02-architecture-constraints02-architecture-constraints"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design03-system-scope-and-context03-system-scope-and-context-li">
-  <input type="checkbox" id="m-docsdomainsshared_design03-system-scope-and-context03-system-scope-and-context-check"/>
-  <label for="m-docsdomainsshared_design03-system-scope-and-context03-system-scope-and-context-check"><a href="/docs/domains/shared/_design/03-system-scope-and-context/03-system-scope-and-context/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design03-system-scope-and-context03-system-scope-and-context"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design04-solution-strategy04-solution-strategy-li">
-  <input type="checkbox" id="m-docsdomainsshared_design04-solution-strategy04-solution-strategy-check"/>
-  <label for="m-docsdomainsshared_design04-solution-strategy04-solution-strategy-check"><a href="/docs/domains/shared/_design/04-solution-strategy/04-solution-strategy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design04-solution-strategy04-solution-strategy"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design05-building-block-view05-building-block-view-li">
-  <input type="checkbox" id="m-docsdomainsshared_design05-building-block-view05-building-block-view-check"/>
-  <label for="m-docsdomainsshared_design05-building-block-view05-building-block-view-check"><a href="/docs/domains/shared/_design/05-building-block-view/05-building-block-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design05-building-block-view05-building-block-view"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design06-runtime-view06-runtime-view-li">
-  <input type="checkbox" id="m-docsdomainsshared_design06-runtime-view06-runtime-view-check"/>
-  <label for="m-docsdomainsshared_design06-runtime-view06-runtime-view-check"><a href="/docs/domains/shared/_design/06-runtime-view/06-runtime-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design06-runtime-view06-runtime-view"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design07-deployment-view07-deployment-view-li">
-  <input type="checkbox" id="m-docsdomainsshared_design07-deployment-view07-deployment-view-check"/>
-  <label for="m-docsdomainsshared_design07-deployment-view07-deployment-view-check"><a href="/docs/domains/shared/_design/07-deployment-view/07-deployment-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design07-deployment-view07-deployment-view"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design08-crosscuting-concepts08-crosscutting-concepts-li">
-  <input type="checkbox" id="m-docsdomainsshared_design08-crosscuting-concepts08-crosscutting-concepts-check"/>
-  <label for="m-docsdomainsshared_design08-crosscuting-concepts08-crosscutting-concepts-check"><a href="/docs/domains/shared/_design/08-crosscuting-concepts/08-crosscutting-concepts/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design08-crosscuting-concepts08-crosscutting-concepts"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design09-architecture-decisions09-architecture-decisions-li">
-  <input type="checkbox" id="m-docsdomainsshared_design09-architecture-decisions09-architecture-decisions-check"/>
-  <label for="m-docsdomainsshared_design09-architecture-decisions09-architecture-decisions-check"><a href="/docs/domains/shared/_design/09-architecture-decisions/09-architecture-decisions/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design09-architecture-decisions09-architecture-decisions"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design10-quality-requirements10-quality-requirements-li">
-  <input type="checkbox" id="m-docsdomainsshared_design10-quality-requirements10-quality-requirements-check"/>
-  <label for="m-docsdomainsshared_design10-quality-requirements10-quality-requirements-check"><a href="/docs/domains/shared/_design/10-quality-requirements/10-quality-requirements/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design10-quality-requirements10-quality-requirements"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design11-technical-risks11-technical-risks-li">
-  <input type="checkbox" id="m-docsdomainsshared_design11-technical-risks11-technical-risks-check"/>
-  <label for="m-docsdomainsshared_design11-technical-risks11-technical-risks-check"><a href="/docs/domains/shared/_design/11-technical-risks/11-technical-risks/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design11-technical-risks11-technical-risks"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design12-user-manual12-user-manual-li">
-  <input type="checkbox" id="m-docsdomainsshared_design12-user-manual12-user-manual-check"/>
-  <label for="m-docsdomainsshared_design12-user-manual12-user-manual-check"><a href="/docs/domains/shared/_design/12-user-manual/12-user-manual/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design12-user-manual12-user-manual"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design13-glossary13-glossary-li">
-  <input type="checkbox" id="m-docsdomainsshared_design13-glossary13-glossary-check"/>
-  <label for="m-docsdomainsshared_design13-glossary13-glossary-check"><a href="/docs/domains/shared/_design/13-glossary/13-glossary/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design13-glossary13-glossary"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designarchitecture-li">
-  <input type="checkbox" id="m-docsdomainsshared_designarchitecture-check"/>
-  <label for="m-docsdomainsshared_designarchitecture-check"><a href="/docs/domains/shared/_design/architecture/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designarchitecture"><span class=""></span></a></label>
   
 </li>
   </ul>
@@ -729,62 +828,6 @@ if (!doNotTrack) {
   </ul>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design01-introduction-and-goals01-introduction-and-goals-li">
-  <input type="checkbox" id="m-docsdomains_design01-introduction-and-goals01-introduction-and-goals-check"/>
-  <label for="m-docsdomains_design01-introduction-and-goals01-introduction-and-goals-check"><a href="/docs/domains/_design/01-introduction-and-goals/01-introduction-and-goals/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design01-introduction-and-goals01-introduction-and-goals"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design02-architecture-constraints02-architecture-constraints-li">
-  <input type="checkbox" id="m-docsdomains_design02-architecture-constraints02-architecture-constraints-check"/>
-  <label for="m-docsdomains_design02-architecture-constraints02-architecture-constraints-check"><a href="/docs/domains/_design/02-architecture-constraints/02-architecture-constraints/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design02-architecture-constraints02-architecture-constraints"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design03-system-scope-and-context03-system-scope-and-context-li">
-  <input type="checkbox" id="m-docsdomains_design03-system-scope-and-context03-system-scope-and-context-check"/>
-  <label for="m-docsdomains_design03-system-scope-and-context03-system-scope-and-context-check"><a href="/docs/domains/_design/03-system-scope-and-context/03-system-scope-and-context/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design03-system-scope-and-context03-system-scope-and-context"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design04-solution-strategy04-solution-strategy-li">
-  <input type="checkbox" id="m-docsdomains_design04-solution-strategy04-solution-strategy-check"/>
-  <label for="m-docsdomains_design04-solution-strategy04-solution-strategy-check"><a href="/docs/domains/_design/04-solution-strategy/04-solution-strategy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design04-solution-strategy04-solution-strategy"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design05-building-block-view05-building-block-view-li">
-  <input type="checkbox" id="m-docsdomains_design05-building-block-view05-building-block-view-check"/>
-  <label for="m-docsdomains_design05-building-block-view05-building-block-view-check"><a href="/docs/domains/_design/05-building-block-view/05-building-block-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design05-building-block-view05-building-block-view"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design06-runtime-view06-runtime-view-li">
-  <input type="checkbox" id="m-docsdomains_design06-runtime-view06-runtime-view-check"/>
-  <label for="m-docsdomains_design06-runtime-view06-runtime-view-check"><a href="/docs/domains/_design/06-runtime-view/06-runtime-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design06-runtime-view06-runtime-view"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design07-deployment-view07-deployment-view-li">
-  <input type="checkbox" id="m-docsdomains_design07-deployment-view07-deployment-view-check"/>
-  <label for="m-docsdomains_design07-deployment-view07-deployment-view-check"><a href="/docs/domains/_design/07-deployment-view/07-deployment-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design07-deployment-view07-deployment-view"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design08-crosscuting-concepts08-crosscutting-concepts-li">
-  <input type="checkbox" id="m-docsdomains_design08-crosscuting-concepts08-crosscutting-concepts-check"/>
-  <label for="m-docsdomains_design08-crosscuting-concepts08-crosscutting-concepts-check"><a href="/docs/domains/_design/08-crosscuting-concepts/08-crosscutting-concepts/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design08-crosscuting-concepts08-crosscutting-concepts"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design09-architecture-decisions09-architecture-decisions-li">
-  <input type="checkbox" id="m-docsdomains_design09-architecture-decisions09-architecture-decisions-check"/>
-  <label for="m-docsdomains_design09-architecture-decisions09-architecture-decisions-check"><a href="/docs/domains/_design/09-architecture-decisions/09-architecture-decisions/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design09-architecture-decisions09-architecture-decisions"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design10-quality-requirements10-quality-requirements-li">
-  <input type="checkbox" id="m-docsdomains_design10-quality-requirements10-quality-requirements-check"/>
-  <label for="m-docsdomains_design10-quality-requirements10-quality-requirements-check"><a href="/docs/domains/_design/10-quality-requirements/10-quality-requirements/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design10-quality-requirements10-quality-requirements"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design11-technical-risks11-technical-risks-li">
-  <input type="checkbox" id="m-docsdomains_design11-technical-risks11-technical-risks-check"/>
-  <label for="m-docsdomains_design11-technical-risks11-technical-risks-check"><a href="/docs/domains/_design/11-technical-risks/11-technical-risks/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design11-technical-risks11-technical-risks"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design12-user-manual12-user-manual-li">
-  <input type="checkbox" id="m-docsdomains_design12-user-manual12-user-manual-check"/>
-  <label for="m-docsdomains_design12-user-manual12-user-manual-check"><a href="/docs/domains/_design/12-user-manual/12-user-manual/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design12-user-manual12-user-manual"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_design13-glossary13-glossary-li">
-  <input type="checkbox" id="m-docsdomains_design13-glossary13-glossary-check"/>
-  <label for="m-docsdomains_design13-glossary13-glossary-check"><a href="/docs/domains/_design/13-glossary/13-glossary/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_design13-glossary13-glossary"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomains_designarchitecture-li">
-  <input type="checkbox" id="m-docsdomains_designarchitecture-check"/>
-  <label for="m-docsdomains_designarchitecture-check"><a href="/docs/domains/_design/architecture/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomains_designarchitecture"><span class=""></span></a></label>
-  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docscontribution-guidelines-li">
@@ -877,6 +920,29 @@ if (!doNotTrack) {
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_views">Views</h3>
+<div class="paragraph">
+<p>Views display a set of instances of an entity.
+The view provides the regular <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>View details of an entity instance.</p>
+</li>
+<li>
+<p>Modify an entity instance.
+The user can edit all properties of an object in the user interface.<br/>
+All changes are buffered in the user interface components.
+She can decide to propage the changes to the model or discard them through <em>save</em> or <em>cancel</em> operations.</p>
+</li>
+<li>
+<p>Delete an entity instance.</p>
+</li>
+<li>
+<p>Create an entity instance.</p>
+</li>
+</ul>
+</div>
 <div class="sect3">
 <h4 id="_item_view">Item View</h4>
 
@@ -903,6 +969,9 @@ if (!doNotTrack) {
 <span style="color: #0550ae">}</span></code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>The comments and the tags of an entity are modelled as a <em>one2many</em> immutable owned object relations.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -917,10 +986,15 @@ if (!doNotTrack) {
 <p>Changes are only performed on the model if the <em>save</em> action is called.
 Mandatory relations are enforced with validation rules.</p>
 </div>
+<div class="imageblock text-center kroki-format-svg kroki">
+<div class="content">
+<img src="https://kroki.io/plantuml/svg/eNqdU8FOAyEQvfMVc2yj9uC1jdnYaOLB1mjjHZepIWGHBobWRvvvsit2acUeSkJY5s28eTzYyrN0HBojRG2k9zANnm1zr9GoyeIGPne_wJzwOs6EAH4wkvJwR6x5GxMFxHEF0za5rcQO6LYJenJ2rRW6Fl2l7wQtIl3HDFarP7FCiGSDKXgbmC1BWCnJKLrgxYHaQTWzPAvGwAs7Te_g0EjWli5hj5RkZ3BJ-lDsROYWTL5Go4O-uXOPkrbPuESHVKM_x8RxwUWPBmuWbwb38A_Vq8ZNm7CO6zj3pKBjcI4JWed_fSj0OrZkviFU_WNLZ3hgbE6eoC_rxR8XDSPdCWE9hRBVvIT4C3wDgBUAjw==" alt="one2one"/>
+</div>
+</div>
 <div class="sect3">
 <h4 id="_one2one_component">One2One Component</h4>
 <div class="paragraph">
-<p>The component displays a relation from one object to another one.</p>
+<p>The component displays a relation from one object to another entity instance.</p>
 </div>
 <div class="sect4">
 <h5 id="_referenced_object">Referenced Object</h5>
@@ -945,12 +1019,22 @@ This set of objects is provided through a provider.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>The provider for selectabe instance is provided to the constructor of the <em>one2one</em> control.</p>
+</div>
+<div class="paragraph">
+<p><em>Providers support composition with _ProviderView</em> to define selection on the eligible instances.</p>
+</div>
 </div>
 <div class="sect4">
 <h5 id="_owned_object">Owned Object</h5>
 <div class="paragraph">
-<p>This mode is not supported through the <em>One2One</em> component.
+<p>This mode is <strong>not</strong> supported through the <em>One2One</em> component.
 Implement custom controls to display the object and to create a new one.</p>
+</div>
+<div class="paragraph">
+<p><em>Custom controls cannot be defined in a generic way.</em>
+<em>Expected controls for an entity are well-defined in the framework.</em></p>
 </div>
 </div>
 </div>
@@ -968,7 +1052,8 @@ Implement custom controls to display the object and to create a new one.</p>
 <div class="sect4">
 <h5 id="_referenced_objects">Referenced Objects</h5>
 <div class="paragraph">
-<p>The functions are for referenced objects:</p>
+<p>The component is <em>One2ManyReferencesField</em>.
+The functions are for referenced objects:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1012,7 +1097,8 @@ A dialog will open with the view and the <em>cancel</em> or <em>add</em> options
 <div class="sect3">
 <h4 id="_owned_objects">Owned Objects</h4>
 <div class="paragraph">
-<p>The functions are for owned objects:</p>
+<p>The component is <em>One2ManyOwnedField</em>.
+The functions are for owned objects:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1025,8 +1111,7 @@ A provided view displays selected properties in columns.</p>
 The object is removed from the relation and deleted.</p>
 </li>
 <li>
-<p>Create an object and add it to the instances which are part of the relation.
-The user can select an instance from a set of available objects displayed in a view.</p>
+<p>Create an object and add it to the instances which are part of the relation.</p>
 </li>
 </ul>
 </div>
@@ -1038,11 +1123,18 @@ The user can select an instance from a set of available objects displayed in a v
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The view to display referenced objects shall be provided to the component.</p>
+<p>The view to display referenced objects shall be provided to the component.
+The view is an item view with the create method</p>
 </div>
 <div class="paragraph">
-<p>The view to create a new object to add to the relation should be provided to the component.
-A dialog will open with the view and the <em>cancel</em> or <em>add</em> options.</p>
+<p>The provider is a shallow copy of the collection for referenced objects belonging to the relation.</p>
+</div>
+<div class="paragraph">
+<p>Because the copy is shallow, we should not provide an update operation modifying the shared object.
+The object is shared between the model and the user interface buffering.</p>
+</div>
+<div class="paragraph">
+<p>We recommend that owned objects are immutable.</p>
 </div>
 </td>
 </tr>
