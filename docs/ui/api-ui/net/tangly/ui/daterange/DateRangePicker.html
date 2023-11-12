@@ -86,8 +86,8 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">com.vaadin.flow.component.Component
-<div class="inheritance">com.vaadin.flow.component.AbstractField&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;,<wbr><a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;
-<div class="inheritance">com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;
+<div class="inheritance">com.vaadin.flow.component.AbstractField&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;,<wbr><a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;
+<div class="inheritance">com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;
 <div class="inheritance">net.tangly.ui.daterange.DateRangePicker</div>
 </div>
 </div>
@@ -96,11 +96,11 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>com.vaadin.flow.component.AttachNotifier</code>, <code>com.vaadin.flow.component.BlurNotifier&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;&gt;</code>, <code>com.vaadin.flow.component.DetachNotifier</code>, <code>com.vaadin.flow.component.Focusable&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;&gt;</code>, <code>com.vaadin.flow.component.FocusNotifier&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;&gt;</code>, <code>com.vaadin.flow.component.HasElement</code>, <code>com.vaadin.flow.component.HasEnabled</code>, <code>com.vaadin.flow.component.HasHelper</code>, <code>com.vaadin.flow.component.HasLabel</code>, <code>com.vaadin.flow.component.HasSize</code>, <code>com.vaadin.flow.component.HasStyle</code>, <code>com.vaadin.flow.component.HasTheme</code>, <code>com.vaadin.flow.component.HasValidation</code>, <code>com.vaadin.flow.component.HasValue&lt;com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;,<wbr><a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;,<wbr><a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;</code>, <code>com.vaadin.flow.component.HasValueAndElement&lt;com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;,<wbr><a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;,<wbr><a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;</code>, <code>com.vaadin.flow.component.shared.HasTooltip</code>, <code>com.vaadin.flow.component.shared.HasValidationProperties</code>, <code>com.vaadin.flow.component.shared.InputField&lt;com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;,<wbr><a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;,<wbr><a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;</code>, <code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code></dd>
+<dd><code>com.vaadin.flow.component.AttachNotifier</code>, <code>com.vaadin.flow.component.BlurNotifier&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;&gt;</code>, <code>com.vaadin.flow.component.DetachNotifier</code>, <code>com.vaadin.flow.component.Focusable&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;&gt;</code>, <code>com.vaadin.flow.component.FocusNotifier&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;&gt;</code>, <code>com.vaadin.flow.component.HasElement</code>, <code>com.vaadin.flow.component.HasEnabled</code>, <code>com.vaadin.flow.component.HasHelper</code>, <code>com.vaadin.flow.component.HasLabel</code>, <code>com.vaadin.flow.component.HasSize</code>, <code>com.vaadin.flow.component.HasStyle</code>, <code>com.vaadin.flow.component.HasTheme</code>, <code>com.vaadin.flow.component.HasValidation</code>, <code>com.vaadin.flow.component.HasValue&lt;com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;,<wbr><a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;,<wbr><a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;</code>, <code>com.vaadin.flow.component.HasValueAndElement&lt;com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;,<wbr><a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;,<wbr><a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;</code>, <code>com.vaadin.flow.component.shared.HasTooltip</code>, <code>com.vaadin.flow.component.shared.HasValidationProperties</code>, <code>com.vaadin.flow.component.shared.InputField&lt;com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent&lt;com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;,<wbr><a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;,<wbr><a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;</code>, <code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">DateRangePicker</span>
-<span class="extends-implements">extends com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;</span></div>
+<span class="extends-implements">extends com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -145,7 +145,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>protected com.vaadin.flow.component.datepicker.DatePicker</code></div>
 <div class="col-second odd-row-color"><code><a href="#endDatePicker" class="member-name-link">endDatePicker</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected com.vaadin.flow.component.orderedlayout.HorizontalLayout</code></div>
+<div class="col-first even-row-color"><code>protected final com.vaadin.flow.component.orderedlayout.HorizontalLayout</code></div>
 <div class="col-second even-row-color"><code><a href="#horizontalLayout" class="member-name-link">horizontalLayout</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected com.vaadin.flow.component.datepicker.DatePicker</code></div>
@@ -194,7 +194,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createShortcuts(com.vaadin.flow.component.orderedlayout.HorizontalLayout)" class="member-name-link">createShortcuts</a><wbr>(com.vaadin.flow.component.orderedlayout.HorizontalLayout&nbsp;mainComponent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateModelValue()" class="member-name-link">generateModelValue</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DateRangeShortcut.html" title="class in net.tangly.ui.daterange">DateRangeShortcut</a></code></div>
@@ -219,7 +219,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setContextMenu(net.tangly.ui.daterange.DateRangeShortcut)" class="member-name-link">setContextMenu</a><wbr>(<a href="DateRangeShortcut.html" title="class in net.tangly.ui.daterange">DateRangeShortcut</a>&nbsp;contextMenu)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPresentationValue(net.tangly.ui.daterange.DateRange)" class="member-name-link">setPresentationValue</a><wbr>(<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&nbsp;dateRange)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPresentationValue(net.tangly.ui.daterange.TemporalDateRange)" class="member-name-link">setPresentationValue</a><wbr>(<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&nbsp;dateRange)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -316,7 +316,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="horizontalLayout">
 <h3>horizontalLayout</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">com.vaadin.flow.component.orderedlayout.HorizontalLayout</span>&nbsp;<span class="element-name">horizontalLayout</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">com.vaadin.flow.component.orderedlayout.HorizontalLayout</span>&nbsp;<span class="element-name">horizontalLayout</span></div>
 </section>
 </li>
 </ul>
@@ -412,20 +412,20 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="generateModelValue()">
 <h3>generateModelValue</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a></span>&nbsp;<span class="element-name">generateModelValue</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a></span>&nbsp;<span class="element-name">generateModelValue</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>generateModelValue</code>&nbsp;in class&nbsp;<code>com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;</code></dd>
+<dd><code>generateModelValue</code>&nbsp;in class&nbsp;<code>com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="setPresentationValue(net.tangly.ui.daterange.DateRange)">
+<section class="detail" id="setPresentationValue(net.tangly.ui.daterange.TemporalDateRange)">
 <h3>setPresentationValue</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPresentationValue</span><wbr><span class="parameters">(<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&nbsp;dateRange)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPresentationValue</span><wbr><span class="parameters">(<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&nbsp;dateRange)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>setPresentationValue</code>&nbsp;in class&nbsp;<code>com.vaadin.flow.component.customfield.CustomField&lt;<a href="DateRange.html" title="class in net.tangly.ui.daterange">DateRange</a>&gt;</code></dd>
+<dd><code>setPresentationValue</code>&nbsp;in class&nbsp;<code>com.vaadin.flow.component.customfield.CustomField&lt;<a href="TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt;</code></dd>
 </dl>
 </section>
 </li>

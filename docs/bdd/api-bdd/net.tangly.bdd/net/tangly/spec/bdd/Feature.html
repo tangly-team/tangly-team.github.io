@@ -86,11 +86,10 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#PACKAGE" title="class or interface in java.lang.annotation" class="external-link">PACKAGE</a>)
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME" title="class or interface in java.lang.annotation" class="external-link">RUNTIME</a>)
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">Feature</span></div>
-<div class="block">A feature or a story describes a behavior of the build system. You can use a story template or free text to describe the behavior of the system.
- For each feature a set of scenarios or tests are defined in the form "Given a context When a specific event happens then the expected outcomes are
- as described". The "Given When Then" scenarios are described in unit tests using the features of JUnit 5 such as test class and nested classes to
- document and implement the "Given When" and test methods to realize the "Then" part. The display name annotation is used to produce readable and
- executable behavior driven tests.</div>
+<div class="block">A feature or a story describes the behavior of the build system. You can use a story template or free text to describe the behavior of the system. For each feature, a set of
+ scenarios or tests are defined in the form "Given a context When a specific event happens, then the expected outcomes are as described". The "Given When Then" scenarios are
+ described in unit tests using the features of JUnit 5 such as test class and nested classes to document and implement the "Given When" and test methods to realize the "Then"
+ part. The display name annotation is used to produce readable and executable behavior-driven tests.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -162,8 +161,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="description()">
 <h3>description</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">description</span></div>
-<div class="block">Return the detailed description of the story as human-readable information for living documentation. One could describe a story in this
- format: As a {user-defined string}, in order to {user-defined string}, I want to {user-defined string}.</div>
+<div class="block">Return the detailed description of the story as human-readable information for living documentation. One could describe a story in this format: As a {user-defined string},
+ to {user-defined string}, I want to {user-defined string}.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the story in a plain human language.</dd>
