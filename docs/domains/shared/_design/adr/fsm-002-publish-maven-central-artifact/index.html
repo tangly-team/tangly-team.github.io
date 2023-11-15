@@ -20,52 +20,61 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>FSM 001: Move Abstractions to JDK Classes | tangly Components</title>
+<title>FSM-002: Publish Maven Central Artifacts | tangly Components</title>
 <meta content="
-FSM-001 Replace Guard and Action classes with JDK BiPredicate and BiFunction Classes
+FSM-002 Publish Artifacts on Public Java Components Repository
 
 
-Date: 2017-06-01
+Date: 2020-01-01
 
 
 Status
 
-Implemented
+Retired
+
+
+
+Links
+
+Superseded by: OS-0005
 
 
 
 Context
 
-We need a …" name="description">
-<meta property="og:title" content="FSM 001: Move Abstractions to JDK Classes" />
-<meta property="og:description" content="FSM-001 Replace Guard and Action classes with JDK BiPredicate and BiFunction Classes Date: 2017-06-01
-Status Implemented
-Context We need a legible data model for finite state machine definitions. New users should easily understand the finite state machine abstractions and map them to their domain.
-Decision We use standard classes of the JDK to minimize contextual complexity when learning and using the FSM library. We will evaluate if the loss of domain names for classes has a negative impact on the legibility of the library." />
+The …" name="description">
+<meta property="og:title" content="FSM-002: Publish Maven Central Artifacts" />
+<meta property="og:description" content="FSM-002 Publish Artifacts on Public Java Components Repository Date: 2020-01-01
+Status Retired
+Links Superseded by: OS-0005
+Context The library is mature enough to be used in commercial and academic projects. The library was used in internal projects and refined to fulfill these requirements. More customers will validate the usefulness of the library and identify extensions for further releases.
+Decision The library shall be published on maven central and be accessible to a wide range of developers and organizations." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tangly.net/docs/fsm/adr/fsm-001-move-abstractions-to-jdk-classes/" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2019-05-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-05-01T00:00:00+00:00" />
+<meta property="og:url" content="https://blog.tangly.net/docs/domains/shared/_design/adr/fsm-002-publish-maven-central-artifact/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2020-01-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-01T00:00:00+00:00" />
 
-<meta itemprop="name" content="FSM 001: Move Abstractions to JDK Classes">
-<meta itemprop="description" content="FSM-001 Replace Guard and Action classes with JDK BiPredicate and BiFunction Classes Date: 2017-06-01
-Status Implemented
-Context We need a legible data model for finite state machine definitions. New users should easily understand the finite state machine abstractions and map them to their domain.
-Decision We use standard classes of the JDK to minimize contextual complexity when learning and using the FSM library. We will evaluate if the loss of domain names for classes has a negative impact on the legibility of the library."><meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="164">
+<meta itemprop="name" content="FSM-002: Publish Maven Central Artifacts">
+<meta itemprop="description" content="FSM-002 Publish Artifacts on Public Java Components Repository Date: 2020-01-01
+Status Retired
+Links Superseded by: OS-0005
+Context The library is mature enough to be used in commercial and academic projects. The library was used in internal projects and refined to fulfill these requirements. More customers will validate the usefulness of the library and identify extensions for further releases.
+Decision The library shall be published on maven central and be accessible to a wide range of developers and organizations."><meta itemprop="datePublished" content="2020-01-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-01-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="170">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="FSM 001: Move Abstractions to JDK Classes"/>
-<meta name="twitter:description" content="FSM-001 Replace Guard and Action classes with JDK BiPredicate and BiFunction Classes Date: 2017-06-01
-Status Implemented
-Context We need a legible data model for finite state machine definitions. New users should easily understand the finite state machine abstractions and map them to their domain.
-Decision We use standard classes of the JDK to minimize contextual complexity when learning and using the FSM library. We will evaluate if the loss of domain names for classes has a negative impact on the legibility of the library."/>
+<meta name="twitter:title" content="FSM-002: Publish Maven Central Artifacts"/>
+<meta name="twitter:description" content="FSM-002 Publish Artifacts on Public Java Components Repository Date: 2020-01-01
+Status Retired
+Links Superseded by: OS-0005
+Context The library is mature enough to be used in commercial and academic projects. The library was used in internal projects and refined to fulfill these requirements. More customers will validate the usefulness of the library and identify extensions for further releases.
+Decision The library shall be published on maven central and be accessible to a wide range of developers and organizations."/>
 
 
 
 
-<link rel="preload" href="/scss/main.min.c14f44eae25dfb7b997ab70c8866fa463b5b5ba07cc60b0c8121d14a748a7496.css" as="style">
-<link href="/scss/main.min.c14f44eae25dfb7b997ab70c8866fa463b5b5ba07cc60b0c8121d14a748a7496.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
+<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -150,7 +159,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.afacd99e58089400644ffa6e56ef55c5.json"
+    data-offline-search-index-json-src="/offline-search-index.c9db9b8d653a4426a253d6313f4e5e9d.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -175,7 +184,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.afacd99e58089400644ffa6e56ef55c5.json"
+    data-offline-search-index-json-src="/offline-search-index.c9db9b8d653a4426a253d6313f4e5e9d.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -277,8 +286,8 @@ if (!doNotTrack) {
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsfsm-li">
-  <input type="checkbox" id="m-docsfsm-check" checked/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsfsm-li">
+  <input type="checkbox" id="m-docsfsm-check"/>
   <label for="m-docsfsm-check"><a href="/docs/fsm/" title="FSM - Hierarchical Finite State Machine" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsfsm"><span class="">FSM</span></a></label>
   
   <ul class="ul-2 foldable">
@@ -302,21 +311,10 @@ if (!doNotTrack) {
   <input type="checkbox" id="m-docsfsmdesign-check"/>
   <label for="m-docsfsmdesign-check"><a href="/docs/fsm/design/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmdesign"><span class="">Design Considerations</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsfsmadr-li">
-  <input type="checkbox" id="m-docsfsmadr-check" checked/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmadr-li">
+  <input type="checkbox" id="m-docsfsmadr-check"/>
   <label for="m-docsfsmadr-check"><a href="/docs/fsm/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsfsmadr"><span class="">ADR</span></a></label>
   
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsfsmadrfsm-001-move-abstractions-to-jdk-classes-li">
-  <input type="checkbox" id="m-docsfsmadrfsm-001-move-abstractions-to-jdk-classes-check" checked/>
-  <label for="m-docsfsmadrfsm-001-move-abstractions-to-jdk-classes-check"><a href="/docs/fsm/adr/fsm-001-move-abstractions-to-jdk-classes/" title="FSM 001: Move Abstractions to JDK Classes" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-docsfsmadrfsm-001-move-abstractions-to-jdk-classes"><span class="td-sidebar-nav-active-item">Move Abstractions to JDK Classes</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsfsmadrfsm-002-publish-maven-central-artifact-li">
-  <input type="checkbox" id="m-docsfsmadrfsm-002-publish-maven-central-artifact-check"/>
-  <label for="m-docsfsmadrfsm-002-publish-maven-central-artifact-check"><a href="/docs/fsm/adr/fsm-002-publish-maven-central-artifact/" title="FSM-002: Publish Maven Central Artifacts" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsfsmadrfsm-002-publish-maven-central-artifact"><span class="">Publish Maven Central Artifacts</span></a></label>
-  
-</li>
-  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsfsmexamples-li">
   <input type="checkbox" id="m-docsfsmexamples-check"/>
   <label for="m-docsfsmexamples-check"><a href="/docs/fsm/examples/" title="FSM Documentation Examples" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsfsmexamples"><span class="">Examples</span></a></label>
@@ -396,8 +394,8 @@ if (!doNotTrack) {
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomains-li">
-  <input type="checkbox" id="m-docsdomains-check"/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdomains-li">
+  <input type="checkbox" id="m-docsdomains-check" checked/>
   <label for="m-docsdomains-check"><a href="/docs/domains/" title="ERP Bounded Domains" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomains"><span class="">ERP Domains</span></a></label>
   
   <ul class="ul-2 foldable">
@@ -411,13 +409,25 @@ if (!doNotTrack) {
   <label for="m-docsdomainsarchitectureadr-check"><a href="/docs/domains/architecture/adr/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsarchitectureadr"><span class="">ADR</span></a></label>
   
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-001-system-guava-removal-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadrerpui-001-asciidoc-for-all-texts-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadrerpui-001-asciidoc-for-all-texts-check"/>
+  <label for="m-docsdomainsarchitectureadrerpui-001-asciidoc-for-all-texts-check"><a href="/docs/domains/architecture/adr/erpui-001-asciidoc-for-all-texts/" title="ERPUI-001: AsciiDoc for Text Fields" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadrerpui-001-asciidoc-for-all-texts"><span class="">AsciiDoc Support</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadrfsm-001-move-abstractions-to-jdk-classes-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadrfsm-001-move-abstractions-to-jdk-classes-check"/>
+  <label for="m-docsdomainsarchitectureadrfsm-001-move-abstractions-to-jdk-classes-check"><a href="/docs/domains/architecture/adr/fsm-001-move-abstractions-to-jdk-classes/" title="FSM 001: Move Abstractions to JDK Classes" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadrfsm-001-move-abstractions-to-jdk-classes"><span class="">Move Abstractions to JDK Classes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-001-system-guava-removal-li">
   <input type="checkbox" id="m-docsdomainsarchitectureadros-001-system-guava-removal-check"/>
   <label for="m-docsdomainsarchitectureadros-001-system-guava-removal-check"><a href="/docs/domains/architecture/adr/os-001-system-guava-removal/" title="OS 001: System Guava Removal" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-001-system-guava-removal"><span class="">Guava Removal</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-002-unit-test-conventions-li">
   <input type="checkbox" id="m-docsdomainsarchitectureadros-002-unit-test-conventions-check"/>
   <label for="m-docsdomainsarchitectureadros-002-unit-test-conventions-check"><a href="/docs/domains/architecture/adr/os-002-unit-test-conventions/" title="OS 002: Unit Test Conventions" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadros-002-unit-test-conventions"><span class="">Unit Test Conventions</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadrfsm-002-publish-maven-central-artifact-li">
+  <input type="checkbox" id="m-docsdomainsarchitectureadrfsm-002-publish-maven-central-artifact-check"/>
+  <label for="m-docsdomainsarchitectureadrfsm-002-publish-maven-central-artifact-check"><a href="/docs/domains/architecture/adr/fsm-002-publish-maven-central-artifact/" title="FSM-002: Publish Maven Central Artifacts" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsarchitectureadrfsm-002-publish-maven-central-artifact"><span class="">Publish Maven Central Artifacts</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsarchitectureadros-003-use-modern-java-constructs-li">
   <input type="checkbox" id="m-docsdomainsarchitectureadros-003-use-modern-java-constructs-check"/>
@@ -670,28 +680,40 @@ if (!doNotTrack) {
   </ul>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsshared-li">
-  <input type="checkbox" id="m-docsdomainsshared-check"/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdomainsshared-li">
+  <input type="checkbox" id="m-docsdomainsshared-check" checked/>
   <label for="m-docsdomainsshared-check"><a href="/docs/domains/shared/" title="Shared - Shared Kernel" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared"><span class="">Shared</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsshared_design-li">
-  <input type="checkbox" id="m-docsdomainsshared_design-check"/>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdomainsshared_design-li">
+  <input type="checkbox" id="m-docsdomainsshared_design-check" checked/>
   <label for="m-docsdomainsshared_design-check"><a href="/docs/domains/shared/_design/" title="ERP Architecture" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared_design"><span class="">Architecture</span></a></label>
   
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsshared_designadr-li">
-  <input type="checkbox" id="m-docsdomainsshared_designadr-check"/>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdomainsshared_designadr-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadr-check" checked/>
   <label for="m-docsdomainsshared_designadr-check"><a href="/docs/domains/shared/_design/adr/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared_designadr"><span class="">ADR</span></a></label>
   
   <ul class="ul-5 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-001-system-guava-removal-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadrerpui-001-asciidoc-for-all-texts-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadrerpui-001-asciidoc-for-all-texts-check"/>
+  <label for="m-docsdomainsshared_designadrerpui-001-asciidoc-for-all-texts-check"><a href="/docs/domains/shared/_design/adr/erpui-001-asciidoc-for-all-texts/" title="ERPUI-001: AsciiDoc for Text Fields" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadrerpui-001-asciidoc-for-all-texts"><span class="">AsciiDoc Support</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadrfsm-001-move-abstractions-to-jdk-classes-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadrfsm-001-move-abstractions-to-jdk-classes-check"/>
+  <label for="m-docsdomainsshared_designadrfsm-001-move-abstractions-to-jdk-classes-check"><a href="/docs/domains/shared/_design/adr/fsm-001-move-abstractions-to-jdk-classes/" title="FSM 001: Move Abstractions to JDK Classes" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadrfsm-001-move-abstractions-to-jdk-classes"><span class="">Move Abstractions to JDK Classes</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-001-system-guava-removal-li">
   <input type="checkbox" id="m-docsdomainsshared_designadros-001-system-guava-removal-check"/>
   <label for="m-docsdomainsshared_designadros-001-system-guava-removal-check"><a href="/docs/domains/shared/_design/adr/os-001-system-guava-removal/" title="OS 001: System Guava Removal" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-001-system-guava-removal"><span class="">Guava Removal</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-002-unit-test-conventions-li">
   <input type="checkbox" id="m-docsdomainsshared_designadros-002-unit-test-conventions-check"/>
   <label for="m-docsdomainsshared_designadros-002-unit-test-conventions-check"><a href="/docs/domains/shared/_design/adr/os-002-unit-test-conventions/" title="OS 002: Unit Test Conventions" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadros-002-unit-test-conventions"><span class="">Unit Test Conventions</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsdomainsshared_designadrfsm-002-publish-maven-central-artifact-li">
+  <input type="checkbox" id="m-docsdomainsshared_designadrfsm-002-publish-maven-central-artifact-check" checked/>
+  <label for="m-docsdomainsshared_designadrfsm-002-publish-maven-central-artifact-check"><a href="/docs/domains/shared/_design/adr/fsm-002-publish-maven-central-artifact/" title="FSM-002: Publish Maven Central Artifacts" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_designadrfsm-002-publish-maven-central-artifact"><span class="td-sidebar-nav-active-item">Publish Maven Central Artifacts</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_designadros-003-use-modern-java-constructs-li">
   <input type="checkbox" id="m-docsdomainsshared_designadros-003-use-modern-java-constructs-check"/>
@@ -816,17 +838,10 @@ if (!doNotTrack) {
   <input type="checkbox" id="m-docsdomainsuimodels-check"/>
   <label for="m-docsdomainsuimodels-check"><a href="/docs/domains/ui/models/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsuimodels"><span class="">Bounded Domain UI Model</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsuiadr-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsuiadr-li">
   <input type="checkbox" id="m-docsdomainsuiadr-check"/>
   <label for="m-docsdomainsuiadr-check"><a href="/docs/domains/ui/adr/" title="Architecture Design Record (ADR)" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsuiadr"><span class="">ADR</span></a></label>
   
-  <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsuiadrerpui-001-markdown-for-all-texts-li">
-  <input type="checkbox" id="m-docsdomainsuiadrerpui-001-markdown-for-all-texts-check"/>
-  <label for="m-docsdomainsuiadrerpui-001-markdown-for-all-texts-check"><a href="/docs/domains/ui/adr/erpui-001-markdown-for-all-texts/" title="ERPUI-001: Markdown for all Text Fields" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsuiadrerpui-001-markdown-for-all-texts"><span class="">Markdown Support</span></a></label>
-  
-</li>
-  </ul>
 </li>
   </ul>
 </li>
@@ -857,8 +872,8 @@ if (!doNotTrack) {
             <div class="taxonomy taxonomy-terms-cloud taxo-tags">
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">101</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">architecture</span><span class="taxonomy-count">18</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">agile</span><span class="taxonomy-count">102</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">architecture</span><span class="taxonomy-count">19</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/crm/" data-taxonomy-term="crm"><span class="taxonomy-label">crm</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/design/" data-taxonomy-term="design"><span class="taxonomy-label">design</span><span class="taxonomy-count">23</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">devops</span><span class="taxonomy-count">8</span></a></li>
@@ -890,56 +905,80 @@ if (!doNotTrack) {
   <li class="breadcrumb-item">
     <a href="https://blog.tangly.net/docs/">Documentation</a></li>
   <li class="breadcrumb-item">
-    <a href="https://blog.tangly.net/docs/fsm/">FSM</a></li>
+    <a href="https://blog.tangly.net/docs/domains/">ERP Domains</a></li>
   <li class="breadcrumb-item">
-    <a href="https://blog.tangly.net/docs/fsm/adr/">ADR</a></li>
+    <a href="https://blog.tangly.net/docs/domains/shared/">Shared</a></li>
+  <li class="breadcrumb-item">
+    <a href="https://blog.tangly.net/docs/domains/shared/_design/">Architecture</a></li>
+  <li class="breadcrumb-item">
+    <a href="https://blog.tangly.net/docs/domains/shared/_design/adr/">ADR</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Move Abstractions to JDK Classes</li>
+    Publish Maven Central Artifacts</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>FSM 001: Move Abstractions to JDK Classes</h1>
+	<h1>FSM-002: Publish Maven Central Artifacts</h1>
 	
 	<header class="article-meta">
 		
 </header>
 	<div class="sect1">
-<h2 id="_fsm_001_replace_guard_and_action_classes_with_jdk_bipredicate_and_bifunction_classes">FSM-001 Replace Guard and Action classes with JDK BiPredicate and BiFunction Classes</h2>
+<h2 id="_fsm_002_publish_artifacts_on_public_java_components_repository">FSM-002 Publish Artifacts on Public Java Components Repository</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Date: 2017-06-01</p>
+<p>Date: 2020-01-01</p>
 </div>
 <div class="sect2">
 <h3 id="_status">Status</h3>
 <div class="paragraph">
-<p>Implemented</p>
+<p>Retired</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="paragraph">
+<p>Superseded by: <a href="../../../../docs/domains/architecture/adr/os-005-publish-maven-central-artifact/">OS-0005</a></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_context">Context</h3>
 <div class="paragraph">
-<p>We need a legible data model for finite state machine definitions.
-New users should easily understand the finite state machine abstractions and map them to their domain.</p>
+<p>The library is mature enough to be used in commercial and academic projects.
+The library was used in internal projects and refined to fulfill these requirements.
+More customers will validate the usefulness of the library and identify extensions for further releases.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_decision">Decision</h3>
 <div class="paragraph">
-<p>We use standard classes of the JDK to minimize contextual complexity when learning and using the FSM library.
-We will evaluate if the loss of domain names for classes has a negative impact on the legibility of the library.</p>
+<p>The library shall be published on maven central and be accessible to a wide range of developers and organizations.
+A website shall be set up to provide adequate documentation for users.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://blog.tangly.net/docs/fsm/">FSM website</a> will use a static web approach to minimize costs and provide good legibility.</p>
+</div>
+<div class="paragraph">
+<p>The library will be published on Maven Central to maximize potential usage.</p>
+</div>
+<div class="paragraph">
+<p>The ADR FSM-001 supports this evolution.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_consequences">Consequences</h3>
-<div class="paragraph">
-<p>We have a cleaner and simpler interface and have increased dependency on regular JDK classes.
-The generic names of the guard predicate and functional action should not diminish the legibility of the source code.
-The role of the type is defined through the name of the parameter in the method signature.</p>
-</div>
-<div class="paragraph">
-<p>Care was taken to use explicit parameter names and document them accordingly in JavaDoc.
-Modern IDEs such as IntelliJ IDEA display formatted JavaDoc as hints to the developer.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>We have to establish a publishing process at the company level to deploy signed artifacts to maven central repository.</p>
+</li>
+<li>
+<p>We have to establish a public website to host the documentation of public published libraries.</p>
+</li>
+<li>
+<p>We have to support semantic versioning of all future published releases.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"net.tangly.erp.apps","c":"App","l":"App()","u":"%3Cinit%3E()"},{"p":"net.tangly.erp.apps","c":"App","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"net.tangly.erp.apps","c":"App","l":"ofInvoicesDomain()"}];updateSearchResults();

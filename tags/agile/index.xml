@@ -5,7 +5,7 @@
     <description>Recent content in agile on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Nov 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/agile/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,285 @@
         
       
     
+    
+    <item>
+      <title>Blog: Pragmatic Java Application Design</title>
+      <link>https://blog.tangly.net/blog/2023/pragmatic-java-application-design/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/pragmatic-java-application-design/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_pragmatic_java_application_design&#34;&gt;Pragmatic Java Application Design&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-11-03-head.png&#34; alt=&#34;2023 11 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I attended the 20&lt;sup&gt;th&lt;/sup&gt; edition of the &lt;a href=&#34;https://devoxx.be/&#34;&gt;Devoxx Belgium&lt;/a&gt; conference in Antwerp.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I heard about beautiful examples of how to design complex software applications written in Java.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The solutions scale to hundreds of thousands of users, are resilient to network disruption and use fancy libraries and tools.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The applications are deployed on cloud infrastructure and are available worldwide.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;After the conference, I went to Ibiza for a family holiday.
+Our family enjoys prolonging the summer on this beautiful balearic island.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The weather is Switzerland is typical for fall.
+Cold, misty and often rainy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I used the relaxed location to reflect about the kind of applications I often develop for customers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The application goal often is to digitalize an internal process or a more complex workflow involving customers and suppliers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The product we have to develop has the following characteristics:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;It is a web-based application.
+Customers and their IT departments do not want to install an application locally.
+Only a few users access the application through a tablet or a smartphone.
+I expect that mobile user numbers will increase in the future.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It has from a few dozens to a maximum of a few hundreds of parallel active users.
+The user interface should be responsive to reflect modern user interface expectation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Persistent data is often a few tens of gigabytes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It has few computational intensive algorithms.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It often has to produce various output documents for distribution.
+The preferred format is PDF.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A CRM system for a small company uses quite a small persistent storage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The marketing department has less than 10&amp;#39;000 prospects and less than 1&amp;#39;000&amp;#39;000 interactions.
+The company has at most 10&amp;#39;000 contracts and 1&amp;#39;000&amp;#39;000 invoices.
+We can assume each object is less than 10 KBytes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The size of the whole database is therefore around 20 GB.
+Modern servers can easily load this data in memory and provide lightning fast access to information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Please factor in the fact that quite a slice of this data is in the past and is very seldom accessed.
+The application will not need regular access to all the historical information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Most of the time the application only accesses active customers, contracts, and invoices issued in the current year.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_modular_monolith&#34;&gt;Modular Monolith&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The good approach to design such a system is to use a modular monolith architecture &lt;a href=&#34;#modular-monolith&#34;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The technologies I use are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Domain Driven Design&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is a good architecture approach to creating modular monoliths with object-oriented technologies
+[&lt;a href=&#34;#domain-driven-design-distilled&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#domain-storytelling&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#domain-driven-design&#34;&gt;4&lt;/a&gt;].&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Modern Java technology stack&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is probably the most effective stack for engineering maintainable solutions.
+Trained engineers are available.
+High-quality open source and commercial libraries are available to solve most requirements
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;EclipseStore and HyperSQL&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Are cost-effective and stable approaches for persistence.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Logging log4j2&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is a powerful and established logging approach for your productive systems.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Monitoring Micrometer&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is an industry standard to monitor your productive solutions on premises or in the cloud.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Vaadin, SO Charts&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is a Java-based approach to creating modern user interfaces.
+{ref-vaadin} empowers developers to use one technology stack for the whole application.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;PDF Box&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is a powerful library to generate your PDF output documents.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;FacturX and Swiss QR Code&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Are used to create compliant invoices in Europe and Switzerland.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The application could have a huge success and be sold as a product to customers.
+You must now support thousands of concurrent users and more persistent data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following changes are needed:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Split modular monolith into a set of services.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Move to PostreSQL database.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shard your application services and data either geographically or per customer groups.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The user interface written with Vaadin currently scales up to around ten thousand concurrent users for one server.
+If you have more users, you must create shards for your application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach will only scale for around hundred thousand concurrent users.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Honestly, I never created an application with more than eight thousand concurrent users.&lt;/em&gt;
+&lt;em&gt;Products with more parallel users are seldom in Europe.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We are professional engineers.
+Form should follow function.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The huge majority of digital products we build do not need fanciful and expensive technologies.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We should build solid products [&lt;a href=&#34;#modern-software-engineering&#34;&gt;5&lt;/a&gt;].
+Evolutive architecture principles [&lt;a href=&#34;#building-evolutionary-architectures-2nd&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#continuous-architecture-in-practice&#34;&gt;7&lt;/a&gt;] help us to scale later.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware that if your market grows exponentially, you will have to rewrite your solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach is the best for your company and your cash flow.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;At this moment, you will better understand your customers and have the necessary budget to create a truly complex solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Track new technologies.
+Evaluate their adequacy for your organization and products.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I am currently evaluating &lt;a href=&#34;https://containers.dev/&#34;&gt;Development Containers&lt;/a&gt;.
+It has the potential to simplify the setup of a development environment for a team.
+The approach also solves the maintenance nightmare to support multiple development environements for older product versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;monolith-first&#34;&gt;&lt;/a&gt;[1 ] &lt;a href=&#34;https://martinfowler.com/bliki/MonolithFirst.html&#34;&gt;Monolith First&lt;/a&gt;
+Martin Fowler. 2015.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modular-monolith&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2022/modular-monoliths-are-the-new-graal/&#34;&gt;Modular Monoliths Are the new Graal&lt;/a&gt;
+Marcel Baumann. 2022.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;behavor-driven-design&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2022/behavior-driven-design/&#34;&gt;Behavior Driven Design&lt;/a&gt;
+Marcel Baumann. 2022.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design-distilled&#34;&gt;&lt;/a&gt;[1] V. Vernon, &lt;em&gt;Domain-Driven Design Distilled&lt;/em&gt;. Addison-Wesley Professional, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01JJSGE5S/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01JJSGE5S/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[2] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-storytelling&#34;&gt;&lt;/a&gt;[3] S. Hofer and H. Schwentner, &lt;em&gt;Domain Storytelling&lt;/em&gt;. Pearson Education, Limited, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B099ZNXCJT&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B099ZNXCJT&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[4] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;modern-software-engineering&#34;&gt;&lt;/a&gt;[5] D. Farley, &lt;em&gt;Modern Software Engineering&lt;/em&gt;. Pearson Education, Limited, 2022 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B09GG6XKS4&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B09GG6XKS4&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;building-evolutionary-architectures-2nd&#34;&gt;&lt;/a&gt;[6] N. Ford, R. Parsons, and P. Kua, &lt;em&gt;Building Evolutionary Architectures: Automated Software Governance&lt;/em&gt;, Second. O’Reilly Media, 2023 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B0BN4T1P27&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B0BN4T1P27&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;continuous-architecture-in-practice&#34;&gt;&lt;/a&gt;[7] M. Erder, P. Pureur, and E. Woods, &lt;em&gt;Continuous architecture in practice&lt;/em&gt;, First. Addison-Wesley, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B08ZRTQGLJ&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B08ZRTQGLJ&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Modern applications are deployed on public or private cloud. I do not understand why such an application should run on an outdated Java runtime. You must update the runtime at least every three months to deploy the quarterly security patches.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: C4 and UML with PlantUML</title>
@@ -16355,199 +16634,6 @@ We are flesh and blood living beings.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
 &lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. Beware you cannot search for such repositories, especially if you are using proprietary document formats such as Microsoft Office. The sole exception is Google Drive from the search engine company.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Why Is Java Path Class Better?</title>
-      <link>https://blog.tangly.net/blog/2021/why-is-java-path-class-better/</link>
-      <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/why-is-java-path-class-better/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_why_is_java_path_api_class_better&#34;&gt;Why Is Java Path API Class Better?&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-02-02-head.jpg&#34; alt=&#34;2021 02 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_file_system_nio&#34;&gt;File System NIO&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Java NIO &lt;em&gt;New Input Output&lt;/em&gt; is an alternative IO API for Java, meaning alternative to the standard Java IO and Java Networking APIs.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Java NIO offers a different IO programming model than the traditional IO APIs.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock note&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Sometimes NIO is claimed to mean Non-blocking IO.
-However, this is not what NIO meant originally.
-Also, parts of the NIO APIs are actually blocking - e.g. the file APIs - so the label &amp;#34;Non-blocking&amp;#34; would be slightly misleading.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;One major feature of interest is the support of alternate file systems.
-An in-memory file system is ideal for test file related operations in unit and integration tests.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_unit_tests&#34;&gt;Unit Tests&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;a href=&#34;https://github.com/google/jimfs&#34;&gt;Jimfs&lt;/a&gt; library implements an in-memory file system.
-You can find other implementations of in-memory file systems if you want to use another library.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The approach is ideal to write unit tests working with files.
-You cannot assume to have access to a well-defined file system in a generic continuous integration pipeline.
-Unit tests using an in-memory file system can be deployed in a continuous integration pipeline.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;When you look at the implementation of &lt;em&gt;Path.of&lt;/em&gt; or &lt;em&gt;Paths.get&lt;/em&gt;, you will see:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Path&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;of&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;first&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;...&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;more&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-    &lt;span style=&#34;color: #cf222e&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;FileSystems&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getDefault&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getPath&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;first&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;more&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;So, while this method and similar ones are very convenient, using them will imply you want to access your default file system.
-The one your JVM is running on, not your in-memory file system.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Hence, when wanting to make sure your code works against in-memory file systems, you must make sure to never call these helper methods.
-Instead, you should always use the &lt;em&gt;FileSystem&lt;/em&gt; or a &lt;em&gt;Path&lt;/em&gt; instance as an anchor.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Depending on your project and your libraries, this is quite a challenge to pull off
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_paths&#34;&gt;Paths&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Alternative file system operations require all methods to use path objects instead of file objects.
-File objects contain the name of the accessed file but lose all references to the underlying file system.
-All operations using file objects implicitly use the default file system.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Path objects encapsulate the file and the file system.
-Operations are aware of the underlying file system and behave as expected.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;FileSystem&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;fs&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;;&lt;/span&gt;  &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-
-&lt;span style=&#34;color: #953800&#34;&gt;Files&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;createDirectory&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;fs&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getPath&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;ORGANIZATION&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;crm/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;  &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-&lt;span style=&#34;color: #953800&#34;&gt;Files&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;copy&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;myFile&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;fs&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getPath&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;ORGANIZATION&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;crm/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)),&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;StandardCopyOption&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;REPLACE_EXISTING&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;colist arabic&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Define a file system&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Work with the file system to create paths and avoid using helper methods using the default file system&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Consider Java &lt;em&gt;java.io.File&lt;/em&gt; class as a legacy abstraction.
-Avoid using it and moving over to the Java path abstraction.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Remember &lt;em&gt;java.nio.Path&lt;/em&gt; class has a reference to a file system, the &lt;em&gt;java.io.File&lt;/em&gt; class only uses the default file system.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The javadoc definition states that a file is&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;An abstract representation of file and directory path names.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;User interfaces and operating systems use system-dependent pathname strings to name files and directories.
-The javadoc definition states that * The java.nio.file package defines interfaces and classes for the Java virtual machine to access files, file attributes, and file systems.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;This API may be used to overcome the limitations of the java.io.File class.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Use file instances to manipulate abstract file path names.
-Use path instances to manipulate files.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Beware that&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;File&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;file&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;/tmp/myfile.txt&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-
-&lt;span style=&#34;color: #953800&#34;&gt;Path&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;path&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;file&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;toPath&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
-
-&lt;span style=&#34;color: #6e7781&#34;&gt;// is implemented as&lt;/span&gt;
-
-&lt;span style=&#34;color: #953800&#34;&gt;FileSystems&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getDefault&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getPath&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getPath&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;());&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;If you need to convert a file instance to a path instance hosed in the desired file system, please write&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;File&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;file&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;/tmp/myfile.txt&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-
-&lt;span style=&#34;color: #953800&#34;&gt;Path&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;path&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;fileSytem&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getPath&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;file&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getPath&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;());&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_learnt_lessons&#34;&gt;Learnt Lessons&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Legacy libraries heavily use &lt;em&gt;File&lt;/em&gt; objects in their algorithms and their public interface.
-Such libraries do &lt;strong&gt;not&lt;/strong&gt; work with in-memory file systems.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The simplest approach is to always provide an API returning streams in addition to file system methods.
-It is always possible to map a stream to a file system specific streams for read and write operations.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The more complex approach is to replace all &lt;em&gt;File&lt;/em&gt; objects with &lt;em&gt;Path&lt;/em&gt; objects.
-Ideally, the Java community should declare the &lt;em&gt;File&lt;/em&gt; class as a deprecated one.
-Another solution would be to extend File with an internal path instance.
-This approach could break backward compatibility.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I regularly open issues in various open-source libraries to request an API extension to support Path. The maintainer of the library is often not aware you need &lt;em&gt;Path&lt;/em&gt; to unit test with in-memory file systems.
 &lt;/div&gt;
 &lt;/div&gt;
 

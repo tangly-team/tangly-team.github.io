@@ -16,6 +16,135 @@
     
     
     <item>
+      <title>Docs: ERPUI-001: AsciiDoc for Text Fields</title>
+      <link>https://blog.tangly.net/docs/domains/architecture/adr/erpui-001-asciidoc-for-all-texts/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/architecture/adr/erpui-001-asciidoc-for-all-texts/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_erpui_001_asciidoc_for_text_fields&#34;&gt;ERPUI-001 Asciidoc for Text Fields&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2021-06-01&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; is a well-established approach to write rich text documentation or comments.
+The casual user can learn and use the notation without excessive effort.
+The legibility and professional appearance of asciidoc texts are markantly higher than plain text.
+Asciidoc is an open standard and used in various environments and tools
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All texts and comments in the ERP components shall use &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; notation to improve legibility.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Alternatives would be proprietary formats such as Microsoft Word or similar notations such as &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;Markdown&lt;/a&gt;.
+Our open-source approach to product development rejects any propriatary formats.
+Asciidoc is a very powerful and successful format
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.
+The associated complexity for the users is probably an overkill for casual users of our product.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Text and comments in our system should have a limited length complexity.
+Activity description can be lengthy and use more complex syntax.
+Asciidoc is an optimal balance between expression power and ease of use.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Asciidoc is backward compatible with text fields.
+No migration of existing records is needed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The user interface components shall be extended to support a &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; visualiation and editing component.
+Vaadin currently does not provide native support for Asciidoc or Markdow.
+The tangly-os components will be extended to provide such a component until Vaadin supports in the future such an approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The alternative would be to use &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;Markdown&lt;/a&gt; notation. The expression power of &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; is higher and better standardized.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. The team acknowledged we have a preference for &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;. We use the notation for all our achitecture documents based on the &lt;a href=&#34;https://arc42.org/&#34;&gt;arc42&lt;/a&gt; template.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: FSM 001: Move Abstractions to JDK Classes</title>
+      <link>https://blog.tangly.net/docs/domains/architecture/adr/fsm-001-move-abstractions-to-jdk-classes/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/architecture/adr/fsm-001-move-abstractions-to-jdk-classes/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_fsm_001_replace_guard_and_action_classes_with_jdk_bipredicate_and_bifunction_classes&#34;&gt;FSM-001 Replace Guard and Action classes with JDK BiPredicate and BiFunction Classes&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2017-06-01&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We need a legible data model for finite state machine definitions.
+New users should easily understand the finite state machine abstractions and map them to their domain.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We use standard classes of the JDK to minimize contextual complexity when learning and using the FSM library.
+We will evaluate if the loss of domain names for classes has a negative impact on the legibility of the library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We have a cleaner and simpler interface and have increased dependency on regular JDK classes.
+The generic names of the guard predicate and functional action should not diminish the legibility of the source code.
+The role of the type is defined through the name of the parameter in the method signature.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Care was taken to use explicit parameter names and document them accordingly in JavaDoc.
+Modern IDEs such as IntelliJ IDEA display formatted JavaDoc as hints to the developer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: OS 001: System Guava Removal</title>
       <link>https://blog.tangly.net/docs/domains/architecture/adr/os-001-system-guava-removal/</link>
       <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
@@ -210,6 +339,79 @@ Therefore, we shall use libraries providing a workaround File instances either b
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Operations to the physical file system have the risk that rights problems could rise in some continuous integration environment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: FSM-002: Publish Maven Central Artifacts</title>
+      <link>https://blog.tangly.net/docs/domains/architecture/adr/fsm-002-publish-maven-central-artifact/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/architecture/adr/fsm-002-publish-maven-central-artifact/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_fsm_002_publish_artifacts_on_public_java_components_repository&#34;&gt;FSM-002 Publish Artifacts on Public Java Components Repository&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2020-01-01&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Retired&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Superseded by: &lt;a href=&#34;../../../../docs/domains/architecture/adr/os-005-publish-maven-central-artifact/&#34;&gt;OS-0005&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library is mature enough to be used in commercial and academic projects.
+The library was used in internal projects and refined to fulfill these requirements.
+More customers will validate the usefulness of the library and identify extensions for further releases.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library shall be published on maven central and be accessible to a wide range of developers and organizations.
+A website shall be set up to provide adequate documentation for users.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://blog.tangly.net/docs/fsm/&#34;&gt;FSM website&lt;/a&gt; will use a static web approach to minimize costs and provide good legibility.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library will be published on Maven Central to maximize potential usage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The ADR FSM-001 supports this evolution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;We have to establish a publishing process at the company level to deploy signed artifacts to maven central repository.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We have to establish a public website to host the documentation of public published libraries.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We have to support semantic versioning of all future published releases.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;

@@ -5,7 +5,7 @@
     <description>Recent content in tangly llc Blog on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Nov 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,285 @@
         
       
     
+    
+    <item>
+      <title>Blog: Pragmatic Java Application Design</title>
+      <link>https://blog.tangly.net/blog/2023/pragmatic-java-application-design/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/pragmatic-java-application-design/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_pragmatic_java_application_design&#34;&gt;Pragmatic Java Application Design&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-11-03-head.png&#34; alt=&#34;2023 11 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I attended the 20&lt;sup&gt;th&lt;/sup&gt; edition of the &lt;a href=&#34;https://devoxx.be/&#34;&gt;Devoxx Belgium&lt;/a&gt; conference in Antwerp.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I heard about beautiful examples of how to design complex software applications written in Java.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The solutions scale to hundreds of thousands of users, are resilient to network disruption and use fancy libraries and tools.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The applications are deployed on cloud infrastructure and are available worldwide.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;After the conference, I went to Ibiza for a family holiday.
+Our family enjoys prolonging the summer on this beautiful balearic island.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The weather is Switzerland is typical for fall.
+Cold, misty and often rainy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I used the relaxed location to reflect about the kind of applications I often develop for customers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The application goal often is to digitalize an internal process or a more complex workflow involving customers and suppliers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The product we have to develop has the following characteristics:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;It is a web-based application.
+Customers and their IT departments do not want to install an application locally.
+Only a few users access the application through a tablet or a smartphone.
+I expect that mobile user numbers will increase in the future.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It has from a few dozens to a maximum of a few hundreds of parallel active users.
+The user interface should be responsive to reflect modern user interface expectation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Persistent data is often a few tens of gigabytes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It has few computational intensive algorithms.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It often has to produce various output documents for distribution.
+The preferred format is PDF.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A CRM system for a small company uses quite a small persistent storage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The marketing department has less than 10&amp;#39;000 prospects and less than 1&amp;#39;000&amp;#39;000 interactions.
+The company has at most 10&amp;#39;000 contracts and 1&amp;#39;000&amp;#39;000 invoices.
+We can assume each object is less than 10 KBytes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The size of the whole database is therefore around 20 GB.
+Modern servers can easily load this data in memory and provide lightning fast access to information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Please factor in the fact that quite a slice of this data is in the past and is very seldom accessed.
+The application will not need regular access to all the historical information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Most of the time the application only accesses active customers, contracts, and invoices issued in the current year.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_modular_monolith&#34;&gt;Modular Monolith&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The good approach to design such a system is to use a modular monolith architecture &lt;a href=&#34;#modular-monolith&#34;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The technologies I use are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Domain Driven Design&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is a good architecture approach to creating modular monoliths with object-oriented technologies
+[&lt;a href=&#34;#domain-driven-design-distilled&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#domain-storytelling&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#domain-driven-design&#34;&gt;4&lt;/a&gt;].&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Modern Java technology stack&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is probably the most effective stack for engineering maintainable solutions.
+Trained engineers are available.
+High-quality open source and commercial libraries are available to solve most requirements
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;EclipseStore and HyperSQL&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Are cost-effective and stable approaches for persistence.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Logging log4j2&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is a powerful and established logging approach for your productive systems.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Monitoring Micrometer&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is an industry standard to monitor your productive solutions on premises or in the cloud.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Vaadin, SO Charts&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is a Java-based approach to creating modern user interfaces.
+{ref-vaadin} empowers developers to use one technology stack for the whole application.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;PDF Box&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Is a powerful library to generate your PDF output documents.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;FacturX and Swiss QR Code&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Are used to create compliant invoices in Europe and Switzerland.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The application could have a huge success and be sold as a product to customers.
+You must now support thousands of concurrent users and more persistent data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following changes are needed:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Split modular monolith into a set of services.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Move to PostreSQL database.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shard your application services and data either geographically or per customer groups.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The user interface written with Vaadin currently scales up to around ten thousand concurrent users for one server.
+If you have more users, you must create shards for your application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach will only scale for around hundred thousand concurrent users.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Honestly, I never created an application with more than eight thousand concurrent users.&lt;/em&gt;
+&lt;em&gt;Products with more parallel users are seldom in Europe.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We are professional engineers.
+Form should follow function.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The huge majority of digital products we build do not need fanciful and expensive technologies.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We should build solid products [&lt;a href=&#34;#modern-software-engineering&#34;&gt;5&lt;/a&gt;].
+Evolutive architecture principles [&lt;a href=&#34;#building-evolutionary-architectures-2nd&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#continuous-architecture-in-practice&#34;&gt;7&lt;/a&gt;] help us to scale later.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware that if your market grows exponentially, you will have to rewrite your solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach is the best for your company and your cash flow.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;At this moment, you will better understand your customers and have the necessary budget to create a truly complex solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Track new technologies.
+Evaluate their adequacy for your organization and products.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I am currently evaluating &lt;a href=&#34;https://containers.dev/&#34;&gt;Development Containers&lt;/a&gt;.
+It has the potential to simplify the setup of a development environment for a team.
+The approach also solves the maintenance nightmare to support multiple development environements for older product versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;monolith-first&#34;&gt;&lt;/a&gt;[1 ] &lt;a href=&#34;https://martinfowler.com/bliki/MonolithFirst.html&#34;&gt;Monolith First&lt;/a&gt;
+Martin Fowler. 2015.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modular-monolith&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2022/modular-monoliths-are-the-new-graal/&#34;&gt;Modular Monoliths Are the new Graal&lt;/a&gt;
+Marcel Baumann. 2022.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;behavor-driven-design&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2022/behavior-driven-design/&#34;&gt;Behavior Driven Design&lt;/a&gt;
+Marcel Baumann. 2022.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design-distilled&#34;&gt;&lt;/a&gt;[1] V. Vernon, &lt;em&gt;Domain-Driven Design Distilled&lt;/em&gt;. Addison-Wesley Professional, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01JJSGE5S/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01JJSGE5S/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[2] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-storytelling&#34;&gt;&lt;/a&gt;[3] S. Hofer and H. Schwentner, &lt;em&gt;Domain Storytelling&lt;/em&gt;. Pearson Education, Limited, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B099ZNXCJT&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B099ZNXCJT&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[4] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;modern-software-engineering&#34;&gt;&lt;/a&gt;[5] D. Farley, &lt;em&gt;Modern Software Engineering&lt;/em&gt;. Pearson Education, Limited, 2022 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B09GG6XKS4&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B09GG6XKS4&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;building-evolutionary-architectures-2nd&#34;&gt;&lt;/a&gt;[6] N. Ford, R. Parsons, and P. Kua, &lt;em&gt;Building Evolutionary Architectures: Automated Software Governance&lt;/em&gt;, Second. O’Reilly Media, 2023 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B0BN4T1P27&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B0BN4T1P27&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;continuous-architecture-in-practice&#34;&gt;&lt;/a&gt;[7] M. Erder, P. Pureur, and E. Woods, &lt;em&gt;Continuous architecture in practice&lt;/em&gt;, First. Addison-Wesley, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B08ZRTQGLJ&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B08ZRTQGLJ&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Modern applications are deployed on public or private cloud. I do not understand why such an application should run on an outdated Java runtime. You must update the runtime at least every three months to deploy the quarterly security patches.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: C4 and UML with PlantUML</title>
@@ -17043,140 +17322,6 @@ The tool chain supports the newer JDKs without trouble but Gradle can only run w
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Gradle 7.3 was released in the first half of November 2021. JDK 17 is now natively supported. As usual the early version of the next JDK - in this case JDK 18 - is only currently supported through the toolchain feature.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Choice is Good</title>
-      <link>https://blog.tangly.net/blog/2021/choice-is-good/</link>
-      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/choice-is-good/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_choice_is_good&#34;&gt;Choice is Good&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-11-01-head.jpg&#34; alt=&#34;2021 11 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;First and foremost, our primary goal is to develop successful products and delight users.
-We are always looking for good practices to improve our odds.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Product development is a risky business&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We want to expand our toolbox with proven approaches.
-We use these tools to experiment when confronted with new problems.
-There is &lt;a href=&#34;https://en.wikipedia.org/wiki/No_Silver_Bullet&#34;&gt;No Silver Bullet&lt;/a&gt; to solve our specific challenges.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Using a goal-driven approach that guides people through process-related options is one powerful approach.
-We need to take decisions to tailor and scale agile strategies to address the context of the situations we face.
-Approaches such as &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; have a minimal set of instructions.
-You are responsible to add the missing pieces to improve your development organization and remove your specific impediments.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;What are the advantages to take a goal-driven approach?
-How can you tailor your product development process?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_goals_over_prescription&#34;&gt;Goals over Prescription&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;a href=&#34;https://www.pmi.org&#34;&gt;Project Management Institute&lt;/a&gt; has acquired the disciplined agile delivery method and heavily promotes the approach.
-I personally prefer the &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; approach to scale agile product development.
-Nevertheless, Scott Ambler is an experienced and talented developer.
-Learning from his experiences and analyzing his approaches promotes the essence of &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt;.
-We want to experiment with new approaches and add the successful ones in our toolbox.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Our philosophy is to look for great ideas regardless of their source and to recognize there ar no best practices.
-When we learn a new technique, we strive to understand what its strengths and weaknesses are and in what situations to apply it.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The diagram shows a potential approach for scope exploration.
-For each facet of the exploration we have set of methods to work with.
-The context of the product development and the identified goals should allow us to select the most effective approach.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock center&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-11-01-explore-scope.jpg&#34; alt=&#34;2021 11 01 explore scope&#34; width=&#34;800&#34; height=&#34;600&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Supports process tailoring&lt;/strong&gt;.
-I think that figures below make it very clear how people are enabled to make intelligent process decisions.
-I think that this is a huge improvement over previous process frameworks, particularly Rational Unified Process &lt;em&gt;RUP&lt;/em&gt;.
-&lt;em&gt;RUP&lt;/em&gt; provides great process advice regardless of what some agilists may claim but struggled to provide consumable process tailoring advice.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Enables effective scaling&lt;/strong&gt;.  &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; is our preferred scaling approach.
-An important part of scaling agile is to tailor your strategy to reflect the realities of the scaling factors which you face.
-For example, consider your approach to exploring the initial scope of your effort (the goal captured in Figure 2).
-A large agile team or a geographically distributed team will make different tailoring decisions than a small co-located team.
-A team in a regulatory environment will make different decisions, particularly around amount of detail, than teams in non-regulatory environments.
-These are just three of several scaling factors (more on this in a future blog posting, although you may find my agility at scale blog to be of interest).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Makes your process options very clea&lt;/strong&gt;.
-Figure 4, in combination with the more detailed goals diagrams (such as in Figures 2 and 3) make it very clear what you need to consider when tailoring an agile solution delivery process to meet the unique needs of the situation faced by your team.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Takes the guesswork out of extending agile methods&lt;/strong&gt;.
-Although it makes for wonderful marketing rhetoric, it’s disingenuous for people to claim that simple methods such as Scrum can be tailored to meet your actual needs.
-Yes, we suppose this claim is true but how do you do so?
-Shouldn’t you start with a full delivery lifecycle, not just a construction lifecycle?
-Shouldn’t the toolkit cover a wider range of issues, such as leadership and requirements management as Scrum does, technical issues as XP does, modeling and documentation as Agile Modeling does, and many other issues?
-In short, shouldn’t it be a hybrid?
-Finally, shouldn’t you be given some context-sensitive advice for tailoring the details, as we do with the goal-driven approach described here?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Makes it clear what risks you’re taking on&lt;/strong&gt;.
-By making your process decision options clear, and by describing the trade-offs associated with those options, we make it very clear what risks you’re taking on.
-Want to write a detailed requirement specification up front then the approach is going to make it very clear what risks you’ve just taken on by doing so.
-It also makes clear when this decision is appropriate, so if you’re not in this situation then it is likely time to rethink your approach.
-Although we cannot prevent challenges such as a Water-Scrum-Fall approach.
-Such when a heavy approach is taken to &lt;em&gt;Inception&lt;/em&gt; and &lt;em&gt;Transition&lt;/em&gt; and an agile approach to Construction.
-We still can certainly make it very clear what the impact is of the decisions that led you to that approach.
-We have spoken with several people who have used the decision tables in it to argue against inappropriate process decisions on their projects.
-In many situations the argument &lt;em&gt;that isn’t agile&lt;/em&gt; falls on deaf ears.
-Whereas &lt;em&gt;that will take longer and here’s why&lt;/em&gt;, &lt;em&gt;that will be more expensive and here’s why&lt;/em&gt; will be listened to.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;It hints at an agile maturity model&lt;/strong&gt;.
-We suggest that in the case of issues where the options are ordered there is a clearly an indication of agile maturity or sophistication.
-Having said that I have no desire to wade into the agile maturity model morass, but I think it is an important observation nonetheless.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_change_and_adapt&#34;&gt;Change and Adapt&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Acknowledge that goals and priorities will shift during the product lifetime.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-11-01-change-scope.jpg&#34; alt=&#34;2021 11 01 change scope&#34; width=&#34;600&#34; height=&#34;600&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The palette of approaches for a facet of your process was exemplary showed above.
-You should explore solutions for all your process steps to continuously improve.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
