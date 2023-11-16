@@ -51,7 +51,7 @@ Technology changes will be added to the product. Legal changes and security impr
 This application will evolve to satisfy new needs and customer segments. The life span of your product is probably more than a decade.
 How can you document critical cross-cutting design decisions and key mechanisms?"><meta itemprop="datePublished" content="2023-11-10T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-11-10T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1358">
+<meta itemprop="wordCount" content="1413">
 <meta itemprop="keywords" content="agile,architecture,series-students," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C4 and UML with PlantUML"/>
 <meta name="twitter:description" content="C4 and UML with PlantUML You are creating an awesome digital product. The software part shall work flawlessly over the years.
@@ -148,7 +148,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.c9db9b8d653a4426a253d6313f4e5e9d.json"
+    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -173,7 +173,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.c9db9b8d653a4426a253d6313f4e5e9d.json"
+    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1286,7 +1286,7 @@ Make sure any icons you use are included in your diagram legend.</p>
 <h3 id="_lessons_learnt">Lessons Learnt</h3>
 <div class="paragraph">
 <p>You should discuss intensively in your team and organization why you create diagrams.
-Each diagram has a creation and a maintenance costs.</p>
+Each diagram has creation and maintenance costs.</p>
 </div>
 <div class="paragraph">
 <p>If you decide to create a lot of diagrams for your system, consider using a full-fledged C4 or UML modeling tool instead of a diagramming tool.
@@ -1298,8 +1298,31 @@ He will support the team and write utilities to simplify usage of the tool
 <p>What are the purpose and goals of your diagrams?</p>
 </div>
 <div class="paragraph">
-<p>I suggest using diagrams to document key design cross-cutting decisions
-<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
+<p>I suggest using diagrams to document key design cross-cutting decisions.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Cross-cutting decisions are the backbone of your design.
+Document them extensively with graphical tools.</p>
+</div>
+<div class="paragraph">
+<p>Key architecture decisions are often tactical decisions and should be documented in <a href="https://adr.github.io/">Architecture Design Records ADR</a>.
+Future team members will understand why you decided to use a specific technology or design pattern.</p>
+</div>
+<div class="paragraph">
+<p>Public API shall be documented with <a href="https://www.openapis.org/">OpenAPI</a> or a similar approach.
+Modules and classes are documented with <a href="https://www.oracle.com/java/technologies/javase/javadoc.html">JavaDoc</a>.
+Maintainers will be thankful for high-quality documentation.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
 <p>New team members should understand the application design with the help of these diagrams and associated documentation.</p>
@@ -1341,9 +1364,6 @@ Marcel Baumann. 2020.</p>
 </div>
 <div class="footnote" id="_footnotedef_2">
 <a href="#_footnoteref_2">2</a>. A typical example of such scripts is the generation of the diagram pictures and their inclusion in the application documentation. The process must be fully automated to guaranty synchronization of modeling results and product documentation.
-</div>
-<div class="footnote" id="_footnotedef_3">
-<a href="#_footnoteref_3">3</a>. Key architecture decisions should often be documented in <a href="https://adr.github.io/">Architecture Design Records ADR</a>.
 </div>
 </div>
 
