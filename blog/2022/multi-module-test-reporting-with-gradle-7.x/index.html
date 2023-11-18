@@ -22,9 +22,6 @@
 
 <title>Multi-Module Test Reporting with Gradle 7.x | tangly Components</title>
 <meta content="
-Multi-Module Test Reporting with Gradle 7.x
-
-
 
 
 
@@ -33,9 +30,9 @@ Multi-Module Test Reporting with Gradle 7.x
 I love Gradle as the building tool for all my Java projects.
 
 
-But sometimes I was discouraged …" name="description">
+But sometimes I was discouraged about how spotty or cumbersome the support for …" name="description">
 <meta property="og:title" content="Multi-Module Test Reporting with Gradle 7.x" />
-<meta property="og:description" content="Multi-Module Test Reporting with Gradle 7.x I love Gradle as the building tool for all my Java projects.
+<meta property="og:description" content="I love Gradle as the building tool for all my Java projects.
 But sometimes I was discouraged about how spotty or cumbersome the support for multi-module project is.
 I struggled for years to generate test and code overage reports over modules included in a Gradle Build Tool project.
 Gradle finally provides a better approach to generate aggregated test and code coverage reports over multiple modules belonging to the same project." />
@@ -45,15 +42,15 @@ Gradle finally provides a better approach to generate aggregated test and code c
 <meta property="article:modified_time" content="2022-11-07T00:00:00+00:00" />
 
 <meta itemprop="name" content="Multi-Module Test Reporting with Gradle 7.x">
-<meta itemprop="description" content="Multi-Module Test Reporting with Gradle 7.x I love Gradle as the building tool for all my Java projects.
+<meta itemprop="description" content="I love Gradle as the building tool for all my Java projects.
 But sometimes I was discouraged about how spotty or cumbersome the support for multi-module project is.
 I struggled for years to generate test and code overage reports over modules included in a Gradle Build Tool project.
 Gradle finally provides a better approach to generate aggregated test and code coverage reports over multiple modules belonging to the same project."><meta itemprop="datePublished" content="2022-11-07T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-11-07T00:00:00+00:00" />
-<meta itemprop="wordCount" content="435">
+<meta itemprop="wordCount" content="429">
 <meta itemprop="keywords" content="java,gradle," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Multi-Module Test Reporting with Gradle 7.x"/>
-<meta name="twitter:description" content="Multi-Module Test Reporting with Gradle 7.x I love Gradle as the building tool for all my Java projects.
+<meta name="twitter:description" content="I love Gradle as the building tool for all my Java projects.
 But sometimes I was discouraged about how spotty or cumbersome the support for multi-module project is.
 I struggled for years to generate test and code overage reports over modules included in a Gradle Build Tool project.
 Gradle finally provides a better approach to generate aggregated test and code coverage reports over multiple modules belonging to the same project."/>
@@ -61,8 +58,8 @@ Gradle finally provides a better approach to generate aggregated test and code c
 
 
 
-<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
-<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" as="style">
+<link href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -147,7 +144,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -172,7 +169,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -952,10 +949,7 @@ if (!doNotTrack) {
         
         
     </header>
-    <div class="sect1">
-<h2 id="_multi_module_test_reporting_with_gradle_7_x">Multi-Module Test Reporting with Gradle 7.x</h2>
-<div class="sectionbody">
-<div class="imageblock left">
+    <div class="imageblock left">
 <div class="content">
 <img src="../pics/2022-11-02-head.jpg" alt="2022 11 02 head" width="420" height="360"/>
 </div>
@@ -979,8 +973,9 @@ The solution is a huge improvement against the previous quite cumbersome approac
 <div class="paragraph">
 <p>I hope similar solutions will be provided for static code analysers such as SpotBugs, PMD or Checkstyle.</p>
 </div>
-<div class="sect2">
-<h3 id="_selected_approach">Selected Approach</h3>
+<div class="sect1">
+<h2 id="_selected_approach">Selected Approach</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>We use the documented approach to define a separate module to generate the aggregation reports.</p>
 </div>
@@ -1053,8 +1048,10 @@ The solution is a huge improvement against the previous quite cumbersome approac
 </tbody></table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_learnings">Learnings</h3>
+</div>
+<div class="sect1">
+<h2 id="_learnings">Learnings</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Gradle provides test results aggregation and test coverage aggregation as two separate plugins.
 The drawback is that we have to configure both plugins with the same information.</p>
@@ -1087,8 +1084,10 @@ Do not ask the user to give information already available to the application.</e
 Gradle ecosystem is still work in progress to support multi-module Java projects <a href="#gradle-7">[1]</a> <a href="#gradle-6">[2]</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_links">Links</h3>
+</div>
+<div class="sect1">
+<h2 id="_links">Links</h2>
+<div class="sectionbody">
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
@@ -1098,7 +1097,6 @@ Gradle ecosystem is still work in progress to support multi-module Java projects
 <p><a id="gradle-6"></a>[2] <a href="../../2020/gradle-6.4-finally-supports-java-modules/">Gradle 6.4 Finally Supports Java Modules</a></p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -1120,7 +1118,6 @@ Gradle ecosystem is still work in progress to support multi-module Java projects
 
     <br/>
     
-
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
     <a href="/blog/2022/behavior-driven-design/" aria-label="Previous - Behavior Driven Design" class="btn btn-primary"><span class="me-1">←</span>Previous</a>

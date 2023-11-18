@@ -22,7 +22,6 @@
 
 <title>Entities, Identifiers, External identifiers and Names | tangly Components</title>
 <meta content="
-Entities, Identifiers, External identifiers and Names
 
 
 
@@ -30,33 +29,37 @@ Entities, Identifiers, External identifiers and Names
 
 
 
-A software architect models customer domains and maps them to powerful software …" name="description">
+A software architect models customer domains and maps them to powerful software abstractions.
+Soon you correlate internal efficient …" name="description">
 <meta property="og:title" content="Entities, Identifiers, External identifiers and Names" />
-<meta property="og:description" content="Entities, Identifiers, External identifiers and Names A software architect models customer domains and maps them to powerful software abstractions. Soon you correlate internal efficient identifiers, meaningful external identifiers, and domain entities. You enjoy our long conversations with the enterprise data architect and find out the system owning a specific external identifier.
+<meta property="og:description" content="A software architect models customer domains and maps them to powerful software abstractions. Soon you correlate internal efficient identifiers, meaningful external identifiers, and domain entities. You enjoy our long conversations with the enterprise data architect and find out the system owning a specific external identifier.
 How do you relate to external systems and communicate with other companies?
-How do you define internal identifiers, which grow with application success?" />
+How do you define internal identifiers, which grow with application success?
+How can you bridge the customer world with your software solution?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/blog/2020/entities-identifiers-external-identifiers-and-names/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2020-08-24T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-08-24T00:00:00+00:00" />
 
 <meta itemprop="name" content="Entities, Identifiers, External identifiers and Names">
-<meta itemprop="description" content="Entities, Identifiers, External identifiers and Names A software architect models customer domains and maps them to powerful software abstractions. Soon you correlate internal efficient identifiers, meaningful external identifiers, and domain entities. You enjoy our long conversations with the enterprise data architect and find out the system owning a specific external identifier.
+<meta itemprop="description" content="A software architect models customer domains and maps them to powerful software abstractions. Soon you correlate internal efficient identifiers, meaningful external identifiers, and domain entities. You enjoy our long conversations with the enterprise data architect and find out the system owning a specific external identifier.
 How do you relate to external systems and communicate with other companies?
-How do you define internal identifiers, which grow with application success?"><meta itemprop="datePublished" content="2020-08-24T00:00:00+00:00" />
+How do you define internal identifiers, which grow with application success?
+How can you bridge the customer world with your software solution?"><meta itemprop="datePublished" content="2020-08-24T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-08-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1274">
+<meta itemprop="wordCount" content="1268">
 <meta itemprop="keywords" content="java,design,domain-driven-design,crm,series-identifiers," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Entities, Identifiers, External identifiers and Names"/>
-<meta name="twitter:description" content="Entities, Identifiers, External identifiers and Names A software architect models customer domains and maps them to powerful software abstractions. Soon you correlate internal efficient identifiers, meaningful external identifiers, and domain entities. You enjoy our long conversations with the enterprise data architect and find out the system owning a specific external identifier.
+<meta name="twitter:description" content="A software architect models customer domains and maps them to powerful software abstractions. Soon you correlate internal efficient identifiers, meaningful external identifiers, and domain entities. You enjoy our long conversations with the enterprise data architect and find out the system owning a specific external identifier.
 How do you relate to external systems and communicate with other companies?
-How do you define internal identifiers, which grow with application success?"/>
+How do you define internal identifiers, which grow with application success?
+How can you bridge the customer world with your software solution?"/>
 
 
 
 
-<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
-<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" as="style">
+<link href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -141,7 +144,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -166,7 +169,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -949,9 +952,8 @@ if (!doNotTrack) {
         
         
     </header>
-    <div class="sect1">
-<h2 id="_entities_identifiers_external_identifiers_and_names">Entities, Identifiers, External identifiers and Names</h2>
-<div class="sectionbody">
+    <div class="openblock float-group">
+<div class="content">
 <div class="imageblock left">
 <div class="content">
 <img src="../pics/2020-08-01-head.png" alt="2020 08 01 head" width="420" height="360"/>
@@ -974,8 +976,11 @@ You enjoy our long conversations with the enterprise data architect and find out
 <div class="paragraph">
 <p>What are the good practices to create a maintainable, legible and efficient model of your domain model?</p>
 </div>
-<div class="sect2">
-<h3 id="_entity_concept">Entity Concept</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_entity_concept">Entity Concept</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>We need an approach to model customer domain entities and map them to a legible and maintainable software construct.</p>
 </div>
@@ -1016,8 +1021,10 @@ The comments can be extended to add audit information such as functional change 
 <p>These entity features should be defined as a set of <a href="https://en.wikipedia.org/wiki/Mixin">mixin</a> interfaces.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_internal_object_identifiers_oid">Internal Object Identifiers <em>oid</em></h3>
+</div>
+<div class="sect1">
+<h2 id="_internal_object_identifiers_oid">Internal Object Identifiers <em>oid</em></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The object identifier <em>oid</em> uniquely identifies an instance in a given context.
 This identifier shall be a numerical value to increase the performance of persistent solutions.
@@ -1059,8 +1066,10 @@ If you respect this rule, you are free to migrate your objects to another identi
 New schemes are often helpful when the application grows, or you have later to import and take over a lot of legacy data.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_external_object_identifiers_id">External Object Identifiers <em>id</em></h3>
+</div>
+<div class="sect1">
+<h2 id="_external_object_identifiers_id">External Object Identifiers <em>id</em></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The external unique identifier id shall uniquely identify an entity instance.
 It is used as an external identifier to communicate with other systems.
@@ -1097,8 +1106,10 @@ The key rule of good systems is that they never change external identifiers.
 As soon as you modify identifiers, they are per definition no more real identifiers.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_names_name">Names <em>name</em></h3>
+</div>
+<div class="sect1">
+<h2 id="_names_name">Names <em>name</em></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The entity name is a human-readable name to distinguish between entity instances.
 Ideally, it should be almost unique.
@@ -1113,8 +1124,10 @@ Social security number is a possible external identifier.
 An internal identifier is used as a primary key in the persistence storage.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_advices">Advices</h3>
+</div>
+<div class="sect1">
+<h2 id="_advices">Advices</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1186,8 +1199,10 @@ Below the source code in modern Java is:</p>
 More information is available under <a href="https://blog.tangly.net/">tangly open source components</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_extensions">Extensions</h3>
+</div>
+<div class="sect1">
+<h2 id="_extensions">Extensions</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>See our blog how to extend the entity concept with the powerful and flexible concepts of tags and comment approaches.</p>
 </div>
@@ -1223,7 +1238,6 @@ Marcel Baumann. 2021.</p>
 </div>
 </div>
 </div>
-</div>
 
     
     <br/>
@@ -1242,7 +1256,6 @@ Marcel Baumann. 2021.</p>
 
     <br/>
     
-
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
     <a href="/blog/2020/a-journey-implementing-digital-invoices/" aria-label="Previous - A Journey Implementing Digital Invoices" class="btn btn-primary"><span class="me-1">←</span>Previous</a>

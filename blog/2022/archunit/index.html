@@ -22,7 +22,6 @@
 
 <title>ArchUnit | tangly Components</title>
 <meta content="
-Verifying Software Design Constraints with ArchUnit
 
 
 
@@ -30,10 +29,12 @@ Verifying Software Design Constraints with ArchUnit
 
 
 
-How often have you experienced a well-defined and understood software architecture on …" name="description">
+How often have you experienced a well-defined and understood software architecture on paper?
+And it falls apart when developers start …" name="description">
 <meta property="og:title" content="ArchUnit" />
-<meta property="og:description" content="Verifying Software Design Constraints with ArchUnit How often have you experienced a well-defined and understood software architecture on paper? And it falls apart when developers start implementing it?
-While re-architecting recently legacy components in an application, I experienced the same. As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.
+<meta property="og:description" content="How often have you experienced a well-defined and understood software architecture on paper? And it falls apart when developers start implementing it?
+While re-architecting recently legacy components in an application, I experienced the same.
+As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.
 I know some of you may say, Why not control the implementation during code-review sessions?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/blog/2022/archunit/" /><meta property="article:section" content="blog" />
@@ -41,22 +42,24 @@ I know some of you may say, Why not control the implementation during code-revie
 <meta property="article:modified_time" content="2022-09-01T00:00:00+00:00" />
 
 <meta itemprop="name" content="ArchUnit">
-<meta itemprop="description" content="Verifying Software Design Constraints with ArchUnit How often have you experienced a well-defined and understood software architecture on paper? And it falls apart when developers start implementing it?
-While re-architecting recently legacy components in an application, I experienced the same. As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.
+<meta itemprop="description" content="How often have you experienced a well-defined and understood software architecture on paper? And it falls apart when developers start implementing it?
+While re-architecting recently legacy components in an application, I experienced the same.
+As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.
 I know some of you may say, Why not control the implementation during code-review sessions?"><meta itemprop="datePublished" content="2022-09-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-09-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="526">
+<meta itemprop="wordCount" content="520">
 <meta itemprop="keywords" content="agile,architecture," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ArchUnit"/>
-<meta name="twitter:description" content="Verifying Software Design Constraints with ArchUnit How often have you experienced a well-defined and understood software architecture on paper? And it falls apart when developers start implementing it?
-While re-architecting recently legacy components in an application, I experienced the same. As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.
+<meta name="twitter:description" content="How often have you experienced a well-defined and understood software architecture on paper? And it falls apart when developers start implementing it?
+While re-architecting recently legacy components in an application, I experienced the same.
+As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.
 I know some of you may say, Why not control the implementation during code-review sessions?"/>
 
 
 
 
-<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
-<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" as="style">
+<link href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -141,7 +144,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -166,7 +169,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -946,9 +949,8 @@ if (!doNotTrack) {
         
         
     </header>
-    <div class="sect1">
-<h2 id="_verifying_software_design_constraints_with_archunit">Verifying Software Design Constraints with ArchUnit</h2>
-<div class="sectionbody">
+    <div class="openblock float-group">
+<div class="content">
 <div class="imageblock left">
 <div class="content">
 <img src="../pics/2022-09-01-head.png" alt="2022 09 01 head" width="420" height="360"/>
@@ -959,8 +961,12 @@ if (!doNotTrack) {
 And it falls apart when developers start implementing it?</p>
 </div>
 <div class="paragraph">
-<p>While re-architecting recently legacy components in an application, I experienced the same.
-As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.</p>
+<p>While re-architecting recently legacy components in an application, I experienced the same.</p>
+</div>
+<div class="paragraph">
+<p>As more and more developers joined the team, it became a constant routine to make them aware of the design and how to adhere to it.</p>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>I know some of you may say, <em>Why not control the implementation during code-review sessions?</em>.
@@ -974,8 +980,9 @@ The violation of the agreed-upon design principles is marked as a failed build.<
 <p>My quest led me to a test library for architecture called <a href="https://www.archunit.org/">ArchUnit</a>.
 It enforces architectural constraints in Java projects.</p>
 </div>
-<div class="sect2">
-<h3 id="_idea">Idea</h3>
+<div class="sect1">
+<h2 id="_idea">Idea</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>ArchUnit is a test library and allows us to validate whether a solution adheres to a given set of design considerations or architecture rules.</p>
 </div>
@@ -989,8 +996,10 @@ The support for <a href="https://junit.org/junit5/docs/current/user-guide/">JUni
 It does so by analyzing the given Java bytecode after importing all classes into a Java code structure.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_use_architectural_constraints">Use Architectural Constraints</h3>
+</div>
+<div class="sect1">
+<h2 id="_use_architectural_constraints">Use Architectural Constraints</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>You first need to import the library in Gradle.</p>
 </div>
@@ -1078,8 +1087,10 @@ The constraints are defined only once in a common module.</p>
 No expensive human activities are required to enforce these rules <a href="#agile-architecture">[4]</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_links">Links</h3>
+</div>
+<div class="sect1">
+<h2 id="_links">Links</h2>
+<div class="sectionbody">
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
@@ -1095,7 +1106,6 @@ No expensive human activities are required to enforce these rules <a href="#agil
 <p><a id="agile-architecture"></a>[4] <a href="../../2019/agile-architecture-within-scrum/">Agile Architecture</a></p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -1117,7 +1127,6 @@ No expensive human activities are required to enforce these rules <a href="#agil
 
     <br/>
     
-
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
     <a href="/blog/2022/transfer-a-software-project/" aria-label="Previous - Transfer a Software Project" class="btn btn-primary"><span class="me-1">←</span>Previous</a>

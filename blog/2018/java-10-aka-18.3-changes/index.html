@@ -22,7 +22,6 @@
 
 <title>Java 10 aka 18.3 Changes | tangly Components</title>
 <meta content="
-Java 10 aka 18.3 Changes
 
 
 
@@ -30,42 +29,45 @@ Java 10 aka 18.3 Changes
 
 
 
+Oracle has decided to release a new JDK two times a year.
 
 
-For Java to remain competitive, it must not just continue to move forward — it must move forward faster.
-
-
-
-— Mark …" name="description">
-<meta property="og:title" content="Java 10 aka 18.3 Changes" />
-<meta property="og:description" content="Java 10 aka 18.3 Changes For Java to remain competitive, it must not just continue to move forward — it must move forward faster.
-— Mark Reinhold What has changed? Oracle has decided to release a new JDK two times a year.
 The next release of Java 10 aka 18.3 will be available in March 2018.
-JDK 11 aka 18.9 will be released in September 2018. Java 11 will also be a long-term support LTS release." />
+
+
+JDK 11 aka …" name="description">
+<meta property="og:title" content="Java 10 aka 18.3 Changes" />
+<meta property="og:description" content="Oracle has decided to release a new JDK two times a year.
+The next release of Java 10 aka 18.3 will be available in March 2018.
+JDK 11 aka 18.9 will be released in September 2018. Java 11 will also be a long-term support LTS release.
+For Java to remain competitive, it must not just continue to move forward — it must move forward faster.
+— Mark Reinhold The Visible Change The visible change is the dawn of the keyword var." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/blog/2018/java-10-aka-18.3-changes/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2018-03-09T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-03-09T00:00:00+00:00" />
 
 <meta itemprop="name" content="Java 10 aka 18.3 Changes">
-<meta itemprop="description" content="Java 10 aka 18.3 Changes For Java to remain competitive, it must not just continue to move forward — it must move forward faster.
-— Mark Reinhold What has changed? Oracle has decided to release a new JDK two times a year.
+<meta itemprop="description" content="Oracle has decided to release a new JDK two times a year.
 The next release of Java 10 aka 18.3 will be available in March 2018.
-JDK 11 aka 18.9 will be released in September 2018. Java 11 will also be a long-term support LTS release."><meta itemprop="datePublished" content="2018-03-09T00:00:00+00:00" />
+JDK 11 aka 18.9 will be released in September 2018. Java 11 will also be a long-term support LTS release.
+For Java to remain competitive, it must not just continue to move forward — it must move forward faster.
+— Mark Reinhold The Visible Change The visible change is the dawn of the keyword var."><meta itemprop="datePublished" content="2018-03-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2018-03-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="585">
+<meta itemprop="wordCount" content="577">
 <meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java 10 aka 18.3 Changes"/>
-<meta name="twitter:description" content="Java 10 aka 18.3 Changes For Java to remain competitive, it must not just continue to move forward — it must move forward faster.
-— Mark Reinhold What has changed? Oracle has decided to release a new JDK two times a year.
+<meta name="twitter:description" content="Oracle has decided to release a new JDK two times a year.
 The next release of Java 10 aka 18.3 will be available in March 2018.
-JDK 11 aka 18.9 will be released in September 2018. Java 11 will also be a long-term support LTS release."/>
+JDK 11 aka 18.9 will be released in September 2018. Java 11 will also be a long-term support LTS release.
+For Java to remain competitive, it must not just continue to move forward — it must move forward faster.
+— Mark Reinhold The Visible Change The visible change is the dawn of the keyword var."/>
 
 
 
 
-<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
-<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" as="style">
+<link href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -150,7 +152,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -175,7 +177,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -954,12 +956,23 @@ if (!doNotTrack) {
         
         
     </header>
-    <div class="sect1">
-<h2 id="_java_10_aka_18_3_changes">Java 10 aka 18.3 Changes</h2>
-<div class="sectionbody">
+    <div class="openblock float-group">
+<div class="content">
 <div class="imageblock left">
 <div class="content">
 <img src="../pics/2018-03-01-head.png" alt="2018 03 01 head" width="420" height="360"/>
+</div>
+</div>
+<div class="paragraph">
+<p>Oracle has decided to release a new JDK two times a year.</p>
+</div>
+<div class="paragraph">
+<p>The next release of Java 10 aka 18.3 will be available in March 2018.</p>
+</div>
+<div class="paragraph">
+<p>JDK 11 aka 18.9 will be released in September 2018.
+Java 11 will also be a long-term support <em>LTS</em> release.</p>
+</div>
 </div>
 </div>
 <div class="quoteblock">
@@ -972,21 +985,9 @@ if (!doNotTrack) {
 — Mark Reinhold
 </div>
 </div>
-<div class="sect2">
-<h3 id="_what_has_changed">What has changed?</h3>
-<div class="paragraph">
-<p>Oracle has decided to release a new JDK two times a year.</p>
-</div>
-<div class="paragraph">
-<p>The next release of Java 10 aka 18.3 will be available in March 2018.</p>
-</div>
-<div class="paragraph">
-<p>JDK 11 aka 18.9 will be released in September 2018.
-Java 11 will also be a long-term support <em>LTS</em> release.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_the_visible_change">The Visible Change</h3>
+<div class="sect1">
+<h2 id="_the_visible_change">The Visible Change</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The visible change is the dawn of the keyword <strong>var</strong>.
 Now instead of typing the type declaration of a local variable - local to a method, a block or an instruction - you can just use the keyword var.
@@ -1012,8 +1013,10 @@ When the type is a class name, I got the impression. the benefit is less clear.<
 Perhaps it takes time until I am accustomed to the new way of writing Java code.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_under_the_hood_changes">Under the Hood Changes</h3>
+</div>
+<div class="sect1">
+<h2 id="_under_the_hood_changes">Under the Hood Changes</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The source code of the JDK is consolidated into one repository.
 It makes development work more efficient.</p>
@@ -1031,8 +1034,10 @@ The extensions are used in library classes to better support locales.</p>
 For example, CA certificates will be provided to OpenJDK by Oracle.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_outlook">Outlook</h3>
+</div>
+<div class="sect1">
+<h2 id="_outlook">Outlook</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The rhythm of releases is staggering higher.
 Starting Spring 2018, we will have * The new rule as blogged by Mark Reinhold <a href="https://mreinhold.org/blog/forward-faster">Moving Java Forward Faster</a>.
@@ -1063,7 +1068,6 @@ So we are back to IAAS.</p>
 </div>
 </div>
 </div>
-</div>
 
     
     <br/>
@@ -1082,7 +1086,6 @@ So we are back to IAAS.</p>
 
     <br/>
     
-
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
     <a href="/blog/2018/six-levers-for-better-agile-product-development/" aria-label="Previous - Six Levers for better Agile Product Development" class="btn btn-primary"><span class="me-1">←</span>Previous</a>

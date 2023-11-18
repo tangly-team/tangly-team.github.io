@@ -22,7 +22,6 @@
 
 <title>Sonar Lint for the Impatient | tangly Components</title>
 <meta content="
-Sonar Lint for the Impatient
 
 
 
@@ -34,30 +33,36 @@ Remove issues before they reach customer sites.
 No quality problems shall reach your Git master branch.
 
 
-What is …" name="description">
+SonarQube is a central server that …" name="description">
 <meta property="og:title" content="Sonar Lint for the Impatient" />
-<meta property="og:description" content="Sonar Lint for the Impatient Remove issues before they reach customer sites. No quality problems shall reach your Git master branch.
-What is Sonar? SonarQube is a central server that processes full analyses (triggered by the various SonarQube Scanners). Its purpose is to give a 360° vision about the quality of your code base. For this, it analyzes all the source lines of your product on a regular basis." />
+<meta property="og:description" content="Remove issues before they reach customer sites. No quality problems shall reach your Git master branch.
+SonarQube is a central server that processes full analyses (triggered by the various SonarQube Scanners).
+Its purpose is to give a 360° vision about the quality of your code base. For this, it analyzes all the source lines of your product on a regular basis.
+It should be added that SonarQube also performs scans with well-known third party analyzers (SpotBugs - previously FindBugs -, Checkstyle, PMD) whereas SonarLint does not include those." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/blog/2018/sonar-lint-for-the-impatient/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2018-05-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-05-16T00:00:00+00:00" />
 
 <meta itemprop="name" content="Sonar Lint for the Impatient">
-<meta itemprop="description" content="Sonar Lint for the Impatient Remove issues before they reach customer sites. No quality problems shall reach your Git master branch.
-What is Sonar? SonarQube is a central server that processes full analyses (triggered by the various SonarQube Scanners). Its purpose is to give a 360° vision about the quality of your code base. For this, it analyzes all the source lines of your product on a regular basis."><meta itemprop="datePublished" content="2018-05-16T00:00:00+00:00" />
+<meta itemprop="description" content="Remove issues before they reach customer sites. No quality problems shall reach your Git master branch.
+SonarQube is a central server that processes full analyses (triggered by the various SonarQube Scanners).
+Its purpose is to give a 360° vision about the quality of your code base. For this, it analyzes all the source lines of your product on a regular basis.
+It should be added that SonarQube also performs scans with well-known third party analyzers (SpotBugs - previously FindBugs -, Checkstyle, PMD) whereas SonarLint does not include those."><meta itemprop="datePublished" content="2018-05-16T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2018-05-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="383">
+<meta itemprop="wordCount" content="375">
 <meta itemprop="keywords" content="design,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sonar Lint for the Impatient"/>
-<meta name="twitter:description" content="Sonar Lint for the Impatient Remove issues before they reach customer sites. No quality problems shall reach your Git master branch.
-What is Sonar? SonarQube is a central server that processes full analyses (triggered by the various SonarQube Scanners). Its purpose is to give a 360° vision about the quality of your code base. For this, it analyzes all the source lines of your product on a regular basis."/>
+<meta name="twitter:description" content="Remove issues before they reach customer sites. No quality problems shall reach your Git master branch.
+SonarQube is a central server that processes full analyses (triggered by the various SonarQube Scanners).
+Its purpose is to give a 360° vision about the quality of your code base. For this, it analyzes all the source lines of your product on a regular basis.
+It should be added that SonarQube also performs scans with well-known third party analyzers (SpotBugs - previously FindBugs -, Checkstyle, PMD) whereas SonarLint does not include those."/>
 
 
 
 
-<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
-<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" as="style">
+<link href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -142,7 +147,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -167,7 +172,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -947,9 +952,8 @@ if (!doNotTrack) {
         
         
     </header>
-    <div class="sect1">
-<h2 id="_sonar_lint_for_the_impatient">Sonar Lint for the Impatient</h2>
-<div class="sectionbody">
+    <div class="openblock float-group">
+<div class="content">
 <div class="imageblock left">
 <div class="content">
 <img src="../pics/2018-05-01-head.png" alt="2018 05 01 head" width="420" height="360"/>
@@ -959,21 +963,25 @@ if (!doNotTrack) {
 <p>Remove issues before they reach customer sites.
 No quality problems shall reach your Git master branch.</p>
 </div>
-<div class="sect2">
-<h3 id="_what_is_sonar">What is Sonar?</h3>
 <div class="paragraph">
-<p><a href="https://www.sonarqube.org/">SonarQube</a> is a central server that processes full analyses (triggered by the various SonarQube Scanners).
-Its purpose is to give a 360° vision about the quality of your code base.
+<p><a href="https://www.sonarqube.org/">SonarQube</a> is a central server that processes full analyses (triggered by the various SonarQube Scanners).</p>
+</div>
+<div class="paragraph">
+<p>Its purpose is to give a 360° vision about the quality of your code base.
 For this, it analyzes all the source lines of your product on a regular basis.</p>
 </div>
 <div class="paragraph">
 <p>It should be added that SonarQube also performs scans with well-known third party analyzers (<a href="https://spotbugs.github.io/">SpotBugs</a> - previously FindBugs -,
-<a href="http://checkstyle.sourceforge.net/">Checkstyle</a>, <a href="https://pmd.github.io/">PMD</a>) whereas SonarLint does not include those.
-I think the reason is a prioritization on performance and findBugs relying on java byte-code.</p>
+<a href="http://checkstyle.sourceforge.net/">Checkstyle</a>, <a href="https://pmd.github.io/">PMD</a>) whereas SonarLint does not include those.</p>
+</div>
+<div class="paragraph">
+<p>I think the reason is a prioritization on performance and findBugs relying on java byte-code.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_what_is_sonarlint">What is SonarLint?</h3>
+</div>
+<div class="sect1">
+<h2 id="_what_is_sonarlint">What is SonarLint?</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>SonarLint lives only in your IDE (IntelliJ, Eclipse, or Visual Studio).
 Its purpose is to give instantaneous feedback as you type your code.
@@ -995,8 +1003,10 @@ It then uses the same code analyzers, rules and settings locally that are used o
 <p>Both SonarLint and SonarQube rely on the same static source code analyzers – most of them being written using SonarSource technology.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_how_to_use_it">How to use It?</h3>
+</div>
+<div class="sect1">
+<h2 id="_how_to_use_it">How to use It?</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1046,7 +1056,6 @@ code.</p>
 </div>
 </div>
 </div>
-</div>
 
     
     <br/>
@@ -1065,7 +1074,6 @@ code.</p>
 
     <br/>
     
-
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
     <a href="/blog/2018/agile-introduction-success-criteria-through-the-less-lens/" aria-label="Previous - Agile Introduction Success Criteria through the LeSS Lens" class="btn btn-primary"><span class="me-1">←</span>Previous</a>

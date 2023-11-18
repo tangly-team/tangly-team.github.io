@@ -24,10 +24,7 @@
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_spotify_cultural_elements&#34;&gt;Spotify Cultural Elements&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-12-01-head.png&#34; alt=&#34;2021 12 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -273,8 +270,6 @@ Apply the above principles in your environment.
 Learn and adapt.
 This is the essence of the agile empirical approach.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -288,28 +283,36 @@ This is the essence of the agile empirical approach.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_gradle_7_goodies&#34;&gt;Gradle 7 Goodies&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-11-02-head.jpg&#34; alt=&#34;2021 11 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;img src=&#34;../pics/2021-11-02-head.png&#34; alt=&#34;2021 11 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; is my preferred build tool for all Java applications I am developing.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Google chose Gradle as the official build tool for Android.
-Not only because build scripts are code, but because Gradle is modeled in a way that is extensible in the most fundamental ways.
-Gradle’s model also allows it to be used for native development with C/C++ and can be expanded to cover any ecosystem.
-For example, Gradle is designed with embedding in mind using its Tooling API.&lt;/p&gt;
+&lt;p&gt;Google chose Gradle as the official build tool for Android.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Not only because build scripts are code, but because Gradle is modeled in a way that is extensible in the most fundamental ways.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle’s model also allows it to be used for native development with C/C++ and can be expanded to cover any ecosystem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For example, Gradle is designed with embedding in mind using its Tooling API.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;What are my preferred goodies with the major version 7?&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_java_module_native_support&#34;&gt;Java Module Native Support&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_java_module_native_support&#34;&gt;Java Module Native Support&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Java modules were introduced with Java 9 in September 2017.
 Adoption was slow.
@@ -325,8 +328,10 @@ Just use the &lt;em&gt;java-library&lt;/em&gt; plugin.&lt;/p&gt;
 &lt;p&gt;The plugin will detect the presence of a &lt;em&gt;module-info.java&lt;/em&gt; module declaration file and transparently switch to module compilation.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_dependencies_semantic_declaration&#34;&gt;Dependencies Semantic Declaration&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_dependencies_semantic_declaration&#34;&gt;Dependencies Semantic Declaration&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The Gradle team has decided to introduce semantic support for the declaration of dependencies.&lt;/p&gt;
 &lt;/div&gt;
@@ -339,8 +344,10 @@ The declarations can be used in all subprojects.&lt;/p&gt;
 &lt;p&gt;Support is provided to group a set of related dependencies and use the alias in the various Gradle modules.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_intellij_support&#34;&gt;IntelliJ Support&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_intellij_support&#34;&gt;IntelliJ Support&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Jetbrains has improved support of Gradle in their new releases of IntelliJ.
 The 2021 versions offer native support of Gradle.
@@ -352,8 +359,10 @@ You just need to take care of one build configuration and no more need to delve 
 You have to be careful to align both structures to avoid surprises.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_jacoco_aggregated_test_coverage_reports&#34;&gt;Jacoco Aggregated Test Coverage Reports&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_jacoco_aggregated_test_coverage_reports&#34;&gt;Jacoco Aggregated Test Coverage Reports&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The support for coverage reports over multiple gradle subprojects is still limited.
 I use the following configuration to generate aggregated coverage report over all gradle modules.&lt;/p&gt;
@@ -462,8 +471,10 @@ The binary report is no more supported by external tool.&lt;/td&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_wishes&#34;&gt;Wishes&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_wishes&#34;&gt;Wishes&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I would greatly appreciate if the JaCoCo Gradle plugin is improved and align with the features of the Maven plugin.
 The process to aggregate the coverage reports on a multi-module project is cumbersome and brittle.&lt;/p&gt;
@@ -472,7 +483,6 @@ The process to aggregate the coverage reports on a multi-module project is cumbe
 &lt;p&gt;I am waiting for the Gradle 7.3 release to have native support of JDK 17.
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;
 The tool chain supports the newer JDKs without trouble but Gradle can only run with JDK 16 or older versions.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -495,10 +505,7 @@ The tool chain supports the newer JDKs without trouble but Gradle can only run w
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_choice_is_good&#34;&gt;Choice is Good&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-11-01-head.jpg&#34; alt=&#34;2021 11 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -525,8 +532,9 @@ You are responsible to add the missing pieces to improve your development organi
 &lt;p&gt;What are the advantages to take a goal-driven approach?
 How can you tailor your product development process?&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_goals_over_prescription&#34;&gt;Goals over Prescription&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_goals_over_prescription&#34;&gt;Goals over Prescription&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The &lt;a href=&#34;https://www.pmi.org&#34;&gt;Project Management Institute&lt;/a&gt; has acquired the disciplined agile delivery method and heavily promotes the approach.
 I personally prefer the &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; approach to scale agile product development.
@@ -598,7 +606,6 @@ Having said that I have no desire to wade into the agile maturity model morass, 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div class=&#34;sect1&#34;&gt;
 &lt;h2 id=&#34;_change_and_adapt&#34;&gt;Change and Adapt&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
@@ -629,10 +636,7 @@ You should explore solutions for all your process steps to continuously improve.
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_jdk_17_lts&#34;&gt;JDK 17 LTS&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-10-02-head.png&#34; alt=&#34;2021 10 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -657,8 +661,9 @@ The advanced &lt;a href=&#34;https://en.wikipedia.org/wiki/Pattern_matching&#34;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Polishing of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Functional_programming&#34;&gt;functional programming&lt;/a&gt; approach improved my source code quite stupendously.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_why_should_you_upgrade&#34;&gt;Why Should You Upgrade?&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_why_should_you_upgrade&#34;&gt;Why Should You Upgrade?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Be honest.
 It is more a question of &lt;strong&gt;when&lt;/strong&gt;, rather than &lt;strong&gt;if&lt;/strong&gt; you will upgrade.&lt;/p&gt;
@@ -766,7 +771,6 @@ OpenJDK and Oracle Java are as different as Red Hat Fedora and Red Hat Enterpris
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div class=&#34;sect1&#34;&gt;
 &lt;h2 id=&#34;_should_you_migrate_everytime&#34;&gt;Should You Migrate Everytime?&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
@@ -819,8 +823,11 @@ Congratulations, you can focus on business value and beat your competitors.&lt;/
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_big_is_the_migration_effort&#34;&gt;How Big is the Migration Effort?&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_how_big_is_the_migration_effort&#34;&gt;How Big is the Migration Effort?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;When we start developing against the new Java version, it’s recommended to start with your local machine, get that up and running first.
 Then upgrade your build environment, so it supports the latest version of Java.
@@ -853,8 +860,10 @@ If we fix that as well, we can package the application, and in the end, we can r
 Based on the nice ingredients, we should get a nice result.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_new_features&#34;&gt;New Features&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_new_features&#34;&gt;New Features&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The official list of new features is&lt;/p&gt;
 &lt;/div&gt;
@@ -915,8 +924,11 @@ We have now nice features for the switch expression.&lt;/p&gt;
 &lt;p&gt;The new features you should use on a daily basis are described bellow.
 They will impact the appearance and legibility of your source code.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_algebraic_types&#34;&gt;Algebraic Types&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_algebraic_types&#34;&gt;Algebraic Types&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Records &lt;a href=&#34;#java-records&#34;&gt;[1]&lt;/a&gt; are immutable classes.
 A record and all associated operations are defined in one statement.&lt;/p&gt;
@@ -930,8 +942,10 @@ A record and all associated operations are defined in one statement.&lt;/p&gt;
 &lt;p&gt;Sealed classes are a powerful constructs to constrain your inheritance hierarchy.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_pattern_matching_for_switch&#34;&gt;Pattern Matching for Switch&lt;/h4&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_pattern_matching_for_switch&#34;&gt;Pattern Matching for Switch&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;A preview of pattern matching for switch extends the language of patterns in Java.
 It allows switch expressions and statements to be tested against a number of patterns, each with a specific action.
@@ -970,8 +984,9 @@ The specialized stream &lt;em&gt;Optional&amp;lt;T&amp;gt;&lt;/em&gt; was added 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -984,7 +999,6 @@ The specialized stream &lt;em&gt;Optional&amp;lt;T&amp;gt;&lt;/em&gt; was added 
 &lt;p&gt;&lt;a id=&#34;jdk-17&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;https://openjdk.java.net/projects/jdk/17/&#34;&gt;Open JDK 17&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1011,9 +1025,6 @@ The specialized stream &lt;em&gt;Optional&amp;lt;T&amp;gt;&lt;/em&gt; was added 
         
         
         Unknown reference: implementing-domain-driven-desing
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_agile_design_modeling&#34;&gt;Agile Design Modeling&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-10-01-head.jpg&#34; alt=&#34;2021 10 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -1030,8 +1041,9 @@ They believe you must always abstract your abstractions and not get bogged down 
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;As always, there is a pragmatic balance somewhere in the middle, but it does raise the interesting question of how you move from one to the other.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_key_takeaways&#34;&gt;Key Takeaways&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_key_takeaways&#34;&gt;Key Takeaways&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1076,8 +1088,10 @@ system.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_good_practices&#34;&gt;Good Practices&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_good_practices&#34;&gt;Good Practices&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;dlist&#34;&gt;
 &lt;dl&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Domain-Driven Design&lt;/dt&gt;
@@ -1099,8 +1113,10 @@ Refactoring implies you have extensive integration and unit tests available.&lt;
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_ideas&#34;&gt;Ideas&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_ideas&#34;&gt;Ideas&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Explore approaches to improve the quality and adequacy of your architecture:&lt;/p&gt;
 &lt;/div&gt;
@@ -1173,8 +1189,10 @@ Refactoring implies you have extensive integration and unit tests available.&lt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1211,7 +1229,6 @@ Refactoring implies you have extensive integration and unit tests available.&lt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -1225,10 +1242,7 @@ Refactoring implies you have extensive integration and unit tests available.&lt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_scrum_developer_formation&#34;&gt;Scrum Developer Formation&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-09-03-head.png&#34; alt=&#34;2021 09 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -1245,8 +1259,9 @@ Refactoring implies you have extensive integration and unit tests available.&lt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Formal training is often the difference between being a professional instead of just pretending to be one.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_scrum_developer_role&#34;&gt;Scrum Developer Role&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_scrum_developer_role&#34;&gt;Scrum Developer Role&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Here the official definition of the developer team member role taken from the &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -1275,8 +1290,10 @@ However, the Developers are always accountable for:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_certifications&#34;&gt;Certifications&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_certifications&#34;&gt;Certifications&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The two big Scrum organizations &lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt; and &lt;a href=&#34;https://www.scrum.org/&#34;&gt;Scrum.org&lt;/a&gt; provide a certification path for Scrum developers.
 The certification path has three levels:&lt;/p&gt;
@@ -1600,8 +1617,10 @@ Examples for the objectives are provided in &lt;a href=&#34;#scrum-developer-lea
 &lt;p&gt;I published a list of seminal works for interested Scrum developers under &lt;a href=&#34;../../../ideas/learnings/books/&#34;&gt;Books&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_software_development_trainings&#34;&gt;Agile Software Development Trainings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_software_development_trainings&#34;&gt;Agile Software Development Trainings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;An interesting development is the addition of tailored trainings emphasizing agile approaches.
 The biggest organization &lt;a href=&#34;https://www.pmi.org&#34;&gt;PMI&lt;/a&gt; has a whole agile based on &lt;a href=&#34;https://www.pmi.org/certifications/agile-certifications&#34;&gt;Disciplined Agile
@@ -1611,8 +1630,10 @@ Design&lt;/a&gt; &lt;em&gt;DAD&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;I expect the emphasis on agile approaches to significantly increase in the next years.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_university_formal_trainings&#34;&gt;University Formal Trainings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_university_formal_trainings&#34;&gt;University Formal Trainings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Technical universities in Switzerland provide formal training in project leadership, project management and related fields.
 The formation provides a certificate of advanced study CAS in the field.
@@ -1635,8 +1656,10 @@ Current available certificates of advanced study offering are for example:&lt;/p
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -1719,7 +1742,6 @@ Jeff Sutherland, Ken Schwaber. 2020&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -1733,10 +1755,7 @@ Jeff Sutherland, Ken Schwaber. 2020&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_what_i_learnt_teaching_agile_software_architecture&#34;&gt;What I Learnt Teaching Agile Software Architecture&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-09-01-head.png&#34; alt=&#34;2021 09 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -1771,8 +1790,9 @@ One consequence is that students have a shallow understanding of more modern fra
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The official proficiencies for the Scrum roles Scrum Master&lt;a href=&#34;#scrum-master-formation&#34;&gt;[4]&lt;/a&gt;, Product Owner&lt;a href=&#34;#product-owner-formation&#34;&gt;[5]&lt;/a&gt;, and Developer&lt;a href=&#34;#scrum-developer-formation&#34;&gt;[6]&lt;/a&gt; are not achieved with the current curriculum.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_swat_lecture_content&#34;&gt;SWAT Lecture Content&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_swat_lecture_content&#34;&gt;SWAT Lecture Content&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The lecture description is:&lt;/p&gt;
 &lt;/div&gt;
@@ -1873,8 +1893,10 @@ Each book is quite compact and can read over a weekend.&lt;/p&gt;
 &lt;p&gt;The lecturer can also use [&lt;a href=&#34;#domain-driven-design-distilled&#34;&gt;10&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;11&lt;/a&gt;] for the workshop parts.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_arc42_architecture_approach&#34;&gt;arc42 Architecture Approach&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_arc42_architecture_approach&#34;&gt;arc42 Architecture Approach&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The course discusses the key points defined in approaches such as &lt;a href=&#34;https://arc42.org/&#34;&gt;arc42&lt;/a&gt;.
 The same concepts can naturally be found in TOGAF with a slight different terminology.
@@ -2009,8 +2031,10 @@ This heritage is one major reason why this approach is not extensively taught in
 They can produce these artifacts before attending the SWAT course.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_isaqb_architecture_program&#34;&gt;ISAQB Architecture Program&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_isaqb_architecture_program&#34;&gt;ISAQB Architecture Program&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-09-02-cspa-foundation.png&#34; alt=&#34;2021 09 02 cspa foundation&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -2259,10 +2283,16 @@ Communication, team findings techniques and documentation are discussed in &lt;a
 &lt;p&gt;Bachelor students have attended formal training in &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; and had extensive team workshop to foster communication techniques.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_foundations&#34;&gt;Foundations&lt;/h4&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_foundations&#34;&gt;Foundations&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Principles need to be taught at the beginning.
 The students already know concepts such as &lt;a href=&#34;https://en.wikipedia.org/wiki/KISS_principle&#34;&gt;KISS&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/SOLID&#34;&gt;SOLID&lt;/a&gt;,
@@ -2293,8 +2323,10 @@ Students must write professional source code, master design at the component lev
 Approaches such as clean code, test-driven development, refactoring and infrastructure as code shall be studied material.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_design_and_architecture&#34;&gt;Design and Architecture&lt;/h4&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_design_and_architecture&#34;&gt;Design and Architecture&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Design concepts must be refined.
 The students understand concepts such as patterns, micro-architecture, layered architecture.
@@ -2311,8 +2343,9 @@ We shall either build these concepts into project management lectures or in the 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -2350,8 +2383,10 @@ Marcel Baumann, 2021&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[1] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -2387,7 +2422,6 @@ Marcel Baumann, 2021&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
@@ -2410,10 +2444,7 @@ Marcel Baumann, 2021&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_improving_a_static_website_build_with_hugo_and_docsy_theme&#34;&gt;Improving a Static Website Build With Hugo and Docsy Theme&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-09-02-head.jpg&#34; alt=&#34;2021 09 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -2465,8 +2496,9 @@ He created it to describe &lt;a href=&#34;https://en.wikipedia.org/wiki/Temporal
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Digital_Equipment_Corporation&#34;&gt;Digital Equipment Corporation&lt;/a&gt; &lt;em&gt;DEC&lt;/em&gt; solution.
 These highly qualified experts and their solutions paved the way to legible documentation and professional typography.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_source_code_highlight&#34;&gt;Source Code Highlight&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_source_code_highlight&#34;&gt;Source Code Highlight&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Asciidoctor supports rouge source code highlighting per default
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.
@@ -2479,8 +2511,10 @@ Just select the style you prefer, such as:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_search_function_for_the_website&#34;&gt;Search Function for the Website&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_search_function_for_the_website&#34;&gt;Search Function for the Website&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The theme has multiple search solutions to index your static website.
 I chose the &lt;a href=&#34;https://lunrjs.com/&#34;&gt;Lunr&lt;/a&gt; approach for our site.
@@ -2490,8 +2524,10 @@ The solution has no strings attached and does not require an external search ser
 &lt;p&gt;The website and the search functionality are self-contained as a static website should be.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_comment_function_for_blog_article&#34;&gt;Comment Function for Blog Article&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_comment_function_for_blog_article&#34;&gt;Comment Function for Blog Article&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The comment feature is somewhat at odds with the concept of static website.
 The theme has multiple comment solutions to allow readers to publish a question or a test to our site.
@@ -2520,8 +2556,10 @@ No tracking, no ads and no locking are great.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_tag_function_for_blog_article&#34;&gt;Tag Function for Blog Article&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_tag_function_for_blog_article&#34;&gt;Tag Function for Blog Article&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Docsy has finally merged the change request for taxonomies during the first semester of 2021.
 Tags for articles are now natively supported without tinkering with the code of the plugin.&lt;/p&gt;
@@ -2531,8 +2569,10 @@ Tags for articles are now natively supported without tinkering with the code of 
 Give it a try.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_diagrams_in_articles&#34;&gt;Diagrams in articles&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_diagrams_in_articles&#34;&gt;Diagrams in articles&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Diagrams in blog articles are currently a more complex issue.
 Hugo seems to be quite restrictive which extensions can be loaded when generating a static site
@@ -2612,8 +2652,10 @@ The value is stated once in &lt;em&gt;opts&lt;/em&gt; and once in &lt;em&gt;svg-
 Text flow configurations are not enforced.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_layout_and_appearance&#34;&gt;Layout and Appearance&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_layout_and_appearance&#34;&gt;Layout and Appearance&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The docsy theme is regularly improving.
 The provided features are good and very stable.&lt;/p&gt;
@@ -2625,8 +2667,10 @@ Often the appearance of the generated HTML could be improved.
 I am currently exploring venues to improve the integration of nice looking asciidoc styling sheets with the docsy universe.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_future_features&#34;&gt;Future Features&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_future_features&#34;&gt;Future Features&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I have integrated an extension to provide access to static files through a Hugo/Docsy site.
 For example the presentation of a speech is made available directly in the static website.&lt;/p&gt;
@@ -2636,8 +2680,10 @@ For example the presentation of a speech is made available directly in the stati
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_4&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_4&#34; title=&#34;View footnote.&#34;&gt;4&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -2657,7 +2703,6 @@ Marcel Baumann. 2020.&lt;/p&gt;
 Marcel Baumann. 2020.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2689,10 +2734,7 @@ Marcel Baumann. 2020.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_scrum_master_formation&#34;&gt;Scrum Master Formation&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-08-03-head.png&#34; alt=&#34;2021 08 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -2715,8 +2757,9 @@ Marcel Baumann. 2020.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Please reflect on your goals and ethics.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_scrum_master_role&#34;&gt;Scrum Master Role&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_scrum_master_role&#34;&gt;Scrum Master Role&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Here the official definition of the product owner role taken from the &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -2789,8 +2832,10 @@ They do this by enabling the Scrum Team to improve its practices within the Scru
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_certifications&#34;&gt;Certifications&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_certifications&#34;&gt;Certifications&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The two big Scrum organizations &lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt; and &lt;a href=&#34;https://www.scrum.org/&#34;&gt;Scrum.org&lt;/a&gt; provide a certification path for Scrum masters.
 The certification path has three levels:&lt;/p&gt;
@@ -3002,8 +3047,10 @@ Be a professional knowledge worker and support your organization on the agile pa
 &lt;p&gt;I published a list of seminal works for interested Scrum masters under &lt;a href=&#34;../../../ideas/learnings/books/&#34;&gt;Books&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_project_leadership_trainings&#34;&gt;Project Leadership Trainings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_project_leadership_trainings&#34;&gt;Project Leadership Trainings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-08-03-pmi-talent-triangle.png&#34; alt=&#34;2021 08 03 pmi talent triangle&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -3018,8 +3065,10 @@ The biggest organization &lt;a href=&#34;https://www.pmi.org&#34;&gt;PMI&lt;/a&g
 &lt;p&gt;I expect the emphasis on agile approaches to markedly increase in the next years.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_university_formal_trainings&#34;&gt;University Formal Trainings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_university_formal_trainings&#34;&gt;University Formal Trainings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Technical universities in Switzerland provide formal training in project leadership, project management and related fields.
 The formation provides a certificate of advanced study CAS in the field.
@@ -3048,8 +3097,10 @@ Current available certificates of advanced study offering are, for example:&lt;/
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -3098,14 +3149,15 @@ Jeff Sutherland, Ken Schwaber. 2020.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;scrum-managing-for-results&#34;&gt;&lt;/a&gt;[1] H. Doshi, &lt;em&gt;Scrum Insights for Practitioners : The Scrum Guide Companion&lt;/em&gt;. Practiceagile.com. &lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;scrum-pocket-guide-3rd&#34;&gt;&lt;/a&gt;[2] G. Verheyen, &lt;em&gt;Scrum - A Pocket Guide&lt;/em&gt;, Third. Van Haren Publishing, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B08XWQ7DG9&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B08XWQ7DG9&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3128,10 +3180,7 @@ Jeff Sutherland, Ken Schwaber. 2020.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_devops_for_small_applications&#34;&gt;DevOps for Small Applications&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-08-02-head.png&#34; alt=&#34;2021 08 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -3148,8 +3197,9 @@ Jeff Sutherland, Ken Schwaber. 2020.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;A surprising side effect of this speed-up is a documented improvement of the delivered quality.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_it_works&#34;&gt;How It Works&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_how_it_works&#34;&gt;How It Works&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Under a DevOps model, development and operations teams are no longer &lt;em&gt;siloed&lt;/em&gt;.
 Sometimes, these two teams are merged into a single team where the engineers work across the entire application lifecycle.
@@ -3192,8 +3242,10 @@ This increases a team’s velocity.&lt;/p&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_benefits&#34;&gt;Benefits&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_benefits&#34;&gt;Benefits&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;dlist&#34;&gt;
 &lt;dl&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Speed&lt;/dt&gt;
@@ -3236,8 +3288,10 @@ For example, using infrastructure as code and policy as code, you can define and
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_devops_adoption&#34;&gt;DevOps Adoption&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_devops_adoption&#34;&gt;DevOps Adoption&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Transitioning to DevOps requires a change in culture and mindset.
 At its simplest, DevOps is about removing the barriers between two traditionally siloed teams, development and operations.
@@ -3253,8 +3307,10 @@ They take full ownership of their services, often beyond where their stated role
 Organizations using a DevOps model have teams that view the entire development and infrastructure lifecycle as part of their responsibilities.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_devops_practices&#34;&gt;DevOps Practices&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_devops_practices&#34;&gt;DevOps Practices&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;dlist&#34;&gt;
 &lt;dl&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;Continuous Integration&lt;/a&gt;&lt;/dt&gt;
@@ -3303,8 +3359,10 @@ This helps speed up communication across developers, operations, and even other 
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_devops_tools&#34;&gt;DevOps Tools&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_devops_tools&#34;&gt;DevOps Tools&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;A DevOps toolchain is a set or combination of tools that aid in the delivery, development, and management of software applications throughout the system development life cycle, as coordinated by an organisation that uses DevOps practices.&lt;/p&gt;
 &lt;/div&gt;
@@ -3315,8 +3373,10 @@ This helps speed up communication across developers, operations, and even other 
 &lt;p&gt;Generally, DevOps tools fit into one or more activities, which support specific DevOps initiatives: Plan, Create, Verify, Package, Release, Configure, Monitor, and Version Control.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_what_is_java_devops&#34;&gt;What is Java DevOps?&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_what_is_java_devops&#34;&gt;What is Java DevOps?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Java DevOps is simply applying DevOps practices and philosophies to Java app development.
 That means that compartmentalized teams are no longer needed when creating Java applications.&lt;/p&gt;
@@ -3361,8 +3421,10 @@ With infrastructure as a code, servers and infrastructure are deployed fast, aut
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The motivations for what has become modern &lt;em&gt;DevOps&lt;/em&gt; and several standard DevOps practices, such as automated build and test, continuous integration, and continuous delivery originated in the Agile world, which dates to the 1990s.
 Agile development teams using methods such as &lt;a href=&#34;http://www.extremeprogramming.org/&#34;&gt;eXtreme Programming&lt;/a&gt; could not &lt;em&gt;satisfy the customer through early and continuous delivery of valuable software&lt;/em&gt; unless they subsumed the operation responsibilities associated with their applications, many of which they automated.&lt;/p&gt;
@@ -3406,8 +3468,10 @@ The approaches, recipes and failures are similar.&lt;/p&gt;
 Small size service allows the architecture of an individual service to emerge through continuous refactoring &lt;a href=&#34;#continuous-delivery&#34;&gt;[4]&lt;/a&gt;  hence reducing the need for a big upfront design, allows for releasing the software early[citation needed] and continuously.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_literature&#34;&gt;Literature&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_literature&#34;&gt;Literature&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -3434,7 +3498,6 @@ Jez Humble &amp;amp; David Farley. 2011&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -3448,10 +3511,7 @@ Jez Humble &amp;amp; David Farley. 2011&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_agile_leadership&#34;&gt;Agile Leadership&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-08-01-head.jpg&#34; alt=&#34;2021 08 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -3489,8 +3549,9 @@ It is a job, not a hobby.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_leaders_engage_and_serve_the_team_at_the_place_of_work&#34;&gt;Agile Leaders engage, and serve the team at the place of work&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_leaders_engage_and_serve_the_team_at_the_place_of_work&#34;&gt;Agile Leaders engage, and serve the team at the place of work&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Serving the team is all the rage these days.
 You hear or read about Servant Leadership at every turn.
@@ -3523,8 +3584,10 @@ But serving the team is too often interpreted as waiting for the team to ask for
 This is a true service to the team by being a contributing member of the team.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_growing_your_team_is_critical&#34;&gt;Growing your team is critical&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_growing_your_team_is_critical&#34;&gt;Growing your team is critical&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;By engaging shoulder to shoulder with your teams, you can help them grow.
 As a leader, you can teach them how to navigate complexity.&lt;/p&gt;
@@ -3597,8 +3660,10 @@ They continue to micromanage subordinates, although a Scrum team could accomplis
 This behavior demonstrates a level of ignorance that may require support from a higher management level to address.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_leading_by_example_to_nurture_resilient_change&#34;&gt;Leading by Example to nurture resilient change&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_leading_by_example_to_nurture_resilient_change&#34;&gt;Leading by Example to nurture resilient change&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -3763,8 +3828,10 @@ Be patient.
 Change takes time, a lot of time.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -3783,8 +3850,10 @@ Marcel Baumann. 2018&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;great-scrum-master&#34;&gt;&lt;/a&gt;[1] Z. Sochova, &lt;em&gt;The Great ScrumMaster&lt;/em&gt;. Addison Wesley, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/013465711X&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/013465711X&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -3793,7 +3862,6 @@ Marcel Baumann. 2018&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;mythical-man-month&#34;&gt;&lt;/a&gt;[3] F. P. Brooks, &lt;em&gt;The Mythical Man-Month&lt;/em&gt;. Addison-Wesley Professional, 1995 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0201835959&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0201835959&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3810,10 +3878,7 @@ Marcel Baumann. 2018&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_technical_team_lead&#34;&gt;Technical Team Lead&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-07-03-head.png&#34; alt=&#34;2021 07 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -3836,8 +3901,9 @@ Ideally, she should &lt;a href=&#34;https://en.wikipedia.org/wiki/Pair_programmi
 &lt;div class=&#34;paragraph text-center&#34;&gt;
 &lt;p&gt;&lt;em&gt;A technical team lead must be technically savvy&lt;/em&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_job_description&#34;&gt;Job Description&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_job_description&#34;&gt;Job Description&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Here is a standard &lt;a href=&#34;https://en.wikipedia.org/wiki/Job_description&#34;&gt;Job Description&lt;/a&gt; for a Java technical team lead as often published on job platforms.&lt;/p&gt;
 &lt;/div&gt;
@@ -3849,8 +3915,11 @@ The Java technical lead will facilitate requirement analyzes, conduct peer revie
 &lt;p&gt;To be successful as a Java technical lead, you should demonstrate sound knowledge of industry best practices, good organizational and leadership skills, and proficiency in Java technologies.
 A top-notch Java technical lead should have good analytical skills, the ability to anticipate issues and frame remedial actions, and excellent teamwork skills.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_java_technical_lead_responsibilities&#34;&gt;Java Technical Lead Responsibilities&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_java_technical_lead_responsibilities&#34;&gt;Java Technical Lead Responsibilities&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -3877,8 +3946,10 @@ A top-notch Java technical lead should have good analytical skills, the ability 
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_java_technical_lead_requirements&#34;&gt;Java Technical Lead Requirements&lt;/h4&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_java_technical_lead_requirements&#34;&gt;Java Technical Lead Requirements&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The candidate has a bachelor or master degree in engineering, information systems or related.&lt;/p&gt;
 &lt;/div&gt;
@@ -3914,8 +3985,9 @@ Similar examples can also be found under &lt;a href=&#34;https://www.linkedin.co
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_responsibilities&#34;&gt;Responsibilities&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_responsibilities&#34;&gt;Responsibilities&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Below a description of the responsibilities for a technical lead.
 A technical lead is responsible for the following tasks:&lt;/p&gt;
@@ -3963,7 +4035,6 @@ While you are more likely to work hands-on and focus on day-to-day tasks as a te
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -3977,10 +4048,7 @@ While you are more likely to work hands-on and focus on day-to-day tasks as a te
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_why_enterprise_architecture&#34;&gt;Why Enterprise Architecture?&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-07-02-head.jpg&#34; alt=&#34;2021 07 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -4024,8 +4092,9 @@ The &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Open_Group&#34;&gt;Open Gr
 &lt;p&gt;Agile frameworks tend to define and promote agile receipts through collaborative structures.
 Examples are &lt;a href=&#34;https://en.wikipedia.org/wiki/Community_of_practice&#34;&gt;Community of Practice&lt;/a&gt;, design workshop, event storming, pair designing.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_concepts&#34;&gt;Concepts&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_concepts&#34;&gt;Concepts&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-07-02-togaf.png&#34; alt=&#34;2021 07 02 togaf&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -4069,8 +4138,10 @@ The easier it is to deploy, the more often it makes sense to deploy.&lt;/p&gt;
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_the_ea_process&#34;&gt;The EA Process&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_the_ea_process&#34;&gt;The EA Process&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Some methods will choose to prescribe a single approach.
 Such as capturing architectural requirements in the form of epics or pre-building &lt;em&gt;architectural runways&lt;/em&gt;.
@@ -4137,8 +4208,10 @@ This is an important activity for enterprise architects as well as for your IT g
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_team_workflow&#34;&gt;Team Workflow&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_team_workflow&#34;&gt;Team Workflow&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The workflow within an agile enterprise architecture team is depicted in the following diagram.&lt;/p&gt;
 &lt;/div&gt;
@@ -4193,8 +4266,10 @@ They explore the newly discovered topics during these sessions.&lt;/p&gt;
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-07-02-aeaf.png&#34; alt=&#34;2021 07 02 aeaf&#34;/&gt;
@@ -4234,8 +4309,10 @@ Apply them on your software product development using agile approaches like &lt;
 &lt;p&gt;Study the rules of &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_software_development&#34;&gt;Lean Software Development&lt;/a&gt; to optimize the value of your product.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -4248,7 +4325,6 @@ Open Group. 2018&lt;/p&gt;
 Open Group. 2019. (ISBN: 1-947754-62-1)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -4265,10 +4341,7 @@ Open Group. 2019. (ISBN: 1-947754-62-1)&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_product_owner_formation&#34;&gt;Product Owner Formation&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-07-04-head.jpg&#34; alt=&#34;2021 07 04 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -4288,8 +4361,9 @@ Open Group. 2019. (ISBN: 1-947754-62-1)&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Formal training is often the difference between being a professional instead of just pretending to be one.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_product_owner_role&#34;&gt;Product Owner Role&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_product_owner_role&#34;&gt;Product Owner Role&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Here the official definition of the product owner role taken from the &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -4334,8 +4408,10 @@ Those wanting to change the Product Backlog can do so by trying to convince the 
 The first steps to become a great product owner are described in this article.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_certifications&#34;&gt;Certifications&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_certifications&#34;&gt;Certifications&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The two big Scrum organizations &lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt; and &lt;a href=&#34;https://www.scrum.org/&#34;&gt;Scrum.org&lt;/a&gt; provide a certification path for product owners.
 The certification path has three levels:&lt;/p&gt;
@@ -4500,8 +4576,10 @@ Be a professional knowledge worker and support your organization on the agile pa
 &lt;p&gt;I published a list of seminal works for interested product owners under &lt;a href=&#34;../../../ideas/learnings/books/#_product_owner&#34;&gt;Books&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_requirement_engineering_trainings&#34;&gt;Requirement Engineering Trainings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_requirement_engineering_trainings&#34;&gt;Requirement Engineering Trainings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The most relevant organization is Europe is the &lt;a href=&#34;https://www.ireb.org/&#34;&gt;International Requirements Engineering Board&lt;/a&gt; &lt;em&gt;IREB&lt;/em&gt;.
 Professional requirements engineers should be IREB certified.&lt;/p&gt;
@@ -4531,8 +4609,10 @@ Professional requirements engineers should be IREB certified.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_university_formal_trainings&#34;&gt;University Formal Trainings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_university_formal_trainings&#34;&gt;University Formal Trainings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Technical universities in Switzerland provide formal training in requirements engineering and related fields &lt;a href=&#34;#agile-requirements&#34;&gt;[3]&lt;/a&gt;.
 The formation provides a certificate of advanced study CAS in the field.
@@ -4564,8 +4644,10 @@ I expect the emphasis on agile approaches to increase in the next years.&lt;/p&g
 See, for example, &lt;a href=&#34;https://uxschweiz.ch/weiterbildung/mashcid/&#34;&gt;Master Human Computer Interaction Design&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;LInks&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;LInks&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -4609,11 +4691,12 @@ Jeff Sutherland, Ken Schwaber. 2020&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;professional-product-owner&#34;&gt;&lt;/a&gt;[1] D. McGreal and R. Jocham, &lt;em&gt;The Professional Product Owner&lt;/em&gt;. Addison-Wesley Professional [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B07D5ZPJBY&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B07D5ZPJBY&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -4630,10 +4713,7 @@ Jeff Sutherland, Ken Schwaber. 2020&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_temporal_aspects_of_rolling_erp_planning&#34;&gt;Temporal Aspects of Rolling ERP Planning&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-07-01-head.jpg&#34; alt=&#34;2021 07 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -4670,8 +4750,9 @@ These techniques include the following:&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;What are the consequences of rolling approaches to any CRM or ERP system?&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_accounting&#34;&gt;Accounting&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_accounting&#34;&gt;Accounting&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Rolling accounting is quite easy.&lt;/p&gt;
 &lt;/div&gt;
@@ -4685,30 +4766,38 @@ For example, Swiss companies shall separate the rolling accounting from their le
 A better approach is to define rules avoiding most of the tuning actions.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_customers_activities_and_offers&#34;&gt;Customers, Activities and Offers&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_customers_activities_and_offers&#34;&gt;Customers, Activities and Offers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;No special effort is necessary.
 Customer relationship activities just need to be timely registered.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_contracts_and_projects&#34;&gt;Contracts and Projects&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_contracts_and_projects&#34;&gt;Contracts and Projects&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Only the contracts and projects active in the selected time interval shall be displayed.
 Efforts booked during the time interval are relevant for the analytics.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_invoices&#34;&gt;Invoices&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_invoices&#34;&gt;Invoices&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The invoices sent to the customers or the effectively paid invoices during the selected item interval shall be considered and displayed.
 These invoices are relevant for the computation of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Cash_flow&#34;&gt;cash flow&lt;/a&gt; and the financial success of the associated projects
 and contracts.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_implementation&#34;&gt;Implementation&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_implementation&#34;&gt;Implementation&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The tangly ERP was extended to support rolling analytics based on a user-defined time interval.
 The system shall have all raw data available for the chosen time interval.
@@ -4722,8 +4811,10 @@ Designs based on a yearly reporting structure make the concept of rolling time p
 &lt;p&gt;The analytics time interval is independent of the system overall interval.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Event-driven_architecture&#34;&gt;Event sourcing&lt;/a&gt; concepts are very powerful to implement an ERP providing time-interval based visualization and analysis.
 The concept works well with the &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Design&lt;/a&gt; concepts.&lt;/p&gt;
@@ -4740,7 +4831,6 @@ The whole financial system must be true and fair to enable rolling planning and 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -4754,10 +4844,7 @@ The whole financial system must be true and fair to enable rolling planning and 
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_agile_trends_switzerland_2021&#34;&gt;Agile Trends Switzerland 2021&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-06-02-head.jpg&#34; alt=&#34;2021 06 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -4788,8 +4875,9 @@ is only needed because administration is strongly hierarchical and unable to ada
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The &lt;a href=&#34;https://swissq.it/en/&#34;&gt;SwissQ&lt;/a&gt; report provides empirical data where Swiss companies stand in 2021.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_main_success_factors&#34;&gt;Main Success Factors&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_main_success_factors&#34;&gt;Main Success Factors&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The main success factors for an agile transformation are:&lt;/p&gt;
 &lt;/div&gt;
@@ -4815,8 +4903,10 @@ is only needed because administration is strongly hierarchical and unable to ada
 The participants of the study confirmed these documented facts.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_why_you_should_not_use_hybrid_methods&#34;&gt;Why You Should Not Use Hybrid Methods&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_why_you_should_not_use_hybrid_methods&#34;&gt;Why You Should Not Use Hybrid Methods&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;It seems that hybrid methods are way less successful than agile based on SwissQ data.&lt;/p&gt;
 &lt;/div&gt;
@@ -4837,8 +4927,10 @@ Only a few have already adopted agility on a portfolio level (15.3%) or strategi
 The good news is that many companies have started transformation initiatives or are planning to do so in the near future.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_used_methods_in_switzerland&#34;&gt;Used Methods in Switzerland&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_used_methods_in_switzerland&#34;&gt;Used Methods in Switzerland&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock kroki&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;https://kroki.io/mermaid/svg/eNpNzksKwjAQBuC9pxh6gNCkD6M7oUhBREHEddpMaSBNJYkLb68xCTjLb_55PBVu4FteeY3QvwerJJzRz6t0wEpGf93iNtrXUsAe2ppsIz2ERzsJrQM3nOwin4QZhAlWl4Sl6cMRg7Amp3q0C7pglBP-dyPN0iprJ7oAFUmf3I2aFEq42nVEF1fk7MXPaCNR0n4AR3s0gQ==&#34; alt=&#34;hybrid-methods-2021&#34;/&gt;
@@ -4850,8 +4942,10 @@ The good news is that many companies have started transformation initiatives or 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_findings&#34;&gt;Findings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_findings&#34;&gt;Findings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The major finding of the agile community during 2020 and 2021 is co-location is not mandatory for a successful agile approach.&lt;/p&gt;
 &lt;/div&gt;
@@ -4869,8 +4963,10 @@ Invest in professional hardware and buy the adequate number of licenses.
 I always wonder why companies implement communication infrastructure with the free version of Slack or GitHub.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_insights&#34;&gt;Insights&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_insights&#34;&gt;Insights&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Agile approaches are steadily making progress in Switzerland.
 Empirical data indicate agile approaches are more successful than hybrid ones.
@@ -4911,8 +5007,10 @@ Progress is sedate and resistance is very high.&lt;/p&gt;
 Below the staying sane advices of &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; community.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_staying_sane&#34;&gt;&lt;a href=&#34;https://less.works/less/adoption/staying-sane&#34;&gt;Staying Sane&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_staying_sane&#34;&gt;&lt;a href=&#34;https://less.works/less/adoption/staying-sane&#34;&gt;Staying Sane&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;During an agile, the organization needs to be changed.
 You are involved and probably have no ‘official’ authority to affect the needed changes.
@@ -4967,7 +5065,6 @@ I wish a fruitful and successful transformation to better way of working and of 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -4981,10 +5078,7 @@ I wish a fruitful and successful transformation to better way of working and of 
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_reflections_on_agile_fluency_model&#34;&gt;Reflections on Agile Fluency Model&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-06-01-head.jpg&#34; alt=&#34;2021 06 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -5005,16 +5099,17 @@ The second zone of the model is all about software craftsmanship and &lt;a href=
 Your organization needs years to transition to more agile ways of working.
 Do not rush it.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_zones&#34;&gt;Zones&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_zones&#34;&gt;Zones&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The model defines four zones in which your company could thrive.
 You are free to choose the zone best suited for your organization.
 Remember the zones are additive.
 If you target the third zone, your teams shall also be fluent in all practices of the first and second zones.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_shift_team_culture_focusing_teams_produce_business_value_6_months&#34;&gt;Shift Team Culture: &lt;em&gt;Focusing&lt;/em&gt; teams produce business value (6 months)&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_shift_team_culture_focusing_teams_produce_business_value_6_months&#34;&gt;Shift Team Culture: &lt;em&gt;Focusing&lt;/em&gt; teams produce business value (6 months)&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The team generates their own day-to-day tasks and plan based on their business representative’s needs.
 Team members consider their plan to be the team’s work, not individuals’ work.
@@ -5054,8 +5149,8 @@ instead, and accept that this will be less effective.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;The organization focuses on agile values and fosters the nurturing of agile teams.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_shift_team_skills_delivering_teams_deliver_on_the_market_cadence_24_months&#34;&gt;Shift Team Skills: &lt;em&gt;Delivering&lt;/em&gt; teams deliver on the market cadence (24 months)&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_shift_team_skills_delivering_teams_deliver_on_the_market_cadence_24_months&#34;&gt;Shift Team Skills: &lt;em&gt;Delivering&lt;/em&gt; teams deliver on the market cadence (24 months)&lt;/h3&gt;
 &lt;div class=&#34;dlist&#34;&gt;
 &lt;dl&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Increase External Quality Productivity&lt;/dt&gt;
@@ -5087,8 +5182,8 @@ They &lt;strong&gt;proactively&lt;/strong&gt; seek to improve those skills.&lt;/
 &lt;p&gt;&lt;em&gt;The organization focuses on technical agility and improves timely delivering quality applications.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_shift_organizational_structure_optimizing_teams_lead_their_market_5_years&#34;&gt;Shift Organizational Structure: &lt;em&gt;Optimizing&lt;/em&gt; teams lead their market (5 years)&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_shift_organizational_structure_optimizing_teams_lead_their_market_5_years&#34;&gt;Shift Organizational Structure: &lt;em&gt;Optimizing&lt;/em&gt; teams lead their market (5 years)&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Fluent optimizing teams understand what their market wants, what your business needs, and how to meet those needs.
 Or, as in a startup environment, they know what they need to learn and how to go about learning it.
@@ -5099,8 +5194,8 @@ They also know what to deliver to the market.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;The organization focuses on value and improves the delivery of highly successful applications.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_shift_organizational_culture_strengthening_teams_make_their_organizations_stronger_unknown&#34;&gt;Shift Organizational Culture: &lt;em&gt;Strengthening&lt;/em&gt; teams make their organizations stronger (unknown)&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_shift_organizational_culture_strengthening_teams_make_their_organizations_stronger_unknown&#34;&gt;Shift Organizational Culture: &lt;em&gt;Strengthening&lt;/em&gt; teams make their organizations stronger (unknown)&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Where Optimizing teams have the ability to understand and fulfill the needs of their market.
 Strengthening teams also play a larger role in their organization.&lt;/p&gt;
@@ -5117,8 +5212,10 @@ Employees, customers and stakeholders satisfaction is high.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_choose_your_zone&#34;&gt;Choose Your Zone&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_choose_your_zone&#34;&gt;Choose Your Zone&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
 &lt;caption class=&#34;title&#34;&gt;Table 1. Table Zones&lt;/caption&gt;
 &lt;colgroup&gt;
@@ -5169,8 +5266,10 @@ Employees, customers and stakeholders satisfaction is high.&lt;/em&gt;&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_learnings&#34;&gt;Learnings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_learnings&#34;&gt;Learnings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;dlist&#34;&gt;
 &lt;dl&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;When Introducing Agile&lt;/dt&gt;
@@ -5211,7 +5310,6 @@ Discipline is king.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
@@ -5231,9 +5329,8 @@ Discipline is king.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_java_certified_professional_java_se_11_developer&#34;&gt;Java Certified Professional: Java SE 11 Developer&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-05-02-head.png&#34; alt=&#34;2021 05 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -5246,9 +5343,15 @@ Discipline is king.&lt;/p&gt;
 &lt;p&gt;I discovered the anniversary offer to certify for Java SE 11 Developer.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This special certification has a cool logo with a remainder of the Java 25-year anniversary.
-Oracle offers this certification for only 25 dollars &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt; and provides free access to their learning platform.
-The offer and logo availability are time limited.&lt;/p&gt;
+&lt;p&gt;This special certification has a cool logo with the remainder of the Java 25-year anniversary.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Oracle offers this certification for only 25 dollars &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt; and provides free access to their learning platform.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The offer and logo availability are time limited.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The free learning subscription includes:&lt;/p&gt;
@@ -5269,8 +5372,9 @@ The offer and logo availability are time limited.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I could not resist and decided to get the cool logo and the associated certification.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_certification_goals&#34;&gt;Certification goals&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_certification_goals&#34;&gt;Certification goals&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The official goals of the certification cover:&lt;/p&gt;
 &lt;/div&gt;
@@ -5467,8 +5571,10 @@ Explain the lifecycle of an object (including creation, dereferencing by a reass
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_e_learning_platform&#34;&gt;E-learning Platform&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_e_learning_platform&#34;&gt;E-learning Platform&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I gave a try to the Oracle online training platform.&lt;/p&gt;
 &lt;/div&gt;
@@ -5483,8 +5589,10 @@ The questionnaire at the end of each lecture is fun to test your understanding.&
 &lt;p&gt;I would &lt;strong&gt;not&lt;/strong&gt; recommend the learning platform as an efficient learning approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_book&#34;&gt;Book&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_book&#34;&gt;Book&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I used the book &lt;a href=&#34;https://www.amazon.com/dp/B08DF4R2V9&#34;&gt;OCP Oracle Certified Professional Java SE 11 Programming Study Guide&lt;/a&gt;
 written by Scott Selikoff and Jeanne Boyarsky.&lt;/p&gt;
@@ -5505,8 +5613,10 @@ The questions sometimes asked details you are not aware when writing regular Jav
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_practice_examinations&#34;&gt;Practice Examinations&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_practice_examinations&#34;&gt;Practice Examinations&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Udemy provides &lt;a href=&#34;https://www.udemy.com/course/java-se-11-certification-exam-1z0-819-practice-tests/&#34;&gt;practice tests&lt;/a&gt;.
 The set contains 250 questions and costs between 15 and 90 dollars.
@@ -5524,8 +5634,10 @@ Here is an
 &lt;p&gt;I only used free offering in addition to the practice questions of the bought book.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_examination&#34;&gt;Examination&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_examination&#34;&gt;Examination&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The examination was acceptable.&lt;/p&gt;
 &lt;/div&gt;
@@ -5633,7 +5745,6 @@ You have &lt;strong&gt;less&lt;/strong&gt; than 2 minutes for each question.&lt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
@@ -5656,10 +5767,7 @@ You have &lt;strong&gt;less&lt;/strong&gt; than 2 minutes for each question.&lt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_agile_trends_switzerland_2020&#34;&gt;Agile Trends Switzerland 2020&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-05-01-head.jpg&#34; alt=&#34;2021 05 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -5681,8 +5789,9 @@ Your key developers are grumbling you are faking it.&lt;/p&gt;
 &lt;p&gt;The SwissQ report provides empirical data where Swiss companies stand in 2020.
 Download is available under from &lt;a href=&#34;https://report.swissq.it/&#34;&gt;SwissQ Reports&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_where_we_stand&#34;&gt;Where We Stand&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_where_we_stand&#34;&gt;Where We Stand&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The agile approach continues to spread rapidly around the world.
 A stunning &lt;strong&gt;89.8%&lt;/strong&gt; of all teams have already adopted or are in the process of adopting an agile methodology.
@@ -5706,8 +5815,10 @@ Fast delivery to customers and pivot to disruptive changes are the new key for e
 The raise of digital and Internet affine banking solutions is such a transformative example.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_waterfall_vs_agile&#34;&gt;Waterfall vs Agile&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_waterfall_vs_agile&#34;&gt;Waterfall vs Agile&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The collected data clearly show agile approaches are tremendously more successful by more than 10%.
 The agile approach seems to eliminate catastrophic development failures.
@@ -5729,8 +5840,10 @@ Drop waterfall approaches.
 Stop being a laggard.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_transformation_drivers&#34;&gt;Transformation Drivers&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_transformation_drivers&#34;&gt;Transformation Drivers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The IT department is still the main driver for agile transformation.
 Going fully agile is challenging and sticking with waterfall is no more an option.
@@ -5760,8 +5873,10 @@ Remember, it is not Kanban if it doesn’t have WIP limits.&lt;/p&gt;
 &lt;p&gt;There is also a trend towards stable product teams that extend their responsibilities beyond those of &lt;em&gt;just&lt;/em&gt; the development for a solution or service.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_findings&#34;&gt;Findings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_findings&#34;&gt;Findings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The conclusion of the main article is enlightening.&lt;/p&gt;
 &lt;/div&gt;
@@ -5782,8 +5897,10 @@ They must make difficult and painful decisions regarding new leadership teams.&l
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_insights&#34;&gt;Insights&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_insights&#34;&gt;Insights&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;quoteblock&#34;&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -5828,7 +5945,6 @@ The hope is to foster a deeper adoption of agile key values and related practice
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
@@ -5848,10 +5964,7 @@ The hope is to foster a deeper adoption of agile key values and related practice
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_agile_requirements_engineering&#34;&gt;Agile Requirements Engineering&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-04-03-head.png&#34; alt=&#34;2021 04 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -5909,10 +6022,11 @@ Our job is to change the world.&lt;/p&gt;
 — Gojko Adzic
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_approach&#34;&gt;Approach&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_approach&#34;&gt;Approach&lt;/h3&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_specification&#34;&gt;Specification&lt;/h4&gt;
+&lt;h3 id=&#34;_specification&#34;&gt;Specification&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Use Impact mapping and story mapping to classify and order your functionality.
 Story mapping works hand in hand with the release plan artifact I cited in a previous post.
@@ -5937,8 +6051,11 @@ They are work items for the Scrum team.
 If you want to use stories to describe your needs instead of the specification by example approach, it is OK, but please not in the backlog.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_validation&#34;&gt;Validation&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_validation&#34;&gt;Validation&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Acceptance criteria is a form of specification by example.
 Acceptance tests - see &lt;a href=&#34;https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development&#34;&gt;ATDD&lt;/a&gt; and
@@ -5963,8 +6080,9 @@ You can extend your automatic validation to non-functional requirements with the
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_background&#34;&gt;Background&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_background&#34;&gt;Background&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You could use the following reference books to bootstrap and strengthen your agile specification process:&lt;/p&gt;
 &lt;/div&gt;
@@ -6000,8 +6118,10 @@ The book was published in 2017, five years ago.&lt;/p&gt;
 [&lt;a href=&#34;#value-proposition-design&#34;&gt;8&lt;/a&gt;, &lt;a href=&#34;#agile-product-management&#34;&gt;9&lt;/a&gt;, &lt;a href=&#34;#strategize&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#how-to-lead-product-management&#34;&gt;10&lt;/a&gt;, &lt;a href=&#34;#building-evolutionary-architectures&#34;&gt;7&lt;/a&gt;].&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_evolution&#34;&gt;Evolution&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_evolution&#34;&gt;Evolution&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The most effective software architecture approach is &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Design&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -6020,8 +6140,10 @@ This blog also contains an architecture series digging into agile architecture a
 The first article describes &lt;a href=&#34;../../2019/agile-architecture-principles&#34;&gt;Agile Architecture Principles&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;professional-product-owner&#34;&gt;&lt;/a&gt;[1] D. McGreal and R. Jocham, &lt;em&gt;The Professional Product Owner&lt;/em&gt;. Addison-Wesley Professional [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B07D5ZPJBY&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B07D5ZPJBY&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -6054,7 +6176,6 @@ The first article describes &lt;a href=&#34;../../2019/agile-architecture-princi
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
@@ -6074,9 +6195,8 @@ The first article describes &lt;a href=&#34;../../2019/agile-architecture-princi
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_self_service_for_a_developer_is_a_game_changer&#34;&gt;Self-Service for A Developer is a Game Changer&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-04-02-head.jpg&#34; alt=&#34;2021 04 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -6088,14 +6208,19 @@ They are slow, clumsy and too administrative.
 Harsher words state they are incompetent.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I have observed a clear trend in Switzerland since around 2015 to solve these tensions.
-Standard IT services such as docker images, database instances or internal domain names are provided through self-service kiosks.&lt;/p&gt;
+&lt;p&gt;I have observed a clear trend in Switzerland since around 2015 to solve these tensions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Standard IT services such as docker images, database instances or internal domain names are provided through self-service kiosks.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;What are the advantages of this approach?&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_advantages&#34;&gt;Advantages&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_advantages&#34;&gt;Advantages&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The advantages to providing a self-service kiosk for users in an academical or industrial environment are:&lt;/p&gt;
 &lt;/div&gt;
@@ -6143,8 +6268,10 @@ The kiosk solution must be connected to the on-boarding and off-boarding process
 The real gains are less animosity and more respect for the IT professionals.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_challenges&#34;&gt;Challenges&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_challenges&#34;&gt;Challenges&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The provided self-service products shall cover at least 80% of customer’s needs.
 The products must be standardized and do not require manual actions for setup and deployment.
@@ -6158,8 +6285,10 @@ You still need to provide a workable approach for special requests.
 The simplest solution is to advocate using a commercial offering.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_approaches&#34;&gt;Approaches&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_approaches&#34;&gt;Approaches&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I am working with teams developing software products in academic and small-company environments.
 The needs boil down to&lt;/p&gt;
@@ -6192,8 +6321,10 @@ The current major challenge is the immaturity of the software solutions to share
 I expect viable standard solutions will be available in the next two years.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_next_steps&#34;&gt;Next Steps&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_next_steps&#34;&gt;Next Steps&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Implement a kiosk self-service solution for all regular requests of collaborators and students.&lt;/p&gt;
 &lt;/div&gt;
@@ -6202,7 +6333,6 @@ I expect viable standard solutions will be available in the next two years.&lt;/
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Track acceptance of provided approaches and implement improvements.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -6219,18 +6349,17 @@ I expect viable standard solutions will be available in the next two years.&lt;/
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_jdk_16&#34;&gt;JDK 16&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-04-01-head.png&#34; alt=&#34;2021 04 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I truly love the new release rhythm of the Java ecosystem.
-Being able to use new features every six months is awesome.
-The migration overhead is held to a minimum thanks to incredible backward compatibility.&lt;/p&gt;
+Being able to use new features every six months is awesome.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The migration overhead is held to a minimum thanks to incredible backward compatibility.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The new features greatly simplify the existing code and tremendously increase legibility.&lt;/p&gt;
@@ -6242,8 +6371,9 @@ The promise of advanced pattern matching constructs is sweet.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Polishing of functional programming approach improved my source code quite stupendously.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_new_features&#34;&gt;New Features&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_new_features&#34;&gt;New Features&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Java 16 fully supports &lt;a href=&#34;https://en.wikipedia.org/wiki/Algebraic_data_type&#34;&gt;Algebraic Data Types&lt;/a&gt; with the &lt;a href=&#34;https://openjdk.java.net/jeps/395&#34;&gt;record&lt;/a&gt; and
 &lt;a href=&#34;https://openjdk.java.net/jeps/397&#34;&gt;sealed types&lt;/a&gt; features.&lt;/p&gt;
@@ -6278,8 +6408,10 @@ An example would be:&lt;/p&gt;
 This port is great new to shrink the size of docker images containing a Java runtime.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_troubles_with_some_packages&#34;&gt;Troubles With Some Packages&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_troubles_with_some_packages&#34;&gt;Troubles With Some Packages&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;dlist&#34;&gt;
 &lt;dl&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;MicroStream&lt;/dt&gt;
@@ -6327,8 +6459,10 @@ Support modules, auto-closeable resources, records, sealed classes.&lt;/p&gt;
 Did you realize that since Java 8 a new version is released every six months?&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_the_next_changes_i_am_dreaming_of&#34;&gt;The Next Changes I am Dreaming Of&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_the_next_changes_i_am_dreaming_of&#34;&gt;The Next Changes I am Dreaming Of&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;dlist&#34;&gt;
 &lt;dl&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Concise Method Body&lt;/dt&gt;
@@ -6355,8 +6489,10 @@ Until now, the Java developers&amp;#39; community has failed us; support for mod
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_important_remainder&#34;&gt;Important Remainder&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_important_remainder&#34;&gt;Important Remainder&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The next long term supported Java shall be published in September 2021.
 The evolution between LTS 11 and LTS 17 is huge.
@@ -6375,7 +6511,6 @@ A security flaw with an older Java version moves on thin ice if your customers s
 This LTS version should be removed in September 2021.
 Early releases are already available to support migration initiatives.
 This migration shall be implemented through teams until the end of year 2021.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -6407,10 +6542,7 @@ This migration shall be implemented through teams until the end of year 2021.&lt
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_agile_software_architecture_is_mainstream&#34;&gt;Agile Software Architecture is Mainstream&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-03-03-head.jpg&#34; alt=&#34;2021 03 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -6448,8 +6580,9 @@ And we still have climate change deniers.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Laggards, please bow and embrace modern software development approaches.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_pmi_and_disciplined_agile_delivery&#34;&gt;PMI and Disciplined Agile Delivery&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_pmi_and_disciplined_agile_delivery&#34;&gt;PMI and Disciplined Agile Delivery&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-03-03-dad.jpg&#34; alt=&#34;2021 03 03 dad&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -6479,8 +6612,10 @@ RUP is certainly not agile.&lt;/p&gt;
 &lt;p&gt;Anyway, it is a huge step for PMI to move away from traditional heavy project development methods and embrace somehow agile product development.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_open_group_and_the_open_agile_architecture_initiative_togaf&#34;&gt;Open Group and The Open Agile Architecture Initiative TOGAF&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_open_group_and_the_open_agile_architecture_initiative_togaf&#34;&gt;Open Group and The Open Agile Architecture Initiative TOGAF&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-03-03-open-group-agile.png&#34; alt=&#34;2021 03 03 open group agile&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -6534,8 +6669,10 @@ The official process how to implement them is flawed.
 You cannot work with short iterations and incrementally improve your solution upon discovering new facts in a timely and efficient manner.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_isaqb_agile_software_architecture&#34;&gt;iSAQB Agile Software Architecture&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_isaqb_agile_software_architecture&#34;&gt;iSAQB Agile Software Architecture&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-03-03-isaqb.jpg&#34; alt=&#34;2021 03 03 isaqb&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -6569,8 +6706,10 @@ On the other hand, expedient anchoring of architecture practices in an agile app
 I hope they will add more material in the future.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_requirements_engineering&#34;&gt;Agile Requirements Engineering&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_requirements_engineering&#34;&gt;Agile Requirements Engineering&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Interestingly, the requirement community is further on the path to agility.
 The most relevant organization is Europe is the &lt;a href=&#34;https://www.ireb.org/&#34;&gt;International Requirements Engineering Board&lt;/a&gt; &lt;em&gt;IREB&lt;/em&gt;.
@@ -6587,8 +6726,10 @@ The organization offers two certifications with emphasis on agile approaches:&lt
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_testing_engineering&#34;&gt;Agile Testing Engineering&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_testing_engineering&#34;&gt;Agile Testing Engineering&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Interestingly, the quality insurance and testing community are further on the path to agility.
 The most relevant organization is Europe is the &lt;a href=&#34;https://www.istqb.org/&#34;&gt;International Software Testing Qualifications Board&lt;/a&gt; &lt;em&gt;ISTQB&lt;/em&gt;.
@@ -6612,7 +6753,6 @@ The organization offers a whole set of certifications with emphasis on agile app
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -6626,10 +6766,7 @@ The organization offers a whole set of certifications with emphasis on agile app
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_microstream_4_x&#34;&gt;MicroStream 4.x&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-03-02-head.jpg&#34; alt=&#34;2021 03 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -6651,8 +6788,9 @@ The library is efficient and works reliably.&lt;/p&gt;
 The implementation speed and ease are awesome.
 I hope the current flaws of the product will be removed and allow productive use.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_constraints&#34;&gt;Constraints&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_constraints&#34;&gt;Constraints&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;dlist&#34;&gt;
 &lt;dl&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Saving a Java Object&lt;/dt&gt;
@@ -6678,8 +6816,10 @@ If you use standard object-oriented practices, you will have to use the less eff
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_design&#34;&gt;Design&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_design&#34;&gt;Design&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Our provider persists instances for all our bounded domains in need of persistence.&lt;/p&gt;
 &lt;/div&gt;
@@ -6738,10 +6878,12 @@ If you use standard object-oriented practices, you will have to use the less eff
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_current_flaws&#34;&gt;Current Flaws&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_current_flaws&#34;&gt;Current Flaws&lt;/h3&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_in_memory_file_system&#34;&gt;In Memory File System&lt;/h4&gt;
+&lt;h3 id=&#34;_in_memory_file_system&#34;&gt;In Memory File System&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;In-memory file systems are a must for unit and integration testing.
 A continuous integration pipeline does not always have access to a regular file system.
@@ -6761,8 +6903,8 @@ Thanks to the MicroStream developers.
 See their &lt;em&gt;file systems&lt;/em&gt; example in their &lt;a href=&#34;https://github.com/microstream-one/examples&#34;&gt;GitHub example repository&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_java_records&#34;&gt;Java Records&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_java_records&#34;&gt;Java Records&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;A field cannot be manipulated anymore in record since Java JDK 1.5.1.
 The &lt;em&gt;MicroStream&lt;/em&gt; 4.x releases crash when using record in JDK 15 and JDK 16. It only works with JDK 14.
@@ -6777,8 +6919,10 @@ It hinders you to use the associated preview features
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_next_steps&#34;&gt;Next Steps&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_next_steps&#34;&gt;Next Steps&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -6797,7 +6941,6 @@ discussion how organizations cope with the Java release cycle or are just laggar
 &lt;p&gt;Wait and see if the promised licensing under an open source copyright will be published.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -6826,10 +6969,7 @@ discussion how organizations cope with the Java release cycle or are just laggar
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_modern_java_development&#34;&gt;Modern Java Development&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-03-01-head.jpg&#34; alt=&#34;2021 03 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -6849,8 +6989,9 @@ Preview and incubator features promote feedback from the community and users.&lt
 Some experiences were quite painful.
 Below our findings and our current focus on developing software products.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_legibility_matters&#34;&gt;Legibility Matters&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_legibility_matters&#34;&gt;Legibility Matters&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Programmers learnt the last decade that legibility and brevity of programming languages matter.
 The Java &lt;a href=&#34;https://openjdk.java.net/projects/coin/&#34;&gt;Coin&lt;/a&gt; and &lt;a href=&#34;https://openjdk.java.net/projects/amber/&#34;&gt;Amber&lt;/a&gt;
@@ -6900,8 +7041,10 @@ The solution is based on the learning of the &lt;a href=&#34;https://www.joda.or
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_useful_constructs&#34;&gt;Useful Constructs&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_useful_constructs&#34;&gt;Useful Constructs&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Modern Java has introduced powerful constructs to write legible and maintainable code.
 Modern Java code is quite different from Java 5 code.&lt;/p&gt;
@@ -6945,8 +7088,10 @@ The code is more performant and has security issues.&lt;/p&gt;
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_cumbersome_aspects&#34;&gt;Cumbersome Aspects&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_cumbersome_aspects&#34;&gt;Cumbersome Aspects&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We still have open wounds in the legibility and elegance of the Java programming languages.&lt;/p&gt;
 &lt;/div&gt;
@@ -6974,8 +7119,10 @@ The code is more performant and has security issues.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_next_improvements&#34;&gt;Next Improvements?&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_next_improvements&#34;&gt;Next Improvements?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We have the first signs of possible improvements.&lt;/p&gt;
 &lt;/div&gt;
@@ -7020,7 +7167,6 @@ Gradle 6.4 was the first version really supporting Java modules.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
@@ -7040,10 +7186,7 @@ Gradle 6.4 was the first version really supporting Java modules.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_effective_working_in_the_digital_age&#34;&gt;Effective Working in the Digital Age?&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-02-03-head.jpg&#34; alt=&#34;2021 02 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -7072,8 +7215,9 @@ Coffee is also really better.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Here are a few advices to improve our work experience.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_schedule_an_appointment&#34;&gt;Schedule an Appointment&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_schedule_an_appointment&#34;&gt;Schedule an Appointment&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;If you are responsible for the meeting preparation, please:&lt;/p&gt;
 &lt;/div&gt;
@@ -7131,8 +7275,10 @@ Please buy a professional headset.&lt;/p&gt;
 &lt;p&gt;The newer versions of major tools from Microsoft, Google, Cisco now include workable versions of whiteboard and voting tools.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_write_a_meeting_protocol&#34;&gt;Write a Meeting Protocol&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_write_a_meeting_protocol&#34;&gt;Write a Meeting Protocol&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;If you are responsible for the meeting event, please:&lt;/p&gt;
 &lt;/div&gt;
@@ -7218,8 +7364,10 @@ It is not just bullet points.&lt;/p&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_share_a_document&#34;&gt;Share a Document&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_share_a_document&#34;&gt;Share a Document&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The rules to share a document are:&lt;/p&gt;
 &lt;/div&gt;
@@ -7255,8 +7403,10 @@ Acrobat Reader supports a review mode.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_communicate&#34;&gt;Communicate&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_communicate&#34;&gt;Communicate&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -7278,8 +7428,10 @@ We need to &lt;strong&gt;discuss&lt;/strong&gt; such themes.&lt;/p&gt;
 Blame on the phone.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_work_on_a_project&#34;&gt;Work on a Project&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_work_on_a_project&#34;&gt;Work on a Project&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -7298,8 +7450,10 @@ You can write whole books with AsciiDoc.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Adapt your analog processes to the digital world.
 Do not just copy them.
@@ -7313,7 +7467,6 @@ These tools support the whole meeting planning, scheduling, and execution workfl
 &lt;p&gt;Enjoy your online interactions.
 Go regularly drink a coffee or a beer with your peers.
 We are flesh and blood living beings.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -7342,21 +7495,24 @@ We are flesh and blood living beings.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_why_is_java_path_api_class_better&#34;&gt;Why Is Java Path API Class Better?&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-02-02-head.jpg&#34; alt=&#34;2021 02 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_file_system_nio&#34;&gt;File System NIO&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Java NIO &lt;em&gt;New Input Output&lt;/em&gt; is an alternative IO API for Java, meaning alternative to the standard Java IO and Java Networking APIs.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Java NIO offers a different IO programming model than the traditional IO APIs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;One major feature of interest is the support of alternate file systems.
+An in-memory file system is ideal for test file related operations in unit and integration tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;admonitionblock note&#34;&gt;
 &lt;table&gt;
@@ -7374,13 +7530,9 @@ Also, parts of the NIO APIs are actually blocking - e.g. the file APIs - so the 
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;One major feature of interest is the support of alternate file systems.
-An in-memory file system is ideal for test file related operations in unit and integration tests.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_unit_tests&#34;&gt;Unit Tests&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_unit_tests&#34;&gt;Unit Tests&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The &lt;a href=&#34;https://github.com/google/jimfs&#34;&gt;Jimfs&lt;/a&gt; library implements an in-memory file system.
 You can find other implementations of in-memory file systems if you want to use another library.&lt;/p&gt;
@@ -7413,8 +7565,10 @@ Instead, you should always use the &lt;em&gt;FileSystem&lt;/em&gt; or a &lt;em&g
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_paths&#34;&gt;Paths&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_paths&#34;&gt;Paths&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Alternative file system operations require all methods to use path objects instead of file objects.
 File objects contain the name of the accessed file but lose all references to the underlying file system.
@@ -7497,8 +7651,10 @@ Use path instances to manipulate files.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_learnt_lessons&#34;&gt;Learnt Lessons&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_learnt_lessons&#34;&gt;Learnt Lessons&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Legacy libraries heavily use &lt;em&gt;File&lt;/em&gt; objects in their algorithms and their public interface.
 Such libraries do &lt;strong&gt;not&lt;/strong&gt; work with in-memory file systems.&lt;/p&gt;
@@ -7512,7 +7668,6 @@ It is always possible to map a stream to a file system specific streams for read
 Ideally, the Java community should declare the &lt;em&gt;File&lt;/em&gt; class as a deprecated one.
 Another solution would be to extend File with an internal path instance.
 This approach could break backward compatibility.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -7535,10 +7690,7 @@ This approach could break backward compatibility.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_less_lessons_learnt&#34;&gt;LeSS Lessons Learnt&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-02-01-head.svg&#34; alt=&#34;2021 02 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -7568,8 +7720,9 @@ I use coaching, mentoring, teaching and facilitation techniques just as other co
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Our goal is to deliver a highly successful product.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_approach&#34;&gt;Agile Approach&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_approach&#34;&gt;Agile Approach&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;My own interpretation of agile as doctrine is:&lt;/p&gt;
 &lt;/div&gt;
@@ -7627,13 +7780,15 @@ Said bluntly, just do not use it if you can choose.&lt;/p&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_ways_of_working&#34;&gt;Ways of working&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_ways_of_working&#34;&gt;Ways of working&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The following three levels of coaching are commonly needed:&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_organizational_less_coaching&#34;&gt;Organizational LeSS Coaching&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_organizational_less_coaching&#34;&gt;Organizational LeSS Coaching&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;A coach works with multiple teams and the management to improve the organization and its structure.
 A clear vision of how LeSS organization could be:&lt;/p&gt;
@@ -7678,8 +7833,8 @@ A clear vision of how LeSS organization could be:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_team_less_coaching&#34;&gt;Team LeSS Coaching&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_team_less_coaching&#34;&gt;Team LeSS Coaching&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;A coach works with at most a few teams to improve their team-working and &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; practices.
 It is common for a coach to take on the Scrum Master role.
@@ -7720,8 +7875,8 @@ A team coach typically focuses on:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_technical_practices_coaching&#34;&gt;Technical Practices Coaching&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_technical_practices_coaching&#34;&gt;Technical Practices Coaching&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;A coach works with (or on) a team on their actual codebase in order to improve the technical practices and adopt agile development techniques.&lt;/p&gt;
 &lt;/div&gt;
@@ -7788,8 +7943,10 @@ High-quality products require well-trained professional developers and mastery.&
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_much_coaching&#34;&gt;How Much Coaching?&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_how_much_coaching&#34;&gt;How Much Coaching?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The most successful &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; adoptions we have seen had the following structure:&lt;/p&gt;
 &lt;/div&gt;
@@ -7812,8 +7969,10 @@ They are also involved with team and technical coaching.&lt;/p&gt;
 After that, reduce, &lt;em&gt;not eliminate!&lt;/em&gt; the external technical coaching or let the external coach move to a new area.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_be_patient_the_time_horizon_is_years&#34;&gt;Be Patient, The Time Horizon is Years&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_be_patient_the_time_horizon_is_years&#34;&gt;Be Patient, The Time Horizon is Years&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -7843,8 +8002,10 @@ After that, reduce, &lt;em&gt;not eliminate!&lt;/em&gt; the external technical c
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_remember&#34;&gt;Remember&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_remember&#34;&gt;Remember&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; is &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt;, it is Large Scaled Scrum Feature teams are economical.
 Cross-functional Technical excellence is the essence of a quality solution.
@@ -7859,8 +8020,10 @@ Depending on your organization, put him where the budget comes from.&lt;/p&gt;
 He is responsible for teaching others how to adapt and evolve the component.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;olist arabic&#34;&gt;
 &lt;ol class=&#34;arabic&#34;&gt;
 &lt;li&gt;
@@ -7873,7 +8036,6 @@ He is responsible for teaching others how to adapt and evolve the component.&lt;
 &lt;p&gt;&lt;a href=&#34;https://scrumteamsurvey.org/&#34;&gt;Scrum Teams Survey&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -7896,10 +8058,7 @@ He is responsible for teaching others how to adapt and evolve the component.&lt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_software_development_for_students&#34;&gt;Software Development for Students&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-01-04-head.jpg&#34; alt=&#34;2021 01 04 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -7916,8 +8075,9 @@ Experience with one of the best of breed tools enforces learning and automatism.
 &lt;p&gt;The focus of a technical university is to teach the concepts and methods.
 The tools are used to practice and to increase student learning.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_source_code_version_management_with_git&#34;&gt;Source Code Version Management with Git&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_source_code_version_management_with_git&#34;&gt;Source Code Version Management with Git&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; is the standard tool for the distributed source code management system.
 It is supported by all major development IDE and continuous integration environments.&lt;/p&gt;
@@ -7930,8 +8090,10 @@ It is supported by all major development IDE and continuous integration environm
 Pull requests are a standard approach to review team colleague works and to consolidate new functions into the application.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_modern_java_software_development&#34;&gt;Modern Java Software Development&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_modern_java_software_development&#34;&gt;Modern Java Software Development&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Java is the preferred programming language for the majority of teaching institutions around the world.
 The programming language has evolved the last ten years.
@@ -7957,8 +8119,10 @@ Concepts such as Optional, Streams, immutable objects, and unchecked expressions
 The approach is straight forward.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_technical_excellence&#34;&gt;Technical Excellence&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_technical_excellence&#34;&gt;Technical Excellence&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The DevOps and software craftsmanship movement strongly promotes technical excellence and intrinsic quality in software development.&lt;/p&gt;
 &lt;/div&gt;
@@ -7986,8 +8150,10 @@ The IDE environment is free for students.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_documentation&#34;&gt;Documentation&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You should only check text artifacts into a &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; repository.
 Modern approaches with &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt; and &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; syntax promote this axiom.&lt;/p&gt;
@@ -8000,8 +8166,10 @@ ALl UML diagram types can be described with the tool.
 Asciidoc supports additional diagrams and diagramming tools such as &lt;a href=&#34;https://mermaid-js.github.io/mermaid&#34;&gt;Mermaid&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_and_scrum&#34;&gt;Agile and Scrum&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_and_scrum&#34;&gt;Agile and Scrum&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Agile and Scrum are the standard methods to develop software products in the industry.
 All students shall excel in agile development approaches.
@@ -8013,8 +8181,10 @@ When working in a Scrum environment, they have used the backlog, issues, stories
 They have planned their projects with a vision, a roadmap, epics, and sprints.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_gitlab_as_a_students_tool&#34;&gt;Gitlab as a Student’s Tool&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_gitlab_as_a_students_tool&#34;&gt;Gitlab as a Student’s Tool&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-01-04-gitlab.png&#34; alt=&#34;2021 01 04 gitlab&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -8029,8 +8199,10 @@ It is the official tool provided in our &lt;a href=&#34;https://www.hslu.ch/en/l
 They will use their learning to develop commercial software components when working after the completion of their studies.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_gitlab_as_a_lecturers_tool&#34;&gt;Gitlab as a Lecturer’s Tool&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_gitlab_as_a_lecturers_tool&#34;&gt;Gitlab as a Lecturer’s Tool&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;All the source code and artifacts of a student class are available in Gitlab.
 The development history over a project or a semester is visible in Git.
@@ -8039,8 +8211,10 @@ The grading process can be standardized.
 The decision process is part of the Gitlab data and is auditable.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The student series is a set of blogs showing how to use central tools for modern software development.&lt;/p&gt;
 &lt;/div&gt;
@@ -8077,7 +8251,6 @@ The decision process is part of the Gitlab data and is auditable.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -8091,10 +8264,7 @@ The decision process is part of the Gitlab data and is auditable.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_gitlab_for_bachelor_students&#34;&gt;Gitlab for Bachelor Students&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-01-03-head.jpg&#34; alt=&#34;720&#34; width=&#34;480&#34;/&gt;
 &lt;/div&gt;
@@ -8206,8 +8376,9 @@ Students can concentrate on the content of their thesis.&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_basic_git_knowledge_for_students&#34;&gt;Basic Git Knowledge for Students&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_basic_git_knowledge_for_students&#34;&gt;Basic Git Knowledge for Students&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Studying the history of software development practices shows the raise and fall of &lt;a href=&#34;https://en.wikipedia.org/wiki/Source_Code_Control_System&#34;&gt;SCCS&lt;/a&gt;,
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Concurrent_Versions_System&#34;&gt;CVS&lt;/a&gt;, ClearCase, Visual Source Safe, or
@@ -8334,8 +8505,10 @@ Often you have just one remote to synchronize with.&lt;/td&gt;
 &lt;p&gt;See our blog &lt;a href=&#34;../../2016/git-branches-for-the-impatient&#34;&gt;Git Branches for the Impatient&lt;/a&gt; for more advanced commands.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_ci_pipelines_for_students&#34;&gt;CI Pipelines for Students&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_ci_pipelines_for_students&#34;&gt;CI Pipelines for Students&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-01-03-cicd_pipeline.png&#34; alt=&#34;720&#34; width=&#34;480&#34;/&gt;
@@ -8431,8 +8604,10 @@ A complete &lt;em&gt;.gitlab-ci.yml&lt;/em&gt; configuration for a gradle projec
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_java_development_environment&#34;&gt;Java Development Environment&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_java_development_environment&#34;&gt;Java Development Environment&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;admonitionblock warning&#34;&gt;
 &lt;table&gt;
 &lt;tbody&gt;&lt;tr&gt;
@@ -8492,8 +8667,10 @@ The quality is good enough, and the feature empowers junior developers to learn 
 &lt;p&gt;More advanced scenarios use &lt;a href=&#34;https://spotbugs.github.io/&#34;&gt;SpotBugs&lt;/a&gt; and the associated IDEA plugin.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_to_write_unit_tests_for_a_java_application&#34;&gt;How to Write Unit Tests for a Java Application&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_how_to_write_unit_tests_for_a_java_application&#34;&gt;How to Write Unit Tests for a Java Application&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You should write unit and integration tests for your Java application using:&lt;/p&gt;
 &lt;/div&gt;
@@ -8511,8 +8688,10 @@ The quality is good enough, and the feature empowers junior developers to learn 
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_to_document_your_project&#34;&gt;How to Document Your Project&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_how_to_document_your_project&#34;&gt;How to Document Your Project&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Static code generators are becoming the standard approach for the technical documentation.
 One huge advantage is you can check the whole documentation into your git repository.
@@ -8539,8 +8718,10 @@ Both are stored in the same repository and can be marked with a version label Yo
 &lt;p&gt;Gitlab provides the &lt;a href=&#34;https://docs.gitlab.com/ee/user/project/pages/&#34;&gt;Pages&lt;/a&gt; concept to create and publish complete documentation of a product.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_diagrams&#34;&gt;Diagrams&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_diagrams&#34;&gt;Diagrams&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-01-03-diagrams.png&#34; alt=&#34;720&#34; width=&#34;480&#34;/&gt;
@@ -8559,21 +8740,25 @@ Asciidoc format has native support for PlantUML diagrams.&lt;/p&gt;
 They can now apply these notations to their projects using plantUML.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_and_scrum&#34;&gt;Agile and Scrum&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_and_scrum&#34;&gt;Agile and Scrum&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Students have training in agile development and the Scrum framework.
 Gitlab allows them to apply these &lt;a href=&#34;https://about.gitlab.com/solutions/agile-delivery/&#34;&gt;Agile Delivery Concepts&lt;/a&gt; to their semester and bachelor projects.
 Lecturers have access to the agile and Scrum artifacts and can qualify the quality of the work.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_advanced_git_for_complex_team_development&#34;&gt;Advanced Git for Complex Team Development&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_advanced_git_for_complex_team_development&#34;&gt;Advanced Git for Complex Team Development&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Once you master the basic commands, consider learning advanced commands like:&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_merge&#34;&gt;Merge&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_merge&#34;&gt;Merge&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Merge your branch &lt;em&gt;my-branch&lt;/em&gt; back into &lt;em&gt;trunk&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -8601,8 +8786,8 @@ git checkout trunk &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_rebase&#34;&gt;Rebase&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_rebase&#34;&gt;Rebase&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Rebase trunk into your branch &lt;em&gt;my-branch&lt;/em&gt;.
 Note that after a rebase, the commit ids of the rebased branch are new.
@@ -8620,8 +8805,8 @@ If you rebase a branch that was pulled from GitHub or GitLab, and then push it b
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_squash&#34;&gt;Squash&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_squash&#34;&gt;Squash&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Git squash is a technique that helps you to take a series of commits and condense it to a few commits.&lt;/p&gt;
 &lt;/div&gt;
@@ -8654,8 +8839,8 @@ pick 474bf0c2 last commit&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_cherry_picking&#34;&gt;Cherry Picking&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_cherry_picking&#34;&gt;Cherry Picking&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Cherry-picking in Git means choosing a commit from one branch and applying it onto another.
 This is in contrast with other ways, such as &lt;em&gt;merge&lt;/em&gt; and &lt;em&gt;rebase&lt;/em&gt;, which normally apply many commits onto another branch.&lt;/p&gt;
@@ -8678,14 +8863,14 @@ This is in contrast with other ways, such as &lt;em&gt;merge&lt;/em&gt; and &lt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_local_and_remote_branch&#34;&gt;Local and Remote Branch&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_local_and_remote_branch&#34;&gt;Local and Remote Branch&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Read the post &lt;a href=&#34;../../2016/git-branches-for-the-impatient&#34;&gt;Git Branches for the Impatient&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_pull_request&#34;&gt;Pull Request&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_pull_request&#34;&gt;Pull Request&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Read the documentation of GitLab, BitBucket or GitHub.
 You will use pull requests if you are working in a team for a project.
@@ -8693,8 +8878,10 @@ Sadly, students rarely work teams during their studies.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -8720,7 +8907,6 @@ Sadly, students rarely work teams during their studies.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -8734,10 +8920,7 @@ Sadly, students rarely work teams during their studies.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_meaningful_identifiers&#34;&gt;Meaningful Identifiers&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-01-02-head.jpg&#34; alt=&#34;2021 01 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -8765,8 +8948,9 @@ Identifying entities makes it possible to refer to them, which is essential for 
 &lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_external_well_defined_identifiers&#34;&gt;External Well-Defined Identifiers&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_external_well_defined_identifiers&#34;&gt;External Well-Defined Identifiers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The best identifiers are externally well-defined identifiers.
 A unique and well-defined authority is responsible for defining and publishing them.
@@ -8822,8 +9006,10 @@ There are currently only defined locally.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_external_managed_identifiers&#34;&gt;External Managed Identifiers&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_external_managed_identifiers&#34;&gt;External Managed Identifiers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You shall document the source of truth for all externally defined and managed identifiers.&lt;/p&gt;
 &lt;/div&gt;
@@ -8832,8 +9018,10 @@ There are currently only defined locally.&lt;/p&gt;
 It should support all interested parties and guaranty their identifiers can be trusted.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_internal_managed_identifiers&#34;&gt;Internal Managed Identifiers&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_internal_managed_identifiers&#34;&gt;Internal Managed Identifiers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;One possible approach is to define a naming convention such as&lt;/p&gt;
 &lt;/div&gt;
@@ -8869,8 +9057,10 @@ You shall also guaranty that existing identifiers are never recycled.
 If your identifiers are strings, you shall clearly define the supported languages and character sets.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_domain_driven_design&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Design&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_domain_driven_design&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Design&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Domain Driven Design &lt;em&gt;DDD&lt;/em&gt; is a powerful and modern approach to define agile software architecture.
 Some key rules are related to identity.&lt;/p&gt;
@@ -8899,8 +9089,10 @@ An aggregate is found and referenced through the identifier of the aggregate roo
 &lt;p&gt;The concept of identity is therefore central to the domain-driven design approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Always try to find an external, well-defined identifier for your entities.
 Beware of legal aspects when you are using government defined identifiers such as social security numbers, passport numbers or car numbers.&lt;/p&gt;
@@ -8938,7 +9130,6 @@ Marcel Baumann. 2021.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -8952,10 +9143,7 @@ Marcel Baumann. 2021.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_value_objects_as_embedded_entities&#34;&gt;Value Objects as Embedded Entities&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-01-01-head.png&#34; alt=&#34;2021 01 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -9015,8 +9203,9 @@ We can pass value objects to clients without worrying they change them.&lt;/p&gt
 These objects measure, quantify or describe things in the domain model.
 Because they are so easy to handle, we should model domain abstractions as value objects as often as possible.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_addresses_phone_numbers_email_addresses&#34;&gt;Addresses, Phone Numbers, Email Addresses&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_addresses_phone_numbers_email_addresses&#34;&gt;Addresses, Phone Numbers, Email Addresses&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Some value objects are part of any commercial application domain.
 Postal addresses, phone numbers and email addresses are canonical value objects.
@@ -9069,8 +9258,10 @@ Often it is a one-liner.&lt;/p&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_invoice_lines&#34;&gt;Invoice Lines&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_invoice_lines&#34;&gt;Invoice Lines&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Invoice lines are lines containing details in an invoice.
 Invoice lines are always value objects belonging to exactly one invoice.&lt;/p&gt;
@@ -9118,8 +9309,10 @@ To store them in a table, you have to model the various types of lines and add a
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_factories&#34;&gt;Factories&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_factories&#34;&gt;Factories&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The factory pattern in Domain Driven Design &lt;em&gt;DDD&lt;/em&gt; can be seen as a super pattern for the Gang of Four (GoF) creation patterns.
 Factories are concerned with creating new entities and value objects.
@@ -9169,8 +9362,10 @@ It is best to create a separate factory.
 This factory could provide multiple ways to create new instances.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_value_objects_in_persistent_store&#34;&gt;Value Objects in Persistent Store&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_value_objects_in_persistent_store&#34;&gt;Value Objects in Persistent Store&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We encourage experimenting with the &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; approach for small projects.
 The effort to persist a Java object graph is very small.&lt;/p&gt;
@@ -9205,7 +9400,6 @@ Marcel Baumann. 2021.&lt;/p&gt;
 Marcel Baumann. 2021.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

@@ -22,9 +22,6 @@
 
 <title>Java 21 | tangly Components</title>
 <meta content="
-Java 21 LTS
-
-
 
 
 
@@ -34,30 +31,33 @@ Java 21 LTS was released on time to the public.
 The release is available for download since 21st September 2023.
 
 
-Pattern …" name="description">
+Pattern matching is maturing …" name="description">
 <meta property="og:title" content="Java 21" />
-<meta property="og:description" content="Java 21 LTS Java 21 LTS was released on time to the public. The release is available for download since 21st September 2023.
-Pattern matching is maturing nicely. The hope is that more solutions will more advanced data stream manipulation and functional programming algorithms. Complex inheritance structure are no more considered as good practices in regular application. The pattern matching extensions nicely provide idioms to solve similar design problems." />
+<meta property="og:description" content="Java 21 LTS was released on time to the public. The release is available for download since 21st September 2023.
+Pattern matching is maturing nicely. The hope is that more solutions will more advanced data stream manipulation and functional programming algorithms. Complex inheritance structure are no more considered as good practices in regular application. The pattern matching extensions nicely provide idioms to solve similar design problems.
+The support for virtual threads is reaching full integration in the official Java distribution." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/blog/2023/java-21/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2023-09-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2023-09-25T00:00:00+00:00" />
 
 <meta itemprop="name" content="Java 21">
-<meta itemprop="description" content="Java 21 LTS Java 21 LTS was released on time to the public. The release is available for download since 21st September 2023.
-Pattern matching is maturing nicely. The hope is that more solutions will more advanced data stream manipulation and functional programming algorithms. Complex inheritance structure are no more considered as good practices in regular application. The pattern matching extensions nicely provide idioms to solve similar design problems."><meta itemprop="datePublished" content="2023-09-25T00:00:00+00:00" />
+<meta itemprop="description" content="Java 21 LTS was released on time to the public. The release is available for download since 21st September 2023.
+Pattern matching is maturing nicely. The hope is that more solutions will more advanced data stream manipulation and functional programming algorithms. Complex inheritance structure are no more considered as good practices in regular application. The pattern matching extensions nicely provide idioms to solve similar design problems.
+The support for virtual threads is reaching full integration in the official Java distribution."><meta itemprop="datePublished" content="2023-09-25T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-09-25T00:00:00+00:00" />
-<meta itemprop="wordCount" content="672">
+<meta itemprop="wordCount" content="669">
 <meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java 21"/>
-<meta name="twitter:description" content="Java 21 LTS Java 21 LTS was released on time to the public. The release is available for download since 21st September 2023.
-Pattern matching is maturing nicely. The hope is that more solutions will more advanced data stream manipulation and functional programming algorithms. Complex inheritance structure are no more considered as good practices in regular application. The pattern matching extensions nicely provide idioms to solve similar design problems."/>
+<meta name="twitter:description" content="Java 21 LTS was released on time to the public. The release is available for download since 21st September 2023.
+Pattern matching is maturing nicely. The hope is that more solutions will more advanced data stream manipulation and functional programming algorithms. Complex inheritance structure are no more considered as good practices in regular application. The pattern matching extensions nicely provide idioms to solve similar design problems.
+The support for virtual threads is reaching full integration in the official Java distribution."/>
 
 
 
 
-<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
-<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" as="style">
+<link href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -142,7 +142,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -167,7 +167,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -946,10 +946,7 @@ if (!doNotTrack) {
         
         
     </header>
-    <div class="sect1">
-<h2 id="_java_21_lts">Java 21 LTS</h2>
-<div class="sectionbody">
-<div class="imageblock left">
+    <div class="imageblock left">
 <div class="content">
 <img src="../pics/2023-09-02-head.jpg" alt="2023 09 02 head" width="420" height="360"/>
 </div>
@@ -969,8 +966,9 @@ The pattern matching extensions nicely provide idioms to solve similar design pr
 Extensions such as scoped values are available as preview feature.
 The tail-call optimization for recursive calls is sadly still missing.</p>
 </div>
-<div class="sect2">
-<h3 id="_amber_project">Amber Project</h3>
+<div class="sect1">
+<h2 id="_amber_project">Amber Project</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The <a href="https://openjdk.org/projects/amber/">amber</a> initiative is completing the changes with pattern matching.
 Start adapting your coding idioms and use pattern matching.</p>
@@ -1010,8 +1008,10 @@ As a bonus, the compiler will verify completeness if your class hierarchy uses s
 My code could be considerably simplified when using this functionality.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_loom_project">Loom Project</h3>
+</div>
+<div class="sect1">
+<h2 id="_loom_project">Loom Project</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The <a href="https://openjdk.org/projects/loom/">loom</a> initiative is completing the major changes associated with virtual threads.</p>
 </div>
@@ -1037,8 +1037,10 @@ Your design can create as much threads as you want without restrictions.</p>
 <em>The feature is useful for library and framework creators.</em></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_panama_project">Panama Project</h3>
+</div>
+<div class="sect1">
+<h2 id="_panama_project">Panama Project</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The panama initiative is iterating through their interfaces.
 They synchronize as much as possible their interfaces with the Valhalla and Lilliput activities.</p>
@@ -1054,8 +1056,10 @@ They synchronize as much as possible their interfaces with the Valhalla and Lill
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_valhalla_project">Valhalla Project</h3>
+</div>
+<div class="sect1">
+<h2 id="_valhalla_project">Valhalla Project</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>As usual, the <a href="https://openjdk.org/projects/valhalla/">Valhalla</a> initiative did not release any improvements in the current release.</p>
 </div>
@@ -1064,14 +1068,18 @@ They synchronize as much as possible their interfaces with the Valhalla and Lill
 <em>The project is going for ten years.</em></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_lilliput_and_leyden_projects">Lilliput and Leyden Projects</h3>
+</div>
+<div class="sect1">
+<h2 id="_lilliput_and_leyden_projects">Lilliput and Leyden Projects</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The <a href="https://openjdk.org/projects/lilliput/">lilliput</a> initiative aims to reduce memory usage.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_miscellaneous_improvements">Miscellaneous Improvements</h3>
+</div>
+<div class="sect1">
+<h2 id="_miscellaneous_improvements">Miscellaneous Improvements</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Obsolete features are removed:</p>
 </div>
@@ -1102,8 +1110,10 @@ They synchronize as much as possible their interfaces with the Valhalla and Lill
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_stumbling_blocks">Stumbling Blocks</h3>
+</div>
+<div class="sect1">
+<h2 id="_stumbling_blocks">Stumbling Blocks</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Once again <a href="https://projectlombok.org/">Lombok</a> up to version 1.18.28 is not working with JDK 21
 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
@@ -1139,8 +1149,10 @@ You need the following additions in your gradle configuration.</p>
 Major libraries test their current release with early-accesses and solve the problems before the official release a new Java version.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_lessons_learnt">Lessons Learnt</h3>
+</div>
+<div class="sect1">
+<h2 id="_lessons_learnt">Lessons Learnt</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Gradle toolchain feature simplifies experimenting with a new Java version.
 The current version of <a href="https://gradle.org/">Gradle Build Tool</a> runs under Java 21.</p>
@@ -1163,8 +1175,10 @@ Invest effort to enhance source code and use the new features.
 So, you will avoid technical obsolesce and geriatric applications.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_links">Links</h3>
+</div>
+<div class="sect1">
+<h2 id="_links">Links</h2>
+<div class="sectionbody">
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
@@ -1203,7 +1217,6 @@ Marcel Baumann. 2021.</p>
 </div>
 </div>
 </div>
-</div>
 <div id="footnotes">
 <hr/>
 <div class="footnote" id="_footnotedef_1">
@@ -1228,7 +1241,6 @@ Marcel Baumann. 2021.</p>
 
     <br/>
     
-
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
     <a href="/blog/2023/are-certifications-useful/" aria-label="Previous - Are Certifications Useful?" class="btn btn-primary"><span class="me-1">←</span>Previous</a>

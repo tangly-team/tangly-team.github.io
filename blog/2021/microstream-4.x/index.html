@@ -22,42 +22,43 @@
 
 <title>MicroStream 4.x | tangly Components</title>
 <meta content="
-MicroStream 4.x
-
-
 
 
 
 
 
 MicroStream approach empowers Java developers.
-The library provides a cool and compact approach to persist complex data …" name="description">
+The library provides a cool and compact approach to persist complex data models.
+You can persist …" name="description">
 <meta property="og:title" content="MicroStream 4.x" />
-<meta property="og:description" content="MicroStream 4.x MicroStream approach empowers Java developers. The library provides a cool and compact approach to persist complex data models. You can persist your whole data model with less than a hundred lines of code. The library is efficient and works reliably.
+<meta property="og:description" content="MicroStream approach empowers Java developers. The library provides a cool and compact approach to persist complex data models. You can persist your whole data model with less than a hundred lines of code. The library is efficient and works reliably.
 Modern architectures based on bounded domains and Domain Driven Design are supported.
-The company behind the product has promised to open source their product beginning of 2021." />
+The company behind the product has promised to open source their product beginning of 2021.
+I use the library to prototype bounded domain implementations requiring persistent data." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/blog/2021/microstream-4.x/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2021-03-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-03-02T00:00:00+00:00" />
 
 <meta itemprop="name" content="MicroStream 4.x">
-<meta itemprop="description" content="MicroStream 4.x MicroStream approach empowers Java developers. The library provides a cool and compact approach to persist complex data models. You can persist your whole data model with less than a hundred lines of code. The library is efficient and works reliably.
+<meta itemprop="description" content="MicroStream approach empowers Java developers. The library provides a cool and compact approach to persist complex data models. You can persist your whole data model with less than a hundred lines of code. The library is efficient and works reliably.
 Modern architectures based on bounded domains and Domain Driven Design are supported.
-The company behind the product has promised to open source their product beginning of 2021."><meta itemprop="datePublished" content="2021-03-02T00:00:00+00:00" />
+The company behind the product has promised to open source their product beginning of 2021.
+I use the library to prototype bounded domain implementations requiring persistent data."><meta itemprop="datePublished" content="2021-03-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-03-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="840">
+<meta itemprop="wordCount" content="838">
 <meta itemprop="keywords" content="java,design," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MicroStream 4.x"/>
-<meta name="twitter:description" content="MicroStream 4.x MicroStream approach empowers Java developers. The library provides a cool and compact approach to persist complex data models. You can persist your whole data model with less than a hundred lines of code. The library is efficient and works reliably.
+<meta name="twitter:description" content="MicroStream approach empowers Java developers. The library provides a cool and compact approach to persist complex data models. You can persist your whole data model with less than a hundred lines of code. The library is efficient and works reliably.
 Modern architectures based on bounded domains and Domain Driven Design are supported.
-The company behind the product has promised to open source their product beginning of 2021."/>
+The company behind the product has promised to open source their product beginning of 2021.
+I use the library to prototype bounded domain implementations requiring persistent data."/>
 
 
 
 
-<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
-<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" as="style">
+<link href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -142,7 +143,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -167,7 +168,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -947,10 +948,7 @@ if (!doNotTrack) {
         
         
     </header>
-    <div class="sect1">
-<h2 id="_microstream_4_x">MicroStream 4.x</h2>
-<div class="sectionbody">
-<div class="imageblock left">
+    <div class="imageblock left">
 <div class="content">
 <img src="../pics/2021-03-02-head.jpg" alt="2021 03 02 head" width="420" height="360"/>
 </div>
@@ -972,8 +970,9 @@ The library is efficient and works reliably.</p>
 The implementation speed and ease are awesome.
 I hope the current flaws of the product will be removed and allow productive use.</p>
 </div>
-<div class="sect2">
-<h3 id="_constraints">Constraints</h3>
+<div class="sect1">
+<h2 id="_constraints">Constraints</h2>
+<div class="sectionbody">
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Saving a Java Object</dt>
@@ -999,8 +998,10 @@ If you use standard object-oriented practices, you will have to use the less eff
 </dl>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_design">Design</h3>
+</div>
+<div class="sect1">
+<h2 id="_design">Design</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Our provider persists instances for all our bounded domains in need of persistence.</p>
 </div>
@@ -1059,10 +1060,12 @@ If you use standard object-oriented practices, you will have to use the less eff
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_current_flaws">Current Flaws</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_current_flaws">Current Flaws</h3>
-<div class="sect3">
-<h4 id="_in_memory_file_system">In Memory File System</h4>
+<h3 id="_in_memory_file_system">In Memory File System</h3>
 <div class="paragraph">
 <p>In-memory file systems are a must for unit and integration testing.
 A continuous integration pipeline does not always have access to a regular file system.
@@ -1082,8 +1085,8 @@ Thanks to the MicroStream developers.
 See their <em>file systems</em> example in their <a href="https://github.com/microstream-one/examples">GitHub example repository</a></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_java_records">Java Records</h4>
+<div class="sect2">
+<h3 id="_java_records">Java Records</h3>
 <div class="paragraph">
 <p>A field cannot be manipulated anymore in record since Java JDK 1.5.1.
 The <em>MicroStream</em> 4.x releases crash when using record in JDK 15 and JDK 16. It only works with JDK 14.
@@ -1098,8 +1101,10 @@ It hinders you to use the associated preview features
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_next_steps">Next Steps</h3>
+</div>
+<div class="sect1">
+<h2 id="_next_steps">Next Steps</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -1118,7 +1123,6 @@ discussion how organizations cope with the Java release cycle or are just laggar
 <p>Wait and see if the promised licensing under an open source copyright will be published.</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -1152,7 +1156,6 @@ discussion how organizations cope with the Java release cycle or are just laggar
 
     <br/>
     
-
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
     <a href="/blog/2021/modern-java-development/" aria-label="Previous - Modern Java Development" class="btn btn-primary"><span class="me-1">←</span>Previous</a>

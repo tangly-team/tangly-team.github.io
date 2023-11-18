@@ -22,7 +22,6 @@
 
 <title>Software Structure with DDD | tangly Components</title>
 <meta content="
-Software Structure when using Domain-Driven Design
 
 
 
@@ -30,9 +29,10 @@ Software Structure when using Domain-Driven Design
 
 
 
-Domain Driven Development DDD is the preferred software architecture approach for designing …" name="description">
+Domain Driven Development DDD is the preferred software architecture approach for designing digital products.
+The method nicely matches with …" name="description">
 <meta property="og:title" content="Software Structure with DDD" />
-<meta property="og:description" content="Software Structure when using Domain-Driven Design Domain Driven Development DDD is the preferred software architecture approach for designing digital products. The method nicely matches with the operational concepts of microservices.
+<meta property="og:description" content="Domain Driven Development DDD is the preferred software architecture approach for designing digital products. The method nicely matches with the operational concepts of microservices.
 Domain-driven design is a holistic approach to understanding, designing and building software applications.
 Seminal books [1, 2, 3] describes the approach and key concepts defining the development method.
 Concrete recipes and examples of code structure are still sparse.
@@ -43,16 +43,16 @@ How should you structure your namespaces and modules?" />
 <meta property="article:modified_time" content="2022-06-01T00:00:00+00:00" />
 
 <meta itemprop="name" content="Software Structure with DDD">
-<meta itemprop="description" content="Software Structure when using Domain-Driven Design Domain Driven Development DDD is the preferred software architecture approach for designing digital products. The method nicely matches with the operational concepts of microservices.
+<meta itemprop="description" content="Domain Driven Development DDD is the preferred software architecture approach for designing digital products. The method nicely matches with the operational concepts of microservices.
 Domain-driven design is a holistic approach to understanding, designing and building software applications.
 Seminal books [1, 2, 3] describes the approach and key concepts defining the development method.
 Concrete recipes and examples of code structure are still sparse.
 How should you structure your namespaces and modules?"><meta itemprop="datePublished" content="2022-06-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1792">
+<meta itemprop="wordCount" content="1786">
 <meta itemprop="keywords" content="architecture,domain-driven-design,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Software Structure with DDD"/>
-<meta name="twitter:description" content="Software Structure when using Domain-Driven Design Domain Driven Development DDD is the preferred software architecture approach for designing digital products. The method nicely matches with the operational concepts of microservices.
+<meta name="twitter:description" content="Domain Driven Development DDD is the preferred software architecture approach for designing digital products. The method nicely matches with the operational concepts of microservices.
 Domain-driven design is a holistic approach to understanding, designing and building software applications.
 Seminal books [1, 2, 3] describes the approach and key concepts defining the development method.
 Concrete recipes and examples of code structure are still sparse.
@@ -61,8 +61,8 @@ How should you structure your namespaces and modules?"/>
 
 
 
-<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
-<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" as="style">
+<link href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -147,7 +147,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -172,7 +172,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -953,9 +953,8 @@ if (!doNotTrack) {
         
         
     </header>
-    <div class="sect1">
-<h2 id="_software_structure_when_using_domain_driven_design">Software Structure when using Domain-Driven Design</h2>
-<div class="sectionbody">
+    <div class="openblock float-group">
+<div class="content">
 <div class="imageblock left">
 <div class="content">
 <img src="../pics/2022-06-01-head.jpg" alt="2022 06 01 head" width="420" height="360"/>
@@ -973,6 +972,8 @@ The method nicely matches with the operational concepts of microservices.</p>
 </div>
 <div class="paragraph">
 <p>Concrete recipes and examples of code structure are still sparse.</p>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>How should you structure your namespaces and modules?</p>
@@ -999,8 +1000,9 @@ The source code size of a bounded domain is often less than 50&#39;000 lines of 
 <cite>Domain-Driven Design: Tackling Complexity in the Heart of Software</cite>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_layers_in_ddd">Layers in DDD</h3>
+<div class="sect1">
+<h2 id="_layers_in_ddd">Layers in DDD</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Domain-driven design <em>DDD</em> has four layers in the architecture:</p>
 </div>
@@ -1051,8 +1053,10 @@ We did not have to add a root persistent class or use annotations.</em></p>
 </tbody></table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_package_structure">Package Structure</h3>
+</div>
+<div class="sect1">
+<h2 id="_package_structure">Package Structure</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>A bounded domain shall be configured as a Java module [<a href="#java-9-modularity">4</a>].
 The exported services and entities are explicitly listed with the <em>exports</em> directive.
@@ -1152,8 +1156,10 @@ Different approaches for user interface realization are available and no clear w
 <p>I mainly use <a href="https://www.vaadin.com">Vaadin</a> to realize browser- or mobile-first internal applications.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_java_considerations">Java Considerations</h3>
+</div>
+<div class="sect1">
+<h2 id="_java_considerations">Java Considerations</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Entities shall have well-documented internal or external identifiers.
 Entities visible to other bounded domains shall always have an external identifier.
@@ -1239,8 +1245,10 @@ Use either Java modules or archUnit to enforce that communication always goes th
 </tbody></table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_architecture_integrity">Architecture Integrity</h3>
+</div>
+<div class="sect1">
+<h2 id="_architecture_integrity">Architecture Integrity</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>A Bounded Context is a logical boundary of a domain where particular terms and rules apply consistently.
 Inside this boundary, all terms, definitions and concepts form the Ubiquitous Language.</p>
@@ -1283,8 +1291,10 @@ Teams can develop simultaneous and independently bounded domain features.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_bounded_domain_relations">Bounded Domain Relations</h3>
+</div>
+<div class="sect1">
+<h2 id="_bounded_domain_relations">Bounded Domain Relations</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>There are five main types of relationships between Bounded Contexts:</p>
 </div>
@@ -1335,8 +1345,10 @@ The protection layer acts as an adapter to translate data from the upstream and 
 </tbody></table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_lessons_learnt">Lessons Learnt</h3>
+</div>
+<div class="sect1">
+<h2 id="_lessons_learnt">Lessons Learnt</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Great technologies, programming languages and tools are used when building software applications.
 That is good and right.</p>
@@ -1370,8 +1382,10 @@ The principle of bounded contexts from DDD can help us here.</p>
 It recommends test driven approach for bounded domain development [<a href="#agile-testing">11</a>, <a href="#more-agile-testing">12</a>, <a href="#bridging-communication-gap">13</a>].</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_references">References</h3>
+</div>
+<div class="sect1">
+<h2 id="_references">References</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><a id="domain-driven-design"></a>[1] E. Evans, <em>Domain-driven design</em>. Addison-Wesley, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321125215" class="bare">https://www.amazon.com/dp/0321125215</a></p>
 </div>
@@ -1413,7 +1427,6 @@ It recommends test driven approach for bounded domain development [<a href="#agi
 </div>
 </div>
 </div>
-</div>
 <div id="footnotes">
 <hr/>
 <div class="footnote" id="_footnotedef_1">
@@ -1438,7 +1451,6 @@ It recommends test driven approach for bounded domain development [<a href="#agi
 
     <br/>
     
-
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
     <a href="/blog/2022/measurements-and-units/" aria-label="Previous - Measurements and Units" class="btn btn-primary"><span class="me-1">←</span>Previous</a>

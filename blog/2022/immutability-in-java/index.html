@@ -22,7 +22,6 @@
 
 <title>Immutability in Java | tangly Components</title>
 <meta content="
-Immutability in Java
 
 
 
@@ -33,9 +32,9 @@ Immutability in Java
 Immutability is a powerful and simple concept in programming theory that is strangely underused.
 
 
-An immutable object is …" name="description">
+An immutable object is simply a class whose …" name="description">
 <meta property="og:title" content="Immutability in Java" />
-<meta property="og:description" content="Immutability in Java Immutability is a powerful and simple concept in programming theory that is strangely underused.
+<meta property="og:description" content="Immutability is a powerful and simple concept in programming theory that is strangely underused.
 An immutable object is simply a class whose instances cannot be modified. This is in contrast to a mutable object or changeable object, which can be modified after it is created.
 Immutable objects are also useful because they are inherently thread-safe. Other benefits are that they are simpler to understand and reason about and offer higher security than mutable objects" />
 <meta property="og:type" content="article" />
@@ -44,22 +43,22 @@ Immutable objects are also useful because they are inherently thread-safe. Other
 <meta property="article:modified_time" content="2022-01-05T00:00:00+00:00" />
 
 <meta itemprop="name" content="Immutability in Java">
-<meta itemprop="description" content="Immutability in Java Immutability is a powerful and simple concept in programming theory that is strangely underused.
+<meta itemprop="description" content="Immutability is a powerful and simple concept in programming theory that is strangely underused.
 An immutable object is simply a class whose instances cannot be modified. This is in contrast to a mutable object or changeable object, which can be modified after it is created.
 Immutable objects are also useful because they are inherently thread-safe. Other benefits are that they are simpler to understand and reason about and offer higher security than mutable objects"><meta itemprop="datePublished" content="2022-01-05T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-01-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="772">
+<meta itemprop="wordCount" content="769">
 <meta itemprop="keywords" content="design,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Immutability in Java"/>
-<meta name="twitter:description" content="Immutability in Java Immutability is a powerful and simple concept in programming theory that is strangely underused.
+<meta name="twitter:description" content="Immutability is a powerful and simple concept in programming theory that is strangely underused.
 An immutable object is simply a class whose instances cannot be modified. This is in contrast to a mutable object or changeable object, which can be modified after it is created.
 Immutable objects are also useful because they are inherently thread-safe. Other benefits are that they are simpler to understand and reason about and offer higher security than mutable objects"/>
 
 
 
 
-<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
-<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" as="style">
+<link href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -144,7 +143,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -169,7 +168,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -949,9 +948,8 @@ if (!doNotTrack) {
         
         
     </header>
-    <div class="sect1">
-<h2 id="_immutability_in_java">Immutability in Java</h2>
-<div class="sectionbody">
+    <div class="openblock float-group">
+<div class="content">
 <div class="imageblock left">
 <div class="content">
 <img src="../pics/2022-01-02-head.jpg" alt="2022 01 02 head" width="420" height="360"/>
@@ -977,8 +975,11 @@ Other benefits are that they are simpler to understand and reason about and offe
 <div class="paragraph">
 <p>Why are immutable objects so good?</p>
 </div>
-<div class="sect2">
-<h3 id="_advantages">Advantages</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_advantages">Advantages</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>There are many reasons for sure, here are the three main ones:</p>
 </div>
@@ -1005,8 +1006,10 @@ It is a huge advantage in the modern world of multicore processors.</p>
 </dl>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_immutable_classes">Immutable Classes</h3>
+</div>
+<div class="sect1">
+<h2 id="_immutable_classes">Immutable Classes</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -1070,8 +1073,10 @@ Use records as Java DTO objects and automatically improve the security of your a
 If you pass immutable objects to the constructor, you will achieve deep immutability.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_immutable_api_classes">Immutable API Classes</h3>
+</div>
+<div class="sect1">
+<h2 id="_immutable_api_classes">Immutable API Classes</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Java already has an extended and expanding set of immutable classes.</p>
 </div>
@@ -1106,8 +1111,10 @@ But the File object itself stays immutable.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_builder_pattern">Builder Pattern</h3>
+</div>
+<div class="sect1">
+<h2 id="_builder_pattern">Builder Pattern</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Immutable abstractions have often verbose and cumbersome constructors.
 You want to provide a more elegant approach to create instances of your immutable classes.
@@ -1123,15 +1130,19 @@ The lombok annotations <em>@Builder</em> and <em>@Superbuilder</em> are time sav
 Use the builder in the body to write the creation code in one Java statement.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_read_only_interface_pattern">Read-only interface pattern</h3>
+</div>
+<div class="sect1">
+<h2 id="_read_only_interface_pattern">Read-only interface pattern</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Read-only interface pattern is an alternative to the Immutable object pattern.
 It allows some objects to modify a value object while other objects can only fetch its values.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_links">Links</h3>
+</div>
+<div class="sect1">
+<h2 id="_links">Links</h2>
+<div class="sectionbody">
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
@@ -1143,7 +1154,6 @@ Marcel Baumann. 2020</p>
 Oracle</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -1165,7 +1175,6 @@ Oracle</p>
 
     <br/>
     
-
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
     <a href="/blog/2022/technical-debt/" aria-label="Previous - Technical Debt" class="btn btn-primary"><span class="me-1">←</span>Previous</a>

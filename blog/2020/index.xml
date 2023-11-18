@@ -24,9 +24,8 @@
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_support_comments_for_static_hugo_website&#34;&gt;Support Comments for Static Hugo Website&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-12-02-head.png&#34; alt=&#34;2020 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -36,11 +35,16 @@
 &lt;p&gt;There are times in software when you are facing a problem, you find an off-the-shelf solution, and a few lines of code later it just works.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Today I lived one of those moments.
-The whole configuration of comments and modification of the &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; theme took around one hour.&lt;/p&gt;
+&lt;p&gt;Today I lived one of those moments.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The whole configuration of comments and modification of the &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; theme took around one hour.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I wanted to add a comment section to this blog for a while.
 I was reluctant to implement one myself the classical way, using an external service such as disqus.
@@ -49,8 +53,10 @@ All pages are written with &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciido
 I wanted to store comments in a personally owned repository and protect my readers from an advertisement and personal information collection.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_meeting_utterances&#34;&gt;Meeting Utterances&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_meeting_utterances&#34;&gt;Meeting Utterances&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Some information on the Internet about &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt; is wrong.
 Facts are:&lt;/p&gt;
@@ -106,8 +112,10 @@ In other words, each page gets its own issue with a comment feed, and so you ben
 &lt;p&gt;The other wonderful aspect of Utterances is how simple the entire setup really is.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_setting_up_utterances&#34;&gt;Setting Up Utterances&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_setting_up_utterances&#34;&gt;Setting Up Utterances&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The process is described in details on &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt;.
 The steps are:&lt;/p&gt;
@@ -163,14 +171,16 @@ In my case, it would be &lt;em&gt;marcelbaumann/tangly-team-comments&lt;/em&gt;.
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_configure_docsy_theme&#34;&gt;Configure Docsy Theme&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_configure_docsy_theme&#34;&gt;Configure Docsy Theme&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I use the Hugo theme &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; to style the &lt;a href=&#34;https://blog.tangly.net/&#34;&gt;Open Source Components&lt;/a&gt;.
 I put some effort to have a configurable extension through site parameters.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_create_the_comments_partial_for_utterances&#34;&gt;Create the comments partial for utterances&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_create_the_comments_partial_for_utterances&#34;&gt;Create the comments partial for utterances&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The partial file contains the code to display for commenting using utterances.
 It is a modified version of the snippet you can generate on the &lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc.es&lt;/a&gt; website.&lt;/p&gt;
@@ -212,7 +222,6 @@ I named my partial &lt;em&gt;comments-utterances.html&lt;/em&gt; and add the fol
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div class=&#34;sect1&#34;&gt;
 &lt;h2 id=&#34;_edit_the_blog_content_file&#34;&gt;Edit the blog content file&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
@@ -247,8 +256,11 @@ Currently, Hugo and Docsy only provide out of the box support for Disqus.&lt;/em
 &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_add_four_site_variables_to_config_toml&#34;&gt;Add four site variables to config.toml&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_add_four_site_variables_to_config_toml&#34;&gt;Add four site variables to config.toml&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The above changes try to be generic and are configured through site variables in the site configuration file under the &lt;em&gt;[params]&lt;/em&gt; block.
 You do not need to edit partial files to tailor them.&lt;/p&gt;
@@ -266,7 +278,6 @@ You do not need to edit partial files to tailor them.&lt;/p&gt;
 
 &lt;span style=&#34;color: #6e7781&#34;&gt;# Theme used by utterance on the website. See utterances (https://utteranc.es/) documentation.&lt;/span&gt;
 &lt;span style=&#34;color: #0550ae&#34;&gt;comments_utterances_theme&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;github-light&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -309,10 +320,7 @@ Marcel Baumann. 2020.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_advocate_zero_bug_policy_in_your_projects&#34;&gt;Advocate Zero Bug Policy in Your Projects!&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-12-01-head.jpg&#34; alt=&#34;2020 12 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -344,8 +352,9 @@ Please stop doing such activities.&lt;/p&gt;
 &lt;div class=&#34;paragraph text-center&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Stop Managing Bugs, Start Focusing on Quality!&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_how_to_transition&#34;&gt;How to transition?&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_how_to_transition&#34;&gt;How to transition?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Zero-Bug policy does not mean bug-free code in production; it means striving to eradicate all known bugs.&lt;/p&gt;
 &lt;/div&gt;
@@ -404,8 +413,10 @@ The steps to reproduce them become irrelevant, the functionality changes, the im
 You may lose a few valid ones, but trust me, someone will report it again if it is still happening.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_clean_code_and_happy_customers&#34;&gt;Clean Code and Happy Customers&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_clean_code_and_happy_customers&#34;&gt;Clean Code and Happy Customers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;quoteblock&#34;&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -445,8 +456,10 @@ And if not, why should I buy your product?&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;See the excellent articles from &lt;a href=&#34;https://www.linkedin.com/in/yassal-sundman&#34;&gt;Yassal Sundman&lt;/a&gt; working for the crisp company.&lt;/p&gt;
 &lt;/div&gt;
@@ -459,7 +472,6 @@ And if not, why should I buy your product?&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.crisp.se/2018/02/05/yassalsundman/stop-managing-bugs-start-focusing-on-quality&#34;&gt;Stop Managing Bugs, Start Focusing on Quality&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -476,9 +488,8 @@ And if not, why should I buy your product?&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_the_quest_for_an_agile_company_five_years_tangly_llc&#34;&gt;The Quest for an Agile Company: Five Years tangly llc&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-11-02-head.png&#34; alt=&#34;2020 11 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -499,6 +510,8 @@ We must swiftly react to market changes to survive.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;They have a continuous competitive advantage, and a flat organizational structure for quick communication [&lt;a href=&#34;#future-of-management&#34;&gt;2&lt;/a&gt;].&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;quoteblock&#34;&gt;
 &lt;blockquote&gt;
@@ -527,8 +540,9 @@ The organization should provide vision, understanding, courage and adaptability.
 &lt;cite&gt;2007&lt;/cite&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_culture&#34;&gt;Agile Culture&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_culture&#34;&gt;Agile Culture&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; movement states the main approach clearly:&lt;/p&gt;
 &lt;/div&gt;
@@ -622,8 +636,10 @@ would not otherwise be that obvious.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_anti_patterns&#34;&gt;Agile Anti-Patterns&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_anti_patterns&#34;&gt;Agile Anti-Patterns&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You have to acknowledge you must change the structure of your company.
 The current approach is to remove functional silos and reorganize along value streams.
@@ -671,8 +687,10 @@ The &lt;a href=&#34;https://martinfowler.com/articles/agileFluency.html&#34;&gt;
 Correct if needed.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Agile is now mainstream.
 More than 80% of all software development initiatives claim to be agile.
@@ -726,8 +744,10 @@ Our structure and processes actively support agile values.
 We are very happy with the current results.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -742,14 +762,15 @@ Waisfisz Bob. 2015. Hofstede Culture Center Strategy, ITIM International.&lt;/p&
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;reinventing-organizations&#34;&gt;&lt;/a&gt;[1] F. Laloux, &lt;em&gt;Reinventing Organizations&lt;/em&gt;. Nelson Parker, 2014 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/2960133501&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/2960133501&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;future-of-management&#34;&gt;&lt;/a&gt;[2] H. Hamel and B. Breen, &lt;em&gt;The Future of Management&lt;/em&gt;. Harvard Business Review Press, 2007 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1422102505&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1422102505&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -766,10 +787,7 @@ Waisfisz Bob. 2015. Hofstede Culture Center Strategy, ITIM International.&lt;/p&
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_reference_codes&#34;&gt;Reference Codes&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-11-01-head.jpg&#34; alt=&#34;2020 11 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -791,8 +809,9 @@ We view reference codes more as strongly typed and efficient tags.&lt;/p&gt;
 &lt;p&gt;How can you easily add the concept of reference codes in your application?
 We provide an initial setup approach requiring mere minutes to add codes to your application.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_enumerations_as_codes&#34;&gt;Enumerations as Codes&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_enumerations_as_codes&#34;&gt;Enumerations as Codes&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;As a professional designer, you have declared sets of fixed values as enumeration in your source code.
 Now you can extend your enumeration classes with the code interface.&lt;/p&gt;
@@ -833,8 +852,10 @@ Now you can extend your enumeration classes with the code interface.&lt;/p&gt;
 Once your enumeration types implement the code interface, you are free to migrate selected types to external persistent and extensible solutions.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_persistent_codes&#34;&gt;Persistent Codes&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_persistent_codes&#34;&gt;Persistent Codes&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Codes can be defined and stored as JSON sets or in SQL table.&lt;/p&gt;
 &lt;/div&gt;
@@ -902,8 +923,10 @@ Once your enumeration types implement the code interface, you are free to migrat
 &lt;p&gt;At the database level, you can define integrity rules in the schema to increase data quality.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_design&#34;&gt;Design&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_design&#34;&gt;Design&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You have the freedom to model set of values as enumeration, reference codes or tags.
 Each approach has specific advantages and tradeoffs.
@@ -946,7 +969,6 @@ Marcel Baumann. 2021.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -960,19 +982,30 @@ Marcel Baumann. 2021.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_creating_a_technical_website_with_hugo_and_asciidoc&#34;&gt;Creating a technical Website with Hugo and Asciidoc&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-10-01-head.jpg&#34; alt=&#34;2020 10 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I hosted my technical blogs on &lt;a href=&#34;https://www.blogger.com/&#34;&gt;blogger&lt;/a&gt; for years.
-If I correctly remember, I started to use blogger ten years ago.
-It is a great tool with some drawbacks.
-Over the years, the drawbacks sting more and more:&lt;/p&gt;
+&lt;p&gt;I hosted my technical blogs on &lt;a href=&#34;https://www.blogger.com/&#34;&gt;blogger&lt;/a&gt; for years.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If I correctly remember, I started to use blogger ten years ago It was a good choice at that time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I could easily write blogs and publish them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It is a great tool with some drawbacks.
+Over the years, the deficiencies sting more and more&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The major drawbacks are:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
@@ -1071,8 +1104,9 @@ The documentation is still on the light side, but you find the need information 
 It is no more necessary to load &lt;em&gt;pygment&lt;/em&gt; highlighter and configure CSS files.
 Another huge gain is that &lt;em&gt;plantuml&lt;/em&gt; and other diagrams are generated at the right location.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_install_the_tools&#34;&gt;Install the Tools&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_install_the_tools&#34;&gt;Install the Tools&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;My development platform is a MacBookPro and macOS.
 I use &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt; as a package manager.&lt;/p&gt;
@@ -1119,8 +1153,8 @@ See also &lt;a href=&#34;https://www.docsy.dev/docs/getting-started/&#34;&gt;doc
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_asciidoctor_configuration&#34;&gt;Asciidoctor Configuration&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_asciidoctor_configuration&#34;&gt;Asciidoctor Configuration&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Below the configuration of asciidoctor in the &lt;em&gt;config.toml&lt;/em&gt; file.&lt;/p&gt;
 &lt;/div&gt;
@@ -1182,10 +1216,10 @@ You must explicitly enable asciidoctor support by adding the following statement
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_docsy_configuration&#34;&gt;Docsy Configuration&lt;/h3&gt;
 &lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_docsy_configuration&#34;&gt;Docsy Configuration&lt;/h4&gt;
-&lt;div class=&#34;sect4&#34;&gt;
-&lt;h5 id=&#34;_add_first_level_folders&#34;&gt;Add First Level Folders&lt;/h5&gt;
+&lt;h4 id=&#34;_add_first_level_folders&#34;&gt;Add First Level Folders&lt;/h4&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Each time you add your own first level folder – meaning at the same level as docs, blog, about, or community, you need to extend the layout to support it.
 For example, I store technical articles in the folder ideas and use the standard template.
@@ -1197,8 +1231,8 @@ So I need to add (if not, no items are visible in the sidebar).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect4&#34;&gt;
-&lt;h5 id=&#34;_change_layouts&#34;&gt;Change layouts&lt;/h5&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_change_layouts&#34;&gt;Change layouts&lt;/h4&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We had to change the partial &lt;em&gt;footer.html&lt;/em&gt; to display a better looking copyright clause.
 The original version has hard coded text not really compatible with the creative commons license we are using.
@@ -1211,8 +1245,8 @@ The layout is updated by overwriting the involved partial file.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_enable_local_search_engine&#34;&gt;Enable Local Search Engine&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_enable_local_search_engine&#34;&gt;Enable Local Search Engine&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;One cool feature of &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; is local search support through &lt;a href=&#34;https://lunrjs.com/&#34;&gt;lunrjs&lt;/a&gt; engine.&lt;/p&gt;
 &lt;/div&gt;
@@ -1227,8 +1261,10 @@ The layout is updated by overwriting the involved partial file.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_learning&#34;&gt;Learning&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_learning&#34;&gt;Learning&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The static website is published under &lt;a href=&#34;https://blog.tangly.net/&#34;&gt;Open Source Components&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -1276,7 +1312,6 @@ All Hugo users shall be aware that asciidoc is an officially supported input for
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div class=&#34;sect1&#34;&gt;
 &lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
@@ -1321,9 +1356,8 @@ Marcel Baumann. 2020.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_the_power_of_tags_and_comments&#34;&gt;The power of Tags and Comments&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-09-01-head.jpg&#34; alt=&#34;2020 09 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -1342,11 +1376,16 @@ Tags are extensible and are machine-readable.&lt;/p&gt;
 Comments are only for human beings.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;What are good approaches to provide searchable tags and labels and avoid wild growth of useless records?
-Can you as a designer govern the ontology defined through labels?&lt;/p&gt;
+&lt;p&gt;What are good approaches to provide searchable tags and labels and avoid wild growth of useless records?&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_tags&#34;&gt;Tags&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Can you as a designer govern the ontology defined through labels?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_tags&#34;&gt;Tags&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Tags add semantic information to business entities.
 Tags are often defined as a crowd ontology without enforced schemas.
@@ -1395,8 +1434,10 @@ Once your design supports tag types, you can add generic validation rules in the
 &lt;p&gt;The ontology enforcement allows consistent reporting and data drilling over departments in your company and over time.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_comments&#34;&gt;Comments&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_comments&#34;&gt;Comments&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Comments provide human-readable information and hints for entities.&lt;/p&gt;
 &lt;/div&gt;
@@ -1448,8 +1489,10 @@ The consequence is that you should only disable these accounts and never delete 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_design&#34;&gt;Design&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_design&#34;&gt;Design&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Our architecture follows the principles of domain-driven design.
 Comments are always associated with a specific bounded domain of the overall application.
@@ -1498,7 +1541,6 @@ Marcel Baumann. 2021.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -1512,9 +1554,8 @@ Marcel Baumann. 2021.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_entities_identifiers_external_identifiers_and_names&#34;&gt;Entities, Identifiers, External identifiers and Names&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-08-01-head.png&#34; alt=&#34;2020 08 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -1537,8 +1578,11 @@ You enjoy our long conversations with the enterprise data architect and find out
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;What are the good practices to create a maintainable, legible and efficient model of your domain model?&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_entity_concept&#34;&gt;Entity Concept&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_entity_concept&#34;&gt;Entity Concept&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We need an approach to model customer domain entities and map them to a legible and maintainable software construct.&lt;/p&gt;
 &lt;/div&gt;
@@ -1579,8 +1623,10 @@ The comments can be extended to add audit information such as functional change 
 &lt;p&gt;These entity features should be defined as a set of &lt;a href=&#34;https://en.wikipedia.org/wiki/Mixin&#34;&gt;mixin&lt;/a&gt; interfaces.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_internal_object_identifiers_oid&#34;&gt;Internal Object Identifiers &lt;em&gt;oid&lt;/em&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_internal_object_identifiers_oid&#34;&gt;Internal Object Identifiers &lt;em&gt;oid&lt;/em&gt;&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The object identifier &lt;em&gt;oid&lt;/em&gt; uniquely identifies an instance in a given context.
 This identifier shall be a numerical value to increase the performance of persistent solutions.
@@ -1622,8 +1668,10 @@ If you respect this rule, you are free to migrate your objects to another identi
 New schemes are often helpful when the application grows, or you have later to import and take over a lot of legacy data.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_external_object_identifiers_id&#34;&gt;External Object Identifiers &lt;em&gt;id&lt;/em&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_external_object_identifiers_id&#34;&gt;External Object Identifiers &lt;em&gt;id&lt;/em&gt;&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The external unique identifier id shall uniquely identify an entity instance.
 It is used as an external identifier to communicate with other systems.
@@ -1660,8 +1708,10 @@ The key rule of good systems is that they never change external identifiers.
 As soon as you modify identifiers, they are per definition no more real identifiers.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_names_name&#34;&gt;Names &lt;em&gt;name&lt;/em&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_names_name&#34;&gt;Names &lt;em&gt;name&lt;/em&gt;&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The entity name is a human-readable name to distinguish between entity instances.
 Ideally, it should be almost unique.
@@ -1676,8 +1726,10 @@ Social security number is a possible external identifier.
 An internal identifier is used as a primary key in the persistence storage.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_advices&#34;&gt;Advices&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_advices&#34;&gt;Advices&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;olist arabic&#34;&gt;
 &lt;ol class=&#34;arabic&#34;&gt;
 &lt;li&gt;
@@ -1749,8 +1801,10 @@ Below the source code in modern Java is:&lt;/p&gt;
 More information is available under &lt;a href=&#34;https://blog.tangly.net/&#34;&gt;tangly open source components&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_extensions&#34;&gt;Extensions&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_extensions&#34;&gt;Extensions&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;See our blog how to extend the entity concept with the powerful and flexible concepts of tags and comment approaches.&lt;/p&gt;
 &lt;/div&gt;
@@ -1786,7 +1840,6 @@ Marcel Baumann. 2021.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -1800,9 +1853,8 @@ Marcel Baumann. 2021.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_a_journey_implementing_digital_invoices&#34;&gt;A Journey Implementing Digital Invoices&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-07-01-head.png&#34; alt=&#34;2020 07 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -1811,23 +1863,32 @@ Marcel Baumann. 2021.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Our company has the ambition to digitize all our workflows since our inception.
 We proudly state we never bought a printer or a fax machine.
-Analog machines should become obsolete in the digital age.
-Companies should be more environment aware and save some trees.
+Analog machines should become obsolete in the digital age.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Companies should be more environment-aware and save some trees.
 See our blog &lt;a href=&#34;../../2019/a-journey-to-be-a-digital-company-tangly-llc&#34;&gt;A Journey to Be a Digital Company&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Switzerland finally introduce a digital payment slip.
-It uses a QR code and still assume you need to print it.
-The European Union is more innovative and mandates that invoices to government parties must be digital.
-Our company exchanges contracts and invoices with partners and customers using the standardized and well-known PDF format.
-It is time to explore extensions to support the new legal requirements in Switzerland and in Europe.&lt;/p&gt;
+&lt;p&gt;Switzerland finally introduced a digital payment slip.
+It uses a QR code and still assume you need to print it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The European Union is more innovative and mandates that invoices to government parties must be digital.
+Our company exchanges contracts and invoices with partners and customers using the standardized and well-known PDF format.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It is time to explore extensions to support the new legal requirements in Switzerland and in Europe.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We show open source based solutions, and the tradeoffs we had to accept.
 Beware our solutions are based on the Java stack.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_swiss_qr_code&#34;&gt;Swiss QR Code&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_swiss_qr_code&#34;&gt;Swiss QR Code&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The &lt;a href=&#34;https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf&#34;&gt;Swiss QR-bill&lt;/a&gt; standard is based on a 2D barcode and associated human-readable text mirroring the data encoded in the barcode.
 The barcode approach assumes the invoice will be printed by the buyer.
@@ -1853,8 +1914,10 @@ The code is under active development.
 The main developer is responsive to suggestions and trouble reports.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_zugferd&#34;&gt;ZUGFeRD&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_zugferd&#34;&gt;ZUGFeRD&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The ZUGFeRD is a German initiative to promote digital invoices in Germany and in Europe.
 The ZUGFeRD approach is to store the invoice data as an XML part in the PDF document of the invoice.
@@ -1878,8 +1941,10 @@ ZUGFeRD additionally can transform a PDF/A-1 into a PDF/A-3 format.&lt;/p&gt;
 &lt;p&gt;Other similar libraries are also available, but the ones we found have quite restrictive licenses.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_pdf_aspects&#34;&gt;PDF Aspects&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_pdf_aspects&#34;&gt;PDF Aspects&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The PDF format is universal known.
 Special variants such as PDF/A1 and PDF/A3 are defined for archiving purposes.&lt;/p&gt;
@@ -1908,8 +1973,10 @@ The drawback is that these approaches are they require manual steps
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_approach&#34;&gt;Approach&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_approach&#34;&gt;Approach&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We decided to extend our open source library to create digital invoices.
 The extensions support the Swiss QR Code and the ZUGFeRD 2.1 standards.
@@ -1942,8 +2009,10 @@ We avoided proprietary solutions based on Microsoft Office templates.&lt;/p&gt;
 They are released under Apache 2.0 license.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_learnings&#34;&gt;Learnings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_learnings&#34;&gt;Learnings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The source code for the invoice component is available as a Java package.
 More information is available under &lt;a href=&#34;https://blog.tangly.net/&#34;&gt;tangly open source components&lt;/a&gt;.&lt;/p&gt;
@@ -1985,7 +2054,6 @@ Our whole toolchain is based on open source solutions and performs flawlessly si
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
@@ -2008,10 +2076,7 @@ Our whole toolchain is based on open source solutions and performs flawlessly si
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_legacy_systems_refactoring&#34;&gt;Legacy Systems Refactoring&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-06-01-head.jpg&#34; alt=&#34;2020 06 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -2060,8 +2125,9 @@ In essence, when you refactor, you are improving the design of the code after it
 — Martin Fowler
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_introduction&#34;&gt;Introduction&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;For a developer, new to a legacy software solution, it is often hard to understand the existing application.
 He must determine the extent of source code and architectural decay, and identify smells and metric violations.&lt;/p&gt;
@@ -2082,8 +2148,10 @@ Also, software complexity increases as it evolves over time as you add new requi
 A professional engineer &lt;a href=&#34;https://martinfowler.com/bliki/OpportunisticRefactoring.html&#34;&gt;opportunistically refactor&lt;/a&gt; each time he modifies source code.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_understand_your_product&#34;&gt;Understand Your Product&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_understand_your_product&#34;&gt;Understand Your Product&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -2108,8 +2176,10 @@ You need a tentative architecture description to start refactoring and to untang
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_refactor_your_product&#34;&gt;Refactor Your Product&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_refactor_your_product&#34;&gt;Refactor Your Product&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Refactoring is always a successful activity.
 You cannot fail.
@@ -2214,8 +2284,10 @@ Agile product development wants to deliver updates with an hourly or daily rhyth
 As fewer and fewer programmers and operation managers will have the knowledge of those systems, you will face a dwindling talent pool.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_ameliorate_your_process&#34;&gt;Ameliorate Your Process&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_ameliorate_your_process&#34;&gt;Ameliorate Your Process&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Applications do not degrade to legacy or geriatric systems overnight.
 The organization and development group failed to work professionally over years before the product was ultimately doomed.&lt;/p&gt;
@@ -2245,8 +2317,10 @@ They consistently read books.
 Is it not that you expect from your physician or the pilot of the plane you are taking?&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The agile architecture track contains the following blogs&lt;/p&gt;
 &lt;/div&gt;
@@ -2283,7 +2357,6 @@ Marcel Baumann. 2020.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -2297,9 +2370,8 @@ Marcel Baumann. 2020.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_gradle_6_4_finally_supports_java_modules&#34;&gt;Gradle 6.4 Finally Supports Java Modules&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-05-01-head.jpg&#34; alt=&#34;2020 05 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -2317,12 +2389,19 @@ Java 9 was released in September 2017.&lt;/p&gt;
 We had to wait almost three years for native support!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Support for modules is native in the Java plugin.
-You only need to add &lt;strong&gt;one configuration line&lt;/strong&gt;.
-Start using Java modules and have language support to enforce modularity in your product.&lt;/p&gt;
+&lt;p&gt;Support for modules is native in the Java plugin.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_java_modules_in_gradle_6_4&#34;&gt;Java Modules in Gradle 6.4&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You only need to add &lt;strong&gt;one configuration line&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Start using Java modules and have language support to enforce modularity in your product.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_java_modules_in_gradle_6_4&#34;&gt;Java Modules in Gradle 6.4&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Gradle supports the Java module system with everything you need to compile, test and execute tests for Java modules.
 You can also build Javadoc.&lt;/p&gt;
@@ -2398,7 +2477,6 @@ The following configuration is needed in Gradle to compile, test, execute and ge
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
@@ -2418,10 +2496,7 @@ The following configuration is needed in Gradle to compile, test, execute and ge
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_agile_component_design&#34;&gt;Agile Component Design&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-04-01-head.jpg&#34; alt=&#34;2020 04 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -2452,10 +2527,11 @@ You are responsible for &lt;strong&gt;architecture decisions&lt;/strong&gt; at c
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Below a set of tools to improve the quality of your design.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_design_approaches&#34;&gt;Design Approaches&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_design_approaches&#34;&gt;Design Approaches&lt;/h3&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_patterns_and_idioms&#34;&gt;Patterns and Idioms&lt;/h4&gt;
+&lt;h3 id=&#34;_patterns_and_idioms&#34;&gt;Patterns and Idioms&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The pattern movement was started last millennium.
 Very talented and experienced developers have documented how to solve common problems elegantly and effectively.
@@ -2474,8 +2550,8 @@ For example, lambda expressions and streams introduced in Java 8 - released Spri
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_read_open_source_code&#34;&gt;Read Open Source Code&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_read_open_source_code&#34;&gt;Read Open Source Code&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Stop inventing the wheel again and again.
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Not_invented_here&#34;&gt;Avoid Not Invented&lt;/a&gt; Here syndrome.
@@ -2492,8 +2568,8 @@ Fill free to improve the suggested solutions.&lt;/p&gt;
 Always verify the quality and adequacy of their proposed solutions.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_java_standard_api&#34;&gt;Java Standard API&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_java_standard_api&#34;&gt;Java Standard API&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Know your programming language and the huge associated standard libraries part of your technology stack.
 Wisdom is coded in this code.
@@ -2508,10 +2584,12 @@ All these decisions and learning are encoded in this code.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_clean_architecture&#34;&gt;Clean Architecture&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_clean_architecture&#34;&gt;Clean Architecture&lt;/h3&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_clean_code&#34;&gt;Clean Code&lt;/h4&gt;
+&lt;h3 id=&#34;_clean_code&#34;&gt;Clean Code&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You want to create a clean architecture [&lt;a href=&#34;#clean-architecture&#34;&gt;2&lt;/a&gt;] you are proud of.
 You must first write a clean code [&lt;a href=&#34;#clean-code&#34;&gt;3&lt;/a&gt;].
@@ -2546,8 +2624,8 @@ Agile code is clean code.&lt;/p&gt;
 You still document all major &lt;a href=&#34;https://en.wikipedia.org/wiki/Architectural_decision&#34;&gt;Architectural Decisions&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_know_your_programming_language&#34;&gt;Know Your Programming Language&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_know_your_programming_language&#34;&gt;Know Your Programming Language&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;If you are developing in Java, you should use the current features of the programming language.
 For example, with Java 14, you have access to:&lt;/p&gt;
@@ -2582,8 +2660,8 @@ This construct is an implementation of automatic resource management.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_aggressive_refactoring&#34;&gt;Aggressive Refactoring&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_aggressive_refactoring&#34;&gt;Aggressive Refactoring&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The entropy of the source code increases over time.
 Only continuous and aggressive refactoring mitigates the degenerescence of your application [&lt;a href=&#34;#refactoring&#34;&gt;4&lt;/a&gt;, &lt;a href=&#34;#refactoring-2nd&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;#refactoring-to-patterns&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#working-effectively-with-legacy-code&#34;&gt;7&lt;/a&gt;].
@@ -2591,24 +2669,24 @@ Each time you correct an error or add a new functionality refactor your code.
 Remove smells, compiler warnings and migrate older code to use newer and better features of your programming language.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_acceptance_test_driven_development&#34;&gt;Acceptance Test Driven Development&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_acceptance_test_driven_development&#34;&gt;Acceptance Test Driven Development&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Your users want a working application.
 Write acceptance tests insuring all relevant functions are tested through your continuous integration pipeline.
 You guarantee your users the application behaves as specified.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_test_driven_development&#34;&gt;Test Driven Development&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_test_driven_development&#34;&gt;Test Driven Development&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Testability and changeability of your application are architectural aspects.
 You must have a way to verify these non-functional requirements.
 Test driven development is a proven approach to fulfill these requirements and validate them continuously.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_continuous_integration&#34;&gt;Continuous Integration&lt;/h4&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_continuous_integration&#34;&gt;Continuous Integration&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Continuous integration and delivery are the mechanisms to continuously validate and verify all functional and non-functional requirements are correctly implemented
 [&lt;a href=&#34;#continuous-delivery-pipelines&#34;&gt;8&lt;/a&gt;].
@@ -2620,8 +2698,10 @@ The same error will never happen again.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_good_practices&#34;&gt;Good Practices&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_good_practices&#34;&gt;Good Practices&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Publish your components on a central repository such as &lt;em&gt;Maven Central&lt;/em&gt;.
 Your users have easy and standardized access to your components and their latest version.&lt;/p&gt;
@@ -2646,8 +2726,10 @@ We write all our documentation in the &lt;a href=&#34;https://asciidoc.org/&#34;
 &lt;p&gt;Start small and improve your approach every day.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The agile architecture track contains the following blogs&lt;/p&gt;
 &lt;/div&gt;
@@ -2683,8 +2765,10 @@ Marcel Baumann. 2020.&lt;/p&gt;
 &lt;p&gt;We also published our &lt;a href=&#34;https://www.tangly.net/insights/continuous-learning/agile-architecture-course&#34;&gt;agile architecture course&lt;/a&gt; (3 ECTS) used for teaching computer science students at bachelor level at Swiss technical universities.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -2726,8 +2810,10 @@ Marcel Baumann. 2020.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_references&#34;&gt;References&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;design-patterns&#34;&gt;&lt;/a&gt;[1] E. Gamma, R. Helm, R. Johnson, and J. Vlissides, &lt;em&gt;Design Patterns&lt;/em&gt;. Addison-Wesley Professional, 1995 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B000SEIBB8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B000SEIBB8&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -2754,7 +2840,6 @@ Marcel Baumann. 2020.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
@@ -2774,9 +2859,8 @@ Marcel Baumann. 2020.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_java_records_are_here_available_in_jdk_14&#34;&gt;Java Records Are Here – Available in JDK 14&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-03-01-head.jpg&#34; alt=&#34;2020 03 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -2794,6 +2878,8 @@ Records as a clean definition of immutable objects can have a tremendous impact 
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You as a designer have to reflect why your abstractions are not immutable and what is the rationale behind.
 From my experience, it improves the quality of your design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Records guarantee:&lt;/p&gt;
@@ -2840,8 +2926,9 @@ Your objects can be used in standard API collections without difficult to find b
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The huge advantage of the approach against IDE code generation is the guaranty that these methods are semantically always correct.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_advantages&#34;&gt;Advantages&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_advantages&#34;&gt;Advantages&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The key benefits of immutable objects are:&lt;/p&gt;
 &lt;/div&gt;
@@ -2877,8 +2964,10 @@ Your objects can be used in standard API collections without difficult to find b
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_design_impact&#34;&gt;Design Impact&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_design_impact&#34;&gt;Design Impact&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I updated my open source projects to use the record abstraction.
 What a surprise!
@@ -2898,8 +2987,10 @@ The Java language guarantees that all record classes must be immutable.&lt;/p&gt
 In the long run, you should eliminate your DTO, they are just waste and break all the rules of abstraction and information hiding.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_tricks_and_tips&#34;&gt;Tricks and Tips&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_tricks_and_tips&#34;&gt;Tricks and Tips&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You can define a constructor extension to validate the passed arguments.
 This validation block is automatically inserted at the beginning of the generated constructor.&lt;/p&gt;
@@ -2939,7 +3030,6 @@ At the same time, write less boilerplate code and enjoy coding.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>
@@ -2953,9 +3043,8 @@ At the same time, write less boilerplate code and enjoy coding.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_how_agile_collaborators_learn&#34;&gt;How Agile Collaborators Learn&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-02-01-head.jpg&#34; alt=&#34;2020 02 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -2974,8 +3063,11 @@ Quite a few companies find that out the hard way.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;How can you increase the odds to create an environment where agile teams bloom and perform?&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_attitude_versus_aptitudes&#34;&gt;Attitude versus Aptitudes&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_attitude_versus_aptitudes&#34;&gt;Attitude versus Aptitudes&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;quoteblock&#34;&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -3010,8 +3102,10 @@ They must know what it is they must do.&lt;/p&gt;
 Train them to improve and perform better.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_continuous_learning_and_improvement&#34;&gt;Continuous Learning and Improvement&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_continuous_learning_and_improvement&#34;&gt;Continuous Learning and Improvement&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;quoteblock&#34;&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -3047,8 +3141,10 @@ See our post about &lt;a href=&#34;../../2018/pragmatic-craftsmanship-profession
 It was an occasion to experiment with new technologies, assess their match for the project needs, share new coding techniques, and update our standards together.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_formal_training&#34;&gt;Formal Training&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_formal_training&#34;&gt;Formal Training&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Professional software developers should have formal training in software development.
 You should expect from a person working forty hours a week for the next forty years to pursue a bachelor or a master degree in computer science.&lt;/p&gt;
@@ -3062,8 +3158,10 @@ A specialist refusing to invest in a two-day training is probably not a member y
 &lt;p&gt;A professional engineer should read multiple technical books each year.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_leadership_responsibilities&#34;&gt;Leadership Responsibilities&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_leadership_responsibilities&#34;&gt;Leadership Responsibilities&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Create &lt;a href=&#34;https://en.wikipedia.org/wiki/Psychological_safety&#34;&gt;psychological safety&lt;/a&gt; in the workplace.&lt;/p&gt;
 &lt;/div&gt;
@@ -3105,8 +3203,10 @@ Look how you budget and account training activities.
 Are they really investment positions?&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_agile_architecture_series&#34;&gt;Agile Architecture Series&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The agile architecture track contains the following blogs&lt;/p&gt;
 &lt;/div&gt;
@@ -3142,15 +3242,16 @@ Marcel Baumann. 2020.&lt;/p&gt;
 &lt;p&gt;We also published our &lt;a href=&#34;#agile-architecture&#34;&gt;[agile-architecture]&lt;/a&gt; credited with 3 ECTS used for teaching computer science students at bachelor level at Swiss technical universities.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a id=&#34;agile-architecture-course&#34;&gt;&lt;/a&gt;[1] https:/blog.tangly.net/ideas/learnings/lectures/[Agile Architecture Course]&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3167,9 +3268,8 @@ Marcel Baumann. 2020.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_calibrate_your_agile_approach_bill_of_rights&#34;&gt;Calibrate Your Agile Approach: Bill of Rights&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-01-01-head.jpg&#34; alt=&#34;2020 01 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -3188,8 +3288,11 @@ calls on software projects.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;To that end, &lt;a href=&#34;https://en.wikipedia.org/wiki/Extreme_programming&#34;&gt;eXtreme Programming&lt;/a&gt; created the &lt;strong&gt;Customer and Development Team Bill of Rights&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_customer_bill_of_rights&#34;&gt;Customer Bill of Rights&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_customer_bill_of_rights&#34;&gt;Customer Bill of Rights&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You have the right&lt;/p&gt;
 &lt;/div&gt;
@@ -3216,8 +3319,10 @@ calls on software projects.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_developer_bill_of_rights&#34;&gt;Developer Bill of Rights&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_developer_bill_of_rights&#34;&gt;Developer Bill of Rights&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You have the right&lt;/p&gt;
 &lt;/div&gt;
@@ -3241,8 +3346,10 @@ calls on software projects.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_calibration&#34;&gt;Calibration&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_calibration&#34;&gt;Calibration&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You shall use the above bill of rights to evolve the cooperation between the development teams and the customers and improve the product value.
 See if:&lt;/p&gt;
@@ -3290,15 +3397,16 @@ Your development team receives help from peers, managers and customers.&lt;/p&gt
 The above rules are here to detect and truly improve your organization toward building products, which delight the customers &lt;a href=&#34;#detecting-agile-bullshit&#34;&gt;[1]&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a id=&#34;detecting-agile-bullshit&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2019/detecting-agile-bullshit/&#34;&gt;Agile Bullshit&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

@@ -24,10 +24,7 @@
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_multi_module_test_reporting_with_gradle_7_x&#34;&gt;Multi-Module Test Reporting with Gradle 7.x&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2022-11-02-head.jpg&#34; alt=&#34;2022 11 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -51,8 +48,9 @@ The solution is a huge improvement against the previous quite cumbersome approac
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I hope similar solutions will be provided for static code analysers such as SpotBugs, PMD or Checkstyle.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_selected_approach&#34;&gt;Selected Approach&lt;/h3&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_selected_approach&#34;&gt;Selected Approach&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We use the documented approach to define a separate module to generate the aggregation reports.&lt;/p&gt;
 &lt;/div&gt;
@@ -125,8 +123,10 @@ The solution is a huge improvement against the previous quite cumbersome approac
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_learnings&#34;&gt;Learnings&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_learnings&#34;&gt;Learnings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Gradle provides test results aggregation and test coverage aggregation as two separate plugins.
 The drawback is that we have to configure both plugins with the same information.&lt;/p&gt;
@@ -159,8 +159,10 @@ Do not ask the user to give information already available to the application.&lt
 Gradle ecosystem is still work in progress to support multi-module Java projects &lt;a href=&#34;#gradle-7&#34;&gt;[1]&lt;/a&gt; &lt;a href=&#34;#gradle-6&#34;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_links&#34;&gt;Links&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;ulist bibliography&#34;&gt;
 &lt;ul class=&#34;bibliography&#34;&gt;
 &lt;li&gt;
@@ -170,7 +172,6 @@ Gradle ecosystem is still work in progress to support multi-module Java projects
 &lt;p&gt;&lt;a id=&#34;gradle-6&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2020/gradle-6.4-finally-supports-java-modules/&#34;&gt;Gradle 6.4 Finally Supports Java Modules&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -187,28 +188,36 @@ Gradle ecosystem is still work in progress to support multi-module Java projects
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_gradle_7_goodies&#34;&gt;Gradle 7 Goodies&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-11-02-head.jpg&#34; alt=&#34;2021 11 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;img src=&#34;../pics/2021-11-02-head.png&#34; alt=&#34;2021 11 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; is my preferred build tool for all Java applications I am developing.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Google chose Gradle as the official build tool for Android.
-Not only because build scripts are code, but because Gradle is modeled in a way that is extensible in the most fundamental ways.
-Gradle’s model also allows it to be used for native development with C/C++ and can be expanded to cover any ecosystem.
-For example, Gradle is designed with embedding in mind using its Tooling API.&lt;/p&gt;
+&lt;p&gt;Google chose Gradle as the official build tool for Android.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Not only because build scripts are code, but because Gradle is modeled in a way that is extensible in the most fundamental ways.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle’s model also allows it to be used for native development with C/C++ and can be expanded to cover any ecosystem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For example, Gradle is designed with embedding in mind using its Tooling API.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;What are my preferred goodies with the major version 7?&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_java_module_native_support&#34;&gt;Java Module Native Support&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_java_module_native_support&#34;&gt;Java Module Native Support&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Java modules were introduced with Java 9 in September 2017.
 Adoption was slow.
@@ -224,8 +233,10 @@ Just use the &lt;em&gt;java-library&lt;/em&gt; plugin.&lt;/p&gt;
 &lt;p&gt;The plugin will detect the presence of a &lt;em&gt;module-info.java&lt;/em&gt; module declaration file and transparently switch to module compilation.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_dependencies_semantic_declaration&#34;&gt;Dependencies Semantic Declaration&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_dependencies_semantic_declaration&#34;&gt;Dependencies Semantic Declaration&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The Gradle team has decided to introduce semantic support for the declaration of dependencies.&lt;/p&gt;
 &lt;/div&gt;
@@ -238,8 +249,10 @@ The declarations can be used in all subprojects.&lt;/p&gt;
 &lt;p&gt;Support is provided to group a set of related dependencies and use the alias in the various Gradle modules.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_intellij_support&#34;&gt;IntelliJ Support&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_intellij_support&#34;&gt;IntelliJ Support&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Jetbrains has improved support of Gradle in their new releases of IntelliJ.
 The 2021 versions offer native support of Gradle.
@@ -251,8 +264,10 @@ You just need to take care of one build configuration and no more need to delve 
 You have to be careful to align both structures to avoid surprises.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_jacoco_aggregated_test_coverage_reports&#34;&gt;Jacoco Aggregated Test Coverage Reports&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_jacoco_aggregated_test_coverage_reports&#34;&gt;Jacoco Aggregated Test Coverage Reports&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The support for coverage reports over multiple gradle subprojects is still limited.
 I use the following configuration to generate aggregated coverage report over all gradle modules.&lt;/p&gt;
@@ -361,8 +376,10 @@ The binary report is no more supported by external tool.&lt;/td&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_wishes&#34;&gt;Wishes&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_wishes&#34;&gt;Wishes&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I would greatly appreciate if the JaCoCo Gradle plugin is improved and align with the features of the Maven plugin.
 The process to aggregate the coverage reports on a multi-module project is cumbersome and brittle.&lt;/p&gt;
@@ -371,7 +388,6 @@ The process to aggregate the coverage reports on a multi-module project is cumbe
 &lt;p&gt;I am waiting for the Gradle 7.3 release to have native support of JDK 17.
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;
 The tool chain supports the newer JDKs without trouble but Gradle can only run with JDK 16 or older versions.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -394,9 +410,8 @@ The tool chain supports the newer JDKs without trouble but Gradle can only run w
       <description>
         
         
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_gradle_6_4_finally_supports_java_modules&#34;&gt;Gradle 6.4 Finally Supports Java Modules&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
 &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2020-05-01-head.jpg&#34; alt=&#34;2020 05 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
@@ -414,12 +429,19 @@ Java 9 was released in September 2017.&lt;/p&gt;
 We had to wait almost three years for native support!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Support for modules is native in the Java plugin.
-You only need to add &lt;strong&gt;one configuration line&lt;/strong&gt;.
-Start using Java modules and have language support to enforce modularity in your product.&lt;/p&gt;
+&lt;p&gt;Support for modules is native in the Java plugin.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_java_modules_in_gradle_6_4&#34;&gt;Java Modules in Gradle 6.4&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You only need to add &lt;strong&gt;one configuration line&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Start using Java modules and have language support to enforce modularity in your product.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_java_modules_in_gradle_6_4&#34;&gt;Java Modules in Gradle 6.4&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Gradle supports the Java module system with everything you need to compile, test and execute tests for Java modules.
 You can also build Javadoc.&lt;/p&gt;
@@ -492,7 +514,6 @@ The following configuration is needed in Gradle to compile, test, execute and ge
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Beware that &lt;a href=&#34;https://www.jacoco.org/&#34;&gt;JaCoCo&lt;/a&gt; shall only release a version supporting code coverage for JDK 14 and, in particular record not before June 2020.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

@@ -22,7 +22,6 @@
 
 <title>Java Records Are Here - Available in JDK 14 | tangly Components</title>
 <meta content="
-Java Records Are Here – Available in JDK 14
 
 
 
@@ -30,9 +29,10 @@ Java Records Are Here – Available in JDK 14
 
 
 
-We need justification not to use immutable objects in our solutions, rather than an affirmative …" name="description">
+We need justification not to use immutable objects in our solutions, rather than an affirmative reason to use them.
+Records provide a …" name="description">
 <meta property="og:title" content="Java Records Are Here - Available in JDK 14" />
-<meta property="og:description" content="Java Records Are Here – Available in JDK 14 We need justification not to use immutable objects in our solutions, rather than an affirmative reason to use them. Records provide a first-class means for modeling data-only aggregates. They have been available in Java since the release of JDK 14.
+<meta property="og:description" content="We need justification not to use immutable objects in our solutions, rather than an affirmative reason to use them. Records provide a first-class means for modeling data-only aggregates. They have been available in Java since the release of JDK 14.
 Records are often seen as syntactic sugar to easily create immutable objects without having to write too much boilerplate code. Records as a clean definition of immutable objects can have a tremendous impact on your component design." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/blog/2020/java-records-are-here-available-in-jdk-14/" /><meta property="article:section" content="blog" />
@@ -40,20 +40,20 @@ Records are often seen as syntactic sugar to easily create immutable objects wit
 <meta property="article:modified_time" content="2020-03-31T00:00:00+00:00" />
 
 <meta itemprop="name" content="Java Records Are Here - Available in JDK 14">
-<meta itemprop="description" content="Java Records Are Here – Available in JDK 14 We need justification not to use immutable objects in our solutions, rather than an affirmative reason to use them. Records provide a first-class means for modeling data-only aggregates. They have been available in Java since the release of JDK 14.
+<meta itemprop="description" content="We need justification not to use immutable objects in our solutions, rather than an affirmative reason to use them. Records provide a first-class means for modeling data-only aggregates. They have been available in Java since the release of JDK 14.
 Records are often seen as syntactic sugar to easily create immutable objects without having to write too much boilerplate code. Records as a clean definition of immutable objects can have a tremendous impact on your component design."><meta itemprop="datePublished" content="2020-03-31T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-03-31T00:00:00+00:00" />
-<meta itemprop="wordCount" content="609">
+<meta itemprop="wordCount" content="600">
 <meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java Records Are Here - Available in JDK 14"/>
-<meta name="twitter:description" content="Java Records Are Here – Available in JDK 14 We need justification not to use immutable objects in our solutions, rather than an affirmative reason to use them. Records provide a first-class means for modeling data-only aggregates. They have been available in Java since the release of JDK 14.
+<meta name="twitter:description" content="We need justification not to use immutable objects in our solutions, rather than an affirmative reason to use them. Records provide a first-class means for modeling data-only aggregates. They have been available in Java since the release of JDK 14.
 Records are often seen as syntactic sugar to easily create immutable objects without having to write too much boilerplate code. Records as a clean definition of immutable objects can have a tremendous impact on your component design."/>
 
 
 
 
-<link rel="preload" href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" as="style">
-<link href="/scss/main.min.63cb475b920bd21b9e8931d5c995b20670f427ffcb268beec89b16fdef7a46b9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" as="style">
+<link href="/scss/main.min.a8a309435cd1eb92715bfcfac69a1a98550c8585a326e0ef2f708ccee694dc63.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -138,7 +138,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -163,7 +163,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.26f21858e1243574df7c1d5f53396b73.json"
+    data-offline-search-index-json-src="/offline-search-index.a60d99f67090c907f016365e74719585.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -942,9 +942,8 @@ if (!doNotTrack) {
         
         
     </header>
-    <div class="sect1">
-<h2 id="_java_records_are_here_available_in_jdk_14">Java Records Are Here – Available in JDK 14</h2>
-<div class="sectionbody">
+    <div class="openblock float-group">
+<div class="content">
 <div class="imageblock left">
 <div class="content">
 <img src="../pics/2020-03-01-head.jpg" alt="2020 03 01 head" width="420" height="360"/>
@@ -962,6 +961,8 @@ Records as a clean definition of immutable objects can have a tremendous impact 
 <div class="paragraph">
 <p>You as a designer have to reflect why your abstractions are not immutable and what is the rationale behind.
 From my experience, it improves the quality of your design.</p>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Records guarantee:</p>
@@ -1008,8 +1009,9 @@ Your objects can be used in standard API collections without difficult to find b
 <div class="paragraph">
 <p>The huge advantage of the approach against IDE code generation is the guaranty that these methods are semantically always correct.</p>
 </div>
-<div class="sect2">
-<h3 id="_advantages">Advantages</h3>
+<div class="sect1">
+<h2 id="_advantages">Advantages</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The key benefits of immutable objects are:</p>
 </div>
@@ -1045,8 +1047,10 @@ Your objects can be used in standard API collections without difficult to find b
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_design_impact">Design Impact</h3>
+</div>
+<div class="sect1">
+<h2 id="_design_impact">Design Impact</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>I updated my open source projects to use the record abstraction.
 What a surprise!
@@ -1066,8 +1070,10 @@ The Java language guarantees that all record classes must be immutable.</p>
 In the long run, you should eliminate your DTO, they are just waste and break all the rules of abstraction and information hiding.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_tricks_and_tips">Tricks and Tips</h3>
+</div>
+<div class="sect1">
+<h2 id="_tricks_and_tips">Tricks and Tips</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>You can define a constructor extension to validate the passed arguments.
 This validation block is automatically inserted at the beginning of the generated constructor.</p>
@@ -1107,7 +1113,6 @@ At the same time, write less boilerplate code and enjoy coding.</p>
 </div>
 </div>
 </div>
-</div>
 
     
     <br/>
@@ -1126,7 +1131,6 @@ At the same time, write less boilerplate code and enjoy coding.</p>
 
     <br/>
     
-
     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
   <li>
     <a href="/blog/2020/how-agile-collaborators-learn/" aria-label="Previous - How Agile Collaborators Learn" class="btn btn-primary"><span class="me-1">←</span>Previous</a>
