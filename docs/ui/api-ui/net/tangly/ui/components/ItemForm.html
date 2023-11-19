@@ -162,9 +162,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.vaadin.flow.data.binder.Binder<wbr>&lt;<a href="ItemForm.html" title="type parameter in ItemForm">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#binder()" class="member-name-link">binder</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Clear the content of the form.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -233,7 +233,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mode(net.tangly.ui.components.Mode)" class="member-name-link">mode</a><wbr>(@NotNull <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set the mode of the form.</div>
+<div class="block">Set the mode of the form and propagate it to all components registered in the binder.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nameActionButton(net.tangly.ui.components.Mode)" class="member-name-link">nameActionButton</a><wbr>(@NotNull <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</code></div>
@@ -320,7 +320,8 @@ loadScripts(document, 'script');</script>
 <h3>mode</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">mode</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</span></div>
-<div class="block">Set the mode of the form. Subclasses should overwrite the method to ensure that the mode is propagated to all contained views.</div>
+<div class="block">Set the mode of the form and propagate it to all components registered in the binder. Subclasses should overwrite the method to ensure that the mode is propagated to all
+ contained views.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>mode</code> - mode of the form</dd>
@@ -433,8 +434,9 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="clear()">
 <h3>clear</h3>
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
-<div class="block">Clear the content of the form. All property fields are reset to empty or a default value.</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
+<div class="block">Clear the content of the form. All property fields are reset to empty or a default value. The default implementation clears all fields registered in the binder. Custom
+ fields are cleared as regular fields because both implements <i>HasValue</i> and therefore are eligble for the binder.</div>
 </section>
 </li>
 <li>

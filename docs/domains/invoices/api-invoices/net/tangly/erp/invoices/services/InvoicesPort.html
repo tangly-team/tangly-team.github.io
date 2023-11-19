@@ -106,19 +106,26 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportInvoiceDocument(net.tangly.erp.invoices.domain.Invoice,boolean,boolean)" class="member-name-link">exportInvoiceDocument</a><wbr>(@NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
- boolean&nbsp;withQrCode,
- boolean&nbsp;withEN16931)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doesInvoiceDocumentExist(net.tangly.erp.invoices.domain.Invoice)" class="member-name-link">doesInvoiceDocumentExist</a><wbr>(@NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Export an invoice to a file.</div>
+<div class="block">Returns true if the invoice document exists.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportInvoiceDocuments(boolean,boolean,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">exportInvoiceDocuments</a><wbr>(boolean&nbsp;withQrCode,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportInvoiceDocument(net.tangly.erp.invoices.domain.Invoice,boolean,boolean,boolean)" class="member-name-link">exportInvoiceDocument</a><wbr>(@NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
+ boolean&nbsp;withQrCode,
  boolean&nbsp;withEN16931,
+ boolean&nbsp;overwrite)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Export an invoice to a file.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportInvoiceDocuments(boolean,boolean,boolean,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">exportInvoiceDocuments</a><wbr>(boolean&nbsp;withQrCode,
+ boolean&nbsp;withEN16931,
+ boolean&nbsp;overwrite,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Exports all selected invoices as artifact to a file.</div>
 </div>
 </div>
@@ -136,12 +143,27 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="exportInvoiceDocument(net.tangly.erp.invoices.domain.Invoice,boolean,boolean)">
+<section class="detail" id="doesInvoiceDocumentExist(net.tangly.erp.invoices.domain.Invoice)">
+<h3>doesInvoiceDocumentExist</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">doesInvoiceDocumentExist</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice)</span></div>
+<div class="block">Returns true if the invoice document exists.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>invoice</code> - invoice to be tested</dd>
+<dt>Returns:</dt>
+<dd>true if the invoice document exists</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="exportInvoiceDocument(net.tangly.erp.invoices.domain.Invoice,boolean,boolean,boolean)">
 <h3>exportInvoiceDocument</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportInvoiceDocument</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
  boolean&nbsp;withQrCode,
- boolean&nbsp;withEN16931)</span></div>
+ boolean&nbsp;withEN16931,
+ boolean&nbsp;overwrite)</span></div>
 <div class="block">Export an invoice to a file. The method is responsible to infer the path to the generated invoice document.
  <p><em>implNote</em> The asciidoc document is deleted upon creation of the pdf document.</p></div>
 <dl class="notes">
@@ -149,14 +171,22 @@ loadScripts(document, 'script');</script>
 <dd><code>invoice</code> - invoice to be exported</dd>
 <dd><code>withQrCode</code> - flag if the Swiss QR cde should be added to the invoice document</dd>
 <dd><code>withEN16931</code> - flag if the EN16931 digital invoice should be added to the invoice document</dd>
+<dd><code>overwrite</code> - flag if an existing document should be overwritten</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#exportInvoiceDocument(net.tangly.erp.invoices.domain.Invoice,boolean,boolean,boolean)"><code>exportInvoiceDocument(Invoice, boolean, boolean, boolean)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="exportInvoiceDocuments(boolean,boolean,java.time.LocalDate,java.time.LocalDate)">
+<section class="detail" id="exportInvoiceDocuments(boolean,boolean,boolean,java.time.LocalDate,java.time.LocalDate)">
 <h3>exportInvoiceDocuments</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportInvoiceDocuments</span><wbr><span class="parameters">(boolean&nbsp;withQrCode,
  boolean&nbsp;withEN16931,
+ boolean&nbsp;overwrite,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
 <div class="block">Exports all selected invoices as artifact to a file. The method is responsible to infer the path to the generated invoice document.
@@ -165,6 +195,7 @@ loadScripts(document, 'script');</script>
 <dt>Parameters:</dt>
 <dd><code>withQrCode</code> - flag if the Swiss QR cde should be added to the invoice document</dd>
 <dd><code>withEN16931</code> - flag if the EN16931 digital invoice should be added to the invoice document</dd>
+<dd><code>overwrite</code> - flag if an existing document should be overwritten</dd>
 <dd><code>from</code> - optional start of the relevant time interval for the invoiced date</dd>
 <dd><code>to</code> - optional end of the relevant time interval for the invoiced date</dd>
 </dl>
