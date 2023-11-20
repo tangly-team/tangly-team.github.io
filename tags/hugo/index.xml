@@ -5,7 +5,7 @@
     <description>Recent content in hugo on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Nov 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,180 @@
         
       
     
+    
+    <item>
+      <title>Blog: Static Website Improvements</title>
+      <link>https://blog.tangly.net/blog/2023/static-website-improvements/</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/static-website-improvements/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-11-04-head.jpg&#34; alt=&#34;2023 11 04 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The static website build tool &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; is awesome.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The extensive built-in feature set of Hugo and the feature-rich text-formatting options that Asciidoc offers creates a blogging experience composed of easy content management and fun writing experience.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Hugo theme Docsy is ideal to create a good-looking software documentation site.
+The templates for blogging are good enough for our needs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This theme is currently the best match I found to combine product documentation with blogging.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I love to write my documentation and blogs using &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; notation.
+The expression power covers all our needs.
+A major tool chain is the &lt;a href=&#34;https://asciidoctor.org/&#34;&gt;Asciidoctor&lt;/a&gt; ecosystem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Lately, I needed new features to ameliorate the usability of our open-source documentation and blogging site.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I had to deepen my understanding of how Hugo is working with themes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_tabs&#34;&gt;Tabs&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I wanted to display &lt;a href=&#34;https://plantuml.com/&#34;&gt;plantUML&lt;/a&gt; diagrams and the associated code side by side in my article.
+The tab approach is perfect and lets the reader switch between both views in her browser.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt; provides an extension to support tabular display
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The trick was to integrate the extension in &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;The stylesheet for &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; was extended to handle the tabular notation.
+The  crew provides a styling example.
+Find my &lt;em&gt;scss&lt;/em&gt; stylesheet under &lt;a href=&#34;https://github.com/tangly-team/tangly-os/tree/master/src/site/website/assets/scss&#34;&gt;Asciidoc Docsy Stylesheet&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the Javascript code to react to user selections.
+Find my &lt;em&gt;javascript&lt;/em&gt; code under &lt;a href=&#34;https://github.com/tangly-team/tangly-os/tree/master/src/site/website/static/js&#34;&gt;Asciidoc Tabs Javascript&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The script code shall be included in the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; partials.
+Find the &lt;em&gt;HTML&lt;/em&gt; code under &lt;a href=&#34;https://github.com/tangly-team/tangly-os/tree/master/src/site/website/layouts/partials&#34;&gt;Hugo Docsy Partials&lt;/a&gt; in the file &lt;em&gt;footer.html&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An article using this functionality is &lt;a href=&#34;../../2023/c4-and-uml-with-plantuml&#34;&gt;C4 and UML with plantUML&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I hope that the tabular display extension will soon graduate to an official &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; extension.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_attachments&#34;&gt;Attachments&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I am a lecturer at &lt;a href=&#34;https://www.hslu.ch/en/lucerne-school-of-information-technology/&#34;&gt;Lucerne School of Information Technology&lt;/a&gt;.
+All my course materials are under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Creative Commons CC BY-SA&lt;/a&gt;..&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I wanted to provide recommended reading materials as a list of downloadable documents on the website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How can you provide this function with &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt;?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; theme as a merge request for exactly this function.
+The request was created in June 2021.
+It is still open end of November 2023, more than two years later
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I decided to add the necessary code as a local extension to the docsy theme.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Add the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; shortcodes to the theme under &lt;a href=&#34;https://github.com/tangly-team/tangly-os/tree/master/src/site/website/layouts/shortcodes&#34;&gt;Hugo Docsy Shortcodes&lt;/a&gt; in the file &lt;em&gt;attachments.html&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add my &lt;em&gt;scss&lt;/em&gt; stylesheet under &lt;a href=&#34;https://github.com/tangly-team/tangly-os/tree/master/src/site/website/assets/scss&#34;&gt;Asciidoc Docsy Stylesheet&lt;/a&gt; in the file &lt;em&gt;shortcodes.scss&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A document using this functionality is https:/blog.tangly.net/ideas/learnings/lectures/[Lectures].
+The page displays multiple lists of documents.
+The reader can download the material she is interested in.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_mundane_work&#34;&gt;Mundane Work&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I invested quite some time to improve the layout of the blog articles in the context of the &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; theme.
+&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; supports &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; out of the box.
+It does not mean that the layout is perfect.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Another tedious activity is to remove broken links from the website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; stylesheet had to be extended to support the additional features I am using.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The work is low tech.
+But I am convinced that users will appreciate the improvements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/static-website-improvements&#34;&gt;Static Website Improvements&lt;/a&gt;
+Marcel Baumann. 2023.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2021/improving-a-static-web-site-build-with-hugo-and-docsy&#34;&gt;Improving a Static Website Build With Hugo and Docsy&lt;/a&gt;
+Marcel Baumann. 2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/support-comments-for-static-hugo-website&#34;&gt;Support Comments for Static Hugo Website&lt;/a&gt;
+Marcel Baumann. 2020.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/creating-a-technical-website-with-hugo-and-asciidoc&#34;&gt;Creating a technical Website with Hugo and Asciidoc&lt;/a&gt;
+Marcel Baumann. 2020.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The extension is still beta level end of 2023.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. You can read the pull request under &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt;. Select the pull requests tab.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Improving a Static Web Site Build With Hugo and Docsy</title>

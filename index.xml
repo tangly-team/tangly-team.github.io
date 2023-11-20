@@ -5,7 +5,7 @@
     <description>Recent content in tangly OS components on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Nov 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,180 @@
       
       
     
+    
+    <item>
+      <title>Blog: Static Website Improvements</title>
+      <link>https://blog.tangly.net/blog/2023/static-website-improvements/</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/static-website-improvements/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-11-04-head.jpg&#34; alt=&#34;2023 11 04 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The static website build tool &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; is awesome.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The extensive built-in feature set of Hugo and the feature-rich text-formatting options that Asciidoc offers creates a blogging experience composed of easy content management and fun writing experience.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Hugo theme Docsy is ideal to create a good-looking software documentation site.
+The templates for blogging are good enough for our needs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This theme is currently the best match I found to combine product documentation with blogging.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I love to write my documentation and blogs using &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; notation.
+The expression power covers all our needs.
+A major tool chain is the &lt;a href=&#34;https://asciidoctor.org/&#34;&gt;Asciidoctor&lt;/a&gt; ecosystem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Lately, I needed new features to ameliorate the usability of our open-source documentation and blogging site.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I had to deepen my understanding of how Hugo is working with themes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_tabs&#34;&gt;Tabs&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I wanted to display &lt;a href=&#34;https://plantuml.com/&#34;&gt;plantUML&lt;/a&gt; diagrams and the associated code side by side in my article.
+The tab approach is perfect and lets the reader switch between both views in her browser.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt; provides an extension to support tabular display
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The trick was to integrate the extension in &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;The stylesheet for &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; was extended to handle the tabular notation.
+The  crew provides a styling example.
+Find my &lt;em&gt;scss&lt;/em&gt; stylesheet under &lt;a href=&#34;https://github.com/tangly-team/tangly-os/tree/master/src/site/website/assets/scss&#34;&gt;Asciidoc Docsy Stylesheet&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the Javascript code to react to user selections.
+Find my &lt;em&gt;javascript&lt;/em&gt; code under &lt;a href=&#34;https://github.com/tangly-team/tangly-os/tree/master/src/site/website/static/js&#34;&gt;Asciidoc Tabs Javascript&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The script code shall be included in the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; partials.
+Find the &lt;em&gt;HTML&lt;/em&gt; code under &lt;a href=&#34;https://github.com/tangly-team/tangly-os/tree/master/src/site/website/layouts/partials&#34;&gt;Hugo Docsy Partials&lt;/a&gt; in the file &lt;em&gt;footer.html&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An article using this functionality is &lt;a href=&#34;../../2023/c4-and-uml-with-plantuml&#34;&gt;C4 and UML with plantUML&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I hope that the tabular display extension will soon graduate to an official &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; extension.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_attachments&#34;&gt;Attachments&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I am a lecturer at &lt;a href=&#34;https://www.hslu.ch/en/lucerne-school-of-information-technology/&#34;&gt;Lucerne School of Information Technology&lt;/a&gt;.
+All my course materials are under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Creative Commons CC BY-SA&lt;/a&gt;..&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I wanted to provide recommended reading materials as a list of downloadable documents on the website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How can you provide this function with &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt;?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; theme as a merge request for exactly this function.
+The request was created in June 2021.
+It is still open end of November 2023, more than two years later
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I decided to add the necessary code as a local extension to the docsy theme.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Add the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; shortcodes to the theme under &lt;a href=&#34;https://github.com/tangly-team/tangly-os/tree/master/src/site/website/layouts/shortcodes&#34;&gt;Hugo Docsy Shortcodes&lt;/a&gt; in the file &lt;em&gt;attachments.html&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add my &lt;em&gt;scss&lt;/em&gt; stylesheet under &lt;a href=&#34;https://github.com/tangly-team/tangly-os/tree/master/src/site/website/assets/scss&#34;&gt;Asciidoc Docsy Stylesheet&lt;/a&gt; in the file &lt;em&gt;shortcodes.scss&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A document using this functionality is https:/blog.tangly.net/ideas/learnings/lectures/[Lectures].
+The page displays multiple lists of documents.
+The reader can download the material she is interested in.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_mundane_work&#34;&gt;Mundane Work&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I invested quite some time to improve the layout of the blog articles in the context of the &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; theme.
+&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; supports &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; out of the box.
+It does not mean that the layout is perfect.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Another tedious activity is to remove broken links from the website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; stylesheet had to be extended to support the additional features I am using.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The work is low tech.
+But I am convinced that users will appreciate the improvements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/static-website-improvements&#34;&gt;Static Website Improvements&lt;/a&gt;
+Marcel Baumann. 2023.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2021/improving-a-static-web-site-build-with-hugo-and-docsy&#34;&gt;Improving a Static Website Build With Hugo and Docsy&lt;/a&gt;
+Marcel Baumann. 2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/support-comments-for-static-hugo-website&#34;&gt;Support Comments for Static Hugo Website&lt;/a&gt;
+Marcel Baumann. 2020.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/creating-a-technical-website-with-hugo-and-asciidoc&#34;&gt;Creating a technical Website with Hugo and Asciidoc&lt;/a&gt;
+Marcel Baumann. 2020.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The extension is still beta level end of 2023.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. You can read the pull request under &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt;. Select the pull requests tab.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Pragmatic Java Application Design</title>
@@ -142,7 +316,7 @@ High-quality open source and commercial libraries are available to solve most re
 &lt;dd&gt;
 &lt;p&gt;Is a powerful and established logging approach for your productive systems.&lt;/p&gt;
 &lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Monitoring Micrometer&lt;/dt&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Monitoring with Micrometer&lt;/dt&gt;
 &lt;dd&gt;
 &lt;p&gt;Is an industry standard to monitor your productive solutions on premises or in the cloud.&lt;/p&gt;
 &lt;/dd&gt;
@@ -160,6 +334,11 @@ High-quality open source and commercial libraries are available to solve most re
 &lt;p&gt;Are used to create compliant invoices in Europe and Switzerland.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Limit the number of external libraries you are using in your products.
+Each additional framework increases maintenance costs and slow down your innovation progress.
+Java open-source projects are often laggards in adopting modern Java constructs.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The application could have a huge success and be sold as a product to customers.
@@ -963,7 +1142,7 @@ Marcel Baumann. 2017.&lt;/p&gt;
 Marcel Baumann. 2023.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2023//git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;
 Marcel Baumann. 2023.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -3144,7 +3323,7 @@ Marcel Baumann. 2017.&lt;/p&gt;
 Marcel Baumann. 2023.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2023//git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;
 Marcel Baumann. 2023.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -3558,7 +3737,7 @@ Marcel Baumann. 2017.&lt;/p&gt;
 Marcel Baumann. 2023.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../2023//git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;
+&lt;p&gt;&lt;a href=&#34;../../2023/git-tag-for-the-impatient/&#34;&gt;Git Tag for the Impatient&lt;/a&gt;
 Marcel Baumann. 2023.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -7559,7 +7738,7 @@ Your collaborators have access to 4K displays and professional keyboards, mice, 
 &lt;p&gt;&lt;a id=&#34;becoming-technical-leader&#34;&gt;&lt;/a&gt;[14] G. M. Weinberg, &lt;em&gt;Becoming a technical leader&lt;/em&gt;. Dorset House, 1986 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B004J4VV3I&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B004J4VV3I&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;skilled-facilitator&#34;&gt;&lt;/a&gt;[15] R. Schwarz, &lt;em&gt;The Skilled Facilitator&lt;/em&gt;. Jossey-Bass, 2002 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp//0787947237&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp//0787947237&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;skilled-facilitator&#34;&gt;&lt;/a&gt;[15] R. Schwarz, &lt;em&gt;The Skilled Facilitator&lt;/em&gt;. Jossey-Bass, 2002 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B0BT11C39N&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B0BT11C39N&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;humble-inquiry&#34;&gt;&lt;/a&gt;[16] E. H. Schein and P. A. Schein, &lt;em&gt;Humble Inquiry&lt;/em&gt;, Second. Berrett-Koehler Publishers, Incorporated, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1609949811&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1609949811&lt;/a&gt;&lt;/p&gt;
@@ -11460,7 +11639,7 @@ Marcel Baumann. 2016&lt;/p&gt;
 &lt;p&gt;&lt;a id=&#34;more-fearless-change&#34;&gt;&lt;/a&gt;[2] M. L. Manns, &lt;em&gt;More fearless change&lt;/em&gt;. 2015 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0133966445&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0133966445&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;skilled-facilitator&#34;&gt;&lt;/a&gt;[3] R. Schwarz, &lt;em&gt;The Skilled Facilitator&lt;/em&gt;. Jossey-Bass, 2002 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp//0787947237&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp//0787947237&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;skilled-facilitator&#34;&gt;&lt;/a&gt;[3] R. Schwarz, &lt;em&gt;The Skilled Facilitator&lt;/em&gt;. Jossey-Bass, 2002 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B0BT11C39N&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B0BT11C39N&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;great-scrum-master&#34;&gt;&lt;/a&gt;[4] Z. Sochova, &lt;em&gt;The Great ScrumMaster&lt;/em&gt;. Addison Wesley, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/013465711X&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/013465711X&lt;/a&gt;&lt;/p&gt;
@@ -17564,228 +17743,6 @@ Mistakes are expected when you are pushing for innovation.&lt;/p&gt;
 Apply the above principles in your environment.
 Learn and adapt.
 This is the essence of the agile empirical approach.&lt;/p&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Gradle 7</title>
-      <link>https://blog.tangly.net/blog/2021/gradle-7/</link>
-      <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/gradle-7/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;openblock float-group&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-11-02-head.png&#34; alt=&#34;2021 11 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; is my preferred build tool for all Java applications I am developing.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Google chose Gradle as the official build tool for Android.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Not only because build scripts are code, but because Gradle is modeled in a way that is extensible in the most fundamental ways.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Gradle’s model also allows it to be used for native development with C/C++ and can be expanded to cover any ecosystem.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;For example, Gradle is designed with embedding in mind using its Tooling API.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;What are my preferred goodies with the major version 7?&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_java_module_native_support&#34;&gt;Java Module Native Support&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Java modules were introduced with Java 9 in September 2017.
-Adoption was slow.
-Developers needed time to understand the tremendous advantages of language and compiler support of modules.
-Tooling was also a problem.
-It was cumbersome and error-prone to create Java modules either using the command line and experimental plugins.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; version 7 finally supports Java modules natively.
-Just use the &lt;em&gt;java-library&lt;/em&gt; plugin.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The plugin will detect the presence of a &lt;em&gt;module-info.java&lt;/em&gt; module declaration file and transparently switch to module compilation.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_dependencies_semantic_declaration&#34;&gt;Dependencies Semantic Declaration&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Gradle team has decided to introduce semantic support for the declaration of dependencies.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;All dependencies of a multi-module Java application are declared in a central file.
-The &lt;em&gt;libs.versions.toml&lt;/em&gt; file under the gradle subdirectory of the root build can contain all plugin and library dependencies.
-The declarations can be used in all subprojects.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Support is provided to group a set of related dependencies and use the alias in the various Gradle modules.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_intellij_support&#34;&gt;IntelliJ Support&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Jetbrains has improved support of Gradle in their new releases of IntelliJ.
-The 2021 versions offer native support of Gradle.
-Native support means IntelliJ finally uses Gradle for compilation and unit testing inside the IDE.
-You just need to take care of one build configuration and no more need to delve in the mysteries of IntelliJ build process.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The only glitch is that IntelliJ has its own concept of modules and are not synchronized with the Gradle modules.
-You have to be careful to align both structures to avoid surprises.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_jacoco_aggregated_test_coverage_reports&#34;&gt;Jacoco Aggregated Test Coverage Reports&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The support for coverage reports over multiple gradle subprojects is still limited.
-I use the following configuration to generate aggregated coverage report over all gradle modules.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;apply&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;plugin:&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#39;jacoco&amp;#39;&lt;/span&gt;      &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-
-&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;jacoco&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;                    &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;toolVersion&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;0.8.7&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-
-&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;jacocoTestReport&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;          &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;dependsOn&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;test&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;reports&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;xml&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;enabled&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;true&lt;/span&gt;
-        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;enabled&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;true&lt;/span&gt;
-    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-
-
-&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;register&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;jacocoRootReport&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;JacocoReport&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;      &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;subprojects&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;subproject&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;-&amp;gt;&lt;/span&gt;
-        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;subproject&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;plugins&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;withType&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;JacocoPlugin&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;configureEach&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-            &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;subproject&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;matching&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;({&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;extensions&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;findByType&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;JacocoTaskExtension&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;}).&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;configureEach&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;testTask&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;-&amp;gt;&lt;/span&gt;
-                &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;sourceSets&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;subproject&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;sourceSets&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;main&lt;/span&gt;
-                &lt;span style=&#34;color: #8250df&#34;&gt;executionData&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;testTask&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;
-            &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-            &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;subproject&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;matching&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;({&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;extensions&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;findByType&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;JacocoTaskExtension&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;}).&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;forEach&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-                &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;rootProject&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;jacocoRootReport&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;dependsOn&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;it&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;
-            &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-        &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;reports&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;xml&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;enabled&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;true&lt;/span&gt;
-        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;enabled&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;true&lt;/span&gt;
-    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-
-
-&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;withType&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;Test&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;finalizedBy&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;jacocoTestReport&lt;/span&gt;        &lt;i class=&#34;conum&#34; data-value=&#34;5&#34;&gt;&lt;/i&gt;&lt;b&gt;(5)&lt;/b&gt;
-    &lt;span style=&#34;color: #8250df&#34;&gt;useJUnitPlatform&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;jvmArgs&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#39;--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#39;--enable-preview&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#39;-XX:+ShowCodeDetailsInExceptionMessages&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;]&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;reports&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;junitXml&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;mergeReruns&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;true&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;options&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;setExcludeTags&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;([&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#39;integration&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;Set&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;
-    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;maxParallelForks&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;8&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;failFast&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;false&lt;/span&gt;
-&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;colist arabic&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Import the Jacoco plugin in the project&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Allows the selection of the Jacoco version.
-I found it useful when using the latest JDK version.
-JaCoCo developers have a slow release rhythm.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Configure JaCoCo to generate a html and an XML report.
-The binary report is no more supported by external tool.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;5&#34;&gt;&lt;/i&gt;&lt;b&gt;5&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Configure JaCoCo test report to be generated after the running of a test task&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock important&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Gradle has finally new plugins to better generate unit tests and test coverage reports for a multi-module project.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;test-report-aggregation&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;jacoco-report-aggregation&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The new approach to create aggregated reports is described in &lt;a href=&#34;../../2022/multi-module-test-reporting-with-gradle-7.x/&#34;&gt;Multi-module Test Reporting with Gradle 7&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_wishes&#34;&gt;Wishes&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I would greatly appreciate if the JaCoCo Gradle plugin is improved and align with the features of the Maven plugin.
-The process to aggregate the coverage reports on a multi-module project is cumbersome and brittle.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I am waiting for the Gradle 7.3 release to have native support of JDK 17.
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;
-The tool chain supports the newer JDKs without trouble but Gradle can only run with JDK 16 or older versions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Gradle 7.3 was released in the first half of November 2021. JDK 17 is now natively supported. As usual the early version of the next JDK - in this case JDK 18 - is only currently supported through the toolchain feature.
-&lt;/div&gt;
 &lt;/div&gt;
 
       </description>
