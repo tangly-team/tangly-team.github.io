@@ -1456,7 +1456,9 @@ discussion how organizations cope with the Java release cycle or are just laggar
       <description>
         
         
-        &lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-01-02-head.jpg&#34; alt=&#34;2021 01 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -1472,15 +1474,23 @@ They permeate how our modern civilization functions.&lt;/p&gt;
 &lt;p&gt;Identifiers are &lt;strong&gt;identifiers&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Identifiers cannot be changed at any time.
-Updating identifiers means introducing mapping relations between the old and the new values.&lt;/p&gt;
+&lt;p&gt;Identifiers cannot be changed at any time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Updating identifiers means introducing mapping relations between the old and the new values.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;quoteblock&#34;&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;In computer science, identifiers &lt;em&gt;IDs&lt;/em&gt; are lexical tokens that name entities.&lt;br/&gt;
-Identifiers are used extensively in virtually all information processing systems.&lt;br/&gt;
-Identifying entities makes it possible to refer to them, which is essential for any kind of symbolic processing.&lt;/p&gt;
+&lt;p&gt;In computer science, identifiers &lt;em&gt;IDs&lt;/em&gt; are lexical tokens that name entities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Identifiers are used extensively in virtually all information processing systems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Identifying entities makes it possible to refer to them, which is essential for any kind of symbolic processing.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
@@ -1488,8 +1498,10 @@ Identifying entities makes it possible to refer to them, which is essential for 
 &lt;h2 id=&#34;_external_well_defined_identifiers&#34;&gt;External Well-Defined Identifiers&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The best identifiers are externally well-defined identifiers.
-A unique and well-defined authority is responsible for defining and publishing them.
+&lt;p&gt;The best identifiers are externally well-defined identifiers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A unique and well-defined authority is responsible for defining and publishing them.
 Ideally, the authorities should only create new identifiers and never delete existing ones.
 The published information is available to all interested parties.&lt;/p&gt;
 &lt;/div&gt;
@@ -1595,10 +1607,10 @@ If your identifiers are strings, you shall clearly define the supported language
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_domain_driven_design&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Design&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;_domain_driven_design&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain-Driven Design&lt;/a&gt;&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Domain Driven Design &lt;em&gt;DDD&lt;/em&gt; is a powerful and modern approach to define agile software architecture.
+&lt;p&gt;Domain Driven Design &lt;em&gt;DDD&lt;/em&gt; is a powerful and modern approach to define agile software architecture [&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;2&lt;/a&gt;].
 Some key rules are related to identity.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;dlist&#34;&gt;
@@ -1612,7 +1624,7 @@ Any instance of an entity abstraction must have a unique identifier.&lt;/p&gt;
 &lt;dd&gt;
 &lt;p&gt;An aggregate is a group of objects that are bound together by a root entity, called the aggregate root.
 Objects outside the aggregate are allowed to hold references to the root but not to any other object of the aggregate.
-The aggregate root is responsible for checking the consistency of changes in the aggregate.
+The aggregate root is responsible for checking the consistency of changes in the aggregate.&lt;br/&gt;
 An aggregate is found and referenced through the identifier of the aggregate root entity.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Reference over aggregate through identity&lt;/dt&gt;
@@ -1686,7 +1698,7 @@ Marcel Baumann. 2021.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;This post discusses the value object pattern, and the factory pattern, which are tactical patterns in the domain-driven design
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;DDD&lt;/a&gt; approach.&lt;/p&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain-Driven Design&lt;/a&gt; approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Value objects represent typed values that have no conceptual identity in your domain.
@@ -1903,7 +1915,8 @@ This factory could provide multiple ways to create new instances.&lt;/p&gt;
 &lt;h2 id=&#34;_value_objects_in_persistent_store&#34;&gt;Value Objects in Persistent Store&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We encourage experimenting with the &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; approach for small projects.
+&lt;p&gt;We encourage experimenting with the &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; approach for small projects
+footnote:[The Eclipse foundation took over the MicroStream library in 2023 under the new name &lt;a href=&#34;https://eclipsestore.io/&#34;&gt;Eclipse Store&lt;/a&gt;.
 The effort to persist a Java object graph is very small.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -2829,12 +2842,16 @@ Marcel Baumann. 2020.&lt;/p&gt;
 The solution shall support future customer groups and expand to store additional information.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;Tags&lt;/em&gt;, also called labels provide an informal ontology to classify customer data.
-Tags are extensible and are machine-readable.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Tags&lt;/em&gt;, also called labels, provide an informal ontology to classify customer data.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;Comments&lt;/em&gt; empower users to store relevant unstructured information.
-Comments are only for human beings.&lt;/p&gt;
+&lt;p&gt;Tags are extensible and are machine-readable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Comments&lt;/em&gt; empower users to store relevant unstructured information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Comments are only for human beings.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;What are good approaches to provide searchable tags and labels and avoid wild growth of useless records?&lt;/p&gt;
@@ -2849,8 +2866,10 @@ Comments are only for human beings.&lt;/p&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Tags add semantic information to business entities.
-Tags are often defined as a crowd ontology without enforced schemas.
-Invest in domain modeling to define and maintain tags, and you will move tags to full-fledged ontology into your domain models.
+Tags are often defined as a crowd ontology without enforced schemas.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Invest in domain modeling to define and maintain tags, and you will move tags to full-fledged ontology into your domain models.
 This ontology supports meaningful search, segmentation and reporting over historical and geographical raw data.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -2874,7 +2893,7 @@ For example, you can associate geographical coordinates – GIS – to pictures,
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;For example, we could define a tag such as &lt;em&gt;geo:longitude=50.167958&lt;/em&gt; to provide the meta information of longitude to an entity.
+&lt;p&gt;For example, we could define a tag such as &lt;em&gt;geo:longitude=50.167958&lt;/em&gt; to provide the meta-information of longitude to an entity.
 This tag has a namespace &lt;em&gt;geo&lt;/em&gt;, a name &lt;em&gt;longitude&lt;/em&gt; and a double value &lt;em&gt;50.167958&lt;/em&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -2912,7 +2931,7 @@ The edition feature is part of the workflow and not part of the domain model.&lt
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;An author can be another computer system.
 It can provide information about its actions through comments.
-If the deletion of comments is disabled, the comment history is an audit trail documenting what happened overtime with an entity instance.&lt;/p&gt;
+If the deletion of comments is disabled, the comment history is an audit trail documenting what happened over time with an entity instance.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;admonitionblock warning&#34;&gt;
 &lt;table&gt;
@@ -2927,7 +2946,7 @@ If your application requires a user account, you can connect the author with the
 The consequence is that you should only disable these accounts and never delete them.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Policy should be defined to handle the fact that collaborators quit the company overtime and are no more active users; but they are still referenced as authors.&lt;/p&gt;
+&lt;p&gt;Policy should be defined to handle the fact that collaborators quit the company over time and are no more active users; but they are still referenced as authors.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -3023,9 +3042,11 @@ Marcel Baumann. 2021.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A software architect models customer domains and maps them to powerful software abstractions.
-Soon you correlate internal efficient identifiers, meaningful external identifiers, and domain entities.
-You enjoy our long conversations with the enterprise data architect and find out the system owning a specific external identifier.&lt;/p&gt;
+&lt;p&gt;A software architect models customer domains and maps them to powerful software abstractions [&lt;a href=&#34;#domain-storytelling&#34;&gt;1&lt;/a&gt;].
+Soon you correlate internal efficient identifiers, meaningful external identifiers, and domain entities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You enjoy long conversations with the enterprise data architect and identify the system owning a specific external identifier.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;How do you relate to external systems and communicate with other companies?&lt;/p&gt;
@@ -3045,22 +3066,25 @@ You enjoy our long conversations with the enterprise data architect and find out
 &lt;h2 id=&#34;_entity_concept&#34;&gt;Entity Concept&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We need an approach to model customer domain entities and map them to a legible and maintainable software construct.&lt;/p&gt;
+&lt;p&gt;We need an approach to model customer domain entities and map them to a legible and maintainable software construct
+[&lt;a href=&#34;#domain-driven-design&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;3&lt;/a&gt;].&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;An entity is a user domain model abstraction and is mapped to a software type.&lt;/p&gt;
+&lt;p&gt;An entity is a user domain model abstraction and is mapped to a software type.
+The entity has:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Any entity has a &lt;em&gt;unique mandatory internal&lt;/em&gt; object identifier &lt;strong&gt;&lt;em&gt;oid&lt;/em&gt;&lt;/strong&gt;, we recommend the use of numeric values to improve performance.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;unique mandatory internal&lt;/em&gt; object identifier &lt;strong&gt;&lt;em&gt;oid&lt;/em&gt;&lt;/strong&gt;, we recommend the use of numeric values to improve performance.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Public and &lt;em&gt;external identifier&lt;/em&gt; &lt;strong&gt;&lt;em&gt;id&lt;/em&gt;&lt;/strong&gt;, we recommend the use of text to adequately support various external identification schemes.
-An example is the European enterprise identifier EUID identifying a company or a certified natural person in Europe&lt;/p&gt;
+&lt;p&gt;A public and &lt;em&gt;external identifier&lt;/em&gt; &lt;strong&gt;&lt;em&gt;id&lt;/em&gt;&lt;/strong&gt;, we recommend the use of text to adequately support various external identification schemes.
+An example is the European enterprise identifier EUID identifying a company or a certified natural person in Europe.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Human-readable &lt;em&gt;name&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;A human-readable &lt;em&gt;name&lt;/em&gt;.
+A name does not need to be unique in the system.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -3089,15 +3113,19 @@ The comments can be extended to add audit information such as functional change 
 &lt;h2 id=&#34;_internal_object_identifiers_oid&#34;&gt;Internal Object Identifiers &lt;em&gt;oid&lt;/em&gt;&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The object identifier &lt;em&gt;oid&lt;/em&gt; uniquely identifies an instance in a given context.
-This identifier shall be a numerical value to increase the performance of persistent solutions.
-It is used as an internal identifier in the application.
-It should never be visible outside the system or published through an API.&lt;/p&gt;
+&lt;p&gt;The object identifier &lt;em&gt;oid&lt;/em&gt; uniquely identifies an instance of a specific type or belonging to a specific type hierarchy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This identifier shall be a numerical value to increase the performance of persistent solutions.
+It is used as an internal identifier in the application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It should never be visible outside the system or published through an API.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Ideally, the identifier is universally valid and uniquely identifies an instance in all contexts.
 For example, the concept of UUID tries to provide such an identifier.
-The drawback is that UUID is not a numerical value and cumbersome for a developer to memorize.&lt;/p&gt;
+The drawback is that the UUID is not a numerical value and cumbersome for a developer or a user to memorize.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;admonitionblock note&#34;&gt;
 &lt;table&gt;
@@ -3108,12 +3136,14 @@ The drawback is that UUID is not a numerical value and cumbersome for a develope
 &lt;td class=&#34;content&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;An interesting approach is to support unique identifiers in the context of a bounded domain.
-All entities of the domain will have unique object identifier.
-The implementation can use a sequence from the domain database or schema.
+All entities of the domain will have unique object identifier.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The implementation can use a sequence from the domain database or schema.
 A programmatic identity generator can also be established in the domain.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Because the &lt;em&gt;oid&lt;/em&gt; is never exported, the solution is as powerful and simple to realize.&lt;/p&gt;
+&lt;p&gt;Because the &lt;em&gt;oid&lt;/em&gt; is never exported, the solution is powerful and simple to realize.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -3124,8 +3154,10 @@ A programmatic identity generator can also be established in the domain.&lt;/p&g
 Please use a long value meaning 64 bits.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Avoid using the internal identifier to communicate with external systems.
-If you respect this rule, you are free to migrate your objects to another identification scheme in the future.
+&lt;p&gt;Avoid using the internal identifier to communicate with external systems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you respect this rule, you are free to migrate your objects to another identification scheme in the future.
 New schemes are often helpful when the application grows, or you have later to import and take over a lot of legacy data.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3134,14 +3166,14 @@ New schemes are often helpful when the application grows, or you have later to i
 &lt;h2 id=&#34;_external_object_identifiers_id&#34;&gt;External Object Identifiers &lt;em&gt;id&lt;/em&gt;&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The external unique identifier id shall uniquely identify an entity instance.
+&lt;p&gt;The external unique identifier &lt;em&gt;id&lt;/em&gt; shall uniquely identify an entity instance.
 It is used as an external identifier to communicate with other systems.
-It should always be visible outside the system and used in any API.&lt;/p&gt;
+It should always be visible outside the system and is used in any public API.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Try to have exactly one external identifier per object to communicate with external systems.
 This restriction is a corollary of the rule stating an instance is owned by exactly one system.
-This system is the one defining and managing the external unique identifiers.&lt;/p&gt;
+This system is the one defining and managing the external unique identifiers for the related instances.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You should clearly define the owning system for the external identification scheme.
@@ -3160,7 +3192,7 @@ Store externally defined identifiers as tags.
 Document these tags as specific for the external system.
 This approach scales to multiple external identifiers, and multiple systems managing the same external identifier.
 So you have a scalable approach and do not pollute your domain model with spurious information defined in external systems.
-Upon completion of refactoring, these tags document historical information and could safely be removed.&lt;/p&gt;
+Upon completion of the refactoring activities, these tags document historical information and could safely be removed.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Multiple external object identifiers imply the existence of mapping functions to identify the object referenced.
@@ -3174,7 +3206,7 @@ As soon as you modify identifiers, they are per definition no more real identifi
 &lt;h2 id=&#34;_names_name&#34;&gt;Names &lt;em&gt;name&lt;/em&gt;&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The entity name is a human-readable name to distinguish between entity instances.
+&lt;p&gt;The entity &lt;em&gt;name&lt;/em&gt; is a human-readable name to distinguish between entity instances.
 Ideally, it should be almost unique.
 The fallback is to use the external unique identifier &lt;em&gt;id&lt;/em&gt; known to all external systems.
 The drawback is that we have no guarantee it is legible for users.
@@ -3183,8 +3215,7 @@ Never require from your users memorizing external identifiers, please provide na
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;For example, the first and last names of a person is the name for a natural entity.
-Social security number is a possible external identifier.
-An internal identifier is used as a primary key in the persistence storage.&lt;/p&gt;
+Social security number is a possible external identifier An internal identifier is used as a primary key in the persistence storage.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3208,7 +3239,9 @@ An identifier is immutable and should be numerical for performance reasons.&lt;/
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;External identifiers can be tricky.
 In Switzerland, we had an old social security number, which is still referenced in a lot of legal systems.
-For example, it is still part of your tax salary yearly form.&lt;/p&gt;
+For example, it is still part of your tax salary yearly form.
+This is the reason I strongly advocate internal identifiers.
+You have no control over external systems providing accepted external identifiers.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;admonitionblock note&#34;&gt;
 &lt;table&gt;
@@ -3229,8 +3262,11 @@ For example, it is still part of your tax salary yearly form.&lt;/p&gt;
 &lt;em&gt;The same number is also used in medical insurance workflows.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We also have a federal identity card number, a federal passport number, a federal driver license number, additional medical card insurance numbers, a state tax personal identification number, and more external identifiers.
-All these external identifiers shall reference the same natural person.&lt;/p&gt;
+&lt;p&gt;We also have a federal identity card number, a federal passport number, a federal driver’s license number.
+Additional used identifiers are medical card insurance numbers, a state tax personal identification number.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All these external identifiers shall reference the same natural person.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;More interesting is that a tourist living in the European zone has none of these numbers.&lt;/p&gt;
@@ -3258,7 +3294,7 @@ Below the source code in modern Java is:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We provide a Java library BUS implementing these constructs.
+&lt;p&gt;We provide a Java library &lt;em&gt;core&lt;/em&gt; implementing these constructs.
 More information is available under &lt;a href=&#34;https://blog.tangly.net/&#34;&gt;tangly open source components&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3298,6 +3334,20 @@ Marcel Baumann. 2021.&lt;/p&gt;
 Marcel Baumann. 2021.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-storytelling&#34;&gt;&lt;/a&gt;[1] S. Hofer and H. Schwentner, &lt;em&gt;Domain Storytelling&lt;/em&gt;. Pearson Education, Limited, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B099ZNXCJT&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B099ZNXCJT&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[2] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[3] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -5412,7 +5462,7 @@ Software craftsmanship is&lt;/p&gt;
 How you do it is up to you.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;An extensive list of books can be found under &lt;a href=&#34;../../../ideas/learnings/books/&#34;&gt;Books&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;An extensive list of books can be found under &lt;a href=&#34;../../../../ideas/learnings/books/&#34;&gt;Books&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

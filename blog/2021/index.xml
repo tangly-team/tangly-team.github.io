@@ -1880,7 +1880,7 @@ One consequence is that students have a shallow understanding of more modern fra
 &lt;p&gt;The &lt;a href=&#34;../../../../../ideas/learnings/lectures&#34;&gt;slides of the SWAT course&lt;/a&gt; are available for all interested parties.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The course provides &lt;a href=&#34;../../../ideas/learnings/lectures/#software-architecture-and-techniques-lectures&#34;&gt;mandatory and optional literature&lt;/a&gt; for studying.&lt;/p&gt;
+&lt;p&gt;The course provides &lt;a href=&#34;../../../../ideas/learnings/lectures/#software-architecture-and-techniques-lectures&#34;&gt;mandatory and optional literature&lt;/a&gt; for studying.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The reference texts are [&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#refactoring&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#building-evolutionary-architectures&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#working-effectively-with-legacy-code&#34;&gt;4&lt;/a&gt;].&lt;/p&gt;
@@ -8912,7 +8912,9 @@ Sadly, students rarely work teams during their studies.&lt;/p&gt;
       <description>
         
         
-        &lt;div class=&#34;imageblock left&#34;&gt;
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
 &lt;img src=&#34;../pics/2021-01-02-head.jpg&#34; alt=&#34;2021 01 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
@@ -8928,15 +8930,23 @@ They permeate how our modern civilization functions.&lt;/p&gt;
 &lt;p&gt;Identifiers are &lt;strong&gt;identifiers&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Identifiers cannot be changed at any time.
-Updating identifiers means introducing mapping relations between the old and the new values.&lt;/p&gt;
+&lt;p&gt;Identifiers cannot be changed at any time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Updating identifiers means introducing mapping relations between the old and the new values.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;quoteblock&#34;&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;In computer science, identifiers &lt;em&gt;IDs&lt;/em&gt; are lexical tokens that name entities.&lt;br/&gt;
-Identifiers are used extensively in virtually all information processing systems.&lt;br/&gt;
-Identifying entities makes it possible to refer to them, which is essential for any kind of symbolic processing.&lt;/p&gt;
+&lt;p&gt;In computer science, identifiers &lt;em&gt;IDs&lt;/em&gt; are lexical tokens that name entities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Identifiers are used extensively in virtually all information processing systems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Identifying entities makes it possible to refer to them, which is essential for any kind of symbolic processing.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
@@ -8944,8 +8954,10 @@ Identifying entities makes it possible to refer to them, which is essential for 
 &lt;h2 id=&#34;_external_well_defined_identifiers&#34;&gt;External Well-Defined Identifiers&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The best identifiers are externally well-defined identifiers.
-A unique and well-defined authority is responsible for defining and publishing them.
+&lt;p&gt;The best identifiers are externally well-defined identifiers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A unique and well-defined authority is responsible for defining and publishing them.
 Ideally, the authorities should only create new identifiers and never delete existing ones.
 The published information is available to all interested parties.&lt;/p&gt;
 &lt;/div&gt;
@@ -9051,10 +9063,10 @@ If your identifiers are strings, you shall clearly define the supported language
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_domain_driven_design&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Design&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;_domain_driven_design&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain-Driven Design&lt;/a&gt;&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Domain Driven Design &lt;em&gt;DDD&lt;/em&gt; is a powerful and modern approach to define agile software architecture.
+&lt;p&gt;Domain Driven Design &lt;em&gt;DDD&lt;/em&gt; is a powerful and modern approach to define agile software architecture [&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;2&lt;/a&gt;].
 Some key rules are related to identity.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;dlist&#34;&gt;
@@ -9068,7 +9080,7 @@ Any instance of an entity abstraction must have a unique identifier.&lt;/p&gt;
 &lt;dd&gt;
 &lt;p&gt;An aggregate is a group of objects that are bound together by a root entity, called the aggregate root.
 Objects outside the aggregate are allowed to hold references to the root but not to any other object of the aggregate.
-The aggregate root is responsible for checking the consistency of changes in the aggregate.
+The aggregate root is responsible for checking the consistency of changes in the aggregate.&lt;br/&gt;
 An aggregate is found and referenced through the identifier of the aggregate root entity.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Reference over aggregate through identity&lt;/dt&gt;
@@ -9142,7 +9154,7 @@ Marcel Baumann. 2021.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;This post discusses the value object pattern, and the factory pattern, which are tactical patterns in the domain-driven design
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;DDD&lt;/a&gt; approach.&lt;/p&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain-Driven Design&lt;/a&gt; approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Value objects represent typed values that have no conceptual identity in your domain.
@@ -9359,7 +9371,8 @@ This factory could provide multiple ways to create new instances.&lt;/p&gt;
 &lt;h2 id=&#34;_value_objects_in_persistent_store&#34;&gt;Value Objects in Persistent Store&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We encourage experimenting with the &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; approach for small projects.
+&lt;p&gt;We encourage experimenting with the &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; approach for small projects
+footnote:[The Eclipse foundation took over the MicroStream library in 2023 under the new name &lt;a href=&#34;https://eclipsestore.io/&#34;&gt;Eclipse Store&lt;/a&gt;.
 The effort to persist a Java object graph is very small.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
