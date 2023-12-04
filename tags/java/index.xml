@@ -5,7 +5,7 @@
     <description>Recent content in java on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,278 @@
         
       
     
+    
+    <item>
+      <title>Blog: Gradle Good Practices</title>
+      <link>https://blog.tangly.net/blog/2023/gradle-good-practices/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/gradle-good-practices/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-12-01-head.png&#34; alt=&#34;2023 12 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; is a fast, dependable, and adaptable open-source build automation tool with an elegant and extensible declarative build language.
+Java is the primary supported programming language.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; is a popular build system for the JVM and is the default system for Android and Kotlin Multi-Platform projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It has a rich community plugin ecosystem.
+&lt;a href=&#34;https://groovy-lang.org&#34;&gt;Groovy&lt;/a&gt;, &lt;a href=&#34;https://kotlinlang.org&#34;&gt;Kotlin&lt;/a&gt;, C++, and &lt;a href=&#34;https://swift.org&#34;&gt;Swift&lt;/a&gt; stacks are well-supported.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle is fast, scalable, and can build projects of any size and complexity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Long ago I migrated all my projects from &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt; to &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt;
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In the first years, I sometimes regretted this decision due to missing or faulty plugins.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The plugins have now reached a level of maturity that you can do everything with Gradle
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_pros_and_cons&#34;&gt;Pros and Cons&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_advantages&#34;&gt;Advantages&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Great Flexibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;You can do everything within the build script as you write them with the full-fledged programming language Groovy or Kotlin based DSL.&lt;br/&gt;
+XML is a data modeling language and probably the worst programming language ever used.
+The &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt; approach to declarative builds is a reasonable idea, but the XML syntax is a nightmare.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Great Performance&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Gradle does an awesome job in speeding up your builds with features like incremental builds, daemons, and clustered builds.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Great IDE Support&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Jetbrains IntelliJ IDE has extensive Gradle support.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_drawbacks&#34;&gt;Drawbacks&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Steep learning curve&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Moreover, the whole team has to learn Gradle or you will be depending on the single Gradle ninja in your team.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Groovy or Kotlin DSL&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The dynamic Groovy DSL and the heterogeneous plugin APIs will make you google everything.
+Unexpected side effects, behavior, and interdependencies between plugins often feel like magic.
+As Groovy is dynamically typed, it is really hard for IDEs to provide good and fast tooling.
+Contrarily, parsing and interpreting Maven’s XML is dead simple.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Breaking Changes&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;New Gradle versions are often breaking existing plugins, and the poor maintainer of these one-man-open-source-projects cannot keep up with this speed.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Best practices how &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; scripts should be structured have quite changed over the years.
+The &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; team has learned a lot and has impressively improved the tooling.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As a drawback, I had to regularly refactor my scripts to keep them up to date with best practices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_maintain_your_build&#34;&gt;Maintain Your Build&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Build rot is the silent degradation of your build system’s effectiveness.
+It is a result of poor practices, neglect, or simply the passage of time.
+It is like rust corroding a piece of machinery.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In this case, it gradually eats into the heart of your build system, causing it to slow down, become unpredictable, or become more challenging to maintain.
+This phenomenon can manifest within any build tool, but for our exploration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;What are the most common sources of build rot?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Dependencies&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Poorly managed dependencies are one characteristic of build rot common to Maven and Gradle.
+Both build systems offer powerful dependency management capabilities.
+But neglecting regular updates to these dependencies can add vulnerable libraries to your build, directly impact build speed, and introduce compatibility issues.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An overly complex Gradle &lt;em&gt;build.gradle&lt;/em&gt; or maven &lt;em&gt;pom.xml&lt;/em&gt; file, cluttered with unnecessary dependencies or outdated plugins, can significantly extend build times and become a maintenance nightmare.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Use the &lt;a href=&#34;https://github.com/ben-manes/gradle-versions-plugin&#34;&gt;Versions Plugin&lt;/a&gt; to identify outdated dependencies and plugins.&lt;/em&gt;&lt;br/&gt;
+&lt;em&gt;Define all your dependencies in a central &lt;a href=&#34;https://docs.gradle.org/current/userguide/platforms.html&#34;&gt;version catalog&lt;/a&gt; configuration file.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Check your dependencies once a week and systematically update them.
+Use the latest version and run your unit and integration tests.
+If everything is green, you are good to go.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Over-customization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Gradle’s flexibility is one of its strong suits and yet it can ironically invite build rot.
+Over-customization, while seemingly advantageous in the short run, can result in a convoluted build.gradle files.
+These scripts can become so complicated that they require more effort to first comprehend and then maintain.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Define standard build processes as plugins in your &lt;a href=&#34;https://docs.gradle.org/current/userguide/organizing_gradle_projects.html&#34;&gt;buildSrc&lt;/a&gt;.&lt;/em&gt;&lt;br/&gt;
+&lt;em&gt;Eliminate all imperative logic from regular build.gradle scripts.&lt;/em&gt;
+&lt;em&gt;Better follow the conventions and processes of standard plugins instead of creating custom logic.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We use this approach in our projects and &lt;a href=&#34;https://github.com/tangly-team/tangly-os/&#34;&gt;Open Source Components&lt;/a&gt; to ensure a consistent build process across all projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Redundant tasks and misconfigured scripts&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Moreover, this complexity can have a significant impact on build speed.
+If scripts include redundant tasks, or simply take a long time to execute your Groovy or Kotlin configuration, the build speed can slow to a frustrating crawl.
+Misconfigured scripts can also lead to extended test times, further exacerbating the build rot.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Always prefer standard plugins to build artifacts.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Suboptimal parallelization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Another silent perpetrator of build rot is the under-utilization of parallel execution capabilities offered by both Maven and Gradle.
+Both support parallel builds.
+Not taking advantage of this feature can lead to unnecessarily long build times.
+Similarly, not properly organizing your project into modules can result in unnecessary rebuilds of unchanged code, further slowing down your build process.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Modern software engineering practices promote modularity and low-coupling between components.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Deprecated features and APIs&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Sticking with deprecated features or APIs in your build scripts can also contribute to build rot.
+These deprecated features might be less efficient than their newer counterparts and might be removed in future build tool versions.
+The time and effort needed to refactor your scripts, once these features are eventually removed, add to the maintenance burden and deepen the build rot.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Refactoring is a mandatory practice to integrate improvements of your build tool into your scripts.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Developers must understand the intricacies of these tools to use build systems like &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt; and &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; to the greatest effect.
+By promoting a learning culture, you equip your team with the knowledge they need to best leverage these tools.
+Regular training and knowledge-sharing sessions can help reduce build rot and enhance productivity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each team of developers should have one savvy build tool expert.
+Do not rely on external consultants or the build tool vendor to solve your problems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Update regularly your tools, plugins, and dependencies ensures you are leveraging the most efficient, optimized versions of libraries.
+This practice mitigates potential security issues and prevents the accumulation of &lt;em&gt;update debt&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I mean it.
+Update &lt;strong&gt;every&lt;/strong&gt; week.
+Run your continuous delivery pipeline to validate your changes.
+You reduce the risk of breaking changes and can react immediately.
+The updates remove known bugs and security issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Observability is critical in managing build rot.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Track your build and test times, identify trends, and analyze the impact of changes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Last millennium I had to migrate all my projects from &lt;a href=&#34;https://ant.apache.org/&#34;&gt;Apache Ant&lt;/a&gt; to &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. I had to wait until {ref-vaadin} provided an official supported &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; plugin.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Java Certification</title>

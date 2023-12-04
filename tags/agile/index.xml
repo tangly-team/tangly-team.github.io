@@ -5,7 +5,7 @@
     <description>Recent content in agile on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Dec 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/agile/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,7 +18,7 @@
     <item>
       <title>Blog: Semantic Commits for the Impatient</title>
       <link>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</link>
-      <pubDate>Thu, 23 Nov 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 02 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tangly.net/blog/2023/semantic-commits-for-the-impatient/</guid>
       <description>
@@ -26,7 +26,7 @@
         
         &lt;div class=&#34;imageblock left&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2023-12-02-head.png&#34; alt=&#34;2023 12 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;img src=&#34;../pics/2023-11-02-head.png&#34; alt=&#34;2023 11 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -259,6 +259,278 @@ Marcel Baumann. 2023.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I never needed the &lt;em&gt;doc&lt;/em&gt; tag. Feel free to use it if you find it useful for your product.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Gradle Good Practices</title>
+      <link>https://blog.tangly.net/blog/2023/gradle-good-practices/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/gradle-good-practices/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-12-01-head.png&#34; alt=&#34;2023 12 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; is a fast, dependable, and adaptable open-source build automation tool with an elegant and extensible declarative build language.
+Java is the primary supported programming language.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; is a popular build system for the JVM and is the default system for Android and Kotlin Multi-Platform projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It has a rich community plugin ecosystem.
+&lt;a href=&#34;https://groovy-lang.org&#34;&gt;Groovy&lt;/a&gt;, &lt;a href=&#34;https://kotlinlang.org&#34;&gt;Kotlin&lt;/a&gt;, C++, and &lt;a href=&#34;https://swift.org&#34;&gt;Swift&lt;/a&gt; stacks are well-supported.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle is fast, scalable, and can build projects of any size and complexity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Long ago I migrated all my projects from &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt; to &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt;
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In the first years, I sometimes regretted this decision due to missing or faulty plugins.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The plugins have now reached a level of maturity that you can do everything with Gradle
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_pros_and_cons&#34;&gt;Pros and Cons&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_advantages&#34;&gt;Advantages&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Great Flexibility&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;You can do everything within the build script as you write them with the full-fledged programming language Groovy or Kotlin based DSL.&lt;br/&gt;
+XML is a data modeling language and probably the worst programming language ever used.
+The &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt; approach to declarative builds is a reasonable idea, but the XML syntax is a nightmare.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Great Performance&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Gradle does an awesome job in speeding up your builds with features like incremental builds, daemons, and clustered builds.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Great IDE Support&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Jetbrains IntelliJ IDE has extensive Gradle support.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_drawbacks&#34;&gt;Drawbacks&lt;/h3&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Steep learning curve&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Moreover, the whole team has to learn Gradle or you will be depending on the single Gradle ninja in your team.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Groovy or Kotlin DSL&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The dynamic Groovy DSL and the heterogeneous plugin APIs will make you google everything.
+Unexpected side effects, behavior, and interdependencies between plugins often feel like magic.
+As Groovy is dynamically typed, it is really hard for IDEs to provide good and fast tooling.
+Contrarily, parsing and interpreting Maven’s XML is dead simple.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Breaking Changes&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;New Gradle versions are often breaking existing plugins, and the poor maintainer of these one-man-open-source-projects cannot keep up with this speed.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Best practices how &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; scripts should be structured have quite changed over the years.
+The &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; team has learned a lot and has impressively improved the tooling.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As a drawback, I had to regularly refactor my scripts to keep them up to date with best practices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_maintain_your_build&#34;&gt;Maintain Your Build&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Build rot is the silent degradation of your build system’s effectiveness.
+It is a result of poor practices, neglect, or simply the passage of time.
+It is like rust corroding a piece of machinery.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In this case, it gradually eats into the heart of your build system, causing it to slow down, become unpredictable, or become more challenging to maintain.
+This phenomenon can manifest within any build tool, but for our exploration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;What are the most common sources of build rot?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Dependencies&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Poorly managed dependencies are one characteristic of build rot common to Maven and Gradle.
+Both build systems offer powerful dependency management capabilities.
+But neglecting regular updates to these dependencies can add vulnerable libraries to your build, directly impact build speed, and introduce compatibility issues.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An overly complex Gradle &lt;em&gt;build.gradle&lt;/em&gt; or maven &lt;em&gt;pom.xml&lt;/em&gt; file, cluttered with unnecessary dependencies or outdated plugins, can significantly extend build times and become a maintenance nightmare.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Use the &lt;a href=&#34;https://github.com/ben-manes/gradle-versions-plugin&#34;&gt;Versions Plugin&lt;/a&gt; to identify outdated dependencies and plugins.&lt;/em&gt;&lt;br/&gt;
+&lt;em&gt;Define all your dependencies in a central &lt;a href=&#34;https://docs.gradle.org/current/userguide/platforms.html&#34;&gt;version catalog&lt;/a&gt; configuration file.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Check your dependencies once a week and systematically update them.
+Use the latest version and run your unit and integration tests.
+If everything is green, you are good to go.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Over-customization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Gradle’s flexibility is one of its strong suits and yet it can ironically invite build rot.
+Over-customization, while seemingly advantageous in the short run, can result in a convoluted build.gradle files.
+These scripts can become so complicated that they require more effort to first comprehend and then maintain.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Define standard build processes as plugins in your &lt;a href=&#34;https://docs.gradle.org/current/userguide/organizing_gradle_projects.html&#34;&gt;buildSrc&lt;/a&gt;.&lt;/em&gt;&lt;br/&gt;
+&lt;em&gt;Eliminate all imperative logic from regular build.gradle scripts.&lt;/em&gt;
+&lt;em&gt;Better follow the conventions and processes of standard plugins instead of creating custom logic.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We use this approach in our projects and &lt;a href=&#34;https://github.com/tangly-team/tangly-os/&#34;&gt;Open Source Components&lt;/a&gt; to ensure a consistent build process across all projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Redundant tasks and misconfigured scripts&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Moreover, this complexity can have a significant impact on build speed.
+If scripts include redundant tasks, or simply take a long time to execute your Groovy or Kotlin configuration, the build speed can slow to a frustrating crawl.
+Misconfigured scripts can also lead to extended test times, further exacerbating the build rot.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Always prefer standard plugins to build artifacts.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Suboptimal parallelization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Another silent perpetrator of build rot is the under-utilization of parallel execution capabilities offered by both Maven and Gradle.
+Both support parallel builds.
+Not taking advantage of this feature can lead to unnecessarily long build times.
+Similarly, not properly organizing your project into modules can result in unnecessary rebuilds of unchanged code, further slowing down your build process.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Modern software engineering practices promote modularity and low-coupling between components.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Deprecated features and APIs&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Sticking with deprecated features or APIs in your build scripts can also contribute to build rot.
+These deprecated features might be less efficient than their newer counterparts and might be removed in future build tool versions.
+The time and effort needed to refactor your scripts, once these features are eventually removed, add to the maintenance burden and deepen the build rot.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Refactoring is a mandatory practice to integrate improvements of your build tool into your scripts.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Developers must understand the intricacies of these tools to use build systems like &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt; and &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; to the greatest effect.
+By promoting a learning culture, you equip your team with the knowledge they need to best leverage these tools.
+Regular training and knowledge-sharing sessions can help reduce build rot and enhance productivity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each team of developers should have one savvy build tool expert.
+Do not rely on external consultants or the build tool vendor to solve your problems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Update regularly your tools, plugins, and dependencies ensures you are leveraging the most efficient, optimized versions of libraries.
+This practice mitigates potential security issues and prevents the accumulation of &lt;em&gt;update debt&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I mean it.
+Update &lt;strong&gt;every&lt;/strong&gt; week.
+Run your continuous delivery pipeline to validate your changes.
+You reduce the risk of breaking changes and can react immediately.
+The updates remove known bugs and security issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Observability is critical in managing build rot.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Track your build and test times, identify trends, and analyze the impact of changes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Last millennium I had to migrate all my projects from &lt;a href=&#34;https://ant.apache.org/&#34;&gt;Apache Ant&lt;/a&gt; to &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. I had to wait until {ref-vaadin} provided an official supported &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; plugin.
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2409,7 +2681,7 @@ git push --force origin my-feature              &lt;i class=&#34;conum&#34; data
 &lt;/td&gt;
 &lt;td class=&#34;content&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;git rebase rewrites the commit history.
+&lt;p&gt;Git rebase rewrites the commit history.
 It can be harmful to do it in shared branches.
 It can cause complex and hard to resolve merge conflicts.
 In these cases, instead of rebasing your branch against the default branch, consider pulling it with &lt;em&gt;git pull origin main&lt;/em&gt;.
@@ -9981,7 +10253,7 @@ The environment increases the productivity of your development teams.&lt;/p&gt;
 &lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;Agile Manifesto&lt;/a&gt; is an umbrella term that refers to a family of approaches that share common values and principles.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Scrum is a commonly used agile framework that offers suggestions for how work can be organized to maximize value to the end-user.&lt;/p&gt;
+&lt;p&gt;Scrum is a commonly used agile framework that offers suggestions for how work can be organized to maximize the value of the end-user.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -10065,7 +10337,7 @@ A clear sign of dysfunctional Scrum is when the content and the priority of back
 &lt;p&gt;The problem is when a team begins to use an agile framework incorrectly.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The team begins to focus more on their adherence to the process than they do to staying true to Agile values.&lt;/p&gt;
+&lt;p&gt;The team begins to focus more on their adherence to the process than they do to stay true to Agile values.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;This is Dark Agile &lt;a href=&#34;#detecting-agile-bullshit&#34;&gt;[4]&lt;/a&gt;.&lt;/p&gt;
@@ -10205,7 +10477,7 @@ Wikipedia&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The majority of software product development initiatives uses an agile approach.
+&lt;p&gt;The majority of software product development initiatives use an agile approach.
 The most popular framework is currently &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -10213,7 +10485,7 @@ The most popular framework is currently &lt;a href=&#34;https://scrumguides.org/
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Scarce resources and time-to-market constraints have driven the implementation of shoring development initiatives.
-Awareness that talent can be found at any location speed-up the trend.&lt;/p&gt;
+Awareness that talent can be found at any location speeds up the trend.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -10399,7 +10671,7 @@ Location of documents, source code, and artifacts should have the same availabil
 &lt;dt class=&#34;hdlist1&#34;&gt;Company Binding&lt;/dt&gt;
 &lt;dd&gt;
 &lt;p&gt;Effort must be put in the integration of the nearshore teams.
-Churn-rates can be as high as 50% per year.&lt;/p&gt;
+Churn rates can be as high as 50% per year.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Capabilities&lt;/dt&gt;
 &lt;dd&gt;
@@ -10437,7 +10709,7 @@ Is our company willing to:&lt;/p&gt;
 &lt;p&gt;Train all collaborators in cultural aspects?&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Host physical meetings using round-robin on all locations?&lt;/p&gt;
+&lt;p&gt;Host physical meetings using round-robin in all locations?&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Schedule all meetings so that all locations have similar constraints for early or late work?&lt;/p&gt;
@@ -10467,11 +10739,11 @@ Any role can be held by a local or a remote collaborator?&lt;/p&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The Corona crisis has pushed collaborators to work from home over a long period.
-I also observe that quite a few team are heavily distributed geographically and often live in different countries.&lt;/p&gt;
+I also observe that quite a few teams are heavily distributed geographically and often live in different countries.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;This constellation is not more a nearshore team.
-The organization has moved to an all-remote setup without common office location
+The organization has moved to an all-remote setup without a common office location
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -10549,7 +10821,7 @@ Marcel Baumann. 2021&lt;/p&gt;
 &lt;div id=&#34;footnotes&#34;&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Companies such as GitLab, SonarCloud, Attlassian adopted this model years ago.
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Companies such as GitLab, SonarCloud, and Attlassian adopted this model years ago.
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -16374,7 +16646,7 @@ It means an agile team has 25% higher relative probability to be victorious than
 &lt;/div&gt;
 &lt;div class=&#34;imageblock kroki&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;svg aria-labelledby=&#34;chart-title-container&#34; aria-roledescription=&#34;pie&#34; role=&#34;graphics-document document&#34; style=&#34;max-width: 584px;&#34; viewBox=&#34;0 0 584 450&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;100%&#34; id=&#34;container&#34;&gt;&lt;title id=&#34;chart-title-container&#34;&gt;Waterfall Methods Success 2020&lt;/title&gt;&lt;style&gt;#container{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;fill:#333;}#container .error-icon{fill:#552222;}#container .error-text{fill:#552222;stroke:#552222;}#container .edge-thickness-normal{stroke-width:2px;}#container .edge-thickness-thick{stroke-width:3.5px;}#container .edge-pattern-solid{stroke-dasharray:0;}#container .edge-pattern-dashed{stroke-dasharray:3;}#container .edge-pattern-dotted{stroke-dasharray:2;}#container .marker{fill:#333333;stroke:#333333;}#container .marker.cross{stroke:#333333;}#container svg{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:16px;}#container .pieCircle{stroke:black;stroke-width:2px;opacity:0.7;}#container .pieOuterCircle{stroke:black;stroke-width:2px;fill:none;}#container .pieTitleText{text-anchor:middle;font-size:25px;fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}#container .slice{font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;fill:#333;font-size:17px;}#container .legend text{fill:black;font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;font-size:17px;}#container :root{--mermaid-font-family:&amp;#34;trebuchet ms&amp;#34;,verdana,arial,sans-serif;}&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g transform=&#34;translate(292,225)&#34;&gt;&lt;circle class=&#34;pieOuterCircle&#34; r=&#34;186&#34; cy=&#34;0&#34; cx=&#34;0&#34;&gt;&lt;/circle&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ECECFF&#34; d=&#34;M-105.33076664233968,152.08691461969033A185,185,0,0,1,-10.445494515495682,-184.70487715360076L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;#ffffde&#34; d=&#34;M1.1327982892113017e-14,-185A185,185,0,1,1,-105.33076664233968,152.08691461969033L0,0Z&#34;&gt;&lt;/path&gt;&lt;path class=&#34;pieCircle&#34; fill=&#34;hsl(80, 100%, 56.2745098039%)&#34; d=&#34;M-10.445494515495682,-184.70487715360076A185,185,0,0,1,-1.982969563208622e-13,-185L0,0Z&#34;&gt;&lt;/path&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-133.551001662401,-37.625688764052725)&#34;&gt;39%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(132.4350917480173,41.38247181711403)&#34;&gt;60%&lt;/text&gt;&lt;text style=&#34;text-anchor: middle;&#34; class=&#34;slice&#34; transform=&#34;translate(-3.9186235595819006,-138.69465342758633)&#34;&gt;1%&lt;/text&gt;&lt;text class=&#34;pieTitleText&#34; y=&#34;-200&#34; x=&#34;0&#34;&gt;Waterfall Methods Success 2020&lt;/text&gt;&lt;g transform=&#34;translate(216,-33)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Successful&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,-11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Challenged&lt;/text&gt;&lt;/g&gt;&lt;g transform=&#34;translate(216,11)&#34; class=&#34;legend&#34;&gt;&lt;rect style=&#34;fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);&#34; height=&#34;18&#34; width=&#34;18&#34;&gt;&lt;/rect&gt;&lt;text y=&#34;14&#34; x=&#34;22&#34;&gt;Stopped&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;span class=&#34;alt&#34;&gt;waterfall-methods-success-2020&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;imageblock kroki&#34;&gt;
@@ -16728,315 +17000,6 @@ The first article describes &lt;a href=&#34;../../2019/agile-architecture-princi
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Lecture videos in German for Spring Semester 2021 are available under &lt;a href=&#34;https://tube.switch.ch/channels/iHdetJjwR4&#34;&gt;Switch Tube&lt;/a&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Effective Working in Digital Age</title>
-      <link>https://blog.tangly.net/blog/2021/effective-working-in-digital-age/</link>
-      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/effective-working-in-digital-age/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-02-03-head.jpg&#34; alt=&#34;2021 02 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Home office is the new way of working.
-A lot of friends and business partners are working from home.
-Our meetings are mostly online.
-We share documents and results through digital platforms.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I truly hope we continue to work online in the future.
-I would like to mix home office, local coworking space, and regular office attendance.
-I am convinced less commute time and a greener approach to work are certainly great improvements.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I would also state an obvious fact.
-My infrastructure at home is better.
-I have a better Internet connection.
-My display is a high-end 4K screen instead of a cheap HD version.
-Coffee is also really better.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;My life would be more productive and fun if more people did better understand how to work in a digital world.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Here are a few advices to improve our work experience.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_schedule_an_appointment&#34;&gt;Schedule an Appointment&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;If you are responsible for the meeting preparation, please:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Send me a calendar invitation in the &lt;a href=&#34;https://en.wikipedia.org/wiki/ICalendar&#34;&gt;icalendar&lt;/a&gt; format.
-The file extension should be &lt;em&gt;ics&lt;/em&gt; or &lt;em&gt;ical&lt;/em&gt;.&lt;br/&gt;
-Never email me asking for an appointment, please provide directly the invitation.&lt;br/&gt;
-Do not send invitations in the Outlook proprietary format.
-I use macOS and Linux, not Microsoft and Office.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Send me a meaningful invitation.
-Provide&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Purpose and goals of the meeting.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;An agenda, ideally each item has a tentative duration.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;An attendee list, normally visible in the ICS invitation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Attach the documents I shall read before the meeting in the invitation.
-You can also provide links to the documents.
-Please do not require a login to access the document.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Add the link and password for the online conference such as Zoom, Google Hangouts, Webex, Slack, or Microsoft Teams.&lt;br/&gt;
-For a physical meeting, please provide room identification and some information about how to get to the location.
-I do not know where the meeting room &lt;em&gt;Dijkstra-R1-8.815&lt;/em&gt; is.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You are responsible that all mandatory invitees will attend the meeting.
-If key persons cannot attend the meeting, you have to reschedule or cancel it.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Test your connection before initiating your call.
-Mute your microphone to avoid disturbing the call attendees.
-Please buy a professional headset.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Use tools such as Trello and Miro to have more collegial meetings.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The newer versions of major tools from Microsoft, Google, Cisco now include workable versions of whiteboard and voting tools.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_write_a_meeting_protocol&#34;&gt;Write a Meeting Protocol&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;If you are responsible for the meeting event, please:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;Check at the beginning of the meeting that all attendees have studied the provided documentation.
-You should politely ask unprepared attendees to leave the meeting
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Write a protocol describing the activities during the meeting.
-A well-written protocol has the following sections:&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;A copy of the agenda you sent to all attendees,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A short description of the discussion,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A list of decisions,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A list of tasks to implement.
-Each task has a description, a due date and one responsible.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Please send the link to the protocol for review to all attendees.
-Define the deadline when the protocol will be released.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Track the implementation of all tasks defined during the meeting and documented in the protocol
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Any meeting without such a protocol was in fact just a gathering to eat donuts and drink coffee.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Modern organizations have coffee breaks for such gatherings.
-With some luck, the organization provides high-grade coffee or tee, and perhaps a barista.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock tip&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Amazon meeting rules are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Start with silence&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;We read those memos, silently, during the meeting.
-It is like a study hall.
-Everybody sits around the table, and we read silently, for usually about half an hour, or however long it takes us to read the document.
-And then we discuss it.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;No PowerPoint presentation&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;No PowerPoints are used inside Amazon.
-Somebody for the meeting has prepared a six-page narrative structured memo.
-It has real sentences, and topic sentences, and verbs, and nouns.
-It is not just bullet points.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Two pizza sized teams&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;We try to create teams that are no larger than can be fed by two pizzas.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_share_a_document&#34;&gt;Share a Document&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The rules to share a document are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Avoid sending me a document per email.
-Send me the link to the document in a shared repository I have access to.
-I mean everybody is using Google Drive, DropBox, or Microsoft One Drive
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The rules to edit a document are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Do not assume I am using Microsoft Office.
-I use and strongly prefer LibreOffice.
-I support open-source software and formats.
-The Microsoft Office formal ISO/IEC 29500 definition is not even implemented in Office.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;When modifying a shared document, consider using the review mode as being polite to your team members.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/PDF&#34;&gt;PDF&lt;/a&gt; is the de facto standard to exchange documents in the wide world.
-Acrobat Reader is free to use on all major platforms.
-Acrobat Reader supports a review mode.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_communicate&#34;&gt;Communicate&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Please use a chat application like Slack to communicate.
-Do not email me and call 20 minutes later to ask me if I read your email.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Please call me to discuss a complicated topic or schedule a telco.
-Do not start an email trail to identify potential solutions to something complicated.
-We need to &lt;strong&gt;discuss&lt;/strong&gt; such themes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Remember the core rule over sane communication and a healthier work environment:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph text-center&#34;&gt;
-&lt;p&gt;&lt;em&gt;Praise in emails.
-Blame on the phone.&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_work_on_a_project&#34;&gt;Work on a Project&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Use &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; and set all source code and project artifacts under source code management.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Work with text formats.
-Avoid Microsoft Office or &lt;a href=&#34;https://www.libreoffice.org/&#34;&gt;LibreOffice&lt;/a&gt; formats for your documents.
-You cannot compute differences on such documents.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Consider &lt;a href=&#34;https://asciidoc.org/&#34;&gt;AsciiDoc&lt;/a&gt; as your preferred format.
-AsciiDoc is semantically equivalent to &lt;a href=&#34;https://en.wikipedia.org/wiki/DocBook&#34;&gt;DocBook&lt;/a&gt;.
-You can write whole books with AsciiDoc.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Adapt your analog processes to the digital world.
-Do not just copy them.
-Improve your processes and remove spurious activities.
-Introduce search capabilities for all produced artifacts.
-There are various tool solutions for Google, Microsoft, or old Lotus Notes to create, track, and archive meeting minutes.
-Similar offerings for web-hosted solutions are also available.
-These tools support the whole meeting planning, scheduling, and execution workflows.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Enjoy your online interactions.
-Go regularly drink a coffee or a beer with your peers.
-We are flesh and blood living beings.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. If meeting preparation is difficult in your organization, implement the Amazon meeting rules. Amazon adds a silent half an hour block at the beginning of the meeting to allow attendees to read the documentation. It is silent time, everybody reads; nobody talks.
-&lt;/div&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
-&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. In a digital world, please use a task tracking tool for this activity.
-&lt;/div&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
-&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. Beware you cannot search for such repositories, especially if you are using proprietary document formats such as Microsoft Office. The sole exception is Google Drive from the search engine company.
 &lt;/div&gt;
 &lt;/div&gt;
 

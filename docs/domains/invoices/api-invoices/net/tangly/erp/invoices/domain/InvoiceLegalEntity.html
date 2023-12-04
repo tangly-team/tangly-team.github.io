@@ -103,7 +103,7 @@ loadScripts(document, 'script');</script>
 <dd><code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasName</code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">InvoiceLegalEntity</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;vatNr, net.tangly.core.Address&nbsp;address, net.tangly.core.EmailAddress&nbsp;email)
+<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">InvoiceLegalEntity</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;vatNr, @NotNull net.tangly.core.Address&nbsp;address, net.tangly.core.EmailAddress&nbsp;email)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a>
 implements net.tangly.core.HasId, net.tangly.core.HasName</span></div>
 <div class="block">Defines a legal entity addressed in an invoice. The entity allows addressing an invoice to a recipient per post-mail or per electronic mail. Invoicing workflow is more and more
@@ -134,7 +134,7 @@ implements net.tangly.core.HasId, net.tangly.core.HasName</span></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,net.tangly.core.Address,net.tangly.core.EmailAddress)" class="member-name-link">InvoiceLegalEntity</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;vatNr,
- net.tangly.core.Address&nbsp;address,
+ @NotNull net.tangly.core.Address&nbsp;address,
  net.tangly.core.EmailAddress&nbsp;email)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates an instance of a <code>InvoiceLegalEntity</code> record class.</div>
@@ -153,7 +153,7 @@ implements net.tangly.core.HasId, net.tangly.core.HasName</span></div>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.Address</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.tangly.core.Address</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#address()" class="member-name-link">address</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-address"><code>address</code></a> record component.</div>
@@ -223,7 +223,8 @@ implements net.tangly.core.HasId, net.tangly.core.HasName</span></div>
  @NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;vatNr,
- net.tangly.core.Address&nbsp;address,
+ @NotNull
+ @NotNull net.tangly.core.Address&nbsp;address,
  net.tangly.core.EmailAddress&nbsp;email)</span></div>
 <div class="block">Creates an instance of a <code>InvoiceLegalEntity</code> record class.</div>
 <dl class="notes">
@@ -326,7 +327,8 @@ implements net.tangly.core.HasId, net.tangly.core.HasName</span></div>
 <li>
 <section class="detail" id="address()">
 <h3>address</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">net.tangly.core.Address</span>&nbsp;<span class="element-name">address</span>()</div>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull net.tangly.core.Address</span>&nbsp;<span class="element-name">address</span>()</div>
 <div class="block">Returns the value of the <a href="#param-address"><code>address</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
