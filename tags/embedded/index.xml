@@ -1,0 +1,387 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tangly Components – embedded</title>
+    <link>https://blog.tangly.net/tags/embedded/</link>
+    <description>Recent content in embedded on tangly Components</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://blog.tangly.net/tags/embedded/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Sensors and Actuators</title>
+      <link>https://blog.tangly.net/blog/2023/sensors-and-actuators/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/sensors-and-actuators/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-12-04-head.jpg&#34; alt=&#34;2023 12 04 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Embedded design maps domain abstractions to the underlying hardware.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A temperature sensor is a domain abstraction of a physical hardware temperature sensor.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A valve is a domain abstraction of a physical hardware valve.
+A physical valve can be a simple opened-closed device, or a proportional device.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The microcontroller board reads the temperature sensor through an I2C or SPI bus.
+It controls the valve through a GPIO, a PWM or a CAN bus controller.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;These hardware components map the domain object to the electronics controlling the physical device.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_model&#34;&gt;Model&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The C++ declaration of a valve object could be:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock text-center kroki-format-svg kroki&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;https://kroki.io/plantuml/svg/eNp9kEFLAzEQhe_7K4YepIu0oN4iFeoeqmDdgKBHidtpCaSZJYnbQ-l_d7PG3ejG5pS8N_lm3lh0YLEWRjgywFiWVUpYC2vaoGLsVagGS11ut3DMoD2X0JDcANWop_ltLFWKLA7aB5ECacuuECrS1n1bMxig006PhIscFtB2RoeheFThe3fTLs7-PqWScEM7g9bKBhN5PqV2N9fvLg_Oz7tz21_JHBEynieSz2aK69LJ_iH1-R6WT4yt-GMJx1Ms8bf1H6VYPheknSGl0HgvmPcvPOxnVUvyxvCYz--iBUcGzWByNYGuMYNdK41x_LDvaf6egnk9sPzEDOrDfkwqhO5J_t6Tou0MbuD9zsugEvoLO2byRA==&#34; alt=&#34;device-model&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The designers should decide if a &lt;em&gt;progressive valve&lt;/em&gt; is a kind of &lt;em&gt;on/off valve&lt;/em&gt; or not.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All instances of the namespaces &lt;em&gt;HAL&lt;/em&gt; and &lt;em&gt;BSP&lt;/em&gt; are static and created when the application starts.
+Our machines are not hot-pluggable.
+All components are wired and fixed with screws.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Relations between objects are defined through constructor parameters.
+This approach is a clean and legible &lt;a href=&#34;https://en.wikipedia.org/wiki/Dependency_injection&#34;&gt;Dependency Injection&lt;/a&gt; implementation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The algorithms should ideally only access the abstractions defined in the &lt;em&gt;model&lt;/em&gt; namespace.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The instantiation of objects should define the initialization of abstractions and the underlying physical devices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Do we start our system and bring all devices to a well-defined initial state?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Or do we start our system, retrieve the state of all devices and initialize our objects accordingly?
+This approach is only possible if each hardware component has sensors providing its current state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_c_approach&#34;&gt;C++ Approach&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A physical device shall be mapped to a C++ class.
+Instances of the class map to existing devices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Therefore, the copy constructor and the copy operator should be disabled.
+The physical devices are defined through the machine the software controls.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The software accesses the physical device through an electronics interface such as a GPIO, PWM or CAN controller.
+The mapping between the electronic component and the physical device is hardwired at construction.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;ValveOnOff&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;public:&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;open&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;close&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;bool&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;isOpen&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;const&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;private:&lt;/span&gt;
+    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;ValveOnOff&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;ValveOnOff&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;delete&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;;&lt;/span&gt;                           &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;ValveOnOff&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;operator&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;ValveOnOff&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;delete&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;;&lt;/span&gt;          &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;bool&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;_opened&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;;&lt;/span&gt;                                             &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;A physical device cannot be replicated.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;A physical device cannot be copied.&lt;br/&gt;
+You should evaluate if a default constructor does make sense.
+Often the constructor needs other objects connecting the abstraction to the hardware.
+This pattern is a hand-coded dependency injection through constructor parameters.&lt;br/&gt;
+The default move constructor and move operator can be useful.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Imply that the application resets the system when booting.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Constant mapping between the electronic wiring and logical representation shall be provided.
+The application should only need to change the mapping when the hardware layout is changed or a microcontroller revision is used.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_interrupt_routines&#34;&gt;Interrupt Routines&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Output devices do not need interrupts.
+A driver provides a function to output the new value on the electronics.
+As an example, the function writes the new value to a memory-mapped register.
+The designer is responsible to avoid concurrent access to the register.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Input devices should always support interrupts.
+Otherwise, the application must poll registers to detect changes.
+Polling is cumbersome and expensive.
+Either the programmer guesses a polling frequency and misses sometimes data.
+Or he chooses a high-frequency sampling rate and wastes computing resources.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sidebarblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+Interrupt routines are written in &lt;em&gt;C&lt;/em&gt; or in &lt;em&gt;assembler&lt;/em&gt;. The C++ language is not supported in interrupt routines.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Three major interrupt approaches exist:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The interrupt routine reads the new value of the sensor and stores the data at a defined location.
+The application accesses the sensor stored value when needed.&lt;/p&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach decouples the application from the external sensors.
+The drawback is that the program is not informed when a new value is received.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The interrupt routine reads the new value and sends the value as a message to interested parties.&lt;/p&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The approach is a reactive system triggering the application each time input data is received.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The interrupt routine calls a callback function.
+The callback function is a function pointer to a static C++ function and often has the reference of the object abstracting the sensor.
+Below is a potential implementation of the callback function and callback registration is shown.&lt;/p&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color: #6e7781&#34;&gt;/**
+ * @brief Register a callback function to be called when data is received.
+ * @param callback The callback function.
+ * @param self The reference to the object.
+ */&lt;/span&gt;
+&lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;registerCallback&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;callback&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;)(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color: #cf222e&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Sensor&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;public:&lt;/span&gt;
+&lt;span style=&#34;color: #6e7781&#34;&gt;/**
+ * @brief Declares the static callback function.
+ * @param self The reference to the object.
+ * @param data The data received.
+ * @param length The length of the data.
+ */&lt;/span&gt;
+ &lt;span style=&#34;color: #cf222e&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;callback&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;Sensor&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;self&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;reinterpret_cast&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;Sensor&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;*&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;callback&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #6e7781&#34;&gt;/**
+ * @brief Object callback function.
+ * @param data The data received.
+ * @param length The length of the data.
+ */&lt;/span&gt;
+&lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;callback&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #6e7781&#34;&gt;// 1. do something with the data. If the sensor is a thread, protect the object data with a mutex or a lock.&lt;/span&gt;
+    &lt;span style=&#34;color: #6e7781&#34;&gt;// 2. if the sensor is an actor, create a message with the payload and send it to own mailbox.&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The interrupt routine or the underlying hardware can handle sensor inputs in two ways:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Data is retrieved regularly.
+This synchronous approach gives a rhythm to the system but often uses computing resources without gains.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data is retrieved when a value has changed.
+Either the hardware detects the change or the interrupt routine compares the received data with the stored value.&lt;/p&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach is purely reactive.
+Algorithms are only triggered when the external system has changed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I recommend interrupt triggering input data gathering and reacting to input &lt;strong&gt;changes&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This design approach minimizes microcontroller resource consumption and simplifies the control algorithms.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_tasks_and_synchronization&#34;&gt;Tasks and Synchronization&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_actuators&#34;&gt;Actuators&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Actuators are often plain old objects.
+Modern microcontrollers provide memory-mapped registers to propagate the value to the actuator hardware.
+The update operation often writes a new value to a memory-mapped register.
+The writing into one register is atomic and does not need additional synchronization.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If the update operation is more complex and writes multiple registers, the operation should be protected by a mutex.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware that mutexes can create deadlocks.
+The cleanest approach is to use mutexes with priority inheritance.
+Therefore, a task will never have to wait for a lower priority task to release a lock or a mutex.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Another trick is to set all writing tasks to the same priority.
+This guarantees that an update operation is not interrupted by another task requesting the same resource.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You could also implement the actuator with a tread.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach is often overkill.
+It complicates unnecessary application design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_sensors&#34;&gt;Sensors&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Sensors shall always be implemented as a thread.
+Otherwise, a client calling an actuator with a synchronous call and waiting for a sensor result will block the whole system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Another trick is to use an interrupt routine to trigger the sensor reading and publish the data on a message queue.
+The interrupt routine takes the role of the thread.
+This guarantees that clients are not blocked by the sensor reading because they get the data asynchronously.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Try to define the simplest model to implement your features.
+Follow the &lt;a href=&#34;https://en.wikipedia.org/wiki/KISS_principle&#34;&gt;Keeep It Simple, Stupid&lt;/a&gt; principle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Model the physical world.
+A valve, a GPIO, a CAN controller are real things.
+Model them.
+Do not try to hide things.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The introductory book &lt;em&gt;Realtime C++&lt;/em&gt; [&lt;a href=&#34;#realtime-cpp&#34;&gt;1&lt;/a&gt;] is a rigorous introduction how to program microcontrollers in C++.
+You learn how to access hardware resources from C++ and what are the costs of various C++ constructs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use the actor pattern to implement thread communication &lt;a href=&#34;#distributed-asynchronous-systems&#34;&gt;[3]&lt;/a&gt; &lt;a href=&#34;#actors-in-cpp&#34;&gt;[4]&lt;/a&gt; &lt;a href=&#34;#actors-cmsis-cpp&#34;&gt;[5]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;distributed-asynchronous-systems&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2025/distributed-systems/&#34;&gt;Distributed Asynchronous Systems&lt;/a&gt;.
+Marcel Baumann.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;actors-in-cpp&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/actors-in-cpp/&#34;&gt;Actors in C++&lt;/a&gt;.
+Marcel Baumann.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;actors-cmsis-cpp&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2024/actors-with-cmsis-os-in-cpp/&#34;&gt;Actors with CMSIS in C++&lt;/a&gt;.
+Marcel Baumann.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;realtime-cpp&#34;&gt;&lt;/a&gt;[1] C. Kormanyos, &lt;em&gt;Real-Time C++ Efficient Object-Oriented and Template Microcontroller Programming&lt;/em&gt;. Springer Berlin / Heidelberg, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B099J441CH&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B099J441CH&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

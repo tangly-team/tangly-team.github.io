@@ -5,7 +5,7 @@
     <description>Recent content in java on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Dec 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,247 @@
         
       
     
+    
+    <item>
+      <title>Blog: Command Interpreter</title>
+      <link>https://blog.tangly.net/blog/2023/command-interpreter/</link>
+      <pubDate>Sun, 10 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/command-interpreter/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-12-03-head.jpg&#34; alt=&#34;2023 12 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Most digital products have a command interpreter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;External systems send requests to the system and often await an answer.
+A command interpreter can model this behavior.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The channels used to transmit requests and return answers are variable.
+Messages can be transmitted other various buses and protocols.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An operator can send a command over a &lt;a href=&#34;https://en.wikipedia.org/wiki/CAN_bus&#34;&gt;CAN bus&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Serial_Peripheral_Interface&#34;&gt;Serial Peripherical Interface&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Ethernet&#34;&gt;Ethernet&lt;/a&gt; or &lt;a href=&#34;https://en.wikipedia.org/wiki/Bluetooth&#34;&gt;Bluetooth&lt;/a&gt; connection.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A regular command line interpreter inputs commands as a string containing a request and associated parameters.
+The answer is displayed as a string.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The processed commands are the instructions executed on the machine.
+They are independent of the transmission layer and communication protocol.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How could you design such a versatile interface using modern software constructs from Java or C++?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Which design delegates most of the validation to the compiler
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_command_descriptors_and_commands&#34;&gt;Command Descriptors and Commands&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A description of a command could be encoded in a set of classes defining a bounded domain.
+This approach is often used in command line interpreters.
+It works well, but the compiler will not validate the descriptors.
+The solution does not well integrate with modern communication protocols such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Protocol_Buffers&#34;&gt;Protocol Buffers&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A modern approach would be to encode the command universe as a sealed class hierarchy in Java.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A similar approach could be based on a variant template instance in C++.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The key concept is to encode the command structure into declarations instead of defining a domain model to describe them.
+The sole drawback of this approach is that you cannot dynamically add a command type.
+You have to declare a new class and compile the program
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock text-center kroki-format-svg kroki&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;https://kroki.io/plantuml/svg/eNqVUktLAzEQvu-vGHpSwQWvtiy0CiL0Vm_iYZpM22AyKUlEofjfTbIPd2tX2j3sbmaS7zVRHMhtUBA8GAlwKCA-igMoeXU9zatVcIq3wGioLa2t1YQMO_Rz9p_kUuO7KFSHtiS5JZcwZzNPqElWFdBXIJY-Ux3idqHR59XC2vcXh-xRBGU5nnEkrEtnlNlrMsTB9zBrmXMh7AeHZwkbZ830qBZsXVlagfoRA4GMr2aXSZsA82fgMkSN2UqtLQlL5Z6gmhs7nubvQuDG9GqvVbjceSPr9a3n_Lc25jySj9GWZdUCtAqbJBeokeNAz03gn7jXNdQwhScK40xnDf8kPQ48_yW5uYXJ3eTY5D1gvs5dUIPRlGUSPJphr3_CVN38ASioHqU=&#34; alt=&#34;commands&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The sealed class hierarchy defines the command types and their parameters.
+Each command type is defined through a class definition.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Instances of a command type are commands.
+Each command is defined through an instance of a class.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The sealed structure guarantees that the compiler will mark all code segments needing edition when a new command type is added.
+The sealed class structure and the pattern matching approach is a compiler-validated visitor pattern.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We decided to store the result of a query into an answer object.
+A computed answer can have a reference to the query initiating the processing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can pack the result into a future wrapper to support asynchronous command processing.
+The interpreter itself behaves as a synchronous command processor matching answers to the related query command.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_interpreters_and_dispatcher&#34;&gt;Interpreters and Dispatcher&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The interpreter is quite simple to realize.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It processes all commands it is in charge of.
+An interpreter is in charge of one or more command sets with a specific group identifier.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A second responsibility is to build a command object based on input data.
+It parses the input and generates the command instance representing the received data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Object-oriented approach states that you should not mix the received data with the internal command classes.
+Do not inherit from any classes defined in the channel abstraction.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Domain-driven design approach clearly states the channels are interfaces to a bounded domain.
+No abstraction defined in the interface layer should pollute the domain model.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The dispatcher delegates the processing to multiple interpreters.
+Each subsystem can provide their interpreter to execute commands specific to the bounded domain.
+The dispatching criteria is either a group identifier or an interface marker.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock text-center kroki-format-svg kroki&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;https://kroki.io/plantuml/svg/eNp9UU1PwzAMvedXWDulaJs4w7ET0m5IcEMcvNTrIrVJ5YQvVfvvOF3L2lLIIZHz7OdnP-si8RENQV4X-xQ0THIDtArkHLyvCB0YdI_sDYWgrYtQsn9rMtWlSCE0yIH0U2TrypdXiPQZsxl4-IokUIER-8JrOqMLR8-1TummLi61fcUC2sHv3gp3L6qDfF2jK9apaX5C56gCc3kzdVbKVBhCAnc2NBjNScZsr1RMpQ0yup5uYg2jgReT86HHL1kC6j_ETGXcbDawut1u3Wruw11qP0RBKTs2bCBux_tiwmInW9YjuR9sI3WfExsE_hnuwfN_HiXWZ7FVZ_cz2u53wfoJ8ww_fwPMxtBc&#34; alt=&#34;command-interpreter&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A channel receives and transmits command data.
+The channel should be able to extract the message group from a raw message.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Why should we support multiple channels to propagate commands?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An operator would input commands as text on a command line.
+An external software system would send commands through a bus such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Ethernet&#34;&gt;Ethernet&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/CAN_bus&#34;&gt;CAN bus&lt;/a&gt; or &lt;a href=&#34;https://en.wikipedia.org/wiki/Serial_Peripheral_Interface&#34;&gt;Serial Peripherical Interface&lt;/a&gt;.
+Multiple channels are a requirement for a versatile command interpreter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I recommend &lt;a href=&#34;https://en.wikipedia.org/wiki/Protocol_Buffers&#34;&gt;Protocol Buffers&lt;/a&gt; for binary encoding of commands, queries, and answers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_channels&#34;&gt;Channels&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The channel decodes all commands send through it into a command instances.
+The channel has knowledge of the command structure.
+This is needed to decode the command and dispatch it to the right interpreter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach delegates the encoding and decoding of commands to messages to the channel.
+This approach is the standard one for bus communication.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The payload of the message does not need to be interpreted by the channel.
+This activity can be delegated to the interpreter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Consider using a factory pattern for the decoding operations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you are using the Google &lt;a href=&#34;https://en.wikipedia.org/wiki/Protocol_Buffers&#34;&gt;Protocol Buffers&lt;/a&gt; library, you will have to describe the structure of all messages send over the channel.
+The library will generate the code to encode and decode the messages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The same can be said if your transmission format is &lt;a href=&#34;https://en.wikipedia.org/wiki/JSON&#34;&gt;JSON&lt;/a&gt; and you want to validate the structure of the messages with a &lt;a href=&#34;https://json-schema.org&#34;&gt;JSON Schema&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The above describes constraints are in line with how major encoding approaches are designed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_thoughts&#34;&gt;Thoughts&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This design approach is almost codified as a design pattern.
+The solution is constrained by the decision to use the compiler toolchain to validate the command types and to program the processing with a pattern matching approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach melts object-orientation with functional aspects.
+It reflects the evolution of modern programming languages blending object-orientation and functional approaches.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. A powerful software quality approach is to delegate validation activities to the compiler.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. Agile and DevOps approaches mitigate the problem. You should be able to generate a new version of your application in at most a few minutes without manual activities.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Gradle Good Practices</title>
@@ -11287,7 +11528,7 @@ You want to have a legible code, start using hamcrest to write clear assertions 
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Please never access a database or a file system when running unit tests.
-If you low-level tests with files, just use an
+If you low-level tests with files, use an
 &lt;a href=&#34;https://github.com/google/jimfs&#34;&gt;in-memory file system mock&lt;/a&gt;.
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -11410,20 +11651,20 @@ But a collocated team still rocks.&lt;/p&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;IntelliJ IDEA&lt;/dt&gt;
 &lt;dd&gt;
 &lt;p&gt;This IDE is the choice for refactoring, powerful context suggestions, and efficient programming.
-If you use Eclipse or Netbeans, just try a friendly refactoring competition with an IDEA convert.&lt;/p&gt;
+If you use Eclipse or Netbeans, try a friendly refactoring competition with an IDEA convert.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Git&lt;/dt&gt;
 &lt;dd&gt;
 &lt;p&gt;Stop using Subversion, CVS, TFS or other geriatric tools.
 Agile development, efficient integration in delivery pipelines, and extensive refactoring require Git.
-Just migrate now to &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; and leave dreaded message &lt;em&gt;Tree conflict detected, please solve manually&lt;/em&gt; behind you.&lt;/p&gt;
+Migrate now to &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; and leave dreaded message &lt;em&gt;Tree conflict detected, please solve manually&lt;/em&gt; behind you.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;These tools shall be used in the agile way.
 You do not have long-lived branches in your source code management tool.
-Either you have only short-lived local branches or better, you just work against the trunk.
+Either you have only short-lived local branches or better, you work against the trunk.
 Complex branching strategies are just a waste for a lean practitioner.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
