@@ -5,7 +5,7 @@
     <description>Recent content in tangly OS components on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Dec 2023 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,342 @@
       
       
     
+    
+    <item>
+      <title>Blog: Bus Sensors and Actuators</title>
+      <link>https://blog.tangly.net/blog/2023/bus-sensors-and-actuators/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2023/bus-sensors-and-actuators/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2023-12-05-head.jpg&#34; alt=&#34;2023 12 05 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your embedded system has a set of sensors and actors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Some sensors and actors are connected to a bus.
+Typical buses are &lt;a href=&#34;https://en.wikipedia.org/wiki/CAN_bus&#34;&gt;CAN bus&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Serial_Peripheral_Interface&#34;&gt;Serial Peripherical Interface&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Ethernet&#34;&gt;Ethernet&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Bluetooth&#34;&gt;Bluetooth&lt;/a&gt;, or &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I2C&lt;/a&gt; standards.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The bus is a shared medium used to communicate with a set of external active or passive components.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Which design rules shall you follow when designing sensors and actors using a bus architecture?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Do you need to consider threading design?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Should you use synchronous or asynchronous communication?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Should you provide queues for sending and receiving messages?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_synchronous_sending&#34;&gt;Synchronous Sending&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Your application can always send messages to a bus synchronously.
+These messages are in general commands to physical devices connected through the bus.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_synchronous_unbuffered_sending&#34;&gt;Synchronous Unbuffered Sending&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The send function is a blocking operation until the message is transformed into a frame and sent over the bus.
+You should select this approach only if the frame creation and the bus frame transmission is fast.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware that bus contention can slow down the frame transmission.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;I do not recommend this approach if you send burst of messages or messages with bigger payloads.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The approach works well for transmitting irregular short frames and is simple to implement.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Analyze the application call stack for all synchronous sending operations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If some driver functions use blocking calls such as polling waits, the thread, the process and in the worst case, the processor core can be blocked until the call returns.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If the instruction is a slow initialization request, the system freezes for tens of seconds.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_asynchronous_buffered_sending&#34;&gt;Asynchronous Buffered Sending&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern bus drivers are able to buffer messages and return immediately.
+Often &lt;a href=&#34;https://en.wikipedia.org/wiki/CAN_bus&#34;&gt;CAN bus&lt;/a&gt; drivers are implemented with a transmission queue.
+This approach provides asynchronous processing of a synchronous transmission request.
+The caller still has to handle the case when the queue is full.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware that transmission errors are not reported back synchronously to the caller.
+An asynchronous error can be reported through a callback function.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;This approach requires a &lt;strong&gt;thread&lt;/strong&gt; to process the queue.&lt;/em&gt;
+&lt;em&gt;The processing thread is either part of the bus driver or part of the application.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Microcontrollers sometimes implement the thread as an interrupt service routine.&lt;/em&gt;
+&lt;em&gt;I would try to avoid the interrupt routine approach if you have a RTOS available.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;This approach scales well for hundreds of devices and thousands of messages per second.&lt;/em&gt;&lt;/strong&gt;
+&lt;strong&gt;&lt;em&gt;The sole limitation is the bus bandwidth.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_asynchronous_receiving&#34;&gt;Asynchronous Receiving&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Please never use a synchronous receiving operation approach.
+If you do so, you will block the thread until a message is received.
+The waiting time is unpredictable.
+If the sending function call graph also handles the sending of the message, you will end up in a deadlock.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is a major design rule.
+You must at least once break the synchronous application calling sequence of sending and receiving frames.
+Therefore, you need at least two threads in your solution.
+&lt;em&gt;One application thread and one bus driver thread.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_asynchronous_callbacks&#34;&gt;Asynchronous Callbacks&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The bus driver can call a callback function when a message is received.
+The asynchronous called function is executed in the context of the bus driver.
+Therefore, the callback function shall delegate further processing to another thread.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://opensource.lely.com/canopen/&#34;&gt;lely CANOpen&lt;/a&gt; asynchronous callback when a PDO is written in the memory of the device representation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;The documentation clearly states the user is responsible to provide needed threads for processing.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The design of the &lt;a href=&#34;https://opensource.lely.com/canopen/&#34;&gt;lely CANOpen&lt;/a&gt; is an example of shared memory implementation.
+The device state is replicated in the local application.
+The bus receives frames and updates the local device state objects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Changes are propagated to the application with registered asynchronous callbacks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/CANopenNode/CANopenNode&#34;&gt;CANopenNode&lt;/a&gt; is another example of a &lt;a href=&#34;https://en.wikipedia.org/wiki/CAN_bus&#34;&gt;CAN bus&lt;/a&gt; driver.
+All code of the &lt;a href=&#34;https://github.com/CANopenNode/CANopenNode&#34;&gt;CANopenNode&lt;/a&gt; driver is non-blocking.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The callback shall not block the bus driver thread.
+It should hand over the payload to another thread for further processing.
+The handover is easily done by sending a message to the processing thread.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;This approach is implemented through the actor model.&lt;/em&gt;&lt;/strong&gt;
+&lt;strong&gt;&lt;em&gt;All realtime operating systems support this approach through tasks and message queues.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_performance&#34;&gt;Performance&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use a synchronous calling sequence for all sending operations only if the bus frame transmission is fast.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Break a synchronization calling sequence for all receiving operations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The actor model is an ideal solution for asynchronous message processing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph text-center&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;image text-center&#34;&gt;&lt;img src=&#34;../pics/2023-12-05-can.png&#34; alt=&#34;2023 12 05 can&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://opensource.lely.com/canopen/&#34;&gt;lely CANOpen&lt;/a&gt; design is based on a set of clever decisions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The implementation is completely passive.
+The library does not perform any I/O besides maybe reading some files from the disk.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It does not create threads nor does it access the system clock.
+Instead, it relies on the user to send and receive bus frames and update the clock.
+This allows the library to be easily embedded in a wide variety of applications.
+&lt;em&gt;This implies that the user shall provide at least one thread to run the library.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library is also &lt;strong&gt;asynchronous&lt;/strong&gt;.
+Issuing a request is &lt;strong&gt;always&lt;/strong&gt; a non-blocking operation.
+If the request is confirmed, the API accepts a callback function which is invoked once the request completes with success or failure.
+This allows the stack to run in a single thread, even when processing dozens of simultaneous requests.
+This configuration is not uncommon for a master node.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Threading is delegated to the user of the driver.
+The calling application is responsible for creating threads and protecting shared resources accessed through the callbacks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock text-center kroki-format-svg kroki&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;https://kroki.io/plantuml/svg/eNq1lE1vwjAMhu_9FT6OQ5HIEU2Iw7TbLuzKDiE1JVqbsMRAf_4cQkv4aIXEdqga2bH9-rHbuSfpaFdXWbblg1Z6Kw3BhyXrJhemN7e_vSKyTCrSe0nYxsQX5LMQAVPwaIoPX77UvhwlztNpCgYbCv5RVuB1LmP5XOGapsAu68Dhzw49AW3wmFibEuwaJKx2fmlq9F6WCNIUcJCawJpjeuDa40RpaIWf1zz_YgFrJ2tcoEK9xyLYz9pd8x6crO2oxOlyw1K2ziquxGJiTMwwbkO7zpSsqpVU37H1pLtQ_4qbiGjEEDfRZReD3MSF2j8A9xS5lIq4oXIRRGlQns-6Gp9oqO9q2is5aXzN-s8TuUkzPIfJvRU9DXzRRN7PLnG7P2EWLXllDUlteCxLE-yuiZL_Y5eHJ_L4nnYJ7vHpW9Ynwx_Z9ZQvHWzL2PdCXvZAnvOHwr_GX096uoo=&#34; alt=&#34;svg&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The operation &lt;em&gt;sendMsg&lt;/em&gt; simply adds a message to the driver mailbox.
+The operation &lt;em&gt;callback&lt;/em&gt; similarly adds a message to the motor actor mailbox.
+These operations are fast and non-blocking.
+Shared resources are the mailboxes.
+The RTOS explicitly protects these objects against concurrent modifications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The callback mechanism shall implement a selector.
+The callback function shall dispatch the message to the correct actor mailbox.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The selector is a simple mapping between the device identifier and the actor object if exactly one actor is responsible for the device.
+Otherwise, a more complex registration mechanism mapping a list of actors to a device identifier is required.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Both approaches are implemented with a few tens of source code lines.
+The C++ or Java standard libraries provide the required data structures and algorithms.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The activation blocks show when a thread is active in a single core processor.
+If multiple cores are available to the application, the threads can run in parallel when messages are delivered in actor mailboxes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In both cases, most of the time, actors are suspended waiting for the next message.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Do not ignore threading design when designing sensors and actors using a bus architecture.
+Bus architectures are common in embedded systems.
+Classical buses are &lt;a href=&#34;https://en.wikipedia.org/wiki/CAN_bus&#34;&gt;CAN bus&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Serial_Peripheral_Interface&#34;&gt;Serial Peripherical Interface&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Ethernet&#34;&gt;Ethernet&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I2C&lt;/a&gt; standards.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Future Tesla cars will use a &lt;a href=&#34;https://en.wikipedia.org/wiki/Ethernet&#34;&gt;Ethernet&lt;/a&gt; bus to connect all sensors and actors.
+&lt;a href=&#34;https://en.wikipedia.org/wiki/CAN_bus&#34;&gt;CAN bus&lt;/a&gt; is discarded as a legacy bus.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Subsystems will be connected through a &lt;a href=&#34;https://en.wikipedia.org/wiki/Ethernet&#34;&gt;Ethernet&lt;/a&gt; switch and have local processing capabilities.
+The latency is below 1 millisecond and is suitable for control by wire approaches.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Power is provided through a &lt;a href=&#34;https://en.wikipedia.org/wiki/Ethernet&#34;&gt;Ethernet&lt;/a&gt; cable and &lt;a href=&#34;https://en.wikipedia.org/wiki/Power_over_Ethernet&#34;&gt;Power over Ethernet&lt;/a&gt;.
+The standard voltage for the whole car is 48V.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The approach tremendously simplifies the wiring of the car.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Multiple devices connected to a bus are per nature asynchronous.
+You cannot predict when a device will send a message.
+Therefore, the reception and processing of a received message must be asynchronous and run in a separate thread.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Always provide send and receive queues for sending and receiving messages for sophisticated devices.
+The queues are used to decouple the bus driver from the application.
+All receive and transmit operations are asynchronous.
+This design implies asynchronous handling of protocol error codes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Small embedded systems shall use the RTOS provided primitives for communication between the driver and the application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Do not use abstraction layers to isolate the used realtime kernel.
+It makes the code more complex and less efficient.
+Modern development environments with powerful refactoring tools make the change of the RTOS simple.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Be honest.&lt;/em&gt;
+&lt;em&gt;You seldom replace the selected RTOS with another one in your device family.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;If you have a complex realtime system, evaluate using a linux based operating system.&lt;/em&gt;
+&lt;em&gt;Use linux design patterns to implement your application.&lt;/em&gt;
+&lt;em&gt;Training will be easier.&lt;/em&gt;
+&lt;em&gt;Numerous external suppliers can provide support.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Sensors and Actuators</title>
@@ -171,7 +507,8 @@ Or he chooses a high-frequency sampling rate and wastes computing resources.&lt;
 &lt;/div&gt;
 &lt;div class=&#34;sidebarblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-Interrupt routines are written in &lt;em&gt;C&lt;/em&gt; or in &lt;em&gt;assembler&lt;/em&gt;. The C++ language is not supported in interrupt routines.
+Interrupt routines are written in &lt;em&gt;C&lt;/em&gt; or in &lt;em&gt;assembler&lt;/em&gt;.
+The C++ language is not supported in interrupt routines.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -5501,7 +5838,7 @@ Try to reform them.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.pmi.org/disciplined-agile/process/governance&#34;&gt;PMI Disciplined Agile Corporate Governance&lt;/a&gt;.
-&lt;a href=&#34;https://pmi.org&#34;&gt;PMI&lt;/a&gt;. 2022&lt;/p&gt;
+&lt;a href=&#34;https://www.pmi.org/&#34;&gt;PMI&lt;/a&gt;. 2022&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -17293,484 +17630,6 @@ John Cutler. 2019&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_7&#34;&gt;
 &lt;a href=&#34;#_footnoteref_7&#34;&gt;7&lt;/a&gt;. To be honest, the biggest problem we have is to find collaborators with the required skill set.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Evaluate Technical CVs</title>
-      <link>https://blog.tangly.net/blog/2022/evaluate-technical-cvs/</link>
-      <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2022/evaluate-technical-cvs/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;openblock float-group&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-01-03-head.jpg&#34; alt=&#34;2022 01 03 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The goal of a &lt;em&gt;curriculum vitae&lt;/em&gt; is to get an invitation to a job interview.
-I review hundreds of CVs and must select a few candidates we should invite.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Each interview will cost hundreds of Euros to the company.
-I must minimize the number of interviews and increase the probability of a match.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Over the years I developed a checklist to select promising candidates.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The below checklist is biased to the Java technology check.
-When I use the verb &lt;strong&gt;explain&lt;/strong&gt; in a list item, I mean that I got a hint the candidate is aware of the concept and has used it in his applications.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Similar lists can be created for Javascript/Typescript, Python, Ruby, C++, or .NET developers.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_what_do_i_check&#34;&gt;What Do I Check?&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Education&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Which kind of education did the candidate pursue during his career?&lt;/p&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Formal Training&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;I expect a software developer to have formal training in computer science or related fields.
-A formal training is given by an accredited institution.
-The student receives a recognized certificate.&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The following information should be available:&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Title of the formation and information if it is a bachelor, a master, or an alternative title,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Time interval when the formation was attended and year when you graduated.&lt;br/&gt;
-&lt;em&gt;The regular bachelor study duration is three years.
-The master’s study duration is an additional one and a half years&lt;/em&gt;,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The name of the school where the formation was attended.
-I regularly look at the curriculum and the ranking of the institute to better understand your training.
-A link to the school is always welcome.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Checks are:&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Did the candidate study computer science?&lt;br/&gt;
-&lt;em&gt;If not, you should pursue an additional formation in computer-related fields.
-I want to hire a computer specialist, not an all-rounder&lt;/em&gt;,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;How long did the candidate study and when did he graduate?&lt;br/&gt;
-&lt;em&gt;It defines the potential years of experience&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;What is the ranking of the school delivering the title?&lt;br/&gt;
-&lt;em&gt;I often want to know the overall ranking of the institute and their curriculum strengths&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Continuous Formation&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;I expect a professional engineer to regularly pursue formal continuous training.
-The following information should be available:&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;What formation did he attend?&lt;br/&gt;
-&lt;em&gt;I am checking if the candidate pursued training in the areas she applies for.
-A team leader should train in soft skills and product management methods.
-An agile specialist should train in agile, Scrum and DevOps.
-A software architect should train in architecture and software design themes.
-A user interface developer should know about usability, accessibility, design and corporate interface standards.&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;When did he attend the continuous formation and year when the title was received?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Link to an authority providing proof of the certificate of the formation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Spoken Languages&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The workplace is international.
-Relevant computer science documentation are in English.&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The candidate shall be fluent in English in written and spoken forms.&lt;br/&gt;
-&lt;em&gt;A software specialist not being fluent in English is an imposter because he cannot read actual technical information&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The organization can request specific languages.
-German and Spanish companies are keen to have candidates speaking the national language.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Programming Capabilities&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A software developer shall be a proficient and trained programmer.
-Here are some examples of capabilities I look for if the candidate is a Java developer:&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Java versions he has experience with
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;br/&gt;
-&lt;em&gt;If his current projects use older versions of the language, I expect a professional to study the current version on his own&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Build tool he has experience with - &lt;a href=&#34;https://maven.apache.org/&#34;&gt;maven&lt;/a&gt;, &lt;a href=&#34;https://gradle.org/&#34;&gt;gradle&lt;/a&gt; -.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If he is a junior developer, I check if he has an official Java developer certificate.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Which libraries did she use?
-I expect &lt;a href=&#34;https://junit.org/junit5/&#34;&gt;JUnit&lt;/a&gt;, &lt;a href=&#34;https://site.mockito.org/&#34;&gt;Mockito&lt;/a&gt;, &lt;a href=&#34;https://assertj.github.io/doc/&#34;&gt;AssertJ&lt;/a&gt;,
-&lt;a href=&#34;https://www.slf4j.org/&#34;&gt;slf4j&lt;/a&gt;, &lt;a href=&#34;https://flywaydb.org/&#34;&gt;flyway&lt;/a&gt;, &lt;a href=&#34;https://github.com/FasterXML/jackson&#34;&gt;Jackson&lt;/a&gt;.
-More capable developers often cite &lt;a href=&#34;https://projectlombok.org/&#34;&gt;lombok&lt;/a&gt;, &lt;a href=&#34;https://github.com/google/jimfs&#34;&gt;jimfs&lt;/a&gt;, &lt;a href=&#34;http://hsqldb.org/&#34;&gt;hsqldb&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Does he have experience with JSON, HTML, CSS, SQL, or script languages?&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Design Capabilities&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A professional developer shall be able to design software components.
-I am looking for:&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Knowledge of design patterns and Java idioms,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain object-oriented approaches - abstraction, &lt;a href=&#34;https://en.wikipedia.org/wiki/SOLID&#34;&gt;SOLID&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/KISS_principle&#34;&gt;KISS&lt;/a&gt;,
-&lt;a href=&#34;https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it&#34;&gt;YAGNI&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Algebraic_data_type&#34;&gt;algebraic data types&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain functional approaches - Optional&amp;lt;T&amp;gt;, Streams, immutability, idempotence, Functor, Monad,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain application concepts such as internationalization &lt;em&gt;i18n&lt;/em&gt;, localization &lt;em&gt;l16n&lt;/em&gt;, or accessibility &lt;em&gt;a11y&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain exception handling approaches in backend and frontend applications.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain test driven development build on JUnit 5, Mockito and AssertJ and the variants TDD, BDD, ATDD.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain continuous integration, continuous delivery, and continuous deployment, infrastructure as code, DevOps.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain refactoring triggered by &lt;a href=&#34;https://www.sonarlint.org/&#34;&gt;SonarLint&lt;/a&gt;, &lt;a href=&#34;https://pmd.github.io/&#34;&gt;PMD&lt;/a&gt;, &lt;a href=&#34;https://spotbugs.github.io/&#34;&gt;SpotBugs&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Architecture Capabilities&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A professional software architect shall be able to define an application architecture.
-I am looking for:&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Explain architecture patterns such as monolith, modular monolith, modular application, layered application.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Show knowledge of architecture approach such as domain driven design, Traditional approaches such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Rational_Unified_Process&#34;&gt;RUP&lt;/a&gt;.
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Zachman_Framework&#34;&gt;Zachmann&lt;/a&gt; can be mentioned but are no more relevant.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain the different facets of the architect role: Teacher, Coach, Mentor, Developer.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain how architecture is documented (&lt;a href=&#34;https://adr.github.io/&#34;&gt;ADR&lt;/a&gt;, &lt;a href=&#34;https://c4model.com/&#34;&gt;C4&lt;/a&gt;), static websites (Pages in GitHub, GitLab, or Bitbucket); and which notation
-(&lt;a href=&#34;https://www.omg.org/spec/UML/&#34;&gt;UML&lt;/a&gt;) or approaches can be used.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain continuous architecture improvements and how it is performed - see e.g., refactoring legacy systems -.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain technical debt concepts and how to mitigate technical debt in an application.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Check if the candidate knows about &lt;a href=&#34;https://adr.github.io/&#34;&gt;ADR&lt;/a&gt; &lt;em&gt;Architecture Design Record&lt;/em&gt;, &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Check if a formal architecture training was performed such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;DDD&lt;/a&gt;,
-&lt;a href=&#34;https://www.opengroup.org/togaf&#34;&gt;TOGAF&lt;/a&gt;, or &lt;a href=&#34;https://arc42.org/&#34;&gt;arc42&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Agile Work Capabilities&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A professional developers should know agile methods which around since this millennium:&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Check if Scrum, Kanban, Lean approaches were used in projects.
-Often they only pretend because they hold a daily meeting and a retrospective.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Check if CI/CD/CD and DevOps practices were used in projects,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Check if understanding of refactoring and automated tests is visible and if techniques were used in projects.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Teamwork Capabilities&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;What does teamwork mean for the candidate?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain pair programming, mob programming, merge requests&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Explain feature branch versus trunk based development&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Check if community of practice, coding dojo, design workshops are known concepts&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Does the candidate show a sensibility to soft factors and team building instruments?&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;If the position is for a team lead position I use the criteria discussed in &lt;a href=&#34;../..//2021/technical-team-lead/&#34;&gt;Techincal Team Lead&lt;/a&gt; blog.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_goodies&#34;&gt;Goodies&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;LinkedIn Profile&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Digital professionals publish their career and achievements on a platform.
-I like to visit your LinkedIn profile or your personal career website.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Open Source Activities&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Modern software application development relies heavily on open source libraries and frameworks.
-Developers who understand how to communicate with the teams behind these projects and how to contribute improvements are worth a lot in any project.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Community Activities&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Engineers working in communities and user group members are often open, enthusiasts and have a wider network of professional acquaintances.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Blogs and Articles&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Developers taking time to write public blogs or articles show a genuine interest in helping others in their learning.
-I also find very interesting to learn which technical books a candidate has read.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Other Programming Languages&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Java developers interested in Groovy, Kotlin, Scala, Clojure are often more knowledgeable and open to new approaches.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_game_rules&#34;&gt;Game Rules&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Provide a short text describing yourself and your interests&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;I want to understand who the person behind the CV is and the type of work she is interested in.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Embellish, do not lie&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;It is normal to show the bright side of your work experience.
-Feel free to embellish your CV.
-But please do not lie to me and invent capabilities you do not have.
-Such a fault is a killer during the interview.
-I always cross-check the CV during an interview.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Explain gaps in your CV&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;I truly respect people taking off time or having encountered problems during their careers.
-And I expect from you a hint to understand gaps in your career.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Experience section&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Use this section to discuss what you achieved in each of your previous roles.
-Using data and numbers can help a hiring manager get a better sense of how you performed, especially because this information is verifiable.
-Please add more details for the last five years.
-I am not deeply interested in knowing details about a project ten years old.&lt;br/&gt;
-&lt;em&gt;I do not fully count experience when the project duration was below half a year.
-You need time to learn the application, the team and the constraints.
-Therefore, the first six months your personal learning in new approaches and technologies is quite shallow.&lt;/em&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Explain why you apply for a specific job position&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Either you have the needed capabilities through past and current experiences or explain why you think you could take over the responsibility.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Use a spell checker&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A computer specialist not being able to use a spell checker is automatically disqualified.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Interest in improving&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;You are doomed if you did not learn or formally train the last ten years.
-This learning and training shall be visible in your resume.
-&lt;em&gt;I look for Oracle Java Developer, advanced or professional Scrum, iSAQB (senior designer), TOGAF, and JEE (architect) certifications.&lt;/em&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Personal information&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;I like to see a picture of the candidate.
-I also expect some information about the location of the candidate such as city and state.
-I have a strong emphasis on building diverse teams because I am fully aware of the improved productivity.
-Women must have a higher chance to get an interview and the job.
-We want to equilibrate our development teams.
-And I fully understand candidates not providing one due to anxiety of toxic selection processes.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_tips&#34;&gt;Tips&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I have the following checks to assess how current the knowledge of a candidate is.
-If a candidate cites obsolete approaches, I become cautious.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;SVN has died for 10 years.
-Everybody uses Git.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Rational_Unified_Process&#34;&gt;RUP&lt;/a&gt; has died for 20 years.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The Waterfall has died for 25 years.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Extensive front-end requirement definition has died for 10 years.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Big front-end architecture and design activities have died for 15 years.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Technologies such as NetBeans, Ant, or XML are obsolete.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_nodejs_candidates&#34;&gt;NodeJS Candidates&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A NodeJS developer shall know domain-driven design, clean, refactoring, TDD, CI/CD and agile approaches.
-General information, computer science, design, software architecture and agile approach requirements are similar.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The technical questions for a NodeJS person are slightly different from a Java developer:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Which &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;NodeJS&lt;/a&gt; version is he working with?
-How experienced is she with the packet manager &lt;em&gt;npm&lt;/em&gt;?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Does he have a Typescript certification?
-Which version of Typescript is she using?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Which tools did she use for quality conformance and refactoring in projects?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Does he know standard &lt;a href=&#34;https://owasp.org/&#34;&gt;OWASP&lt;/a&gt; approaches and why they are important in a NodeJS environment?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Examples of object-oriented, functional programming, asynchronous and reactive approaches in Typescript code.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Can senior developers discuss and explain threading, thread library, or async design approaches?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Which development environment does he use to develop NodeJS code - e.g. JetBrain WebStorm -?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Does he master &lt;a href=&#34;https://en.wikipedia.org/wiki/MEAN_(solution_stack)&#34;&gt;MEAN&lt;/a&gt; stack - MongoDB, Express.JS, Angular, NodeJS -?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Which experience and certification does she have with Angular or React?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Which training or certificates does she have in user interface design, usability, or accessibility?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Does he have experience and training in MongoDB, Mongoose, Meteor, express.js, socket.io?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Is she experienced with integrating relational database in NodeJS backend solutions?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Are advanced topics such as &lt;a href=&#34;https://webassembly.org/&#34;&gt;WebAssembly&lt;/a&gt; or &lt;a href=&#34;https://deno.land/&#34;&gt;Deno&lt;/a&gt; known?&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Use hints in the project experience sections to cover the above topics.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I sadely sometimes encounter candidates who have no clue which version of their programming language they are daily using.
 &lt;/div&gt;
 &lt;/div&gt;
 
