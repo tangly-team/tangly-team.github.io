@@ -49,7 +49,7 @@ A temperature sensor is a domain abstraction of a physical hardware temperature 
 A valve is a domain abstraction of a physical hardware valve. A physical valve can be a simple opened-closed device, or a proportional device.
 The microcontroller board reads the temperature sensor through an I2C or SPI bus. It controls the valve through a GPIO, a PWM or a CAN bus controller."><meta itemprop="datePublished" content="2023-12-12T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-12-12T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1288">
+<meta itemprop="wordCount" content="1308">
 <meta itemprop="keywords" content="C&#43;&#43;,architecture,embedded," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Sensors and Actuators"/>
 <meta name="twitter:description" content="Embedded design maps domain abstractions to the underlying hardware.
 A temperature sensor is a domain abstraction of a physical hardware temperature sensor.
@@ -145,7 +145,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.31ffd4ec13523f1a6ba5d1e01296cba8.json"
+    data-offline-search-index-json-src="/offline-search-index.f116af6cf1a550508e082113ec1c3b98.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -169,7 +169,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.31ffd4ec13523f1a6ba5d1e01296cba8.json"
+    data-offline-search-index-json-src="/offline-search-index.f116af6cf1a550508e082113ec1c3b98.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1037,8 +1037,10 @@ This approach is a clean and legible <a href="https://en.wikipedia.org/wiki/Depe
 <p>Do we start our system and bring all devices to a well-defined initial state?</p>
 </div>
 <div class="paragraph">
-<p>Or do we start our system, retrieve the state of all devices and initialize our objects accordingly?
-This approach is only possible if each hardware component has sensors providing its current state.</p>
+<p>Or do we start our system, retrieve the state of all devices and initialize our objects accordingly?</p>
+</div>
+<div class="paragraph">
+<p>This approach is only possible if each hardware component has sensors providing its current state.</p>
 </div>
 </td>
 </tr>
@@ -1294,7 +1296,7 @@ Do not try to hide things.</p>
 You learn how to access hardware resources from C++ and what are the costs of various C++ constructs.</p>
 </div>
 <div class="paragraph">
-<p>Use the actor pattern to implement thread communication <a href="#distributed-asynchronous-systems">[3]</a> <a href="#actors-in-cpp">[4]</a> <a href="#actors-cmsis-cpp">[5]</a>.</p>
+<p>Use the actor pattern to implement thread communication <a href="#distributed-asynchronous-systems">[distributed-asynchronous-systems]</a> <a href="#actors-in-cpp">[actors-in-cpp]</a> <a href="#actors-cmsis-cpp">[actors-cmsis-cpp]</a>.</p>
 </div>
 </div>
 </div>
@@ -1304,16 +1306,28 @@ You learn how to access hardware resources from C++ and what are the costs of va
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
-<p><a id="distributed-asynchronous-systems"></a>[3] <a href="../../2025/distributed-systems/">Distributed Asynchronous Systems</a>.
-Marcel Baumann.</p>
+<p><a href="../../2019/agile-architecture-principles">Agile Architecture Principles</a>
+Marcel Baumann. 2019.</p>
 </li>
 <li>
-<p><a id="actors-in-cpp"></a>[4] <a href="../../2024/actors-in-cpp/">Actors in C++</a>.
-Marcel Baumann.</p>
+<p><a href="../../2019/agile-code-is-clean-code">Agile Code is Clean Code!</a>
+Marcel Baumann. 2019.</p>
 </li>
 <li>
-<p><a id="actors-cmsis-cpp"></a>[5] <a href="../../2024/actors-with-cmsis-os-in-cpp/">Actors with CMSIS in C++</a>.
-Marcel Baumann.</p>
+<p><a href="../../2019/agile-architecture-within-scrum/">Agile Architecture within Scrum</a>
+Marcel Baumann. 2019.</p>
+</li>
+<li>
+<p><a href="../../2020/agile-component-design">Agile Component Design</a>
+Marcel Baumann. 2020.</p>
+</li>
+<li>
+<p><a href="../../2020/legacy-systems-refactoring">Legacy Systems Refactoring</a>
+Marcel Baumann. 2020.</p>
+</li>
+<li>
+<p><a href="../../2020/how-agile-collaborators-learn">How Agile Collaborators Learn</a>
+Marcel Baumann. 2020.</p>
 </li>
 </ul>
 </div>

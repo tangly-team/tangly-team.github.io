@@ -200,6 +200,21 @@ This is needed to decode the command and dispatch it to the right interpreter.&l
 &lt;p&gt;This approach delegates the encoding and decoding of commands to messages to the channel.
 This approach is the standard one for bus communication.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&#34;exampleblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can implement a two-step decoding process for maximum flexibility.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The first step is to decode the message type and encodind format before dispatching the message to the right interpreter.
+The interpreter will decode the message payload and transform it into a command instance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach shall only be used if you need to support multiple complex encoding formats due to its complexity.
+Most decoding libraries for JSON, proto buffers, or command line parsers are ill-suited for this approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The payload of the message does not need to be interpreted by the channel.
 This activity can be delegated to the interpreter.&lt;/p&gt;
@@ -240,6 +255,39 @@ The solution is constrained by the decision to use the compiler toolchain to val
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;This approach melts object-orientation with functional aspects.
 It reflects the evolution of modern programming languages blending object-orientation and functional approaches.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-principles&#34;&gt;Agile Architecture Principles&lt;/a&gt;
+Marcel Baumann. 2019.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-code-is-clean-code&#34;&gt;Agile Code is Clean Code!&lt;/a&gt;
+Marcel Baumann. 2019.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2019/agile-architecture-within-scrum/&#34;&gt;Agile Architecture within Scrum&lt;/a&gt;
+Marcel Baumann. 2019.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/agile-component-design&#34;&gt;Agile Component Design&lt;/a&gt;
+Marcel Baumann. 2020.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/legacy-systems-refactoring&#34;&gt;Legacy Systems Refactoring&lt;/a&gt;
+Marcel Baumann. 2020.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../../2020/how-agile-collaborators-learn&#34;&gt;How Agile Collaborators Learn&lt;/a&gt;
+Marcel Baumann. 2020.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -6876,7 +6924,8 @@ While you are more likely to work hands-on and focus on day-to-day tasks as a te
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Use primitives and wrapper classes, including, operators, parentheses, type promotion and casting.&lt;/p&gt;
+&lt;p&gt;Use primitives and wrapper classes.
+This includes operators, parentheses, type promotion and casting.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Handle text using String and StringBuilder classes.&lt;/p&gt;
@@ -7360,13 +7409,13 @@ The needs boil down to&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Provide docker images to developers.
-The images shall be accessible from the company Intranet and often form the Internet,&lt;/p&gt;
+The images shall be accessible from the company Intranet and often from the Internet.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Provide virtual images only exceptionally,&lt;/p&gt;
+&lt;p&gt;Provide virtual images only exceptionally.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Provide git repositories,&lt;/p&gt;
+&lt;p&gt;Provide git repositories.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Provide development tools such as GitHub, GitLab or Bitbucket solutions including Pages for documentation.&lt;/p&gt;
@@ -7419,7 +7468,7 @@ I expect viable standard solutions will be available in the next two years.&lt;/
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I truly love the new release rhythm of the Java ecosystem.
-Being able to use new features every six months is awesome.&lt;/p&gt;
+It is awesome to be able to use new features every six months.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The migration overhead is held to a minimum thanks to incredible backward compatibility.&lt;/p&gt;
@@ -7496,7 +7545,7 @@ This port is great new to shrink the size of docker images containing a Java run
 They at least provide a well-documented and workable approach.
 You can run the tool with JDK 15 and compile your components with JDK 16.
 Use the instruction &lt;em&gt;toolchain { languageVersion = JavaLanguageVersion.of(16) }&lt;/em&gt;.
-One of the cool stable features of Gradle 7.0 release is the full support for the Java module system.
+One of the cool stable features of the Gradle release 7.0 is the full support for the Java module system.
 You can now build, test, and run Java modules via Gradle with the &lt;em&gt;java library&lt;/em&gt; plugin.
 The mere presence of &lt;em&gt;module-info.java&lt;/em&gt; will let Gradle infer that your jar is a module and has to be put on the &lt;em&gt;module path&lt;/em&gt;.
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;&lt;/p&gt;
@@ -7519,7 +7568,7 @@ Support modules, auto-closeable resources, records, sealed classes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;As a maintainer of a successful component or application, you should represent modern Java approaches.
-Did you realize that since Java 8 a new version is released every six months?&lt;/p&gt;
+Did you realize that since Java 8, a new version is released every six months?&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -7781,10 +7830,10 @@ The organization offers two certifications with emphasis on agile approaches:&lt
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;RE@Agile Primer - Bridging the gap between RE and Agile&lt;/p&gt;
+&lt;p&gt;RE@Agile Primer to Bridge the gap between RE and Agile&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Advanced Level RE@Agile - is part of the advanced CPRE AL&lt;/p&gt;
+&lt;p&gt;Advanced Level RE@Agile is part of the advanced CPRE AL&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -8038,7 +8087,7 @@ discussion how organizations cope with the Java release cycle or are just laggar
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Java development won traction since the decision to release every six months a new version to the community.
+&lt;p&gt;Java development activities won traction since the decision to release a new version to the community every six months.
 Preview and incubator features promote feedback from the community and users.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
