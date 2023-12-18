@@ -145,7 +145,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.f116af6cf1a550508e082113ec1c3b98.json"
+    data-offline-search-index-json-src="/offline-search-index.04a0ba6b84a8b78cd55ec42c22f4aabe.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -169,7 +169,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.f116af6cf1a550508e082113ec1c3b98.json"
+    data-offline-search-index-json-src="/offline-search-index.04a0ba6b84a8b78cd55ec42c22f4aabe.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1166,8 +1166,8 @@ Below is a potential implementation of the callback function and callback regist
  * @param length The length of the data.
  */</span>
  <span style="color: #cf222e">static</span> <span style="color: #cf222e">void</span> <span style="color: #24292f;background-color: #f6f8fa">callback</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">void</span><span style="color: #0550ae">*</span> <span style="color: #24292f;background-color: #f6f8fa">self</span><span style="color: #24292f;background-color: #f6f8fa">,</span> <span style="color: #24292f;background-color: #f6f8fa">byte</span><span style="color: #0550ae">*</span> <span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">,</span> <span style="color: #cf222e">int</span> <span style="color: #24292f;background-color: #f6f8fa">length</span><span style="color: #24292f;background-color: #f6f8fa">)</span> <span style="color: #24292f;background-color: #f6f8fa">{</span>
-    <span style="color: #24292f;background-color: #f6f8fa">Sensor</span><span style="color: #0550ae">*</span> <span style="color: #24292f;background-color: #f6f8fa">self</span> <span style="color: #0550ae">=</span> <span style="color: #cf222e">reinterpret_cast</span><span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">Sensor</span><span style="color: #0550ae">*&gt;</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
-    <span style="color: #24292f;background-color: #f6f8fa">self</span><span style="color: #0550ae">-&gt;</span><span style="color: #24292f;background-color: #f6f8fa">callback</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">,</span> <span style="color: #24292f;background-color: #f6f8fa">length</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+    <span style="color: #24292f;background-color: #f6f8fa">Sensor</span><span style="color: #0550ae">*</span> <span style="color: #24292f;background-color: #f6f8fa">sensor</span> <span style="color: #0550ae">=</span> <span style="color: #cf222e">reinterpret_cast</span><span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">Sensor</span><span style="color: #0550ae">*&gt;</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">self</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+    <span style="color: #24292f;background-color: #f6f8fa">sensor</span><span style="color: #0550ae">-&gt;</span><span style="color: #24292f;background-color: #f6f8fa">callback</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">,</span> <span style="color: #24292f;background-color: #f6f8fa">length</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
 <span style="color: #24292f;background-color: #f6f8fa">}</span>
 
 <span style="color: #6e7781">/**
