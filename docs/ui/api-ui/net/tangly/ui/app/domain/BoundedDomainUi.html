@@ -87,8 +87,9 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">BoundedDomainUi</span></div>
-<div class="block">Define the interface for the visualization of a bounded domain. The user interface is a set of views to display entities, commands, and dialogs to modify
- entities.</div>
+<div class="block">Define the interface for the visualization of a bounded domain. The user interface is a set of views to display entities, commands, and dialogs to modify entities.
+ <p>Commands can trigger domain changes which should be reflected in the user interface. Some commands update the current displayed view, others update multiple views of the
+ domain interface.</p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,20 +109,23 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#ANALYTICS" class="member-name-link">ANALYTICS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#ENTITIES" class="member-name-link">ENTITIES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#CLEAR" class="member-name-link">CLEAR</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#EXPORT" class="member-name-link">EXPORT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ENTITIES" class="member-name-link">ENTITIES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#IMPORT" class="member-name-link">IMPORT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#EXPORT" class="member-name-link">EXPORT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#LOAD" class="member-name-link">LOAD</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IMPORT" class="member-name-link">IMPORT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#STATISTICS" class="member-name-link">STATISTICS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#LOAD" class="member-name-link">LOAD</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#STATISTICS" class="member-name-link">STATISTICS</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -155,17 +159,20 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Return the name of bounded domain user interface as displayed in the user interface.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.Component)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#refreshViews()" class="member-name-link">refreshViews</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.Component)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
  com.vaadin.flow.component.Component&nbsp;view)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Select the new current view of the bounded domain interface.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Select the view to be displayed from the bounded domain user interface and update the menu to reflect the bounded domain.</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Select the bounded domain and the associated default view to be displayed from the bounded domain user interface and update the menu to reflect the bounded domain.</div>
 </div>
 </div>
 </div>
@@ -266,6 +273,20 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="CLEAR">
+<h3>CLEAR</h3>
+<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">CLEAR</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#net.tangly.ui.app.domain.BoundedDomainUi.CLEAR">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="LOAD">
 <h3>LOAD</h3>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">LOAD</span></div>
@@ -305,7 +326,7 @@ loadScripts(document, 'script');</script>
  @NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
  @NotNull
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar)</span></div>
-<div class="block">Select the view to be displayed from the bounded domain user interface and update the menu to reflect the bounded domain.</div>
+<div class="block">Select the bounded domain and the associated default view to be displayed from the bounded domain user interface and update the menu to reflect the bounded domain.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>layout</code> - layout in which the view will be displayed</dd>
@@ -323,8 +344,14 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>layout</code> - layout to display within</dd>
-<dd><code>view</code> - new current view if not null otherwise the current view is refrested</dd>
+<dd><code>view</code> - new current view if not null otherwise the current view is refreshed</dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="refreshViews()">
+<h3>refreshViews</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refreshViews</span>()</div>
 </section>
 </li>
 <li>

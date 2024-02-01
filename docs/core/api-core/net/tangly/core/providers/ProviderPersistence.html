@@ -100,7 +100,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ProviderPersistence&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;T&gt;</span></div>
-<div class="block">Provider with instances cached in memory and persisted onto the file system or a database.
+<div class="block">Provider where all instances are cached in memory and persisted onto the file system or a database.
  <p>The update method uses an eager storage strategy to insure that all instance variables of a Java object are persisted. This approach is necessary due
  to the implementation restrictions of MicroStream. The current regular store operation does not persist fields based on collections.</p></div>
 </section>
@@ -115,7 +115,7 @@ implements <a href="Provider.html" title="interface in net.tangly.core.providers
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.eclipse.store.storage.embedded.types.EmbeddedStorageManager,java.util.List)" class="member-name-link">ProviderPersistence</a><wbr>(@NotNull org.eclipse.store.storage.embedded.types.EmbeddedStorageManager&nbsp;storageManager,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&gt;&nbsp;items)</code></div>
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&gt;&nbsp;items)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -136,23 +136,28 @@ implements <a href="Provider.html" title="interface in net.tangly.core.providers
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Delete the data associated with the entity.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#items()" class="member-name-link">items</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteAll()" class="member-name-link">deleteAll</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Delete all the entities managed by the provider.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#items()" class="member-name-link">items</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return a list containing all known instances of the entity type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="ProviderPersistence.html" title="class in net.tangly.core.providers">ProviderPersistence</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(org.eclipse.store.storage.embedded.types.EmbeddedStorageManager,java.util.List)" class="member-name-link">of</a><wbr>(@NotNull org.eclipse.store.storage.embedded.types.EmbeddedStorageManager&nbsp;storageManager,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;T&gt;&nbsp;items)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(T)" class="member-name-link">update</a><wbr>(<a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="ProviderPersistence.html" title="class in net.tangly.core.providers">ProviderPersistence</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(org.eclipse.store.storage.embedded.types.EmbeddedStorageManager,java.util.List)" class="member-name-link">of</a><wbr>(@NotNull org.eclipse.store.storage.embedded.types.EmbeddedStorageManager&nbsp;storageManager,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;T&gt;&nbsp;items)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(T)" class="member-name-link">update</a><wbr>(<a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&nbsp;entity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Update the data associated with the entity.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateAll(java.lang.Iterable)" class="member-name-link">updateAll</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;? extends <a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&gt;&nbsp;entities)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateAll(java.lang.Iterable)" class="member-name-link">updateAll</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;? extends <a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&gt;&nbsp;entities)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Update the data associated with all entities.</div>
 </div>
 </div>
@@ -180,7 +185,8 @@ implements <a href="Provider.html" title="interface in net.tangly.core.providers
 <h3>ProviderPersistence</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ProviderPersistence</span><wbr><span class="parameters">(@NotNull
  @NotNull org.eclipse.store.storage.embedded.types.EmbeddedStorageManager&nbsp;storageManager,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&gt;&nbsp;items)</span></div>
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&gt;&nbsp;items)</span></div>
 </section>
 </li>
 </ul>
@@ -196,7 +202,8 @@ implements <a href="Provider.html" title="interface in net.tangly.core.providers
 <h3>of</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="ProviderPersistence.html" title="class in net.tangly.core.providers">ProviderPersistence</a>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(@NotNull
  @NotNull org.eclipse.store.storage.embedded.types.EmbeddedStorageManager&nbsp;storageManager,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;T&gt;&nbsp;items)</span></div>
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;T&gt;&nbsp;items)</span></div>
 </section>
 </li>
 <li>
@@ -256,6 +263,18 @@ implements <a href="Provider.html" title="interface in net.tangly.core.providers
 <dd><code><a href="Provider.html#delete(T)">delete</a></code>&nbsp;in interface&nbsp;<code><a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;<a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
 <dd><code>entity</code> - entity to delete</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="deleteAll()">
+<h3>deleteAll</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteAll</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Provider.html#deleteAll()">Provider</a></code></span></div>
+<div class="block">Delete all the entities managed by the provider.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Provider.html#deleteAll()">deleteAll</a></code>&nbsp;in interface&nbsp;<code><a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;<a href="ProviderPersistence.html" title="type parameter in ProviderPersistence">T</a>&gt;</code></dd>
 </dl>
 </section>
 </li>

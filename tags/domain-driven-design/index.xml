@@ -5,7 +5,7 @@
     <description>Recent content in domain-driven-design on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/domain-driven-design/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,358 @@
         
       
     
+    
+    <item>
+      <title>Blog: EclipseStore</title>
+      <link>https://blog.tangly.net/blog/2024/eclipsestore/</link>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2024/eclipsestore/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-01-02-head.png&#34; alt=&#34;2024 01 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://eclipsestore.io/&#34;&gt;Eclipse Store&lt;/a&gt;
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;
+is a Java-native persistence layer built for cloud-native microservices and serverless systems.
+EclipseStore is the only data storage solution that uses the native Java object model instead of database-specific structure or format.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It enables storing any Java object graph of any size and complexity transaction-safe into any binary data storage such as plain files, persistent volumes, or cloud object storage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Snapshots of the object graph differences are regularly saved to the storage.
+ACID transaction journal guarantees full consistency.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each diff is stored as a bytecode representation appended to the storage using Eclipse Serializers optimized byte format.
+Objects are retrieved from the storage and restored in memory fully automated by just accessing the objects in your object graph via getter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Lazy-Loading enables to run EclipseStore also with low memory capacity even lower than 1 GB.
+At system start, only object IDs are loaded into RAM.
+Related object reference subgraphs are restored in memory on-demand only.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_eclipsestore_hello_world&#34;&gt;EclipseStore Hello World&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Using &lt;a href=&#34;https://eclipsestore.io/&#34;&gt;Eclipse Store&lt;/a&gt; is really simple.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;First you have to add the dependency to your &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; build file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;implementation&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;org.eclipse.store:storage-embedded:&amp;lt;current-version&amp;gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;                      &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;implementation&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;org.eclipse.serializer:persistence-binary-jdk8:&amp;lt;current-version&amp;gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;implementation&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;org.eclipse.serializer:persistence-binary-jdk17:&amp;lt;current-version&amp;gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;This dependency is required for the embedded storage manager.
+The other dependencies are optimizations for modern Java versions.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Second, you create a storage manager and store a string as the root object to write the canonical Hello World example.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;EmbeddedStorageManager&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;storageManager&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;EmbeddedStorage&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;start&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;                            &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;storageManager&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;setRoot&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;Hello World&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;                                                      &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;storageManager&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;storeRoot&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;                                                                 &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Start the database manager&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Set the entity (graph) as root&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Store root to persistent storage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_entities_and_aggregates&#34;&gt;Entities and Aggregates&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Domain-driven design promotes the concept of entities and aggregates.
+EclipseStore optimally supports the storage and retrieval of aggregates.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The provider abstraction is a data access objects for a collection of aggregates with the same type for the root entity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;E&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;HasOid&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Long&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Optional&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;findByOid&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #8250df&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color: #cf222e&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;oid&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #cf222e&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;findBy&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;E:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;oid&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;oid&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #cf222e&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;E&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;HasId&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Optional&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;findById&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #8250df&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color: #8250df&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #cf222e&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;findBy&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;E:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #6e7781&#34;&gt;/**
+     * Return a list containing all known instances of the entity type.
+     *
+     * @return list of all instances
+     */&lt;/span&gt;
+    &lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;items&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
+
+    &lt;span style=&#34;color: #6e7781&#34;&gt;/**
+     * Update the data associated with the entity. If the entity is new, the update is handled
+     * as a create operation. The update is transitive and all referenced entities are also
+     * updated. The entity given as parameter becomes the instance managed through the provider.
+     *
+     * @param entity entity to update
+     */&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;update&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #8250df&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;T&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;entity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+
+    &lt;span style=&#34;color: #6e7781&#34;&gt;/**
+     * Delete the data associated with the entity. The object identifier is invalidated.
+     *
+     * @param entity entity to delete
+     */&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;delete&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #8250df&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;T&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;entity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+
+    &lt;span style=&#34;color: #6e7781&#34;&gt;/**
+     * Delete all the entities managed by the provider.
+     */&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;deleteAll&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
+
+
+    &lt;span style=&#34;color: #6e7781&#34;&gt;/**
+     * Replace an existing value with a new one. A null value is ignored.
+     *
+     * @param oldValue remove the old value if not null
+     * @param newValue add the new value if not null
+     */&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;replace&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;T&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;oldValue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;T&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;newValue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #cf222e&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Objects&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;nonNull&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;oldValue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;delete&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;oldValue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+        &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+        &lt;span style=&#34;color: #cf222e&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Objects&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;nonNull&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;newValue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;update&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;newValue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+        &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #6e7781&#34;&gt;/**
+     * Update the data associated with all entities.
+     *
+     * @param items entities to update
+     */&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;updateAll&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #8250df&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Iterable&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;?&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;items&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;items&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;forEach&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;update&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+
+
+    &lt;span style=&#34;color: #6e7781&#34;&gt;/**
+     * Return the first entity which property matches the value.
+     *
+     * @param getter getter to retrieve the property
+     * @param value  value to compare with
+     * @param &amp;lt;U&amp;gt;    type of the property
+     * @return optional of the first matching entity otherwise empty
+     */&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;U&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Optional&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;findBy&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #8250df&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Function&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;U&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getter&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;U&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #cf222e&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;items&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;filter&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;o&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;equals&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getter&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;apply&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;))).&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;findAny&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Transactions must be realized at the provider level.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Created aggregates only need transactional integrity when added to the provider.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Deleted aggregates only need transactional integrity when removed from the provider.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Modified aggregates need transaction integrity when updating entities and value objects of the aggregate and persisting the changes to the provider.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Read aggregates only need transactional integrity when the aggregate is retrieved from the provider.
+Potential changes to the aggregate initiated by another client can be propagated to all clients by using an event bus.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The root object for a complete bounded domain would be:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;DomainEntities&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Data&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;                                                                     &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+        &lt;span style=&#34;color: #cf222e&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Lead&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;leads&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;;&lt;/span&gt;
+        &lt;span style=&#34;color: #cf222e&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;NaturalEntity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;naturalEntities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;;&lt;/span&gt;
+
+        &lt;span style=&#34;color: #953800&#34;&gt;Data&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;leads&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;ArrayList&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+            &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;naturalEntities&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;ArrayList&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+        &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #cf222e&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Data&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Lead&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;leads&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;NaturalEntity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;naturalEntities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;;&lt;/span&gt;
+
+    &lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;DomainEntities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #8250df&#34;&gt;@NotNull&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Path&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #cf222e&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Data&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
+        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;storageManager&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;EmbeddedStorage&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;start&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;                                 &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+
+        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;leads&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;ProviderPersistence&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;of&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;storageManager&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;leads&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;                         &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;naturalEntities&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;ProviderPersistence&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;of&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;storageManager&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;naturalEntities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Lead&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;leads&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;                                                         &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
+        &lt;span style=&#34;color: #cf222e&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;leads&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Provider&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;NaturalEntity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;naturalEntities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #cf222e&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;naturalEntities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The data class contains all the data of the bounded domain.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The storage manager is initialized with the data instance and the path to the storage.
+The instance is populated with the persistent data if the storage exists.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The provider is initialized with the storage manager and the list of entities.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The provider interface is accessible through a getter.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_advanced_considerations&#34;&gt;Advanced Considerations&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For a huge set of aggregates, you should introduce a sharding concept to distribute the aggregates over multiple providers.
+For example, accounting transactions can be shard by the year of the transaction date.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Beware that if an accounting transaction needs one KB of storage, a million transactions need one GB of storage.
+Few companies have more than a million transactions per year.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If your bounded domain runs as a separate Java virtual machine, you should limit your memory consumption to around 32 GB.
+This restriction covers a lot of concrete use cases.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Almost all internal management systems of a company can be realized within these memory limits.
+You do not need to implement sophisticated sharding concepts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_migration_tangly_erp&#34;&gt;Migration tangly ERP&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We migrated our open source components from &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; to &lt;a href=&#34;https://eclipsestore.io/&#34;&gt;Eclipse Store&lt;/a&gt; as soon as the first stable release was available.
+The migration was straight forward and took only a few hours.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We did not use the provided migration assistant and instead use the refactoring tools of our &lt;em&gt;IntelliJ IDEA&lt;/em&gt; IDE.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All unit tests passed without any changes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The situation is more complicated if you have to migrate a production system with persistent data.
+Our application has an export and import capability to CVS formatted files for all bounded domains
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.
+We used this capability to export the data, migrate the application, and import the data again with the new version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;EclipseStore is a great persistence layer for Java applications.
+The effort to persist complex bounded domain object graphs is minimal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Especially in the early phases of a project, you can focus on the domain entities and not on the persistence layer.
+The integration of the &lt;a href=&#34;https://eclipsestore.io/&#34;&gt;Eclipse Store&lt;/a&gt; persistence layer is straightforward and takes only a few hours.
+You can postpone the decision for the persistence layer to a later phase.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach is optimal for domain-driven design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We combine EclipseStore with an in-memory file system &lt;a href=&#34;https://github.com/google/jimfs&#34;&gt;jimfs&lt;/a&gt; to create extensive integration tests with synthetic data.
+The execution speed of the tests is great.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;eclipsestore&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;http://localhost:1313/blog/2024/eclipsestore/&#34;&gt;EclipseStore&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;microstream&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. &lt;a href=&#34;https://eclipsestore.io/&#34;&gt;Eclipse Store&lt;/a&gt; was previously called &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt;. The Java frameworks &lt;a href=&#34;https://helidon.io/&#34;&gt;Helidon&lt;/a&gt; and &lt;a href=&#34;https://micronaut.io/&#34;&gt;Micronaut&lt;/a&gt; support natively EclipseStore for their persistence layer.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. We use the &lt;a href=&#34;https://commons.apache.org/proper/commons-csv/&#34;&gt;Apache Commons CSV&lt;/a&gt; library for the export and import operations.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Modular Monoliths are the new Graal</title>
@@ -141,7 +493,7 @@ Whether that means making dependencies more manageable within the application, i
 &lt;p&gt;For the application itself, embracing modularity can help to organize dependencies, making it easier and less time-consuming to change components within the system.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Good practices shall be applied to refactor the application [&lt;a href=&#34;#clean-code&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#clean-architecture&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#refactoring&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#refactoring-databases&#34;&gt;4&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;Good practices shall be applied to refactor the application cite:[clean-code,clean-architecture,refactoring,refactoring-databases].&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -161,7 +513,7 @@ Whether that means making dependencies more manageable within the application, i
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Architecture approach for modular monoliths or microservices is &lt;em&gt;Domain Driven Design&lt;/em&gt;
-[&lt;a href=&#34;#domain-driven-design&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;#domain-driven-design-distilled&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;7&lt;/a&gt;].&lt;/p&gt;
+cite:[domain-driven-design,domain-driven-design-distilled,implementing-domain-driven-design].&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;If you are like many Java developers who are still working on a monolithic application, then employing modularization best practices can help make your application achieve some benefits of microservices without the associated cost of refactoring.&lt;/p&gt;
@@ -188,25 +540,7 @@ Marcel Baumann. 2022.&lt;/p&gt;
 &lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-code&#34;&gt;&lt;/a&gt;[1] R. C. Martin, &lt;em&gt;Clean Code&lt;/em&gt;. Prentice Hall, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0132350882&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0132350882&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-architecture&#34;&gt;&lt;/a&gt;[2] R. C. Martin, &lt;em&gt;Clean Architecture&lt;/em&gt;. Pearson, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134494164&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134494164&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[3] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, First. Addision-Wesley, 1999 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B004PQQRK2&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B004PQQRK2&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring-databases&#34;&gt;&lt;/a&gt;[4] A. Scott and P. J. Sadalage, &lt;em&gt;Refactoring Databases&lt;/em&gt;. Addison-Wesley Professional, 2006 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B001QAP36E&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B001QAP36E&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[5] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;domain-driven-design-distilled&#34;&gt;&lt;/a&gt;[6] V. Vernon, &lt;em&gt;Domain-Driven Design Distilled&lt;/em&gt;. Addison-Wesley Professional, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01JJSGE5S/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01JJSGE5S/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[7] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;bibliography::[]&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -238,7 +572,7 @@ The method nicely matches with the operational concepts of microservices.&lt;/p&
 &lt;p&gt;Domain-driven design is a holistic approach to understanding, designing and building software applications.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Seminal books [&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#domain-driven-design-distilled&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;3&lt;/a&gt;] describes the approach and key concepts defining the development method.&lt;/p&gt;
+&lt;p&gt;Seminal books cite:[domain-driven-design,domain-driven-design-distilled,implementing-domain-driven-design] describes the approach and key concepts defining the development method.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Concrete recipes and examples of code structure are still sparse.&lt;/p&gt;
@@ -328,7 +662,7 @@ We did not have to add a root persistent class or use annotations.&lt;/em&gt;&lt
 &lt;h2 id=&#34;_package_structure&#34;&gt;Package Structure&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A bounded domain shall be configured as a Java module [&lt;a href=&#34;#java-9-modularity&#34;&gt;4&lt;/a&gt;].
+&lt;p&gt;A bounded domain shall be configured as a Java module cite:[java-9-modularity].
 The exported services and entities are explicitly listed with the &lt;em&gt;exports&lt;/em&gt; directive.
 A huge advantage is the obligation to list all dependencies with the &lt;em&gt;requires&lt;/em&gt; directive.&lt;/p&gt;
 &lt;/div&gt;
@@ -524,7 +858,7 @@ Use either Java modules or archUnit to enforce that communication always goes th
 Inside this boundary, all terms, definitions and concepts form the Ubiquitous Language.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Good practices shall be applied to ensure the quality of the bounded domain software architecture [&lt;a href=&#34;#clean-architecture&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;#refactoring&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#refactoring-databases&#34;&gt;7&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;Good practices shall be applied to ensure the quality of the bounded domain software architecture cite:[clean-architecture,refactoring,refactoring-databases]&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The Java Platform Module System (JPMS) encourages us to build more reliable and strongly encapsulated modules.
@@ -648,8 +982,8 @@ The principle of bounded contexts from DDD can help us here.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The DDD approach emphasizes systematic refactoring and code improvements [&lt;a href=&#34;#refactoring-2nd&#34;&gt;8&lt;/a&gt;, &lt;a href=&#34;#clean-code&#34;&gt;9&lt;/a&gt;, &lt;a href=&#34;#clean-coder&#34;&gt;10&lt;/a&gt;, &lt;a href=&#34;#clean-architecture&#34;&gt;5&lt;/a&gt;].
-It recommends test driven approach for bounded domain development [&lt;a href=&#34;#agile-testing&#34;&gt;11&lt;/a&gt;, &lt;a href=&#34;#more-agile-testing&#34;&gt;12&lt;/a&gt;, &lt;a href=&#34;#bridging-communication-gap&#34;&gt;13&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;The DDD approach emphasizes systematic refactoring and code improvements cite:[refactoring-2nd,clean-code,clean-coder,clean-architecture].
+It recommends test driven approach for bounded domain development cite:[agile-testing,more-agile-testing,bridging-communication-gap].&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -657,43 +991,7 @@ It recommends test driven approach for bounded domain development [&lt;a href=&#
 &lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[1] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;domain-driven-design-distilled&#34;&gt;&lt;/a&gt;[2] V. Vernon, &lt;em&gt;Domain-Driven Design Distilled&lt;/em&gt;. Addison-Wesley Professional, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01JJSGE5S/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01JJSGE5S/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[3] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;java-9-modularity&#34;&gt;&lt;/a&gt;[4] S. Mak, &lt;em&gt;Java 9 Modularity&lt;/em&gt;. O’Reilly Media, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1491954167&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1491954167&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-architecture&#34;&gt;&lt;/a&gt;[5] R. C. Martin, &lt;em&gt;Clean Architecture&lt;/em&gt;. Pearson, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134494164&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134494164&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[6] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, First. Addision-Wesley, 1999 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B004PQQRK2&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B004PQQRK2&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring-databases&#34;&gt;&lt;/a&gt;[7] A. Scott and P. J. Sadalage, &lt;em&gt;Refactoring Databases&lt;/em&gt;. Addison-Wesley Professional, 2006 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B001QAP36E&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B001QAP36E&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring-2nd&#34;&gt;&lt;/a&gt;[8] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, Second. Addision-Wesley, 2018 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134757599&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134757599&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-code&#34;&gt;&lt;/a&gt;[9] R. C. Martin, &lt;em&gt;Clean Code&lt;/em&gt;. Prentice Hall, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0132350882&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0132350882&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-coder&#34;&gt;&lt;/a&gt;[10] R. C. Martin, &lt;em&gt;The Clean Coder&lt;/em&gt;. Prentice Hall, 2011 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0137081073&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0137081073&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;agile-testing&#34;&gt;&lt;/a&gt;[11] L. Crispin, &lt;em&gt;Agile testing&lt;/em&gt;. Addison-Wesley, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321534468&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321534468&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;more-agile-testing&#34;&gt;&lt;/a&gt;[12] J. G. Gregory and L. Crispin, &lt;em&gt;More Agile Testing&lt;/em&gt;. Addison-Wesley Professional [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321967054&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321967054&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;bridging-communication-gap&#34;&gt;&lt;/a&gt;[13] G. Adzic, &lt;em&gt;Bridging the Communication Gap&lt;/em&gt;. Neuri Limited, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B008YZ993W/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B008YZ993W/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;bibliography::[]&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -870,7 +1168,7 @@ If your identifiers are strings, you shall clearly define the supported language
 &lt;h2 id=&#34;_domain_driven_design&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain-Driven Design&lt;/a&gt;&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Domain Driven Design &lt;em&gt;DDD&lt;/em&gt; is a powerful and modern approach to define agile software architecture [&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;2&lt;/a&gt;].
+&lt;p&gt;Domain Driven Design &lt;em&gt;DDD&lt;/em&gt; is a powerful and modern approach to define agile software architecture cite:[domain-driven-design,implementing-domain-driven-design].
 Some key rules are related to identity.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;dlist&#34;&gt;
@@ -1175,7 +1473,7 @@ This factory could provide multiple ways to create new instances.&lt;/p&gt;
 &lt;h2 id=&#34;_value_objects_in_persistent_store&#34;&gt;Value Objects in Persistent Store&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We encourage experimenting with the &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; approach for small projects footnote:[The Eclipse foundation took over the MicroStream library in 2023 under the new name &lt;a href=&#34;https://eclipsestore.io/&#34;&gt;Eclipse Store&lt;/a&gt;.
+&lt;p&gt;We encourage experimenting with the &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; approach for small projects footnote:[The Eclipse foundation took over the MicroStream library in 2023 under the new name {ref-eclipse-store}.
 The effort to persist a Java object graph is very small.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -1232,7 +1530,7 @@ Marcel Baumann. 2021.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A software architect models customer domains and maps them to powerful software abstractions [&lt;a href=&#34;#domain-storytelling&#34;&gt;1&lt;/a&gt;].
+&lt;p&gt;A software architect models customer domains and maps them to powerful software abstractions cite:[domain-storytelling].
 Soon you correlate internal efficient identifiers, meaningful external identifiers, and domain entities.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -1257,7 +1555,7 @@ Soon you correlate internal efficient identifiers, meaningful external identifie
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We need an approach to model customer domain entities and map them to a legible and maintainable software construct
-[&lt;a href=&#34;#domain-driven-design&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;3&lt;/a&gt;].&lt;/p&gt;
+cite:[domain-driven-design,implementing-domain-driven-design].&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;An entity is a user domain model abstraction and is mapped to a software type.
@@ -1531,13 +1829,7 @@ Marcel Baumann. 2021.&lt;/p&gt;
 &lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;domain-storytelling&#34;&gt;&lt;/a&gt;[1] S. Hofer and H. Schwentner, &lt;em&gt;Domain Storytelling&lt;/em&gt;. Pearson Education, Limited, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B099ZNXCJT&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B099ZNXCJT&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[2] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[3] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;bibliography::[]&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

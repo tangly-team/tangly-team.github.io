@@ -91,13 +91,14 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="ProviderHasOid.html" title="class in net.tangly.core.providers">ProviderHasOid</a></code>, <code><a href="ProviderInMemory.html" title="class in net.tangly.core.providers">ProviderInMemory</a></code>, <code><a href="ProviderPersistence.html" title="class in net.tangly.core.providers">ProviderPersistence</a></code>, <code><a href="ProviderView.html" title="class in net.tangly.core.providers">ProviderView</a></code></dd>
+<dd><code><a href="ProviderHasOid.html" title="class in net.tangly.core.providers">ProviderHasOid</a></code>, <code><a href="ProviderInMemory.html" title="class in net.tangly.core.providers">ProviderInMemory</a></code>, <code><a href="ProviderPersistence.html" title="class in net.tangly.core.providers">ProviderPersistence</a></code>, <code><a href="ProviderTransaction.html" title="class in net.tangly.core.providers">ProviderTransaction</a></code>, <code><a href="ProviderView.html" title="class in net.tangly.core.providers">ProviderView</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Provider&lt;T&gt;</span></div>
-<div class="block">Defines the provider abstraction responsible for handling instances of a specific type.
- The provider declares the regular CRUD operations: <i>Create, Read, Update, and Delete</i>.
- The provider is the repository and often the factory in the domain-driven design terminology.
+<div class="block">Define the provider abstraction responsible for handling instances of a specific type. The provider declares the regular CRUD operations: <i>Create, Read, Update, and
+ Delete</i>. The provider is the repository and often the factory in the domain-driven design terminology.
+ <p>You should store domain-driven domain aggregates in a provider. Each aggregate should have a root with an identifier. All objects of an aggregate are owned by the
+ aggregate and are always edited through the root. The concept defines a natural job and transactional boundary.</p>
  <dl>
      <dt>Create</dt><dd>The creation operation is integrated with the update operation <a href="#update(T)"><code>update(Object)</code></a></dd>
      <dt>Read</dt><dd>The read all items operation maps to the <a href="#items()"><code>items()</code></a> operation.
@@ -124,41 +125,46 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Delete the data associated with the entity.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;U&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findBy(java.util.function.Function,U)" class="member-name-link">findBy</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>,<wbr>U&gt;&nbsp;getter,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#deleteAll()" class="member-name-link">deleteAll</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Delete all the entities managed by the provider.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;U&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findBy(java.util.function.Function,U)" class="member-name-link">findBy</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>,<wbr>U&gt;&nbsp;getter,
  U&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Return the first entity which property matches the value.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;E extends <a href="../HasId.html" title="interface in net.tangly.core">HasId</a>,<wbr>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;E extends <a href="../HasId.html" title="interface in net.tangly.core">HasId</a>,<wbr>
 String&gt;<br><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;E&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#findById(net.tangly.core.providers.Provider,String)" class="member-name-link">findById</a><wbr>(@NotNull <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;E&gt;&nbsp;provider,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#findById(net.tangly.core.providers.Provider,String)" class="member-name-link">findById</a><wbr>(@NotNull <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;E&gt;&nbsp;provider,
  String&nbsp;id)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;E extends <a href="../HasOid.html" title="interface in net.tangly.core">HasOid</a>,<wbr>
-Long&gt;<br><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;E&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#findByOid(net.tangly.core.providers.Provider,long)" class="member-name-link">findByOid</a><wbr>(@NotNull <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;E&gt;&nbsp;provider,
- long&nbsp;oid)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#items()" class="member-name-link">items</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;E extends <a href="../HasOid.html" title="interface in net.tangly.core">HasOid</a>,<wbr>
+Long&gt;<br><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;E&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#findByOid(net.tangly.core.providers.Provider,long)" class="member-name-link">findByOid</a><wbr>(@NotNull <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;E&gt;&nbsp;provider,
+ long&nbsp;oid)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Provider.html" title="type parameter in Provider">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#items()" class="member-name-link">items</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Return a list containing all known instances of the entity type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#replace(T,T)" class="member-name-link">replace</a><wbr>(<a href="Provider.html" title="type parameter in Provider">T</a>&nbsp;oldValue,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#replace(T,T)" class="member-name-link">replace</a><wbr>(<a href="Provider.html" title="type parameter in Provider">T</a>&nbsp;oldValue,
  <a href="Provider.html" title="type parameter in Provider">T</a>&nbsp;newValue)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Replace an existing value with a new one.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(T)" class="member-name-link">update</a><wbr>(<a href="Provider.html" title="type parameter in Provider">T</a>&nbsp;entity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(T)" class="member-name-link">update</a><wbr>(<a href="Provider.html" title="type parameter in Provider">T</a>&nbsp;entity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Update the data associated with the entity.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#updateAll(java.lang.Iterable)" class="member-name-link">updateAll</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;? extends <a href="Provider.html" title="type parameter in Provider">T</a>&gt;&nbsp;items)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#updateAll(java.lang.Iterable)" class="member-name-link">updateAll</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;? extends <a href="Provider.html" title="type parameter in Provider">T</a>&gt;&nbsp;items)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Update the data associated with all entities.</div>
 </div>
 </div>
@@ -228,6 +234,13 @@ String&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.co
 <dt>Parameters:</dt>
 <dd><code>entity</code> - entity to delete</dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="deleteAll()">
+<h3>deleteAll</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">deleteAll</span>()</div>
+<div class="block">Delete all the entities managed by the provider.</div>
 </section>
 </li>
 <li>

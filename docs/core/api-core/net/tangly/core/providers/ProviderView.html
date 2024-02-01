@@ -100,7 +100,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ProviderView&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;T&gt;</span></div>
-<div class="block">Defines a filtered view on an underlying provider.</div>
+<div class="block">Define a filtered view on an underlying provider. The view is defined by a predicate on the items of the provider.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -134,24 +134,29 @@ implements <a href="Provider.html" title="interface in net.tangly.core.providers
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Delete the data associated with the entity.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ProviderView.html" title="type parameter in ProviderView">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#items()" class="member-name-link">items</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteAll()" class="member-name-link">deleteAll</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Delete all the entities managed by the provider.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ProviderView.html" title="type parameter in ProviderView">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#items()" class="member-name-link">items</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return a list containing all known instances of the entity type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.tangly.core.providers.Provider)" class="member-name-link">of</a><wbr>(@NotNull <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;T&gt;&nbsp;provider)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.tangly.core.providers.Provider,java.util.function.Predicate)" class="member-name-link">of</a><wbr>(@NotNull <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;T&gt;&nbsp;provider,
- @NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.tangly.core.providers.Provider)" class="member-name-link">of</a><wbr>(@NotNull <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;T&gt;&nbsp;provider)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#predicate(java.util.function.Predicate)" class="member-name-link">predicate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="ProviderView.html" title="type parameter in ProviderView">T</a>&gt;&nbsp;predicate)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.tangly.core.providers.Provider,java.util.function.Predicate)" class="member-name-link">of</a><wbr>(@NotNull <a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;T&gt;&nbsp;provider,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(T)" class="member-name-link">update</a><wbr>(<a href="ProviderView.html" title="type parameter in ProviderView">T</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#predicate(java.util.function.Predicate)" class="member-name-link">predicate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="ProviderView.html" title="type parameter in ProviderView">T</a>&gt;&nbsp;predicate)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(T)" class="member-name-link">update</a><wbr>(<a href="ProviderView.html" title="type parameter in ProviderView">T</a>&nbsp;entity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Update the data associated with the entity.</div>
 </div>
 </div>
@@ -255,6 +260,18 @@ implements <a href="Provider.html" title="interface in net.tangly.core.providers
 <dd><code><a href="Provider.html#delete(T)">delete</a></code>&nbsp;in interface&nbsp;<code><a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;<a href="ProviderView.html" title="type parameter in ProviderView">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
 <dd><code>entity</code> - entity to delete</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="deleteAll()">
+<h3>deleteAll</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteAll</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Provider.html#deleteAll()">Provider</a></code></span></div>
+<div class="block">Delete all the entities managed by the provider.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Provider.html#deleteAll()">deleteAll</a></code>&nbsp;in interface&nbsp;<code><a href="Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;<a href="ProviderView.html" title="type parameter in ProviderView">T</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
