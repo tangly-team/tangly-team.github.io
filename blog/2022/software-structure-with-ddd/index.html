@@ -34,10 +34,9 @@ The method nicely matches with …" name="description">
 <meta property="og:title" content="Software Structure with DDD" />
 <meta property="og:description" content="Domain Driven Development DDD is the preferred software architecture approach for designing digital products. The method nicely matches with the operational concepts of microservices.
 Domain-driven design is a holistic approach to understanding, designing and building software applications.
-Seminal books cite:[domain-driven-design,domain-driven-design-distilled,implementing-domain-driven-design] describes the approach and key concepts defining the development method.
+Seminal books [1, 2, 3] describes the approach and key concepts defining the development method.
 Concrete recipes and examples of code structure are still sparse.
-How should you structure your namespaces and modules?
-We propose a simple and adequate code structure for implementation using modern Java constructs." />
+How should you structure your namespaces and modules?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/blog/2022/software-structure-with-ddd/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2022-06-01T00:00:00+00:00" />
@@ -46,19 +45,17 @@ We propose a simple and adequate code structure for implementation using modern 
 <meta itemprop="name" content="Software Structure with DDD">
 <meta itemprop="description" content="Domain Driven Development DDD is the preferred software architecture approach for designing digital products. The method nicely matches with the operational concepts of microservices.
 Domain-driven design is a holistic approach to understanding, designing and building software applications.
-Seminal books cite:[domain-driven-design,domain-driven-design-distilled,implementing-domain-driven-design] describes the approach and key concepts defining the development method.
+Seminal books [1, 2, 3] describes the approach and key concepts defining the development method.
 Concrete recipes and examples of code structure are still sparse.
-How should you structure your namespaces and modules?
-We propose a simple and adequate code structure for implementation using modern Java constructs."><meta itemprop="datePublished" content="2022-06-01T00:00:00+00:00" />
+How should you structure your namespaces and modules?"><meta itemprop="datePublished" content="2022-06-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1622">
+<meta itemprop="wordCount" content="1786">
 <meta itemprop="keywords" content="architecture,domain-driven-design,java," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Software Structure with DDD"/>
 <meta name="twitter:description" content="Domain Driven Development DDD is the preferred software architecture approach for designing digital products. The method nicely matches with the operational concepts of microservices.
 Domain-driven design is a holistic approach to understanding, designing and building software applications.
-Seminal books cite:[domain-driven-design,domain-driven-design-distilled,implementing-domain-driven-design] describes the approach and key concepts defining the development method.
+Seminal books [1, 2, 3] describes the approach and key concepts defining the development method.
 Concrete recipes and examples of code structure are still sparse.
-How should you structure your namespaces and modules?
-We propose a simple and adequate code structure for implementation using modern Java constructs."/>
+How should you structure your namespaces and modules?"/>
 
 
 
@@ -149,7 +146,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.5e220508d3d4cdbff7851fddcd6eb3cd.json"
+    data-offline-search-index-json-src="/offline-search-index.0e5255aa28d923005e4c0d1f94618dc6.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -173,7 +170,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.5e220508d3d4cdbff7851fddcd6eb3cd.json"
+    data-offline-search-index-json-src="/offline-search-index.0e5255aa28d923005e4c0d1f94618dc6.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1002,7 +999,7 @@ The method nicely matches with the operational concepts of microservices.</p>
 <p>Domain-driven design is a holistic approach to understanding, designing and building software applications.</p>
 </div>
 <div class="paragraph">
-<p>Seminal books cite:[domain-driven-design,domain-driven-design-distilled,implementing-domain-driven-design] describes the approach and key concepts defining the development method.</p>
+<p>Seminal books <span class="citation">[<a href="#domain-driven-design">1</a>, <a href="#domain-driven-design-distilled">2</a>, <a href="#implementing-domain-driven-design">3</a>]</span> describes the approach and key concepts defining the development method.</p>
 </div>
 <div class="paragraph">
 <p>Concrete recipes and examples of code structure are still sparse.</p>
@@ -1092,7 +1089,7 @@ We did not have to add a root persistent class or use annotations.</em></p>
 <h2 id="_package_structure">Package Structure</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A bounded domain shall be configured as a Java module cite:[java-9-modularity].
+<p>A bounded domain shall be configured as a Java module <span class="citation">[<a href="#java-9-modularity">4</a>]</span>.
 The exported services and entities are explicitly listed with the <em>exports</em> directive.
 A huge advantage is the obligation to list all dependencies with the <em>requires</em> directive.</p>
 </div>
@@ -1288,7 +1285,7 @@ Use either Java modules or archUnit to enforce that communication always goes th
 Inside this boundary, all terms, definitions and concepts form the Ubiquitous Language.</p>
 </div>
 <div class="paragraph">
-<p>Good practices shall be applied to ensure the quality of the bounded domain software architecture cite:[clean-architecture,refactoring,refactoring-databases]</p>
+<p>Good practices shall be applied to ensure the quality of the bounded domain software architecture <span class="citation">[<a href="#clean-architecture">5</a>, <a href="#refactoring">6</a>, <a href="#refactoring-databases">7</a>]</span></p>
 </div>
 <div class="paragraph">
 <p>The Java Platform Module System (JPMS) encourages us to build more reliable and strongly encapsulated modules.
@@ -1412,8 +1409,8 @@ The principle of bounded contexts from DDD can help us here.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The DDD approach emphasizes systematic refactoring and code improvements cite:[refactoring-2nd,clean-code,clean-coder,clean-architecture].
-It recommends test driven approach for bounded domain development cite:[agile-testing,more-agile-testing,bridging-communication-gap].</p>
+<p>The DDD approach emphasizes systematic refactoring and code improvements <span class="citation">[<a href="#refactoring-2nd">8</a>, <a href="#clean-code">9</a>, <a href="#clean-coder">10</a>, <a href="#clean-architecture">5</a>]</span>.
+It recommends test driven approach for bounded domain development <span class="citation">[<a href="#agile-testing">11</a>, <a href="#more-agile-testing">12</a>, <a href="#bridging-communication-gap">13</a>]</span>.</p>
 </div>
 </div>
 </div>
@@ -1421,7 +1418,43 @@ It recommends test driven approach for bounded domain development cite:[agile-te
 <h2 id="_references">References</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>bibliography::[]</p>
+<p><a id="domain-driven-design"></a>[1] E. Evans, <em>Domain-driven design</em>. Addison-Wesley, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321125215" class="bare">https://www.amazon.com/dp/0321125215</a></p>
+</div>
+<div class="paragraph">
+<p><a id="domain-driven-design-distilled"></a>[2] V. Vernon, <em>Domain-Driven Design Distilled</em>. Addison-Wesley Professional, 2016 [Online]. Available: <a href="https://www.amazon.com/dp/B01JJSGE5S/" class="bare">https://www.amazon.com/dp/B01JJSGE5S/</a></p>
+</div>
+<div class="paragraph">
+<p><a id="implementing-domain-driven-design"></a>[3] V. Vernon, <em>Implementing Domain driven Design</em>. Addison-Wesley Professional, 2012 [Online]. Available: <a href="https://www.amazon.com/dp/B00BCLEBN8" class="bare">https://www.amazon.com/dp/B00BCLEBN8</a></p>
+</div>
+<div class="paragraph">
+<p><a id="java-9-modularity"></a>[4] S. Mak, <em>Java 9 Modularity</em>. O’Reilly Media, 2017 [Online]. Available: <a href="https://www.amazon.com/dp/1491954167" class="bare">https://www.amazon.com/dp/1491954167</a></p>
+</div>
+<div class="paragraph">
+<p><a id="clean-architecture"></a>[5] R. C. Martin, <em>Clean Architecture</em>. Pearson, 2017 [Online]. Available: <a href="https://www.amazon.com/dp/0134494164" class="bare">https://www.amazon.com/dp/0134494164</a></p>
+</div>
+<div class="paragraph">
+<p><a id="refactoring"></a>[6] M. Fowler, <em>Refactoring</em>, First. Addision-Wesley, 1999 [Online]. Available: <a href="https://www.amazon.com/dp/B004PQQRK2" class="bare">https://www.amazon.com/dp/B004PQQRK2</a></p>
+</div>
+<div class="paragraph">
+<p><a id="refactoring-databases"></a>[7] A. Scott and P. J. Sadalage, <em>Refactoring Databases</em>. Addison-Wesley Professional, 2006 [Online]. Available: <a href="https://www.amazon.com/dp/B001QAP36E" class="bare">https://www.amazon.com/dp/B001QAP36E</a></p>
+</div>
+<div class="paragraph">
+<p><a id="refactoring-2nd"></a>[8] M. Fowler, <em>Refactoring</em>, Second. Addision-Wesley, 2018 [Online]. Available: <a href="https://www.amazon.com/dp/0134757599" class="bare">https://www.amazon.com/dp/0134757599</a></p>
+</div>
+<div class="paragraph">
+<p><a id="clean-code"></a>[9] R. C. Martin, <em>Clean Code</em>. Prentice Hall, 2009 [Online]. Available: <a href="https://www.amazon.com/dp/0132350882" class="bare">https://www.amazon.com/dp/0132350882</a></p>
+</div>
+<div class="paragraph">
+<p><a id="clean-coder"></a>[10] R. C. Martin, <em>The Clean Coder</em>. Prentice Hall, 2011 [Online]. Available: <a href="https://www.amazon.com/dp/0137081073" class="bare">https://www.amazon.com/dp/0137081073</a></p>
+</div>
+<div class="paragraph">
+<p><a id="agile-testing"></a>[11] L. Crispin, <em>Agile testing</em>. Addison-Wesley, 2009 [Online]. Available: <a href="https://www.amazon.com/dp/0321534468" class="bare">https://www.amazon.com/dp/0321534468</a></p>
+</div>
+<div class="paragraph">
+<p><a id="more-agile-testing"></a>[12] J. G. Gregory and L. Crispin, <em>More Agile Testing</em>. Addison-Wesley Professional [Online]. Available: <a href="https://www.amazon.com/dp/0321967054" class="bare">https://www.amazon.com/dp/0321967054</a></p>
+</div>
+<div class="paragraph">
+<p><a id="bridging-communication-gap"></a>[13] G. Adzic, <em>Bridging the Communication Gap</em>. Neuri Limited, 2009 [Online]. Available: <a href="https://www.amazon.com/dp/B008YZ993W/" class="bare">https://www.amazon.com/dp/B008YZ993W/</a></p>
 </div>
 </div>
 </div>

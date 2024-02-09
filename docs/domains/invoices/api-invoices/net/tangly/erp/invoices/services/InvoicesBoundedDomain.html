@@ -142,15 +142,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;net.tangly.core.domain.DomainEntity&lt;?&gt;&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entities()" class="member-name-link">entities</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startup()" class="member-name-link">startup</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.domain.BoundedDomain">Methods inherited from class&nbsp;net.tangly.core.domain.BoundedDomain</h3>
-<code>addTagCounts, addTagCounts, countTags, handler, logic, name, port, realm, registry</code></div>
+<code>addTagCounts, addTagCounts, countTags, handler, logic, name, port, realm, registry, shutdown</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -206,12 +206,12 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="init()">
-<h3>init</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">init</span>()</div>
+<section class="detail" id="startup()">
+<h3>startup</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">startup</span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code>init</code>&nbsp;in class&nbsp;<code>net.tangly.core.domain.BoundedDomain&lt;<a href="InvoicesRealm.html" title="interface in net.tangly.erp.invoices.services">InvoicesRealm</a>,<wbr><a href="InvoicesBusinessLogic.html" title="class in net.tangly.erp.invoices.services">InvoicesBusinessLogic</a>,<wbr><a href="InvoicesHandler.html" title="interface in net.tangly.erp.invoices.services">InvoicesHandler</a>,<wbr><a href="InvoicesPort.html" title="interface in net.tangly.erp.invoices.services">InvoicesPort</a>&gt;</code></dd>
+<dd><code>startup</code>&nbsp;in class&nbsp;<code>net.tangly.core.domain.BoundedDomain&lt;<a href="InvoicesRealm.html" title="interface in net.tangly.erp.invoices.services">InvoicesRealm</a>,<wbr><a href="InvoicesBusinessLogic.html" title="class in net.tangly.erp.invoices.services">InvoicesBusinessLogic</a>,<wbr><a href="InvoicesHandler.html" title="interface in net.tangly.erp.invoices.services">InvoicesHandler</a>,<wbr><a href="InvoicesPort.html" title="interface in net.tangly.erp.invoices.services">InvoicesPort</a>&gt;</code></dd>
 </dl>
 </section>
 </li>

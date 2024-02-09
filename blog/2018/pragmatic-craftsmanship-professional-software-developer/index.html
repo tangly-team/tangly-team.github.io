@@ -49,7 +49,7 @@ Insufficient means late delivery, and few new features. The effort to correct er
 One root cause is the low quality of the source code and ignorance of basic coding design approaches.
 We are not talking about complex design activities or complex patterns; we are discussing basic approaches how to write correct and maintainable code."><meta itemprop="datePublished" content="2018-04-12T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2018-04-12T00:00:00+00:00" />
-<meta itemprop="wordCount" content="641">
+<meta itemprop="wordCount" content="803">
 <meta itemprop="keywords" content="agile,design," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Pragmatic Craftsmanship - Professional Software Developer"/>
 <meta name="twitter:description" content="The last months I was often confronted with software products having insufficient quality.
 Insufficient means late delivery, and few new features. The effort to correct errors in the field eats 30% to 50% away from the development budget. How can such a dreadful situation occur?
@@ -145,7 +145,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.5e220508d3d4cdbff7851fddcd6eb3cd.json"
+    data-offline-search-index-json-src="/offline-search-index.0e5255aa28d923005e4c0d1f94618dc6.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -169,7 +169,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.5e220508d3d4cdbff7851fddcd6eb3cd.json"
+    data-offline-search-index-json-src="/offline-search-index.0e5255aa28d923005e4c0d1f94618dc6.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1014,27 +1014,27 @@ Their best friend is the Internet.
 And as a consequence, many agile projects steadily and iteratively produce mediocre software.</p>
 </div>
 <div class="paragraph">
-<p>You shall be a proud software craftsman cite:[software-craftsman].
+<p>You shall be a proud software craftsman <span class="citation">[<a href="#software-craftsman">1</a>]</span>.
 You shall work as a professional and deliver professional results.
 I recommend any Java developer:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Have formal training in the Java language and library cite:[java-puzzlers].
+<p>Have formal training in the Java language and library <span class="citation">[<a href="#java-puzzlers">2</a>]</span>.
 For example, you should consider a Java Programmer certification for the current JDK you are working daily with.</p>
 </li>
 <li>
 <p>Learn the new features in Java e.g. Streams, Lambdas, Reactive Programming, LocalDate, Modules, packaging with jlink.</p>
 </li>
 <li>
-<p>Read and understand <em>Effective Java</em> cite:[effective-java-2nd] from Joshua Bloch.</p>
+<p>Read and understand <em>Effective Java</em> <span class="citation">[<a href="#effective-java-2nd">3</a>]</span> from Joshua Bloch.</p>
 </li>
 <li>
-<p>Read and understand the clean series cite:[clean-code, clean-coder, clean-architecture,clean-agile, clean-craftsmanship].</p>
+<p>Read and understand the clean series <span class="citation">[<a href="#clean-code">4</a>, <a href="#clean-coder">5</a>, <a href="#clean-architecture">6</a>, <a href="#clean-agile">7</a>, <a href="#clean-craftsmanship">8</a>]</span>.</p>
 </li>
 <li>
-<p>Read and understand <em>Refactoring</em> from Martin Fowler cite:[refactoring-2nd].</p>
+<p>Read and understand <em>Refactoring</em> from Martin Fowler <span class="citation">[<a href="#refactoring-2nd">9</a>]</span>.</p>
 </li>
 <li>
 <p>And read <a href="https://ronjeffries.com/xprog/articles/refactoring-not-on-the-backlog/">Refactoring not in the backlog</a> article from Ron Jeffries.</p>
@@ -1054,7 +1054,7 @@ For example, you should consider a Java Programmer certification for the current
 </ul>
 </div>
 <div class="paragraph">
-<p>A software developer not knowing the above items is almost certainly not a professional person, just a more or less talented amateur cite:[clean-code,clean-coder].
+<p>A software developer not knowing the above items is almost certainly not a professional person, just a more or less talented amateur <span class="citation">[<a href="#clean-code">4</a>, <a href="#clean-coder">5</a>]</span>.
 For a similar point of view, see the blog of Mike Cohn
 <a href="https://www.mountaingoatsoftware.com/blog/the-difference-between-a-professional-and-an-amateur">the difference between a professional and an amateur</a>.</p>
 </div>
@@ -1075,10 +1075,10 @@ For a similar point of view, see the blog of Mike Cohn
 <p>Lean a new language or framework every two years.</p>
 </li>
 <li>
-<p>Read books such as The pragmatic Programmer cite:[pragmatic-programmer-2nd].</p>
+<p>Read books such as The pragmatic Programmer <span class="citation">[<a href="#pragmatic-programmer-2nd">10</a>]</span>.</p>
 </li>
 <li>
-<p>Know approaches such <a href="http://www.extremeprogramming.org/">eXtreme Programming</a>, and read the book cite:[extreme-programming-explained].</p>
+<p>Know approaches such <a href="http://www.extremeprogramming.org/">eXtreme Programming</a>, and read the book <span class="citation">[<a href="#extreme-programming-explained">11</a>]</span>.</p>
 </li>
 <li>
 <p>Work with <a href="https://www.scrumguides.org/">Scrum</a>, <a href="https://en.wikipedia.org/wiki/Kanban">Kanban</a>, <a href="https://less.works/">LeSS</a>.
@@ -1122,13 +1122,13 @@ You do not have to agree with them, look what they are doing.</p>
 <p>Craftsmanship is not enough to guarantee the success of a product, but the lack of it can be the main cause of its failure.</p>
 </div>
 <div class="paragraph">
-<p>Agile and Craftsmanship complement each other and both are necessary cite:[clean-agile, clean-craftsmanship].</p>
+<p>Agile and Craftsmanship complement each other and both are necessary <span class="citation">[<a href="#clean-agile">7</a>, <a href="#clean-craftsmanship">8</a>]</span>.</p>
 </div>
 <div class="paragraph">
 <p>Agile processes assume technical excellence and a professional attitude</p>
 </div>
 <div class="paragraph">
-<p>Software craftsmanship takes technical excellence and professionalism to a whole new level cite:[pragmatic-programmer-1st,pragmatic-programmer-2nd].</p>
+<p>Software craftsmanship takes technical excellence and professionalism to a whole new level <span class="citation">[<a href="#pragmatic-programmer-1st">12</a>, <a href="#pragmatic-programmer-2nd">10</a>]</span>.</p>
 </div>
 </blockquote>
 </div>
@@ -1165,7 +1165,40 @@ How you do it is up to you.</p>
 <h2 id="_references">References</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>bibliography::[]</p>
+<p><a id="software-craftsman"></a>[1] S. Mancuso, <em>The Software Craftsman</em>. Prentice Hall, 2015 [Online]. Available: <a href="https://www.amazon.com/dp/0134052501" class="bare">https://www.amazon.com/dp/0134052501</a></p>
+</div>
+<div class="paragraph">
+<p><a id="java-puzzlers"></a>[2] J. Bloch and N. Gafter, <em>Java™ Puzzlers</em>. Addison-Wesley Professional, 2005 [Online]. Available: <a href="https://www.amazon.com/dp/032133678X" class="bare">https://www.amazon.com/dp/032133678X</a></p>
+</div>
+<div class="paragraph">
+<p><a id="effective-java-2nd"></a>[3] J. Bloch, <em>Effective Java</em>, Second. Addison-Wesley Professional, 2008 [Online]. Available: <a href="https://www.amazon.com/dp/B078H61SCH" class="bare">https://www.amazon.com/dp/B078H61SCH</a></p>
+</div>
+<div class="paragraph">
+<p><a id="clean-code"></a>[4] R. C. Martin, <em>Clean Code</em>. Prentice Hall, 2009 [Online]. Available: <a href="https://www.amazon.com/dp/0132350882" class="bare">https://www.amazon.com/dp/0132350882</a></p>
+</div>
+<div class="paragraph">
+<p><a id="clean-coder"></a>[5] R. C. Martin, <em>The Clean Coder</em>. Prentice Hall, 2011 [Online]. Available: <a href="https://www.amazon.com/dp/0137081073" class="bare">https://www.amazon.com/dp/0137081073</a></p>
+</div>
+<div class="paragraph">
+<p><a id="clean-architecture"></a>[6] R. C. Martin, <em>Clean Architecture</em>. Pearson, 2017 [Online]. Available: <a href="https://www.amazon.com/dp/0134494164" class="bare">https://www.amazon.com/dp/0134494164</a></p>
+</div>
+<div class="paragraph">
+<p><a id="clean-agile"></a>[7] R. C. Martin, <em>Clean Agile</em>. Prentice Hall, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135781868" class="bare">https://www.amazon.com/dp/0135781868</a></p>
+</div>
+<div class="paragraph">
+<p><a id="clean-craftsmanship"></a>[8] R. C. Martin, <em>Clean Craftsmanship</em>. Addison-Wesley Professional, 2021 [Online]. Available: <a href="https://www.amazon.com/dp/B095C16LSW" class="bare">https://www.amazon.com/dp/B095C16LSW</a></p>
+</div>
+<div class="paragraph">
+<p><a id="refactoring-2nd"></a>[9] M. Fowler, <em>Refactoring</em>, Second. Addision-Wesley, 2018 [Online]. Available: <a href="https://www.amazon.com/dp/0134757599" class="bare">https://www.amazon.com/dp/0134757599</a></p>
+</div>
+<div class="paragraph">
+<p><a id="pragmatic-programmer-2nd"></a>[10] D. Thomas and A. Hunt, <em>The Pragmatic Programmer - 20th Anniversary Edition</em>, Second. Addison Wesley, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/0135957052" class="bare">https://www.amazon.com/dp/0135957052</a></p>
+</div>
+<div class="paragraph">
+<p><a id="extreme-programming-explained"></a>[11] K. Beck and C. Andres, <em>Extreme Programming Explained</em>, Second. Addison-Wesley Professional, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321278658" class="bare">https://www.amazon.com/dp/0321278658</a></p>
+</div>
+<div class="paragraph">
+<p><a id="pragmatic-programmer-1st"></a>[12] D. Thomas and A. Hunt, <em>The Pragmatic Programmer</em>, First. Addison Wesley, 1999 [Online]. Available: <a href="https://www.amazon.com/dp/B003GCTQAE" class="bare">https://www.amazon.com/dp/B003GCTQAE</a></p>
 </div>
 </div>
 </div>

@@ -39,7 +39,7 @@ The features have been available since Java 17.
 Latter JDK releases provide additional capabilities and syntactic sugar.
 Based on the features of JDK 22, we are still missing with constructors for records and primitive support for pattern matching [1].
 Pattern matching capabilities empower the developer to implement complex algorithms in a compact and legible way.
-The compiler checks the exhaustiveness of the pattern matching." />
+Patterns such as visitor pattern are obsolete." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tangly.net/blog/2024/data-classes-sealed-types-and-pattern-matching/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2024-01-01T00:00:00+00:00" />
@@ -51,16 +51,16 @@ The features have been available since Java 17.
 Latter JDK releases provide additional capabilities and syntactic sugar.
 Based on the features of JDK 22, we are still missing with constructors for records and primitive support for pattern matching [1].
 Pattern matching capabilities empower the developer to implement complex algorithms in a compact and legible way.
-The compiler checks the exhaustiveness of the pattern matching."><meta itemprop="datePublished" content="2024-01-01T00:00:00+00:00" />
+Patterns such as visitor pattern are obsolete."><meta itemprop="datePublished" content="2024-01-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2024-01-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="552">
+<meta itemprop="wordCount" content="604">
 <meta itemprop="keywords" content="java,students-java," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Data Classes, Sealed Types and Pattern Matching"/>
 <meta name="twitter:description" content="Records, sealed types, enumerations are the key language features for Algebraic Data Types.
 The features have been available since Java 17.
 Latter JDK releases provide additional capabilities and syntactic sugar.
 Based on the features of JDK 22, we are still missing with constructors for records and primitive support for pattern matching [1].
 Pattern matching capabilities empower the developer to implement complex algorithms in a compact and legible way.
-The compiler checks the exhaustiveness of the pattern matching."/>
+Patterns such as visitor pattern are obsolete."/>
 
 
 
@@ -151,7 +151,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.5e220508d3d4cdbff7851fddcd6eb3cd.json"
+    data-offline-search-index-json-src="/offline-search-index.0e5255aa28d923005e4c0d1f94618dc6.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -175,7 +175,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.5e220508d3d4cdbff7851fddcd6eb3cd.json"
+    data-offline-search-index-json-src="/offline-search-index.0e5255aa28d923005e4c0d1f94618dc6.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1012,6 +1012,10 @@ if (!doNotTrack) {
 <p>Pattern matching capabilities empower the developer to implement complex algorithms in a compact and legible way.</p>
 </div>
 <div class="paragraph">
+<p>Patterns such as visitor pattern are obsolete.
+You can write the same functionality with one pattern matching switch case and the compiler would validate completness for you.</p>
+</div>
+<div class="paragraph">
 <p>The compiler checks the exhaustiveness of the pattern matching.
 Source code is more maintainable and less error-prone.</p>
 </div>
@@ -1134,7 +1138,7 @@ No more visitor pattern.
 <em>Use pattern matching</em>.</p>
 </div>
 <div class="paragraph">
-<p>These programming idioms are compliant with seminal books on software engineering cite:[modern-software-engineering,effective-java-3rd].</p>
+<p>These programming idioms are compliant with seminal books on software engineering <span class="citation">[<a href="#modern-software-engineering">1</a>, <a href="#effective-java-3rd">2</a>]</span>.</p>
 </div>
 <div class="paragraph">
 <p>The next JDK releases will provide additional capabilities for pattern matching.
@@ -1180,7 +1184,10 @@ Wikipedia</p>
 <h2 id="_references">References</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>bibliography::[]</p>
+<p><a id="modern-software-engineering"></a>[1] D. Farley, <em>Modern Software Engineering</em>. Pearson Education, Limited, 2022 [Online]. Available: <a href="https://www.amazon.com/dp/B09GG6XKS4" class="bare">https://www.amazon.com/dp/B09GG6XKS4</a></p>
+</div>
+<div class="paragraph">
+<p><a id="effective-java-3rd"></a>[2] J. Bloch, <em>Effective Java</em>, Third. Addison-Wesley Professional, 2017 [Online]. Available: <a href="https://www.amazon.com/dp/B078H61SCH" class="bare">https://www.amazon.com/dp/B078H61SCH</a></p>
 </div>
 </div>
 </div>
