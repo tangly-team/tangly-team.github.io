@@ -154,7 +154,7 @@ They can have the following parameters:&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Accumulator&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;a function which specifies the logic of the aggregation of elements.
+&lt;p&gt;a function which specifies the logic for the aggregation of elements.
 As the accumulator creates a new value for every step of reducing, the quantity of new values equals the stream’s size and only the last value is useful.
 This is not very good for the performance.&lt;/p&gt;
 &lt;/dd&gt;
@@ -193,7 +193,7 @@ They can be accessed with the help of the Collectors type.&lt;/p&gt;
 Collector will take care of that.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Processing the average value of all numeric elements of the stream:&lt;/p&gt;
+&lt;p&gt;Processing the average value for all numeric elements of the stream:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
@@ -264,10 +264,30 @@ You do not need to create a stream for this purpose.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;windowSliding&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;is a stateful many-to-many gatherer which groups input elements into lists of a supplied size. After the first window, each subsequent window is created from a
-copy of its predecessor by dropping the first element and appending the next element from the input stream..&lt;/p&gt;
+&lt;p&gt;is a stateful many-to-many gatherer which groups input elements into lists of a supplied size.
+After the first window, each subsequent window is created from a copy of its predecessor by dropping the first element and appending the next element from the input stream.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gatherers support composition via the &lt;em&gt;andThen(Gatherer)&lt;/em&gt; method, which joins two gatherers where the first produces elements that the second can consume.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This enables the creation of sophisticated gatherers by composing simpler ones, just like function composition.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Semantically, &lt;em&gt;source.gather(a).gather(b).gather(c).collect(…​)&lt;/em&gt; is equivalent to  &lt;em&gt;source.gather(a.andThen(b).andThen(c)).collect(…​)&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -276,8 +296,7 @@ copy of its predecessor by dropping the first element and appending the next ele
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Before Java 8, parallelization was complex.
-The emergence of the &lt;em&gt;ExecutorService&lt;/em&gt; and the &lt;em&gt;ForkJoin&lt;/em&gt; simplified a developer’s life a little bit, but it was still worth remembering how to create a specific executor and
-how to run it.
+The emergence of the &lt;em&gt;ExecutorService&lt;/em&gt; and the &lt;em&gt;ForkJoin&lt;/em&gt; simplified a developer’s life a little bit, but it was still worth remembering how to create a specific executor and how to run it.
 Java 8 introduced a way of accomplishing parallelism in a functional style.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -342,7 +361,7 @@ Marcel Baumann. 2024&lt;/p&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;jep-gatherers&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;https://openjdk.org/jeps/461&#34;&gt;Stream Gatherers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;jep-gatherers&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;https://openjdk.org/jeps/461&#34;&gt;JEP 461: Stream Gatherers&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
