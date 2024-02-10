@@ -5,7 +5,7 @@
     <description>Recent content in tangly llc Blog on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Feb 2024 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,361 @@
         
       
     
+    
+    <item>
+      <title>Blog: Advanced Streams</title>
+      <link>https://blog.tangly.net/blog/2024/advanced-streams/</link>
+      <pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2024/advanced-streams/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-02-01-head.png&#34; alt=&#34;2024 02 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Java Stream API is a powerful and simple to understand set of tools for processing sequences of elements.
+The standard collections were retrofitted with the &lt;em&gt;stream()&lt;/em&gt; method, which allows us to convert any collection to a stream.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern Java code has almost no loops and conditional statements.
+It relies on the Stream API and the functional programming style to implement algorithms.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;When used properly, it allows us to reduce a huge amount of boilerplate code, create more readable programs, and improve productivity &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#modern-software-engineering&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#effective-java-3rd&#34;&gt;2&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The majority of Java developers I encountered are still not familiar with how to apply the Stream API when writing code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Introductory Java courses do not extensively cover the Stream API.
+Most code examples are still written in an ancient imperative style.
+The usage of the Stream API and Optional is not covered in detail.
+Too much time is used to explain the basics of the various loops and conditional statements instead of teaching modern concepts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock warning&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-warning&#34; title=&#34;Warning&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java developers should never return null from a method.
+Instead, they should return an empty collection or an optional.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are truly using functional programming style if some of your methods have lambda expressions as parameters or return values.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_creating_streams&#34;&gt;Creating Streams&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;There are many ways to create a stream instance of different sources.
+Once created, the instance will not modify its source, therefore allowing the creation of multiple instances from a single source.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;streamOf&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;list&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;list&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;null&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;list&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;isEmpty&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;empty&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;list&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;                 &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;streamOf&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;array&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #cf222e&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;array&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;null&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;array&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;empty&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Arrays&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;array&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;      &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #953800&#34;&gt;IntStream&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;intStream&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;IntStream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;range&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;                                                &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+&lt;span style=&#34;color: #953800&#34;&gt;LongStream&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;longStream&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;LongStream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;rangeClosed&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color: #953800&#34;&gt;StreamSupport&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;iterable&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;spliterator&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;                                        &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;em&gt;stream()&lt;/em&gt; method is used to convert a collection to a stream.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;em&gt;Arrays.stream()&lt;/em&gt; method is used to convert an array to a stream.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;em&gt;range()&lt;/em&gt; method is used to create a stream of integer or long values.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;em&gt;StreamSupport.stream()&lt;/em&gt; method is used to convert an iterable to a stream.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_map_and_filter&#34;&gt;Map and Filter&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-02-01-flatmap.jpg&#34; alt=&#34;2024 02 01 flatmap&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;em&gt;map()&lt;/em&gt; method is used to transform one object into another by applying a transformation function.
+It produces a new stream after applying the function to each element of the original stream.
+The new stream could be of different type.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;em&gt;filter()&lt;/em&gt; method is used to eliminate elements based on a condition.
+It produces a new stream that contains elements of the original stream that pass a given test specified by a &lt;em&gt;Predicate&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;em&gt;flatMap()&lt;/em&gt; method is used to transform one object into another by applying a function that returns a stream.
+A stream can hold complex data structures like &lt;em&gt;Stream&amp;lt;List&amp;lt;String&amp;gt;&amp;gt;&lt;/em&gt;.
+In cases like this, &lt;em&gt;flatMap()&lt;/em&gt; helps us to flatten the data structure to simplify further operations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_collectors&#34;&gt;Collectors&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;There are three variations of this method, which differ by their signatures and returning types.
+They can have the following parameters:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Identity&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;the initial value for an accumulator, or a default value if a stream is empty and there is nothing to accumulate&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Accumulator&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a function which specifies the logic of the aggregation of elements.
+As the accumulator creates a new value for every step of reducing, the quantity of new values equals the stream’s size and only the last value is useful.
+This is not very good for the performance.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Combiner&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;a function which aggregates the results of the accumulator.
+We only call combiner in a parallel mode to reduce the results of accumulators from different threads.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The reduction of a stream can also be executed by another terminal operation, the collect() method.
+It accepts an argument of the type Collector, which specifies the mechanism of reduction.
+There are already created, predefined collectors for most common operations.
+They can be accessed with the help of the Collectors type.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In this section, we will use the following List as a source for all streams:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #6e7781&#34;&gt;// Copy Converting a stream to the Collection (Collection, List or Set):&lt;/span&gt;
+&lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Product&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;productList&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;of&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Product&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;23&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;potatoes&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Product&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;orange&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;),&lt;/span&gt;
+                        &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;Product&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;13&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;lemon&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Product&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;23&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;bread&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Product&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;13&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;sugar&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;
+
+&lt;span style=&#34;color: #6e7781&#34;&gt;// Copy Reducing to String:&lt;/span&gt;
+&lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;collectorCollection&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;productList&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;map&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;Product:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getName&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;collect&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Collectors&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;toList&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;());&lt;/span&gt;
+
+&lt;span style=&#34;color: #6e7781&#34;&gt;// Copy The joiner() method can have from one to three parameters (delimiter, prefix, suffix):&lt;/span&gt;
+&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;listToString&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;productList&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;map&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;Product:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getName&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;
+                                          &lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;collect&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Collectors&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;joining&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;, &amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;[&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;]&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The most convenient thing about using joiner() is that the developer does not need to check if the stream reaches its end to apply the suffix and not to apply a delimiter.
+Collector will take care of that.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Processing the average value of all numeric elements of the stream:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #6e7781&#34;&gt;// Copy Processing the sum of all numeric elements of the stream:&lt;/span&gt;
+&lt;span style=&#34;color: #cf222e&#34;&gt;double&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;averagePrice&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;productList&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;collect&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Collectors&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;averagingInt&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;Product:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getPrice&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;
+
+&lt;span style=&#34;color: #6e7781&#34;&gt;// Copy The methods averagingXX(), summingXX() and summarizingXX() can work with primitives&lt;/span&gt;
+&lt;span style=&#34;color: #6e7781&#34;&gt;// (int, long, double) and with their wrapper classes (Integer, Long, Double).&lt;/span&gt;
+&lt;span style=&#34;color: #6e7781&#34;&gt;// One more powerful feature of these methods is providing the mapping.&lt;/span&gt;
+&lt;span style=&#34;color: #6e7781&#34;&gt;// As a result, the developer does not need to use an additional map() operation before the collect() method.&lt;/span&gt;
+&lt;span style=&#34;color: #cf222e&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;summingPrice&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;productList&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;collect&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Collectors&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;summingInt&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;Product:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getPrice&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;
+
+&lt;span style=&#34;color: #6e7781&#34;&gt;// Grouping of stream’s elements according to the specified function:&lt;/span&gt;
+&lt;span style=&#34;color: #6e7781&#34;&gt;// Copy In the example above, the stream was reduced to the Map, which groups all products by their price.&lt;/span&gt;
+&lt;span style=&#34;color: #953800&#34;&gt;Map&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Integer&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Product&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;collectorMapOfLists&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;productList&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;stream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt;
+                                &lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;collect&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Collectors&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;groupingBy&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;Product:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getPrice&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;em&gt;Collectors&lt;/em&gt; class provides a set of predefined collectors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To iterate over a collection and apply a function to each element, use the forEach() convenience method.
+You do not need to create a stream for this purpose.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_gatherers&#34;&gt;Gatherers&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Java Stream API was released with Java 8 in March 2014 and has given us a fundamentally new tool for processing data streams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;However, the limited set of intermediate operations – &lt;em&gt;filter&lt;/em&gt;, &lt;em&gt;map&lt;/em&gt;, &lt;em&gt;flatMap&lt;/em&gt;, &lt;em&gt;mapMulti&lt;/em&gt;, &lt;em&gt;distinct&lt;/em&gt;, &lt;em&gt;sorted&lt;/em&gt;, &lt;em&gt;peak&lt;/em&gt;, &lt;em&gt;limit&lt;/em&gt;, &lt;em&gt;skip&lt;/em&gt;, &lt;em&gt;takeWhile&lt;/em&gt;, and &lt;em&gt;dropWhile&lt;/em&gt; – means that the Stream API cannot express more complex data transformations&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A set of default gatherers are provided in the &lt;em&gt;java.util.stream.Gatherers&lt;/em&gt; class:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;fold&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;is a stateful many-to-one gatherer which constructs an aggregate incrementally and emits that aggregate when no more input elements exist.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;mapConcurrent&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;is a stateful one-to-one gatherer which invokes a supplied function for each input element concurrently, up to a supplied limit.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;scan&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;is a stateful one-to-one gatherer which applies a supplied function to the current state and the current element to produce the next element, which it passes downstream.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;windowFixed&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;is a stateful many-to-many gatherer which groups input elements into lists of a supplied size, emitting the windows downstream when they are full.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;windowSliding&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;is a stateful many-to-many gatherer which groups input elements into lists of a supplied size. After the first window, each subsequent window is created from a
+copy of its predecessor by dropping the first element and appending the next element from the input stream..&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_parallel_streams&#34;&gt;Parallel Streams&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Before Java 8, parallelization was complex.
+The emergence of the &lt;em&gt;ExecutorService&lt;/em&gt; and the &lt;em&gt;ForkJoin&lt;/em&gt; simplified a developer’s life a little bit, but it was still worth remembering how to create a specific executor and
+how to run it.
+Java 8 introduced a way of accomplishing parallelism in a functional style.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The API allows us to create parallel streams, which perform operations in a parallel mode.
+When the source of a stream is a Collection or an array, it can be achieved with the help of the &lt;em&gt;parallelStream()&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Under the hood, Stream API automatically uses the &lt;em&gt;ForkJoin&lt;/em&gt; framework to execute operations in parallel.
+By default, the common thread pool will be used, and there is no way to assign some custom thread pool to it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern Java applications extensively use streams.
+Beware modern Java code is quite different from Java code written beginning of this millennium
+&lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#functional-thinking&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#functional-programming-java&#34;&gt;4&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The source code is almost free of loops and conditional statements.
+The code is more readable and maintainable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The new gatherers simplify this functional and declarative programming style.
+Custom gatherers and collectors are seldom written.
+Most of the time, the predefined gatherers and collectors are sufficient.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This extension of the Stream API allows experienced Java developers to write custom gatherers and collectors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern IDE like IntelliJ provides reasonable support to debug complex stream expressions.
+I seldom need to activate the debugger.
+The declarative style tremendously reduces the risks of errors in the application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The IDE provides refactoring support to convert loops to streams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-algebric-data-types&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2024/data-classes-sealed-types-and-pattern-matching&#34;&gt;Data Classes, Sealed Types and Pattern Matching&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-advanced-streams&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2024/advanced-streams&#34;&gt;Advanced Streams&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-modules&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2024/java-modules&#34;&gt;Java Modules&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structured-concurrency&#34;&gt;Structured Concurrency&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;jep-gatherers&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;https://openjdk.org/jeps/461&#34;&gt;Stream Gatherers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;modern-software-engineering&#34;&gt;&lt;/a&gt;[1] D. Farley, &lt;em&gt;Modern Software Engineering&lt;/em&gt;. Pearson Education, Limited, 2022 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B09GG6XKS4&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B09GG6XKS4&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;effective-java-3rd&#34;&gt;&lt;/a&gt;[2] J. Bloch, &lt;em&gt;Effective Java&lt;/em&gt;, Third. Addison-Wesley Professional, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B078H61SCH&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B078H61SCH&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;functional-thinking&#34;&gt;&lt;/a&gt;[3] N. Ford, &lt;em&gt;Functional Thinking: Paradigm Over Syntax&lt;/em&gt;. O’Reilly Media [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00LEX6SP8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00LEX6SP8&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;functional-programming-java&#34;&gt;&lt;/a&gt;[4] V. Subramaniam, &lt;em&gt;Functional Programming In Java Harnessing The Power Of Java 8 Lambda Expressions&lt;/em&gt;. The Pragmatic Programmers, 2014 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B0CJL7VKFL&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B0CJL7VKFL&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: EclipseStore</title>
@@ -401,7 +756,7 @@ The execution speed of the tests is great.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Patterns such as visitor pattern are obsolete.
-You can write the same functionality with one pattern matching switch case and the compiler would validate completness for you.&lt;/p&gt;
+You can write the same functionality with one pattern matching switch case and the compiler would validate completeness for you.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The compiler checks the exhaustiveness of the pattern matching.
@@ -421,7 +776,7 @@ But you are on your own.
 The compiler does not provide any support for deep immutability.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Constructor, getters, equals, hashCode and toString are generated by the compiler.&lt;/p&gt;
+&lt;p&gt;The compiler generates constructor, getters, equals, hashCode and toString.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
@@ -535,7 +890,7 @@ Draft JEP for with constructors for records was also published in January 2024.&
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Step by step, the language is evolving to a more functional programming language.
-Syntax sugar for pattern matching is on the way and reduce boilerplate code.&lt;/p&gt;
+Syntax sugar for pattern matching is on the way and reduces boilerplate code.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -17282,240 +17637,6 @@ The environment increases the productivity of your development teams.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. &lt;a href=&#34;https://spring.io/&#34;&gt;Spring organization&lt;/a&gt; provides &lt;a href=&#34;https://spring.academy/courses&#34;&gt;certification path&lt;/a&gt;.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Doing Agile</title>
-      <link>https://blog.tangly.net/blog/2022/doing-agile/</link>
-      <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2022/doing-agile/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;openblock float-group&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-03-01-head.png&#34; alt=&#34;2022 03 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;In the midst of the agile adoption explosion, many teams are experiencing difficulties.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Organizations often mix agile with Scrum.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;One of the most common misconceptions about &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; is that it is synonymous with agile.
-&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;Agile Manifesto&lt;/a&gt; is an umbrella term that refers to a family of approaches that share common values and principles.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Scrum is a commonly used agile framework that offers suggestions for how work can be organized to maximize the value of the end-user.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;While Scrum is implemented at a product development team level, agile has a focus on the entire organization including its leadership and company culture.
-Both are relatively easy to start down the path but difficult to master.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Many organizations use Scrum in combination with other agile principles and practices.
-Even if Scrum seems like a relatively easy framework to implement, there are changes needed on the individual and organizational level that scrum does not address.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Teams often try hard to use new ways of working and learning.
-The challenge is to explore the new approaches and not to fall back to traditional processes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;According to the
-&lt;a href=&#34;https://stateofagile.com/&#34;&gt;15th Annual State of Agile report&lt;/a&gt;, 46% of survey respondents report struggles with inconsistent practices and 43% report cultural classes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;What are signs your teams are struggling with agile and lean adoption?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_common_symptoms&#34;&gt;Common Symptoms&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock text-center&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-03-01-resistence.png&#34; alt=&#34;2022 03 01 resistence&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Below are some common symptoms of teams who are &lt;em&gt;pretending&lt;/em&gt; to be agile:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Teams are not delivering a &lt;em&gt;done&lt;/em&gt;, a usable increment at the end of each sprint.
-By usable we mean that the product is fully tested and provides a fully usable increment of valuable functionality.
-The product increment must be deployed on a server for internal or external use.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The daily Scrum is a status update instead of a small planning session.
-Reporting to attending managers is a clear sign of distrust and micromanagement.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The sprint review meeting is merely a demonstration, and not an opportunity for collaboration.
-A clear sign of dysfunctional Scrum is when the content and the priority of backlog items is never updated during a sprint review.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The sprint retrospective does not result in actionable improvement ideas that the Scrum team addresses proactively.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The quality of the product resulting from the Scrum team’s work is not increasing
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The Scrum master is not coaching the Scrum Team or the parent organization in techniques to improve the use of the Scrum framework.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Developers do not self-manage or collaborate with the Product Owner on ways to maximize the product’s value.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The organization does not respect the Product Owner’s decisions.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Resource managers do not know how to support agile teams.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_dark_agile&#34;&gt;Dark Agile&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-03-01-scrum-empirism.png&#34; alt=&#34;2022 03 01 scrum empirism&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The problem is when a team begins to use an agile framework incorrectly.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The team begins to focus more on their adherence to the process than they do to stay true to Agile values.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This is Dark Agile &lt;a href=&#34;#detecting-agile-bullshit&#34;&gt;[4]&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The team presents itself as agile and believes it is practicing agile, but it is not.
-It is practicing a framework without the support of agile values.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This can lead to micromanagement, a squashing of adaptability toward customers’ changing needs, and an extreme lessening of the benefits gained from Agile practice.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Remember that Scrum, Lean, and agile approaches are tools to improve the quality and effectiveness of your product development.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; is a framework and a set of techniques to help you improve your way of creating awesome products.
-The ultimate goal is the product, never the process.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_how_to_be_agile&#34;&gt;How to Be Agile?&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Emphasizes key values and principles over blindly applying a method &lt;a href=&#34;#cargo-cult&#34;&gt;[9]&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Apply the &lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;twelve principles&lt;/a&gt; of the &lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;agile manifesto&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Please read the &lt;a href=&#34;#scrum-guide&#34;&gt;[8]&lt;/a&gt;.
-Delve in documented experiences &lt;a href=&#34;#great-scrummaster&#34;&gt;[1]&lt;/a&gt;, &lt;a href=&#34;#scrum-pocket-guide&#34;&gt;[2]&lt;/a&gt;, &lt;a href=&#34;#professional-scrum&#34;&gt;[3]&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Empiricism and lean thinking are the foundations of &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt;.
-Measure your work to find out if your improvement measures are successful.
-Drop all initiatives which do not provide measurable improvements in quality, effectiveness and productivity.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Train your collaborators &lt;a href=&#34;#scrum-master-formation&#34;&gt;[5]&lt;/a&gt;, &lt;a href=&#34;#product-owner-formation&#34;&gt;[6]&lt;/a&gt;, &lt;a href=&#34;#scrum-developer-formation&#34;&gt;[7]&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Visualize your initiatives and their metrics.
-I want to see typical lean diagrams on the walls of your project space.
-If your Scrum masters or product owners have only attended the initial two days training and never continued on the path, they are laymen.&lt;br/&gt;
-You should work with professionals.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Check your culture.
-Agile means you always trust all your collaborators.
-Your ways of working emphasize transparency, inspection and adaptation.&lt;br/&gt;
-Therefore, all information is available to all collaborators!&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Hire for cultural agile fit.
-Recognize not everybody wants to develop products in the agile way.
-Please hire collaborators who are comfortable with agile approaches, autonomy and accountability.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;ulist bibliography&#34;&gt;
-&lt;ul class=&#34;bibliography&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;great-scrummaster&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;https://www.amazon.com/dp/013465711X&#34;&gt;The Great Scrum Master&lt;/a&gt;.
-Zuzana Šochová, Addison-Wesley. 2017&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-pocket-guide&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;https://www.amazon.com/dp/B08XWQ7DG9&#34;&gt;Scrum A Pocket Guide, 3rd Edition&lt;/a&gt;.
-Gunther Verheyen.
-Van Haren Publishing. 2021&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;professional-scrum&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;https://www.amazon.com/dp/B07XTLNPTC&#34;&gt;Mastering Professional Scrum: A Practitioner’s Guide To Overcome Challenges and Maximize the Benefits of
-Agility&lt;/a&gt;.
-Stephanie Ockerman and Simon Reindl.
-Addison-Wesley. 2020&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;detecting-agile-bullshit&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2019/detecting-agile-bullshit/&#34;&gt;Detecting Agile Bullshit&lt;/a&gt;.
-Marcel Baumann. 2019&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-master-formation&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2021/scrum-master-formation&#34;&gt;Scrum Master Formation&lt;/a&gt;.
-Marcel Baumann. 2021&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;product-owner-formation&#34;&gt;&lt;/a&gt;[6] &lt;a href=&#34;../../2021/product-owner-formation&#34;&gt;Product Owner Formation&lt;/a&gt;.
-Marcel Baumann. 2021&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-developer-formation&#34;&gt;&lt;/a&gt;[7] &lt;a href=&#34;../../2021/scrum-developer-formation&#34;&gt;Scrum Developer Formation&lt;/a&gt;.
-Marcel Baumann. 2021&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-guide&#34;&gt;&lt;/a&gt;[8] &lt;a href=&#34;https://scrumguides.org/scrum-guide.html&#34;&gt;Scrum Guide&lt;/a&gt;
-Jeff Sutherland, Ken Schwaber. 2020&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;cargo-cult&#34;&gt;&lt;/a&gt;[9] &lt;a href=&#34;https://en.wikipedia.org/wiki/Cargo_cult&#34;&gt;Cargo Cult&lt;/a&gt;
-Wikipedia&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Your organization focuses more on how to write stories in JIRA instead of delivering awesome products.
 &lt;/div&gt;
 &lt;/div&gt;
 
