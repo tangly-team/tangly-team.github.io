@@ -41,7 +41,7 @@
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; is a well-established approach to write rich text documentation or comments.
 The casual user can learn and use the notation without excessive effort.
-The legibility and professional appearance of asciidoc texts are markantly higher than plain text.
+The legibility and professional appearance of asciidoc texts are striking higher than plain text.
 Asciidoc is an open standard and used in various environments and tools
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -53,7 +53,7 @@ Asciidoc is an open standard and used in various environments and tools
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Alternatives would be proprietary formats such as Microsoft Word or similar notations such as &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;Markdown&lt;/a&gt;.
-Our open-source approach to product development rejects any propriatary formats.
+Our open-source approach to product development rejects any proprietary formats.
 Asciidoc is a very powerful and successful format
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.
 The associated complexity for the users is probably an overkill for casual users of our product.&lt;/p&gt;
@@ -71,8 +71,8 @@ Asciidoc is an optimal balance between expression power and ease of use.&lt;/p&g
 No migration of existing records is needed.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The user interface components shall be extended to support a &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; visualiation and editing component.
-Vaadin currently does not provide native support for Asciidoc or Markdow.
+&lt;p&gt;The user interface components shall be extended to support a &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; visualization and editing component.
+Vaadin currently does not provide native support for &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; or &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;Markdown&lt;/a&gt;.
 The tangly-os components will be extended to provide such a component until Vaadin supports in the future such an approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -84,7 +84,7 @@ The tangly-os components will be extended to provide such a component until Vaad
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The alternative would be to use &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;Markdown&lt;/a&gt; notation. The expression power of &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; is higher and better standardized.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
-&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. The team acknowledged we have a preference for &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;. We use the notation for all our achitecture documents based on the &lt;a href=&#34;https://arc42.org/&#34;&gt;arc42&lt;/a&gt; template.
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. The team acknowledged we have a preference for &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;. We use the notation for all our architecture documents based on the &lt;a href=&#34;https://arc42.org/&#34;&gt;arc42&lt;/a&gt; template.
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -186,7 +186,7 @@ These improvements make Guava functions more and more obsolete.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/google/guava&#34;&gt;Guava&lt;/a&gt; is an external library of high quality but still an additional dependency in the application.
 We always follow the rule to use language and standard library constructs over using external libraries.
-Guava tries to support older JDKs and, therefore does not use more modern approaches defined in new API versions.
+Guava tries to support older JDKs and, therefore, does not use more modern approaches defined in new API versions.
 We consider Guava has a legacy library.
 We are dedicated to writing modern Java using the latest official releases of the language and runtime environment.&lt;/p&gt;
 &lt;/div&gt;
@@ -205,7 +205,7 @@ The main advantages are:&lt;/p&gt;
 &lt;div class=&#34;olist arabic&#34;&gt;
 &lt;ol class=&#34;arabic&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Current JDK versions provide their own implementation e.g., in the Objects class.&lt;/p&gt;
+&lt;p&gt;Current JDK versions provide their own implementation, e.g., in the Objects class.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Guava dependency is removed from our source code and compiled artifacts.&lt;/p&gt;
@@ -301,7 +301,7 @@ For example, you want to generate human-readable paper invoices.&lt;/p&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We recommend the following conventions when writing unit tests creating files.
+&lt;p&gt;We recommend the following conventions when writing unit tests which need to create files.
 Use Google Java in memory file system &lt;a href=&#34;https://github.com/google/jimfs&#34;&gt;Jimfs&lt;/a&gt;.
 Additional file systems can only be used in Java if all operations are performed through Path objects.
 Path objects have a reference to the file system; File objects always referenced the default file system.
@@ -338,7 +338,7 @@ File instances do not support alternative file systems.
 Therefore, we shall use libraries providing a workaround File instances either by using Path instances or reader and writer to access files.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Operations to the physical file system have the risk that rights problems could rise in some continuous integration environment.&lt;/p&gt;
+&lt;p&gt;Operations on the physical file system have the risk that rights problems could rise in some continuous integration environment.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -579,7 +579,7 @@ See, for example, the record construct provided since JDK 14.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A legible, well-structured and up-to-date technical documentation of released open source components is a service to all our users.
+&lt;p&gt;Legible, well-structured and up-to-date technical documentation of released open source components is a service to all our users.
 Due to the small size of our team, we want a straight forward tool chain to generate the website.
 In the future, we could move our product to another hosting platform.
 The solution should be built on a standard to minimize porting overhead.&lt;/p&gt;
@@ -615,7 +615,7 @@ I will strongly fight against proprietary solutions.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;Tooling is slightly more brittle because &lt;a href=&#34;https://asciidoctor.org/&#34;&gt;Asciidoctor&lt;/a&gt; integration in &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; is work in progress.
 &lt;a href=&#34;https://asciidoctor.org/&#34;&gt;Asciidoctor&lt;/a&gt; is also undergoing changes such as the native support of rouge syntax highlighter.
-The improvements in both tools were impressive the last year, but we have to update regularly our toolchain and update all &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; documents.&lt;/p&gt;
+The improvements in both tools were impressive the last year, but we have to regularly update our toolchain and update all &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; documents.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -708,7 +708,7 @@ They shall have access to our libraries through official and well-documented cha
 &lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The libraries shall be published as artifacts on maven central and be accessible to a wide range of developers and organizations.
-A website shall be set up to provide an adequate documentation for users.&lt;/p&gt;
+A website shall be set up to provide adequate documentation for users.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The &lt;a href=&#34;https://blog.tangly.net&#34;&gt;Technical Documentation&lt;/a&gt; will use a static web approach to minimize costs and provide good legibility.
@@ -821,10 +821,10 @@ The modules are also used as a documentation mechanism.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Honestly we are not providing the module for our modules.
+&lt;p&gt;Honestly, we are not providing the module for our modules.
 Our applications are quite simple and use a handful of services.
 This simple solution of a static repository works fine.
-This approach is muchj simpler to reason about, much faster to start, much easier to debug and to maintain.&lt;/p&gt;
+This approach is much simpler to reason about, much faster to start, much easier to debug and to maintain.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
@@ -911,13 +911,13 @@ Conversions are inefficient, lead to enormous loss of performance and latencies,
 &lt;p&gt;Almost no impedance mismatch between the Java application and persistence store.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;An elegant approach to provide one persistence container for each bounded domain the same application.&lt;/p&gt;
+&lt;p&gt;An elegant approach to providing one persistence container for each bounded domain the same application.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;MicroStream has formally announced their software library will be published under an open source license.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The library supports current versions of the JDK and all constructs of the language including preview constructs.&lt;/p&gt;
+&lt;p&gt;The library supports current versions of the JDK and all constructs of the language, including preview constructs.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;The support of the company is good.
@@ -932,6 +932,29 @@ The answers are fast and professional.&lt;/p&gt;
 &lt;p&gt;A huge advantage is the ease of migrating a java model from Microstream to JPA.
 Experience shows that the effort is often less than five working days
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;EclipseStore&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The decision to use MicroStream was a good approach.
+The library was moved to the Eclipse umbrella in 2024 and is now part of the Eclipse Foundation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library is now called &lt;a href=&#34;https://eclipsestore.io/&#34;&gt;Eclipse Store&lt;/a&gt; and is actively maintained and developed.
+Famous microservices frameworks like Quarkus and Helidon are using the library as one of their default persistence solutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A companion library provides seamless serialization of Java object graphs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -956,7 +979,7 @@ Therefore, all data containers with lambda variables must either be redesigned o
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Work on a design enabling domain driven design with MicroStream approach.&lt;/p&gt;
+&lt;p&gt;Work on a design enabling domain-driven design with MicroStream approach.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -1104,13 +1127,13 @@ The API is declared as an implementation dependency.
 The core library is declared as a test or runtime dependency.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Testing shall be performed to verify correct behavior and correct configuration.&lt;/p&gt;
+&lt;p&gt;Testing shall be performed to verify the correct behavior and correct configuration.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We shall explore if trouble arise from used components which are using other logging libraries.
-The risk is small because it is already existing wehn using slf4j liberary.
+&lt;p&gt;We shall explore if trouble arises from used components which are using other logging libraries.
+The risk is small because it is already existing when using slf4j library.
 The difference is only our new preferred library is now the Apache one.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;admonitionblock important&#34;&gt;
@@ -1139,7 +1162,7 @@ This configuration is important if some of your libraries are using slf4j.&lt;/p
 &lt;li&gt;
 &lt;p&gt;The log4j2 community reacted professionally and fast in 2022 to correct a security attack in the library.
 The update of all libraries and applications with the patched version was done in a few minutes.
-A gradle plugin was used to infer, which version of the library was used.
+A &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; plugin was used to infer, which version of the library was used.
 The continuous implementation and delivery pipeline were used to generate hardened versions.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1270,7 +1293,7 @@ The file’s size is at the possible minimum, and the performance of the convert
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;TSV is the preferred to import data into the application or export information from the solution.
+&lt;p&gt;TSV is preferred to import data into the application or export information from the solution.
 The format is also the preferred solution to import data into or export data from the solution.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1366,7 +1389,7 @@ The library is well-maintained and under Apache 2.0 open source license.&lt;/p&g
 &lt;p&gt;A major weakness of the Java ecosystem is the user interface aspects.
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Swing_(Java)&#34;&gt;Swing&lt;/a&gt; is old and no more actively supported by Oracle or other major players.
 &lt;a href=&#34;https://openjfx.io/&#34;&gt;JavaFX&lt;/a&gt; has a small active community.
-The platform never had huge acceptance.&lt;/p&gt;
+The platform never had a huge acceptance.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;We could use various JavaScript frameworks to realize our user interfaces.
@@ -1400,7 +1423,7 @@ Complexity is added between the Java backend and the TypeScript frontend.&lt;/p&
 &lt;p&gt;User interface components are based on &lt;a href=&#34;https://www.webcomponents.org/&#34;&gt;Web Components&lt;/a&gt; and &lt;a href=&#34;https://lit.dev/&#34;&gt;Lit HTML&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If desired, you can write user interface components in Typescript and connect them the Vaadin ecosystem.&lt;/p&gt;
+&lt;p&gt;If desired, you can write user interface components in Typescript and connect them to the Vaadin ecosystem.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
