@@ -96,7 +96,7 @@
 For a detailed view of what has changed, refer to the &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os&#34;&gt;repository&lt;/a&gt; commits.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_0_2_7_2023_11_31&#34;&gt;0.2.7 (2023-11-31)&lt;/h3&gt;
+&lt;h3 id=&#34;_0_2_7_2024_03_31&#34;&gt;0.2.7 (2024-03-31)&lt;/h3&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -139,20 +139,28 @@ For a detailed view of what has changed, refer to the &lt;a href=&#34;https://bi
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_concepts&#34;&gt;Concepts&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Invoices define a business bounded domain as defined in domain-driven design approach.
+&lt;p&gt;Invoices define a business-bounded domain as defined in domain-driven design approach.
 They are not constrained through external entities such as products, contracts or legal entities.
 External entities can provide hints to streamline the creation of regular invoices.
 The invoice article identifier is available as an external identifier to the article bounded domain.
 Similar identifiers are available for legal entities.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;VAT rates are defined within an article definition.
-Therefore, different VAT rates require different article definitions.
-For example, in Switzerland, a service company has two VAT rates.
-One for regular services and one for services exempted from VAT taxes.&lt;/p&gt;
+&lt;p&gt;The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_vat_rates&#34;&gt;VAT Rates&lt;/h4&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We initially stored VAT rates to the article abstraction.
+Experience showed that VAT rates are subject to change and should be stored in the invoice line.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency.&lt;/p&gt;
+&lt;p&gt;Each invoice line has a VAT rate and a computed VAT amount baed on the geographical location, time when the inovice line was created and the VAT rate.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The application does not try to provide a comprehensive VAT rate database and delegates the responsibility to the user to select the correct VAT rates.
+Reasonable hints are provided through the user interface to streamline the selection process.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -167,7 +175,7 @@ The JSON file is an adequate archive format which can digitally be processed.&lt
 &lt;/div&gt;
 &lt;div class=&#34;imageblock kroki&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;https://kroki.io/plantuml/svg/eNqNVMFu2zAMvesrdNyKxR8QBEHRdIcAGVCkX6BIjENUpgKJDmqk-fdRtuPZXovNF9vke3yPFO3HxCZyXXmlzsa-mRI0ARdsqPRNcahTYWO1B-MrfVVaLutNSnoHpfE_iZEbfb2pUebJ0NsmEIFlDKRXK_1t_yNEe0L3Xa_XfZV8vXJEKjUeDM1jB7R_wSiJWs3QJiaSIsfRWM5Obl_2gXQJaCGJg472EoOrhfWFxV733KG2bhx0kGzEc-6wDT9h-QwWK-N1TcgvUYTG-BycAy-G90baEcedn21ncCqPE13bd9q72QVr_LMUEUMeLxCb_DJL9X27T1KuhiG6qWMEso22_cNYl-GdJ0MxTQXEMniHeQgpd0FBSkYsT7wcGdWYNJ_EhhMCHhGiPobYhu6g9mwN2ey1TWz2v3R_ioVS97k8LBb3Ge2QQC-1l1sa8mGxWE8Wc9n3Lo67yL-h4GbIh4yc7fSo7p-oUkgM8WiENHZ5nZ_vlqH6ZOduQ6MtbfVRFGPGkG3p4n9Y36WWDxith7vOa33gwLJh_ydyh6uBF6aDVvlwH4Gc_CV-A5BVYJc=&#34; alt=&#34;bus-invoice-uml&#34;/&gt;
+&lt;img src=&#34;https://kroki.io/plantuml/svg/eNqNVMtu4zAMvOsrdOwWG39AEARF0z0EyAJF-gWKxDhEZSqQ6aBGmn9fyq_abouuL7bJGc6Qov1QsolcFV6ps7GvJgdNwBkbyn2dQTxnNhZ7ML7QV6Xlst6Upd5BbvwfYuRaX29qlHk09LoJRGAZA-nVSt_tf4doT-h-6fW6q5KuF45IucaDoXnsgPYTjEpRqxiaxERS5Dgay8nJ7ds-kC4BLZTioKU9x-AqYX1jsdM9t6itGwcdlDbiOXXYhB8xfwKLhfG6IuTnKEJjfArOgRfDeyPtiOPWz7Y1OJXHia7tOu3c7II1_kmKiCGPF4h1epmlur7dFylXwRDdVDEC2Vrb7mGsy_DGk6GYugBiGbzDNIQydUFBSkbMT7wcGdVYaj6JDScEPCJEfQyxCfWg5mwN2eS1SWz2f3V3iplS_VzuF4t-Rjsk0Evt5VYO-bBYrCeLuex6F8dt5GcouBnyPiFnOz2q-xFVCokhHo2Qxi6v8_PdMhRf7NxtaLShrd6zbMwYsg1d_A_ru9TyAaP10Ou8VAcOLBv2fyI9XA28MB20Sof7AOTkL_EPellgkQ==&#34; alt=&#34;bus-invoice-uml&#34;/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

@@ -452,31 +452,7 @@ They describe how the objects interact with each other to create a functioning s
 <div class="dlist"><dl><dt class="hdlist1">Structure Diagrams</dt><dd><p>class diagram, sometimes the component diagram</p></dd><dt class="hdlist1">Behavior Diagras</dt><dd><p>state machine diagram, sequence diagram, sometimes the communication diagram</p></dd></dl></div>
 <div class="paragraph"><p>I prefer</p></div>
 <div class="ulist"><ul><li><p>Customer journeys over use case diagram</p></li><li><p>Textual descriptions over deployment diagram or package diagram</p></li></ul></div></aside></div></section></section>
-<section><section id="_class_diagram"><h2>Class Diagram</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre>@startuml
-interface Actor &lt;&lt;Active&gt;&gt; {
-  + {static} send(Actor actor, Message message)
-  + String name()
-  # receive(Message message)
-  # {abstract} process(Message message)
-}
-class Queue&lt;T&gt; {}
-
-class Message &lt;&lt;struct&gt;&gt; {}
-
-enum MessageType
-
-Message *-- "1" MessageType : type
-
-Actor *- "1" Queue : messages
-Queue .&gt; Message
-
-class ActorCpp {}
-Actor &lt;|.. ActorCpp
-
-class ActorCmsis {}
-Actor &lt;|.. ActorCmsis
-
-@enduml</pre></div></div></div></section><section id="_relations"><h2>Relations</h2><div class="slide-content"><div class="ulist"><ul><li><p>Association <em>shows a dependency between two class</em></p></li><li><p>Inheritance <em>extends a class</em></p></li><li><p>Realization <em>implements an interface</em></p></li><li><p>Dependency <em>uses a class</em></p></li><li><p>Aggregation <em>instance has other objects</em></p></li><li><p>Composition <em>lifecycle is the same</em></p></li></ul></div>
+<section><section id="_class_diagram"><h2>Class Diagram</h2><div class="slide-content"><div class="imageblock kroki"><img src="https://kroki.io/plantuml/svg/eNptkc9KAzEQxu_zFEN7WWu74FXC0uK5B7EvEONYAk26ZCaCrPvuzm42othLBr7vN3-zZ7FJcriAj0Lp3TrCg5NrQmM0-g_qOhwA8R4HRcW7EZniW1MgO71bPBKzPROGEu9m_kWSj2eMNlAzKWtM5EgrNjfwNQ72lSVpwRH7dHVq_edGcBfLjM-ZMpmTTjbCIlXWGK2SnXTFpJhD9U6fPQFUcLPb4eph9dvER5SZKcttCjA3U2uZgqEIbVdT6whz1lPfT42XG3617Y_8Fwvs-SY4GQB7vbH-yjeeiImK" alt="uml-class-diagram"></div></div></section><section id="_relations"><h2>Relations</h2><div class="slide-content"><div class="ulist"><ul><li><p>Association <em>shows a dependency between two class</em></p></li><li><p>Inheritance <em>extends a class</em></p></li><li><p>Realization <em>implements an interface</em></p></li><li><p>Dependency <em>uses a class</em></p></li><li><p>Aggregation <em>instance has other objects</em></p></li><li><p>Composition <em>lifecycle is the same</em></p></li></ul></div>
 <aside class="notes"><div class="paragraph"><p>Avoid bidirectional associations.
 Dependencies can have keywords to refine them: call, create, derive, instantiate, permit, realize, refine, substitute, trace, use.</p></div></aside></div></section><section id="_properties_and_methods"><h2>Properties and Methods</h2><div class="slide-content"><div class="ulist"><ul><li><p>Properties define the state of an object</p></li><li><p>Methods define the behavior of an object</p></li></ul></div>
 <div class="paragraph"><p>A big chunk of the source code is the implementation of methods.</p></div>
@@ -491,25 +467,7 @@ Modern programming languages have too many features and idioms.</p></div></aside
 These are mostly used when working with complex systems with many components.
 Components communicate with each other using interfaces.
 The interfaces are linked using connectors.</p></div>
-<div class="paragraph"><p>Java or C++ modules are components.</p></div></aside></div></section><section id="_component_diagram_2"><h2>Component Diagram</h2><div class="slide-content"><div class="literalblock"><div class="content"><pre>package "Application" {
-  HTTP - [Loader]
-  [Process Manager]
-}
-rectangle "Drivers" {
-  FTP - [Second Component]
-  [First Component] --&gt; FTP
-}
-cloud {
-  [Maintenance]
-}
-database "Persistence" {
-  folder "Configuration Data" {
-    [Configuration]
-  }
-  frame "Logger" {
-    [Trace]
-  }
-}</pre></div></div></div></section><section id="_thoughts_2"><h2>Thoughts</h2><div class="slide-content"><div class="ulist"><ul><li><p>Provide an overview to highlight your component structure</p></li><li><p>Beware that modern programming languages support a textual representation of this structure</p></li></ul></div></div></section></section>
+<div class="paragraph"><p>Java or C++ modules are components.</p></div></aside></div></section><section id="_component_diagram_2"><h2>Component Diagram</h2><div class="slide-content"><div class="imageblock kroki"><img src="https://kroki.io/plantuml/svg/eNpVj0EKg0AMRfeeIrj3CoXSIl0oCHUnXaRjlKGaSGbaTfHuzSiUdpuf936yoHvgSJAfl2XyDqMXzuGdAVzatoECukqwJ73ZpGtUHIUANbIxNlszJReRx8kMZ_Uv0rDT5Q5fyQn3cJJ5ESaOm6b0GuLPDIrikADTuUme_SboavQciZEdpaIeI94xWE9jJT5Y5GjvGmSyCyE_CQ9-fOr2BJwN2HOT_UXpiDVxirP5Khntme9qq5ga08r6ARjJW4o=" alt="uml-component-diagram"></div></div></section><section id="_thoughts_2"><h2>Thoughts</h2><div class="slide-content"><div class="ulist"><ul><li><p>Provide an overview to highlight your component structure</p></li><li><p>Beware that modern programming languages support a textual representation of this structure</p></li></ul></div></div></section></section>
 <section id="_package_diagram"><h2>Package Diagram</h2><div class="slide-content"><div class="ulist"><ul><li><p>structure of source code in package and modules.
 You can show your layered architecture with a package diagram.</p></li></ul></div>
 <aside class="notes"><div class="paragraph"><p>As the name suggests, a package diagram shows the dependencies between different packages in a system.</p></div></aside></div></section>
@@ -522,81 +480,16 @@ Like class diagrams, they also show the relationship between objects, but they u
 Because there is data available in the objects, they are used to explain complex relationships between objects.</p></div>
 <div class="paragraph"><p>In UML version 1, communication diagrams were called collaboration diagrams.
 Communication diagrams are similar to sequence diagrams, but the focus is on messages passed between objects.
-The same information can be represented using a sequence diagram and different objects.</p></div></aside></div></section><section id="_sequence_diagram"><h2>Sequence Diagram</h2><div class="slide-content"><div class="literalblock"><div class="content"><pre>participant User
-User -&gt; Engine: DoWork
-activate Engine
-Engine -&gt; Receipt: &lt;&lt; createRequest &gt;&gt;
-activate Engine
-Receipt -&gt; Interpreter: DoWork
-activate Interpreter
-Interpreter --&gt; Receipt: WorkDone
-destroy Interpreter
-Receipt --&gt; Engine: RequestCreated
-deactivate Receipt
-Engine -&gt; User: Done
-deactivate Engine</pre></div></div>
+The same information can be represented using a sequence diagram and different objects.</p></div></aside></div></section><section id="_sequence_diagram"><h2>Sequence Diagram</h2><div class="slide-content"><div class="imageblock kroki"><img src="https://kroki.io/plantuml/svg/eNplUDEKwzAM3P0KfSAfCMFL06FroHQ2jiimYLuKWujvKyUmqM0iGelOd-caiFNMNWSG64LktEDn4ZzvKWMPY7kVergQOb0DY5u7rSlwwoipcg_DAJFQMBM-X7gweH-gNbDyLpmRKqHUo4pZOvOGzgoqZSxydRY1Kp8f1q5ksjRjp9XlLLRdr6FNLP0H9bWe_4vxBYVNbLE=" alt="uml-sequence-diagram"></div>
 <aside class="notes"><div class="paragraph"><p>Sequence diagrams in UML show how objects interact with each other and the order those interactions occur.
 It is important to note that they show the interactions for a particular scenario.
 The processes are represented vertically and interactions are shown as arrows.</p></div></aside></div></section><section id="_advanced_concepts"><h2>Advanced Concepts</h2><div class="slide-content"><div class="ulist"><ul><li><p>Activation frames</p></li><li><p>Synchronous and asynchronous calls</p></li><li><p>Return values</p></li><li><p>Interaction Frames</p></li><li><p>Creation and deletion of instances</p></li></ul></div></div></section></section>
 <section><section id="_state_machine_diagram"><h2>State Machine Diagram</h2></section><section id="_rules"><h2>Rules</h2><div class="slide-content"><div class="ulist"><ul><li><p>A state machine is inside a class</p></li><li><p>Events are asynchronous messages</p></li><li><p>Avoid activities and concurrent states</p></li><li><p>Timeout requires a global time provider</p></li></ul></div>
 <aside class="notes"><div class="paragraph"><p>Design your system so that you do not have any concurrent state.</p></div>
 <div class="paragraph"><p>Flat state machines can be implemented with a double switch.
-Hierarchical state machines require a nested set or at least a table representation if you have no history states.</p></div></aside></div></section><section id="_state_machine_diagram_2"><h2>State Machine Diagram</h2><div class="slide-content"><div class="literalblock"><div class="content"><pre>hide empty description
-
-state Root {
-    [*] --&gt; Off
-    state Maintenance
-    Maintenance -&gt; Off : TogglePower / MaintainedToOff
-
-    state Off
-    Off -&gt; Maintenance : TogglePower [Maintenance is On] / log transition Off to Maintenance
-    Off -&gt; On : TogglePower [Maintenance Off] / OffToOn
-
-
-    state On {
-        [*] --&gt; DAB
-        state DAB
-        DAB -&gt; FM : ToggleMode / DABToFM
-
-        state FM {
-            [*] --&gt; Play
-            state Play
-            Play -&gt; AutoTune : StationLost / PlayToAutoTune
-
-            state AutoTune
-            AutoTune -&gt; Play : StationFound / AutoTuneToPlay
-
-            FM -&gt; DAB : ToggleMode / FMToDAB
-        }
-
-        On -&gt; Off : TogglePower / OnToOff
-    }
-}</pre></div></div></div></section></section>
-<section><section id="_requirements_aspects"><h2>Requirements Aspects</h2><div class="slide-content"><div class="ulist"><ul><li><p>Use case diagram</p></li><li><p>Activity diagram</p></li></ul></div></div></section><section id="_use_case_diagram"><h2>Use Case Diagram</h2><div class="slide-content"><div class="literalblock"><div class="content"><pre>left to right direction
-
-actor developer
-database repo as "central\nrepo"
-agent jenkins as "Jenkins"
-
-rectangle admin as "Gerrit / Gitlab" {
-    agent ui as "front"
-    database repo_local as "local\nrepo"
-}
-
-developer --&gt; ui : push
-ui --&gt; repo_local : push
-ui -left-&gt; jenkins: "\npush "
-ui ..&gt; repo : replication</pre></div></div>
-<aside class="notes"><div class="paragraph"><p>As the most known diagram type of the behavioral UML types, use case diagrams give a graphic overview of the actors involved in a system, different functions needed by those actors and how these different functions interact.</p></div></aside></div></section><section id="_activity_diagram"><h2>Activity Diagram</h2><div class="slide-content"><div class="literalblock"><div class="content"><pre>(*) --&gt; "Initialization"
-
-if "Some Test" then
-  --&gt;[true] "Some Activity"
-  --&gt; "Another activity"
-  -right-&gt; (*)
-else
-  -&gt;[false] "Something else"
-  --&gt;[Ending process] (*)
-endif</pre></div></div>
+Hierarchical state machines require a nested set or at least a table representation if you have no history states.</p></div></aside></div></section><section id="_state_machine_diagram_2"><h2>State Machine Diagram</h2><div class="slide-content"><div class="imageblock kroki"><img src="https://kroki.io/plantuml/svg/eNp9kk1rwzAMhu_-FToPSu87DDpGTjMpm2-lB9O4mSGTSuwwSul_rxTnw2m3GYJj6dUj-cVfvnLgvk_xDJULh9afoidUKkQbHXwQRbgo4LV72sNq9QLl8difk0Bbj9GhxYPro9kZkhiewVBdN25LP66FdZLw5ypDAstoI1vKuDqHLSm7POUDlLhnckM1xNZi8HKHnhLpYcQBXuJ_TBYJkTceku3Ih8TBkdyVt83rFEuyPML_0rLQU0tNbPtaEoYKre5qWTi3yNtsG3teJJL-ISwB6bjpIpkOxb5PVrIr7xQiNxaBoTGtfmFOuTw18YZZZm5BHVYMHhWG-qEW1XytZNW9DYU2lPt1nevY7T_eUYnp_aSC6w3pEsey" alt="uml-state-diagram"></div></div></section></section>
+<section><section id="_requirements_aspects"><h2>Requirements Aspects</h2><div class="slide-content"><div class="ulist"><ul><li><p>Use case diagram</p></li><li><p>Activity diagram</p></li></ul></div></div></section><section id="_use_case_diagram"><h2>Use Case Diagram</h2><div class="slide-content"><div class="imageblock kroki"><img src="https://kroki.io/plantuml/svg/eNpVULuOAjEM7P0VVnq4noIWiW9AOpmsWXznc1ZeQ4P4d5IsIC5NJp5HRlY-BUZBl_EcOIhzDikGQDmK48BX1jKxw0BBR5oZnaeCNGPKbOGkB2uTBDTWN_6w_YrNXbBfcAJoqWSjMtLwJ9bZHbtL4BfuJJSOCW-A9SwxF-makxeL1Of__v_Wkkm7pKNXhzvAuzGuVtuWs8HpMp-hojb4cH8QWrdQyWf5DaaDNQ5TY9frxVYN9VLJ1Db0AJzBaLY=" alt="uml-use-case-diagram"></div>
+<aside class="notes"><div class="paragraph"><p>As the most known diagram type of the behavioral UML types, use case diagrams give a graphic overview of the actors involved in a system, different functions needed by those actors and how these different functions interact.</p></div></aside></div></section><section id="_activity_diagram"><h2>Activity Diagram</h2><div class="slide-content"><div class="imageblock kroki"><img src="https://kroki.io/plantuml/svg/eNpNjLEKwzAMRHd_hdCUBPILgQwdOrebyWBSORakcrGVQvv1tYmHbsd7d9cNPYzjBHgVVnY7f51yFDSGPeAtPgnulBVBA4mB2rWaDlqanFflN-sHTwc4SyzVBO5fJN6CFtsNvaE9U2WT9a7EdqSBZYPq2pO9yKOiV4or5byc28L8D-M9Noc=" alt="uml-activity-diagram"></div>
 <aside class="notes"><div class="paragraph"><p>Activity diagrams represent workflows in a graphical way.
 They can be used to describe the business workflow or the operational workflow of any component in a system.</p></div>
 <div class="paragraph"><p>I recommend using <a href="https://en.wikipedia.org/wiki/Business_Process_Modeling_Language">BPML</a> <em>Business Process Modeling Language</em> notation to describe workflows.

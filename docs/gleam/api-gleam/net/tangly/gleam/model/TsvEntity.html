@@ -356,15 +356,14 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="exports(T,org.apache.commons.csv.CSVPrinter)">
 <h3 id="exports(java.lang.Object,org.apache.commons.csv.CSVPrinter)">exports</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exports</span><wbr><span class="parameters">(@NotNull
- <a href="TsvEntity.html" title="type parameter in TsvEntity">T</a>&nbsp;entity,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exports</span><wbr><span class="parameters">(<a href="TsvEntity.html" title="type parameter in TsvEntity">T</a>&nbsp;entity,
  @NotNull
  @NotNull org.apache.commons.csv.CSVPrinter&nbsp;printer)</span></div>
-<div class="block">Export an entity as a row in a TSV file. Upon completion of the export, the caller shall call. If defined, the export lambda is executed, otherwise the exports lambdas for
+<div class="block">Export an entity as a row in a TSV file. Upon completion of the export, the caller shall call. If defined, the export lambda is executed; otherwise the exports lambdas for
  all fields are executed. The exclusive operation modes are due to the constraints of the underlying CSV Apache Commons library.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>entity</code> - entity to be exported as TSV record</dd>
+<dd><code>entity</code> - entity to be exported as TSV record. The value can be null</dd>
 <dd><code>printer</code> - printer to write TSV record</dd>
 </dl>
 </section>

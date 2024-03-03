@@ -170,6 +170,12 @@ loadScripts(document, 'script');</script>
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar,
  @NotNull <a href="AnalyticsView.html" title="class in net.tangly.ui.app.domain">AnalyticsView</a>&nbsp;analyticsView)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.vaadin.flow.component.Component</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentView()" class="member-name-link">currentView</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentView(com.vaadin.flow.component.Component)" class="member-name-link">currentView</a><wbr>(com.vaadin.flow.component.Component&nbsp;currentView)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomainUi.html" title="type parameter in BoundedDomainUi">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#domain()" class="member-name-link">domain</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -181,16 +187,19 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshViews()" class="member-name-link">refreshViews</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.Component)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.Component)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
  com.vaadin.flow.component.Component&nbsp;view)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Select the new current view of the bounded domain interface.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Select the bounded domain and the associated default view to be displayed from the bounded domain user interface and update the menu to reflect the bounded domain.</div>
 </div>
 </div>
@@ -380,7 +389,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.Component)">
 <h3>select</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">select</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">select</span><wbr><span class="parameters">(@NotNull
  @NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
  com.vaadin.flow.component.Component&nbsp;view)</span></div>
 <div class="block">Select the new current view of the bounded domain interface.</div>
@@ -389,6 +398,13 @@ loadScripts(document, 'script');</script>
 <dd><code>layout</code> - layout to display within</dd>
 <dd><code>view</code> - new current view if not null otherwise the current view is refreshed</dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="select(com.vaadin.flow.component.applayout.AppLayout)">
+<h3>select</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">select</span><wbr><span class="parameters">(@NotNull
+ @NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout)</span></div>
 </section>
 </li>
 <li>
@@ -426,6 +442,18 @@ loadScripts(document, 'script');</script>
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar,
  @NotNull
  @NotNull <a href="AnalyticsView.html" title="class in net.tangly.ui.app.domain">AnalyticsView</a>&nbsp;analyticsView)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="currentView(com.vaadin.flow.component.Component)">
+<h3>currentView</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">currentView</span><wbr><span class="parameters">(com.vaadin.flow.component.Component&nbsp;currentView)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="currentView()">
+<h3>currentView</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">com.vaadin.flow.component.Component</span>&nbsp;<span class="element-name">currentView</span>()</div>
 </section>
 </li>
 </ul>

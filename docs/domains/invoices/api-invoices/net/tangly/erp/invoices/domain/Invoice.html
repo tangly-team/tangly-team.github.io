@@ -97,11 +97,12 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 <div class="block"><p>The abstraction of an invoice with a set of positions, subtotals, and a total. The items and the subtotals have a position
- to order them in the invoice to provide human readable outputs. An invoice and its components have no dependencies to external entities. Therefore, an
- invoice is complete and can be archived. For example, you can change the VAT percentage or a product price without any consequence on existing invoices.</p>
- <p>The invoice assumes that a VAT rate applies to a specific product associated with a given invoice item. This assumption is reasonable for
- quite a lot of businesses, in particular in the service industry. Often an invoice references only one VAT rate, convenience methods are provided to
- streamline this scenario.</p></div>
+ to order them in the invoice to provide human readable outputs. An invoice and its components have no dependencies to external entities. Therefore, an invoice is complete and
+ can be archived. For example, you can change the VAT percentage or a product price without any consequence on existing invoices.</p>
+ <p>The invoice assumes that a VAT rate applies to a specific product associated with a given invoice item.
+ Each item line has an associated article and a VAT rate. A subtotoal does not have an article or a VAT rate. This assumption is reasonable for quite a lot of businesses, in
+ particular in the service industry.</p>
+ <p>Often an invoice references only one VAT rate, convenience methods are provided to streamline this scenario.</p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -324,8 +325,8 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDa
 <section class="detail" id="name">
 <h3>name</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span></div>
-<div class="block">The name is a human-readable identifier of the invoice. The name is also used as file name if the invoice is stored in a JSON file or an artifact is generated.
- Humans can associate the invoice with the various artifacts generated out of it.</div>
+<div class="block">The name is a human-readable identifier of the invoice. The name is also used as file name if the invoice is stored in a JSON file or an artifact is generated. Humans can
+ associate the invoice with the various artifacts generated out of it.</div>
 </section>
 </li>
 </ul>
@@ -447,7 +448,8 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDa
 <section class="detail" id="vatAmounts()">
 <h3>vatAmounts</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&gt;</span>&nbsp;<span class="element-name">vatAmounts</span>()</div>
-<div class="block">Return a map of VAT rates and associated VAT amounts for the whole invoice.</div>
+<div class="block">Return a map of VAT rates and associated VAT amounts for the whole invoice. An invoice line has a VAT rate and a computed VAT amount. A subtotal does not have a VAT rate but
+ has a aggregated VAT amount</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>map of entries VAT rate and associated VAT amounts</dd>
@@ -469,8 +471,7 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDa
 <section class="detail" id="uniqueVatRate()">
 <h3>uniqueVatRate</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&gt;</span>&nbsp;<span class="element-name">uniqueVatRate</span>()</div>
-<div class="block">Return the unique VAT rate if defined otherwise empty optional. It is a convenience method to support service companies having exactly one VAT rate for
- all their products.</div>
+<div class="block">Return the unique VAT rate if defined otherwise empty optional. It is a convenience method to support service companies having exactly one VAT rate for all their products.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>unique VAT rate if defined</dd>

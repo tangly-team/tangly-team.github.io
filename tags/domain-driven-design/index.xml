@@ -623,8 +623,30 @@ The source code size of a bounded domain is often less than 50&amp;#39;000 lines
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_history&#34;&gt;History&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It originated in the 1980s and 1990s, with Richard P. Gabriel being an early pioneer who introduced &lt;em&gt;domain models&lt;/em&gt; as mental models of the business guiding software and digital product development.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Eric Evans further developed DDD in the late 1990s and early 2000s.
+His book &lt;em&gt;Domain-Driven Design: Tackling Complexity in the Heart of Software&lt;/em&gt; &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;]&lt;/span&gt;
+defined DDD as creating software based on a deep understanding of the business domain.
+It outlined principles for creating domain models, including using object-relational mapping (ORM) tools.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Today, DDD is widely accepted and applied across various domains like financial services, healthcare, and e-commerce.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
 &lt;h2 id=&#34;_layers_in_ddd&#34;&gt;Layers in DDD&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;imageblock left text-center&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2022-06-01-layers.png&#34; alt=&#34;2022 06 01 layers&#34; width=&#34;360&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Domain-driven design &lt;em&gt;DDD&lt;/em&gt; has four layers in the architecture:&lt;/p&gt;
 &lt;/div&gt;
@@ -653,9 +675,9 @@ Application
 Domain
 &lt;/td&gt;
 &lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;The heart of the software, this layer holds domain logic and business knowledge.&lt;br/&gt;
+&lt;p&gt;At The heart of the software, this layer holds domain logic and business knowledge.&lt;br/&gt;
 &lt;em&gt;A major goal is to avoid any tainting of the core domain model from other layers.&lt;/em&gt;
-&lt;em&gt;Try to avoid extending domain entities with implementation specific root classes or to a lesser degree annotations.&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;Try to avoid extending domain entities with implementation-specific root classes or to a lesser degree annotations.&lt;/em&gt;&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -664,15 +686,17 @@ Infrastructure
 &lt;/td&gt;
 &lt;td class=&#34;hdlist2&#34;&gt;
 &lt;p&gt;A supporting layer for the other layers.
-This layer contains supporting libraries or external services like a database or UI supporting library.&lt;br/&gt;
-&lt;em&gt;I use libraries to minimize effort in support functions such as persistence, JSON transformation, archiving, and reporting.
-The microstream library is a good example of this approach.
-The persistence capability is less than fifty lines of code.
-No changes in the domain model was necessary.
-We did not have to add a root persistent class or use annotations.&lt;/em&gt;&lt;/p&gt;
+This layer contains supporting libraries or external services like a database or UI supporting library.&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;I use libraries to minimize effort in support functions such as persistence, JSON transformation, archiving, and reporting.
+The microstream library is a good example of this approach.
+The persistence capability is less than fifty lines of code.
+No changes in the domain model were necessary.
+We did not have to add a root persistent class or use annotations.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -701,7 +725,7 @@ Services
 &lt;td class=&#34;hdlist2&#34;&gt;
 &lt;p&gt;defines the bounded domain context.
 The domain uses the library to implement a bounded domain.
-The ports, handlers and realms are declared in the context package for small bounded domains.
+The ports, handlers, and realms are declared in the context package for small bounded domains.
 Complex domains can declare these interfaces in separate packages for legibility.&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -1725,7 +1749,7 @@ This process is part of the enterprise architecture activities of your ecosystem
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;External identifier ownership is often a murky situation when working with legacy systems.
 You often have multiple sources of external identifiers, sometimes overlapping and sometimes not covering all instances.
-You have to formulate a long-term strategy to clean up your landscape and handle the problems until these clean-up activities are completed.
+You have to formulate a long-term strategy to clean up your landscape and handle the problems until these cleanup activities are completed.
 By handling, we mean administrative and import rules matching the various external identifiers to the same object.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -1804,7 +1828,7 @@ You have no control over external systems providing accepted external identifier
 &lt;em&gt;The same number is also used in medical insurance workflows.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We also have a federal identity card number, a federal passport number, a federal driver’s license number.
+&lt;p&gt;We also have a federal identity card number, a federal passport number, and a federal driver’s license number.
 Additional used identifiers are medical card insurance numbers, a state tax personal identification number.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
