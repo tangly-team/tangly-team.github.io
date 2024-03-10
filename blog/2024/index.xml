@@ -16,6 +16,311 @@
     
     
     <item>
+      <title>Blog: Nice Statechart Diagrams</title>
+      <link>https://blog.tangly.net/blog/2024/nice-statechart-diagrams/</link>
+      <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2024/nice-statechart-diagrams/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-03-02-head.gif&#34; alt=&#34;2024 03 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;What are statecharts, also called hierarchical state machines?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Put simply, a statechart is a beefed-up state machine &lt;a href=&#34;#state-diagram&#34;&gt;[1]&lt;/a&gt; &lt;a href=&#34;#uml-fsm&#34;&gt;[2]&lt;/a&gt;.
+The syntax is formally defined in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Unified_Modeling_Language&#34;&gt;UML&lt;/a&gt; standard.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The beefing up solves a lot of the problems that state machines have, especially state explosion that happens as state machines grow.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We explain below what statecharts are and how they are useful.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Statecharts offer a surprising array of benefits:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It is easier to understand a statechart than many other forms of code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The behavior is decoupled from the component in question.
+This makes it easier to make changes to the behavior.
+It also makes it easier to reason about the code.
+And the behavior can be tested independently of the component.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The process of building a statechart causes all the states to be explored.
+Studies have shown that statechart based code has lower bug counts than traditional code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Statecharts lend themselves to dealing with exceptional situations that might otherwise be overlooked.
+As complexity grows, statecharts scale well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A statechart is a great communicator.
+Non-developers can understand the statecharts, while the quality group can use statecharts as an exploratory tool.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It is worth noting that you are already coding state machines, except that they are hidden in the code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_why_finite_state_machines&#34;&gt;Why Finite State Machines?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The actor model &lt;a href=&#34;#actor-model&#34;&gt;[5]&lt;/a&gt; is a powerful approach to create resilient and scalable distributed systems.
+Asynchronous communication between actors avoids global states and painful synchronization of primitives such as locks, semaphores or monitors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each actor defines his behavior with a finite state machine.
+The behavior is documented with a statechart.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Messages sent to an actor are the events triggering the firing of transitions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Finite state machines and statecharts are part of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Unified_Modeling_Language&#34;&gt;UML&lt;/a&gt; notation &lt;a href=&#34;#state-diagram&#34;&gt;[1]&lt;/a&gt; &lt;a href=&#34;#uml-fsm&#34;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Finite state machines should be deterministic.
+The set of all relevant &lt;em&gt;events&lt;/em&gt; must be identified and documented.
+&lt;em&gt;Consider encoding the events as an enumeration in your programming language&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;At most, one transition can be fired when a specific event is processed.
+Use guard conditions to restrict which transition could be fired when multiple efferent transitions have the same triggering event.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A guard is a predicate used to decide if a transition can be fired.
+If your transition guards are using timeouts, you need a global time reference with the expected resolution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A state in a finite state machine must have a duration.
+The actor implementing the finite state machine is in a state and waits for an input meaning a message, or a timeout event.
+&lt;em&gt;Consider encoding the states as an enumeration in your programming language&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A transition has a trigger event, an optional guard and an optional action.
+The guard is a predicate to decide if the transition can be fired or not.
+A transition has semantically no duration.
+The action of a transition must be processed in a brief time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Try to limit the parameter list of an action to the owner of the finite state machine and the triggering event.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Entry and exit actions are executed when the state is entered or exited.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;State activities are active as long as the state is active.
+Try to avoid activities in control systems.
+An activity needs to be implemented as a separate thread and must be abruptly stopped when leaving the state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We prefer to handle timing constraints as external events sent to the finite state machine instances.
+The source of timeout events is also the timekeeper of the system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;This approach relieves the designer of implementing a synchronous global time reference&lt;/em&gt;.
+&lt;em&gt;Global synchronous time is tricky to implement in distributed systems with multiple processors&lt;/em&gt;.
+&lt;em&gt;It is also arduous to test and sources of hard to find bugs&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_how_to_document_finite_state_machines&#34;&gt;How to Document Finite State Machines?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;High-quality documentation tools are readily available to document your finite state machines.
+Most of the tools are open source and free to use.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://plantuml.com/&#34;&gt;plantUML&lt;/a&gt; provides support for all UML diagrams including statecharts.
+All features are supported.
+The graphical representation is dependent on the order of state declaration.
+You have to experiment if you want to render nice looking statecharts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://mermaid.js.org/&#34;&gt;Mermaid&lt;/a&gt; provides nice finite state machines.
+Beware that entry and exit states are not supported.
+Transition guards and actions can be emulated but are supported by a specific notation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://graphviz.org/&#34;&gt;Graphviz&lt;/a&gt; is the reference implementation for graph visualization.
+It is the Swiss army graph library.
+You can draw all types of graphs, but you are on your own.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/sverweij/state-machine-cat&#34;&gt;state machine cat&lt;/a&gt; has the goal to draw beautiful statecharts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; Tables&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_diagram_generators&#34;&gt;Diagram Generators&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Code-first approach is realized with the tangly open source FSM library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library executes finite state machines and generates documentation from the code.
+The code description of a finite state machine is the source of the diagrams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The generator logic is straightforward.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the diagram preamble.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Traverse recursively the hierarchical states.&lt;/p&gt;
+&lt;div class=&#34;olist loweralpha&#34;&gt;
+&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the state preamble.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the optional shallow or deep history configuration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the optional default state configuration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate entry and exit actions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the optional final state configuration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the state postamble.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate all transitions&lt;/p&gt;
+&lt;div class=&#34;olist loweralpha&#34;&gt;
+&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the source state name, the target state name, the event, optional guard, and action.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the diagram postamble.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;../../../docs/fsm&#34;&gt;OS FSM&lt;/a&gt; defines generators for Java language and documentation targets.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The visual and tabular documentation is always synchronous with the source code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach has one source of truth and minimizes documentation effort.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_history&#34;&gt;History&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A standard to describe and execute UML Statecharts is SCXML &lt;a href=&#34;#scxml&#34;&gt;[3]&lt;/a&gt;.
+The whole approach to document logic with XML notation was doomed.
+This approach is dying out.
+Do not use it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Simple flat finite state machines can easily be implemented with two levels of nested switch cases.
+A flat state machine does not have any hierarchical, orthogonal or history states.&lt;br/&gt;
+Ask yourself if an external library is worth the effort.
+&lt;em&gt;I recommend defining the set of events and states as enumerations&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Libraries are mandatory if your state machines have hierarchical or history states.
+Entry and exit states are also easier to implement with a library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;state-diagram&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;https://en.wikipedia.org/wiki/State_diagram&#34;&gt;State Diagram&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;uml-fsm&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;https://en.wikipedia.org/wiki/UML_state_machine&#34;&gt;UML State Machine&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;scxml&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;https://www.w3.org/TR/scxml/&#34;&gt;SCXML&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;fsm&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;https://blog.tangly.net/docs/fsm/&#34;&gt;Hierarchical Finite State Machine&lt;/a&gt;.
+Marcel Baumann.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;actor-model&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;https://en.wikipedia.org/wiki/Actor_model&#34;&gt;Actor Model&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;bibliography:[]&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Java Modules</title>
       <link>https://blog.tangly.net/blog/2024/java-modules/</link>
       <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>

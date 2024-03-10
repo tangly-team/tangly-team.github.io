@@ -15,6 +15,311 @@
     
     
     <item>
+      <title>Blog: Nice Statechart Diagrams</title>
+      <link>https://blog.tangly.net/blog/2024/nice-statechart-diagrams/</link>
+      <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2024/nice-statechart-diagrams/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-03-02-head.gif&#34; alt=&#34;2024 03 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;What are statecharts, also called hierarchical state machines?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Put simply, a statechart is a beefed-up state machine &lt;a href=&#34;#state-diagram&#34;&gt;[1]&lt;/a&gt; &lt;a href=&#34;#uml-fsm&#34;&gt;[2]&lt;/a&gt;.
+The syntax is formally defined in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Unified_Modeling_Language&#34;&gt;UML&lt;/a&gt; standard.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The beefing up solves a lot of the problems that state machines have, especially state explosion that happens as state machines grow.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We explain below what statecharts are and how they are useful.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Statecharts offer a surprising array of benefits:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It is easier to understand a statechart than many other forms of code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The behavior is decoupled from the component in question.
+This makes it easier to make changes to the behavior.
+It also makes it easier to reason about the code.
+And the behavior can be tested independently of the component.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The process of building a statechart causes all the states to be explored.
+Studies have shown that statechart based code has lower bug counts than traditional code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Statecharts lend themselves to dealing with exceptional situations that might otherwise be overlooked.
+As complexity grows, statecharts scale well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A statechart is a great communicator.
+Non-developers can understand the statecharts, while the quality group can use statecharts as an exploratory tool.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It is worth noting that you are already coding state machines, except that they are hidden in the code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_why_finite_state_machines&#34;&gt;Why Finite State Machines?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The actor model &lt;a href=&#34;#actor-model&#34;&gt;[5]&lt;/a&gt; is a powerful approach to create resilient and scalable distributed systems.
+Asynchronous communication between actors avoids global states and painful synchronization of primitives such as locks, semaphores or monitors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each actor defines his behavior with a finite state machine.
+The behavior is documented with a statechart.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Messages sent to an actor are the events triggering the firing of transitions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Finite state machines and statecharts are part of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Unified_Modeling_Language&#34;&gt;UML&lt;/a&gt; notation &lt;a href=&#34;#state-diagram&#34;&gt;[1]&lt;/a&gt; &lt;a href=&#34;#uml-fsm&#34;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Finite state machines should be deterministic.
+The set of all relevant &lt;em&gt;events&lt;/em&gt; must be identified and documented.
+&lt;em&gt;Consider encoding the events as an enumeration in your programming language&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;At most, one transition can be fired when a specific event is processed.
+Use guard conditions to restrict which transition could be fired when multiple efferent transitions have the same triggering event.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A guard is a predicate used to decide if a transition can be fired.
+If your transition guards are using timeouts, you need a global time reference with the expected resolution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A state in a finite state machine must have a duration.
+The actor implementing the finite state machine is in a state and waits for an input meaning a message, or a timeout event.
+&lt;em&gt;Consider encoding the states as an enumeration in your programming language&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A transition has a trigger event, an optional guard and an optional action.
+The guard is a predicate to decide if the transition can be fired or not.
+A transition has semantically no duration.
+The action of a transition must be processed in a brief time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Try to limit the parameter list of an action to the owner of the finite state machine and the triggering event.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Entry and exit actions are executed when the state is entered or exited.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;State activities are active as long as the state is active.
+Try to avoid activities in control systems.
+An activity needs to be implemented as a separate thread and must be abruptly stopped when leaving the state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We prefer to handle timing constraints as external events sent to the finite state machine instances.
+The source of timeout events is also the timekeeper of the system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;This approach relieves the designer of implementing a synchronous global time reference&lt;/em&gt;.
+&lt;em&gt;Global synchronous time is tricky to implement in distributed systems with multiple processors&lt;/em&gt;.
+&lt;em&gt;It is also arduous to test and sources of hard to find bugs&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_how_to_document_finite_state_machines&#34;&gt;How to Document Finite State Machines?&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;High-quality documentation tools are readily available to document your finite state machines.
+Most of the tools are open source and free to use.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://plantuml.com/&#34;&gt;plantUML&lt;/a&gt; provides support for all UML diagrams including statecharts.
+All features are supported.
+The graphical representation is dependent on the order of state declaration.
+You have to experiment if you want to render nice looking statecharts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://mermaid.js.org/&#34;&gt;Mermaid&lt;/a&gt; provides nice finite state machines.
+Beware that entry and exit states are not supported.
+Transition guards and actions can be emulated but are supported by a specific notation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://graphviz.org/&#34;&gt;Graphviz&lt;/a&gt; is the reference implementation for graph visualization.
+It is the Swiss army graph library.
+You can draw all types of graphs, but you are on your own.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/sverweij/state-machine-cat&#34;&gt;state machine cat&lt;/a&gt; has the goal to draw beautiful statecharts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; Tables&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_diagram_generators&#34;&gt;Diagram Generators&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Code-first approach is realized with the tangly open source FSM library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The library executes finite state machines and generates documentation from the code.
+The code description of a finite state machine is the source of the diagrams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The generator logic is straightforward.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the diagram preamble.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Traverse recursively the hierarchical states.&lt;/p&gt;
+&lt;div class=&#34;olist loweralpha&#34;&gt;
+&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the state preamble.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the optional shallow or deep history configuration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the optional default state configuration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate entry and exit actions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the optional final state configuration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the state postamble.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate all transitions&lt;/p&gt;
+&lt;div class=&#34;olist loweralpha&#34;&gt;
+&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the source state name, the target state name, the event, optional guard, and action.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the diagram postamble.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;../../../docs/fsm&#34;&gt;OS FSM&lt;/a&gt; defines generators for Java language and documentation targets.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The visual and tabular documentation is always synchronous with the source code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach has one source of truth and minimizes documentation effort.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_history&#34;&gt;History&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A standard to describe and execute UML Statecharts is SCXML &lt;a href=&#34;#scxml&#34;&gt;[3]&lt;/a&gt;.
+The whole approach to document logic with XML notation was doomed.
+This approach is dying out.
+Do not use it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Simple flat finite state machines can easily be implemented with two levels of nested switch cases.
+A flat state machine does not have any hierarchical, orthogonal or history states.&lt;br/&gt;
+Ask yourself if an external library is worth the effort.
+&lt;em&gt;I recommend defining the set of events and states as enumerations&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Libraries are mandatory if your state machines have hierarchical or history states.
+Entry and exit states are also easier to implement with a library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;state-diagram&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;https://en.wikipedia.org/wiki/State_diagram&#34;&gt;State Diagram&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;uml-fsm&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;https://en.wikipedia.org/wiki/UML_state_machine&#34;&gt;UML State Machine&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;scxml&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;https://www.w3.org/TR/scxml/&#34;&gt;SCXML&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;fsm&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;https://blog.tangly.net/docs/fsm/&#34;&gt;Hierarchical Finite State Machine&lt;/a&gt;.
+Marcel Baumann.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;actor-model&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;https://en.wikipedia.org/wiki/Actor_model&#34;&gt;Actor Model&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;bibliography:[]&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Java Modules</title>
       <link>https://blog.tangly.net/blog/2024/java-modules/</link>
       <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
@@ -9539,6 +9844,9 @@ You have to send the notebook to an approved reseller and have no access during 
 &lt;h2 id=&#34;_standard_programs&#34;&gt;Standard Programs&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;First, update the operating system to the newest version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I installed manually the following applications:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;dlist&#34;&gt;
@@ -9632,7 +9940,7 @@ The complete accounting activities including VAT declarations are performed with
 &lt;p&gt;&lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;JetBrains IntelliJ IDEA&lt;/a&gt; with AsciiDoc, Cursive, SonarLint, Statistics, Grazie Professional, and Snyk plugins.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Java JDK 17 LTS, JDK 20, and JDK 21 including the documentation for the latest JDK
+&lt;p&gt;Java JDK 17 LTS, JDK 20, and JDK 21 including the documentation for the latest JDK.
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_9&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_9&#34; title=&#34;View footnote.&#34;&gt;9&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -9679,6 +9987,23 @@ The official Swiss railway company does not provide Internet access in the train
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can either migrate your whole user account to the new machine or copy manually the needed files&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Copy the &lt;em&gt;ssh&lt;/em&gt; keys files and &lt;em&gt;zhrc&lt;/em&gt; configuration files.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Copy the music, photos and video files.
+The fastest approach is to copy the files from the backup drive to the new machine.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Download all the Kindle books you want to read offline on the train.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect1&#34;&gt;
@@ -9694,7 +10019,7 @@ The official Swiss railway company does not provide Internet access in the train
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;brew install maven gradle git git-lfs node pmd ruby                   &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;brew install maven gradle git git-lfs node pmd ruby protobuf          &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
 brew install hugo asciidoctor graphviz plantuml mermaid-cli python    &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
 brew install clojure leiningen                                        &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
 brew install wget rsync ghostscript                                   &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
@@ -9853,7 +10178,7 @@ alias la=&amp;#34;ls -al&amp;#34;
 &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;alias java21=&amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 21`;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;java &lt;span style=&#34;color: #116329&#34;&gt;-version&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;
 &lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;alias java22=&amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 22`;&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;java -version&amp;#34;&lt;/span&gt;
 &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;
-java20                                                                          &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+java21                                                                          &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -9900,7 +10225,7 @@ gem update&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_house_keeping&#34;&gt;House Keeping&lt;/h2&gt;
+&lt;h2 id=&#34;_housekeeping&#34;&gt;Housekeeping&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Once the new machine is up and running, I need to clean up the backup drive and remove the backups of the old machine.&lt;/p&gt;
@@ -9964,7 +10289,8 @@ The build-in loudspeakers are an audible improvement against the sound of the pr
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;It is worth the price I paid
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_11&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_11&#34; title=&#34;View footnote.&#34;&gt;11&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_11&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_11&#34; title=&#34;View footnote.&#34;&gt;11&lt;/a&gt;]&lt;/sup&gt;.
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_12&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_12&#34; title=&#34;View footnote.&#34;&gt;12&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -10020,6 +10346,9 @@ The build-in loudspeakers are an audible improvement against the sound of the pr
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_11&#34;&gt;
 &lt;a href=&#34;#_footnoteref_11&#34;&gt;11&lt;/a&gt;. The price of the Macbook notebook in 2023 was CHF 3&amp;#39;300. I buy a new notebook every five years, meaning the yearly costs are ridiculous low.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_12&#34;&gt;
+&lt;a href=&#34;#_footnoteref_12&#34;&gt;12&lt;/a&gt;. Due to customer policy, I had to give back my 2023 MacBook and buy a new notebook in 2024. I got a MacBookPro M3 Pro with 36 GB of RAM and 1 TB SSD for the price of CHF 3&amp;#39;000. The above instructions were used to set up the notebook from scratch in less than two hours. The JDK versions just needed to be upgraded to the newly released ones.
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -17232,352 +17561,6 @@ Too often, the institutes still cling to obsolete practices and are not aware of
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;technological factors and agile collaborator approaches are sorely missing in many curriculums.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Yet Another Hybrid Method</title>
-      <link>https://blog.tangly.net/blog/2022/yet-another-hybrid-method/</link>
-      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2022/yet-another-hybrid-method/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;openblock float-group&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-04-02-head.jpg&#34; alt=&#34;2022 04 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;SoDa &lt;em&gt;Software Development Agile&lt;/em&gt; is a homebrew project development method created at the &lt;a href=&#34;https://www.hslu.ch&#34;&gt;technical university of Lucerne&lt;/a&gt;.
-It is a mixture of &lt;a href=&#34;https://en.wikipedia.org/wiki/Waterfall_model&#34;&gt;Waterfall&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Rational_Unified_Process&#34;&gt;RUP&lt;/a&gt;
-and &lt;a href=&#34;https://en.wikipedia.org/wiki/Scrum_(software_development)&#34;&gt;Scrum&lt;/a&gt; approaches.
-It uses a distorted Scrum for the concept and implementation phase&lt;a href=&#34;#detecting-agile-bullshit&#34;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The documentation was not updated the last ten years.
-The approach is clinically dead and should not be promoted for active software development efforts.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A similar approach exists with the official governmental Swiss project method &lt;a href=&#34;https://www.hermes.admin.ch/en/&#34;&gt;HERMES&lt;/a&gt;.
-At least the documentation of &lt;a href=&#34;https://www.hermes.admin.ch/en//starting-page.html&#34;&gt;Hermes&lt;/a&gt; is better than SoDa.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Both approaches are quite similar.
-They mix a phase-based Waterfall approach with the four phases of the old &lt;a href=&#34;https://en.wikipedia.org/wiki/Rational_Unified_Process&#34;&gt;RUP&lt;/a&gt; project life-cycle approach.
-RUP belongs to the family of &lt;a href=&#34;https://en.wikipedia.org/wiki/Unified_Process&#34;&gt;unified process methods&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock text-center&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-04-02-rup-phases.jpg&#34; alt=&#34;2022 04 02 rup phases&#34; width=&#34;640&#34; height=&#34;380&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The four phases or gates are
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Inception&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;approximate vision, business case, scope, and vague estimates.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Elaboration&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;refined vision, iterative implementation of the core architecture, resolution of high risks, identification of most requirements and scope, more realistic estimates.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Construction&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;iterative implementation of the remaining lower risk and easier elements, and preparation for deployment.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Transition&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;beta tests, deployment.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;If you are using &lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt; approaches, you certainly do not need an inception or a transition phase.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;These approaches are obsolete.
-Almost no industrial service companies are explicitly using Waterfall or unified process approaches.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;For most of these organizations that take a hybrid approach, this is an interim step.
-They intend to gradually expand their agile activities beyond the development and testing stages to the rest of the software development lifecycle.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Malcom Isaacs
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_hermes_swiss_hybrid_method&#34;&gt;HERMES Swiss Hybrid Method&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;If you are forced to use a hybrid method in Switzerland, please use Hermes.
-Never try to use SoDa.
-It is obsolete and sparingly documented.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;If you want to be a professional developer, please use an agile approach.
-Scrum is currently the most used agile approach in the industry.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.hermes.admin.ch/en/&#34;&gt;HERMES&lt;/a&gt; fulfills the current requirements of federal and state administration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;They are mainly organized &lt;strong&gt;hierarchically&lt;/strong&gt; and have to handle projects taking governance into account.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Hermes FAQ
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The major problem is that Hermes is mandatory for a set of governmental projects.
-You are forced to use this method as a software company if you want to work on some government initiatives
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The method is Swiss and completely unknown in Europe or abroad.
-Swiss commercial or industrial software development initiatives never use Hermes as a development approach.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_why_hybrid_methods_are_hindering&#34;&gt;Why Hybrid Methods are Hindering&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;In his mind-expanding book &lt;em&gt;The Beginning of Infinity&lt;/em&gt;, physicist David Deutsch describes science and the enlightenment as the quest for &lt;em&gt;good explanations&lt;/em&gt;.
-He explains how various ideas in human history represent a &lt;em&gt;beginning of infinity&lt;/em&gt; that allows us to cope with any conceivable relevant application of these good explanations.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This idea of infinite reach or scope is true of an agile approach to development and not true of a waterfall-based approach.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;An agile approach to software development encourages us to start work on solving problems in smaller pieces.
-It encourages us to begin work before we know the answer to everything.
-This approach allows us to make progress, maybe sometimes in suboptimal or even bad directions, but nevertheless, after each step, we learn something new.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This does not mean that agile thinking is perfect or the final answer.
-Rather, it is an important, significant, enabling step in the direction of better performance.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock important&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The software product development method war is won.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Agile approaches as described in &lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;Agile Manifesto&lt;/a&gt; and &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt; are the winners
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;.
-Eighty percent of all new software development initiatives are based on an agile approach.
-The most used agile approach is &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Stop being a laggard.
-Start using agile approaches and the Scrum framework.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_future_work&#34;&gt;Future Work&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I strongly advocate discarding all hybrid methods.
-No empirical evidence is available that they work is available.
-Anecdotal evidence shows that they regularly fail.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We shall use the Scrum approach as a preferred approach for developing software application &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#professional-scrum-master-guide&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#professional-product-owner&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#mastering-professional-scrum&#34;&gt;3&lt;/a&gt;]&lt;/span&gt;.
-Scrum and various Scrum scaling frameworks provide approaches for teams up to eighty developers working on the same product.
-I strongly state that 99.9% of all software initiatives have smaller teams.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock warning&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-warning&#34; title=&#34;Warning&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-One of the founders of Scrum strongly stated the same in a famous post
-&lt;a href=&#34;https://kenschwaber.wordpress.com/2013/08/06/unsafe-at-any-speed/&#34;&gt;Unsafe at any Speed&lt;/a&gt;.
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I strongly recommend avoiding SAFe for the following reasons:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;SAFe is complex and less agile.
-It contains waterfall elements.
-Their approach to software architecture is outdated and does not reflect the findings of OpenGroup, the steward of TOGAF.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.scaledagileframework.com/agile-release-train/&#34;&gt;Agile release trains&lt;/a&gt; should align teams to a shared business and technology mission.
-The ideal size of a train is between 50 and 125 people working on the same product family.
-Most product development initiatives are smaller.
-ALl members of a train shall work on the same products.
-Using the same technology stack is not a criteria to belong to the same train.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;SAFe is not based or using Scrum.
-Their definition of Scrum master and product owner is different to the ones in &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt;.
-Their key roles of a release train engineer &lt;em&gt;RTE&lt;/em&gt; and product management do not exist in Scrum.
-They are more traditional project management roles.
-All synergy effects are lost.
-You must retrain your collaborators into SAFe if you go down this path.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The planning and release cycle is a program increment.
-The duration is typically 8 to 12 weeks long.
-This is too long for agile, DevOps, or Design Thinking approaches.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-04-02-agile-vs-waterfall.png&#34; alt=&#34;2022 04 02 agile vs waterfall&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;If you have a choice, do not use any hybrid method.
-Various studies found out that agile initiatives are three times more successful than Waterfall approaches.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Business agility is not compatible with hybrid approaches.
-Use Lean startup or design thinking frameworks to increase your business agility and adapt to market changes.
-Design thinking advocates iterations of one week duration.
-Therefore, product increments of three months or worst RUP phases over half a year are truly incompatible with weekly cycle-time.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We train our students and collaborators in Design Thinking, Lean approaches, and Scrum framework.
-We should not force them to use later obsolete methods such as V-Model, RUP, HERMES or unsupported approaches such as SODA.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock important&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-important&#34; title=&#34;Important&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Be responsible.
-Train adequately your collaborators&lt;a href=&#34;#scrum-master-formation&#34;&gt;[3]&lt;/a&gt;, &lt;a href=&#34;#product-owner-formation&#34;&gt;[4]&lt;/a&gt;, &lt;a href=&#34;#scrum-developer-formation&#34;&gt;[5]&lt;/a&gt; in the Scrum approach.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Advocate the &lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;agile manifesto&lt;/a&gt; and the &lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;twelve principles&lt;/a&gt; behind the manifesto.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The majority of hybrid methods I still encounter are bad rehearsal of the RUP development approach.
-The unified process was defined in the nineties and is now obsolete.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;ulist bibliography&#34;&gt;
-&lt;ul class=&#34;bibliography&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;detecting-agile-bullshit&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2019/detecting-agile-bullshit/&#34;&gt;Detecting Agile Bullshit&lt;/a&gt;.
-Marcel Baumann. 2019&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-master-formation&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2021/scrum-master-formation&#34;&gt;Scrum Master Formation&lt;/a&gt;.
-Marcel Baumann. 2021&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;product-owner-formation&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2021/product-owner-formation&#34;&gt;Product Owner Formation&lt;/a&gt;.
-Marcel Baumann. 2021&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-developer-formation&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2021/scrum-developer-formation&#34;&gt;Scrum Developer Formation&lt;/a&gt;.
-Marcel Baumann. 2021&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;scrum-guide&#34;&gt;&lt;/a&gt;[6] &lt;a href=&#34;https://scrumguides.org/scrum-guide.html&#34;&gt;Scrum Guide&lt;/a&gt;.
-Jeff Sutherland, Ken Schwaber. 2020&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;cargo-cult&#34;&gt;&lt;/a&gt;[7] &lt;a href=&#34;https://en.wikipedia.org/wiki/Cargo_cult&#34;&gt;Cargo Cult&lt;/a&gt;.
-Wikipedia&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;devops-sme&#34;&gt;&lt;/a&gt;[8] &lt;a href=&#34;../../2021/devops-for-small-applications/&#34;&gt;DevOps for Small Applications&lt;/a&gt;.
-Marcel Baumann. 2021&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;zero-defect&#34;&gt;&lt;/a&gt;[9] &lt;a href=&#34;../../2020/advocate-zero-bug-policy-in-your-projects/&#34;&gt;Advocate Zero Bug Policy in Your Projects&lt;/a&gt;.
-Marcel Baumann. 2020&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;agile-software-architecture&#34;&gt;&lt;/a&gt;[10] &lt;a href=&#34;../..//2021/what-i-learnt-teaching-agile-software-architecture/&#34;&gt;What I learnt Teaching Agile Software Architecture&lt;/a&gt;.
-Marcel Baumann. 2021&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;professional-scrum-master-guide&#34;&gt;&lt;/a&gt;[1] F. Heath, &lt;em&gt;Professional Scrum Master Guide&lt;/em&gt;. Packt Publishing, Limited, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1800205562&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1800205562&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;professional-product-owner&#34;&gt;&lt;/a&gt;[2] D. McGreal and R. Jocham, &lt;em&gt;The Professional Product Owner&lt;/em&gt;. Addison-Wesley Professional [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B07D5ZPJBY&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B07D5ZPJBY&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;mastering-professional-scrum&#34;&gt;&lt;/a&gt;[3] S. Ockerman and S. Reindl, &lt;em&gt;Mastering Professional Scrum&lt;/em&gt;. Addison Wesley, 2019 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B07XTLNPTC&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B07XTLNPTC&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The description Craig Larman book &lt;em&gt;Applying UML and Patterns&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
-&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. The fact the method is only used in Switzerland and only when it is a mandatory requirement is a testament to its lack of success.
-&lt;/div&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
-&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. &lt;a href=&#34;https://www.pmi.org/&#34;&gt;PMI&lt;/a&gt; has adopted disciplined agile. &lt;a href=&#34;https://www.opengroup.org/&#34;&gt;OpenGroup&lt;/a&gt; has updated TOGAF to support agile approaches. Major certification authorities such as &lt;a href=&#34;https://www.isaqb.org/&#34;&gt;ISAQB&lt;/a&gt;, &lt;a href=&#34;https://www.ireb.org/&#34;&gt;IREB&lt;/a&gt;, &lt;a href=&#34;https://www.istqb.org/&#34;&gt;ISTQB&lt;/a&gt; offer a track of agile certifications. You as a responsible organization shall train your collaborators in agile approaches. Stop clinging to obsolete approaches used in the last millennium.
 &lt;/div&gt;
 &lt;/div&gt;
 

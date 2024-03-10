@@ -5,7 +5,7 @@
     <description>Recent content in BDD - Behavior Driven Development on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/docs/bdd/index.xml" rel="self" type="application/rss+xml" />
     
@@ -426,107 +426,6 @@ No information is available in a backlog or JIRA, which variant is now the one i
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;more-agile-testing&#34;&gt;&lt;/a&gt;[4] J. G. Gregory and L. Crispin, &lt;em&gt;More Agile Testing&lt;/em&gt;. Addison-Wesley Professional [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321967054&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321967054&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: bdd Report</title>
-      <link>https://blog.tangly.net/docs/bdd/bdd-report/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/docs/bdd/bdd-report/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_feature_sell_items_to_customers&#34;&gt;Feature: Sell items to customers&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The customer can buy various items from the store. Upon completion the stock of the store reflects the purchasing action.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;strong&gt;tags:&lt;/strong&gt; &amp;#39;Feature Example&amp;#39; &amp;#39;Mandatory&amp;#39;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_story_buy_sweater&#34;&gt;Story: Buy Sweater&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;As a store owner I want to update the stock when I am selling sweaters to customers.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;strong&gt;tags:&lt;/strong&gt; &amp;#39;Release 1.0&amp;#39;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;div class=&#34;title&#34;&gt;Scenario: Sell some blue sweaters in stock to a customer&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;given&lt;/strong&gt; The store is stocked with sweaters &lt;strong&gt;and&lt;/strong&gt; has 5 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 4 blue sweaters in stock&lt;br/&gt;
-&lt;strong&gt;when&lt;/strong&gt; The customer buys 3 blue sweaters&lt;br/&gt;
-&lt;strong&gt;then&lt;/strong&gt; The store should have 5 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 1 blue sweaters in stock&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;div class=&#34;title&#34;&gt;Scenario: Refuse to sell more blue sweaters than the store in stock&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;given&lt;/strong&gt; The store is stocked with sweaters &lt;strong&gt;and&lt;/strong&gt; has 5 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 4 blue sweaters in stock&lt;br/&gt;
-&lt;strong&gt;when&lt;/strong&gt; The customer try to buy 6 blue sweaters, and an exception is thrown&lt;br/&gt;
-&lt;strong&gt;then&lt;/strong&gt; the store should have 5 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 4 blue sweaters in stock&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;div class=&#34;title&#34;&gt;Scenario: Sell some blacks and blue sweaters in stock&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;given&lt;/strong&gt; The store is stocked with sweaters &lt;strong&gt;and&lt;/strong&gt; has 5 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 4 blue sweaters in stock&lt;br/&gt;
-&lt;strong&gt;when&lt;/strong&gt; The customer buys 3 black sweaters&lt;br/&gt;
-&lt;strong&gt;then&lt;/strong&gt; The store should have 2 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 2 blue sweaters in stock&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;div class=&#34;title&#34;&gt;Scenario: Sell some black sweaters in stock to a customer&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;given&lt;/strong&gt; The store is stocked with sweaters &lt;strong&gt;and&lt;/strong&gt; has 5 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 4 blue sweaters in stock&lt;br/&gt;
-&lt;strong&gt;when&lt;/strong&gt; The customer buys 3 black sweaters&lt;br/&gt;
-&lt;strong&gt;then&lt;/strong&gt; The store should have 2 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 4 blue sweaters in stock&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;div class=&#34;title&#34;&gt;Scenario: Refuse to sell more black sweaters than the store in stock&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;given&lt;/strong&gt; The store is stocked with sweaters &lt;strong&gt;and&lt;/strong&gt; has 5 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 4 blue sweaters in stock&lt;br/&gt;
-&lt;strong&gt;when&lt;/strong&gt; The customer try to buy 6 blue sweaters, and an exception is thrown&lt;br/&gt;
-&lt;strong&gt;then&lt;/strong&gt; the store should have 5 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 4 blue sweaters in stock&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_feature_refund_items_to_customers&#34;&gt;Feature: Refund items to customers&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The customer can return items to the store and be refunded. Upon completion the stock of the store reflects the purchasing action.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_story_refunded_items_go_back_to_the_stockpile&#34;&gt;Story: Refunded items go back to the stockpile&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;As a store owner, in order to keep track of stock, I want to add items back to stock when they’re refunded.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;strong&gt;tags:&lt;/strong&gt; &amp;#39;Release 2.0&amp;#39;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;div class=&#34;title&#34;&gt;Scenario: Refunded items from the customer should be returned to stock&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;given&lt;/strong&gt; A customer bought a black sweater from the store having 4 black and 0 blue sweaters &lt;strong&gt;and&lt;/strong&gt; the store has now 3 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 0 blue sweaters in stock&lt;br/&gt;
-&lt;strong&gt;when&lt;/strong&gt; The customer returns one black sweater for a refund&lt;br/&gt;
-&lt;strong&gt;then&lt;/strong&gt; the store should have 4 black sweaters in stock &lt;strong&gt;and&lt;/strong&gt; 0 blue sweaters in stock&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_story_replaced_are_switched_form_the_stockpile&#34;&gt;Story: Replaced are switched form the stockpile&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;As a store owner, in order to keep track of stock, I want to switch itemsback to stock when they’re returned and replaced.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;strong&gt;tags:&lt;/strong&gt; &amp;#39;Release 2.0&amp;#39;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;div class=&#34;title&#34;&gt;Scenario: Replaced items should be returned to stock, and the new ones deduced from the stock&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;given&lt;/strong&gt; A customer previously bought a blue garment from the store having 3 black and 3 blue sweaters &lt;strong&gt;and&lt;/strong&gt; the store now has 2 blue garments in stock &lt;strong&gt;and&lt;/strong&gt; the store has 3 black garments in stock&lt;br/&gt;
-&lt;strong&gt;when&lt;/strong&gt; The customer returns one blue garment for a replacement with one in black&lt;br/&gt;
-&lt;strong&gt;then&lt;/strong&gt; The store should have 3 blue garments in stock &lt;strong&gt;and&lt;/strong&gt; the store should have 2 black garments in stock&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
