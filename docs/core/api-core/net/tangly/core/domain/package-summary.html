@@ -72,8 +72,14 @@ loadScripts(document, 'script');</script>
 <div class="block">Defines the core abstractions for a bounded domain implementation. Entities defined in the domain can have oid, id, name, tags and comments.
  The realm interface is the entry point for the repository and factory abstractions.
  Repositories retrieve domain objects from persistence technologies.
- Factories create new object trees. The regular persistence approach is based on Microstream.
- The solution is well integrated in Java so that retrieval and creation operations are simple to implement.</div>
+ Factories create new object trees. The regular persistence approach is based on EclipseStore.
+ The solution is well integrated in Java so that retrieval and creation operations are simple to implement.
+ <p>The key abstractions are:</p>
+ <dl>
+     <dt>Bounded Domain</dt><dd>Defines the bounded domain model and the domain services.</dd>
+     <dt>Realm</dt><dd>Defines the repositories interfance to retrieve all domein entities.</dd>
+     <dt>Port</dt><dd>Port interface for all inbound and outpound communication.</dd>
+ </dl></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -97,7 +103,7 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary" aria-labelledby="class-summary-tab0">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a>&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>,<wbr>B,<wbr>H extends <a href="Handler.html" title="interface in net.tangly.core.domain">Handler</a>&lt;?&gt;,<wbr>P&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a>&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>,<wbr>B,<wbr>P extends <a href="Port.html" title="interface in net.tangly.core.domain">Port</a>&lt;R&gt;&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A bounded domain as defined in the DDD approach has a domain-specific model and a set of adapters.</div>
 </div>
@@ -105,9 +111,9 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color class-summary class-summary-tab4">
 <div class="block">Define the meta-information describing the characteristics of a domain entity.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Handler.html" title="interface in net.tangly.core.domain">Handler</a>&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Port.html" title="interface in net.tangly.core.domain">Port</a>&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">Define the import port for the bounded domain.</div>
+<div class="block">Define the inbound and outbound communication port to the bounded domain.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">

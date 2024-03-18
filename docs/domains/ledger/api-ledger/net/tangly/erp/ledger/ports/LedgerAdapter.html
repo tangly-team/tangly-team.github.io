@@ -90,13 +90,20 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../services/LedgerPort.html" title="interface in net.tangly.erp.ledger.services">LedgerPort</a></code></dd>
+<dd><code>net.tangly.core.domain.Port&lt;<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&gt;</code>, <code><a href="../services/LedgerPort.html" title="interface in net.tangly.erp.ledger.services">LedgerPort</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LedgerAdapter</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../services/LedgerPort.html" title="interface in net.tangly.erp.ledger.services">LedgerPort</a></span></div>
-<div class="block">Define business logic rules and functions for the ledger double entry accounting domain model.</div>
+<div class="block">Provide workflows for ledger activities.
+ <ul>
+     <li>Import of the ledger account structure. If using the <a href="https://www.banana.ch">banana</a> application, select all definition rows in
+     the accounts tab and export it as <i>Data/Export Rows/Export Rows to Txt</i>. Once completed you can use for example MacOs Numbers to remove company
+     specific information such as segments.</li>
+     <li>Import transaction journal into the ledger. If using the <a href="https://www.banana.ch">banana</a> application, select all transaction rows in
+     the accounts tab and export it as <i>Data/Export Rows/Export Rows to Txt</i>. </li>
+ </ul></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -120,6 +127,12 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#EQUITY_ACCOUNT" class="member-name-link">EQUITY_ACCOUNT</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#JOURNAL" class="member-name-link">JOURNAL</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#LEDGER" class="member-name-link">LEDGER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#LONG_TERM_THIRD_PARTY_CAPITAL_ACCOUNT" class="member-name-link">LONG_TERM_THIRD_PARTY_CAPITAL_ACCOUNT</a></code></div>
@@ -152,12 +165,18 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel">
 <div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearEntities()" class="member-name-link">clearEntities</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEntities()" class="member-name-link">exportEntities</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportLedgerDocument(java.lang.String,java.time.LocalDate,java.time.LocalDate,boolean,boolean)" class="member-name-link">exportLedgerDocument</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
@@ -167,8 +186,14 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Exports a ledger report with profits and losses, and assets and liabilities information for a specific time interval.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEntities()" class="member-name-link">importEntities</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#journalForYear(int)" class="member-name-link">journalForYear</a><wbr>(int&nbsp;year)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ledger()" class="member-name-link">ledger</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#realm()" class="member-name-link">realm</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -187,6 +212,34 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="LEDGER">
+<h3>LEDGER</h3>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">LEDGER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#net.tangly.erp.ledger.ports.LedgerAdapter.LEDGER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="JOURNAL">
+<h3>JOURNAL</h3>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">JOURNAL</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#net.tangly.erp.ledger.ports.LedgerAdapter.JOURNAL">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="TURNOVER_ACCOUNT">
 <h3>TURNOVER_ACCOUNT</h3>
@@ -311,9 +364,43 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="ledger()">
-<h3>ledger</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a></span>&nbsp;<span class="element-name">ledger</span>()</div>
+<section class="detail" id="realm()">
+<h3>realm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a></span>&nbsp;<span class="element-name">realm</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>realm</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&gt;</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="importEntities()">
+<h3>importEntities</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importEntities</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>importEntities</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&gt;</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="exportEntities()">
+<h3>exportEntities</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEntities</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>exportEntities</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&gt;</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="clearEntities()">
+<h3>clearEntities</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearEntities</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>clearEntities</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&gt;</code></dd>
+</dl>
 </section>
 </li>
 <li>
@@ -336,6 +423,12 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <dd><code>withVat</code> - flag indicating if VAT information should be part of the report</dd>
 <dd><code>withTransactions</code> - flag indicating if the transactions should be part of the report</dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="journalForYear(int)">
+<h3>journalForYear</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">journalForYear</span><wbr><span class="parameters">(int&nbsp;year)</span></div>
 </section>
 </li>
 </ul>

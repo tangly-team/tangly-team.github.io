@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-<meta name="generator" content="Hugo 0.123.8">
+<meta name="generator" content="Hugo 0.124.0">
 <meta content="index, follow" name="robots">
 
 
@@ -42,14 +42,13 @@ Hugo supports natively Asciidoc syntax. Asciidoc files are automatically compile
 <meta property="og:url" content="https://blog.tangly.net/blog/2024/asciidoc-and-hugo-website-improvements/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2024-03-15T00:00:00+00:00" />
 <meta property="article:modified_time" content="2024-03-15T00:00:00+00:00" />
-
 <meta itemprop="name" content="Asciidoc and Hugo Website Improvements">
 <meta itemprop="description" content="The static website build tool Hugo is awesome.
 The extensive built-in feature set of Hugo and the feature-rich typesetting that Asciidoc offers provide a blogging experience composed of easy content management and fun writing experience.
 Source code highlighting and diagrams are extensively supported.
 Hugo supports natively Asciidoc syntax. Asciidoc files are automatically compiled with Asciidoctor, so we do not need to configure anything. Have it installed and you are ready to go."><meta itemprop="datePublished" content="2024-03-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2024-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="862">
+<meta itemprop="wordCount" content="890">
 <meta itemprop="keywords" content="hugo," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Asciidoc and Hugo Website Improvements"/>
 <meta name="twitter:description" content="The static website build tool Hugo is awesome.
 The extensive built-in feature set of Hugo and the feature-rich typesetting that Asciidoc offers provide a blogging experience composed of easy content management and fun writing experience.
@@ -59,8 +58,8 @@ Hugo supports natively Asciidoc syntax. Asciidoc files are automatically compile
 
 
 
-<link rel="preload" href="/scss/main.min.e26cb3f2d6c904696ee939cc864bf04c94aeaa1924d1877cdbca481681341586.css" as="style">
-<link href="/scss/main.min.e26cb3f2d6c904696ee939cc864bf04c94aeaa1924d1877cdbca481681341586.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.41561e8a65d418268e6c46fd1ec8dbdc452feb3bcea50349dc1d9bf84d93297c.css" as="style">
+<link href="/scss/main.min.41561e8a65d418268e6c46fd1ec8dbdc452feb3bcea50349dc1d9bf84d93297c.css" rel="stylesheet" integrity="">
 
 <script
     crossorigin="anonymous"
@@ -145,7 +144,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.00eed29084a259c60f4ca49e6cf14778.json"
+    data-offline-search-index-json-src="/offline-search-index.94164189b386e2a3b7347c1ea888cb42.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -169,7 +168,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.00eed29084a259c60f4ca49e6cf14778.json"
+    data-offline-search-index-json-src="/offline-search-index.94164189b386e2a3b7347c1ea888cb42.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1199,12 +1198,14 @@ Any browser can display the slides and support navigation and the presenter mode
 <div class="sect1">
 <h2 id="_lessons_learnt">Lessons Learnt</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_toolchain">Toolchain</h3>
 <div class="paragraph">
 <p>Beware of your toolchain.
 After updating some ruby modules, I could not generate bibtex citation references anymore
 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
 I posted the issue on the asciidoctor GitHub, and some weeks later a new version was released.
-The gem asciidoctor-bibtex-0.9.0 fixed the issue.</p>
+The gem <em>asciidoctor-bibtex-0.9.0</em> fixed the issue.</p>
 </div>
 <div class="paragraph">
 <p>The following statements are helpful for ruby applications.
@@ -1248,12 +1249,23 @@ ruby -v                                                                        <
 <div class="paragraph">
 <p>The consequence is that I should set up a CI pipeline to check if the toolchain is still working.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_asciidoc_stylesheet">Asciidoc Stylesheet</h3>
 <div class="paragraph">
 <p>The support of <a href="https://www.docsy.dev/">Docsy</a> for <a href="https://asciidoc.org/">Asciidoc</a> is limited.
 I had to extend the theme to support styling of <a href="https://asciidoc.org/">Asciidoc</a> texts and to display taxonomies in the sidebar.</p>
 </div>
 <div class="paragraph">
 <p>Additional tinkering supports the download of referenced documents.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_link_integrity">Link Integrity</h3>
+<div class="paragraph">
+<p>When your website is growing, you need tools to ensure consistency of links.
+I use <a href="https://peacockmedia.software/mac/integrity/free.html">integrity</a> to validate all hyperlinks on my website.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1370,7 +1382,7 @@ Marcel Baumann. 2020.</p>
 </footer>
 
     </div>
-    <script src="/js/main.min.248655eb216150e39da254c2f7aa5357805d0ec66bdb741b591cd35fb5f629ab.js" integrity="sha256-JIZV6yFhUOOdolTC96pTV4BdDsZr23QbWRzTX7X2Kas=" crossorigin="anonymous"></script>
+    <script src="/js/main.min.fc653db1f3d4f4a8b4eacd389f96d8afe966937ba9dded8b07d3a1b17d967d22.js" integrity="sha256-/GU9sfPU9Ki06s04n5bYr&#43;lmk3up3e2LB9OhsX2WfSI=" crossorigin="anonymous"></script>
 <script defer src="/js/click-to-copy.min.f724d3de49218995223b7316aa2e53e2b34bf42026bf399ebb21bb02212402d1.js" integrity="sha256-9yTT3kkhiZUiO3MWqi5T4rNL9CAmvzmeuyG7AiEkAtE=" crossorigin="anonymous"></script>
 <script src='/js/tabpane-persist.js'></script>
 

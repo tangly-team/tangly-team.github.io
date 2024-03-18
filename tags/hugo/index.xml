@@ -219,12 +219,14 @@ Any browser can display the slides and support navigation and the presenter mode
 &lt;div class=&#34;sect1&#34;&gt;
 &lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_toolchain&#34;&gt;Toolchain&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Beware of your toolchain.
 After updating some ruby modules, I could not generate bibtex citation references anymore
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.
 I posted the issue on the asciidoctor GitHub, and some weeks later a new version was released.
-The gem asciidoctor-bibtex-0.9.0 fixed the issue.&lt;/p&gt;
+The gem &lt;em&gt;asciidoctor-bibtex-0.9.0&lt;/em&gt; fixed the issue.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The following statements are helpful for ruby applications.
@@ -268,12 +270,23 @@ ruby -v                                                                        &
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The consequence is that I should set up a CI pipeline to check if the toolchain is still working.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_asciidoc_stylesheet&#34;&gt;Asciidoc Stylesheet&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The support of &lt;a href=&#34;https://www.docsy.dev/&#34;&gt;Docsy&lt;/a&gt; for &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; is limited.
 I had to extend the theme to support styling of &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; texts and to display taxonomies in the sidebar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Additional tinkering supports the download of referenced documents.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_link_integrity&#34;&gt;Link Integrity&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;When your website is growing, you need tools to ensure consistency of links.
+I use &lt;a href=&#34;https://peacockmedia.software/mac/integrity/free.html&#34;&gt;integrity&lt;/a&gt; to validate all hyperlinks on my website.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

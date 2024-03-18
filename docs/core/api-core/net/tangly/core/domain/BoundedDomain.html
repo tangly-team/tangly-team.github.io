@@ -82,23 +82,29 @@ loadScripts(document, 'script');</script>
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">net.tangly.core.domain</a></div>
-<h1 title="Class BoundedDomain" class="title">Class BoundedDomain&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>,<wbr>B,<wbr>H extends <a href="Handler.html" title="interface in net.tangly.core.domain">Handler</a>&lt;?&gt;,<wbr>P&gt;</h1>
+<h1 title="Class BoundedDomain" class="title">Class BoundedDomain&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>,<wbr>B,<wbr>P extends <a href="Port.html" title="interface in net.tangly.core.domain">Port</a>&lt;R&gt;&gt;</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.tangly.core.domain.BoundedDomain&lt;R,<wbr>B,<wbr>H,<wbr>P&gt;</div>
+<div class="inheritance">net.tangly.core.domain.BoundedDomain&lt;R,<wbr>B,<wbr>P&gt;</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><code>R</code> - realm handles all entities and values objects of the domain model</dd>
 <dd><code>B</code> - business logic provides complex domain business logic functions</dd>
-<dd><code>H</code> - handler provides an interface to interact with the bounded domain from outer layers</dd>
-<dd><code>P</code> - port empowers the business domain to communicate with outer layers or external systems</dd>
+<dd><code>P</code> - port empowers the business domain to communicate with outer layers or external systems.
+            The communication is generally asynchronous</dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">BoundedDomain&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>,<wbr>B,<wbr>H extends <a href="Handler.html" title="interface in net.tangly.core.domain">Handler</a>&lt;?&gt;,<wbr>P&gt;</span>
+<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">BoundedDomain&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>,<wbr>B,<wbr>P extends <a href="Port.html" title="interface in net.tangly.core.domain">Port</a>&lt;R&gt;&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">A bounded domain as defined in the DDD approach has a domain-specific model and a set of adapters.</div>
+<div class="block">A bounded domain as defined in the DDD approach has a domain-specific model and a set of adapters.
+ <p>The lifecycle of a bounded domain is:</p>
+ <ol>
+     <li>Bounded domain creation</li>
+     <li>Startup of the domain after construction</li>
+     <li>Shutdown of the domain after startup</li>
+ </ol></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -110,13 +116,14 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,R,B,H,P,net.tangly.core.TypeRegistry)" class="member-name-link">BoundedDomain</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,R,B,P,net.tangly.core.TypeRegistry)" class="member-name-link">BoundedDomain</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="BoundedDomain.html" title="type parameter in BoundedDomain">R</a>&nbsp;realm,
  <a href="BoundedDomain.html" title="type parameter in BoundedDomain">B</a>&nbsp;logic,
- <a href="BoundedDomain.html" title="type parameter in BoundedDomain">H</a>&nbsp;handler,
  <a href="BoundedDomain.html" title="type parameter in BoundedDomain">P</a>&nbsp;port,
  <a href="../TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a>&nbsp;registry)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor of the bounded domain.</div>
+</div>
 </div>
 </section>
 </li>
@@ -147,30 +154,27 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="DomainEntity.html" title="class in net.tangly.core.domain">DomainEntity</a>&lt;?&gt;&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entities()" class="member-name-link">entities</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">H</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handler()" class="member-name-link">handler</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">B</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logic()" class="member-name-link">logic</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">B</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logic()" class="member-name-link">logic</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">P</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#port()" class="member-name-link">port</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">P</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#port()" class="member-name-link">port</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">R</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#realm()" class="member-name-link">realm</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">R</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#realm()" class="member-name-link">realm</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registry()" class="member-name-link">registry</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shutdown()" class="member-name-link">shutdown</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registry()" class="member-name-link">registry</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startup()" class="member-name-link">startup</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shutdown()" class="member-name-link">shutdown</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startup()" class="member-name-link">startup</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -189,8 +193,8 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(java.lang.String,R,B,H,P,net.tangly.core.TypeRegistry)">
-<h3 id="&lt;init&gt;(java.lang.String,net.tangly.core.domain.Realm,java.lang.Object,net.tangly.core.domain.Handler,java.lang.Object,net.tangly.core.TypeRegistry)">BoundedDomain</h3>
+<section class="detail" id="&lt;init&gt;(java.lang.String,R,B,P,net.tangly.core.TypeRegistry)">
+<h3 id="&lt;init&gt;(java.lang.String,net.tangly.core.domain.Realm,java.lang.Object,net.tangly.core.domain.Port,net.tangly.core.TypeRegistry)">BoundedDomain</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">BoundedDomain</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  @NotNull
@@ -198,10 +202,17 @@ loadScripts(document, 'script');</script>
  @NotNull
  <a href="BoundedDomain.html" title="type parameter in BoundedDomain">B</a>&nbsp;logic,
  @NotNull
- <a href="BoundedDomain.html" title="type parameter in BoundedDomain">H</a>&nbsp;handler,
- @NotNull
  <a href="BoundedDomain.html" title="type parameter in BoundedDomain">P</a>&nbsp;port,
  <a href="../TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a>&nbsp;registry)</span></div>
+<div class="block">Constructor of the bounded domain.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - human-readable name of the domain</dd>
+<dd><code>realm</code> - realm handles all entities and values objects of the domain model</dd>
+<dd><code>logic</code> - logic provides complex domain business logic functions</dd>
+<dd><code>port</code> - port empowers the business domain to communicate with external systems</dd>
+<dd><code>registry</code> - registry where the tagged values and code types defined for the domain model are registered</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -255,12 +266,6 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="logic()">
 <h3>logic</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BoundedDomain.html" title="type parameter in BoundedDomain">B</a></span>&nbsp;<span class="element-name">logic</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="handler()">
-<h3>handler</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BoundedDomain.html" title="type parameter in BoundedDomain">H</a></span>&nbsp;<span class="element-name">handler</span>()</div>
 </section>
 </li>
 <li>

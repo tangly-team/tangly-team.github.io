@@ -143,12 +143,14 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/Strings.html#blankToNull(java.lang.String)" class="member-name-link">blankToNull(String)</a> - Static method in class net.tangly.core.<a href="net/tangly/core/Strings.html" title="class in net.tangly.core">Strings</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/domain/BoundedDomain.html" class="type-name-link" title="class in net.tangly.core.domain">BoundedDomain&lt;R,<wbr>B,<wbr>H,<wbr>P&gt;</a> - Class in <a href="net/tangly/core/domain/package-summary.html">net.tangly.core.domain</a></dt>
+<dt><a href="net/tangly/core/domain/BoundedDomain.html" class="type-name-link" title="class in net.tangly.core.domain">BoundedDomain&lt;R,<wbr>B,<wbr>P&gt;</a> - Class in <a href="net/tangly/core/domain/package-summary.html">net.tangly.core.domain</a></dt>
 <dd>
 <div class="block">A bounded domain as defined in the DDD approach has a domain-specific model and a set of adapters.</div>
 </dd>
-<dt><a href="net/tangly/core/domain/BoundedDomain.html#%3Cinit%3E(java.lang.String,R,B,H,P,net.tangly.core.TypeRegistry)" class="member-name-link">BoundedDomain(String, R, B, H, P, TypeRegistry)</a> - Constructor for class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/domain/BoundedDomain.html#%3Cinit%3E(java.lang.String,R,B,P,net.tangly.core.TypeRegistry)" class="member-name-link">BoundedDomain(String, R, B, P, TypeRegistry)</a> - Constructor for class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
+<dd>
+<div class="block">Constructor of the bounded domain.</div>
+</dd>
 <dt><a href="net/tangly/core/Address.Builder.html#build()" class="member-name-link">build()</a> - Method in class net.tangly.core.<a href="net/tangly/core/Address.Builder.html" title="class in net.tangly.core">Address.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/Address.html#builder()" class="member-name-link">builder()</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/Address.html" title="class in net.tangly.core">Address</a></dt>
@@ -180,7 +182,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the value of the <a href="./net/tangly/core/TagType.html#param-clazz"><code>clazz</code></a> record component.</div>
 </dd>
-<dt><a href="net/tangly/core/domain/Handler.html#clearEntities()" class="member-name-link">clearEntities()</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Handler.html" title="interface in net.tangly.core.domain">Handler</a></dt>
+<dt><a href="net/tangly/core/domain/Port.html#clearEntities()" class="member-name-link">clearEntities()</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
 <dd>
 <div class="block">Clear all entities of the bounded domain.</div>
 </dd>
@@ -536,7 +538,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/gravatar/GravatarRating.html#EXPLICIT" class="member-name-link">EXPLICIT</a> - Enum constant in enum class net.tangly.core.gravatar.<a href="net/tangly/core/gravatar/GravatarRating.html" title="enum class in net.tangly.core.gravatar">GravatarRating</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/domain/Handler.html#exportEntities()" class="member-name-link">exportEntities()</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Handler.html" title="interface in net.tangly.core.domain">Handler</a></dt>
+<dt><a href="net/tangly/core/domain/Port.html#exportEntities()" class="member-name-link">exportEntities()</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
 <dd>
 <div class="block">Export all entities of the bounded domain to the file system.</div>
 </dd>
@@ -705,12 +707,6 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:H">H</h2>
 <dl class="index">
-<dt><a href="net/tangly/core/domain/BoundedDomain.html#handler()" class="member-name-link">handler()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/domain/Handler.html" class="type-name-link" title="interface in net.tangly.core.domain">Handler&lt;R&gt;</a> - Interface in <a href="net/tangly/core/domain/package-summary.html">net.tangly.core.domain</a></dt>
-<dd>
-<div class="block">Define the import port for the bounded domain.</div>
-</dd>
 <dt><a href="net/tangly/core/HasLocation.html#hasAddress()" class="member-name-link">hasAddress()</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasLocation.html" title="interface in net.tangly.core">HasLocation</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/DomainEntity.html#hasComments()" class="member-name-link">hasComments()</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/DomainEntity.html" title="class in net.tangly.core.domain">DomainEntity</a></dt>
@@ -902,11 +898,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/crm/CrmEntity.html#im(net.tangly.core.crm.VcardType,java.lang.String)" class="member-name-link">im(VcardType, String)</a> - Method in interface net.tangly.core.crm.<a href="net/tangly/core/crm/CrmEntity.html" title="interface in net.tangly.core.crm">CrmEntity</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/domain/Handler.html#importEntities()" class="member-name-link">importEntities()</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Handler.html" title="interface in net.tangly.core.domain">Handler</a></dt>
+<dt><a href="net/tangly/core/domain/Port.html#importEntities()" class="member-name-link">importEntities()</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
 <dd>
 <div class="block">Import all entities of the bounded domain from the file system.</div>
 </dd>
-<dt><a href="net/tangly/core/domain/Handler.html#importEntities(java.nio.file.Path,java.lang.String,org.apache.logging.log4j.util.BiConsumer)" class="member-name-link">importEntities(Path, String, BiConsumer&lt;Reader, String&gt;)</a> - Static method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Handler.html" title="interface in net.tangly.core.domain">Handler</a></dt>
+<dt><a href="net/tangly/core/domain/Port.html#importEntities(java.nio.file.Path,java.lang.String,org.apache.logging.log4j.util.BiConsumer)" class="member-name-link">importEntities(Path, String, BiConsumer&lt;Reader, String&gt;)</a> - Static method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
 <dd>
 <div class="block">Import the entities from a resource specified through a path to a folder.</div>
 </dd>
@@ -1316,6 +1312,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#port()" class="member-name-link">port()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/domain/Port.html" class="type-name-link" title="interface in net.tangly.core.domain">Port&lt;R&gt;</a> - Interface in <a href="net/tangly/core/domain/package-summary.html">net.tangly.core.domain</a></dt>
+<dd>
+<div class="block">Define the inbound and outbound communication port to the bounded domain.</div>
+</dd>
 <dt><a href="net/tangly/core/crm/CrmEntity.html#position()" class="member-name-link">position()</a> - Method in interface net.tangly.core.crm.<a href="net/tangly/core/crm/CrmEntity.html" title="interface in net.tangly.core.crm">CrmEntity</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/HasLocation.html#position()" class="member-name-link">position()</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasLocation.html" title="interface in net.tangly.core">HasLocation</a></dt>
@@ -1399,7 +1399,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#realm()" class="member-name-link">realm()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/domain/Handler.html#realm()" class="member-name-link">realm()</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Handler.html" title="interface in net.tangly.core.domain">Handler</a></dt>
+<dt><a href="net/tangly/core/domain/Port.html#realm()" class="member-name-link">realm()</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
 <dd>
 <div class="block">Return the realm containing all the entities of the bounded domain.</div>
 </dd>
