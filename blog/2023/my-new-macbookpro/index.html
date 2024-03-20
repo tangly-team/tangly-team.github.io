@@ -47,7 +47,7 @@ More seriously, I easily use my workstation forty hours a week. I really appreci
 I know. I am a geek who loves his technical gadgets. I convinced my wife these gadgets are way cheaper than a sports car.
 More seriously, I easily use my workstation forty hours a week. I really appreciate a stable and fast machine. My eyes are thankful if the display has a high resolution and the refresh rate fulfills ergonomic criteria [2]."><meta itemprop="datePublished" content="2023-04-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-04-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1881">
+<meta itemprop="wordCount" content="1965">
 <meta itemprop="keywords" content="organization," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="My New MacBookPro"/>
 <meta name="twitter:description" content="I just received my new MacBookPro M2 Max with 32 GB of RAM and 1 TB SSD [1].
 I know. I am a geek who loves his technical gadgets. I convinced my wife these gadgets are way cheaper than a sports car.
@@ -142,7 +142,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.94164189b386e2a3b7347c1ea888cb42.json"
+    data-offline-search-index-json-src="/offline-search-index.8f37f6723d477da8d5ea37b0cb4c0a43.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -166,7 +166,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.94164189b386e2a3b7347c1ea888cb42.json"
+    data-offline-search-index-json-src="/offline-search-index.8f37f6723d477da8d5ea37b0cb4c0a43.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1392,7 +1392,9 @@ java21                                                                          
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Command to select a JDK version and set it as default under macOS.</td>
+<td>Command to select a JDK version and set it as default under macOS.
+Beware the command changes only between different JDK versions.
+You cannot switch between multiple JDK vendors with the same JDK version using this command.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
@@ -1418,6 +1420,33 @@ java21                                                                          
 <pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">brewup
 gem update</span></code></pre>
 </div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you install a JDK with brew, read the brew output.
+Do not forget to create the link to the java installation.
+<em>This step is necessary because brew installs a JDK as keg-only package.</em>
+<em>MacOS expects JDKs to be installed in the /Library/Java/JavaVirtualMachines directory.</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="console"><span style="color: #24292f;background-color: #f6f8fa">sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk
+             /Library/Java/JavaVirtualMachines/openjdk.jdk
+</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can check the installed JDKs with the command <em>/usr/libexec/java_home -V</em>.</p>
 </div>
 </td>
 </tr>

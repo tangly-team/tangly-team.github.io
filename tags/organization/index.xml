@@ -2043,7 +2043,9 @@ java21                                                                          
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Command to select a JDK version and set it as default under macOS.&lt;/td&gt;
+&lt;td&gt;Command to select a JDK version and set it as default under macOS.
+Beware the command changes only between different JDK versions.
+You cannot switch between multiple JDK vendors with the same JDK version using this command.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
@@ -2069,6 +2071,33 @@ java21                                                                          
 &lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;brewup
 gem update&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you install a JDK with brew, read the brew output.
+Do not forget to create the link to the java installation.
+&lt;em&gt;This step is necessary because brew installs a JDK as keg-only package.&lt;/em&gt;
+&lt;em&gt;MacOS expects JDKs to be installed in the /Library/Java/JavaVirtualMachines directory.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;console&#34;&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk
+             /Library/Java/JavaVirtualMachines/openjdk.jdk
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can check the installed JDKs with the command &lt;em&gt;/usr/libexec/java_home -V&lt;/em&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;

@@ -118,6 +118,12 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Exports all efforts of the assignment in the given period of time.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#importEfforts(java.nio.file.Path,boolean)" class="member-name-link">importEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
+ boolean&nbsp;replace)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Imports all efforts defined in the YAML file located at the given path.</div>
+</div>
 </div>
 </div>
 </div>
@@ -135,6 +141,24 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="importEfforts(java.nio.file.Path,boolean)">
+<h3>importEfforts</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">importEfforts</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
+ boolean&nbsp;replace)</span>
+            throws <span class="exceptions">org.eclipse.serializer.exceptions.IORuntimeException</span></div>
+<div class="block">Imports all efforts defined in the YAML file located at the given path.
+ An effort is identified by the combination of the assignment identifier and the date of the effort. The assigement identifies uniquely the collaborator working on the effort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>path</code> - path to the YAML defining the efforts to be imported</dd>
+<dd><code>replace</code> - if true, the existing efforts are replaced by the imported ones, otherwise the imported efforts are only imported if not preesent</dd>
+<dt>Throws:</dt>
+<dd><code>org.eclipse.serializer.exceptions.IORuntimeException</code></dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate)">
 <h3>exportEffortsDocument</h3>

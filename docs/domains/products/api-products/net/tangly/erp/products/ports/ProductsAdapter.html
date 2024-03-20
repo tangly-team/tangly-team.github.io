@@ -150,7 +150,7 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearEntities()" class="member-name-link">clearEntities</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">exportEffortsDocument</a><wbr>(<a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">exportEffortsDocument</a><wbr>(@NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -162,7 +162,9 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEfforts(java.nio.file.Path,boolean)" class="member-name-link">importEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  boolean&nbsp;replace)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Imports all efforts defined in the YAML file located at the given path.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEntities()" class="member-name-link">importEntities</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -301,17 +303,26 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importEfforts</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  boolean&nbsp;replace)</span>
-                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+                   throws <span class="exceptions">org.eclipse.serializer.exceptions.IORuntimeException</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#importEfforts(java.nio.file.Path,boolean)">ProductsPort</a></code></span></div>
+<div class="block">Imports all efforts defined in the YAML file located at the given path.
+ An effort is identified by the combination of the assignment identifier and the date of the effort. The assigement identifies uniquely the collaborator working on the effort.</div>
 <dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../services/ProductsPort.html#importEfforts(java.nio.file.Path,boolean)">importEfforts</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>path</code> - path to the YAML defining the efforts to be imported</dd>
+<dd><code>replace</code> - if true, the existing efforts are replaced by the imported ones, otherwise the imported efforts are only imported if not preesent</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code>org.eclipse.serializer.exceptions.IORuntimeException</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate)">
 <h3>exportEffortsDocument</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEffortsDocument</span><wbr><span class="parameters">(<a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEffortsDocument</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate)">ProductsPort</a></code></span></div>
