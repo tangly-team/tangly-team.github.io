@@ -16,6 +16,320 @@
     
     
     <item>
+      <title>Blog: Structure Your Concurrency</title>
+      <link>https://blog.tangly.net/blog/2024/structure-your-concurrency/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2024/structure-your-concurrency/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-01-head.png&#34; alt=&#34;2024 04 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Writing concurrent software is one of the greatest challenges for software developers &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#modern-software-engineering&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#effective-java-3rd&#34;&gt;2&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A professional software developer must understand the principles of concurrent programming and the tools available to write concurrent software.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Only concurrent applications can access all cores of modern multicore processors and provide the best performance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java thread model makes it a strong contender among concurrent languages, but multithreading has always been inherently tricky.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The introduction of &lt;em&gt;virtual threads&lt;/em&gt; empowered Java to provide a unique and highly-optimized threading system that is also easy to understand.
+You can now create millions of threads without the overhead of creating a native operating system thread.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Now you need mechanisms to manage this huge number of threads.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Virtual threads, now an official feature of Java, create the possibility of cheaply spawning threads to gain concurrent performance.
+As a result, Java now has a unique and highly-optimized threading system that is also easy to understand.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Application designers often face the following questions:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;How do you cope with a huge number of threads?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How do you process huge collections?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How do you process data flows with back pressure?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How do you design distributed and reactive systems?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_structured_concurrency&#34;&gt;Structured Concurrency&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Structured concurrency enhances the maintainability, reliability, and observability of multithreaded code.
+It adopts a concurrent programming style that reduces the likelihood of thread leaks and cancellation delay.
+These are common risks associated with cancellation and shutdown.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As the JEP for structured concurrency says, &lt;em&gt;If a task splits into concurrent subtasks, then they all return to the same place, namely the task’s code block&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Structured concurrency is a programming paradigm that provides a way to write concurrent software using familiar program flows and constructs.
+It guarantees that all concurrent tasks are properly managed and cleaned up when leaving the scope of the &lt;em&gt;try with resources&lt;/em&gt; block.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;try&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;scope&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;StructuredTaskScope&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;ShutdownOnFailure&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;())&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #953800&#34;&gt;Future&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Shelter&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;shelter&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;scope&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;fork&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getShelter&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #953800&#34;&gt;Future&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Dog&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;dogs&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;scope&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;fork&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getDogs&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;scope&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;join&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #953800&#34;&gt;Response&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Response&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;shelter&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;resultNow&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;dogs&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;resultNow&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;());&lt;/span&gt;
+    &lt;span style=&#34;color: #6e7781&#34;&gt;// ...&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;When exiting the try-with-resources block, the structured concurrency framework ensures that all concurrent tasks are properly managed and cleaned up.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern Java programmers never create threads directly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Complex or slow algoritms shall be parallelized using structured concurrency to exploit modern multicore processors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_concurrent_stream_processing&#34;&gt;Concurrent Stream Processing&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-01-parallel-stream.png&#34; alt=&#34;2024 04 01 parallel stream&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java 8 introduced the Stream API, which provides a way to process data in a declarative manner &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#functional-programming-java&#34;&gt;3&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java Streams support parallel processing, but the parallelism is not structured.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The parallelism is processing bound and not I/O bound.
+Therefore, the maximum number of active threads should be limited to the number of available processor cores.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The parallel stream is cleanup upon completion of the terminal operation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Integer&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;listOfNumbers&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Arrays&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;asList&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #cf222e&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;listOfNumbers&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;parallelStream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;reduce&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;Integer:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;sum&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java streams library provides a rich set of functionalities that can work with any stream.
+The approach is similar to the sequence library in functional programming languages such as Clojure.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern Java cpde processeses any collection through sreams.
+Huge collections are very efficiently processed in parallel streams on modern multicore processors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach transforms imperative code into a declarative style, which is easier to read and maintain.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_concurrent_data_flow_processing&#34;&gt;Concurrent Data Flow Processing&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-01-reactive.png&#34; alt=&#34;2024 04 01 reactive&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Concurrent data flow processing is based on the Reactive Streams API.
+It is a specification for asynchronous stream processing with non-blocking back pressure.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;On one side, functional programming is the process of building software by composing pure functions, avoiding shared state, mutable data, and side effects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;On the other side, reactive programming is an asynchronous programming paradigm concerned with data streams and the propagation of change.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Together, functional reactive programming forms a combination of functional and reactive techniques that can represent an elegant approach to event-driven programming.
+Values change over time and where the consumer reacts to the data as it comes in.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The processing pipeline is composed of a source, a set of operators, and a sink.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;letters&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;d&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;e&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;f&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;g&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;};&lt;/span&gt;
+&lt;span style=&#34;color: #953800&#34;&gt;Observable&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;observable&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Observable&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;from&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;letters&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;observable&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;subscribe&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;
+  &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt;                                        &lt;span style=&#34;color: #6e7781&#34;&gt;//OnNext&lt;/span&gt;
+  &lt;span style=&#34;color: #0550ae&#34;&gt;Throwable:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;printStackTrace&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt;                              &lt;span style=&#34;color: #6e7781&#34;&gt;//OnError&lt;/span&gt;
+  &lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;_Completed&amp;#34;&lt;/span&gt;                             &lt;span style=&#34;color: #6e7781&#34;&gt;//OnCompleted&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;assertTrue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;equals&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;abcdefg_Completed&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The reactive library takes care of the threading and back pressure.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_distributed_and_reactive_systems&#34;&gt;Distributed and Reactive Systems&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-01-actor.png&#34; alt=&#34;2024 04 01 actor&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The actor model is a programming model for concurrency in a distributed system.
+It is based on the concept of actors, which are independent entities that communicate with each other by sending messages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each actor has its own mailbox and processes messages one at a time.
+An actor only accesses its own state and does not share state with other actors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An actor is an active object that encapsulates state and behavior and is implemented as a concurrent process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I strongly recommend using the actor model when designing distributed and reactive systems.
+Avoid low-level concurrency primitives and thread pools.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Design your system as a set of actors that communicate with each other by sending messages.
+Eliminate shared mutable state and use message passing to communicate between actors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Between virtual threads and structured concurrency, Java developers have a compelling new mechanism for breaking up almost any code into concurrent tasks without much overhead.
+An application developer almost never uses concurrency primitives or thread pools directly.
+Beware of these design approaches and select wisely based on the requirements of the application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Library developers can use the new concurrency primitives to build high-performance libraries that are easy to use.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use parallel streams when processing huge collections.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use reactive programming when processing data flows with back pressure, different sampling rates, and complex event processing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use the actor model when designing distributed and reactive systems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-algebric-data-types&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2024/data-classes-sealed-types-and-pattern-matching&#34;&gt;Data Classes, Sealed Types and Pattern Matching&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-advanced-streams&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2024/advanced-streams&#34;&gt;Advanced Streams&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-modules&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2024/java-modules&#34;&gt;Java Modules&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structure Your Concurrency&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;modern-software-engineering&#34;&gt;&lt;/a&gt;[1] D. Farley, &lt;em&gt;Modern Software Engineering&lt;/em&gt;. Pearson Education, Limited, 2022 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B09GG6XKS4&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B09GG6XKS4&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;effective-java-3rd&#34;&gt;&lt;/a&gt;[2] J. Bloch, &lt;em&gt;Effective Java&lt;/em&gt;, Third. Addison-Wesley Professional, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B078H61SCH&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B078H61SCH&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;functional-programming-java&#34;&gt;&lt;/a&gt;[3] V. Subramaniam, &lt;em&gt;Functional Programming In Java Harnessing The Power Of Java 8 Lambda Expressions&lt;/em&gt;. The Pragmatic Programmers, 2014 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B0CJL7VKFL&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B0CJL7VKFL&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Asciidoc and Hugo Website Improvements</title>
       <link>https://blog.tangly.net/blog/2024/asciidoc-and-hugo-website-improvements/</link>
       <pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate>
@@ -1014,7 +1328,7 @@ Marcel Baumann. 2024&lt;/p&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structured Concurrency&lt;/a&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structure Your Concurrency&lt;/a&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2077,7 +2391,7 @@ Marcel Baumann. 2024&lt;/p&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structured Concurrency&lt;/a&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structure Your Concurrency&lt;/a&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2650,7 +2964,7 @@ Marcel Baumann. 2024&lt;/p&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structured Concurrency&lt;/a&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structure Your Concurrency&lt;/a&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;

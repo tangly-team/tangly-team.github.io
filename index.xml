@@ -15,6 +15,320 @@
     
     
     <item>
+      <title>Blog: Structure Your Concurrency</title>
+      <link>https://blog.tangly.net/blog/2024/structure-your-concurrency/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2024/structure-your-concurrency/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-01-head.png&#34; alt=&#34;2024 04 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Writing concurrent software is one of the greatest challenges for software developers &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#modern-software-engineering&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#effective-java-3rd&#34;&gt;2&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A professional software developer must understand the principles of concurrent programming and the tools available to write concurrent software.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Only concurrent applications can access all cores of modern multicore processors and provide the best performance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java thread model makes it a strong contender among concurrent languages, but multithreading has always been inherently tricky.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The introduction of &lt;em&gt;virtual threads&lt;/em&gt; empowered Java to provide a unique and highly-optimized threading system that is also easy to understand.
+You can now create millions of threads without the overhead of creating a native operating system thread.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Now you need mechanisms to manage this huge number of threads.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Virtual threads, now an official feature of Java, create the possibility of cheaply spawning threads to gain concurrent performance.
+As a result, Java now has a unique and highly-optimized threading system that is also easy to understand.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Application designers often face the following questions:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;How do you cope with a huge number of threads?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How do you process huge collections?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How do you process data flows with back pressure?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How do you design distributed and reactive systems?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_structured_concurrency&#34;&gt;Structured Concurrency&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Structured concurrency enhances the maintainability, reliability, and observability of multithreaded code.
+It adopts a concurrent programming style that reduces the likelihood of thread leaks and cancellation delay.
+These are common risks associated with cancellation and shutdown.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As the JEP for structured concurrency says, &lt;em&gt;If a task splits into concurrent subtasks, then they all return to the same place, namely the task’s code block&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Structured concurrency is a programming paradigm that provides a way to write concurrent software using familiar program flows and constructs.
+It guarantees that all concurrent tasks are properly managed and cleaned up when leaving the scope of the &lt;em&gt;try with resources&lt;/em&gt; block.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;try&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;scope&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;StructuredTaskScope&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;ShutdownOnFailure&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;())&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #953800&#34;&gt;Future&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Shelter&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;shelter&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;scope&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;fork&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getShelter&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #953800&#34;&gt;Future&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Dog&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;dogs&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;scope&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;fork&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;getDogs&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;scope&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;join&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color: #953800&#34;&gt;Response&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Response&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;shelter&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;resultNow&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(),&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;dogs&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;resultNow&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;());&lt;/span&gt;
+    &lt;span style=&#34;color: #6e7781&#34;&gt;// ...&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;When exiting the try-with-resources block, the structured concurrency framework ensures that all concurrent tasks are properly managed and cleaned up.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern Java programmers never create threads directly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Complex or slow algoritms shall be parallelized using structured concurrency to exploit modern multicore processors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_concurrent_stream_processing&#34;&gt;Concurrent Stream Processing&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-01-parallel-stream.png&#34; alt=&#34;2024 04 01 parallel stream&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java 8 introduced the Stream API, which provides a way to process data in a declarative manner &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#functional-programming-java&#34;&gt;3&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java Streams support parallel processing, but the parallelism is not structured.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The parallelism is processing bound and not I/O bound.
+Therefore, the maximum number of active threads should be limited to the number of available processor cores.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The parallel stream is cleanup upon completion of the terminal operation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;List&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Integer&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;listOfNumbers&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Arrays&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;asList&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #cf222e&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;listOfNumbers&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;parallelStream&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;reduce&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;Integer:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;sum&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Java streams library provides a rich set of functionalities that can work with any stream.
+The approach is similar to the sequence library in functional programming languages such as Clojure.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern Java cpde processeses any collection through sreams.
+Huge collections are very efficiently processed in parallel streams on modern multicore processors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This approach transforms imperative code into a declarative style, which is easier to read and maintain.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_concurrent_data_flow_processing&#34;&gt;Concurrent Data Flow Processing&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-01-reactive.png&#34; alt=&#34;2024 04 01 reactive&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Concurrent data flow processing is based on the Reactive Streams API.
+It is a specification for asynchronous stream processing with non-blocking back pressure.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;On one side, functional programming is the process of building software by composing pure functions, avoiding shared state, mutable data, and side effects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;On the other side, reactive programming is an asynchronous programming paradigm concerned with data streams and the propagation of change.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Together, functional reactive programming forms a combination of functional and reactive techniques that can represent an elegant approach to event-driven programming.
+Values change over time and where the consumer reacts to the data as it comes in.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The processing pipeline is composed of a source, a set of operators, and a sink.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;letters&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;d&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;e&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;f&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;g&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;};&lt;/span&gt;
+&lt;span style=&#34;color: #953800&#34;&gt;Observable&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;observable&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Observable&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;from&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;letters&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;observable&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;subscribe&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;
+  &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt;                                        &lt;span style=&#34;color: #6e7781&#34;&gt;//OnNext&lt;/span&gt;
+  &lt;span style=&#34;color: #0550ae&#34;&gt;Throwable:&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;printStackTrace&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt;                              &lt;span style=&#34;color: #6e7781&#34;&gt;//OnError&lt;/span&gt;
+  &lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;_Completed&amp;#34;&lt;/span&gt;                             &lt;span style=&#34;color: #6e7781&#34;&gt;//OnCompleted&lt;/span&gt;
+&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;assertTrue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;equals&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;abcdefg_Completed&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The reactive library takes care of the threading and back pressure.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_distributed_and_reactive_systems&#34;&gt;Distributed and Reactive Systems&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-01-actor.png&#34; alt=&#34;2024 04 01 actor&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The actor model is a programming model for concurrency in a distributed system.
+It is based on the concept of actors, which are independent entities that communicate with each other by sending messages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Each actor has its own mailbox and processes messages one at a time.
+An actor only accesses its own state and does not share state with other actors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;An actor is an active object that encapsulates state and behavior and is implemented as a concurrent process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I strongly recommend using the actor model when designing distributed and reactive systems.
+Avoid low-level concurrency primitives and thread pools.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Design your system as a set of actors that communicate with each other by sending messages.
+Eliminate shared mutable state and use message passing to communicate between actors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Between virtual threads and structured concurrency, Java developers have a compelling new mechanism for breaking up almost any code into concurrent tasks without much overhead.
+An application developer almost never uses concurrency primitives or thread pools directly.
+Beware of these design approaches and select wisely based on the requirements of the application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Library developers can use the new concurrency primitives to build high-performance libraries that are easy to use.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use parallel streams when processing huge collections.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use reactive programming when processing data flows with back pressure, different sampling rates, and complex event processing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Use the actor model when designing distributed and reactive systems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-algebric-data-types&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2024/data-classes-sealed-types-and-pattern-matching&#34;&gt;Data Classes, Sealed Types and Pattern Matching&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-advanced-streams&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2024/advanced-streams&#34;&gt;Advanced Streams&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-modules&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2024/java-modules&#34;&gt;Java Modules&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structure Your Concurrency&lt;/a&gt;
+Marcel Baumann. 2024&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;modern-software-engineering&#34;&gt;&lt;/a&gt;[1] D. Farley, &lt;em&gt;Modern Software Engineering&lt;/em&gt;. Pearson Education, Limited, 2022 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B09GG6XKS4&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B09GG6XKS4&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;effective-java-3rd&#34;&gt;&lt;/a&gt;[2] J. Bloch, &lt;em&gt;Effective Java&lt;/em&gt;, Third. Addison-Wesley Professional, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B078H61SCH&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B078H61SCH&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;functional-programming-java&#34;&gt;&lt;/a&gt;[3] V. Subramaniam, &lt;em&gt;Functional Programming In Java Harnessing The Power Of Java 8 Lambda Expressions&lt;/em&gt;. The Pragmatic Programmers, 2014 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B0CJL7VKFL&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B0CJL7VKFL&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Asciidoc and Hugo Website Improvements</title>
       <link>https://blog.tangly.net/blog/2024/asciidoc-and-hugo-website-improvements/</link>
       <pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate>
@@ -1013,7 +1327,7 @@ Marcel Baumann. 2024&lt;/p&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structured Concurrency&lt;/a&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structure Your Concurrency&lt;/a&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2076,7 +2390,7 @@ Marcel Baumann. 2024&lt;/p&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structured Concurrency&lt;/a&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structure Your Concurrency&lt;/a&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2649,7 +2963,7 @@ Marcel Baumann. 2024&lt;/p&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structured Concurrency&lt;/a&gt;
+&lt;p&gt;&lt;a id=&#34;modern-java-structured-concurency&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2024/structure-your-concurrency&#34;&gt;Structure Your Concurrency&lt;/a&gt;
 Marcel Baumann. 2024&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -10652,6 +10966,13 @@ The build-in loudspeakers are an audible improvement against the sound of the pr
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_11&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_11&#34; title=&#34;View footnote.&#34;&gt;11&lt;/a&gt;]&lt;/sup&gt;.
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_12&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_12&#34; title=&#34;View footnote.&#34;&gt;12&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The only feature I am truly missing is a finer control of the audio outputs.
+I would like to send the music stream to the loudspeakers and the conference call to the headset.
+My loudspeakers deliver high-quality sound but do not have a microphone.
+The headset has a microphone and is used for incoming calls.
+Currently, all audio streams are aggregated and sent to exactly one output device.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect1&#34;&gt;
@@ -16771,760 +17092,6 @@ Historically, JSR-363 defined the API 1.0 and is now superseded by the newer def
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Introducing DevOps Ideas</title>
-      <link>https://blog.tangly.net/blog/2022/introducing-devops-ideas/</link>
-      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2022/introducing-devops-ideas/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;openblock float-group&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-04-04-head.png&#34; alt=&#34;2022 04 04 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Your organization heard of &lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt;, and your developers clamor you should adopt the approach.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Each organization I talk with has some DevOps initiative.
-Often because they read that DevOps approach puts customers and end-user satisfaction at the center.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Does DevOps really improve the quality of your digital products and customer satisfaction?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Or is it only the next &lt;a href=&#34;https://en.wikipedia.org/wiki/No_Silver_Bullet&#34;&gt;silver bullet&lt;/a&gt; fad used to increase the bonus of consultants and managers?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You also find a simple way to boostrap your DevOps adoption &lt;a href=&#34;#bootstrap-devops-adoption&#34;&gt;Bootstrap Your DevOps Adoption&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_what_is_devops&#34;&gt;What is DevOps?&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Wikipedia provides the following definition
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;strong&gt;DevOps&lt;/strong&gt; is a set of practices that combines &lt;a href=&#34;https://en.wikipedia.org/wiki/Software_development&#34;&gt;software development&lt;/a&gt; &lt;strong&gt;Dev&lt;/strong&gt; and
-&lt;a href=&#34;https://en.wikipedia.org/wiki/IT_operations&#34;&gt;IT operations&lt;/a&gt; &lt;strong&gt;Ops&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;It aims to shorten the &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;system development life-cycle&lt;/a&gt; and provide
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;continuous delivery&lt;/a&gt; with high &lt;a href=&#34;https://en.wikipedia.org/wiki/Software_quality&#34;&gt;software quality&lt;/a&gt;.
-DevOps is &lt;strong&gt;complementary&lt;/strong&gt; with &lt;a href=&#34;https://en.wikipedia.org/wiki/Agile_software_development&#34;&gt;agile software development&lt;/a&gt;.
-Several DevOps aspects came from the agile methodology.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Wikipedia
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;DevOps is intended to be a cross-functional mode of working &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#accelerate&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#devops-handbook&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#phoenix-project&#34;&gt;3&lt;/a&gt;]&lt;/span&gt;.
-Practitioners use different toolchains rather than a single one.
-These toolchains are expected to fit into one or more of the following categories, reflective of key aspects of the development and delivery process.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock note&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The major software product development platforms &lt;a href=&#34;https://gitlab.com/&#34;&gt;GitLab&lt;/a&gt;, &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; or &lt;a href=&#34;https://bitbucket.org/&#34;&gt;Bitbucket&lt;/a&gt;
-are classical examples of toolchains integration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;DevOps teams practice daily:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;hdlist&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Coding
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Code development and review, source code management tools, code merging &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#clean-code&#34;&gt;4&lt;/a&gt;, &lt;a href=&#34;#clean-architecture&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;#refactoring&#34;&gt;6&lt;/a&gt;]&lt;/span&gt;.
-Emphasize continuous development and testing.
-Continuous testing can only be fully automated.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Building
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Continuous integration tools, build status.
-Emphasize continuous integration, continuous delivery, and continuous deployment &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#continuous-delivery&#34;&gt;7&lt;/a&gt;, &lt;a href=&#34;#continuous-delivery-pipelines&#34;&gt;8&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Testing
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Continuous testing tools that provide quick and timely feedback on business risks.
-Supports continuous development activities.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Packaging
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Artifact repository, application pre-deployment staging.
-Supports the continuous delivery activities in a corporate environment.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Releasing
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Change management, release approvals, release automation.
-Supports the continuous delivery and deployment to productive servers.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Configuring
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Infrastructure configuration and management, infrastructure as code tools.
-Supports the infrastructure as a code approach.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Monitoring
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Applications performance monitoring, end-user experience.
-Emphasize continuous monitoring and alarming, optimize time to recover metric.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_development&#34;&gt;Development&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Development in an agile and DevOps environment means:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;Continuous integration&lt;/a&gt;, where the coding, building, integration, and testing processes are carried out.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;Continuous delivery&lt;/a&gt;, which includes continuous integration but mainly focuses on product delivery.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_deployment&#34;&gt;Continuous deployment&lt;/a&gt;, which aims at automating project deliveries.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-04-04-Ci-pipeline.png&#34; alt=&#34;2022 04 04 Ci pipeline&#34; width=&#34;480&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Your development teams shall have automatic continuous integration.
-This pipeline builds the software, runs static code analyzer and executes a reasonable set of unit and integration tests.
-If not, they are pretending to do DevOps and lying to you.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The next step is to configure an automatic continuous delivery.
-This pipeline packages the complete solution and delivers as an installation package.
-This package can be deployed in the staging area without manual configuration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Only professional DevOps teams shall dare to implement continuous delivery.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The areas that a DevOps engineer must be competent are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Version Control Systems&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Any DevOps engineer has expertise in Git, and platforms such as GitHub, GitLab, or BitBucket.
-Infrastructure as Code &lt;em&gt;IaC&lt;/em&gt; is used to build and deploy digital products.
-Documentation is always synchronized with the source artifacts.
-Approaches such as static websites are preferred.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;Continuous Integration&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_deployment&#34;&gt;Continuous Deployment&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;Continuous Delivery&lt;/a&gt; (CI/CD/CD)&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;As for this one, you should look for Jenkins, TeamCity, GitHub, GitLab, or Bitbucket.
-All products are built and packaged using continuous integration and continuous delivery approaches.
-No manual steps are required to package a release for production.
-It is important to note, however, that there are so many DevOps tools out there that it is impossible to cover them.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Testing and Automation Tools&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;One of the duties of a DevOps engineer is to speed up the delivery of software to the clients.
-Most companies care about the quality of their software and testing has become an essential part of DevOps engineers&amp;#39; job.
-Functional and non-functional testing techniques and tools are used to guaranty quality of the installed solutions.
-It provides the obvious benefits of automation, and helps DevOps engineers save a lot of time.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Containers and Cloud Services&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Containers such as Docker and Kubernetes are used to deploy digital solutions.
-Microsoft Azure, Google Cloud, Amazon Web Services are some examples.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Communication&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;DevOps is not isolated to a specific role or to a specific team in your organization.
-A DevOps specialist must have well-developed empathy because their job implies communication with other people.
-Conflicts are not going to help them.
-Deep understanding of empiricism and transparency of all available information and measurements is a must for successful communication in an agile and DevOps environment.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Google has published exhaustive insights how they implement DevOps mindset &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#site-reliability-engineering&#34;&gt;9&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_devsecops&#34;&gt;DevSecOps&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Security and corporate governance awareness tremendously grew during the beginning of this decade.
-Systematic cyberattacks and more stringent citizen protection laws displayed lack of competence in a lot of IT departments.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-04-04-DevOps-SecDevOps.png&#34; alt=&#34;2022 04 04 DevOps SecDevOps&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;DevOps engineers shall always also be DevSecOps specialists and master:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Collective Responsibility&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Security is not something ephemeral whose progress and contribution cannot be measured.
-Each person in the organization has their own security responsibility and must be aware of their own contribution to the organization’s security stance.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Collaboration and Integration&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Security can only be achieved through collaboration, not confrontation.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Pragmatic Implementation&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;They focus on application development to ensure safety, privacy and trust in the digital society.
-Organizations shall be able to pragmatically approach security in DevOps.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Bridge the Divide between Compliance and Development&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The key to addressing the gap between compliance and development is to identify applicable controls, translating them to appropriate software measures and identifying inflection points within the software lifecycle where these controls can be automated and measured.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Automation&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Software quality can be better by improving the thoroughness, timeliness and frequency of testing.
-Processes that can be automated should be automated, and the other ones should be considered for elimination.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Measurement, Monitoring, Report and Action&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The results during software development as well as post-delivery must be continuously controlled by the qualified people at the right time for DevSecOps to succeed.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;bootstrap-devops-adoption&#34;&gt;Bootstrap Your DevOps Adoption&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You are already using agile approaches to develop your digital products.
-You want to start your journey with DevOps.
-Success requires actions in three areas.
-First, your development teams must adopt automated pipelines to create a new version of your application and deploy it.
-Second, you shall monitor your productive servers to infer service level agreement metrics.
-Indicators are used to improve the application by changing usage patterns.
-Third, a continuous improvement initiative shall continuously improve quality and effectiveness.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You shall provide at least the following capabilities for all your teams and products:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Development&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Focus on automation and repeatability.
-Measure deployment frequency and deployment duration.&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Each product can be checked out locally from a git repository and built with less than five commands.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Each product is built in a continuous delivery pipeline and packaged for deployment in a staging area or in production.
-Static code analysis and automated tests are executed in the pipeline.
-They provide an automated, tracked and documented quality gate.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Each production version is tagged in the repository including associated documentation and technical instructions.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Running&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Focus is on time to repair rather than time between issues.
-Measure mean-time to recovery, production failure rate and change failure rate.&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Each instance has a monitoring feature, which enabled us to provide realtime information about resource usage, heartbeat, health status and warnings.
-You can rely on an automated alert and response system to troubleshoot and monitor your enterprise servers.
-The developing team can quickly rectify errors or hiccups in the workflow without disturbing the operations teams.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Each instance monitor view is accessible to all involved collaborators.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Each deployed product has a set of measurable targets and the associated metrics to track them.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;You have a documented process to handle security issues in a timely manner.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;You have a documented process to mitigate proactively potential security, performance and governance issues.
-A governance goal could be to always update libraries once a security defect is corrected.
-Empiricism and data are the building block to quality and sustainable improvements.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Continual_improvement_process&#34;&gt;Continuous Improvement&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Take small steps.
-Measure the number of improvements, average lead time, and improvement impact.&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Each product development team has a continuous improvement initiative.
-The measures for the next releases are documented and progress is tracked.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Each measure is regularly evaluated for adequacy and success.
-Does the measure improve the overall quality of the product?
-Do the actions measurably improve the associated metrics?&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_checklist&#34;&gt;Checklist&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;You give access to a product repository.
-I can check out the whole project and build it locally with one command.+
-&lt;em&gt;I shall install the needed development tools based on written instruction available in the repository.&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;You give access to a product repository.
-I can initiate a complete build and delivery action in a continuous integration and delivery pipeline.+
-&lt;em&gt;I shall use the CI/CD tool chosen for the product.&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;I can check out, build and deploy the two last releases in a staging area with less than ten commands.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;You give me access to the list of all issues and changes ongoing in the repository.
-The list is specific to one product.
-I see the information such as priority, cycle-time of these issues and in which release the issue was fixed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;You give me read-only access to the health dashboard of any test and productive server on which the product runs.
-I see:&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Uptime, availability, last down events with time of occurrence, duration and explanation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Database, memory, CPU, etc. usage and trends,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;List of alarms with the involved components and resolution status.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;You give a list of improvements to continuously improve the quality of the product.
-For each improvement, a list of actions and their status are available.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;You automate everything.
-All automation solutions are documented.
-Manual configuration or installation are banned.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Microsoft has published a checklist for &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/architecture/checklist/dev-ops&#34;&gt;Azure DevOps&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A vendor-agnostic checklist is &lt;a href=&#34;https://devopschecklist.com/&#34;&gt;the DevOps checklist&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Here are some of the most critical DevOps metrics
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock text-center&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-04-04-elite-dora-success.png&#34; alt=&#34;2022 04 04 elite dora success&#34; width=&#34;70%&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Elite teams have tremendous overall performance when improving in the areas tracked through these metrics.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;hdlist&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Deployment Frequency
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;It analyzes how frequently you are deploying the current release of software into production.
-Deployment automation is covered through &lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_deployment&#34;&gt;continuous deployment&lt;/a&gt; and
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_delivery&#34;&gt;continuous delivery&lt;/a&gt;.
-Higher frequencies correlate with high-performance teams.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Average Lead Time
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;It identifies how long it takes to develop, examine, deliver, and deploy a brand-new requirement through &lt;a href=&#34;https://en.wikipedia.org/wiki/Lead_time&#34;&gt;lead time&lt;/a&gt; tracking.
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Value_stream&#34;&gt;Value stream&lt;/a&gt; approaches emphasize optimizing lead time.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Meantime To Recovery
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Measures the time between an interruption due to deployment or system failure and full recovery through
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Mean_time_to_recovery&#34;&gt;mean time to recovery&lt;/a&gt; &lt;em&gt;MTTR&lt;/em&gt; tracking.
-Focus is on efficient recovery and away from mean time between failure.
-If your organization can recover in minutes, the failure rate is seldom critical.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Change Failure Rate
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Indicates how often a team’s changes or hotfixes lead to failures after the code has been deployed.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Additional metrics often are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;hdlist&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Deployment Speed
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;It suggests how quickly you can deploy a new software version into the production environment.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Production Failure Rate
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;It analyses how frequently your software crashes in production for a particular period through
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Failure_rate&#34;&gt;failure rate&lt;/a&gt;.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_cultural_change&#34;&gt;Cultural change&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;DevOps initiatives create cultural changes in companies by transforming the way operations, developers and testers collaborate during the development and delivery processes.
-Getting these groups to work cohesively is a critical challenge in enterprise adoption.
-DevOps is as much about culture, the toolchains are only instruments to implement the approach.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Organizational culture is a strong predictor of IT and organizational performance.
-Cultural practices such as information flow, collaboration, shared responsibilities, learning from failures and encouraging new ideas are central to DevOps.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Team-building and other employee engagement activities are often used to create an environment that fosters this communication and cultural change within an organization.
-DevOps as a service approach allows developers and operations teams to take greater control of their applications and infrastructure without hindering speed.
-It also transfers the onus of owning a problem on to the development team, making them much more careful in their stride.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The 2015 State of DevOps Report discovered that the top seven measures with the strongest correlation to organizational culture and successful DevOps are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;Organizational investment,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Team leaders&amp;#39; experience and effectiveness,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Continuous delivery,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The ability of different disciplines &lt;em&gt;development, operations and security&lt;/em&gt; to achieve win-win outcomes,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Organizational performance,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Deployment pain,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Lean management practices.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;DevOps will only be successful if your organization adopts agile values.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Support transparency, inspection and adaption.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;These pillars are central to empiricism and lean thinking.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Nurture commitment, focus, openness, respect and courage.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;These are the official values of &lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Be honest with yourself.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;If you do not have concrete and visible initiatives in the areas of development &lt;em&gt;Dev&lt;/em&gt;, running &lt;em&gt;Ops&lt;/em&gt; and continuous improvement, you are just pretending to be a professional.
-But in reality, you are just an amateur.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_glossary&#34;&gt;Glossary&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;hdlist&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Continuous Integration
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Fowler, 2006 - a software development practice where members of a team integrate their work frequently, usually at least daily.
-Multiple integrations per day shall be possible.
-Each integration is verified by an automated build including tests to quickly detect errors.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Pair Programming
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Williams &amp;amp; Kessler, 2003 – style of programming in which two programmers work side by side at one computer, continually collaborating on the same design, algorithm, code or test.
-The &lt;strong&gt;driver&lt;/strong&gt; types and writes the design.
-The &lt;strong&gt;navigator&lt;/strong&gt; observes the driver and looks for defects.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Refactoring
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Fowler, 2014 - the process of changing a software system in such a way that it does not change the external structure of the code, only the internal.
-When you refactor, you are simply improving the design of the code after it has been written.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Single Command Build
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Biedenharn, personal communication, October 2018 - describes the goal of automating the process of turning the code into a fully functional program.
-It functions with a single command, thus not requiring a multistep procedure.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Single Source Repository
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;Fowler, 2006 - allows teams to keep the main project codebase in one easy-to-access location.
-This allows for easy version control; and for any new team members to get up and running easily.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Technical Excellence
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;managing constraints on software development via techniques, individual skills, and practices as a team.
-Generally, this includes test-driven development, collective code ownership, continuous integration, and &lt;em&gt;ego-less programming&lt;/em&gt; (Gerald Weinberg).
-Personal commitment to self-improvement in pursuit of software development as a craft is the driver for technical excellence.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Test-Driven Development
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;development driven by automated tests &lt;em&gt;published by Beck, 2014&lt;/em&gt;:&lt;/p&gt;
-&lt;div class=&#34;olist arabic&#34;&gt;
-&lt;ol class=&#34;arabic&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;Red: Write a test that does not work.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Green: Make the test work quickly.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Refactor: Clear up all duplications made in the process to make the test work.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Unit Testing
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;testing the smallest units possible to prove what was written is true.
-Unit testing frameworks are Xunit or NUnit for C# and .Net, Junit for Java, PyUnit for Python, Cppunit for C++.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;ulist bibliography&#34;&gt;
-&lt;ul class=&#34;bibliography&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;technical-debt&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2022/technical-debt/&#34;&gt;Technical Debt&lt;/a&gt;
-Marcel Baumann. 2022&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;devops-sme&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2021/devops-for-small-applications/&#34;&gt;DevOps for Small Applications&lt;/a&gt;
-Marcel Baumann. 2021&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;zero-defect&#34;&gt;&lt;/a&gt;[3] &lt;a href=&#34;../../2020/advocate-zero-bug-policy-in-your-projects/&#34;&gt;Advocate Zero Bug Policy in Your Projects&lt;/a&gt;
-Marcel Baumann. 2020&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;legacy-system-refactoring&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2020/legacy-systems-refactoring/&#34;&gt;Legacy System Refactoring&lt;/a&gt;
-Marcel Baumann. 2020&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;how-healthy-is-your-product&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2018/how-healthy-is-your-product-delivery-pipeline-check/&#34;&gt;How Healthy is Your Product Delivery Pipeline&lt;/a&gt;
-Marcel Baumann. 2018&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;accelerate&#34;&gt;&lt;/a&gt;[1] N. Forsgren, J. Humble, and G. Kim, &lt;em&gt;Accelerate: The Science of Lean Software and DevOps&lt;/em&gt;. IT Revolution Press [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B07B9F83WM&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B07B9F83WM&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;devops-handbook&#34;&gt;&lt;/a&gt;[2] G. Kim and N. Forsgren, &lt;em&gt;DevOps Handbook&lt;/em&gt;, Second. IT Revolution Press, 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com//dp/B09G2GS39R&#34; class=&#34;bare&#34;&gt;https://www.amazon.com//dp/B09G2GS39R&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;phoenix-project&#34;&gt;&lt;/a&gt;[3] G. Kim, &lt;em&gt;The Phoenix Project a novel about IT, DevOps, and helping your business win&lt;/em&gt;. IT Revolution Press [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0988262592&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0988262592&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-code&#34;&gt;&lt;/a&gt;[4] R. C. Martin, &lt;em&gt;Clean Code&lt;/em&gt;. Prentice Hall, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0132350882&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0132350882&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-architecture&#34;&gt;&lt;/a&gt;[5] R. C. Martin, &lt;em&gt;Clean Architecture&lt;/em&gt;. Pearson, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134494164&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134494164&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[6] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, First. Addision-Wesley, 1999 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B004PQQRK2&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B004PQQRK2&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;continuous-delivery&#34;&gt;&lt;/a&gt;[7] J. Humble and D. Farley, &lt;em&gt;Continuous Delivery&lt;/em&gt;. Addison-Wesley Professional, 2010 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321601912&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321601912&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;continuous-delivery-pipelines&#34;&gt;&lt;/a&gt;[8] D. Farley, &lt;em&gt;Continuous Delivery Pipelines&lt;/em&gt;. 2021 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B096YGZVZ9&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B096YGZVZ9&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;site-reliability-engineering&#34;&gt;&lt;/a&gt;[9] B. Beyer, C. Jones, J. Petoff, and N. R. Murphy, &lt;em&gt;Site Reliability Engineering&lt;/em&gt;. O’Reilly Media, Inc., 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1492029505&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1492029505&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The first conference dedicated to DevOps themes was held in 2009 in Ghent, Belgium.
-&lt;/div&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
-&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. The DevOps Research and assessment DORA has defined these key metrics and a strong correlation with high-performance organizations.
 &lt;/div&gt;
 &lt;/div&gt;
 
