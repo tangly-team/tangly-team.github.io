@@ -1299,7 +1299,7 @@ Beware our solutions are based on the Java stack.&lt;/p&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The &lt;a href=&#34;https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf&#34;&gt;Swiss QR-bill&lt;/a&gt; standard is based on a 2D barcode and associated human-readable text mirroring the data encoded in the barcode.
-The barcode approach assumes the invoice will be printed by the buyer.
+The barcode approach assumes the buyer will print the invoice.
 The interested parties have to scan the barcode to digitize the invoice information.
 This approach clearly breaks digitalization efforts.&lt;/p&gt;
 &lt;/div&gt;
@@ -1330,14 +1330,14 @@ The main developer is responsive to suggestions and trouble reports.&lt;/p&gt;
 &lt;p&gt;The ZUGFeRD is a German initiative to promote digital invoices in Germany and in Europe.
 The ZUGFeRD approach is to store the invoice data as an XML part in the PDF document of the invoice.
 The standard is also called &lt;em&gt;Factur-X&lt;/em&gt; in France.
-It is compatible to the European B2G invoices standard, namely &lt;a href=&#34;http://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32014L0055&#34;&gt;EN16931&lt;/a&gt;.
+It is compatible with the European B2G invoices standard, namely &lt;a href=&#34;http://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32014L0055&#34;&gt;EN16931&lt;/a&gt;.
 It can also be used for B2B invoices.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;XML is not really a human-readable format.
 A JSON-based approach would have been more friendly.
-The advantage is that the standard contains all relevant information for an invoice and streamline the digital processing of invoices.
-You can easily define a workflow extracting and parsing the XML payload from all received invoices, and feeding the information to your ERP system for further processing.&lt;/p&gt;
+The advantage is that the standard contains all relevant information for an invoice and streamlines the digital processing of invoices.
+You can define a workflow extracting and parsing the XML payload from all received invoices, and feeding the information to your ERP system for further processing.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The library &lt;a href=&#34;https://github.com/ZUGFeRD/mustangproject&#34;&gt;Mustang ZUGFerD&lt;/a&gt; is a mature and usable solution to read and write digital ZUGFeRD invoices.
@@ -1354,7 +1354,7 @@ ZUGFeRD additionally can transform a PDF/A-1 into a PDF/A-3 format.&lt;/p&gt;
 &lt;h2 id=&#34;_pdf_aspects&#34;&gt;PDF Aspects&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The PDF format is universal known.
+&lt;p&gt;The PDF format is universally known.
 Special variants such as PDF/A1 and PDF/A3 are defined for archiving purposes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -1372,7 +1372,7 @@ The famous &lt;em&gt;iText&lt;/em&gt; library provides all these features, but s
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;The online service &lt;a href=&#34;https://www.pdftron.com/pdf-tools/pdfa-converter/&#34;&gt;pdftron&lt;/a&gt; provides free PDF translation to the archive format.
-The &lt;a href=&#34;https://www.scribus.net/&#34;&gt;Scribus&lt;/a&gt; application support archive format export.
+The &lt;a href=&#34;https://www.scribus.net/&#34;&gt;Scribus&lt;/a&gt; application supports archive format export.
 The drawback is that these approaches are they require manual steps
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -1394,13 +1394,25 @@ This document is sent electronically to the customer.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Our current approach is&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code&gt;*Generate* AsciiDoc Invoice from our invoice model (Java source code)
-*Generate* PDF version of Invoice using AsciiDocPDF
-    *Add* Swiss QR code as last page in the PDF invoice document
-    *Add* ZUGFeRD XML payload in the PDF invoice document&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Generate&lt;/strong&gt; AsciiDoc Invoice from our invoice model (Java source code)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Generate&lt;/strong&gt; the PDF output format of Invoice using AsciiDocPDF&lt;/p&gt;
+&lt;div class=&#34;olist loweralpha&#34;&gt;
+&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Add&lt;/strong&gt; Swiss QR code as last page in the PDF invoice document&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Add&lt;/strong&gt; ZUGFeRD XML payload in the PDF invoice document&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Currently, we do not generate PDF/A1 documents as required in the ZUGFeRD standard.
@@ -1457,7 +1469,7 @@ Use &lt;strong&gt;java.nio.Files&lt;/strong&gt; to create input streams, output 
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;You can find more information about how to digitize your company in a blog describing our journey to a digital company.
-We are quite proud no having any Microsoft Office our Outlook tools.
+We are quite proud of not having any Microsoft Office our Outlook tools.
 Our whole toolchain is based on open source solutions and performs flawlessly since the foundation of our company.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1468,7 +1480,7 @@ Our whole toolchain is based on open source solutions and performs flawlessly si
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. &lt;a href=&#34;https://www.onlyoffice.com/&#34;&gt;OnlyOffice&lt;/a&gt; also support PDF/A creation. They provide a free local installation package for Linux, macOS, and Windows
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
-&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. LibreOffice can open and manipulate PDF files. You can easily open a PDF file and export it as PDF from LibreOffice. The application supports exporting to PDF/A version 1b, 2b and 3b. It also supports PDF/UA.
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. LibreOffice can open and manipulate PDF files. You can open a PDF file and export it as PDF from LibreOffice. The application supports exporting to PDF/A version 1b, 2b and 3b. It also supports PDF/UA.
 &lt;/div&gt;
 &lt;/div&gt;
 

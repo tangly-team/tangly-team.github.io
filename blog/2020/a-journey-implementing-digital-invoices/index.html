@@ -44,7 +44,7 @@ Switzerland finally introduced a digital payment slip. It uses a QR code and sti
 Companies should be more environment-aware and save some trees. See our blog on A Journey to Be a Digital Company.
 Switzerland finally introduced a digital payment slip. It uses a QR code and still assumes you need to print it."><meta itemprop="datePublished" content="2020-07-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-07-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1171">
+<meta itemprop="wordCount" content="1170">
 <meta itemprop="keywords" content="java,design,crm," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="A Journey Implementing Digital Invoices"/>
 <meta name="twitter:description" content="Our company has the ambition to digitize all our workflows since our inception. We proudly state we never bought a printer or a fax machine. Analog machines should become obsolete in the digital age.
 Companies should be more environment-aware and save some trees. See our blog on A Journey to Be a Digital Company.
@@ -139,7 +139,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.c8e6707c7edc98c364b30bb5b952f409.json"
+    data-offline-search-index-json-src="/offline-search-index.728934166c8377f7eb098ece322aceb0.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -163,7 +163,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.c8e6707c7edc98c364b30bb5b952f409.json"
+    data-offline-search-index-json-src="/offline-search-index.728934166c8377f7eb098ece322aceb0.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1042,7 +1042,7 @@ Beware our solutions are based on the Java stack.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <a href="https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf">Swiss QR-bill</a> standard is based on a 2D barcode and associated human-readable text mirroring the data encoded in the barcode.
-The barcode approach assumes the invoice will be printed by the buyer.
+The barcode approach assumes the buyer will print the invoice.
 The interested parties have to scan the barcode to digitize the invoice information.
 This approach clearly breaks digitalization efforts.</p>
 </div>
@@ -1073,14 +1073,14 @@ The main developer is responsive to suggestions and trouble reports.</p>
 <p>The ZUGFeRD is a German initiative to promote digital invoices in Germany and in Europe.
 The ZUGFeRD approach is to store the invoice data as an XML part in the PDF document of the invoice.
 The standard is also called <em>Factur-X</em> in France.
-It is compatible to the European B2G invoices standard, namely <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32014L0055">EN16931</a>.
+It is compatible with the European B2G invoices standard, namely <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32014L0055">EN16931</a>.
 It can also be used for B2B invoices.</p>
 </div>
 <div class="paragraph">
 <p>XML is not really a human-readable format.
 A JSON-based approach would have been more friendly.
-The advantage is that the standard contains all relevant information for an invoice and streamline the digital processing of invoices.
-You can easily define a workflow extracting and parsing the XML payload from all received invoices, and feeding the information to your ERP system for further processing.</p>
+The advantage is that the standard contains all relevant information for an invoice and streamlines the digital processing of invoices.
+You can define a workflow extracting and parsing the XML payload from all received invoices, and feeding the information to your ERP system for further processing.</p>
 </div>
 <div class="paragraph">
 <p>The library <a href="https://github.com/ZUGFeRD/mustangproject">Mustang ZUGFerD</a> is a mature and usable solution to read and write digital ZUGFeRD invoices.
@@ -1097,7 +1097,7 @@ ZUGFeRD additionally can transform a PDF/A-1 into a PDF/A-3 format.</p>
 <h2 id="_pdf_aspects">PDF Aspects</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The PDF format is universal known.
+<p>The PDF format is universally known.
 Special variants such as PDF/A1 and PDF/A3 are defined for archiving purposes.</p>
 </div>
 <div class="paragraph">
@@ -1115,7 +1115,7 @@ The famous <em>iText</em> library provides all these features, but sadly is no m
 </div>
 <div class="paragraph">
 <p>The online service <a href="https://www.pdftron.com/pdf-tools/pdfa-converter/">pdftron</a> provides free PDF translation to the archive format.
-The <a href="https://www.scribus.net/">Scribus</a> application support archive format export.
+The <a href="https://www.scribus.net/">Scribus</a> application supports archive format export.
 The drawback is that these approaches are they require manual steps
 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
@@ -1137,13 +1137,25 @@ This document is sent electronically to the customer.</p>
 <div class="paragraph">
 <p>Our current approach is</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code>*Generate* AsciiDoc Invoice from our invoice model (Java source code)
-*Generate* PDF version of Invoice using AsciiDocPDF
-    *Add* Swiss QR code as last page in the PDF invoice document
-    *Add* ZUGFeRD XML payload in the PDF invoice document</code></pre>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Generate</strong> AsciiDoc Invoice from our invoice model (Java source code)</p>
+</li>
+<li>
+<p><strong>Generate</strong> the PDF output format of Invoice using AsciiDocPDF</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Add</strong> Swiss QR code as last page in the PDF invoice document</p>
+</li>
+<li>
+<p><strong>Add</strong> ZUGFeRD XML payload in the PDF invoice document</p>
+</li>
+</ol>
 </div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>Currently, we do not generate PDF/A1 documents as required in the ZUGFeRD standard.
@@ -1200,7 +1212,7 @@ Use <strong>java.nio.Files</strong> to create input streams, output streams, buf
 </div>
 <div class="paragraph">
 <p>You can find more information about how to digitize your company in a blog describing our journey to a digital company.
-We are quite proud no having any Microsoft Office our Outlook tools.
+We are quite proud of not having any Microsoft Office our Outlook tools.
 Our whole toolchain is based on open source solutions and performs flawlessly since the foundation of our company.</p>
 </div>
 </div>
@@ -1211,7 +1223,7 @@ Our whole toolchain is based on open source solutions and performs flawlessly si
 <a href="#_footnoteref_1">1</a>. <a href="https://www.onlyoffice.com/">OnlyOffice</a> also support PDF/A creation. They provide a free local installation package for Linux, macOS, and Windows
 </div>
 <div class="footnote" id="_footnotedef_2">
-<a href="#_footnoteref_2">2</a>. LibreOffice can open and manipulate PDF files. You can easily open a PDF file and export it as PDF from LibreOffice. The application supports exporting to PDF/A version 1b, 2b and 3b. It also supports PDF/UA.
+<a href="#_footnoteref_2">2</a>. LibreOffice can open and manipulate PDF files. You can open a PDF file and export it as PDF from LibreOffice. The application supports exporting to PDF/A version 1b, 2b and 3b. It also supports PDF/UA.
 </div>
 </div>
 
