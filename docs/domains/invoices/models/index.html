@@ -4,9 +4,8 @@
     
 
 <meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-<meta name="generator" content="Hugo 0.124.1">
-<meta content="index, follow" name="robots">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,29 +20,27 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Bounded Domain Invoice Model | tangly Components</title>
-<meta content="
-Invoices Model
+<meta name="description" content="Invoices Model Concepts Invoices define a business-bounded domain as defined in domain-driven design approach. They are not constrained through external entities such as products, contracts or legal entities. External entities can provide hints to streamline the creation of regular invoices. The invoice article identifier is available as an external identifier to the article bounded domain. Similar identifiers are available for legal entities.
+The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency.">
+<meta property="og:url" content="https://blog.tangly.net/docs/domains/invoices/models/">
+  <meta property="og:site_name" content="tangly Components">
+  <meta property="og:title" content="Bounded Domain Invoice Model">
+  <meta property="og:description" content="Invoices Model Concepts Invoices define a business-bounded domain as defined in domain-driven design approach. They are not constrained through external entities such as products, contracts or legal entities. External entities can provide hints to streamline the creation of regular invoices. The invoice article identifier is available as an external identifier to the article bounded domain. Similar identifiers are available for legal entities.
+The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2019-05-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-05-01T00:00:00+00:00">
 
-
-Concepts
-
-Invoices define a business-bounded domain as defined in domain-driven design approach.
-They are not constrained through …" name="description">
-<meta property="og:title" content="Bounded Domain Invoice Model" />
-<meta property="og:description" content="Invoices Model Concepts Invoices define a business-bounded domain as defined in domain-driven design approach. They are not constrained through external entities such as products, contracts or legal entities. External entities can provide hints to streamline the creation of regular invoices. The invoice article identifier is available as an external identifier to the article bounded domain. Similar identifiers are available for legal entities.
-The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tangly.net/docs/domains/invoices/models/" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2019-05-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-05-01T00:00:00+00:00" />
-<meta itemprop="name" content="Bounded Domain Invoice Model">
-<meta itemprop="description" content="Invoices Model Concepts Invoices define a business-bounded domain as defined in domain-driven design approach. They are not constrained through external entities such as products, contracts or legal entities. External entities can provide hints to streamline the creation of regular invoices. The invoice article identifier is available as an external identifier to the article bounded domain. Similar identifiers are available for legal entities.
-The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency."><meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="264">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Bounded Domain Invoice Model"/>
+  <meta itemprop="name" content="Bounded Domain Invoice Model">
+  <meta itemprop="description" content="Invoices Model Concepts Invoices define a business-bounded domain as defined in domain-driven design approach. They are not constrained through external entities such as products, contracts or legal entities. External entities can provide hints to streamline the creation of regular invoices. The invoice article identifier is available as an external identifier to the article bounded domain. Similar identifiers are available for legal entities.
+The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency.">
+  <meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00">
+  <meta itemprop="wordCount" content="264"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Bounded Domain Invoice Model">
 <meta name="twitter:description" content="Invoices Model Concepts Invoices define a business-bounded domain as defined in domain-driven design approach. They are not constrained through external entities such as products, contracts or legal entities. External entities can provide hints to streamline the creation of regular invoices. The invoice article identifier is available as an external identifier to the article bounded domain. Similar identifiers are available for legal entities.
-The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency."/>
+The currency is defined at the invoice level, meaning all invoice items and subtotals should use the same currency.">
 
 
 
@@ -52,30 +49,28 @@ The currency is defined at the invoice level, meaning all invoice items and subt
 <link href="/scss/main.min.41561e8a65d418268e6c46fd1ec8dbdc452feb3bcea50349dc1d9bf84d93297c.css" rel="stylesheet" integrity="">
 
 <script
-    crossorigin="anonymous"
-    integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
-    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script crossorigin="anonymous"
-        defer
-        integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
-        src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  messageStyle: "none",
-  tex2jax: {
-    inlineMath: [["\\(", "\\)"]],
-    displayMath: [["\\[", "\\]"]],
-    ignoreClass: "nostem|nolatexmath"
-  },
-  asciimath2jax: {
-    delimiters: [["\\$", "\\$"]],
-    ignoreClass: "nostem|noasciimath"
-  },
-  TeX: { equationNumbers: { autoNumber: "none" } }
-});
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
-
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+ <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       messageStyle: "none",
+       tex2jax: {
+         inlineMath: [["\\(", "\\)"]],
+         displayMath: [["\\[", "\\]"]],
+         ignoreClass: "nostem|nolatexmath"
+       },
+       asciimath2jax: {
+         delimiters: [["\\$", "\\$"]],
+         ignoreClass: "nostem|noasciimath"
+       },
+       TeX: { equationNumbers: { autoNumber: "none" } }
+     });
+ </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYDTXKRW9J"></script>
 <script>
 var doNotTrack = false;
@@ -83,10 +78,9 @@ if (!doNotTrack) {
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
-	gtag('config', 'G-EYDTXKRW9J', { 'anonymize_ip': false });
+	gtag('config', 'G-EYDTXKRW9J');
 }
 </script>
-
   </head>
   <body class="td-page">
     <header>
@@ -134,7 +128,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.728934166c8377f7eb098ece322aceb0.json"
+    data-offline-search-index-json-src="/offline-search-index.cb3f463ccd2f6adc46b3babbff2694b5.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -158,7 +152,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.728934166c8377f7eb098ece322aceb0.json"
+    data-offline-search-index-json-src="/offline-search-index.cb3f463ccd2f6adc46b3babbff2694b5.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -841,7 +835,7 @@ if (!doNotTrack) {
             <div class="taxonomy taxonomy-terms-cloud taxo-tags">
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">Agile</span><span class="taxonomy-count">105</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">Agile</span><span class="taxonomy-count">106</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">23</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/c&#43;&#43;/" data-taxonomy-term="c&#43;&#43;"><span class="taxonomy-label">C&#43;&#43;</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/crm/" data-taxonomy-term="crm"><span class="taxonomy-label">Crm</span><span class="taxonomy-count">6</span></a></li>
@@ -852,7 +846,7 @@ if (!doNotTrack) {
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/git/" data-taxonomy-term="git"><span class="taxonomy-label">Git</span><span class="taxonomy-count">7</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/gradle/" data-taxonomy-term="gradle"><span class="taxonomy-label">Gradle</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/hugo/" data-taxonomy-term="hugo"><span class="taxonomy-label">Hugo</span><span class="taxonomy-count">5</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">Java</span><span class="taxonomy-count">47</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">Java</span><span class="taxonomy-count">48</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/jvm-languages/" data-taxonomy-term="jvm-languages"><span class="taxonomy-label">Jvm-Languages</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/organization/" data-taxonomy-term="organization"><span class="taxonomy-label">Organization</span><span class="taxonomy-count">18</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/series-agile-design/" data-taxonomy-term="series-agile-design"><span class="taxonomy-label">Series-Agile-Design</span><span class="taxonomy-count">6</span></a></li>
@@ -933,7 +927,7 @@ The JSON file is an adequate archive format that can digitally be processed.</p>
 </div>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqNVMtu4zAMvOsrdOwWG39AEARF0z0EyAJF-gWKxDhEZSqQ6aBGmn9fyq_abouuL7bJGc6Qov1QsolcFV6ps7GvJgdNwBkbyn2dQTxnNhZ7ML7QV6Xlst6Upd5BbvwfYuRaX29qlHk09LoJRGAZA-nVSt_tf4doT-h-6fW6q5KuF45IucaDoXnsgPYTjEpRqxiaxERS5Dgay8nJ7ds-kC4BLZTioKU9x-AqYX1jsdM9t6itGwcdlDbiOXXYhB8xfwKLhfG6IuTnKEJjfArOgRfDeyPtiOPWz7Y1OJXHia7tOu3c7II1_kmKiCGPF4h1epmlur7dFylXwRDdVDEC2Vrb7mGsy_DGk6GYugBiGbzDNIQydUFBSkbMT7wcGdVYaj6JDScEPCJEfQyxCfWg5mwN2eS1SWz2f3V3iplS_VzuF4t-Rjsk0Evt5VYO-bBYrCeLuex6F8dt5GcouBnyPiFnOz2q-xFVCokhHo2Qxi6v8_PdMhRf7NxtaLShrd6zbMwYsg1d_A_ru9TyAaP10Ou8VAcOLBv2fyI9XA28MB20Sof7AOTkL_EPellgkQ==" alt="bus-invoice-uml"/>
+<img src="https://kroki.io/plantuml/svg/eNqVVMFu2zAMvesrhJy2YDGwaxAEXdMeAmRDkV53USTGJSpLgUwHM7r8-yhb9hzXDTZfbFGPfE-PtO5KUoGqwgpxUvpV5SAdUEbK5bbOtA8g34TkR1tVlvJeudeNdw40oXdytZKf9l980C9oPsv1OmHj80wBXS7xoNw4dkD9DuZKQqoImo2LED3jN2MC8Ps91UVcJkVDOGU6FHtQtrgSv4Nc2UfHRPWEUCNa2gTmU1JQmiaRSeQH5OjOHjWUnNrWegreVFzqA7tS3VOL2pph0ECpA56i2034HvMH0FgoKyuH9BSYaIiPwTHwrGiv2FpW3OpJAod-3JaGV5qcKq44uf6P0AQeC4W26xjERSSdoJsvFn1nl1K1X0II5wnkwRP5Ysms0h87sdLGdAkxnwtgKZUtvaQXYFyMHhGC_OmOPjTBAbxuxks5LoKu2dzsv8vUvEx0rmwT0Y2T6zQUqUc7r5V9YGu5TRbPEOq4GG0l_WZiy1TQRzdVCOB0LXX6GPIS_KKrUVF1wUfjGTUYR6OMNjfeBcxfaDkQGp0amdRZ1IHYtdsGdc7Ers3ms86pHTrg7ll-lT3GLxZrOfs6mxqyZQryEdrIf2WBGSXNY9LoRhpQ_I3GESQIR8VJQ-1vl1HvtwTF5E0jhmmr31k2zOh3m3Q-Sv_D82gHQm2h43muDuSJB_PfSDq46PNi9QFMxMbfgTN8g_8BEIHjqw==" alt="bus-invoice-uml"/>
 </div>
 </div>
 </div>
@@ -987,9 +981,7 @@ The JSON file is an adequate archive format that can digitally be processed.</p>
       </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
         <span class="td-footer__copyright">&copy;
     2024
-    <span class="td-footer__authors"><div class="paragraph">
-<p>tangly llc - Attribution 4.0 International (CC BY 4.0)</p>
-</div></span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span>
+    <span class="td-footer__authors">tangly llc - Attribution 4.0 International (CC BY 4.0)</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span>
       </div>
     </div>
   </div>

@@ -98,9 +98,10 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDa
 <div class="block"><p>The abstraction of an invoice with a set of positions, subtotals, and a total. The items and the subtotals have a position
  to order them in the invoice to provide human readable outputs. An invoice and its components have no dependencies to external entities. Therefore, an invoice is complete and
  can be archived. For example, you can change the VAT percentage or a product price without any consequence on existing invoices.</p>
- <p>The invoice assumes that a VAT rate applies to a specific product associated with a given invoice item.
- Each item line has an associated article and a VAT rate. A subtotoal does not have an article or a VAT rate. This assumption is reasonable for quite a lot of businesses, in
- particular in the service industry.</p>
+ <p>The invoice assumes that a VAT rate applies to a given invoice item. The rate is dependent on the service sold and the customer.
+ For example educational services are VAT free in Switzerland. </p>
+ <p></p>Each item line has an associated article and a VAT rate. A subtotal does not have an article or a VAT rate. This assumption is reasonable for quite a lot of
+ businesses, in particular in the service industry.</p>
  <p>Often an invoice references only one VAT rate, convenience methods are provided to streamline this scenario.</p></div>
 </div>
 </section>

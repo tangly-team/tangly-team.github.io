@@ -95,7 +95,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ProductsPort</span><span class="extends-implements">
 extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="interface in net.tangly.erp.products.services">ProductsRealm</a>&gt;</span></div>
-<div class="block">Defines the import port for the products bounded domain. It is the primary port in the DDD terminology.</div>
+<div class="block">Defines the import and export port for the products-bounded domain. It is the primary port in the DDD terminology.</div>
 </div>
 </section>
 <section class="summary">
@@ -119,11 +119,15 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 <div class="block">Exports all efforts of the assignment in the given period of time.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#importEfforts(java.nio.file.Path,boolean)" class="member-name-link">importEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#importEfforts(java.io.Reader,java.lang.String,boolean)" class="member-name-link">importEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  boolean&nbsp;replace)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Imports all efforts defined in the YAML file located at the given path.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ProductsBusinessLogic.html" title="class in net.tangly.erp.products.services">ProductsBusinessLogic</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#logic()" class="member-name-link">logic</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -142,18 +146,29 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="importEfforts(java.nio.file.Path,boolean)">
+<section class="detail" id="logic()">
+<h3>logic</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="ProductsBusinessLogic.html" title="class in net.tangly.erp.products.services">ProductsBusinessLogic</a></span>&nbsp;<span class="element-name">logic</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="importEfforts(java.io.Reader,java.lang.String,boolean)">
 <h3>importEfforts</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">importEfforts</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  boolean&nbsp;replace)</span>
             throws <span class="exceptions">org.eclipse.serializer.exceptions.IORuntimeException</span></div>
 <div class="block">Imports all efforts defined in the YAML file located at the given path.
  An effort is identified by the combination of the assignment identifier and the date of the effort. The assigement identifies uniquely the collaborator working on the effort.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>path</code> - path to the YAML defining the efforts to be imported</dd>
+<dd><code>reader</code> - reader containing the efforts to import</dd>
+<dd><code>source</code> - source of the efforts used to audit the import operation</dd>
 <dd><code>replace</code> - if true, the existing efforts are replaced by the imported ones, otherwise the imported efforts are only imported if not preesent</dd>
 <dt>Throws:</dt>
 <dd><code>org.eclipse.serializer.exceptions.IORuntimeException</code></dd>
@@ -169,7 +184,9 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
  @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
-<div class="block">Exports all efforts of the assignment in the given period of time. The export shall be a asciidoc document.</div>
+<div class="block">Exports all efforts of the assignment in the given period of time. The export shall be a asciidoc document.
+ The document name should contain the contract identifier, the collaborator identifier, and the period of time.
+ The prefix should be the year and month of the period end. The prefix is used to sort the documents.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>assignment</code> - assignment which efforts are of interest</dd>

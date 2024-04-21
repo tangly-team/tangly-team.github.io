@@ -115,7 +115,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#exportEntities()" class="member-name-link">exportEntities</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Export all entities of the bounded domain to the file system.</div>
+<div class="block">Export all entities of the bounded domain to the file system as TSV, JSON, TOML, and YAML files.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#importEntities()" class="member-name-link">importEntities</a>()</code></div>
@@ -153,7 +153,8 @@ loadScripts(document, 'script');</script>
 <h3>importEntities</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importEntities</span>()</div>
-<div class="block">Import all entities of the bounded domain from the file system.</div>
+<div class="block">Import all entities of the bounded domain from the file system. All TSV, JSON, TOML, and YAML files are imported.
+ The domain is responsible for the order of the import and the handling of the entities. A bounded domain should not depend on other domains to perform the operation.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -170,7 +171,7 @@ loadScripts(document, 'script');</script>
 <h3>exportEntities</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEntities</span>()</div>
-<div class="block">Export all entities of the bounded domain to the file system.</div>
+<div class="block">Export all entities of the bounded domain to the file system as TSV, JSON, TOML, and YAML files. A bounded domain should not depend on other domains to perform the operation.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>

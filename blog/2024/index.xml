@@ -16,6 +16,211 @@
     
     
     <item>
+      <title>Blog: Modern Java Rant</title>
+      <link>https://blog.tangly.net/blog/2024/modern-java-rant/</link>
+      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2024/modern-java-rant/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-02-head.jpg&#34; alt=&#34;2024 04 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Java community releases a new version every six months.
+This is a good thing, it means that the language is evolving at a steady pace.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;New language features are added in each release.
+Much effort is put into improving the performance of the JVM and solving small issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The community provides beta releases for developers to test and provide feedback during the six months before the next release.
+You have the possibility and time to migrate and test your code before the official release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Security vulnerabilities are patched every three months.
+This is a dream for agile and DevOps teams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Sadly, many developers are still using outdated versions of Java, which can lead to security vulnerabilities and other issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I try to always work with the current release of Java, but I have to admit that it is not always easy.
+Below a rant about some of the issues I have encountered.
+Solving these issues or finding workarounds cost me quite some hours of my time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_intellij_idea_slow_approach&#34;&gt;IntelliJ IDEA Slow Approach&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I love &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;IntelliJ IDEA&lt;/a&gt;, but it is slow to support new Java versions.
+I have an ultimate license for decades and never give up the hope that they will improve their release cycle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;They almost always release a new version of IntelliJ IDEA weeks after the official release of Java.
+I do not understand why they could not switch their release date to match the Java release date.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The early access program for Java should empower them to test their IDE with the new Java version before the official release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;At least they provide preview support for some of the new JDK features in the current version of IntelliJ IDEA.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_gradle_collapse&#34;&gt;Gradle Collapse&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; is my preferred build tool.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle community is not capable of delivering a new version of Gradle supporting the current JDK version for months after the official release.
+The reason is they use old versions of Groovy and Kotlin instead of regularly updating with the current stable versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Yes, you can run Gradle with an older version of Java and compile the code with a newer version of Java.&lt;/em&gt;
+&lt;em&gt;It makes your GitHub actions more complex and brittle.&lt;/em&gt;
+The standard GitHub scripts do not support installing multiple JDK versions in the image building your application
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;._&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_jpms_laggards&#34;&gt;JPMS Laggards&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I cannot fully modularize my applications due to the lack of support for JPMS in many libraries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Java_Platform_Module_System&#34;&gt;Java Platform Module System&lt;/a&gt; is available since Java 9. This version was released on September 21, 2017.
+Maintainers had &lt;strong&gt;seven&lt;/strong&gt; years to migrate their code to JPMS.
+The minimal effort is to provide an automatic name.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;You have to write one line in your manifest file of your jar file to support JPMS.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://docs.asciidoctor.org/asciidoctorj/latest/&#34;&gt;AsciidoctorJ&lt;/a&gt; package has still no automatic name.
+Some Apache libraries have no automatic names.
+A lot of well-known libraries do not document the automatic name in their documentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_javalin_debacle&#34;&gt;Javalin Debacle&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I like the &lt;a href=&#34;https://javalin.io/&#34;&gt;Javalin&lt;/a&gt; REST framework.
+It is a small and lightweight web framework and uses the &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; as embedded server.
+It has build-in support for &lt;a href=&#34;https://www.openapis.org/&#34;&gt;OpenAPI&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The team quite screwed up the migration to the current Jetty version released more than one year ago.
+&lt;em&gt;Developers should not use internal Jetty classes in their code
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I develop applications with &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; and &lt;a href=&#34;https://javalin.io/&#34;&gt;Javalin&lt;/a&gt;.
+A cool developer Martin Vysny has created a nice library &lt;a href=&#34;https://github.com/mvysny/vaadin-boot&#34;&gt;vaadin-boot&lt;/a&gt; to integrate both frameworks.
+The &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; application uses an embedded &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; server and can be deployed as a single jar file.
+The whole setup is about 20 lines of code.
+It is a pleasure to work with this library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Now Javalin hinders the use of the current Jetty version
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_good_practices&#34;&gt;Good Practices&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I understand that open source developers have limited resources to migrate their code to the current Java version.
+I find the practice advocated by Brian Goetz ideal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Support the latest LTS version of Java in your stable release.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;All new development and improvements should be done with the current Java version.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do not support any other Java versions.
+Provide a package for the current Java version and a package for the latest LTS version.
+Do not backport any new features to the LTS version.
+Remember, a new LTS version is released every two years.
+Just fix painful bugs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You have no excuse not to define an automatic name for your library.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Today you shall only support JDK 21 LTS and JDK 22.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The early access program for JDK 23 is available.
+You can already test your code with JDK 23.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The huge advantage is that you only have to maintain two versions of your code.
+You focus on developing new features only with the current Java version.
+No need to backport any new features to the LTS version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Because all new features are only available with the current Java version, your users have a strong motivation to migrate to the current Java version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;As a developer, it is more fun to write code with the latest Java version and use the latest features.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Please remember never to use internal classes of a library in your code.- _It will bite you.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Update your JDK every three months to install the latest security patches.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Continuously update your dependencies to the latest stable version.&lt;/em&gt;
+&lt;em&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; has plugins and &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; has dependabot to simplify or automate the work.&lt;/em&gt;
+&lt;em&gt;You need a continuous integration pipeline and sufficient automatic tests to validate your code with the latest dependencies.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. If you have a code snippet to install multiple JDKs, run Gradle with an older version and let Gradle toolchain find the current JDK to build, let me know. I will add your solution with name in this blog.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. If &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; would use JPMS, they could hide these classes inside a module. No external developers could use them.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
+&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. Martin has found a workaround, but the drawback is that we have to use a quite older version of Javalin.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Structure Your Concurrency</title>
       <link>https://blog.tangly.net/blog/2024/structure-your-concurrency/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
@@ -1100,7 +1305,7 @@ Next, we have the &lt;em&gt;with&lt;/em&gt; directive where we provide the imple
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;opens &lt;em&gt;package list&lt;/em&gt;&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;If we need to allow reflection of private types, but we don’t want all of our code exposed, we can use the opens directive to expose specific packages.
+&lt;p&gt;If we need to allow reflection of private types, but we do not want all of our code exposed, we can use the opens directive to expose specific packages.
 But remember, this will open the package up to the entire world, so be careful with this directive.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;opens &lt;em&gt;package list&lt;/em&gt; to &lt;em&gt;module list&lt;/em&gt;&lt;/dt&gt;
@@ -1150,7 +1355,7 @@ Automatic modules will have full read access to every other module loaded by the
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Unnamed Module&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;When a class or JAR is loaded onto the classpath, but not the module path, it’s automatically added to the unnamed module.
+&lt;p&gt;When a class or JAR is loaded onto the classpath, but not the module path, it is automatically added to the unnamed module.
 It is a catch-all module to maintain backward compatibility with previously written Java code.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;

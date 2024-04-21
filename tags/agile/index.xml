@@ -5,7 +5,7 @@
     <description>Recent content in Agile on tangly Components</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Apr 2024 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://blog.tangly.net/tags/agile/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,211 @@
         
       
     
+    
+    <item>
+      <title>Blog: Modern Java Rant</title>
+      <link>https://blog.tangly.net/blog/2024/modern-java-rant/</link>
+      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2024/modern-java-rant/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-02-head.jpg&#34; alt=&#34;2024 04 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Java community releases a new version every six months.
+This is a good thing, it means that the language is evolving at a steady pace.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;New language features are added in each release.
+Much effort is put into improving the performance of the JVM and solving small issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The community provides beta releases for developers to test and provide feedback during the six months before the next release.
+You have the possibility and time to migrate and test your code before the official release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Security vulnerabilities are patched every three months.
+This is a dream for agile and DevOps teams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Sadly, many developers are still using outdated versions of Java, which can lead to security vulnerabilities and other issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I try to always work with the current release of Java, but I have to admit that it is not always easy.
+Below a rant about some of the issues I have encountered.
+Solving these issues or finding workarounds cost me quite some hours of my time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_intellij_idea_slow_approach&#34;&gt;IntelliJ IDEA Slow Approach&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I love &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;IntelliJ IDEA&lt;/a&gt;, but it is slow to support new Java versions.
+I have an ultimate license for decades and never give up the hope that they will improve their release cycle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;They almost always release a new version of IntelliJ IDEA weeks after the official release of Java.
+I do not understand why they could not switch their release date to match the Java release date.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The early access program for Java should empower them to test their IDE with the new Java version before the official release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;At least they provide preview support for some of the new JDK features in the current version of IntelliJ IDEA.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_gradle_collapse&#34;&gt;Gradle Collapse&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; is my preferred build tool.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle community is not capable of delivering a new version of Gradle supporting the current JDK version for months after the official release.
+The reason is they use old versions of Groovy and Kotlin instead of regularly updating with the current stable versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Yes, you can run Gradle with an older version of Java and compile the code with a newer version of Java.&lt;/em&gt;
+&lt;em&gt;It makes your GitHub actions more complex and brittle.&lt;/em&gt;
+The standard GitHub scripts do not support installing multiple JDK versions in the image building your application
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;._&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_jpms_laggards&#34;&gt;JPMS Laggards&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I cannot fully modularize my applications due to the lack of support for JPMS in many libraries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Java_Platform_Module_System&#34;&gt;Java Platform Module System&lt;/a&gt; is available since Java 9. This version was released on September 21, 2017.
+Maintainers had &lt;strong&gt;seven&lt;/strong&gt; years to migrate their code to JPMS.
+The minimal effort is to provide an automatic name.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;You have to write one line in your manifest file of your jar file to support JPMS.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://docs.asciidoctor.org/asciidoctorj/latest/&#34;&gt;AsciidoctorJ&lt;/a&gt; package has still no automatic name.
+Some Apache libraries have no automatic names.
+A lot of well-known libraries do not document the automatic name in their documentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_javalin_debacle&#34;&gt;Javalin Debacle&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I like the &lt;a href=&#34;https://javalin.io/&#34;&gt;Javalin&lt;/a&gt; REST framework.
+It is a small and lightweight web framework and uses the &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; as embedded server.
+It has build-in support for &lt;a href=&#34;https://www.openapis.org/&#34;&gt;OpenAPI&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The team quite screwed up the migration to the current Jetty version released more than one year ago.
+&lt;em&gt;Developers should not use internal Jetty classes in their code
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I develop applications with &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; and &lt;a href=&#34;https://javalin.io/&#34;&gt;Javalin&lt;/a&gt;.
+A cool developer Martin Vysny has created a nice library &lt;a href=&#34;https://github.com/mvysny/vaadin-boot&#34;&gt;vaadin-boot&lt;/a&gt; to integrate both frameworks.
+The &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; application uses an embedded &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; server and can be deployed as a single jar file.
+The whole setup is about 20 lines of code.
+It is a pleasure to work with this library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Now Javalin hinders the use of the current Jetty version
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_good_practices&#34;&gt;Good Practices&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I understand that open source developers have limited resources to migrate their code to the current Java version.
+I find the practice advocated by Brian Goetz ideal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Support the latest LTS version of Java in your stable release.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;All new development and improvements should be done with the current Java version.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do not support any other Java versions.
+Provide a package for the current Java version and a package for the latest LTS version.
+Do not backport any new features to the LTS version.
+Remember, a new LTS version is released every two years.
+Just fix painful bugs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You have no excuse not to define an automatic name for your library.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Today you shall only support JDK 21 LTS and JDK 22.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The early access program for JDK 23 is available.
+You can already test your code with JDK 23.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The huge advantage is that you only have to maintain two versions of your code.
+You focus on developing new features only with the current Java version.
+No need to backport any new features to the LTS version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Because all new features are only available with the current Java version, your users have a strong motivation to migrate to the current Java version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;As a developer, it is more fun to write code with the latest Java version and use the latest features.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Please remember never to use internal classes of a library in your code.- _It will bite you.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Update your JDK every three months to install the latest security patches.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Continuously update your dependencies to the latest stable version.&lt;/em&gt;
+&lt;em&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; has plugins and &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; has dependabot to simplify or automate the work.&lt;/em&gt;
+&lt;em&gt;You need a continuous integration pipeline and sufficient automatic tests to validate your code with the latest dependencies.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. If you have a code snippet to install multiple JDKs, run Gradle with an older version and let Gradle toolchain find the current JDK to build, let me know. I will add your solution with name in this blog.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. If &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; would use JPMS, they could hide these classes inside a module. No external developers could use them.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
+&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. Martin has found a workaround, but the drawback is that we have to use a quite older version of Javalin.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: How To Improve</title>
@@ -16831,445 +17036,6 @@ Discipline is king.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. Each team member has a high-resolution camera, a professional headset, and a 4K display. Chat and collaboration tools are mandatory for effective working performance. Buy enough licenses for all team members for tools such as GitHub, Slack, Mural, collaborative IDE, etc.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Certified Java Developer</title>
-      <link>https://blog.tangly.net/blog/2021/certified-java-developer/</link>
-      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2021/certified-java-developer/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;openblock float-group&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2021-05-02-head.png&#34; alt=&#34;2021 05 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Java is celebrating 25 years of existence.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I discovered the anniversary offer to certify for Java SE 11 Developer.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This special certification has a cool logo with the remainder of the Java 25-year anniversary.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Oracle offers this certification for only 25 dollars &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt; and provides free access to their learning platform.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The offer and logo availability are time limited.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The free learning subscription includes:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The Java Explorer learning path for basic Java skills.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;em&gt;Java SE 11 Developer OCP – Java 25 Years&lt;/em&gt; learning path for advanced programming skills.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Practice questions for customers to review as they prepare for the exam.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I could not resist and decided to get the cool logo and the associated certification.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_certification_goals&#34;&gt;Certification goals&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The official goals of the certification cover:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Working with Java data types&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Use primitives and wrapper classes.
-This includes operators, parentheses, type promotion and casting.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Handle text using String and StringBuilder classes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use local variable type inference, including lambda parameters.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Controlling Program Flow&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Create and use loops, if/else, and switch statements.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Java Object-Oriented Approach&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Declare and instantiate Java objects including nested class objects.
-Explain the lifecycle of an object (including creation, dereferencing by a reassignment and garbage collection).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Define and use fields and methods, including instance, static and overloaded methods.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Initialize objects and their members using instance and static initializer statements and constructors.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Understand variable scopes, apply encapsulation and make objects immutable.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Create and use subclasses and superclasses, including abstract classes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Utilize polymorphism and casting to call methods, differentiate an object type versus a reference type.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Create and use interfaces, identify functional interfaces, and utilize private, static and default methods.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Create and use enumerations.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Exception Handling&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Handle exceptions using try/catch/finally clauses, try-with-resource, and multi-catch statements.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Create and use custom exceptions.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Working with Arrays and Collections&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Use generics, including wildcards.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use a Java array and List, Set, Map and Deque collections, including convenience methods.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Sort collections and arrays using Comparator and Comparable interfaces.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Working with Streams and Lambda expressions&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Implement functional interfaces using lambda expressions, including interfaces from the java.util.function package.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use Java Streams to filter, transform and process data.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Perform decomposition and reduction, including grouping and partitioning on sequential and parallel streams.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Java Platform Module System&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Deploy and execute modular applications, including automatic modules.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Declare, use, and expose modules, including the use of services.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Concurrency&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Create worker threads using Runnable and Callable, and manage concurrency using an ExecutorService and java.util.concurrent API.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Develop thread-safe code, using different locking mechanisms and java.util.concurrent API.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Java I/O API&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Read from and write to the console and file data using I/O Streams.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Implement serialization and deserialization techniques on Java objects.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Handle file system objects using java.nio.file API.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Secure Coding in Java SE Application&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Develop code that mitigates security threats such as denial of service, code injection, input validation and ensure data integrity.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Secure resource access including filesystems, manage policies and execute privileged code.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Database Applications with JDBC&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Connect to and perform database SQL operations, process query results using JDBC API.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Localization&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Implement localization using Locale class, resource bundles, and Java APIs to parse and format messages, dates, and numbers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Annotations&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Create, apply and process annotations.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_e_learning_platform&#34;&gt;E-learning Platform&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I gave a try to the Oracle online training platform.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The provided material is basic and does not always reflect the current state of the Java ecosystem.
-The questionnaire at the end of each lecture is fun to test your understanding.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;At the end, I skipped most of the recordings and just answered the questions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I would &lt;strong&gt;not&lt;/strong&gt; recommend the learning platform as an efficient learning approach.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_book&#34;&gt;Book&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I used the book &lt;a href=&#34;https://www.amazon.com/dp/B08DF4R2V9&#34;&gt;OCP Oracle Certified Professional Java SE 11 Programming Study Guide&lt;/a&gt;
-written by Scott Selikoff and Jeanne Boyarsky.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The book contains questions at the end of each chapter.
-The authors also offer a practice examination of their platform.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I found all needed the information, and the practice questions were a good drill.
-The material is terse to read.
-This should be expected from such material but makes concentration more challenging.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Invest time for lambdas, streams, annotations and the module system.
-I was surprised how many questions about these themes I needed to answer during the examination.
-The questions sometimes asked details you are not aware when writing regular Java code in regular products
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_practice_examinations&#34;&gt;Practice Examinations&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Udemy provides &lt;a href=&#34;https://www.udemy.com/course/java-se-11-certification-exam-1z0-819-practice-tests/&#34;&gt;practice tests&lt;/a&gt;.
-The set contains 250 questions and costs between 15 and 90 dollars.
-Just look for rebates.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can find a set of links to &lt;a href=&#34;https://blogs.oracle.com/oracleuniversity/post/test-your-java-knowledge-with-free-sample-questions&#34;&gt;free sample questions&lt;/a&gt; in an Oracle blog.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A lot of resources are available online.
-Here is an
-&lt;a href=&#34;https://javarevisited.blogspot.com/2019/07/top-4-java-11-certification-free-mock-exams-practice-tests-ocajp11-ocpjp11-1z0-815-16-questions.html&#34;&gt;example&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I only used free offering in addition to the practice questions of the bought book.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_examination&#34;&gt;Examination&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The examination was acceptable.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I decided to pass the examination at an accredited partner site.
-I read quite a few posts how challenging it is to use the online examination mode and did not want to be stressed with trivialities.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock caution&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Do not forget to bring two identification documents.
-Regulations are tailored for the USA and do not consider that any European citizen has a legal identification document.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Your second document can be a driver’s license or a credit card.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I passed the examination in April during Corona restrictions.
-I had to wear a mask during the whole time.
-It did not really improve my concentration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock tip&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Check if writing material is available in your seat.
-Otherwise, request a pen and something to write on.
-Regulations officially allow it.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Writing down ideas or which options are plausible as an answer helps me a lot.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The rules I use are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Manage and track time&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The examination is time limited.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;You need to steadily progress and answer the questions in 90 minutes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The number of questions is 50.
-You have &lt;strong&gt;less&lt;/strong&gt; than 2 minutes for each question.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Do not get stuck in one question&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Each question has the same weight for the result.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The provided program has a function to identify unanswered questions or questions you would like to look at again.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;If you do not know an answer, mark the question and go to the next one&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Answer all questions&lt;/dt&gt;
-&lt;dd&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;No penalty exists if you answer a question wrong.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The passing rate for the examination is 68%.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I hope you interesting learning and successful certification.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. The regular price is around 250 dollars.
-&lt;/div&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
-&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. Regular developers seldom define their own annotations. I need to know the details of how to declare annotations to answer examination questions.
 &lt;/div&gt;
 &lt;/div&gt;
 

@@ -135,19 +135,34 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Return a new empty reference to the given object.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Reference.html" title="type parameter in Reference">T</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get()" class="member-name-link">get</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return the reference object.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ifPresent(java.util.function.Consumer)" class="member-name-link">ifPresent</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="Reference.html" title="type parameter in Reference">T</a>&gt;&nbsp;action)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">If a value is present, performs the given action with the value, otherwise does nothing.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">If a value is not present, returns true, otherwise false.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPresent()" class="member-name-link">isPresent</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">If a value is present, returns true, otherwise false.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="Reference.html" title="class in net.tangly.commons.lang">Reference</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(T)" class="member-name-link">of</a><wbr>(T&nbsp;reference)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Return a new reference to the given object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Reference.html" title="type parameter in Reference">T</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reference()" class="member-name-link">reference</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(T)" class="member-name-link">set</a><wbr>(<a href="Reference.html" title="type parameter in Reference">T</a>&nbsp;reference)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return the reference object.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reference(T)" class="member-name-link">reference</a><wbr>(<a href="Reference.html" title="type parameter in Reference">T</a>&nbsp;reference)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the referenced object.</div>
 </div>
 </div>
@@ -230,28 +245,76 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="reference(T)">
-<h3 id="reference(java.lang.Object)">reference</h3>
+<section class="detail" id="set(T)">
+<h3 id="set(java.lang.Object)">set</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">reference</span><wbr><span class="parameters">(<a href="Reference.html" title="type parameter in Reference">T</a>&nbsp;reference)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(<a href="Reference.html" title="type parameter in Reference">T</a>&nbsp;reference)</span></div>
 <div class="block">Set the referenced object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>reference</code> - referenced object</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="#get()"><code>get()</code></a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="reference()">
-<h3>reference</h3>
+<section class="detail" id="get()">
+<h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Reference.html" title="type parameter in Reference">T</a></span>&nbsp;<span class="element-name">reference</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Reference.html" title="type parameter in Reference">T</a></span>&nbsp;<span class="element-name">get</span>()</div>
 <div class="block">Return the reference object.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>referenced object</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="#set(T)"><code>set(Object)</code></a></li>
+</ul>
+</dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isEmpty()">
+<h3>isEmpty</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
+<div class="block">If a value is not present, returns true, otherwise false.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if a value is not present, otherwise false</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isPresent()">
+<h3>isPresent</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPresent</span>()</div>
+<div class="block">If a value is present, returns true, otherwise false.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if a value is present, otherwise false</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ifPresent(java.util.function.Consumer)">
+<h3>ifPresent</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ifPresent</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="Reference.html" title="type parameter in Reference">T</a>&gt;&nbsp;action)</span></div>
+<div class="block">If a value is present, performs the given action with the value, otherwise does nothing.</div>
 </div>
 </section>
 </li>

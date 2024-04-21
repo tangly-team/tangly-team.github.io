@@ -105,8 +105,12 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">InvoiceLegalEntity</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;vatNr, @NotNull net.tangly.core.Address&nbsp;address, net.tangly.core.EmailAddress&nbsp;email)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a>
 implements net.tangly.core.HasId, net.tangly.core.HasName</span></div>
-<div class="block">Defines a legal entity addressed in an invoice. The entity allows addressing an invoice to a recipient per post-mail or per electronic mail. Invoicing workflow is more and more
- digitalized and requires the exchange of information and documents over the electronic way.</div>
+<div class="block">Define a legal entity referenced in an invoice.
+ <p>The entity allows addressing an invoice to a recipient per post-mail or per electronic mail. Invoicing workflow is more and more
+ digitalized and requires the exchange of information and documents over the electronic way.</p>
+ <p>Beware that legal entity identifier is a murky business. For example in Switzerland state companies do not always have a registered identifier.
+ The zefix platform offers a fuzzy search to find such organizations. European community has introduced an European identifier for all companies. Sadly they do not provide a
+ search platform to find out that the identifier of a company is.</p></div>
 </div>
 </section>
 <section class="summary">

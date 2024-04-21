@@ -47,7 +47,7 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1>Index</h1>
 </div>
-<a href="#I:A">A</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:V">V</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="constant-values.html">Constant&nbsp;Field&nbsp;Values</a>
+<a href="#I:A">A</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:Y">Y</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="constant-values.html">Constant&nbsp;Field&nbsp;Values</a>
 <h2 class="title" id="I:A">A</h2>
 <dl class="index">
 <dt><a href="net/tangly/erp/products/domain/Expense.html#amount()" class="member-name-link">amount()</a> - Method in record class net.tangly.erp.products.domain.<a href="net/tangly/erp/products/domain/Expense.html" title="class in net.tangly.erp.products.domain">Expense</a></dt>
@@ -131,6 +131,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/erp/products/domain/Effort.html#%3Cinit%3E()" class="member-name-link">Effort()</a> - Constructor for class net.tangly.erp.products.domain.<a href="net/tangly/erp/products/domain/Effort.html" title="class in net.tangly.erp.products.domain">Effort</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/tangly/erp/products/domain/Effort.html#%3Cinit%3E(net.tangly.erp.products.domain.Assignment,java.lang.String,java.time.LocalDate,int,java.lang.String)" class="member-name-link">Effort(Assignment, String, LocalDate, int, String)</a> - Constructor for class net.tangly.erp.products.domain.<a href="net/tangly/erp/products/domain/Effort.html" title="class in net.tangly.erp.products.domain">Effort</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/products/ports/EffortReportEngine.html" class="type-name-link" title="class in net.tangly.erp.products.ports">EffortReportEngine</a> - Class in <a href="net/tangly/erp/products/ports/package-summary.html">net.tangly.erp.products.ports</a></dt>
 <dd>
 <div class="block">engine to create effort reports for collaborators.</div>
@@ -202,17 +204,24 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="net/tangly/erp/products/ports/ProductsTsvHdl.html#importAssignments(java.io.Reader,java.lang.String)" class="member-name-link">importAssignments(Reader, String)</a> - Method in class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsTsvHdl.html" title="class in net.tangly.erp.products.ports">ProductsTsvHdl</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/erp/products/ports/ProductsTsvHdl.html#importEfforts(java.io.Reader,java.lang.String)" class="member-name-link">importEfforts(Reader, String)</a> - Method in class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsTsvHdl.html" title="class in net.tangly.erp.products.ports">ProductsTsvHdl</a></dt>
+<dt><a href="net/tangly/erp/products/ports/ProductsAdapter.html#importEfforts(java.io.Reader,java.lang.String,boolean)" class="member-name-link">importEfforts(Reader, String, boolean)</a> - Method in class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsAdapter.html" title="class in net.tangly.erp.products.ports">ProductsAdapter</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/erp/products/ports/ProductsAdapter.html#importEfforts(java.nio.file.Path,boolean)" class="member-name-link">importEfforts(Path, boolean)</a> - Method in class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsAdapter.html" title="class in net.tangly.erp.products.ports">ProductsAdapter</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="net/tangly/erp/products/services/ProductsPort.html#importEfforts(java.nio.file.Path,boolean)" class="member-name-link">importEfforts(Path, boolean)</a> - Method in interface net.tangly.erp.products.services.<a href="net/tangly/erp/products/services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></dt>
+<dt><a href="net/tangly/erp/products/services/ProductsPort.html#importEfforts(java.io.Reader,java.lang.String,boolean)" class="member-name-link">importEfforts(Reader, String, boolean)</a> - Method in interface net.tangly.erp.products.services.<a href="net/tangly/erp/products/services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></dt>
 <dd>
 <div class="block">Imports all efforts defined in the YAML file located at the given path.</div>
 </dd>
+<dt><a href="net/tangly/erp/products/ports/ProductsTsvHdl.html#importEfforts(java.io.Reader,java.lang.String)" class="member-name-link">importEfforts(Reader, String)</a> - Method in class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsTsvHdl.html" title="class in net.tangly.erp.products.ports">ProductsTsvHdl</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/products/ports/ProductsAdapter.html#importEntities()" class="member-name-link">importEntities()</a> - Method in class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsAdapter.html" title="class in net.tangly.erp.products.ports">ProductsAdapter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/products/ports/ProductsTsvHdl.html#importProducts(java.io.Reader,java.lang.String)" class="member-name-link">importProducts(Reader, String)</a> - Method in class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsTsvHdl.html" title="class in net.tangly.erp.products.ports">ProductsTsvHdl</a></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 class="title" id="I:L">L</h2>
+<dl class="index">
+<dt><a href="net/tangly/erp/products/ports/ProductsAdapter.html#logic()" class="member-name-link">logic()</a> - Method in class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsAdapter.html" title="class in net.tangly.erp.products.ports">ProductsAdapter</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/tangly/erp/products/services/ProductsPort.html#logic()" class="member-name-link">logic()</a> - Method in interface net.tangly.erp.products.services.<a href="net/tangly/erp/products/services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:N">N</h2>
@@ -250,7 +259,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/products/ports/ProductsAdapter.html" class="type-name-link" title="class in net.tangly.erp.products.ports">ProductsAdapter</a> - Class in <a href="net/tangly/erp/products/ports/package-summary.html">net.tangly.erp.products.ports</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/erp/products/ports/ProductsAdapter.html#%3Cinit%3E(net.tangly.erp.products.services.ProductsRealm,net.tangly.erp.products.services.ProductsBusinessLogic,java.nio.file.Path)" class="member-name-link">ProductsAdapter(ProductsRealm, ProductsBusinessLogic, Path)</a> - Constructor for class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsAdapter.html" title="class in net.tangly.erp.products.ports">ProductsAdapter</a></dt>
+<dt><a href="net/tangly/erp/products/ports/ProductsAdapter.html#%3Cinit%3E(net.tangly.erp.products.services.ProductsRealm,net.tangly.erp.products.services.ProductsBusinessLogic,java.nio.file.Path,java.nio.file.Path)" class="member-name-link">ProductsAdapter(ProductsRealm, ProductsBusinessLogic, Path, Path)</a> - Constructor for class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsAdapter.html" title="class in net.tangly.erp.products.ports">ProductsAdapter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/products/services/ProductsBoundedDomain.html" class="type-name-link" title="class in net.tangly.erp.products.services">ProductsBoundedDomain</a> - Class in <a href="net/tangly/erp/products/services/package-summary.html">net.tangly.erp.products.services</a></dt>
 <dd>&nbsp;</dd>
@@ -268,7 +277,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/products/services/ProductsPort.html" class="type-name-link" title="interface in net.tangly.erp.products.services">ProductsPort</a> - Interface in <a href="net/tangly/erp/products/services/package-summary.html">net.tangly.erp.products.services</a></dt>
 <dd>
-<div class="block">Defines the import port for the products bounded domain.</div>
+<div class="block">Defines the import and export port for the products-bounded domain.</div>
 </dd>
 <dt><a href="net/tangly/erp/products/services/ProductsRealm.html" class="type-name-link" title="interface in net.tangly.erp.products.services">ProductsRealm</a> - Interface in <a href="net/tangly/erp/products/services/package-summary.html">net.tangly.erp.products.services</a></dt>
 <dd>&nbsp;</dd>
@@ -317,6 +326,11 @@ loadScripts(document, 'script');</script>
 <dt><a href="net/tangly/erp/products/domain/Product.html#validate()" class="member-name-link">validate()</a> - Method in class net.tangly.erp.products.domain.<a href="net/tangly/erp/products/domain/Product.html" title="class in net.tangly.erp.products.domain">Product</a></dt>
 <dd>&nbsp;</dd>
 </dl>
-<a href="#I:A">A</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:V">V</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="constant-values.html">Constant&nbsp;Field&nbsp;Values</a></main>
+<h2 class="title" id="I:Y">Y</h2>
+<dl class="index">
+<dt><a href="net/tangly/erp/products/ports/ProductsAdapter.html#YAML_EXT" class="member-name-link">YAML_EXT</a> - Static variable in class net.tangly.erp.products.ports.<a href="net/tangly/erp/products/ports/ProductsAdapter.html" title="class in net.tangly.erp.products.ports">ProductsAdapter</a></dt>
+<dd>&nbsp;</dd>
+</dl>
+<a href="#I:A">A</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:Y">Y</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="constant-values.html">Constant&nbsp;Field&nbsp;Values</a></main>
 </body>
 </html>

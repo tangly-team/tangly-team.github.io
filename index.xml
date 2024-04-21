@@ -15,6 +15,211 @@
     
     
     <item>
+      <title>Blog: Modern Java Rant</title>
+      <link>https://blog.tangly.net/blog/2024/modern-java-rant/</link>
+      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2024/modern-java-rant/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-04-02-head.jpg&#34; alt=&#34;2024 04 02 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The Java community releases a new version every six months.
+This is a good thing, it means that the language is evolving at a steady pace.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;New language features are added in each release.
+Much effort is put into improving the performance of the JVM and solving small issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The community provides beta releases for developers to test and provide feedback during the six months before the next release.
+You have the possibility and time to migrate and test your code before the official release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Security vulnerabilities are patched every three months.
+This is a dream for agile and DevOps teams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Sadly, many developers are still using outdated versions of Java, which can lead to security vulnerabilities and other issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I try to always work with the current release of Java, but I have to admit that it is not always easy.
+Below a rant about some of the issues I have encountered.
+Solving these issues or finding workarounds cost me quite some hours of my time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_intellij_idea_slow_approach&#34;&gt;IntelliJ IDEA Slow Approach&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I love &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;IntelliJ IDEA&lt;/a&gt;, but it is slow to support new Java versions.
+I have an ultimate license for decades and never give up the hope that they will improve their release cycle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;They almost always release a new version of IntelliJ IDEA weeks after the official release of Java.
+I do not understand why they could not switch their release date to match the Java release date.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The early access program for Java should empower them to test their IDE with the new Java version before the official release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;At least they provide preview support for some of the new JDK features in the current version of IntelliJ IDEA.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_gradle_collapse&#34;&gt;Gradle Collapse&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; is my preferred build tool.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Gradle community is not capable of delivering a new version of Gradle supporting the current JDK version for months after the official release.
+The reason is they use old versions of Groovy and Kotlin instead of regularly updating with the current stable versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Yes, you can run Gradle with an older version of Java and compile the code with a newer version of Java.&lt;/em&gt;
+&lt;em&gt;It makes your GitHub actions more complex and brittle.&lt;/em&gt;
+The standard GitHub scripts do not support installing multiple JDK versions in the image building your application
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;._&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_jpms_laggards&#34;&gt;JPMS Laggards&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I cannot fully modularize my applications due to the lack of support for JPMS in many libraries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Java_Platform_Module_System&#34;&gt;Java Platform Module System&lt;/a&gt; is available since Java 9. This version was released on September 21, 2017.
+Maintainers had &lt;strong&gt;seven&lt;/strong&gt; years to migrate their code to JPMS.
+The minimal effort is to provide an automatic name.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;You have to write one line in your manifest file of your jar file to support JPMS.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The &lt;a href=&#34;https://docs.asciidoctor.org/asciidoctorj/latest/&#34;&gt;AsciidoctorJ&lt;/a&gt; package has still no automatic name.
+Some Apache libraries have no automatic names.
+A lot of well-known libraries do not document the automatic name in their documentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_javalin_debacle&#34;&gt;Javalin Debacle&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I like the &lt;a href=&#34;https://javalin.io/&#34;&gt;Javalin&lt;/a&gt; REST framework.
+It is a small and lightweight web framework and uses the &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; as embedded server.
+It has build-in support for &lt;a href=&#34;https://www.openapis.org/&#34;&gt;OpenAPI&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The team quite screwed up the migration to the current Jetty version released more than one year ago.
+&lt;em&gt;Developers should not use internal Jetty classes in their code
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I develop applications with &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; and &lt;a href=&#34;https://javalin.io/&#34;&gt;Javalin&lt;/a&gt;.
+A cool developer Martin Vysny has created a nice library &lt;a href=&#34;https://github.com/mvysny/vaadin-boot&#34;&gt;vaadin-boot&lt;/a&gt; to integrate both frameworks.
+The &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; application uses an embedded &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; server and can be deployed as a single jar file.
+The whole setup is about 20 lines of code.
+It is a pleasure to work with this library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Now Javalin hinders the use of the current Jetty version
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_good_practices&#34;&gt;Good Practices&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I understand that open source developers have limited resources to migrate their code to the current Java version.
+I find the practice advocated by Brian Goetz ideal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Support the latest LTS version of Java in your stable release.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;All new development and improvements should be done with the current Java version.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do not support any other Java versions.
+Provide a package for the current Java version and a package for the latest LTS version.
+Do not backport any new features to the LTS version.
+Remember, a new LTS version is released every two years.
+Just fix painful bugs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You have no excuse not to define an automatic name for your library.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Today you shall only support JDK 21 LTS and JDK 22.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The early access program for JDK 23 is available.
+You can already test your code with JDK 23.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The huge advantage is that you only have to maintain two versions of your code.
+You focus on developing new features only with the current Java version.
+No need to backport any new features to the LTS version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Because all new features are only available with the current Java version, your users have a strong motivation to migrate to the current Java version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;As a developer, it is more fun to write code with the latest Java version and use the latest features.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Please remember never to use internal classes of a library in your code.- _It will bite you.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Update your JDK every three months to install the latest security patches.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;em&gt;Continuously update your dependencies to the latest stable version.&lt;/em&gt;
+&lt;em&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; has plugins and &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; has dependabot to simplify or automate the work.&lt;/em&gt;
+&lt;em&gt;You need a continuous integration pipeline and sufficient automatic tests to validate your code with the latest dependencies.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. If you have a code snippet to install multiple JDKs, run Gradle with an older version and let Gradle toolchain find the current JDK to build, let me know. I will add your solution with name in this blog.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. If &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; would use JPMS, they could hide these classes inside a module. No external developers could use them.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
+&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. Martin has found a workaround, but the drawback is that we have to use a quite older version of Javalin.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Structure Your Concurrency</title>
       <link>https://blog.tangly.net/blog/2024/structure-your-concurrency/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
@@ -1099,7 +1304,7 @@ Next, we have the &lt;em&gt;with&lt;/em&gt; directive where we provide the imple
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;opens &lt;em&gt;package list&lt;/em&gt;&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;If we need to allow reflection of private types, but we don’t want all of our code exposed, we can use the opens directive to expose specific packages.
+&lt;p&gt;If we need to allow reflection of private types, but we do not want all of our code exposed, we can use the opens directive to expose specific packages.
 But remember, this will open the package up to the entire world, so be careful with this directive.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;opens &lt;em&gt;package list&lt;/em&gt; to &lt;em&gt;module list&lt;/em&gt;&lt;/dt&gt;
@@ -1149,7 +1354,7 @@ Automatic modules will have full read access to every other module loaded by the
 &lt;/dd&gt;
 &lt;dt class=&#34;hdlist1&#34;&gt;Unnamed Module&lt;/dt&gt;
 &lt;dd&gt;
-&lt;p&gt;When a class or JAR is loaded onto the classpath, but not the module path, it’s automatically added to the unnamed module.
+&lt;p&gt;When a class or JAR is loaded onto the classpath, but not the module path, it is automatically added to the unnamed module.
 It is a catch-all module to maintain backward compatibility with previously written Java code.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
@@ -16812,286 +17017,6 @@ It recommends test driven approach for bounded domain development &lt;span class
 &lt;hr/&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. You do &lt;strong&gt;not&lt;/strong&gt; need to modify your domain model. No inheritance from a special persistence class, no annotations are required.
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Measurements and Units</title>
-      <link>https://blog.tangly.net/blog/2022/measurements-and-units/</link>
-      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2022/measurements-and-units/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;openblock float-group&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-05-01-head.png&#34; alt=&#34;2022 05 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;JSR-385 could have saved Mars Climate Orbiter&lt;a href=&#34;#mars-climate-orbiter&#34;&gt;[2]&lt;/a&gt; in year 1999.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Accidents in computer applications happen again and again due to calculation errors.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The International System of Units &lt;em&gt;SI&lt;/em&gt;, commonly known as the metric system, is the international standard for measurement.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;a href=&#34;https://en.wikipedia.org/wiki/Metre_Convention&#34;&gt;International Treaty of the Mete&lt;/a&gt; was signed in Paris on May 20, 1875, by seventeen countries, including the United States.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;In May 2019, the system of units was updated.
-All units are defined by constants of nature.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Still, various countries use alternate conventions to complicate our lives.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Here some well-documented and expensive catastrophes originating from wrong approaches to measurements.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Patriot Missile&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The cause here was an inaccurate calculation of the time that has passed since the start due to arithmetic errors in the computer system.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Ariane 5 Explosion&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A floating point number was converted, which then had a larger value than could be stored using the available 16-bit signed integer value.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;US Air Machine&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A US airliner nearly crashed on a flight between the United States and Canada, in the Great Lakes area and the greater Chicago area.
-Here, when refueling the machine, the US gallon and British gallon volume units for liquid and fuel were mixed up.
-The actual amount of kerosene available was significantly reduced.
-The machine ending up on the holding pattern on approach without sufficient fuel.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Numerous, sometimes fatal, incorrect dosages of medication.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_definitions&#34;&gt;Definitions&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-05-01-si-units.png&#34; alt=&#34;2022 05 01 si units&#34; width=&#34;200&#34; height=&#34;200&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Java classes defined in the &lt;a href=&#34;https://unitsofmeasurement.github.io/&#34;&gt;JSR-385&lt;/a&gt; specification are not limited to science, physics or math alone.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;As a result, the terms quantity and unit of measure should be used in their general terminology, such as physical quantity or physical unit of measure, unless otherwise specified.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This generalization holds true even if the Units of Measurement API was originally designed with scientific or physical quantities as the primary goal.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The names and terms used in the specification are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Dimension&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Dimension is one of the fundamental aspects of quantity, including length, mass, time or combinations thereof.
-The concept of measure expresses a characteristic without any concept of size.
-So we can talk about length without any implication.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Quantity&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Any kind of quantitative property or attribute of a thing.
-Mass, time, distance, heat, longitude or latitude are among the familiar examples of quantitative properties.&lt;/p&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;No unit of measure is required to express a quantity, nor does one need specific arithmetic to do so.
-Alice can quantify the size of her shoes by picking them up.
-Alice can add the mass of her left shoe and the mass of her right shoe by placing them both in the bowl of a scale.
-Quantities can be measurable or dimensionless: the number of Alice’s shoes is a dimensionless quantity.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Units of measure are required to represent measurable quantities on a computer, on paper, on a network, device, etc.
-Two or more of these specifications do not mandate the use of a particular quantity as a standard unit of measure.
-Therefore, SI (System-International) is usually used so that the standard system of units of measurement is suitable for most applications.
-According to the JSR-385 API specification, 7 quantities should be acceptable if they have the same dimensions so that they can be compared with one another in a meaningful way.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Unit&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A unit, or unit of measure, is a quantity that is assumed to be the standard with a unique value that can be used to express.
-The same type units of measurement are used as a comparison value.
-For example, one foot corresponds to a quantity of 0.3048 meters.
-Regardless of how this came about, a unit of measure can be expressed as the quantity of other units of measure of the same kind.&lt;/p&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Base-Unit&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;The base unit is a well-defined unit of measurement that is defined as being dimensionally independent of other basic units of measurement.
-The SI system defines only 7 basic units of measurement (including meters, kilograms and seconds) from which all other SI units of measurement are derived.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Derived-Unit&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Derived-Unit is a unit of measurement formed as the product of the results of basic units of measurement.
-Some derived units of measurement have been given a special name and a symbol for convenience and ease of use.
-In the SI system, special name derived units of measurement include &lt;a href=&#34;https://en.wikipedia.org/wiki/Hertz&#34;&gt;Hertz&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Newton_(unit)&#34;&gt;Newtons&lt;/a&gt;
-and &lt;a href=&#34;https://en.wikipedia.org/wiki/Volt&#34;&gt;Volts&lt;/a&gt;.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;System-of-Units&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A system of units is a set of basic and derived units of measure chosen as standards for specifying measures.
-Examples are the SI (metric) and the imperial (English) system.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;Prefix (multiplier)&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;A prefix is a leading word that can be applied to a unit of measure to form a decimal multiplication or decrease of the unit of measure.
-Prefixes are used in the SI system, which includes kilo-, centi-, mili- etc.
-Other cultures and regions use multiplier systems of a similar type, some of which differ from the SI system.
-Examples are the separate use of multipliers such as Lakh- (100,000) or Crore- (10 million) in countries like India or parts of the Middle East.
-This can be attributed to the fact that different currency systems exist.
-It can also be traced back to historical number systems, which differ from the Latin or Arabic origin of today’s western systems in some areas or are absent in these in the same form.
-On the other hand, the use of others, such as a dozen, is almost unknown there.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_measurement&#34;&gt;Measurement&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;In May 2019, all units are defined by constants of nature in the world-wide &lt;a href=&#34;https://en.wikipedia.org/wiki/International_System_of_Units&#34;&gt;international system of units&lt;/a&gt;.
-These changes are incorporated in the newer version of the RFC and the reference implementation.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_how_to_use_the_api&#34;&gt;How to Use the API&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;JSR-385 defines the API 2.x.
-Historically, JSR-363 defined the API 1.0 and is now superseded by the newer definitions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;implementation&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;javax.measure:unit-api:2.1.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;implementation&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;tech.units:indriya:2.1.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;implementation&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;tec.units:unit-ri:1.0.3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;    &lt;span style=&#34;color: #953800&#34;&gt;Quantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Length&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;distance&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Quantities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getQuantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;MILLI&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Units&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;METRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;
-
-    &lt;span style=&#34;color: #953800&#34;&gt;Quantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Volume&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;cubicMetre&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Quantities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getQuantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Units&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;CUBIC_METRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-    &lt;span style=&#34;color: #953800&#34;&gt;Quantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Volume&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;litres&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Quantities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getQuantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Units&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;LITRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-
-    &lt;span style=&#34;color: #953800&#34;&gt;ComparableQuantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Volume&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;cubicMetre&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Quantities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getQuantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Units&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;CUBIC_METRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-    &lt;span style=&#34;color: #953800&#34;&gt;ComparableQuantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Volume&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;litres&lt;/span&gt;  &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Quantities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getQuantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Units&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;LITRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;assertTrue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;cubicMetre&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;compareTo&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;litres&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-
-    &lt;span style=&#34;color: #953800&#34;&gt;Quantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Speed&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;velocity&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Quantities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getQuantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Units&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;METRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;)&lt;/span&gt;
-                                         &lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;divide&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Quantities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getQuantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Units&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;SECOND&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;))&lt;/span&gt;
-                                         &lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;asType&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Speed&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The power of the approach is in the object-oriented abstractions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;WaterTank&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-    &lt;span style=&#34;color: #cf222e&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;setCapacityMeasure&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Quantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Volume&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;capacityMeasure&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-
-&lt;span style=&#34;color: #cf222e&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;WaterTankTest&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-    &lt;span style=&#34;color: #8250df&#34;&gt;@Test&lt;/span&gt;
-    &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;givenQuantity_whenGetUnitAndConvertValue_thenSuccess&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-        &lt;span style=&#34;color: #953800&#34;&gt;WaterTank&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;waterTank&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #cf222e&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;WaterTank&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
-        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;waterTank&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;setCapacityMeasure&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Quantities&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getQuantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;9.2&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;LITRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;
-        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;assertEquals&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;LITRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;waterTank&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getCapacityMeasure&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getUnit&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;());&lt;/span&gt;
-
-        &lt;span style=&#34;color: #953800&#34;&gt;Quantity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Volume&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;waterCapacity&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;waterTank&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getCapacityMeasure&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
-        &lt;span style=&#34;color: #cf222e&#34;&gt;double&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;volumeInLitre&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;waterCapacity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getValue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;doubleValue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
-        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;assertEquals&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;9.2&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;volumeInLitre&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;0.0f&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-
-    &lt;span style=&#34;color: #8250df&#34;&gt;@Test&lt;/span&gt;
-    &lt;span style=&#34;color: #cf222e&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #8250df&#34;&gt;conversionTest&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;{&lt;/span&gt;
-        &lt;span style=&#34;color: #cf222e&#34;&gt;double&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;volumeInMilliLitre&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;waterCapacity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;MetricPrefix&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;MILLI&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;LITRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;))&lt;/span&gt;
-                                                 &lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;getValue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;doubleValue&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;();&lt;/span&gt;
-        &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;assertEquals&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;9200.0&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;volumeInMilliLitre&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;0.0f&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-    &lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color: #0550ae&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The abstractions allow compilation time detection of errors.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;java&#34;&gt;    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;waterCapacity&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;MetricPrefix&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;MILLI&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;KILOGRAM&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;));&lt;/span&gt;         &lt;span style=&#34;color: #6e7781&#34;&gt;// compilation error&lt;/span&gt;
-
-    &lt;span style=&#34;color: #953800&#34;&gt;Unit&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Length&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Kilometer&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;MetricPrefix&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;KILO&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;METRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;
-    &lt;span style=&#34;color: #953800&#34;&gt;Unit&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;Length&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;Centimeter&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #953800&#34;&gt;MetricPrefix&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #116329&#34;&gt;CENTI&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;LITRE&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;);&lt;/span&gt;    &lt;span style=&#34;color: #6e7781&#34;&gt;// compilation error&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_recommendations&#34;&gt;Recommendations&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Keep your unit definitions in a single place.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Encapsulate your own &lt;em&gt;Quantities&lt;/em&gt; by delegation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Create converters when storing units into a JPA-based persistent store.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;In any case, if a unit does not exist in the system of units, you can create new units with new symbols: — &lt;em&gt;AlternateUnit&lt;/em&gt; is a new unit with the same dimension but different symbol and nature. — &lt;em&gt;ProductUnit&lt;/em&gt; is a new unit created as the product of rational powers of other units.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;ulist bibliography&#34;&gt;
-&lt;ul class=&#34;bibliography&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;units-of-measurement&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;https://unitsofmeasurement.github.io/&#34;&gt;Units of Measurement&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a id=&#34;mars-climate-orbiter&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;https://en.wikipedia.org/wiki/Mars_Climate_Orbiter&#34;&gt;Mars Climate Orbiter&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 

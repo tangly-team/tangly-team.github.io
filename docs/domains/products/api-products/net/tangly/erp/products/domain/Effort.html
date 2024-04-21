@@ -37,7 +37,7 @@ loadScripts(document, 'script');</script>
 <p>Summary:</p>
 <ul>
 <li><a href="#nested-class-summary">Nested</a></li>
-<li>Field</li>
+<li><a href="#field-summary">Field</a></li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -57,7 +57,7 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -89,12 +89,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.tangly.core.HasDate</code></dd>
+<dd><code>net.tangly.core.HasDate</code>, <code>net.tangly.core.HasText</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Effort</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements net.tangly.core.HasDate</span></div>
+implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 <div class="block">An effort defines work performed on a project. It is possible to specify an additional contract to identify the financial link to the duration. A duration is always performed by
  one employee. Administrative data specify the duration, the date and an optional description. Efforts can be used to generate work ports such as monthly ports and used to
  calculate the spent time on a contract or a project.</div>
@@ -111,6 +111,15 @@ implements net.tangly.core.HasDate</span></div>
 <code>net.tangly.core.HasDate.IntervalFilter&lt;T extends net.tangly.core.HasDate&gt;</code></div>
 </section>
 </li>
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-net.tangly.core.HasText">Fields inherited from interface&nbsp;net.tangly.core.HasText</h3>
+<code>TEXT</code></div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -121,6 +130,12 @@ implements net.tangly.core.HasDate</span></div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Effort</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.products.domain.Assignment,java.lang.String,java.time.LocalDate,int,java.lang.String)" class="member-name-link">Effort</a><wbr>(<a href="Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contractId,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
+ int&nbsp;durationInMinutes,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -202,6 +217,18 @@ implements net.tangly.core.HasDate</span></div>
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="&lt;init&gt;(net.tangly.erp.products.domain.Assignment,java.lang.String,java.time.LocalDate,int,java.lang.String)">
+<h3>Effort</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Effort</span><wbr><span class="parameters">(<a href="Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contractId,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
+ int&nbsp;durationInMinutes,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -215,6 +242,10 @@ implements net.tangly.core.HasDate</span></div>
 <h3>text</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">text</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>text</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasText</code></dd>
+</dl>
 </div>
 </section>
 </li>
@@ -223,6 +254,10 @@ implements net.tangly.core.HasDate</span></div>
 <h3>text</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">text</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>text</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasText</code></dd>
+</dl>
 </div>
 </section>
 </li>
