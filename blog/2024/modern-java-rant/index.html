@@ -135,7 +135,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.cb3f463ccd2f6adc46b3babbff2694b5.json"
+    data-offline-search-index-json-src="/offline-search-index.4e7ba9214f84e68c0d48a19e45dd44e4.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -159,7 +159,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.cb3f463ccd2f6adc46b3babbff2694b5.json"
+    data-offline-search-index-json-src="/offline-search-index.4e7ba9214f84e68c0d48a19e45dd44e4.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -1055,8 +1055,11 @@ The reason is they use old versions of Groovy and Kotlin instead of regularly up
 The standard GitHub scripts do not support installing multiple JDK versions in the image building your application
 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>._</p>
 </div>
-<div class="sect2">
-<h3 id="_jpms_laggards">JPMS Laggards</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_jpms_laggards">JPMS Laggards</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>I cannot fully modularize my applications due to the lack of support for JPMS in many libraries.</p>
 </div>
@@ -1072,7 +1075,6 @@ The minimal effort is to provide an automatic name.</p>
 <p>The <a href="https://docs.asciidoctor.org/asciidoctorj/latest/">AsciidoctorJ</a> package has still no automatic name.
 Some Apache libraries have no automatic names.
 A lot of well-known libraries do not document the automatic name in their documentation.</p>
-</div>
 </div>
 </div>
 </div>
@@ -1159,13 +1161,14 @@ No need to backport any new features to the LTS version.</p>
 <p><em>As a developer, it is more fun to write code with the latest Java version and use the latest features.</em></p>
 </div>
 <div class="paragraph">
-<p><em>Please remember never to use internal classes of a library in your code.- _It will bite you.</em></p>
+<p><em>Please remember never to use internal classes of a library in your code</em>.
+<em>It will bite you</em>.</p>
 </div>
 <div class="paragraph">
 <p><em>Update your JDK every three months to install the latest security patches.</em></p>
 </div>
 <div class="paragraph">
-<p><em>Continuously update your dependencies to the latest stable version.</em>
+<p><em>Continuously update your dependencies to the latest stable version.</em><br/>
 <em><a href="https://gradle.org/">Gradle Build Tool</a> has plugins and <a href="https://github.com/">GitHub</a> has dependabot to simplify or automate the work.</em>
 <em>You need a continuous integration pipeline and sufficient automatic tests to validate your code with the latest dependencies.</em></p>
 </div>

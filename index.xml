@@ -87,8 +87,11 @@ The reason is they use old versions of Groovy and Kotlin instead of regularly up
 The standard GitHub scripts do not support installing multiple JDK versions in the image building your application
 &lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;._&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_jpms_laggards&#34;&gt;JPMS Laggards&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_jpms_laggards&#34;&gt;JPMS Laggards&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I cannot fully modularize my applications due to the lack of support for JPMS in many libraries.&lt;/p&gt;
 &lt;/div&gt;
@@ -104,7 +107,6 @@ The minimal effort is to provide an automatic name.&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&#34;https://docs.asciidoctor.org/asciidoctorj/latest/&#34;&gt;AsciidoctorJ&lt;/a&gt; package has still no automatic name.
 Some Apache libraries have no automatic names.
 A lot of well-known libraries do not document the automatic name in their documentation.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -191,13 +193,14 @@ No need to backport any new features to the LTS version.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;As a developer, it is more fun to write code with the latest Java version and use the latest features.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;Please remember never to use internal classes of a library in your code.- _It will bite you.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Please remember never to use internal classes of a library in your code&lt;/em&gt;.
+&lt;em&gt;It will bite you&lt;/em&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;em&gt;Update your JDK every three months to install the latest security patches.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;Continuously update your dependencies to the latest stable version.&lt;/em&gt;
+&lt;p&gt;&lt;em&gt;Continuously update your dependencies to the latest stable version.&lt;/em&gt;&lt;br/&gt;
 &lt;em&gt;&lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle Build Tool&lt;/a&gt; has plugins and &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; has dependabot to simplify or automate the work.&lt;/em&gt;
 &lt;em&gt;You need a continuous integration pipeline and sufficient automatic tests to validate your code with the latest dependencies.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
