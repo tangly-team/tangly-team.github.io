@@ -92,10 +92,10 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Record Components:</dt>
 <dd><code><span id="param-event">event</span></code> - event triggering the creation of an audit log</dd>
-<dd><code><span id="param-timestamp">timestamp</span></code> - timestanmp when the audit log was created</dd>
+<dd><code><span id="param-timestamp">timestamp</span></code> - timestamp when the audit log was created</dd>
 <dd><code><span id="param-component">component</span></code> - component source of the audit log. By convention, we use the module name or if necessary the package name</dd>
 <dd><code><span id="param-status">status</span></code> - status associated with the audit log</dd>
-<dd><code><span id="param-text">text</span></code> - text of the audit log</dd>
+<dd><code><span id="param-text">text</span></code> - text of the audit log. It should be English and provide a concise description of the event</dd>
 <dd><code><span id="param-data">data</span></code> - data specific to the audit log</dd>
 <dd><code><span id="param-exception">exception</span></code> - optional exception to be added to the audit log</dd>
 </dl>
@@ -103,7 +103,17 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">EventData</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;event, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link">LocalDateTime</a>&nbsp;timestamp, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;component, @NotNull <a href="EventData.Status.html" title="enum class in net.tangly.commons.logger">EventData.Status</a>&nbsp;status, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;data, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;exception)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
 <div class="block">Provide a simple approach to create an audit trail for all relevant operations performed in the system. Contextual information such as user, IP address are
- part of the MDR context and implicitly available to the event data logging process.</div>
+ part of the MDR context and implicitly available to the event data logging process.
+ <p>Good practice is to log all incoming and outgoing data. The granularity should be an aggregate as defined in the domain-driven design approach.
+ The goal is provide an audit trail for all relevant input and output operations performed in the system.</p>
+ <p></p>Statuses are:</p>
+ <dl>
+     <dt>Success</dt> <dd>A complex operation was completed successfully. For example all entities of a TSV file could be imported.</dd>
+     <dt>Info</dt> <dd>Status information of a completed system activity. For example one entity of a TSV file could be imported.</dd>
+     <dt>Warning</dt> <dd>The operation encountered a problem but the data could be processed.</dd>
+     <dt>Error</dt> <dd>The data could not be processed due to syntactic or semantic errors.</dd>
+     <dt>Failure</dt> <dd>The operation failed due to an internal or resource problem. For example the file could be found or read.</dd>
+ </dl></div>
 </div>
 </section>
 <section class="summary">

@@ -15,6 +15,304 @@
     
     
     <item>
+      <title>Blog: How to Document Your Software Architecture</title>
+      <link>https://blog.tangly.net/blog/2024/how-to-document-your-software-architecture/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/blog/2024/how-to-document-your-software-architecture/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;openblock float-group&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;imageblock left&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;../pics/2024-05-01-head.png&#34; alt=&#34;2024 05 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You are creating the next digital software masterpiece.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;How can you document your software architecture in a way that is useful for your team and stakeholders?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;A software architecture document &lt;em&gt;SAD&lt;/em&gt; is a document that describes the structure of a software solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It includes the architecture of its components, the relationships between those components, and the principles that guide its design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The solution architecture document is typically used as a reference for designing, building, and maintaining a software system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Developers, architects, and other stakeholders use it to understand the overall design of the system and how it fits into the larger business or technical environment.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Below an example of a software architecture document content
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph text-center&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;../pics/2024-05-01-architecture-doc.png&#34; alt=&#34;2024 05 01 architecture doc&#34; width=&#34;640&#34; height=&#34;360&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_modern_approaches&#34;&gt;Modern Approaches&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Modern software development practices, such as &lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;Agile Manifesto&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/DevOps&#34;&gt;DevOps&lt;/a&gt;, have changed the way we think about software architecture
+&lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#modern-software-engineering&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#effective-java-3rd&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#building-evolutionary-architectures-2nd&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;#building-evolutionary-architectures&#34;&gt;4&lt;/a&gt;, &lt;a href=&#34;#large-scale-scrum&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;#practices-for-scaling-lean-and-agile-development&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#scaling-lean-and-agile-development&#34;&gt;7&lt;/a&gt;, &lt;a href=&#34;#documenting-software-architectures&#34;&gt;8&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Tooling and practices have evolved to support the creation of lightweight, agile software architecture documentation.
+The &lt;a href=&#34;https://arc42.org/&#34;&gt;arc42&lt;/a&gt; approach natively supports &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; and &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;Markdown&lt;/a&gt; based documentation
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_2&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_2&#34; title=&#34;View footnote.&#34;&gt;2&lt;/a&gt;]&lt;/sup&gt;.
+All documents are stored as text artifacts in a git repository.
+The documentation is generated as static website &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt;
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_3&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_3&#34; title=&#34;View footnote.&#34;&gt;3&lt;/a&gt;]&lt;/sup&gt;.
+Diagrams with &lt;a href=&#34;https://c4model.com/&#34;&gt;C4 Model&lt;/a&gt; or &lt;a href=&#34;https://en.wikipedia.org/wiki/Unified_Modeling_Language&#34;&gt;UML&lt;/a&gt;, &lt;a href=&#34;https://adr.github.io/&#34;&gt;Architecture Design Records ADR&lt;/a&gt; are linked to source code documentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The architecture documents shall be online, searchable and actual.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The artifacts shall be versioned to support documenting various releases of the application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The documents shall be created as part of a continuous integration pipeline.
+This approach eliminates the need for manual documentation generation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_architecture_documentation_goals&#34;&gt;Architecture Documentation Goals&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Software architecture documentation creates a common understanding of the solution behind the system for various stakeholders.
+The documentation makes it possible to evaluate the software architecture from the perspective of the various stakeholders.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Software architecture documentation supports architectural work and guides the development team in implementing new product features.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph text-center&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;image text-center&#34;&gt;&lt;img src=&#34;../pics/2024-05-01-C4-5-things.png&#34; alt=&#34;2024 05 01 C4 5 things&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You should as a software architect understand:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;What is the essence of &lt;a href=&#34;https://en.wikipedia.org/wiki/Software_architecture&#34;&gt;Software architecture&lt;/a&gt;?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Why should the software architecture role include coding, coaching and collaboration?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What are the  things that you really need to think about before coding?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How to visualize your software architecture using &lt;a href=&#34;https://c4model.com/&#34;&gt;C4 Model&lt;/a&gt;?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How to document your application with a lightweight and collaborative approach?.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Why there is no conflict between agile and architecture?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What does &lt;em&gt;just enough&lt;/em&gt; upfront design mean?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How to identify risks with risk-storming?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_documentation_rules&#34;&gt;Documentation Rules&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;These are the rules for any technical documentation, including software architecture documentation:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Write documentation from the reader’s point of view.
+Embrace approaches such as &lt;a href=&#34;https://www.oracle.com/java/technologies/javase/javadoc.html&#34;&gt;JavaDoc&lt;/a&gt;
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_4&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_4&#34; title=&#34;View footnote.&#34;&gt;4&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Document that you have realized, not your wishes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Avoid unnecessary repetition.
+Reference and link to information, do not copy it.
+Minimalism is key.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Avoid ambiguity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use a standard structure such as &lt;a href=&#34;https://arc42.org/&#34;&gt;arc42&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Record rationale and decisions with &lt;a href=&#34;https://adr.github.io/&#34;&gt;Architecture Design Records ADR&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Keep documentation current but not too current.
+Generate your documentation as a static website.
+Avoid manual steps when updating your documentation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Review documentation for fitness of purpose.
+A new collaborator in the team is the optimal guinea pig to test the documentation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It is far better to be explicit and wrong than to be vague.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+— Frederick Brooks jr.&lt;br/&gt;
+&lt;cite&gt;1995&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_possible_pitfalls&#34;&gt;Possible Pitfalls&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph text-center&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;image left&#34;&gt;&lt;img src=&#34;../pics/2024-05-01-arc42-c4.png&#34; alt=&#34;2024 05 01 arc42 c4&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Upfront document everything&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Do not document everything in advance.
+Think of the arc42 template as a cabinet for documentation.&lt;br/&gt;
+You put something on a shelf as you work on it.
+This is how software architecture documentation emerges, evolves, and stays current.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Do not include tutorials or Q&amp;amp;A sections&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The most important thing in arc42 is the structure.
+The structure does not provide a space for guides or Q&amp;amp;A sections.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Do not put any specific things like customer names or similar&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Do not write customer-specific things in the software architecture documentation unless your building blocks are structured in a customer-oriented way.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Do not generate documentation site&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Manual activities to generate the product documentation are a waste of time.
+Modern approaches are documentation as code and static site generators.&lt;br/&gt;
+&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; and &lt;a href=&#34;https://gitlab.com/&#34;&gt;GitLab&lt;/a&gt; provide the &lt;em&gt;pages&lt;/em&gt; feature to host your documentation as static website.
+The generation can be integrated into the CI/CD pipeline.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_links&#34;&gt;Links&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;ulist bibliography&#34;&gt;
+&lt;ul class=&#34;bibliography&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;why-enterprise-architecture&#34;&gt;&lt;/a&gt;[1] &lt;a href=&#34;../../2021/why-enterprise-architecture/&#34;&gt;Why Enterprise Architecture?&lt;/a&gt;.
+Marcel Baumann. 2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;agile-achitecture-is-main-stream&#34;&gt;&lt;/a&gt;[2] &lt;a href=&#34;../../2021/agile-software-architecture-is-mainstream/&#34;&gt;Agile Architecture is Mainstream&lt;/a&gt;.
+Marcel Baumann. 2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;agile-architecture-principles&#34;&gt;&lt;/a&gt;[3]  &lt;a href=&#34;../../2019/agile-architecture-principles/&#34;&gt;Agile Architecture Principles&lt;/a&gt;.
+Marcel Baumann. 2019.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;agile-architecture-with-scrum&#34;&gt;&lt;/a&gt;[4] &lt;a href=&#34;../../2019/agile-architecture-within-scrum/&#34;&gt;Agile Architecture Within Scrum&lt;/a&gt;.
+Marcel Baumann. 2019.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;adr&#34;&gt;&lt;/a&gt;[5] &lt;a href=&#34;../../2018/architectural-decision-records-adr/&#34;&gt;Architecture Decision Records ADR&lt;/a&gt;.
+Marcel Baumann. 20218.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=&#34;what-i-learnt-teaching-agile-software-engineering&#34;&gt;&lt;/a&gt;[6] &lt;a href=&#34;../../2021/what-i-learnt-teaching-agile-software-architecture/&#34;&gt;What I Learnt Teaching Agile Software Architecture&lt;/a&gt;.
+Marcel Baumann. 2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;modern-software-engineering&#34;&gt;&lt;/a&gt;[1] D. Farley, &lt;em&gt;Modern Software Engineering&lt;/em&gt;. Pearson Education, Limited, 2022 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B09GG6XKS4&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B09GG6XKS4&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;effective-java-3rd&#34;&gt;&lt;/a&gt;[2] J. Bloch, &lt;em&gt;Effective Java&lt;/em&gt;, Third. Addison-Wesley Professional, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B078H61SCH&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B078H61SCH&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;building-evolutionary-architectures-2nd&#34;&gt;&lt;/a&gt;[3] N. Ford, R. Parsons, and P. Kua, &lt;em&gt;Building Evolutionary Architectures: Automated Software Governance&lt;/em&gt;, Second. O’Reilly Media, 2023 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B0BN4T1P27&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B0BN4T1P27&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;building-evolutionary-architectures&#34;&gt;&lt;/a&gt;[4] N. Ford, R. Parsons, and P. Kua, &lt;em&gt;Building Evolutionary Architectures: Support Constant Change&lt;/em&gt;, First. O’Reilly Media, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1491986360&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1491986360&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;large-scale-scrum&#34;&gt;&lt;/a&gt;[5] C. Larman, &lt;em&gt;Large-scale scrum&lt;/em&gt;. 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321985710&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321985710&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;practices-for-scaling-lean-and-agile-development&#34;&gt;&lt;/a&gt;[6] C. Larman, &lt;em&gt;Practices for scaling lean &amp;amp; agile development&lt;/em&gt;. Addison-Wesley, 2010 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321636406&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321636406&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;scaling-lean-and-agile-development&#34;&gt;&lt;/a&gt;[7] C. Larman, &lt;em&gt;Scaling lean &amp;amp; agile development&lt;/em&gt;. Addison-Wesley, 2008 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321480961&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321480961&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;a id=&#34;documenting-software-architectures&#34;&gt;&lt;/a&gt;[8] P. Clements, &lt;em&gt;Documenting software architectures views and beyond&lt;/em&gt;. Addison-Wesley, 2011 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321552687&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321552687&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr/&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I add a chapter describing the user manual and user interface when document our applications.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. The worst solution is to write Microsoft Word documents and store them in a SharePoint site. Such documents can neither be searched nor archived. Jira wiki documentation has similar drawbacks.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
+&lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. I love &lt;a href=&#34;https://asciidoc.org/&#34;&gt;Asciidoc&lt;/a&gt; and &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; to create technical static website. I use &lt;a href=&#34;https://plantuml.com/&#34;&gt;plantUML&lt;/a&gt; and &lt;a href=&#34;https://mermaid.js.org/&#34;&gt;Mermaid&lt;/a&gt; to create diagrams.
+&lt;/div&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_4&#34;&gt;
+&lt;a href=&#34;#_footnoteref_4&#34;&gt;4&lt;/a&gt;. JavaDoc lately added support to Markdown syntax and code snippets. It markantly simplifies the redaction of quality documentation.
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Modern Java Rant</title>
       <link>https://blog.tangly.net/blog/2024/modern-java-rant/</link>
       <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
@@ -115,7 +413,7 @@ A lot of well-known libraries do not document the automatic name in their docume
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I like the &lt;a href=&#34;https://javalin.io/&#34;&gt;Javalin&lt;/a&gt; REST framework.
-It is a small and lightweight web framework and uses the &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; as embedded server.
+It is a small and lightweight web framework and uses the &lt;a href=&#34;https://eclipse.dev/jetty/&#34;&gt;Jetty&lt;/a&gt; as embedded server.
 It has build-in support for &lt;a href=&#34;https://www.openapis.org/&#34;&gt;OpenAPI&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
@@ -126,7 +424,7 @@ It has build-in support for &lt;a href=&#34;https://www.openapis.org/&#34;&gt;Op
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;I develop applications with &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; and &lt;a href=&#34;https://javalin.io/&#34;&gt;Javalin&lt;/a&gt;.
 A cool developer Martin Vysny has created a nice library &lt;a href=&#34;https://github.com/mvysny/vaadin-boot&#34;&gt;vaadin-boot&lt;/a&gt; to integrate both frameworks.
-The &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; application uses an embedded &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; server and can be deployed as a single jar file.
+The &lt;a href=&#34;https://vaadin.com/&#34;&gt;Vaadin&lt;/a&gt; application uses an embedded &lt;a href=&#34;https://eclipse.dev/jetty/&#34;&gt;Jetty&lt;/a&gt; server and can be deployed as a single jar file.
 The whole setup is about 20 lines of code.
 It is a pleasure to work with this library.&lt;/p&gt;
 &lt;/div&gt;
@@ -212,7 +510,7 @@ No need to backport any new features to the LTS version.&lt;/p&gt;
 &lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. If you have a code snippet to install multiple JDKs, run Gradle with an older version and let Gradle toolchain find the current JDK to build, let me know. I will add your solution with name in this blog.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_2&#34;&gt;
-&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. If &lt;a href=&#34;https://www.eclipse.org/jetty/&#34;&gt;Jetty&lt;/a&gt; would use JPMS, they could hide these classes inside a module. No external developers could use them.
+&lt;a href=&#34;#_footnoteref_2&#34;&gt;2&lt;/a&gt;. If &lt;a href=&#34;https://eclipse.dev/jetty/&#34;&gt;Jetty&lt;/a&gt; would use JPMS, they could hide these classes inside a module. No external developers could use them.
 &lt;/div&gt;
 &lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_3&#34;&gt;
 &lt;a href=&#34;#_footnoteref_3&#34;&gt;3&lt;/a&gt;. Martin has found a workaround, but the drawback is that we have to use a quite older version of Javalin.
@@ -16503,523 +16801,6 @@ Marcel Baumann. 2022.&lt;/p&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[7] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Software Structure with DDD</title>
-      <link>https://blog.tangly.net/blog/2022/software-structure-with-ddd/</link>
-      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/blog/2022/software-structure-with-ddd/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;openblock float-group&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;div class=&#34;imageblock left&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-06-01-head.jpg&#34; alt=&#34;2022 06 01 head&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain Driven Development&lt;/a&gt; &lt;em&gt;DDD&lt;/em&gt; is the preferred software architecture approach for designing digital products.
-The method nicely matches with the operational concepts of microservices.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Domain-driven design is a holistic approach to understanding, designing and building software applications.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Seminal books &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;#domain-driven-design-distilled&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;#implementing-domain-driven-design&#34;&gt;3&lt;/a&gt;]&lt;/span&gt; describes the approach and key concepts defining the development method.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Concrete recipes and examples of code structure are still sparse.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;How should you structure your namespaces and modules?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We propose a simple and adequate code structure for implementation using modern Java constructs.
-The approach builds on the strengths of the Java packages and modules.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The language visibility rules enforce cohesion and minimize coupling.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The described approach is ideal for small to medium software solutions.
-The source code size of a bounded domain is often less than 50&amp;#39;000 lines of code.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The heart of software is its ability to solve domain-related problems for its user.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Eric Evans&lt;br/&gt;
-&lt;cite&gt;Domain-Driven Design: Tackling Complexity in the Heart of Software&lt;/cite&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_history&#34;&gt;History&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;It originated in the 1980s and 1990s, with Richard P. Gabriel being an early pioneer who introduced &lt;em&gt;domain models&lt;/em&gt; as mental models of the business guiding software and digital product development.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Eric Evans further developed DDD in the late 1990s and early 2000s.
-His book &lt;em&gt;Domain-Driven Design: Tackling Complexity in the Heart of Software&lt;/em&gt; &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#domain-driven-design&#34;&gt;1&lt;/a&gt;]&lt;/span&gt;
-defined DDD as creating software based on a deep understanding of the business domain.
-It outlined principles for creating domain models, including using object-relational mapping (ORM) tools.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Today, DDD is widely accepted and applied across various domains like financial services, healthcare, and e-commerce.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_layers_in_ddd&#34;&gt;Layers in DDD&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock left text-center&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-06-01-layers.png&#34; alt=&#34;2022 06 01 layers&#34; width=&#34;360&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Domain-driven design &lt;em&gt;DDD&lt;/em&gt; has four layers in the architecture:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;hdlist&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Interface
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;This layer is in charge of the interaction with the user, whether software presents information to the user or receives information from the user.&lt;br/&gt;
-&lt;em&gt;I use vaadin to increase productivity.
-Vaadin allows us to use the single technology stack Java to develop all backend and frontend functionalities.&lt;/em&gt;&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Application
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;This is a thin layer between the interface and the domain, it could call domain services to serve the solution purposes.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Domain
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;At The heart of the software, this layer holds domain logic and business knowledge.&lt;br/&gt;
-&lt;em&gt;A major goal is to avoid any tainting of the core domain model from other layers.&lt;/em&gt;
-&lt;em&gt;Try to avoid extending domain entities with implementation-specific root classes or to a lesser degree annotations.&lt;/em&gt;&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Infrastructure
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;A supporting layer for the other layers.
-This layer contains supporting libraries or external services like a database or UI supporting library.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;I use libraries to minimize effort in support functions such as persistence, JSON transformation, archiving, and reporting.
-The microstream library is a good example of this approach.
-The persistence capability is less than fifty lines of code.
-No changes in the domain model were necessary.
-We did not have to add a root persistent class or use annotations.&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_package_structure&#34;&gt;Package Structure&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A bounded domain shall be configured as a Java module &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#java-9-modularity&#34;&gt;4&lt;/a&gt;]&lt;/span&gt;.
-The exported services and entities are explicitly listed with the &lt;em&gt;exports&lt;/em&gt; directive.
-A huge advantage is the obligation to list all dependencies with the &lt;em&gt;requires&lt;/em&gt; directive.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock text-center&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;../pics/2022-06-01-hexagonal-architecture.png&#34; alt=&#34;2022 06 01 hexagonal architecture&#34; width=&#34;420&#34; height=&#34;360&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Java compiler validates the module dependencies and interfaces.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;hdlist&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Services
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;defines the bounded domain context.
-The domain uses the library to implement a bounded domain.
-The ports, handlers, and realms are declared in the context package for small bounded domains.
-Complex domains can declare these interfaces in separate packages for legibility.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Logic
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;contains common business logic and features.
-Elaborate domains can contain more business features.
-Use a package structure increasing legibility and enforcing separation of concerns.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Ports
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;contains the services receiving data and events from the environment.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Handlers
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;contains the services providing data and events to the environment and to other applications.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Realm
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;contains the repository functions to persist and create domain entities and object values.
-The current approach uses the &lt;a href=&#34;https://microstream.one/&#34;&gt;MicroStream&lt;/a&gt; library.
-The amount of code to persist the domain model is minimal and non-intrusive
-&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Domain
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;contains the abstraction describing the bounded domain.
-Care is taken to define resilient and legible domain abstractions.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock text-center kroki&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;https://kroki.io/plantuml/svg/eNqNkUEKwkAMRfc9xaxbbK9QRMGFCxEvkM7EGphmZJIKUry7Yyu4EFvJJiQv-T-kFoWoAl6zIRtOWWEYtVTg1t_LPG9Czw7dyoUOiPM8KxaAckoSV5iqsh5EUIxDsZEa4tboBQ00ohGsUmAx4TzWprmqWla4hmT4LfDdXm1ZSQllXPWD2Tn_j5JgvJHFGbHNx_UPYt0LMYrsQ0t21hOw8xjnkEO6fK5_RPBdAh4pamT3eusToIuaUw==&#34; alt=&#34;bounded-domain-structure&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The above diagram shows the package structure for a bounded domain named &lt;strong&gt;bounded-domain&lt;/strong&gt;.
-The names with the regular font are package names, the ones in italics are class names.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The infrastructure supports classes are not part of this structure.
-These classes shall be defined in a separate Java module and imported with regular dependency declaration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We use the &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt; tool to ensure the expected structure is provided for each bounded domain.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The user interface for a bounded domain is stored in a separate package and often in its own Java module.
-The bounded domain implementation shall not constrain the technologies used to provide a user interface.
-Different approaches for user interface realization are available and no clear winner can currently be identified.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;I mainly use &lt;a href=&#34;https://vaadin.com&#34;&gt;Vaadin&lt;/a&gt; to realize browser- or mobile-first internal applications.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_java_considerations&#34;&gt;Java Considerations&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Entities shall have well-documented internal or external identifiers.
-Entities visible to other bounded domains shall always have an external identifier.
-Identifiers are always immutable objects.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Objects that have a distinct identity that runs through time and different representations.
-You also hear these called &lt;em&gt;reference objects&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Martin Fowler
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Value objects shall be expressed as Java value types.
-Record construct is the preferred way to model a value object in Java.
-The record concept provides the expected &lt;em&gt;equals(Object)&lt;/em&gt; behavior.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Objects that matter only as the combination of their attributes.
-Two value objects with the same values for all their attributes are considered equal.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Martin Fowler
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;An aggregate is a set of Entities and Value Objects that do not make sense alone.
-Every aggregate has a root entity, which will be responsible for providing all methods involving business rules that will modify its child entities.
-The first rule is that aggregates reference each other by identity instead of object references.
-Aggregates shall be constructed with the help of factory patterns such as factory method, abstract factory, or builder.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A DDD aggregate is a cluster of domain objects that can be treated as a unit.
-An example may be an order and its line-items, these will be separate objects.
-Tt is useful to treat the order together with its line items as a single aggregate.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Martin Fowler
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Rich domains are models that have full control of their data and do not rely on external objects to manipulate them.
-Anemic domains are models that rely on other classes to validate their data.
-Anemic domains are a smell in the domain-driven design world.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Services should be pure functions and be stateless.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Pure functions are functions (or methods) that do not change the value of any object outside it.
-It avoids side effects and guarantees the same output for certain inputs, meaning it needs to be completely deterministic.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock tip&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Spring project has added support for bounded domain in their framework with the &lt;a href=&#34;https://github.com/spring-projects/spring-modulith&#34;&gt;Modulith&lt;/a&gt; extension.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Gradle modules are a natural mapping for bounded domains.
-Use either Java modules or archUnit to enforce that communication always goes through bounded domain interfaces.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_architecture_integrity&#34;&gt;Architecture Integrity&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A Bounded Context is a logical boundary of a domain where particular terms and rules apply consistently.
-Inside this boundary, all terms, definitions and concepts form the Ubiquitous Language.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Good practices shall be applied to ensure the quality of the bounded domain software architecture &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#clean-architecture&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;#refactoring&#34;&gt;6&lt;/a&gt;, &lt;a href=&#34;#refactoring-databases&#34;&gt;7&lt;/a&gt;]&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Java Platform Module System (JPMS) encourages us to build more reliable and strongly encapsulated modules.
-As a result, these features can help to isolate our contexts and establish clear boundaries.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;A bounded domain is implemented as a Java module.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The domain internal layered architecture is verified with &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt; custom validation rules.
-The rules are coded as unit tests and are processed in the continuous integration pipeline.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The advantages of the architecture are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The whole company talking the same ubiquitous language, reduced risk of misunderstandings.
-Everyone needs to be aligned, both in vocabulary and ownership of the components.
-The engineers have common understanding and coding guidelines to realize the layers inside a bounded domain.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;You have a segregated architecture defining a modular monolith application.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Smaller and well-defined components are easier to maintain.
-Your services are independent and can more easily be refactored.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Development scalability is implicitly provided.
-Teams can develop simultaneous and independently bounded domain features.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_bounded_domain_relations&#34;&gt;Bounded Domain Relations&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;There are five main types of relationships between Bounded Contexts:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;hdlist&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Partnership
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;a relationship between two contexts that cooperates to align the two teams with dependent goals.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Shared Kernel
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;a kind of relationship when common parts of several contexts are extracted to another context/module to reduce code duplication.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Customer-supplier
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;a connection between two contexts, where one context (upstream) produces data, and the other (downstream) consumes it.
-In this relationship, both sides are interested in establishing the best possible communication.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Conformist
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;this relationship also has upstream and downstream, however, downstream always conforms to the upstream’s APIs.&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&#34;hdlist1&#34;&gt;
-Anti-corruption layer
-&lt;/td&gt;
-&lt;td class=&#34;hdlist2&#34;&gt;
-&lt;p&gt;this relationship kind is widely used for legacy systems to adapt them to a new architecture and gradually migrate from the legacy codebase.
-The protection layer acts as an adapter to translate data from the upstream and protect from undesired changes&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_lessons_learnt&#34;&gt;Lessons Learnt&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Great technologies, programming languages and tools are used when building software applications.
-That is good and right.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;But unfortunately, it is often lost that the decisive factor for the success of a project is not technology, but the solution.
-In order to understand the subject matter or domain, we need a common language with the domain experts and users.
-If we do not map the technical model in the software and its architecture, it will not help our users in their work.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;As a computer scientist, it is easy to fall into the trap of focusing on technology instead of specialist knowledge
-footnoote:[In the modern trend of technology driven curriculum this dreadful approach is often encountered].
-The principle of bounded contexts from DDD can help us here.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;quoteblock&#34;&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Domain-driven design (DDD) is a useful approach that provides excellent guidelines for modeling and building systems, but it is a means to an end, not an end in itself.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;While the concepts are valid, you lose a lot if you limit yourself to using them only: There actually is a life beyond DDD.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;attribution&#34;&gt;
-— Stefan Tilkov&lt;br/&gt;
-&lt;cite&gt;2021&lt;/cite&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The DDD approach emphasizes systematic refactoring and code improvements &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#refactoring-2nd&#34;&gt;8&lt;/a&gt;, &lt;a href=&#34;#clean-code&#34;&gt;9&lt;/a&gt;, &lt;a href=&#34;#clean-coder&#34;&gt;10&lt;/a&gt;, &lt;a href=&#34;#clean-architecture&#34;&gt;5&lt;/a&gt;]&lt;/span&gt;.
-It recommends test driven approach for bounded domain development &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#agile-testing&#34;&gt;11&lt;/a&gt;, &lt;a href=&#34;#more-agile-testing&#34;&gt;12&lt;/a&gt;, &lt;a href=&#34;#bridging-communication-gap&#34;&gt;13&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_references&#34;&gt;References&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;domain-driven-design&#34;&gt;&lt;/a&gt;[1] E. Evans, &lt;em&gt;Domain-driven design&lt;/em&gt;. Addison-Wesley, 2004 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321125215&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;domain-driven-design-distilled&#34;&gt;&lt;/a&gt;[2] V. Vernon, &lt;em&gt;Domain-Driven Design Distilled&lt;/em&gt;. Addison-Wesley Professional, 2016 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B01JJSGE5S/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B01JJSGE5S/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;implementing-domain-driven-design&#34;&gt;&lt;/a&gt;[3] V. Vernon, &lt;em&gt;Implementing Domain driven Design&lt;/em&gt;. Addison-Wesley Professional, 2012 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B00BCLEBN8&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B00BCLEBN8&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;java-9-modularity&#34;&gt;&lt;/a&gt;[4] S. Mak, &lt;em&gt;Java 9 Modularity&lt;/em&gt;. O’Reilly Media, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/1491954167&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/1491954167&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-architecture&#34;&gt;&lt;/a&gt;[5] R. C. Martin, &lt;em&gt;Clean Architecture&lt;/em&gt;. Pearson, 2017 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134494164&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134494164&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring&#34;&gt;&lt;/a&gt;[6] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, First. Addision-Wesley, 1999 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B004PQQRK2&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B004PQQRK2&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring-databases&#34;&gt;&lt;/a&gt;[7] A. Scott and P. J. Sadalage, &lt;em&gt;Refactoring Databases&lt;/em&gt;. Addison-Wesley Professional, 2006 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B001QAP36E&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B001QAP36E&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;refactoring-2nd&#34;&gt;&lt;/a&gt;[8] M. Fowler, &lt;em&gt;Refactoring&lt;/em&gt;, Second. Addision-Wesley, 2018 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0134757599&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0134757599&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-code&#34;&gt;&lt;/a&gt;[9] R. C. Martin, &lt;em&gt;Clean Code&lt;/em&gt;. Prentice Hall, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0132350882&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0132350882&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;clean-coder&#34;&gt;&lt;/a&gt;[10] R. C. Martin, &lt;em&gt;The Clean Coder&lt;/em&gt;. Prentice Hall, 2011 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0137081073&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0137081073&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;agile-testing&#34;&gt;&lt;/a&gt;[11] L. Crispin, &lt;em&gt;Agile testing&lt;/em&gt;. Addison-Wesley, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321534468&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321534468&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;more-agile-testing&#34;&gt;&lt;/a&gt;[12] J. G. Gregory and L. Crispin, &lt;em&gt;More Agile Testing&lt;/em&gt;. Addison-Wesley Professional [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/0321967054&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/0321967054&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;a id=&#34;bridging-communication-gap&#34;&gt;&lt;/a&gt;[13] G. Adzic, &lt;em&gt;Bridging the Communication Gap&lt;/em&gt;. Neuri Limited, 2009 [Online]. Available: &lt;a href=&#34;https://www.amazon.com/dp/B008YZ993W/&#34; class=&#34;bare&#34;&gt;https://www.amazon.com/dp/B008YZ993W/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;footnotes&#34;&gt;
-&lt;hr/&gt;
-&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
-&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. You do &lt;strong&gt;not&lt;/strong&gt; need to modify your domain model. No inheritance from a special persistence class, no annotations are required.
 &lt;/div&gt;
 &lt;/div&gt;
 

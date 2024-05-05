@@ -154,9 +154,11 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearEntities()" class="member-name-link">clearEntities</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">exportEffortsDocument</a><wbr>(@NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocument</a><wbr>(@NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Exports all efforts of the assignment in the given period of time.</div>
 </div>
@@ -362,14 +364,14 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
                    throws <span class="exceptions">org.eclipse.serializer.exceptions.IORuntimeException</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#importEfforts(java.io.Reader,java.lang.String,boolean)">ProductsPort</a></code></span></div>
 <div class="block">Imports all efforts defined in the YAML file located at the given path.
- An effort is identified by the combination of the assignment identifier and the date of the effort. The assigement identifies uniquely the collaborator working on the effort.</div>
+ An effort is identified by the combination of the assignment identifier and the date of the effort. The assignment identifies uniquely the collaborator working on the effort.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../services/ProductsPort.html#importEfforts(java.io.Reader,java.lang.String,boolean)">importEfforts</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>stream</code> - reader containing the efforts to import</dd>
 <dd><code>source</code> - source of the efforts used to audit the import operation</dd>
-<dd><code>replace</code> - if true, the existing efforts are replaced by the imported ones, otherwise the imported efforts are only imported if not preesent</dd>
+<dd><code>replace</code> - if true, the imported ones replace the existing efforts, otherwise the imported efforts are only imported if not present</dd>
 <dt>Throws:</dt>
 <dd><code>org.eclipse.serializer.exceptions.IORuntimeException</code></dd>
 </dl>
@@ -377,20 +379,23 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
-<section class="detail" id="exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate)">
+<section class="detail" id="exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">
 <h3>exportEffortsDocument</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEffortsDocument</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate)">ProductsPort</a></code></span></div>
-<div class="block">Exports all efforts of the assignment in the given period of time. The export shall be a asciidoc document.
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">ProductsPort</a></code></span></div>
+<div class="block">Exports all efforts of the assignment in the given period of time. The export shall be an asciidoc document.
  The document name should contain the contract identifier, the collaborator identifier, and the period of time.
  The prefix should be the year and month of the period end. The prefix is used to sort the documents.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../services/ProductsPort.html#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate)">exportEffortsDocument</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
+<dd><code><a href="../services/ProductsPort.html#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">exportEffortsDocument</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>assignment</code> - assignment which efforts are of interest</dd>
 <dd><code>from</code> - start of the considered time interval</dd>
