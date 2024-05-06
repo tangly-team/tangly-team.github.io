@@ -16,6 +16,70 @@
     
     
     <item>
+      <title>Docs: LED 001</title>
+      <link>https://blog.tangly.net/docs/domains/ledger/adr/led-001-ledger-tag-for-vat-costs/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tangly.net/docs/domains/ledger/adr/led-001-ledger-tag-for-vat-costs/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_led_001_use_tag_for_vat_costs_computation&#34;&gt;LED-001 Use Tag for VAT costs computation&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Date: 2017-12-01&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Implemented&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We need to record the VAT components of transactions in our ledger system.
+The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The value of the VAT is computed based on the VAT percentage.
+The percentage can change over time due to regulatory changes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;We will support tags at the transaction entry.
+The tags are a triplet &lt;strong&gt;[namespace:]name[=value]&lt;/strong&gt; format.
+We recommend the namespace &amp;#34;fin&amp;#34;, the name &amp;#34;vat&amp;#34;, and a text identifier has value.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The current values are:
+1. F1 for VAT invoiced at 8% and paid to the state at 7.1%
+1. F2 for VAT invoiced at 7.7% and paid to the state at 6.9%&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ontology based on tags are not validated through a type system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Checks have to be implemented to guaranty adequate level of tracking.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Readme</title>
       <link>https://blog.tangly.net/docs/domains/ledger/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
@@ -96,7 +160,7 @@
 For a detailed view of what has changed, refer to the &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os&#34;&gt;repository&lt;/a&gt; commits.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_0_2_7_2024_03_31&#34;&gt;0.2.7 (2024-03-31)&lt;/h3&gt;
+&lt;h3 id=&#34;_0_2_7_2024_05_31&#34;&gt;0.2.7 (2024.05.31)&lt;/h3&gt;
 &lt;div class=&#34;ulist&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -240,20 +304,6 @@ It is a good practice to generate a file per fiscal year.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Architecture Design Record (ADR)</title>
-      <link>https://blog.tangly.net/docs/domains/ledger/adr/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tangly.net/docs/domains/ledger/adr/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The list of all architectural design record defined for the business component.&lt;/p&gt;
 
       </description>
     </item>

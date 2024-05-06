@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"net.tangly.app.api","l":"AppJavalinServlet"},{"p":"net.tangly.app","l":"Application"},{"p":"net.tangly.app","l":"ApplicationView"},{"p":"net.tangly.app.api","l":"BoundedDomainRest"}];updateSearchResults();
