@@ -52,7 +52,8 @@ loadScripts(document, 'script');</script>
 <li><a href="net/tangly/erp/invoices/artifacts/package-tree.html">net.tangly.erp.invoices.artifacts</a>, </li>
 <li><a href="net/tangly/erp/invoices/domain/package-tree.html">net.tangly.erp.invoices.domain</a>, </li>
 <li><a href="net/tangly/erp/invoices/ports/package-tree.html">net.tangly.erp.invoices.ports</a>, </li>
-<li><a href="net/tangly/erp/invoices/services/package-tree.html">net.tangly.erp.invoices.services</a></li>
+<li><a href="net/tangly/erp/invoices/services/package-tree.html">net.tangly.erp.invoices.services</a>, </li>
+<li><a href="net/tangly/erp/invoices/ui/package-tree.html">net.tangly.erp.invoices.ui</a></li>
 </ul>
 <section class="hierarchy">
 <h2 title="Class Hierarchy">Class Hierarchy</h2>
@@ -62,6 +63,17 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.core.domain.BoundedDomain&lt;R,<wbr>B,<wbr>P&gt;
 <ul>
 <li class="circle">net.tangly.erp.invoices.services.<a href="net/tangly/erp/invoices/services/InvoicesBoundedDomain.html" class="type-name-link" title="class in net.tangly.erp.invoices.services">InvoicesBoundedDomain</a></li>
+</ul>
+</li>
+<li class="circle">net.tangly.ui.app.domain.BoundedDomainUi&lt;T&gt;
+<ul>
+<li class="circle">net.tangly.erp.invoices.ui.<a href="net/tangly/erp/invoices/ui/InvoicesBoundedDomainUi.html" class="type-name-link" title="class in net.tangly.erp.invoices.ui">InvoicesBoundedDomainUi</a></li>
+</ul>
+</li>
+<li class="circle">net.tangly.erp.invoices.ui.<a href="net/tangly/erp/invoices/ui/CmdCreateInvoiceDocument.html" class="type-name-link" title="class in net.tangly.erp.invoices.ui">CmdCreateInvoiceDocument</a> (implements net.tangly.ui.app.domain.Cmd)</li>
+<li class="circle">net.tangly.ui.app.domain.CmdFilesUpload&lt;R,<wbr>B,<wbr>P&gt; (implements net.tangly.ui.app.domain.Cmd)
+<ul>
+<li class="circle">net.tangly.erp.invoices.ui.<a href="net/tangly/erp/invoices/ui/CmdFilesUploadInvoices.html" class="type-name-link" title="class in net.tangly.erp.invoices.ui">CmdFilesUploadInvoices</a></li>
 </ul>
 </li>
 <li class="circle">net.tangly.erp.invoices.domain.<a href="net/tangly/erp/invoices/domain/Invoice.html" class="type-name-link" title="class in net.tangly.erp.invoices.domain">Invoice</a> (implements net.tangly.core.HasDate, net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasText)</li>

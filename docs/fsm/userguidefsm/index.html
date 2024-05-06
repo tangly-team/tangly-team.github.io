@@ -47,7 +47,7 @@ Usage of events, transitions, guards and actions. Transition actions, state entr
 Builder pattern for easy creation of a complete state machine declaration using a fluent approach,">
   <meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00">
   <meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1575"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="User Guide Finite State Machine">
+  <meta itemprop="wordCount" content="1566"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="User Guide Finite State Machine">
 <meta name="twitter:description" content="Features The FSM library aims to provide the following features:
 Easy to use flat state machine for simple use cases. This type of FSM is taught in bachelor engineering courses.
 Hierarchical state machine structure to ease complex state configuration. The hierarchical type of FSM is part of the UML notation.
@@ -140,7 +140,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.827c272393a4058dcaa0f63d39fb0ed8.json"
+    data-offline-search-index-json-src="/offline-search-index.0bb703e86965cfa8329b90281c9c2e73.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -164,7 +164,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.827c272393a4058dcaa0f63d39fb0ed8.json"
+    data-offline-search-index-json-src="/offline-search-index.0bb703e86965cfa8329b90281c9c2e73.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -799,7 +799,7 @@ Transition actions, state entry actions, and state exit actions are supported.</
 <p>State machine event listeners,</p>
 </li>
 <li>
-<p>Diagrams generators for dot and plantUml applications; diagrams are living documentation.</p>
+<p>Diagrams generators for <a href="https://graphviz.org/">Graphviz</a>, <a href="https://plantuml.com/">plantUML</a> and <a href="https://mermaid.js.org">Mermaid</a> diagrams are living documentation.</p>
 </li>
 </ul>
 </div>
@@ -926,7 +926,7 @@ Therefore, no entry or exit actions are executed</p>
 </div>
 </li>
 <li>
-<p><strong>Guards</strong> are implemented as an extension of a standard Java <strong>BiPrediction</strong> functional interface.
+<p><strong>Guards</strong> are implemented as an extension of a standard Java <strong>BiPredicate</strong> functional interface.
 The parameters are the event triggering the guard and the context.</p>
 <div class="ulist">
 <ul>
@@ -977,8 +977,10 @@ They diminish runtime errors.</p>
 <div class="paragraph">
 <p>Below the UML diagram of the public interface of the finite state machine component.</p>
 </div>
-<div class="paragraph">
-<p>![Finite State Machine UML](./pics/fsm-uml.svg &#34;Finite State Machine UML Diagram&#34;)</p>
+<div class="imageblock kroki">
+<div class="content">
+<img src="https://kroki.io/plantuml/svg/eNqdVG1vgjAQ_s6vuPiJGfwDGyGbhm0mLluCf6CW03WBYtrDaJb997UVBEHNGJ969zz30nuuPGpiiso88zyeMa0h3qGkMAbcE8rU2LLMwziK4NsD88VAhy36dw_OWghN4fvqCzlFsGWK5UiotIV_PE9IY6wZR0iIEYazAJLzvEkUwNVSCWyQ5mlda1eIFFiaxpLU4YmTKKQ_FbNC6jJHZZNXrZsEzMHdwL2g_8QtFZNauLiaCWgPQeteJksEZpSm5QCm4kNhKngFNvk3JVOpxQeUXxScZTd6GJTs1QhWqIPfaVxbs0OdS1OPZX-hPgtpiE50x4bxZAKj8eg4H7gHXa5cnO7gzbUMiU6Gbu9Owxm8QOedG2mSolT8tL19fOkErPHTpI3PnWvgur5IL1bihnhZG8OrNvH4Ulpz6I3OtXyLcdy63nN7Y_xTyMGvzmm6Fgo7i1bPzPY-K5UyLlem-zztLwElKr_dRO1shp1Vnna0wrzY4fAE1dZV1P4E3eb9AuxsjsE=" alt="fsm-userGuideFsm-Interface"/>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1075,14 +1077,14 @@ The enumeration of <em>Events</em> defines the events recognized and processed t
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight" style="color: #24292f;background-color: #f6f8fa"><code data-lang="java"><span style="color: #cf222e">enum</span> <span style="color: #953800">States</span> <span style="color: #0550ae">{</span>
-    <span style="color: #953800">Root</span><span style="color: #0550ae">,</span> <span style="color: #953800">Off</span><span style="color: #0550ae">,</span> <span style="color: #953800">Maintenance</span><span style="color: #0550ae">,</span> <span style="color: #953800">On</span><span style="color: #0550ae">,</span> <span style="color: #953800">FM</span><span style="color: #0550ae">,</span> <span style="color: #953800">DAB</span><span style="color: #0550ae">,</span> <span style="color: #953800">Play</span><span style="color: #0550ae">,</span> <span style="color: #953800">AutoTune</span><span style="color: #0550ae">,</span>                                        <i class="conum" data-value="1"></i><b>(1)</b>
+    <span style="color: #953800">Root</span><span style="color: #0550ae">,</span> <span style="color: #953800">Off</span><span style="color: #0550ae">,</span> <span style="color: #953800">Maintenance</span><span style="color: #0550ae">,</span> <span style="color: #953800">On</span><span style="color: #0550ae">,</span> <span style="color: #953800">FM</span><span style="color: #0550ae">,</span> <span style="color: #953800">DAB</span><span style="color: #0550ae">,</span> <span style="color: #953800">Play</span><span style="color: #0550ae">,</span> <span style="color: #953800">AutoTune</span><span style="color: #0550ae">,</span>                                      <i class="conum" data-value="1"></i><b>(1)</b>
 <span style="color: #0550ae">}</span>
 
 <span style="color: #cf222e">enum</span> <span style="color: #953800">Events</span> <span style="color: #0550ae">{</span>
-    <span style="color: #953800">TogglePower</span><span style="color: #0550ae">,</span> <span style="color: #953800">ToggleMode</span><span style="color: #0550ae">,</span> <span style="color: #953800">StationLost</span><span style="color: #0550ae">,</span> <span style="color: #953800">StationFound</span><span style="color: #0550ae">,</span> <span style="color: #953800">StoreStation</span>                            <i class="conum" data-value="2"></i><b>(2)</b>
+    <span style="color: #953800">TogglePower</span><span style="color: #0550ae">,</span> <span style="color: #953800">ToggleMode</span><span style="color: #0550ae">,</span> <span style="color: #953800">StationLost</span><span style="color: #0550ae">,</span> <span style="color: #953800">StationFound</span><span style="color: #0550ae">,</span> <span style="color: #953800">StoreStation</span>                          <i class="conum" data-value="2"></i><b>(2)</b>
 <span style="color: #0550ae">}</span>
 
-<span style="color: #953800">DefinitionBuilder</span><span style="color: #0550ae">&lt;</span><span style="color: #953800">Owner</span><span style="color: #0550ae">,</span> <span style="color: #953800">States</span><span style="color: #0550ae">,</span> <span style="color: #953800">Events</span><span style="color: #0550ae">&gt;</span> <span style="color: #24292f;background-color: #f6f8fa">builder</span> <span style="color: #0550ae">=</span> <span style="color: #cf222e">new</span> <span style="color: #953800">DefinitionBuilder</span><span style="color: #0550ae">&lt;&gt;(</span><span style="color: #953800">States</span><span style="color: #0550ae">.</span><span style="color: #116329">Root</span><span style="color: #0550ae">);</span>        <i class="conum" data-value="3"></i><b>(3)</b>
+<span style="color: #953800">DefinitionBuilder</span><span style="color: #0550ae">&lt;</span><span style="color: #953800">Owner</span><span style="color: #0550ae">,</span> <span style="color: #953800">States</span><span style="color: #0550ae">,</span> <span style="color: #953800">Events</span><span style="color: #0550ae">&gt;</span> <span style="color: #24292f;background-color: #f6f8fa">builder</span> <span style="color: #0550ae">=</span> <span style="color: #cf222e">new</span> <span style="color: #953800">DefinitionBuilder</span><span style="color: #0550ae">&lt;&gt;(</span><span style="color: #953800">States</span><span style="color: #0550ae">.</span><span style="color: #116329">Root</span><span style="color: #0550ae">);</span>      <i class="conum" data-value="3"></i><b>(3)</b>
 
 <span style="color: #24292f;background-color: #f6f8fa">builder</span><span style="color: #0550ae">.</span><span style="color: #116329">addToRoot</span><span style="color: #0550ae">(</span><span style="color: #953800">States</span><span style="color: #0550ae">.</span><span style="color: #116329">Off</span><span style="color: #0550ae">).</span><span style="color: #116329">isInitial</span><span style="color: #0550ae">().</span><span style="color: #116329">onEntry</span><span style="color: #0550ae">(</span><span style="color: #0550ae">Fsm:</span><span style="color: #0550ae">:</span><span style="color: #24292f;background-color: #f6f8fa">logOffEntry</span><span style="color: #0550ae">).</span><span style="color: #116329">onExit</span><span style="color: #0550ae">(</span><span style="color: #0550ae">Fsm:</span><span style="color: #0550ae">:</span><span style="color: #24292f;background-color: #f6f8fa">logOffExit</span><span style="color: #0550ae">);</span>
 <span style="color: #24292f;background-color: #f6f8fa">builder</span><span style="color: #0550ae">.</span><span style="color: #116329">addToRoot</span><span style="color: #0550ae">(</span><span style="color: #953800">States</span><span style="color: #0550ae">.</span><span style="color: #116329">Maintenance</span><span style="color: #0550ae">).</span><span style="color: #116329">onEntry</span><span style="color: #0550ae">(</span><span style="color: #0550ae">Fsm:</span><span style="color: #0550ae">:</span><span style="color: #24292f;background-color: #f6f8fa">logMaintenanceEntry</span><span style="color: #0550ae">).</span><span style="color: #116329">onExit</span><span style="color: #0550ae">(</span><span style="color: #0550ae">Fsm:</span><span style="color: #0550ae">:</span><span style="color: #24292f;background-color: #f6f8fa">logMaintenanceExit</span><span style="color: #0550ae">);</span>
@@ -1105,7 +1107,7 @@ The enumeration of <em>Events</em> defines the events recognized and processed t
 <span style="color: #24292f;background-color: #f6f8fa">builder</span><span style="color: #0550ae">.</span><span style="color: #116329">in</span><span style="color: #0550ae">(</span><span style="color: #953800">States</span><span style="color: #0550ae">.</span><span style="color: #116329">Play</span><span style="color: #0550ae">).</span><span style="color: #116329">on</span><span style="color: #0550ae">(</span><span style="color: #953800">Events</span><span style="color: #0550ae">.</span><span style="color: #116329">StationLost</span><span style="color: #0550ae">).</span><span style="color: #116329">to</span><span style="color: #0550ae">(</span><span style="color: #953800">States</span><span style="color: #0550ae">.</span><span style="color: #116329">AutoTune</span><span style="color: #0550ae">).</span><span style="color: #116329">execute</span><span style="color: #0550ae">(</span><span style="color: #0550ae">Fsm:</span><span style="color: #0550ae">:</span><span style="color: #24292f;background-color: #f6f8fa">logTransitionFromPlayToAutoTune</span><span style="color: #0550ae">);</span>
 <span style="color: #24292f;background-color: #f6f8fa">builder</span><span style="color: #0550ae">.</span><span style="color: #116329">in</span><span style="color: #0550ae">(</span><span style="color: #953800">States</span><span style="color: #0550ae">.</span><span style="color: #116329">AutoTune</span><span style="color: #0550ae">).</span><span style="color: #116329">on</span><span style="color: #0550ae">(</span><span style="color: #953800">Events</span><span style="color: #0550ae">.</span><span style="color: #116329">StationFound</span><span style="color: #0550ae">).</span><span style="color: #116329">to</span><span style="color: #0550ae">(</span><span style="color: #953800">States</span><span style="color: #0550ae">.</span><span style="color: #116329">Play</span><span style="color: #0550ae">).</span><span style="color: #116329">execute</span><span style="color: #0550ae">(</span><span style="color: #0550ae">Fsm:</span><span style="color: #0550ae">:</span><span style="color: #24292f;background-color: #f6f8fa">logTransitionFromAutoTuneToPlay</span><span style="color: #0550ae">);</span>
 
-<span style="color: #24292f;background-color: #f6f8fa">builder</span><span style="color: #0550ae">.</span><span style="color: #116329">machine</span><span style="color: #0550ae">(</span><span style="color: #0a3069">&#34;name of the machine&#34;</span><span style="color: #0550ae">,</span> <span style="color: #24292f;background-color: #f6f8fa">owner</span><span style="color: #0550ae">);</span>                                                  <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+<span style="color: #24292f;background-color: #f6f8fa">builder</span><span style="color: #0550ae">.</span><span style="color: #116329">machine</span><span style="color: #0550ae">(</span><span style="color: #0a3069">&#34;name of the machine&#34;</span><span style="color: #0550ae">,</span> <span style="color: #24292f;background-color: #f6f8fa">owner</span><span style="color: #0550ae">);</span>                                                <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">

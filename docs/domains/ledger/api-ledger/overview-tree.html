@@ -51,7 +51,8 @@ loadScripts(document, 'script');</script>
 <ul class="horizontal contents-list">
 <li><a href="net/tangly/erp/ledger/domain/package-tree.html">net.tangly.erp.ledger.domain</a>, </li>
 <li><a href="net/tangly/erp/ledger/ports/package-tree.html">net.tangly.erp.ledger.ports</a>, </li>
-<li><a href="net/tangly/erp/ledger/services/package-tree.html">net.tangly.erp.ledger.services</a></li>
+<li><a href="net/tangly/erp/ledger/services/package-tree.html">net.tangly.erp.ledger.services</a>, </li>
+<li><a href="net/tangly/erp/ledger/ui/package-tree.html">net.tangly.erp.ledger.ui</a></li>
 </ul>
 <section class="hierarchy">
 <h2 title="Class Hierarchy">Class Hierarchy</h2>
@@ -65,7 +66,31 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.erp.ledger.services.<a href="net/tangly/erp/ledger/services/LedgerBoundedDomain.html" class="type-name-link" title="class in net.tangly.erp.ledger.services">LedgerBoundedDomain</a></li>
 </ul>
 </li>
+<li class="circle">net.tangly.ui.app.domain.BoundedDomainUi&lt;T&gt;
+<ul>
+<li class="circle">net.tangly.erp.ledger.ui.<a href="net/tangly/erp/ledger/ui/LedgerBoundedDomainUi.html" class="type-name-link" title="class in net.tangly.erp.ledger.ui">LedgerBoundedDomainUi</a></li>
+</ul>
+</li>
 <li class="circle">net.tangly.erp.ledger.ports.<a href="net/tangly/erp/ledger/ports/ClosingReportAsciiDoc.html" class="type-name-link" title="class in net.tangly.erp.ledger.ports">ClosingReportAsciiDoc</a></li>
+<li class="circle">net.tangly.erp.ledger.ui.<a href="net/tangly/erp/ledger/ui/CmdCreateLedgerDocument.html" class="type-name-link" title="class in net.tangly.erp.ledger.ui">CmdCreateLedgerDocument</a> (implements net.tangly.ui.app.domain.Cmd)</li>
+<li class="circle">net.tangly.ui.app.domain.CmdFilesUpload&lt;R,<wbr>B,<wbr>P&gt; (implements net.tangly.ui.app.domain.Cmd)
+<ul>
+<li class="circle">net.tangly.erp.ledger.ui.<a href="net/tangly/erp/ledger/ui/CmdFilesUploadLedger.html" class="type-name-link" title="class in net.tangly.erp.ledger.ui">CmdFilesUploadLedger</a></li>
+</ul>
+</li>
+<li class="circle">com.vaadin.flow.component.Component (implements com.vaadin.flow.component.AttachNotifier, com.vaadin.flow.component.DetachNotifier, com.vaadin.flow.component.HasElement)
+<ul>
+<li class="circle">com.vaadin.flow.component.orderedlayout.VerticalLayout (implements com.vaadin.flow.component.ClickNotifier&lt;T&gt;, com.vaadin.flow.component.orderedlayout.FlexComponent, com.vaadin.flow.component.orderedlayout.ThemableLayout)
+<ul>
+<li class="circle">net.tangly.ui.app.domain.AnalyticsView
+<ul>
+<li class="circle">net.tangly.erp.ledger.ui.<a href="net/tangly/erp/ledger/ui/AnalyticsLedgerView.html" class="type-name-link" title="class in net.tangly.erp.ledger.ui">AnalyticsLedgerView</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="circle">net.tangly.erp.ledger.domain.<a href="net/tangly/erp/ledger/domain/Ledger.html" class="type-name-link" title="class in net.tangly.erp.ledger.domain">Ledger</a></li>
 <li class="circle">net.tangly.erp.ledger.ports.<a href="net/tangly/erp/ledger/ports/LedgerAdapter.html" class="type-name-link" title="class in net.tangly.erp.ledger.ports">LedgerAdapter</a> (implements net.tangly.erp.ledger.services.<a href="net/tangly/erp/ledger/services/LedgerPort.html" title="interface in net.tangly.erp.ledger.services">LedgerPort</a>)</li>
 <li class="circle">net.tangly.erp.ledger.services.<a href="net/tangly/erp/ledger/services/LedgerBusinessLogic.html" class="type-name-link" title="class in net.tangly.erp.ledger.services">LedgerBusinessLogic</a></li>
