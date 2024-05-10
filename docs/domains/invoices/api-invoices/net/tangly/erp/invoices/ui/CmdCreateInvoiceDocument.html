@@ -95,6 +95,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CmdCreateInvoiceDocument</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements net.tangly.ui.app.domain.Cmd</span></div>
+<div class="block">Command to create a document for an invoice. The command opens a dialog to select the options for the document creation.
+ If an invoice is selected, the dialog displays the generation options and removes the time range selection fields.
+ Otherwise, the dialog allows the selection of a time interval to select the documents to be generated and removes the file name field.</div>
 </div>
 </section>
 <section class="summary">
@@ -107,9 +110,11 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.invoices.domain.Invoice,net.tangly.erp.invoices.services.InvoicesBoundedDomain)" class="member-name-link">CmdCreateInvoiceDocument</a><wbr>(@NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.invoices.domain.Invoice,net.tangly.erp.invoices.services.InvoicesBoundedDomain)" class="member-name-link">CmdCreateInvoiceDocument</a><wbr>(<a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
  @NotNull <a href="../services/InvoicesBoundedDomain.html" title="class in net.tangly.erp.invoices.services">InvoicesBoundedDomain</a>&nbsp;domain)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Create a command to create a document for a specific invoice.</div>
+</div>
 </div>
 </section>
 </li>
@@ -141,7 +146,7 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.ui.app.domain.Cmd">Methods inherited from interface&nbsp;net.tangly.ui.app.domain.Cmd</h3>
-<code>isAllowed, roles</code></div>
+<code>isEnabled</code></div>
 </section>
 </li>
 </ul>
@@ -157,10 +162,15 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 <section class="detail" id="&lt;init&gt;(net.tangly.erp.invoices.domain.Invoice,net.tangly.erp.invoices.services.InvoicesBoundedDomain)">
 <h3>CmdCreateInvoiceDocument</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CmdCreateInvoiceDocument</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CmdCreateInvoiceDocument</span><wbr><span class="parameters">(<a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
  @NotNull
  @NotNull <a href="../services/InvoicesBoundedDomain.html" title="class in net.tangly.erp.invoices.services">InvoicesBoundedDomain</a>&nbsp;domain)</span></div>
+<div class="block">Create a command to create a document for a specific invoice.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>invoice</code> - invoice for which the document is created</dd>
+<dd><code>domain</code> - bounded domain of the invoices</dd>
+</dl>
 </div>
 </section>
 </li>

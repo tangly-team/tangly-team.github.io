@@ -1,294 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tangly Components – ERP-UI - UI for ERP Bounded Domains</title>
+    <title>ERP-UI - UI for ERP Bounded Domains on tangly Components</title>
     <link>https://blog.tangly.net/docs/domains/ui/</link>
     <description>Recent content in ERP-UI - UI for ERP Bounded Domains on tangly Components</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="https://blog.tangly.net/docs/domains/ui/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <atom:link href="https://blog.tangly.net/docs/domains/ui/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docs: Readme</title>
+      <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/ui/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/domains/ui/readme/</guid>
-      <description>
-        
-        
-        &lt;div id=&#34;preamble&#34;&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/license-Apache%202-blue.svg&#34; alt=&#34;Apache License 2.0&#34;/&gt;&lt;/span&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/maven-central/v/net.tangly.erp/ui&#34; alt=&#34;Maven Central&#34;/&gt;&lt;/span&gt;
-&lt;a href=&#34;https://javadoc.io/doc/net.tangly.erp/ui&#34;&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://javadoc.io/badge2/net.tangly.erp/ui/javadoc.svg&#34; alt=&#34;javadoc&#34;/&gt;&lt;/span&gt;&lt;/a&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://github.com/tangly-team/tangly-os/actions/workflows/workflows.yml/badge.svg&#34; alt=&#34;build&#34;/&gt;&lt;/span&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/issues-raw/tangly-team/tangly-os&#34; alt=&#34;issues&#34;/&gt;&lt;/span&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/discussions/tangly-team/tangly-os&#34; alt=&#34;discussions&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_purpose&#34;&gt;Purpose&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;strong&gt;tangly erp ui&lt;/strong&gt; bounded domain component provides regular business model abstractions for business applications written in Java.
-The component is using records and requires &lt;strong&gt;Java 17 or higher&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Try it out&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_download_and_documentation&#34;&gt;Download and Documentation&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Include the library in your Maven configuration as:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;net.tangly.erp&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;ui&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.2.7&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Include the library in your Gradle configuration as:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt;    &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;implementation&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;net.tangly.erp:ui:0.2.7&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The documentation can be found under &lt;a href=&#34;https://blog.tangly.net/docs/domains/ui/&#34;&gt;Business documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;For any further questions, you can use the forum &lt;a href=&#34;https://github.com/orgs/tangly-team/discussions&#34;&gt;tangly-Discussions&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_run_as_an_application&#34;&gt;Run as an Application&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_run_locally_with_gradle&#34;&gt;Run Locally with Gradle&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The gradle script compiles, packages, and runs the application with an embedded web server. &lt;em&gt;Run from the project root&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;    gradle run&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_run_locally_as_compiled_application&#34;&gt;Run locally as compiled application&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can build and run the generated Java Vaadin application locally. &lt;em&gt;Run from the project root&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew build installDist &lt;span style=&#34;color: #116329&#34;&gt;-Pvaadin&lt;/span&gt;.-Pvaadin.forceProductionBuild&lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;true   &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-  &lt;/span&gt;net.tangly.erp.ui/build/install/net.tangly.erp.ui/bin/net.tangly.erp.ui   &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_run_locally_as_fatjar_application&#34;&gt;Run locally as fatjar application&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can build and run the generated Java Vaadin application as fat jar locally. &lt;em&gt;Run from the project root&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew build installShadowDist &lt;span style=&#34;color: #116329&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode                 &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-  net.tangly.erp.ui/build/install/net.tangly.erp.ui-shadow/bin/net.tangly.erp.ui &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-  java &lt;span style=&#34;color: #0550ae&#34;&gt;$JVM_OPTS&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;-jar&lt;/span&gt; net.tangly.erp.ui/build/install/net.tangly.erp.ui-shadow/lib/net.tangly.erp.ui-all.jar &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&amp;lt;1&amp;gt; The production mode parameter is mandatory.
-Otherwise, the distribution frontend is not built, and the application cannot run without JavaScript build tools.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&amp;lt;2&amp;gt; Head to http://localhost:8080/erp/.
-The default port is 8080, and the application starts with in-memory storage.
-The environment variables are set in the run script.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&amp;lt;3&amp;gt; Start the application with java command.
-You are responsible to provide the JVM options as define below.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The JVM options to run the application are&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;JVM_OPTS&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;--enable-preview --add-exports=java.base/jdk.internal.misc=ALL_UNNAMED &lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color: #0a3069&#34;&gt;
-          --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED -XX:+ShowCodeDetailsInExceptionMessages -Xmx256m&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_run_in_a_docker_image&#34;&gt;Run in a Docker Image&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The prerequisite is that the application was built locally for production mode as described above.
-The first step is to build the Docker image with the provided configuration.
-&lt;em&gt;Run from the project root&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  ./gradlew net.tangly.erp.ui:installDist &lt;span style=&#34;color: #116329&#34;&gt;-Pvaadin&lt;/span&gt;.productionMode   &lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-  docker login &lt;span style=&#34;color: #116329&#34;&gt;-u&lt;/span&gt; tanglyllc &lt;span style=&#34;color: #116329&#34;&gt;-p&lt;/span&gt; &amp;lt;password&amp;gt;                           &lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-  docker build &lt;span style=&#34;color: #116329&#34;&gt;-t&lt;/span&gt; tanglyllc/tangly-erp:latest net.tangly.erp.ui/    &lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-  docker push tanglyllc/tangly-erp:latest                           &lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;colist arabic&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;1&#34;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Build the Java application and create a binary distribution of the application.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;2&#34;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Login into DockerHub with username and password.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;3&#34;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Generate a Docker image containing the binary application generated in the previous step.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;i class=&#34;conum&#34; data-value=&#34;4&#34;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Push the Docker image to the repository.
-Customers can retrieve the published Docker image and execute it in a container.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We currently push to &lt;a href=&#34;https://hub.docker.com/&#34;&gt;Docker Hub&lt;/a&gt; repository.
-The image is accessible unde &lt;a href=&#34;https://hub.docker.com/r/tanglyllc/tangly-erp&#34;&gt;tangly-erp Docker Image&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;To run the built image use the following commands.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;shell&#34;&gt;  docker run &lt;span style=&#34;color: #116329&#34;&gt;--rm&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;-ti&lt;/span&gt; &lt;span style=&#34;color: #116329&#34;&gt;-p&lt;/span&gt; 8080:8080 &lt;span style=&#34;color: #116329&#34;&gt;-e&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;PORT&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt;8080 &lt;span style=&#34;color: #116329&#34;&gt;-e&lt;/span&gt; &lt;span style=&#34;color: #0550ae&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color: #0550ae&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #953800&#34;&gt;true&lt;/span&gt;  &lt;span style=&#34;color: #116329&#34;&gt;-v&lt;/span&gt; /var/tangly-erp:/var/tangly-erp tanglyllc/tangly-erp:latest&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The user under which the erp application shall not have root privileges.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The port of the application is configured through the port environment variable.
-This approach is mandatory if the image is deployed in &lt;a href=&#34;https://www.heroku.com/&#34;&gt;Heroku&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_run_in_the_cloud&#34;&gt;Run in the Cloud&lt;/h3&gt;
-&lt;div class=&#34;admonitionblock caution&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-caution&#34; title=&#34;Caution&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The deployment on the Heroku cloud was removed due to changes in the usage conditions of the platform.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Therefore, we do not deploy anymore our applications on Heroku.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description>Purpose The tangly erp ui bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Try it out.&#xA;Download and Documentation Include the library in your Maven configuration as:&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ui&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; Include the library in your Gradle configuration as:&#xA;implementation &amp;#34;net.tangly.erp:ui:0.2.7&amp;#34; The documentation can be found under Business documentation.&#xA;For any further questions, you can use the forum tangly-Discussions.</description>
     </item>
-    
     <item>
-      <title>Docs: Release Notes</title>
+      <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/domains/ui/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/domains/ui/releasesnotes/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_ui_library_change_logs&#34;&gt;UI Library Change Logs&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This document provides a high-level view of the changes introduced in the ERP UI library by release.
-For a detailed view of what has changed, refer to the &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os&#34;&gt;repository&lt;/a&gt; commits.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_0_2_7_2024_05_31&#34;&gt;0.2.7 (2024.05.31)&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_0_2_6_2021_08_31&#34;&gt;0.2.6 (2021-08-31)&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Initial version of the library packed as a DDD bounded domain&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Requires Java 16 or higher due to extensive usage of &lt;em&gt;records&lt;/em&gt; and &lt;em&gt;sealed&lt;/em&gt; classes&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description>UI Library Change Logs This document provides a high-level view of the changes introduced in the ERP UI library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions&#xA;0.2.6 (2021-08-31) Initial version of the library packed as a DDD bounded domain&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes</description>
     </item>
-    
     <item>
-      <title>Docs: Bounded Domain UI Model</title>
+      <title>Bounded Domain UI Model</title>
       <link>https://blog.tangly.net/docs/domains/ui/models/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/domains/ui/models/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_bounded_domain_ui_model&#34;&gt;Bounded Domain UI Model&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description> Bounded Domain UI Model </description>
     </item>
-    
   </channel>
 </rss>

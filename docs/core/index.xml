@@ -1,252 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tangly Components – Core - Core model abstractions</title>
+    <title>Core - Core model abstractions on tangly Components</title>
     <link>https://blog.tangly.net/docs/core/</link>
     <description>Recent content in Core - Core model abstractions on tangly Components</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="https://blog.tangly.net/docs/core/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <atom:link href="https://blog.tangly.net/docs/core/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docs: Readme</title>
+      <title>Readme</title>
       <link>https://blog.tangly.net/docs/core/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/core/readme/</guid>
-      <description>
-        
-        
-        &lt;div id=&#34;preamble&#34;&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/license-Apache%202-blue.svg&#34; alt=&#34;Apache License 2.0&#34;/&gt;&lt;/span&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/maven-central/v/net.tangly/core&#34; alt=&#34;Maven Central&#34;/&gt;&lt;/span&gt;
-&lt;a href=&#34;https://javadoc.io/doc/net.tangly/core&#34;&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://javadoc.io/badge2/net.tangly/core/javadoc.svg&#34; alt=&#34;javadoc&#34;/&gt;&lt;/span&gt;&lt;/a&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://github.com/tangly-team/tangly-os/actions/workflows/workflows.yml/badge.svg&#34; alt=&#34;build&#34;/&gt;&lt;/span&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/issues-raw/tangly-team/tangly-os&#34; alt=&#34;issues&#34;/&gt;&lt;/span&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/discussions/tangly-team/tangly-os&#34; alt=&#34;discussions&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_purpose&#34;&gt;Purpose&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;strong&gt;tangly core&lt;/strong&gt; component provides a key abstraction for domain-driven development approach and entities with tags and comments.
-It requires &lt;strong&gt;Java 17 or higher&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_download_and_documentation&#34;&gt;Download and Documentation&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The library can be included in Maven as&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;xml&#34;&gt; &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
- &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;net.tangly&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
- &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;core&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
- &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.2.7&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
- &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The library can be included in Gradle as&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;implementation&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;net.tangly:core:0.2.7&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The documentation can be found under &lt;a href=&#34;https://blog.tangly.net/docs/core/&#34;&gt;Core&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description>Purpose The tangly core component provides a key abstraction for domain-driven development approach and entities with tags and comments. It requires Java 17 or higher.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly:core:0.2.7&amp;#34; The documentation can be found under Core.</description>
     </item>
-    
     <item>
-      <title>Docs: Release Notes</title>
+      <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/core/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/core/releasesnotes/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_core_library_change_logs&#34;&gt;Core Library Change Logs&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This document provides a high-level view of the changes introduced in the Core library by release.
-For a detailed view of what has changed, refer to the &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os&#34;&gt;repository&lt;/a&gt; commits.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_0_2_7_2024_05_31&#34;&gt;0.2.7 (2024.05.31)&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_0_2_6_2021_08_31&#34;&gt;0.2.6 (2021-08-31)&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Initial release of the library&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description>Core Library Change Logs This document provides a high-level view of the changes introduced in the Core library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Initial release of the library</description>
     </item>
-    
     <item>
-      <title>Docs: Core Models</title>
+      <title>Core Models</title>
       <link>https://blog.tangly.net/docs/core/models/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/core/models/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_core_models&#34;&gt;Core Models&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_codes_model&#34;&gt;Codes Model&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The abstraction of a reference table or reference codes.
-A code table is an extensible set of values.
-You can add values when needed and extend the model with temporal activation if desired.
-For example, currencies are typical code values with a temporal duration; well-known retired currencies are the European Currency Unit &lt;em&gt;ECU&lt;/em&gt; or the German deutsche mark &lt;em&gt;DM&lt;/em&gt;.
-New values can be added without recompiling the application.
-A code can have an optional validity period or simply a flag stating it is active or not.
-To guaranty consistency with exported datasets, a code format shall never be deleted, only be disabled.
-Code instances are immutable objects.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;admonitionblock note&#34;&gt;
-&lt;table&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td class=&#34;icon&#34;&gt;
-&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&#34;content&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;You can smooth your transition from enumeration types to reference codes.
-Extend your enumeration types with the &lt;em&gt;Code&lt;/em&gt; interface.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Now you can transform your code to support generic reference codes and make your application more dynamic to domain model changes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock kroki&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;https://kroki.io/plantuml/svg/eNp9kEEKwjAQRfc5xSx10RuUUiguBMGFvUCaTGUgTUozirZ6d5O0glQxq-S9z4ef0rMc-NIZIcgyDq1UCJXTCJOAcAIE0pttepx4IHsGFfRCGucMSgvkd1Y2BmPyKYQy0vtUU997hLwGvDFaPbNi6a5iKq8LCPFxXBoP5DmxEPQrJhXTFasfhuy3O_ZMzkoTfUtWR7eZ9_wJfGxcTdl3PUyBvO_5I8uSEKIM28IfvgCM2WbX&#34; alt=&#34;bus-codes-uml&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_core_model&#34;&gt;Core Model&lt;/h3&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_entity&#34;&gt;Entity&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;An entity and all subclasses have a set of attributes present in any CSV file.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;dlist&#34;&gt;
-&lt;dl&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;oid&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Object identifier of the entity instance as the string representation of a 64 bits long.
-The value is mandatory.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;id&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Identifier of the entity instance as a string.
-The value is optional.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;name&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Human-readable name of the entity instance as a string.
-The value is optional.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;text&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Human-readable description of the entity instance as a long string.
-The value is optional.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;fromDate&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;Start date when the entity instance is active.
-The value is optional.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class=&#34;hdlist1&#34;&gt;toDate&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;End date when the entity instance is active.
-Upon the end date, the entity should be read-only and no more edited in the system.
-The value is optional.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;
-&lt;div class=&#34;imageblock kroki&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;https://kroki.io/plantuml/svg/eNp1U9FuwiAUfecr7qPO-QOmMS6uyUyWLXH-AAPsSAoYuEts3P59twoOqe1Lyz3nXA6H21VA7vHbtIxpi8rvuVDwwsNGwokBPR_otW1Ay8k0X1tuFFV-C9m7TrrWEcudZSXpjbTEorJoeQjwzFFtuW0UVBVMto_Oiy8tp7BcwqnU_nNPV_2ON_3quth1BzUQUj1kmrUzRlksNlg7edOYGm1VowP6bmgltggFUlvU2MUUZikvVEeMCc7g1Qne9ieBvXem_7gDoYsAdY_JVj_zeezPLndUVM7JFrUs3QwYGK6PqKxUsj9NPELGTyhLSY5g10zu4Yx_UpJcIFzivYU35nBOsrBzpxEx2VD7QLx-EhaAZHCEkK59ASI6TXf9JKVX9C5HMB-yMSwfpvRd2InM2nDdjm-1IrP0L_4By44uFQ==&#34; alt=&#34;bus-core-uml&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;See our blogs for a discussion concerning the cornerstone abstractions of the business core model:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../../blog/2020/entities-identifiers-external-identifiers-and-names&#34;&gt;Entities, internal Identifiers, external Identifiers, and Names&lt;/a&gt;,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../../blog/2020/the-power-of-tags-and-comments&#34;&gt;The Power of Tags and Comments&lt;/a&gt;,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;../../../blog/2020/reference-codes&#34;&gt;Reference Codes&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_customer_relationship_model_crm&#34;&gt;Customer Relationship Model CRM&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock kroki&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;https://kroki.io/plantuml/svg/eNqVVdtO4zAQfe9X-BHKwgegqAIK0lZiYVX2HU3tIbVw7Mhxd6mg_77TxEl9SWE3D210ZuacGXtmctU4sG5TqcmkBv4KJbKnNVgUrCiWyB3oUuFsxt4njB6pHdoX4Mi-Q7MQHt0_T85KXTIpTk5TTEOFHt1NcppHGfIoQxFmoBkL-AVlw97HLHNTVajdEevjH43WS-3aX69efFxcDA5p4J120m2DDM_6uhy-uaDaM3ZvOKhbcMherKn2L0fMzgTGPJVOsocXo2h7CCP4cAShrTXCqnEWuGNcQdN406KqoxM5oNPzc0Yi7JI5khoxeiVy4F4zcArlKaDLoBPekxaFRW6smM1CS88YJtRjSTpB1A3o17nRmppVGk3UJ8tvxvK1FKesVxlp1BXoFFtJnrnphkrYOAy7sdO9FsIi_beC7GtFOn1El6LUQ6gFihSvzY15y8HGcSMwxdW-s_omCHCLJR1JinKz0c5u84ruKpDqf8sShqJ0rsxlLenicpWfa6Pxwf6zgN5UKxrLjmd3WFM3VAYd3PNtm8DzfPkjW1lHRjlKZ24rj8uqVtgNT-IZzdsQELLcYwkq5zmQ91QHpCUL4kK6B3AbOxAeiY2c4nusldkifp7J4GVotGKuzJyliXQr7Jom7jdBc2rJZGgJKD4oMHSJhsfjUdgATpPIdsfEBDTx3TaLdT2Y5EzxDSrlu-grLwxKXOybB9rN8kmViVeYZ2CKgkN8mlP0FY-5Dsd0yaB7lUgbka71ilYJfcr_Ann5V1w=&#34; alt=&#34;bus-crmRealm-uml&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description>Core Models Codes Model The abstraction of a reference table or reference codes. A code table is an extensible set of values. You can add values when needed and extend the model with temporal activation if desired. For example, currencies are typical code values with a temporal duration; well-known retired currencies are the European Currency Unit ECU or the German deutsche mark DM. New values can be added without recompiling the application.</description>
     </item>
-    
   </channel>
 </rss>

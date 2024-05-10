@@ -128,26 +128,27 @@ loadScripts(document, 'script');</script>
 <div class="block">Execute the command.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isAllowed()" class="member-name-link">isAllowed</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isEnabled(boolean)" class="member-name-link">isEnabled</a><wbr>(boolean&nbsp;itemSelected)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Indicate if the command is enabled or not.</div>
+<div class="block">Return true if the command is enabled.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#ofGlobalCmd(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent,java.lang.Runnable)" class="member-name-link">ofGlobalCmd</a><wbr>(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;?&gt;&nbsp;event,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;consumer)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#ofDualCmd(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent,java.util.function.Consumer)" class="member-name-link">ofDualCmd</a><wbr>(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;T&gt;&nbsp;event,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;&nbsp;consumer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Factory method to create a command from a grid context menu item click event.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#ofItemCmd(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent,java.util.function.Consumer)" class="member-name-link">ofItemCmd</a><wbr>(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;T&gt;&nbsp;event,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;&nbsp;consumer)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#ofGlobalCmd(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent,java.lang.Runnable)" class="member-name-link">ofGlobalCmd</a><wbr>(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;?&gt;&nbsp;event,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;consumer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Factory method to create a command from a grid context menu item click event.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#roles()" class="member-name-link">roles</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Return the roles requested to execute the command.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#ofItemCmd(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent,java.util.function.Consumer)" class="member-name-link">ofItemCmd</a><wbr>(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;T&gt;&nbsp;event,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;&nbsp;consumer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Factory method to create a command from a grid context menu item click event.</div>
 </div>
 </div>
 </div>
@@ -167,8 +168,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="ofItemCmd(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent,java.util.function.Consumer)">
 <h3>ofItemCmd</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ofItemCmd</span><wbr><span class="parameters">(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;T&gt;&nbsp;event,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;&nbsp;consumer)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ofItemCmd</span><wbr><span class="parameters">(@NotNull
+ com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;T&gt;&nbsp;event,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;&nbsp;consumer)</span></div>
 <div class="block">Factory method to create a command from a grid context menu item click event. The command is executed on the item selected in the grid.
  An item must be selected to trigger the command.</div>
 <dl class="notes">
@@ -185,9 +188,28 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="ofGlobalCmd(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent,java.lang.Runnable)">
 <h3>ofGlobalCmd</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ofGlobalCmd</span><wbr><span class="parameters">(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;?&gt;&nbsp;event,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;consumer)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ofGlobalCmd</span><wbr><span class="parameters">(@NotNull
+ com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;?&gt;&nbsp;event,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;consumer)</span></div>
 <div class="block">Factory method to create a command from a grid context menu item click event. The command is executed if no item is selected in the grid.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>event</code> - grid context menu item click event</dd>
+<dd><code>consumer</code> - consumer to execute the command</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ofDualCmd(com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent,java.util.function.Consumer)">
+<h3>ofDualCmd</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ofDualCmd</span><wbr><span class="parameters">(@NotNull
+ com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;T&gt;&nbsp;event,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;&nbsp;consumer)</span></div>
+<div class="block">Factory method to create a command from a grid context menu item click event. The command is executed if one or no items are selected in the grid.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>event</code> - grid context menu item click event</dd>
@@ -215,27 +237,16 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="isAllowed()">
-<h3>isAllowed</h3>
+<section class="detail" id="isEnabled(boolean)">
+<h3>isEnabled</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAllowed</span>()</div>
-<div class="block">Indicate if the command is enabled or not. A command availability is dependent on the application and roles the user has.</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEnabled</span><wbr><span class="parameters">(boolean&nbsp;itemSelected)</span></div>
+<div class="block">Return true if the command is enabled. The criteria are if an item is selected in the grid and the access rights associated with the user profile.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>itemSelected</code> - true if an item is selected in the grid</dd>
 <dt>Returns:</dt>
-<dd>true if enabled otherwise false</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="roles()">
-<h3>roles</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">roles</span>()</div>
-<div class="block">Return the roles requested to execute the command.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>roles allowed to execute the command</dd>
+<dd>true if the command is enabled, otherwise false</dd>
 </dl>
 </div>
 </section>

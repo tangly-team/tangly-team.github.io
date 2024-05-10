@@ -25,7 +25,6 @@ loadScripts(document, 'script');</script>
 <div class="top-nav" id="navbar-top"><button id="navbar-toggle-button" aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation links"><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span></button>
 <div class="skip-nav"><a href="#skip-navbar-top" title="Skip navigation links">Skip navigation links</a></div>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
-<li><a href="../../../../index.html">Overview</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -85,7 +84,9 @@ loadScripts(document, 'script');</script>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">com.vaadin.flow.component.Component
 <div class="inheritance">com.vaadin.flow.component.applayout.AppLayout
+<div class="inheritance">net.tangly.app.ApplicationView
 <div class="inheritance">net.tangly.erp.ui.MainView</div>
+</div>
 </div>
 </div>
 </div>
@@ -98,7 +99,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="annotations">@Route("")
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">MainView</span>
-<span class="extends-implements">extends com.vaadin.flow.component.applayout.AppLayout</span></div>
+<span class="extends-implements">extends net.tangly.app.ApplicationView</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -138,18 +139,27 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel">
 <div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static net.tangly.erp.crm.services.CrmBoundedDomain</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#crmBoundedDomain()" class="member-name-link">crmBoundedDomain</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ofDomainUis()" class="member-name-link">ofDomainUis</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onAttach(com.vaadin.flow.component.AttachEvent)" class="member-name-link">onAttach</a><wbr>(@NotNull com.vaadin.flow.component.AttachEvent&nbsp;attachEvent)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.app.ApplicationView">Methods inherited from class&nbsp;net.tangly.app.ApplicationView</h3>
+<code>boundedDomainUis, drawerMenu, getBoundedDomainUi, registerBoundedDomainUi, selectBoundedDomainUi, selectBoundedDomainUi, selectBoundedDomainUi</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.vaadin.flow.component.applayout.AppLayout">Methods inherited from class&nbsp;com.vaadin.flow.component.applayout.AppLayout</h3>
 <code>addToDrawer, addToNavbar, addToNavbar, afterNavigation, getContent, getI18n, getPrimarySection, isDrawerOpened, isOverlay, remove, setContent, setDrawerOpened, setI18n, setPrimarySection, showRouterLayoutContent</code></div>
@@ -201,6 +211,22 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="crmBoundedDomain()">
+<h3>crmBoundedDomain</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">net.tangly.erp.crm.services.CrmBoundedDomain</span>&nbsp;<span class="element-name">crmBoundedDomain</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ofDomainUis()">
+<h3>ofDomainUis</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ofDomainUis</span>()</div>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="onAttach(com.vaadin.flow.component.AttachEvent)">
 <h3>onAttach</h3>

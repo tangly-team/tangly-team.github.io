@@ -1,312 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tangly Components – Ledger - Ledger Bounded Domain</title>
+    <title>Ledger - Ledger Bounded Domain on tangly Components</title>
     <link>https://blog.tangly.net/docs/domains/ledger/</link>
     <description>Recent content in Ledger - Ledger Bounded Domain on tangly Components</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="https://blog.tangly.net/docs/domains/ledger/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <atom:link href="https://blog.tangly.net/docs/domains/ledger/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docs: LED 001</title>
+      <title>LED 001</title>
       <link>https://blog.tangly.net/docs/domains/ledger/adr/led-001-ledger-tag-for-vat-costs/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/domains/ledger/adr/led-001-ledger-tag-for-vat-costs/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_led_001_use_tag_for_vat_costs_computation&#34;&gt;LED-001 Use Tag for VAT costs computation&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Date: 2017-12-01&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_status&#34;&gt;Status&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Implemented&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_context&#34;&gt;Context&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We need to record the VAT components of transactions in our ledger system.
-The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The value of the VAT is computed based on the VAT percentage.
-The percentage can change over time due to regulatory changes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_decision&#34;&gt;Decision&lt;/h3&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;We will support tags at the transaction entry.
-The tags are a triplet &lt;strong&gt;[namespace:]name[=value]&lt;/strong&gt; format.
-We recommend the namespace &amp;#34;fin&amp;#34;, the name &amp;#34;vat&amp;#34;, and a text identifier has value.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The current values are:
-1. F1 for VAT invoiced at 8% and paid to the state at 7.1%
-1. F2 for VAT invoiced at 7.7% and paid to the state at 6.9%&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_consequences&#34;&gt;Consequences&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Ontology based on tags are not validated through a type system.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Checks have to be implemented to guaranty adequate level of tracking.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description>LED-001 Use Tag for VAT costs computation Date: 2017-12-01&#xA;Status Implemented&#xA;Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.&#xA;The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.</description>
     </item>
-    
     <item>
-      <title>Docs: Readme</title>
+      <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/ledger/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/domains/ledger/readme/</guid>
-      <description>
-        
-        
-        &lt;div id=&#34;preamble&#34;&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/license-Apache%202-blue.svg&#34; alt=&#34;Apache License 2.0&#34;/&gt;&lt;/span&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/maven-central/v/net.tangly.erp/ledger&#34; alt=&#34;Maven Central&#34;/&gt;&lt;/span&gt;
-&lt;a href=&#34;https://javadoc.io/doc/net.tangly.erp/ledger&#34;&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://javadoc.io/badge2/net.tangly.erp/ledger/javadoc.svg&#34; alt=&#34;javadoc&#34;/&gt;&lt;/span&gt;&lt;/a&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://github.com/tangly-team/tangly-os/actions/workflows/workflows.yml/badge.svg&#34; alt=&#34;build&#34;/&gt;&lt;/span&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/issues-raw/tangly-team/tangly-os&#34; alt=&#34;issues&#34;/&gt;&lt;/span&gt;
-&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/discussions/tangly-team/tangly-os&#34; alt=&#34;discussions&#34;/&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_purpose&#34;&gt;Purpose&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The &lt;strong&gt;tangly erp crm&lt;/strong&gt; bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires &lt;strong&gt;Java 17 or higher&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Try it out&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_download_and_documentation&#34;&gt;Download and Documentation&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The library can be included in Maven as&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;net.tangly.erp&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;crm&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.2.7&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #116329&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The library can be included in Gradle as&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;listingblock&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;rouge highlight&#34; style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;&lt;code data-lang=&#34;groovy&#34;&gt; &lt;span style=&#34;color: #24292f;background-color: #f6f8fa&#34;&gt;implementation&lt;/span&gt; &lt;span style=&#34;color: #0a3069&#34;&gt;&amp;#34;net.tangly.erp:crm:0.2.7&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The documentation can be found under &lt;a href=&#34;https://blog.tangly.net/docs/domains/crm/&#34;&gt;Business documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description>Purpose The tangly erp crm bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;crm&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:crm:0.2.7&amp;#34; The documentation can be found under Business documentation.</description>
     </item>
-    
     <item>
-      <title>Docs: Release Notes</title>
+      <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/domains/ledger/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/domains/ledger/releasesnotes/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_erp_ledger_library_change_logs&#34;&gt;ERP Ledger Library Change Logs&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;This document provides a high-level view of the changes introduced in the Ledger CRM library by release.
-For a detailed view of what has changed, refer to the &lt;a href=&#34;https://bitbucket.org/tangly-team/tangly-os&#34;&gt;repository&lt;/a&gt; commits.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_0_2_7_2024_05_31&#34;&gt;0.2.7 (2024.05.31)&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_0_2_6_2021_08_31&#34;&gt;0.2.6 (2021-08-31)&lt;/h3&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Initial version of the library packed as a DDD bounded domain.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Requires Java 16 or higher due to extensive usage of &lt;em&gt;records&lt;/em&gt; and &lt;em&gt;sealed&lt;/em&gt; classes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description>ERP Ledger Library Change Logs This document provides a high-level view of the changes introduced in the Ledger CRM library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Initial version of the library packed as a DDD bounded domain.&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes.</description>
     </item>
-    
     <item>
-      <title>Docs: ERP Ports</title>
+      <title>ERP Ports</title>
       <link>https://blog.tangly.net/docs/domains/ledger/userguideports/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/domains/ledger/userguideports/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_crm_ports&#34;&gt;CRM Ports&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The CRM ports provide a bidirectional interface to persistent file storage.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;CRM entities can be stored to and retrieved from tab separated values &lt;em&gt;TSV&lt;/em&gt; files.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_invoices_ports&#34;&gt;Invoices Ports&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Invoices are stored to and retrieved from JSON files.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_ledger_ports&#34;&gt;Ledger Ports&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;&lt;em&gt;To be written&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect2&#34;&gt;
-&lt;h3 id=&#34;_ledger_banana_import_handler&#34;&gt;Ledger Banana Import Handler&lt;/h3&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_importing_ledger_structure&#34;&gt;Importing Ledger Structure&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The following steps export the information from the banana application:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Select the accounts tab displaying all the accounts and their structure of the period&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Goto Data &amp;gt; Export Rows &amp;gt; Export Rows to txt&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Select the destination file&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If necessary change the extension to &lt;em&gt;tsv&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The generated file is a CSV file containing the whole ledger account plan. The separator is TAB.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;sect3&#34;&gt;
-&lt;h4 id=&#34;_importing_transactions&#34;&gt;Importing Transactions&lt;/h4&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The following steps export the information from the banana application:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Select the transaction tab displaying all the transactions of the period&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Goto Data &amp;gt; Export Rows &amp;gt; Export Rows to txt&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Select the destination file&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If necessary change the extension to &lt;em&gt;tsv&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The generated file is a CSV file containing the transaction details. The separator is TAB.
-It is a good practice to generate a file per fiscal year.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;All imported transactions should use the same ledger structure to support benchmarking and reporting over multiple periods.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description>CRM Ports The CRM ports provide a bidirectional interface to persistent file storage.&#xA;CRM entities can be stored to and retrieved from tab separated values TSV files.&#xA;Invoices Ports Invoices are stored to and retrieved from JSON files.&#xA;Ledger Ports To be written&#xA;Ledger Banana Import Handler Importing Ledger Structure The following steps export the information from the banana application:&#xA;Select the accounts tab displaying all the accounts and their structure of the period</description>
     </item>
-    
     <item>
-      <title>Docs: Bounded Domain Invoice Model</title>
+      <title>Bounded Domain Invoice Model</title>
       <link>https://blog.tangly.net/docs/domains/ledger/-models/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tangly.net/docs/domains/ledger/-models/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;sect1&#34;&gt;
-&lt;h2 id=&#34;_ledger_model&#34;&gt;Ledger Model&lt;/h2&gt;
-&lt;div class=&#34;sectionbody&#34;&gt;
-&lt;div class=&#34;imageblock kroki&#34;&gt;
-&lt;div class=&#34;content&#34;&gt;
-&lt;img src=&#34;https://kroki.io/plantuml/svg/eNpzKC5JLCopzc3h4krOSSwuVnBMTs4vzStxzSspqlSoroUJhxQl5hUnJpdk5uchiUIVI4n4pKakpxaBBaBMLV1duDorhUQIqxhZFtlsK4USBK-Yi8shNS8F6DoAGzw5rw==&#34; alt=&#34;bus-ledger-uml&#34;/&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
+      <description> Ledger Model </description>
     </item>
-    
   </channel>
 </rss>
