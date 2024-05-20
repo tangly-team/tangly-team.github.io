@@ -158,23 +158,23 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addAdministration(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.ui.app.domain.DomainView,net.tangly.ui.app.domain.Cmd)" class="member-name-link">addAdministration</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addAdministration(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.commons.lang.functional.LazyReference,net.tangly.ui.app.domain.Cmd)" class="member-name-link">addAdministration</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar,
- @NotNull <a href="DomainView.html" title="class in net.tangly.ui.app.domain">DomainView</a>&nbsp;domainView,
+ @NotNull net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;domainView,
  <a href="Cmd.html" title="interface in net.tangly.ui.app.domain">Cmd</a>&nbsp;loadDialog)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The administration menu provides standard administration operation for a bounded domain.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addAnalytics(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.ui.app.domain.AnalyticsView)" class="member-name-link">addAnalytics</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addAnalytics(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.commons.lang.functional.LazyReference)" class="member-name-link">addAnalytics</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar,
- @NotNull <a href="AnalyticsView.html" title="class in net.tangly.ui.app.domain">AnalyticsView</a>&nbsp;analyticsView)</code></div>
+ @NotNull net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;analyticsView)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.vaadin.flow.component.Component</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;T extends com.vaadin.flow.component.Component&gt;<br>net.tangly.commons.lang.functional.LazyReference<wbr>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentView()" class="member-name-link">currentView</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentView(com.vaadin.flow.component.Component)" class="member-name-link">currentView</a><wbr>(com.vaadin.flow.component.Component&nbsp;currentView)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;T extends com.vaadin.flow.component.Component&gt;<br>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentView(net.tangly.commons.lang.functional.LazyReference)" class="member-name-link">currentView</a><wbr>(net.tangly.commons.lang.functional.LazyReference&lt;T&gt;&nbsp;currentView)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomainUi.html" title="type parameter in BoundedDomainUi">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#domain()" class="member-name-link">domain</a>()</code></div>
@@ -184,23 +184,25 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return the name of bounded domain user interface as displayed in the user interface.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshViews()" class="member-name-link">refreshViews</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refreshViews()" class="member-name-link">refreshViews</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Refresh the views of the bounded domain user interface because the domain entities have changed</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.Component)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
- com.vaadin.flow.component.Component&nbsp;view)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Select the new current view of the bounded domain interface.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Select the bounded domain and the associated default view to be displayed from the bounded domain user interface and update the menu to reflect the bounded domain.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout,net.tangly.commons.lang.functional.LazyReference)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
+ net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;view)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Select the new current view of the bounded domain interface.</div>
 </div>
 </div>
 </div>
@@ -411,12 +413,21 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.Component)">
+<section class="detail" id="refreshViews()">
+<h3>refreshViews</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refreshViews</span>()</div>
+<div class="block">Refresh the views of the bounded domain user interface because the domain entities have changed</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="select(com.vaadin.flow.component.applayout.AppLayout,net.tangly.commons.lang.functional.LazyReference)">
 <h3>select</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">select</span><wbr><span class="parameters">(@NotNull
  @NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
- com.vaadin.flow.component.Component&nbsp;view)</span></div>
+ net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;view)</span></div>
 <div class="block">Select the new current view of the bounded domain interface.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -436,15 +447,7 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="refreshViews()">
-<h3>refreshViews</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refreshViews</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addAdministration(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.ui.app.domain.DomainView,net.tangly.ui.app.domain.Cmd)">
+<section class="detail" id="addAdministration(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.commons.lang.functional.LazyReference,net.tangly.ui.app.domain.Cmd)">
 <h3>addAdministration</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addAdministration</span><wbr><span class="parameters">(@NotNull
@@ -452,7 +455,7 @@ loadScripts(document, 'script');</script>
  @NotNull
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar,
  @NotNull
- @NotNull <a href="DomainView.html" title="class in net.tangly.ui.app.domain">DomainView</a>&nbsp;domainView,
+ @NotNull net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;domainView,
  <a href="Cmd.html" title="interface in net.tangly.ui.app.domain">Cmd</a>&nbsp;loadDialog)</span></div>
 <div class="block">The administration menu provides standard administration operation for a bounded domain.
  <ul>
@@ -466,7 +469,7 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="addAnalytics(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.ui.app.domain.AnalyticsView)">
+<section class="detail" id="addAnalytics(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.commons.lang.functional.LazyReference)">
 <h3>addAnalytics</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addAnalytics</span><wbr><span class="parameters">(@NotNull
@@ -474,15 +477,16 @@ loadScripts(document, 'script');</script>
  @NotNull
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar,
  @NotNull
- @NotNull <a href="AnalyticsView.html" title="class in net.tangly.ui.app.domain">AnalyticsView</a>&nbsp;analyticsView)</span></div>
+ @NotNull net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;analyticsView)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="currentView(com.vaadin.flow.component.Component)">
+<section class="detail" id="currentView(net.tangly.commons.lang.functional.LazyReference)">
 <h3>currentView</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">currentView</span><wbr><span class="parameters">(com.vaadin.flow.component.Component&nbsp;currentView)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="type-parameters">&lt;T extends com.vaadin.flow.component.Component&gt;</span>
+<span class="return-type">void</span>&nbsp;<span class="element-name">currentView</span><wbr><span class="parameters">(net.tangly.commons.lang.functional.LazyReference&lt;T&gt;&nbsp;currentView)</span></div>
 </div>
 </section>
 </li>
@@ -490,7 +494,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="currentView()">
 <h3>currentView</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">com.vaadin.flow.component.Component</span>&nbsp;<span class="element-name">currentView</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="type-parameters">&lt;T extends com.vaadin.flow.component.Component&gt;</span>
+<span class="return-type">net.tangly.commons.lang.functional.LazyReference&lt;T&gt;</span>&nbsp;<span class="element-name">currentView</span>()</div>
 </div>
 </section>
 </li>

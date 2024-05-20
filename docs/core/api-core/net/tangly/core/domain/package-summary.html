@@ -76,11 +76,36 @@ loadScripts(document, 'script');</script>
  <p>The key abstractions are:</p>
  <dl>
      <dt>Bounded Domain</dt><dd>Defines the bounded domain model and the domain services.</dd>
-     <dt>Realm</dt><dd>Defines the repositories interfance to retrieve all domein entities.</dd>
-     <dt>Port</dt><dd>Port interface for all inbound and outpound communication.</dd>
+     <dt>Realm</dt><dd>Defines the repositories interfaces to retrieve all domain entities.</dd>
+     <dt>Port</dt><dd>Port interface for all inbound and outbound communication.</dd>
  </dl>
  <p>The user interface is an optional port. We support Vaadin based user interfaces.</p>
- <p>The REST interface is an optional port. We use Javalin and OpenAPI to build a REST interface to the domain.</p></div>
+ <p>The REST interface is an optional port. We use Javalin and OpenAPI to build a REST interface to the domain.</p>
+ <h2 id="creating-a-new-bounded-domain-heading">Creating a New Bounded Domain</h2>
+ <dl>
+ <dt>Define Domain Entities</dt><dd>The domain entities are defined as regular Java classes and records.
+ Per convention all classes are defined in the package DOMANIN_NAME.domain.</dd>
+ <dt>Define the interfaces to the Bounded Domain</dt><dd>
+     <p>Per convention all classes are defined in the package DOMAIN.services</p>
+     <ul>
+         <li>The bounded domain class DOMAINBoundedDomain defines all the instances defining the bounded domain.
+         It implements the <a href="BoundedDomain.html" title="class in net.tangly.core.domain"><code>BoundedDomain</code></a> interface.</li>
+         <li>The realm DOMAINRealm defines the repository interface. It implements the <a href="Realm.html" title="interface in net.tangly.core.domain"><code>Realm</code></a> interface.</li>
+         <li>The port DOMAINPort defies the default port interface. It implements the <a href="Port.html" title="interface in net.tangly.core.domain"><code>Port</code></a> interface.
+         This interface defines the import, export and clear functions for the bounded domain.</li>
+        <li>The optional DOMAINBusinesLogic class defines business logic functions. It does not implement any specific interface.</li>
+     </ul>
+ </dd>
+ <dt>Define the implementation of all service interfaces</dt><dd>
+     <p>Per convention all classes are defined in the package DOMAIN.ports.</p>
+     <ul>
+         <li>Implement the realm interface. Per convention the class is called DOMAINEntities.
+         Use the <a href="../providers/Provider.html" title="interface in net.tangly.core.providers"><code>Provider</code></a> abstractions to provide persistence with EclipseStore.</li>
+         <li>Implement the port interface. Per convention the class is called DOMAINAdapter.</li>
+         <li>Define the TSV Handler to enalbe the adapter to import entities from a TSV file and export them to a TSV file.</li>
+     </ul>
+ </dd>
+ </dl></div>
 </section>
 </div>
 <section class="summary">
@@ -95,6 +120,22 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Provides core abstractions used in any commercial application.</div>
 </div>
+<div class="col-first odd-row-color"><a href="../codes/package-summary.html">net.tangly.core.codes</a></div>
+<div class="col-last odd-row-color">
+<div class="block">Defines dynamic enumeration values representing a code table and provides strong typing in the business models using them.</div>
+</div>
+<div class="col-first even-row-color"><a href="../gravatar/package-summary.html">net.tangly.core.gravatar</a></div>
+<div class="col-last even-row-color">
+<div class="block">Support for retrieving <a href="https://en.gravatar.com/">gravatar</a> images is provided through this package.</div>
+</div>
+<div class="col-first odd-row-color"><a href="../providers/package-summary.html">net.tangly.core.providers</a></div>
+<div class="col-last odd-row-color">
+<div class="block">Provides the provider abstraction to handle a list of items.</div>
+</div>
+<div class="col-first even-row-color"><a href="../tsv/package-summary.html">net.tangly.core.tsv</a></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><a href="../validation/package-summary.html">net.tangly.core.validation</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </div>
 </li>
