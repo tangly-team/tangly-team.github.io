@@ -121,8 +121,11 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="col-second odd-row-color"><code><a href="#PRODUCTS_TSV" class="member-name-link">PRODUCTS_TSV</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#YAML_EXT" class="member-name-link">YAML_EXT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WORK_CONTRACTS_TSV" class="member-name-link">WORK_CONTRACTS_TSV</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#YAML_EXT" class="member-name-link">YAML_EXT</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -166,24 +169,32 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="block">Exports all efforts of the assignment in the given period of time.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEntities()" class="member-name-link">exportEntities</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEffortsDocumentsSplittedPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocumentsSplittedPerMonth</a><wbr>(@NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;from,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;to,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Exports all efforts of the assignment in the given period of time.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEfforts(java.io.Reader,java.lang.String,boolean)" class="member-name-link">importEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;stream,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEntities()" class="member-name-link">exportEntities</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEfforts(java.io.Reader,java.lang.String,boolean)" class="member-name-link">importEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;stream,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  boolean&nbsp;replace)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Imports all efforts defined in the YAML file located at the given path.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEntities()" class="member-name-link">importEntities</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../services/ProductsBusinessLogic.html" title="class in net.tangly.erp.products.services">ProductsBusinessLogic</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logic()" class="member-name-link">logic</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEntities()" class="member-name-link">importEntities</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../services/ProductsRealm.html" title="interface in net.tangly.erp.products.services">ProductsRealm</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#realm()" class="member-name-link">realm</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../services/ProductsBusinessLogic.html" title="class in net.tangly.erp.products.services">ProductsBusinessLogic</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logic()" class="member-name-link">logic</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../services/ProductsRealm.html" title="interface in net.tangly.erp.products.services">ProductsRealm</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#realm()" class="member-name-link">realm</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -211,6 +222,22 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../constant-values.html#net.tangly.erp.products.ports.ProductsAdapter.PRODUCTS_TSV">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="WORK_CONTRACTS_TSV">
+<h3>WORK_CONTRACTS_TSV</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">WORK_CONTRACTS_TSV</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#net.tangly.erp.products.ports.ProductsAdapter.WORK_CONTRACTS_TSV">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -420,6 +447,36 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <dd><code>assignment</code> - assignment which efforts are of interest</dd>
 <dd><code>from</code> - start of the considered time interval</dd>
 <dd><code>to</code> - end of the considered time interval</dd>
+<dd><code>filename</code> - name of the file to create</dd>
+<dd><code>unit</code> - unit of the time interval (minutes, hours, and days)</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="exportEffortsDocumentsSplittedPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">
+<h3>exportEffortsDocumentsSplittedPerMonth</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEffortsDocumentsSplittedPerMonth</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;from,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;to,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#exportEffortsDocumentsSplittedPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">ProductsPort</a></code></span></div>
+<div class="block">Exports all efforts of the assignment in the given period of time. The export shall create an asciidoc document per month.
+ The document name should contain the contract identifier, the collaborator identifier, and the period of time.
+ The prefix should be the year and month of the period end. The prefix is used to sort the documents.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../services/ProductsPort.html#exportEffortsDocumentsSplittedPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">exportEffortsDocumentsSplittedPerMonth</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>assignment</code> - assignment which efforts are of interest</dd>
+<dd><code>from</code> - first month to consider</dd>
+<dd><code>to</code> - last  month to consider</dd>
+<dd><code>unit</code> - unit of the time interval (minutes, hours, and days)</dd>
 </dl>
 </div>
 </section>
