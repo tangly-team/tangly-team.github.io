@@ -19,44 +19,44 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>LED 001 | tangly Components</title>
-<meta name="description" content="LED-001 Use Tag for VAT costs computation Date: 2017-12-01
+<title>PRJ 001 | tangly Components</title>
+<meta name="description" content="PRJ-001 Use Tag for product costs computation Date: 2017-12-01
 Status Implemented
-Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.
-The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.">
-<meta property="og:url" content="https://blog.tangly.net/docs/domains/ledger/adr/led-001-ledger-tag-for-vat-costs/">
+Context We would like to compute earnings and costs on per product base. Each transaction entry should support tags to identify the associated projects or departments. The tag approach supports multiple consolidation of an orthogonal cost structure.
+Decision We will support tags at the transaction entry. The tags are a triplet [namespace:]name[=value] format. We recommend the namespace &amp;#34;fin&amp;#34;, the name &amp;#34;segment&amp;#34;, and a text identifier has value.">
+<meta property="og:url" content="https://blog.tangly.net/docs/domains/shared/_design/adr/prj-001-project-tag-for-project-costs/">
   <meta property="og:site_name" content="tangly Components">
-  <meta property="og:title" content="LED 001">
-  <meta property="og:description" content="LED-001 Use Tag for VAT costs computation Date: 2017-12-01
+  <meta property="og:title" content="PRJ 001">
+  <meta property="og:description" content="PRJ-001 Use Tag for product costs computation Date: 2017-12-01
 Status Implemented
-Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.
-The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.">
+Context We would like to compute earnings and costs on per product base. Each transaction entry should support tags to identify the associated projects or departments. The tag approach supports multiple consolidation of an orthogonal cost structure.
+Decision We will support tags at the transaction entry. The tags are a triplet [namespace:]name[=value] format. We recommend the namespace &#34;fin&#34;, the name &#34;segment&#34;, and a text identifier has value.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
     <meta property="article:published_time" content="2017-12-01T00:00:00+00:00">
     <meta property="article:modified_time" content="2017-12-01T00:00:00+00:00">
 
-  <meta itemprop="name" content="LED 001">
-  <meta itemprop="description" content="LED-001 Use Tag for VAT costs computation Date: 2017-12-01
+  <meta itemprop="name" content="PRJ 001">
+  <meta itemprop="description" content="PRJ-001 Use Tag for product costs computation Date: 2017-12-01
 Status Implemented
-Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.
-The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.">
+Context We would like to compute earnings and costs on per product base. Each transaction entry should support tags to identify the associated projects or departments. The tag approach supports multiple consolidation of an orthogonal cost structure.
+Decision We will support tags at the transaction entry. The tags are a triplet [namespace:]name[=value] format. We recommend the namespace &#34;fin&#34;, the name &#34;segment&#34;, and a text identifier has value.">
   <meta itemprop="datePublished" content="2017-12-01T00:00:00+00:00">
   <meta itemprop="dateModified" content="2017-12-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="157">
+  <meta itemprop="wordCount" content="102">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="LED 001">
-  <meta name="twitter:description" content="LED-001 Use Tag for VAT costs computation Date: 2017-12-01
+  <meta name="twitter:title" content="PRJ 001">
+  <meta name="twitter:description" content="PRJ-001 Use Tag for product costs computation Date: 2017-12-01
 Status Implemented
-Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.
-The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.">
+Context We would like to compute earnings and costs on per product base. Each transaction entry should support tags to identify the associated projects or departments. The tag approach supports multiple consolidation of an orthogonal cost structure.
+Decision We will support tags at the transaction entry. The tags are a triplet [namespace:]name[=value] format. We recommend the namespace &#34;fin&#34;, the name &#34;segment&#34;, and a text identifier has value.">
 
 
 
 
-<link rel="preload" href="/scss/main.min.c6431b57f8b3681f331f754300bcfb35fda810022d9be194fea04fd2cbbffdbb.css" as="style">
-<link href="/scss/main.min.c6431b57f8b3681f331f754300bcfb35fda810022d9be194fea04fd2cbbffdbb.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.0f44adde75165a15d514b791d82408f37d5ecde9e2fa500f7b92e362a47b2289.css" as="style">
+<link href="/scss/main.min.0f44adde75165a15d514b791d82408f37d5ecde9e2fa500f7b92e362a47b2289.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.3.min.js"
@@ -138,7 +138,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.785506f51f5823d5508b6f002746ccf9.json"
+    data-offline-search-index-json-src="/offline-search-index.bcab197c40d8b43184c11a0c2508ef9a.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -162,7 +162,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.785506f51f5823d5508b6f002746ccf9.json"
+    data-offline-search-index-json-src="/offline-search-index.bcab197c40d8b43184c11a0c2508ef9a.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -462,6 +462,10 @@ if (!doNotTrack) {
   <input type="checkbox" id="m-docsdomainscollaboratorsreadme-check"/>
   <label for="m-docsdomainscollaboratorsreadme-check"><a href="/docs/domains/collaborators/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainscollaboratorsreadme"><span class="">Readme</span></a></label>
   
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainscollaboratorsreleasesnotes-li">
+  <input type="checkbox" id="m-docsdomainscollaboratorsreleasesnotes-check"/>
+  <label for="m-docsdomainscollaboratorsreleasesnotes-check"><a href="/docs/domains/collaborators/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainscollaboratorsreleasesnotes"><span class="">Release Notes</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainscollaboratorscollaborators-design-li">
   <input type="checkbox" id="m-docsdomainscollaboratorscollaborators-design-check"/>
   <label for="m-docsdomainscollaboratorscollaborators-design-check"><a href="/docs/domains/collaborators/collaborators-design/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainscollaboratorscollaborators-design"><span class="">Collaborators Design</span></a></label>
@@ -506,16 +510,12 @@ if (!doNotTrack) {
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdomainsledger-li">
-  <input type="checkbox" id="m-docsdomainsledger-check" checked/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsledger-li">
+  <input type="checkbox" id="m-docsdomainsledger-check"/>
   <label for="m-docsdomainsledger-check"><a href="/docs/domains/ledger/" title="Ledger - Ledger Bounded Domain" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsledger"><span class="">Ledger</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsdomainsledgeradrled-001-ledger-tag-for-vat-costs-li">
-  <input type="checkbox" id="m-docsdomainsledgeradrled-001-ledger-tag-for-vat-costs-check" checked/>
-  <label for="m-docsdomainsledgeradrled-001-ledger-tag-for-vat-costs-check"><a href="/docs/domains/ledger/adr/led-001-ledger-tag-for-vat-costs/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-docsdomainsledgeradrled-001-ledger-tag-for-vat-costs"><span class="td-sidebar-nav-active-item">LED 001</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsledgerreadme-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsledgerreadme-li">
   <input type="checkbox" id="m-docsdomainsledgerreadme-check"/>
   <label for="m-docsdomainsledgerreadme-check"><a href="/docs/domains/ledger/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsledgerreadme"><span class="">Readme</span></a></label>
   
@@ -538,11 +538,7 @@ if (!doNotTrack) {
   <label for="m-docsdomainsproducts-check"><a href="/docs/domains/products/" title="Products - Products Bounded Domain" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsproducts"><span class="">Products</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsproductsadrprj-001-project-tag-for-project-costs-li">
-  <input type="checkbox" id="m-docsdomainsproductsadrprj-001-project-tag-for-project-costs-check"/>
-  <label for="m-docsdomainsproductsadrprj-001-project-tag-for-project-costs-check"><a href="/docs/domains/products/adr/prj-001-project-tag-for-project-costs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsproductsadrprj-001-project-tag-for-project-costs"><span class="">PRJ 001</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsproductsreadme-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsproductsreadme-li">
   <input type="checkbox" id="m-docsdomainsproductsreadme-check"/>
   <label for="m-docsdomainsproductsreadme-check"><a href="/docs/domains/products/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsproductsreadme"><span class="">Readme</span></a></label>
   
@@ -556,13 +552,13 @@ if (!doNotTrack) {
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsshared-li">
-  <input type="checkbox" id="m-docsdomainsshared-check"/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdomainsshared-li">
+  <input type="checkbox" id="m-docsdomainsshared-check" checked/>
   <label for="m-docsdomainsshared-check"><a href="/docs/domains/shared/" title="Shared - Shared Kernel" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared"><span class="">Shared</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsshared_design-li">
-  <input type="checkbox" id="m-docsdomainsshared_design-check"/>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdomainsshared_design-li">
+  <input type="checkbox" id="m-docsdomainsshared_design-check" checked/>
   <label for="m-docsdomainsshared_design-check"><a href="/docs/domains/shared/_design/" title="ERP Architecture" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared_design"><span class="">Architecture</span></a></label>
   
   <ul class="ul-4 foldable">
@@ -718,20 +714,24 @@ if (!doNotTrack) {
   <li class="breadcrumb-item">
     <a href="/docs/domains/">ERP Domains</a></li>
   <li class="breadcrumb-item">
-    <a href="/docs/domains/ledger/">Ledger</a></li>
+    <a href="/docs/domains/shared/">Shared</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/domains/shared/_design/">Architecture</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/domains/shared/_design/adr/">ADR</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    LED 001</li>
+    PRJ 001</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>LED 001</h1>
+	<h1>PRJ 001</h1>
 	
 	<header class="article-meta">
 		
 </header>
 	<div class="sect1">
-<h2 id="_led_001_use_tag_for_vat_costs_computation">LED-001 Use Tag for VAT costs computation</h2>
+<h2 id="_prj_001_use_tag_for_product_costs_computation">PRJ-001 Use Tag for product costs computation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Date: 2017-12-01</p>
@@ -745,12 +745,9 @@ if (!doNotTrack) {
 <div class="sect2">
 <h3 id="_context">Context</h3>
 <div class="paragraph">
-<p>We need to record the VAT components of transactions in our ledger system.
-The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.</p>
-</div>
-<div class="paragraph">
-<p>The value of the VAT is computed based on the VAT percentage.
-The percentage can change over time due to regulatory changes.</p>
+<p>We would like to compute earnings and costs on per product base.
+Each transaction entry should support tags to identify the associated projects or departments.
+The tag approach supports multiple consolidation of an orthogonal cost structure.</p>
 </div>
 </div>
 <div class="sect2">
@@ -758,12 +755,7 @@ The percentage can change over time due to regulatory changes.</p>
 <div class="paragraph">
 <p>We will support tags at the transaction entry.
 The tags are a triplet <strong>[namespace:]name[=value]</strong> format.
-We recommend the namespace &#34;fin&#34;, the name &#34;vat&#34;, and a text identifier has value.</p>
-</div>
-<div class="paragraph">
-<p>The current values are:
-1. F1 for VAT invoiced at 8% and paid to the state at 7.1%
-1. F2 for VAT invoiced at 7.7% and paid to the state at 6.9%</p>
+We recommend the namespace &#34;fin&#34;, the name &#34;segment&#34;, and a text identifier has value.</p>
 </div>
 </div>
 <div class="sect2">
@@ -771,7 +763,7 @@ We recommend the namespace &#34;fin&#34;, the name &#34;vat&#34;, and a text ide
 <div class="ulist">
 <ul>
 <li>
-<p>Ontology based on tags are not validated through a type system.</p>
+<p>Ontology based on tags are not hard defined through a type system.</p>
 </li>
 <li>
 <p>Checks have to be implemented to guaranty adequate level of tracking.</p>

@@ -97,8 +97,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">EntityForm&lt;T extends net.tangly.core.Entity,<wbr>V extends <a href="EntityView.html" title="class in net.tangly.ui.components">EntityView</a>&lt;T&gt;&gt;</span>
 <span class="extends-implements">extends <a href="ItemForm.html" title="class in net.tangly.ui.components">ItemForm</a>&lt;T,<wbr>V&gt;</span></div>
-<div class="block">Creates the form for a simple entity or a full entity. A simple entity has an internal object identifier, an external identifier, a human-readable name, a time interval when the
- entity is active, and a textual description. A full entity has additionally a set of tags and a set of comments.</div>
+<div class="block">Create the form for a simple entity or a full entity. A simple entity has an internal object identifier, an external identifier, a human-readable name, a
+ time interval when the entity is active, and a textual description. A full entity has additionally a set of tags and a set of comments.
+ <p> Entities are immutable instances. Therefore we need to retrieve new values directuly from the form to create an update of an instance.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -113,8 +114,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(V,java.util.function.Function)" class="member-name-link">EntityForm</a><wbr>(<a href="EntityForm.html" title="type parameter in EntityForm">V</a>&nbsp;parent,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>,<wbr><a href="EntityForm.html" title="type parameter in EntityForm">T</a>&gt;&nbsp;supplier)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(V)" class="member-name-link">EntityForm</a><wbr>(<a href="EntityForm.html" title="type parameter in EntityForm">V</a>&nbsp;parent)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -130,31 +130,41 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;U&gt;&nbsp;com.vaadin.flow.data.binder.Binder<wbr>&lt;U&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#binderCast()" class="member-name-link">binderCast</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;net.tangly.core.Comment&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#comments()" class="member-name-link">comments</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="EntityForm.html" title="type parameter in EntityForm">T</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createOrUpdateInstance(T)" class="member-name-link">createOrUpdateInstance</a><wbr>(<a href="EntityForm.html" title="type parameter in EntityForm">T</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Create or update the instance with the new values from the user interface.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected net.tangly.core.DateRange</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dateRange()" class="member-name-link">dateRange</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#duplicate(T)" class="member-name-link">duplicate</a><wbr>(<a href="EntityForm.html" title="type parameter in EntityForm">T</a>&nbsp;entity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Duplicate the entity and clears the object identifier field.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initEntityForm()" class="member-name-link">initEntityForm</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>,<wbr><a href="EntityForm.html" title="type parameter in EntityForm">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supplier()" class="member-name-link">supplier</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initEntityForm()" class="member-name-link">initEntityForm</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#oid()" class="member-name-link">oid</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;net.tangly.core.Tag&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tags()" class="member-name-link">tags</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text()" class="member-name-link">text</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.ui.components.ItemForm">Methods inherited from class&nbsp;net.tangly.ui.components.<a href="ItemForm.html" title="class in net.tangly.ui.components">ItemForm</a></h3>
-<code><a href="ItemForm.html#addTabAt(java.lang.String,com.vaadin.flow.component.Component,int)">addTabAt</a>, <a href="ItemForm.html#binder()">binder</a>, <a href="ItemForm.html#clear()">clear</a>, <a href="ItemForm.html#create()">create</a>, <a href="ItemForm.html#createButtonBar()">createButtonBar</a>, <a href="ItemForm.html#createCodeField(net.tangly.core.codes.CodeType,java.lang.String)">createCodeField</a>, <a href="ItemForm.html#delete(T)">delete</a>, <a href="ItemForm.html#deleteEntity()">deleteEntity</a>, <a href="ItemForm.html#display(T)">display</a>, <a href="ItemForm.html#edit(T)">edit</a>, <a href="ItemForm.html#entityClass()">entityClass</a>, <a href="ItemForm.html#form()">form</a>, <a href="ItemForm.html#fromBinder(java.lang.String)">fromBinder</a>, <a href="ItemForm.html#mode()">mode</a>, <a href="ItemForm.html#mode(net.tangly.ui.components.Mode)">mode</a>, <a href="ItemForm.html#nameActionButton(net.tangly.ui.components.Mode)">nameActionButton</a>, <a href="ItemForm.html#parent()">parent</a>, <a href="ItemForm.html#text()">text</a>, <a href="ItemForm.html#updateEntity()">updateEntity</a>, <a href="ItemForm.html#value()">value</a>, <a href="ItemForm.html#value(T)">value</a></code></div>
+<code><a href="ItemForm.html#addTabAt(java.lang.String,com.vaadin.flow.component.Component,int)">addTabAt</a>, <a href="ItemForm.html#binder()">binder</a>, <a href="ItemForm.html#clear()">clear</a>, <a href="ItemForm.html#create()">create</a>, <a href="ItemForm.html#createButtonBar()">createButtonBar</a>, <a href="ItemForm.html#createCodeField(net.tangly.core.codes.CodeType,java.lang.String)">createCodeField</a>, <a href="ItemForm.html#createOrUpdateInstance(T)">createOrUpdateInstance</a>, <a href="ItemForm.html#delete(T)">delete</a>, <a href="ItemForm.html#deleteEntity()">deleteEntity</a>, <a href="ItemForm.html#display(T)">display</a>, <a href="ItemForm.html#edit(T)">edit</a>, <a href="ItemForm.html#entityClass()">entityClass</a>, <a href="ItemForm.html#form()">form</a>, <a href="ItemForm.html#fromBinder(java.lang.String)">fromBinder</a>, <a href="ItemForm.html#mode()">mode</a>, <a href="ItemForm.html#mode(net.tangly.ui.components.Mode)">mode</a>, <a href="ItemForm.html#nameActionButton(net.tangly.ui.components.Mode)">nameActionButton</a>, <a href="ItemForm.html#parent()">parent</a>, <a href="ItemForm.html#textForm()">textForm</a>, <a href="ItemForm.html#textForm(net.tangly.ui.asciidoc.AsciiDocField)">textForm</a>, <a href="ItemForm.html#updateEntity()">updateEntity</a>, <a href="ItemForm.html#value()">value</a>, <a href="ItemForm.html#value(T)">value</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -170,12 +180,11 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(V,java.util.function.Function)">
-<h3 id="&lt;init&gt;(net.tangly.ui.components.EntityView,java.util.function.Function)">EntityForm</h3>
+<section class="detail" id="&lt;init&gt;(V)">
+<h3 id="&lt;init&gt;(net.tangly.ui.components.EntityView)">EntityForm</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">EntityForm</span><wbr><span class="parameters">(@NotNull
- <a href="EntityForm.html" title="type parameter in EntityForm">V</a>&nbsp;parent,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>,<wbr><a href="EntityForm.html" title="type parameter in EntityForm">T</a>&gt;&nbsp;supplier)</span></div>
+ <a href="EntityForm.html" title="type parameter in EntityForm">V</a>&nbsp;parent)</span></div>
 </div>
 </section>
 </li>
@@ -218,39 +227,58 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="createOrUpdateInstance(T)">
-<h3 id="createOrUpdateInstance(net.tangly.core.Entity)">createOrUpdateInstance</h3>
+<section class="detail" id="oid()">
+<h3>oid</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="EntityForm.html" title="type parameter in EntityForm">T</a></span>&nbsp;<span class="element-name">createOrUpdateInstance</span><wbr><span class="parameters">(<a href="EntityForm.html" title="type parameter in EntityForm">T</a>&nbsp;entity)</span>
-                            throws <span class="exceptions">com.vaadin.flow.data.binder.ValidationException</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="ItemForm.html#createOrUpdateInstance(T)">ItemForm</a></code></span></div>
-<div class="block">Create or update the instance with the new values from the user interface.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ItemForm.html#createOrUpdateInstance(T)">createOrUpdateInstance</a></code>&nbsp;in class&nbsp;<code><a href="ItemForm.html" title="class in net.tangly.ui.components">ItemForm</a>&lt;<a href="EntityForm.html" title="type parameter in EntityForm">T</a> extends net.tangly.core.Entity,<wbr><a href="EntityForm.html" title="type parameter in EntityForm">V</a> extends <a href="EntityView.html" title="class in net.tangly.ui.components">EntityView</a>&lt;<a href="EntityForm.html" title="type parameter in EntityForm">T</a>&gt;&gt;</code></dd>
-<dt>Parameters:</dt>
-<dd><code>entity</code> - the entity to update or null if it is a created or duplicated instance</dd>
-<dt>Returns:</dt>
-<dd>new or updated instance</dd>
-<dt>Throws:</dt>
-<dd><code>com.vaadin.flow.data.binder.ValidationException</code></dd>
-</dl>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">oid</span>()</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="supplier()">
-<h3>supplier</h3>
+<section class="detail" id="id()">
+<h3>id</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>,<wbr><a href="EntityForm.html" title="type parameter in EntityForm">T</a>&gt;</span>&nbsp;<span class="element-name">supplier</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">id</span>()</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="binderCast()">
-<h3>binderCast</h3>
+<section class="detail" id="name()">
+<h3>name</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="type-parameters">&lt;U&gt;</span>&nbsp;<span class="return-type">com.vaadin.flow.data.binder.Binder&lt;U&gt;</span>&nbsp;<span class="element-name">binderCast</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="dateRange()">
+<h3>dateRange</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">net.tangly.core.DateRange</span>&nbsp;<span class="element-name">dateRange</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="text()">
+<h3>text</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">text</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="tags()">
+<h3>tags</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;net.tangly.core.Tag&gt;</span>&nbsp;<span class="element-name">tags</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="comments()">
+<h3>comments</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;net.tangly.core.Comment&gt;</span>&nbsp;<span class="element-name">comments</span>()</div>
 </div>
 </section>
 </li>

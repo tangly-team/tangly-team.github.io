@@ -106,7 +106,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">Article</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text, @NotNull <a href="ArticleCode.html" title="enum class in net.tangly.erp.invoices.domain">ArticleCode</a>&nbsp;code, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&nbsp;unitPrice, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;unit)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a>
 implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasText</span></div>
-<div class="block">A product sold by a legal entity and referenced in an invoice or an invoice line. An article is a <code>HasId</code> mixin because the identifier is external and the Java record
+<div class="block">A product sold by a legal entity and referenced in an invoice or an invoice line. An article is a <code>HasMutableId</code> mixin because the identifier is external and the Java record
  structure does not support internal <code>HasOid</code> manipulation through reflection.</div>
 </div>
 </section>
@@ -209,15 +209,6 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasTe
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.tangly.core.HasId">Methods inherited from interface&nbsp;net.tangly.core.HasId</h3>
-<code>id</code></div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.tangly.core.HasName">Methods inherited from interface&nbsp;net.tangly.core.HasName</h3>
-<code>name</code></div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.tangly.core.HasText">Methods inherited from interface&nbsp;net.tangly.core.HasText</h3>
-<code>text</code></div>
 </section>
 </li>
 </ul>

@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 <h1 title="Class Interaction" class="title">Class Interaction</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.tangly.core.EntityExtendedImp
+<div class="inheritance">net.tangly.core.MutableEntityExtendedImp
 <div class="inheritance">net.tangly.erp.crm.domain.Interaction</div>
 </div>
 </div>
@@ -91,13 +91,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.tangly.core.Entity</code>, <code>net.tangly.core.EntityExtended</code>, <code>net.tangly.core.HasComments</code>, <code>net.tangly.core.HasDateRange</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasOid</code>, <code>net.tangly.core.HasTags</code>, <code>net.tangly.core.HasText</code></dd>
+<dd><code>net.tangly.core.Entity</code>, <code>net.tangly.core.EntityExtended</code>, <code>net.tangly.core.HasComments</code>, <code>net.tangly.core.HasDateRange</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasMutableComments</code>, <code>net.tangly.core.HasMutableDateRange</code>, <code>net.tangly.core.HasMutableId</code>, <code>net.tangly.core.HasMutableName</code>, <code>net.tangly.core.HasMutableTags</code>, <code>net.tangly.core.HasMutableText</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasOid</code>, <code>net.tangly.core.HasTags</code>, <code>net.tangly.core.HasText</code>, <code>net.tangly.core.MutableEntity</code>, <code>net.tangly.core.MutableEntityExtended</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Interaction</span>
-<span class="extends-implements">extends net.tangly.core.EntityExtendedImp</span></div>
-<div class="block">Defines an interaction between your company and a legal entity and a group of natural entities. The legal entity is the organization you want a contract with. The interaction
- has a set of activities moving your negotiation through stages. The final result is a contract or a lost opportunity.
+<span class="extends-implements">extends net.tangly.core.MutableEntityExtendedImp</span></div>
+<div class="block">Defines an interaction between your company and a legal entity and a group of natural entities. The legal entity is the organization you want a contract with.
+ The interaction has a set of activities moving your negotiation through stages. The final result is a contract or a lost opportunity.
  <p>An interaction can have quite a long duration. Activities are the events when you interact with your potential customer.</p></div>
 </div>
 </section>
@@ -122,6 +122,9 @@ loadScripts(document, 'script');</script>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.tangly.core.HasId">Fields inherited from interface&nbsp;net.tangly.core.HasId</h3>
 <code>ID</code></div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-net.tangly.core.HasMutableName">Fields inherited from interface&nbsp;net.tangly.core.HasMutableName</h3>
+<code>NAME</code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.tangly.core.HasName">Fields inherited from interface&nbsp;net.tangly.core.HasName</h3>
 <code>NAME</code></div>
@@ -209,20 +212,29 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.tangly.core.EntityExtendedImp">Methods inherited from class&nbsp;net.tangly.core.EntityExtendedImp</h3>
+<h3 id="methods-inherited-from-class-net.tangly.core.MutableEntityExtendedImp">Methods inherited from class&nbsp;net.tangly.core.MutableEntityExtendedImp</h3>
 <code>add, add, clear, comments, comments, hashCode, id, id, init, name, name, oid, range, range, remove, remove, tags, tags, text, text</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasComments">Methods inherited from interface&nbsp;net.tangly.core.HasComments</h3>
-<code>addComments, findByAuthor, findByTag, findByTime</code></div>
+<code>findByAuthor, findByTag, findByTime</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasDateRange">Methods inherited from interface&nbsp;net.tangly.core.HasDateRange</h3>
-<code>from, from, isActive, isActive, to, to</code></div>
+<code>from, isActive, isActive, to</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableComments">Methods inherited from interface&nbsp;net.tangly.core.HasMutableComments</h3>
+<code>addComments</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableDateRange">Methods inherited from interface&nbsp;net.tangly.core.HasMutableDateRange</h3>
+<code>from, to</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableTags">Methods inherited from interface&nbsp;net.tangly.core.HasMutableTags</h3>
+<code>addTags, rawTags, removeTagNamed, update, update</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasTags">Methods inherited from interface&nbsp;net.tangly.core.HasTags</h3>
-<code>addTags, containsTag, containsTag, findBy, findBy, findByNamespace, rawTags, rawTags, removeTagNamed, update, update, value</code></div>
+<code>containsTag, containsTag, findBy, findBy, findByNamespace, rawTags, value</code></div>
 </section>
 </li>
 </ul>
@@ -372,7 +384,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code>equals</code>&nbsp;in class&nbsp;<code>net.tangly.core.EntityExtendedImp</code></dd>
+<dd><code>equals</code>&nbsp;in class&nbsp;<code>net.tangly.core.MutableEntityExtendedImp</code></dd>
 </dl>
 </div>
 </section>

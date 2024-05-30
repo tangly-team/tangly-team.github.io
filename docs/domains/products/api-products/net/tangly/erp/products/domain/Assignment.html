@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 <h1 title="Class Assignment" class="title">Class Assignment</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.tangly.core.EntityExtendedImp
+<div class="inheritance">net.tangly.core.MutableEntityExtendedImp
 <div class="inheritance">net.tangly.erp.products.domain.Assignment</div>
 </div>
 </div>
@@ -91,11 +91,11 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.tangly.core.Entity</code>, <code>net.tangly.core.EntityExtended</code>, <code>net.tangly.core.HasComments</code>, <code>net.tangly.core.HasDateRange</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasOid</code>, <code>net.tangly.core.HasTags</code>, <code>net.tangly.core.HasText</code></dd>
+<dd><code>net.tangly.core.Entity</code>, <code>net.tangly.core.EntityExtended</code>, <code>net.tangly.core.HasComments</code>, <code>net.tangly.core.HasDateRange</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasMutableComments</code>, <code>net.tangly.core.HasMutableDateRange</code>, <code>net.tangly.core.HasMutableId</code>, <code>net.tangly.core.HasMutableName</code>, <code>net.tangly.core.HasMutableTags</code>, <code>net.tangly.core.HasMutableText</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasOid</code>, <code>net.tangly.core.HasTags</code>, <code>net.tangly.core.HasText</code>, <code>net.tangly.core.MutableEntity</code>, <code>net.tangly.core.MutableEntityExtended</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Assignment</span>
-<span class="extends-implements">extends net.tangly.core.EntityExtendedImp</span></div>
+<span class="extends-implements">extends net.tangly.core.MutableEntityExtendedImp</span></div>
 <div class="block">An assignment defines the connection of an employee to a project for a duration. The start date shall be equal or greater to the start date of a project. The end date is
  optional,
  if defined, it shall be smaller or equal to the end date of the project.
@@ -126,6 +126,9 @@ loadScripts(document, 'script');</script>
 <h3 id="fields-inherited-from-class-net.tangly.core.HasId">Fields inherited from interface&nbsp;net.tangly.core.HasId</h3>
 <code>ID</code></div>
 <div class="inherited-list">
+<h3 id="fields-inherited-from-class-net.tangly.core.HasMutableName">Fields inherited from interface&nbsp;net.tangly.core.HasMutableName</h3>
+<code>NAME</code></div>
+<div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.tangly.core.HasName">Fields inherited from interface&nbsp;net.tangly.core.HasName</h3>
 <code>NAME</code></div>
 <div class="inherited-list">
@@ -154,54 +157,73 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel">
 <div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#closedPeriod()" class="member-name-link">closedPeriod</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#closedPeriod(java.time.LocalDate)" class="member-name-link">closedPeriod</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;closedPeriod)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#collaboratorId()" class="member-name-link">collaboratorId</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#collaboratorId(java.lang.String)" class="member-name-link">collaboratorId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;collaboratorId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Product.html" title="class in net.tangly.erp.products.domain">Product</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#product()" class="member-name-link">product</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#product(net.tangly.erp.products.domain.Product)" class="member-name-link">product</a><wbr>(<a href="Product.html" title="class in net.tangly.erp.products.domain">Product</a>&nbsp;product)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convert(int,java.time.temporal.ChronoUnit)" class="member-name-link">convert</a><wbr>(int&nbsp;durationInMinutes,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate()" class="member-name-link">validate</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Product.html" title="class in net.tangly.erp.products.domain">Product</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#product()" class="member-name-link">product</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#product(net.tangly.erp.products.domain.Product)" class="member-name-link">product</a><wbr>(<a href="Product.html" title="class in net.tangly.erp.products.domain">Product</a>&nbsp;product)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate()" class="member-name-link">validate</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.tangly.core.EntityExtendedImp">Methods inherited from class&nbsp;net.tangly.core.EntityExtendedImp</h3>
+<h3 id="methods-inherited-from-class-net.tangly.core.MutableEntityExtendedImp">Methods inherited from class&nbsp;net.tangly.core.MutableEntityExtendedImp</h3>
 <code>add, add, clear, comments, comments, id, id, init, name, name, oid, range, range, remove, remove, tags, tags, text, text</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasComments">Methods inherited from interface&nbsp;net.tangly.core.HasComments</h3>
-<code>addComments, findByAuthor, findByTag, findByTime</code></div>
+<code>findByAuthor, findByTag, findByTime</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasDateRange">Methods inherited from interface&nbsp;net.tangly.core.HasDateRange</h3>
-<code>from, from, isActive, isActive, to, to</code></div>
+<code>from, isActive, isActive, to</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableComments">Methods inherited from interface&nbsp;net.tangly.core.HasMutableComments</h3>
+<code>addComments</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableDateRange">Methods inherited from interface&nbsp;net.tangly.core.HasMutableDateRange</h3>
+<code>from, to</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableTags">Methods inherited from interface&nbsp;net.tangly.core.HasMutableTags</h3>
+<code>addTags, rawTags, removeTagNamed, update, update</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasTags">Methods inherited from interface&nbsp;net.tangly.core.HasTags</h3>
-<code>addTags, containsTag, containsTag, findBy, findBy, findByNamespace, rawTags, rawTags, removeTagNamed, update, update, value</code></div>
+<code>containsTag, containsTag, findBy, findBy, findByNamespace, rawTags, value</code></div>
 </section>
 </li>
 </ul>
@@ -229,6 +251,15 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="convert(int,java.time.temporal.ChronoUnit)">
+<h3>convert</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name">convert</span><wbr><span class="parameters">(int&nbsp;durationInMinutes,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</span></div>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="product()">
 <h3>product</h3>
@@ -262,6 +293,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="closedPeriod()">
+<h3>closedPeriod</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></span>&nbsp;<span class="element-name">closedPeriod</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="closedPeriod(java.time.LocalDate)">
+<h3>closedPeriod</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">closedPeriod</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;closedPeriod)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="validate()">
 <h3>validate</h3>
 <div class="horizontal-scroll">
@@ -276,7 +323,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code>equals</code>&nbsp;in class&nbsp;<code>net.tangly.core.EntityExtendedImp</code></dd>
+<dd><code>equals</code>&nbsp;in class&nbsp;<code>net.tangly.core.MutableEntityExtendedImp</code></dd>
 </dl>
 </div>
 </section>
@@ -288,7 +335,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code>hashCode</code>&nbsp;in class&nbsp;<code>net.tangly.core.EntityExtendedImp</code></dd>
+<dd><code>hashCode</code>&nbsp;in class&nbsp;<code>net.tangly.core.MutableEntityExtendedImp</code></dd>
 </dl>
 </div>
 </section>

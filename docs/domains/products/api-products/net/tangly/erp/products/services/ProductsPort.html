@@ -37,7 +37,7 @@ loadScripts(document, 'script');</script>
 <p>Summary:</p>
 <ul>
 <li>Nested</li>
-<li>Field</li>
+<li><a href="#field-summary">Field</a></li>
 <li>Constr</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -57,7 +57,7 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -100,6 +100,15 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-net.tangly.core.domain.Port">Fields inherited from interface&nbsp;net.tangly.core.domain.Port</h3>
+<code>PATTERN</code></div>
+</section>
+</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -121,7 +130,7 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 <div class="block">Exports all efforts of the assignment in the given period of time.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportEffortsDocumentsSplittedPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocumentsSplittedPerMonth</a><wbr>(@NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportEffortsDocumentsSplitPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocumentsSplitPerMonth</a><wbr>(@NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;from,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;to,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</code></div>
@@ -213,10 +222,10 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 </section>
 </li>
 <li>
-<section class="detail" id="exportEffortsDocumentsSplittedPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">
-<h3>exportEffortsDocumentsSplittedPerMonth</h3>
+<section class="detail" id="exportEffortsDocumentsSplitPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">
+<h3>exportEffortsDocumentsSplitPerMonth</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportEffortsDocumentsSplittedPerMonth</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportEffortsDocumentsSplitPerMonth</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;from,
@@ -231,7 +240,7 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 <dt>Parameters:</dt>
 <dd><code>assignment</code> - assignment which efforts are of interest</dd>
 <dd><code>from</code> - first month to consider</dd>
-<dd><code>to</code> - last  month to consider</dd>
+<dd><code>to</code> - last month to consider</dd>
 <dd><code>unit</code> - unit of the time interval (minutes, hours, and days)</dd>
 </dl>
 </div>

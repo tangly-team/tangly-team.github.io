@@ -57,9 +57,11 @@ loadScripts(document, 'script');</script>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" class="type-name-link external-link" title="class or interface in java.lang">Object</a>
 <ul>
 <li class="circle">net.tangly.core.<a href="Address.Builder.html" class="type-name-link" title="class in net.tangly.core">Address.Builder</a></li>
-<li class="circle">net.tangly.core.<a href="Comment.html" class="type-name-link" title="class in net.tangly.core">Comment</a> (implements net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)</li>
+<li class="circle">net.tangly.core.<a href="Comment.html" class="type-name-link" title="class in net.tangly.core">Comment</a> (implements net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
 <li class="circle">net.tangly.core.<a href="EntityExtendedImp.html" class="type-name-link" title="class in net.tangly.core">EntityExtendedImp</a> (implements net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>)</li>
 <li class="circle">net.tangly.core.<a href="ExternalEntityImp.html" class="type-name-link" title="class in net.tangly.core">ExternalEntityImp</a> (implements net.tangly.core.<a href="ExternalEntity.html" title="interface in net.tangly.core">ExternalEntity</a>)</li>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtendedImp.html" class="type-name-link" title="class in net.tangly.core">MutableEntityExtendedImp</a> (implements net.tangly.core.<a href="MutableEntityExtended.html" title="interface in net.tangly.core">MutableEntityExtended</a>)</li>
+<li class="circle">net.tangly.core.<a href="MutalbeExternalEntityImp.html" class="type-name-link" title="class in net.tangly.core">MutalbeExternalEntityImp</a> (implements net.tangly.core.<a href="MutableExternalEntity.html" title="interface in net.tangly.core">MutableExternalEntity</a>)</li>
 <li class="circle">net.tangly.core.<a href="Strings.html" class="type-name-link" title="class in net.tangly.core">Strings</a></li>
 <li class="circle">net.tangly.core.<a href="TypeRegistry.html" class="type-name-link" title="class in net.tangly.core">TypeRegistry</a></li>
 </ul>
@@ -71,20 +73,61 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">net.tangly.core.<a href="HasComments.html" class="type-name-link" title="interface in net.tangly.core">HasComments</a>
 <ul>
-<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="Entity.html" title="interface in net.tangly.core">Entity</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)</li>
-<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)</li>
+<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="Entity.html" title="interface in net.tangly.core">Entity</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="HasMutableComments.html" class="type-name-link" title="interface in net.tangly.core">HasMutableComments</a>
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a>)</li>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="ExternalEntity.html" title="interface in net.tangly.core">ExternalEntity</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="circle">net.tangly.core.<a href="HasDate.html" class="type-name-link" title="interface in net.tangly.core">HasDate</a>
 <ul>
-<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)</li>
+<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="HasMutableDate.html" class="type-name-link" title="interface in net.tangly.core">HasMutableDate</a>
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="ExternalEntity.html" title="interface in net.tangly.core">ExternalEntity</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="circle">net.tangly.core.<a href="HasDateRange.html" class="type-name-link" title="interface in net.tangly.core">HasDateRange</a>
 <ul>
 <li class="circle">net.tangly.core.<a href="Entity.html" class="type-name-link" title="interface in net.tangly.core">Entity</a> (also extends net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasOid.html" title="interface in net.tangly.core">HasOid</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)
 <ul>
-<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)</li>
+<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="MutableEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableEntity</a> (also extends net.tangly.core.<a href="HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="HasMutableDateRange.html" class="type-name-link" title="interface in net.tangly.core">HasMutableDateRange</a>
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableEntity</a> (also extends net.tangly.core.<a href="Entity.html" title="interface in net.tangly.core">Entity</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -93,10 +136,33 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">net.tangly.core.<a href="Entity.html" class="type-name-link" title="interface in net.tangly.core">Entity</a> (also extends net.tangly.core.<a href="HasDateRange.html" title="interface in net.tangly.core">HasDateRange</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasOid.html" title="interface in net.tangly.core">HasOid</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)
 <ul>
-<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)</li>
+<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a>)</li>
 </ul>
 </li>
-<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)</li>
+<li class="circle">net.tangly.core.<a href="MutableEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableEntity</a> (also extends net.tangly.core.<a href="HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="HasMutableId.html" class="type-name-link" title="interface in net.tangly.core">HasMutableId</a>
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableEntity</a> (also extends net.tangly.core.<a href="Entity.html" title="interface in net.tangly.core">Entity</a>, net.tangly.core.<a href="HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="ExternalEntity.html" title="interface in net.tangly.core">ExternalEntity</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="circle">net.tangly.core.<a href="HasLocation.html" class="type-name-link" title="interface in net.tangly.core">HasLocation</a></li>
@@ -104,35 +170,104 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">net.tangly.core.<a href="Entity.html" class="type-name-link" title="interface in net.tangly.core">Entity</a> (also extends net.tangly.core.<a href="HasDateRange.html" title="interface in net.tangly.core">HasDateRange</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasOid.html" title="interface in net.tangly.core">HasOid</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)
 <ul>
-<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)</li>
+<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a>)</li>
 </ul>
 </li>
-<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)</li>
+<li class="circle">net.tangly.core.<a href="MutableEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableEntity</a> (also extends net.tangly.core.<a href="HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="HasMutableName.html" class="type-name-link" title="interface in net.tangly.core">HasMutableName</a>
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableEntity</a> (also extends net.tangly.core.<a href="Entity.html" title="interface in net.tangly.core">Entity</a>, net.tangly.core.<a href="HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="ExternalEntity.html" title="interface in net.tangly.core">ExternalEntity</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="circle">net.tangly.core.<a href="HasOid.html" class="type-name-link" title="interface in net.tangly.core">HasOid</a>
 <ul>
 <li class="circle">net.tangly.core.<a href="Entity.html" class="type-name-link" title="interface in net.tangly.core">Entity</a> (also extends net.tangly.core.<a href="HasDateRange.html" title="interface in net.tangly.core">HasDateRange</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)
 <ul>
-<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)</li>
+<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="MutableEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableEntity</a> (also extends net.tangly.core.<a href="HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="circle">net.tangly.core.<a href="HasTags.html" class="type-name-link" title="interface in net.tangly.core">HasTags</a>
 <ul>
-<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="Entity.html" title="interface in net.tangly.core">Entity</a>, net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>)</li>
-<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)</li>
+<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="Entity.html" title="interface in net.tangly.core">Entity</a>, net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="HasMutableTags.html" class="type-name-link" title="interface in net.tangly.core">HasMutableTags</a>
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a>)</li>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="ExternalEntity.html" title="interface in net.tangly.core">ExternalEntity</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="circle">net.tangly.core.<a href="HasText.html" class="type-name-link" title="interface in net.tangly.core">HasText</a>
 <ul>
 <li class="circle">net.tangly.core.<a href="Entity.html" class="type-name-link" title="interface in net.tangly.core">Entity</a> (also extends net.tangly.core.<a href="HasDateRange.html" title="interface in net.tangly.core">HasDateRange</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasOid.html" title="interface in net.tangly.core">HasOid</a>)
 <ul>
-<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)</li>
+<li class="circle">net.tangly.core.<a href="EntityExtended.html" class="type-name-link" title="interface in net.tangly.core">EntityExtended</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a>)</li>
 </ul>
 </li>
-<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)</li>
+<li class="circle">net.tangly.core.<a href="MutableEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableEntity</a> (also extends net.tangly.core.<a href="HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="ExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">ExternalEntity</a> (also extends net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a>, net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>, net.tangly.core.<a href="HasMutableText.html" title="interface in net.tangly.core">HasMutableText</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="HasMutableText.html" class="type-name-link" title="interface in net.tangly.core">HasMutableText</a>
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableEntity</a> (also extends net.tangly.core.<a href="Entity.html" title="interface in net.tangly.core">Entity</a>, net.tangly.core.<a href="HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>)
+<ul>
+<li class="circle">net.tangly.core.<a href="MutableEntityExtended.html" class="type-name-link" title="interface in net.tangly.core">MutableEntityExtended</a> (also extends net.tangly.core.<a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
+</ul>
+</li>
+<li class="circle">net.tangly.core.<a href="MutableExternalEntity.html" class="type-name-link" title="interface in net.tangly.core">MutableExternalEntity</a> (also extends net.tangly.core.<a href="ExternalEntity.html" title="interface in net.tangly.core">ExternalEntity</a>, net.tangly.core.<a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a>, net.tangly.core.<a href="HasMutableDate.html" title="interface in net.tangly.core">HasMutableDate</a>, net.tangly.core.<a href="HasMutableId.html" title="interface in net.tangly.core">HasMutableId</a>, net.tangly.core.<a href="HasMutableName.html" title="interface in net.tangly.core">HasMutableName</a>, net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a>)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -167,6 +302,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.core.<a href="HasDateRange.RangeFilter.html" class="type-name-link" title="class in net.tangly.core">HasDateRange.RangeFilter</a>&lt;T&gt; (implements java.util.function.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;)</li>
 <li class="circle">net.tangly.core.<a href="HasLocation.GeoPosition.html" class="type-name-link" title="class in net.tangly.core">HasLocation.GeoPosition</a></li>
 <li class="circle">net.tangly.core.<a href="HasLocation.PlusCode.html" class="type-name-link" title="class in net.tangly.core">HasLocation.PlusCode</a></li>
+<li class="circle">net.tangly.core.<a href="HasMutableDate.IntervalFilter.html" class="type-name-link" title="class in net.tangly.core">HasMutableDate.IntervalFilter</a>&lt;T&gt; (implements java.util.function.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;)</li>
 <li class="circle">net.tangly.core.<a href="PhoneNr.html" class="type-name-link" title="class in net.tangly.core">PhoneNr</a></li>
 <li class="circle">net.tangly.core.<a href="Tag.html" class="type-name-link" title="class in net.tangly.core">Tag</a></li>
 <li class="circle">net.tangly.core.<a href="TagType.html" class="type-name-link" title="class in net.tangly.core">TagType</a>&lt;T&gt;</li>

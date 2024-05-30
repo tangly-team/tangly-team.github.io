@@ -96,10 +96,10 @@ loadScripts(document, 'script');</script>
 <dd><code><span id="param-from">from</span></code> - start date of the contract</dd>
 <dd><code><span id="param-to">to</span></code> - end date of the contract</dd>
 <dd><code><span id="param-locale">locale</span></code> - locale of the contract</dd>
-<dd><code><span id="param-budgetInHours">budgetInHours</span></code> - work budget in hours. If the value is zero, the contract is time and material without a budget</dd>
+<dd><code><span id="param-budgetInHours">budgetInHours</span></code> - work budget measured with hours. If the value is zero, the contract is time and material without a budget</dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">WorkContract</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;mainContractId, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale, int&nbsp;budgetInHours)
+<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">WorkContract</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;mainContractId, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale, int&nbsp;budgetInHours)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
 <div class="block">Defines the work view of a contract. The work budget is used to validate the work done by the team.</div>
 </div>
@@ -118,7 +118,7 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;mainContractId,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale,
  int&nbsp;budgetInHours)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates an instance of a <code>WorkContract</code> record class.</div>
@@ -162,7 +162,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-id"><code>id</code></a> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#locale()" class="member-name-link">locale</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-locale"><code>locale</code></a> record component.</div>
@@ -210,7 +210,8 @@ loadScripts(document, 'script');</script>
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale,
  int&nbsp;budgetInHours)</span></div>
 <div class="block">Creates an instance of a <code>WorkContract</code> record class.</div>
 <dl class="notes">
@@ -339,7 +340,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="locale()">
 <h3>locale</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a></span>&nbsp;<span class="element-name">locale</span>()</div>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a></span>&nbsp;<span class="element-name">locale</span>()</div>
 <div class="block">Returns the value of the <a href="#param-locale"><code>locale</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>

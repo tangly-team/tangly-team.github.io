@@ -86,7 +86,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code>net.tangly.core.HasLocation</code>, <code>net.tangly.core.HasTags</code></dd>
+<dd><code>net.tangly.core.HasLocation</code>, <code>net.tangly.core.HasMutableTags</code>, <code>net.tangly.core.HasTags</code></dd>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
@@ -94,7 +94,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">CrmEntity</span><span class="extends-implements">
-extends net.tangly.core.HasTags, net.tangly.core.HasLocation</span></div>
+extends net.tangly.core.HasMutableTags, net.tangly.core.HasLocation</span></div>
 <div class="block">A customer relation management mixin defines a set of operations useful for all CRM abstractions. All information is stored as tags for future extensions.
  Key attributes are address or locations, phone numbers, social channels and internet presence.
  <p>The tag approach provides flexibility required by the evolution of values to represent similar information. For example an address, a geographical
@@ -171,8 +171,11 @@ extends net.tangly.core.HasTags, net.tangly.core.HasLocation</span></div>
 <h3 id="methods-inherited-from-class-net.tangly.core.HasLocation">Methods inherited from interface&nbsp;net.tangly.core.HasLocation</h3>
 <code>address, hasAddress, hasPlusCode, hasPosition</code></div>
 <div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableTags">Methods inherited from interface&nbsp;net.tangly.core.HasMutableTags</h3>
+<code>add, addTags, clear, rawTags, remove, removeTagNamed, tags, update, update</code></div>
+<div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasTags">Methods inherited from interface&nbsp;net.tangly.core.HasTags</h3>
-<code>add, addTags, clear, containsTag, containsTag, findBy, findBy, findByNamespace, rawTags, rawTags, remove, removeTagNamed, tags, tags, update, update, value</code></div>
+<code>containsTag, containsTag, findBy, findBy, findByNamespace, rawTags, tags, value</code></div>
 </section>
 </li>
 </ul>

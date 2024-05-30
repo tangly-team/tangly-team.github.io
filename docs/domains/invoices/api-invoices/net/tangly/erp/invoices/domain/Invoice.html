@@ -89,12 +89,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.tangly.core.HasDate</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasText</code></dd>
+<dd><code>net.tangly.core.HasDate</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasMutableDate</code>, <code>net.tangly.core.HasMutableId</code>, <code>net.tangly.core.HasMutableName</code>, <code>net.tangly.core.HasMutableText</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasText</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Invoice</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
+implements net.tangly.core.HasMutableId, net.tangly.core.HasMutableName, net.tangly.core.HasMutableDate, net.tangly.core.HasMutableText</span></div>
 <div class="block"><p>The abstraction of an invoice with a set of positions, subtotals, and a total. The items and the subtotals have a position
  to order them in the invoice to provide human readable outputs. An invoice and its components have no dependencies to external entities. Therefore, an invoice is complete and
  can be archived. For example, you can change the VAT percentage or a product price without any consequence on existing invoices.</p>
@@ -112,8 +112,8 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDa
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
 <div class="inherited-list">
-<h3 id="nested-classes-inherited-from-class-net.tangly.core.HasDate">Nested classes/interfaces inherited from interface&nbsp;net.tangly.core.HasDate</h3>
-<code>net.tangly.core.HasDate.IntervalFilter&lt;T extends net.tangly.core.HasDate&gt;</code></div>
+<h3 id="nested-classes-inherited-from-class-net.tangly.core.HasMutableDate">Nested classes/interfaces inherited from interface&nbsp;net.tangly.core.HasMutableDate</h3>
+<code>net.tangly.core.HasMutableDate.IntervalFilter&lt;T extends net.tangly.core.HasMutableDate&gt;</code></div>
 </section>
 </li>
 <!-- =========== FIELD SUMMARY =========== -->
@@ -135,7 +135,7 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDa
 <h3 id="fields-inherited-from-class-net.tangly.core.HasId">Fields inherited from interface&nbsp;net.tangly.core.HasId</h3>
 <code>ID</code></div>
 <div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.tangly.core.HasName">Fields inherited from interface&nbsp;net.tangly.core.HasName</h3>
+<h3 id="fields-inherited-from-class-net.tangly.core.HasMutableName">Fields inherited from interface&nbsp;net.tangly.core.HasMutableName</h3>
 <code>NAME</code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.tangly.core.HasText">Fields inherited from interface&nbsp;net.tangly.core.HasText</h3>
@@ -375,7 +375,7 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDa
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">id</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>id</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasId</code></dd>
+<dd><code>id</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasMutableId</code></dd>
 </dl>
 </div>
 </section>
@@ -399,7 +399,7 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDa
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">name</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>name</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasName</code></dd>
+<dd><code>name</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasMutableName</code></dd>
 </dl>
 </div>
 </section>
@@ -423,7 +423,7 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDa
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">text</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>text</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasText</code></dd>
+<dd><code>text</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasMutableText</code></dd>
 </dl>
 </div>
 </section>
@@ -614,7 +614,7 @@ implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasDa
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">date</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;invoicedDate)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>date</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasDate</code></dd>
+<dd><code>date</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasMutableDate</code></dd>
 </dl>
 </div>
 </section>

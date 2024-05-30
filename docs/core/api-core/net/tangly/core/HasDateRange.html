@@ -86,11 +86,11 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Known Subinterfaces:</dt>
-<dd><code><a href="Entity.html" title="interface in net.tangly.core">Entity</a></code>, <code><a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a></code></dd>
+<dd><code><a href="Entity.html" title="interface in net.tangly.core">Entity</a></code>, <code><a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a></code>, <code><a href="HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a></code>, <code><a href="MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a></code>, <code><a href="MutableEntityExtended.html" title="interface in net.tangly.core">MutableEntityExtended</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="EntityExtendedImp.html" title="class in net.tangly.core">EntityExtendedImp</a></code></dd>
+<dd><code><a href="EntityExtendedImp.html" title="class in net.tangly.core">EntityExtendedImp</a></code>, <code><a href="MutableEntityExtendedImp.html" title="class in net.tangly.core">MutableEntityExtendedImp</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">HasDateRange</span></div>
@@ -154,38 +154,25 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Return the date from when the entity is existing and active.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#from(java.time.LocalDate)" class="member-name-link">from</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isActive()" class="member-name-link">isActive</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Set a new start to the date range.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isActive()" class="member-name-link">isActive</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Return true if the date now is in the time range of the instance.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isActive(java.time.LocalDate)" class="member-name-link">isActive</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isActive(java.time.LocalDate)" class="member-name-link">isActive</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Return true if the date is in the time range of the instance.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="DateRange.html" title="class in net.tangly.core">DateRange</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#range()" class="member-name-link">range</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="DateRange.html" title="class in net.tangly.core">DateRange</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#range()" class="member-name-link">range</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Return the range of the mixin.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#range(net.tangly.core.DateRange)" class="member-name-link">range</a><wbr>(<a href="DateRange.html" title="class in net.tangly.core">DateRange</a>&nbsp;range)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#to()" class="member-name-link">to</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Return the date until when the entity is existing and active.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#to(java.time.LocalDate)" class="member-name-link">to</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Set a new end to the date range.</div>
 </div>
 </div>
 </div>
@@ -252,21 +239,7 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>date range of the mixin</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="#range(net.tangly.core.DateRange)"><code>range(DateRange)</code></a></li>
-</ul>
-</dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="range(net.tangly.core.DateRange)">
-<h3>range</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">range</span><wbr><span class="parameters">(<a href="DateRange.html" title="class in net.tangly.core">DateRange</a>&nbsp;range)</span></div>
 </div>
 </section>
 </li>
@@ -279,31 +252,6 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the start of the existing period for the entity</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="#from(java.time.LocalDate)"><code>from(LocalDate)</code></a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="from(java.time.LocalDate)">
-<h3>from</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">from</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from)</span></div>
-<div class="block">Set a new start to the date range.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>from</code> - new start date.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="#from()"><code>from()</code></a></li>
-</ul>
-</dd>
 </dl>
 </div>
 </section>
@@ -317,31 +265,6 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the end of the existing period for the entity</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="#to(java.time.LocalDate)"><code>to(LocalDate)</code></a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="to(java.time.LocalDate)">
-<h3>to</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">to</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
-<div class="block">Set a new end to the date range.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>to</code> - new start date.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="#to()"><code>to()</code></a></li>
-</ul>
-</dd>
 </dl>
 </div>
 </section>

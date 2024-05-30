@@ -89,12 +89,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code></dd>
+<dd><code><a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></code>, <code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Comment</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></span></div>
+implements <a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></span></div>
 <div class="block">Defines a human-readable annotation to an entity. A comment is an immutable object. Comments can be tagged to provide classification. A comment belongs to
  the entity owning it an is only accessible through this entity.</div>
 </div>
@@ -204,8 +204,11 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableTags">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></h3>
+<code><a href="HasMutableTags.html#addTags(java.lang.Iterable)">addTags</a>, <a href="HasMutableTags.html#rawTags(java.lang.String)">rawTags</a>, <a href="HasMutableTags.html#removeTagNamed(java.lang.String)">removeTagNamed</a>, <a href="HasMutableTags.html#update(java.lang.String,java.lang.String)">update</a>, <a href="HasMutableTags.html#update(net.tangly.core.Tag)">update</a></code></div>
+<div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasTags">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></h3>
-<code><a href="HasTags.html#addTags(java.lang.Iterable)">addTags</a>, <a href="HasTags.html#containsTag(java.lang.String)">containsTag</a>, <a href="HasTags.html#containsTag(java.lang.String,java.lang.String)">containsTag</a>, <a href="HasTags.html#findBy(java.lang.String)">findBy</a>, <a href="HasTags.html#findBy(java.lang.String,java.lang.String)">findBy</a>, <a href="HasTags.html#findByNamespace(java.lang.String)">findByNamespace</a>, <a href="HasTags.html#rawTags()">rawTags</a>, <a href="HasTags.html#rawTags(java.lang.String)">rawTags</a>, <a href="HasTags.html#removeTagNamed(java.lang.String)">removeTagNamed</a>, <a href="HasTags.html#update(java.lang.String,java.lang.String)">update</a>, <a href="HasTags.html#update(net.tangly.core.Tag)">update</a>, <a href="HasTags.html#value(java.lang.String)">value</a></code></div>
+<code><a href="HasTags.html#containsTag(java.lang.String)">containsTag</a>, <a href="HasTags.html#containsTag(java.lang.String,java.lang.String)">containsTag</a>, <a href="HasTags.html#findBy(java.lang.String)">findBy</a>, <a href="HasTags.html#findBy(java.lang.String,java.lang.String)">findBy</a>, <a href="HasTags.html#findByNamespace(java.lang.String)">findByNamespace</a>, <a href="HasTags.html#rawTags()">rawTags</a>, <a href="HasTags.html#value(java.lang.String)">value</a></code></div>
 </section>
 </li>
 </ul>
@@ -365,12 +368,6 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <dd><code><a href="HasTags.html#tags()">tags</a></code>&nbsp;in interface&nbsp;<code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code></dd>
 <dt>Returns:</dt>
 <dd>collection of tags</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="HasTags.html#tags(java.util.Collection)"><code>HasTags.tags(Collection)</code></a></li>
-</ul>
-</dd>
 </dl>
 </div>
 </section>
@@ -381,11 +378,11 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">tags</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="Tag.html" title="class in net.tangly.core">Tag</a>&gt;&nbsp;tags)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasTags.html#tags(java.util.Collection)">HasTags</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasMutableTags.html#tags(java.util.Collection)">HasMutableTags</a></code></span></div>
 <div class="block">Set the new collection of tags for the entity.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="HasTags.html#tags(java.util.Collection)">tags</a></code>&nbsp;in interface&nbsp;<code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code></dd>
+<dd><code><a href="HasMutableTags.html#tags(java.util.Collection)">tags</a></code>&nbsp;in interface&nbsp;<code><a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>tags</code> - new collection of tags</dd>
 <dt>See Also:</dt>
@@ -404,11 +401,11 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="Tag.html" title="class in net.tangly.core">Tag</a>&nbsp;tag)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasTags.html#add(net.tangly.core.Tag)">HasTags</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasMutableTags.html#add(net.tangly.core.Tag)">HasMutableTags</a></code></span></div>
 <div class="block">Add the tag to the collection of tags.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="HasTags.html#add(net.tangly.core.Tag)">add</a></code>&nbsp;in interface&nbsp;<code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code></dd>
+<dd><code><a href="HasMutableTags.html#add(net.tangly.core.Tag)">add</a></code>&nbsp;in interface&nbsp;<code><a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>tag</code> - tag to be added</dd>
 <dt>Returns:</dt>
@@ -416,7 +413,7 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="HasTags.html#remove(net.tangly.core.Tag)"><code>HasTags.remove(Tag)</code></a></li>
+<li><a href="HasMutableTags.html#remove(net.tangly.core.Tag)"><code>HasMutableTags.remove(Tag)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -429,11 +426,11 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="Tag.html" title="class in net.tangly.core">Tag</a>&nbsp;tag)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasTags.html#remove(net.tangly.core.Tag)">HasTags</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="HasMutableTags.html#remove(net.tangly.core.Tag)">HasMutableTags</a></code></span></div>
 <div class="block">Remove the tag from the collection of tags.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="HasTags.html#remove(net.tangly.core.Tag)">remove</a></code>&nbsp;in interface&nbsp;<code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code></dd>
+<dd><code><a href="HasMutableTags.html#remove(net.tangly.core.Tag)">remove</a></code>&nbsp;in interface&nbsp;<code><a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>tag</code> - tag to remove</dd>
 <dt>Returns:</dt>
@@ -441,7 +438,7 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="HasTags.html#add(net.tangly.core.Tag)"><code>HasTags.add(Tag)</code></a></li>
+<li><a href="HasMutableTags.html#add(net.tangly.core.Tag)"><code>HasMutableTags.add(Tag)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -455,7 +452,7 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="HasTags.html#clear()">clear</a></code>&nbsp;in interface&nbsp;<code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code></dd>
+<dd><code><a href="HasMutableTags.html#clear()">clear</a></code>&nbsp;in interface&nbsp;<code><a href="HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></code></dd>
 </dl>
 </div>
 </section>

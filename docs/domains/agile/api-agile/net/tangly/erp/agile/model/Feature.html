@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 <h1 title="Class Feature" class="title">Class Feature</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.tangly.core.ExternalEntityImp
+<div class="inheritance">net.tangly.core.MutalbeExternalEntityImp
 <div class="inheritance">net.tangly.erp.agile.model.Feature</div>
 </div>
 </div>
@@ -91,12 +91,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.tangly.core.ExternalEntity</code>, <code>net.tangly.core.HasComments</code>, <code>net.tangly.core.HasDate</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasTags</code>, <code>net.tangly.core.HasText</code></dd>
+<dd><code>net.tangly.core.ExternalEntity</code>, <code>net.tangly.core.HasComments</code>, <code>net.tangly.core.HasDate</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasMutableComments</code>, <code>net.tangly.core.HasMutableDate</code>, <code>net.tangly.core.HasMutableId</code>, <code>net.tangly.core.HasMutableName</code>, <code>net.tangly.core.HasMutableTags</code>, <code>net.tangly.core.HasMutableText</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasTags</code>, <code>net.tangly.core.HasText</code>, <code>net.tangly.core.MutableExternalEntity</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Feature</span>
-<span class="extends-implements">extends net.tangly.core.ExternalEntityImp
-implements net.tangly.core.ExternalEntity</span></div>
+<span class="extends-implements">extends net.tangly.core.MutalbeExternalEntityImp
+implements net.tangly.core.MutableExternalEntity</span></div>
 </div>
 </section>
 <section class="summary">
@@ -108,6 +108,9 @@ implements net.tangly.core.ExternalEntity</span></div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.tangly.core.HasDate">Nested classes/interfaces inherited from interface&nbsp;net.tangly.core.HasDate</h3>
 <code>net.tangly.core.HasDate.IntervalFilter&lt;T extends net.tangly.core.HasDate&gt;</code></div>
+<div class="inherited-list">
+<h3 id="nested-classes-inherited-from-class-net.tangly.core.HasMutableDate">Nested classes/interfaces inherited from interface&nbsp;net.tangly.core.HasMutableDate</h3>
+<code>net.tangly.core.HasMutableDate.IntervalFilter&lt;T extends net.tangly.core.HasMutableDate&gt;</code></div>
 </section>
 </li>
 <!-- =========== FIELD SUMMARY =========== -->
@@ -117,6 +120,9 @@ implements net.tangly.core.ExternalEntity</span></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.tangly.core.HasId">Fields inherited from interface&nbsp;net.tangly.core.HasId</h3>
 <code>ID</code></div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-net.tangly.core.HasMutableName">Fields inherited from interface&nbsp;net.tangly.core.HasMutableName</h3>
+<code>NAME</code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.tangly.core.HasName">Fields inherited from interface&nbsp;net.tangly.core.HasName</h3>
 <code>NAME</code></div>
@@ -165,29 +171,47 @@ implements net.tangly.core.ExternalEntity</span></div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.tangly.core.ExternalEntityImp">Methods inherited from class&nbsp;net.tangly.core.ExternalEntityImp</h3>
+<h3 id="methods-inherited-from-class-net.tangly.core.MutalbeExternalEntityImp">Methods inherited from class&nbsp;net.tangly.core.MutalbeExternalEntityImp</h3>
 <code>add, add, clear, comments, comments, date, date, equals, hashCode, id, id, name, name, remove, remove, tags, tags, text, text</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasComments">Methods inherited from interface&nbsp;net.tangly.core.HasComments</h3>
-<code>add, addComments, comments, comments, findByAuthor, findByTag, findByTime, remove</code></div>
+<code>comments, findByAuthor, findByTag, findByTime</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasDate">Methods inherited from interface&nbsp;net.tangly.core.HasDate</h3>
-<code>date, date</code></div>
+<code>date</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasId">Methods inherited from interface&nbsp;net.tangly.core.HasId</h3>
-<code>id, id</code></div>
+<code>id</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableComments">Methods inherited from interface&nbsp;net.tangly.core.HasMutableComments</h3>
+<code>add, addComments, comments, remove</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableDate">Methods inherited from interface&nbsp;net.tangly.core.HasMutableDate</h3>
+<code>date</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableId">Methods inherited from interface&nbsp;net.tangly.core.HasMutableId</h3>
+<code>id</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableName">Methods inherited from interface&nbsp;net.tangly.core.HasMutableName</h3>
+<code>name</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableTags">Methods inherited from interface&nbsp;net.tangly.core.HasMutableTags</h3>
+<code>add, addTags, clear, rawTags, remove, removeTagNamed, tags, update, update</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableText">Methods inherited from interface&nbsp;net.tangly.core.HasMutableText</h3>
+<code>text</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasName">Methods inherited from interface&nbsp;net.tangly.core.HasName</h3>
-<code>name, name</code></div>
+<code>name</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasTags">Methods inherited from interface&nbsp;net.tangly.core.HasTags</h3>
-<code>add, addTags, clear, containsTag, containsTag, findBy, findBy, findByNamespace, rawTags, rawTags, remove, removeTagNamed, tags, tags, update, update, value</code></div>
+<code>containsTag, containsTag, findBy, findBy, findByNamespace, rawTags, tags, value</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasText">Methods inherited from interface&nbsp;net.tangly.core.HasText</h3>
-<code>text, text</code></div>
+<code>text</code></div>
 </section>
 </li>
 </ul>

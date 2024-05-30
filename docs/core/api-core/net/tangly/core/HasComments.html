@@ -86,11 +86,11 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Known Subinterfaces:</dt>
-<dd><code><a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a></code>, <code><a href="ExternalEntity.html" title="interface in net.tangly.core">ExternalEntity</a></code></dd>
+<dd><code><a href="EntityExtended.html" title="interface in net.tangly.core">EntityExtended</a></code>, <code><a href="ExternalEntity.html" title="interface in net.tangly.core">ExternalEntity</a></code>, <code><a href="HasMutableComments.html" title="interface in net.tangly.core">HasMutableComments</a></code>, <code><a href="MutableEntityExtended.html" title="interface in net.tangly.core">MutableEntityExtended</a></code>, <code><a href="MutableExternalEntity.html" title="interface in net.tangly.core">MutableExternalEntity</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="EntityExtendedImp.html" title="class in net.tangly.core">EntityExtendedImp</a></code>, <code><a href="ExternalEntityImp.html" title="class in net.tangly.core">ExternalEntityImp</a></code></dd>
+<dd><code><a href="EntityExtendedImp.html" title="class in net.tangly.core">EntityExtendedImp</a></code>, <code><a href="ExternalEntityImp.html" title="class in net.tangly.core">ExternalEntityImp</a></code>, <code><a href="MutableEntityExtendedImp.html" title="class in net.tangly.core">MutableEntityExtendedImp</a></code>, <code><a href="MutalbeExternalEntityImp.html" title="class in net.tangly.core">MutalbeExternalEntityImp</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">HasComments</span></div>
@@ -110,47 +110,27 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#add(net.tangly.core.Comment)" class="member-name-link">add</a><wbr>(@NotNull <a href="Comment.html" title="class in net.tangly.core">Comment</a>&nbsp;comment)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Adds a comment to the list of comments.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#addComments(java.lang.Iterable)" class="member-name-link">addComments</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;&nbsp;comments)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Add a list of comments.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#comments()" class="member-name-link">comments</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Return the collection of comments owned by the entity.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#comments(java.util.Collection)" class="member-name-link">comments</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;&nbsp;comments)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Set the new collection of comments.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findByAuthor(java.lang.String)" class="member-name-link">findByAuthor</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;author)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findByAuthor(java.lang.String)" class="member-name-link">findByAuthor</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;author)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Return the comments authored by the given author.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findByTag(java.lang.String,java.lang.String)" class="member-name-link">findByTag</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;namespace,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findByTag(java.lang.String,java.lang.String)" class="member-name-link">findByTag</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;namespace,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Return the comments having the given tag.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findByTime(java.time.LocalDateTime,java.time.LocalDateTime)" class="member-name-link">findByTime</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link">LocalDateTime</a>&nbsp;from,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findByTime(java.time.LocalDateTime,java.time.LocalDateTime)" class="member-name-link">findByTime</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link">LocalDateTime</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link">LocalDateTime</a>&nbsp;to)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Return all the comments which creation date is in the closed interval.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#remove(net.tangly.core.Comment)" class="member-name-link">remove</a><wbr>(@NotNull <a href="Comment.html" title="class in net.tangly.core">Comment</a>&nbsp;comment)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Remove the given comment from the list of comments.</div>
 </div>
 </div>
 </div>
@@ -175,79 +155,6 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>list of comments</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="#comments(java.util.Collection)"><code>comments(Collection)</code></a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="comments(java.util.Collection)">
-<h3>comments</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">comments</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;&nbsp;comments)</span></div>
-<div class="block">Set the new collection of comments.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>comments</code> - new collection of comments</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="#comments()"><code>comments()</code></a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="add(net.tangly.core.Comment)">
-<h3>add</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="Comment.html" title="class in net.tangly.core">Comment</a>&nbsp;comment)</span></div>
-<div class="block">Adds a comment to the list of comments.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>comment</code> - comment to be added, cannot be null</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="remove(net.tangly.core.Comment)">
-<h3>remove</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="Comment.html" title="class in net.tangly.core">Comment</a>&nbsp;comment)</span></div>
-<div class="block">Remove the given comment from the list of comments.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>comment</code> - comment to be removed, cannot be null</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addComments(java.lang.Iterable)">
-<h3>addComments</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addComments</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Comment.html" title="class in net.tangly.core">Comment</a>&gt;&nbsp;comments)</span></div>
-<div class="block">Add a list of comments.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>comments</code> - comments to be added, cannot be null</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="#add(net.tangly.core.Comment)"><code>add(Comment)</code></a></li>
-</ul>
-</dd>
 </dl>
 </div>
 </section>

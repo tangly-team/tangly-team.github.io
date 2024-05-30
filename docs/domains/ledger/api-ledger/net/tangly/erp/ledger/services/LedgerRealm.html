@@ -113,6 +113,12 @@ extends net.tangly.core.domain.Realm</span></div>
 <div class="col-first even-row-color"><code>static final org.apache.logging.log4j.Logger</code></div>
 <div class="col-second even-row-color"><code><a href="#logger" class="member-name-link">logger</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#VAT_ACCOUNT" class="member-name-link">VAT_ACCOUNT</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#VAT_FLAT_RATE" class="member-name-link">VAT_FLAT_RATE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -139,33 +145,33 @@ extends net.tangly.core.domain.Realm</span></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#add(net.tangly.erp.ledger.domain.Account)" class="member-name-link">add</a><wbr>(@NotNull <a href="../domain/Account.html" title="class in net.tangly.erp.ledger.domain">Account</a>&nbsp;account)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#add(net.tangly.erp.ledger.domain.Transaction)" class="member-name-link">add</a><wbr>(@NotNull <a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a>&nbsp;transaction)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#addVat(net.tangly.erp.ledger.domain.Transaction)" class="member-name-link">addVat</a><wbr>(@NotNull <a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a>&nbsp;transaction)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Adds a transaction to the ledger and the referenced accounts.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../domain/Account.html" title="class in net.tangly.erp.ledger.domain">Account</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#assets()" class="member-name-link">assets</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../domain/Account.html" title="class in net.tangly.erp.ledger.domain">Account</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#bookableAccounts()" class="member-name-link">bookableAccounts</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#book(net.tangly.erp.ledger.domain.Transaction)" class="member-name-link">book</a><wbr>(@NotNull <a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a>&nbsp;transaction)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../domain/Account.html" title="class in net.tangly.erp.ledger.domain">Account</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#bookableAccounts()" class="member-name-link">bookableAccounts</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Build the account tree structure and perform basic validation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeDueVat(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">computeDueVat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeVat(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">computeVat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeDueVat(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">computeDueVat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeVat(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">computeVat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeVat(net.tangly.erp.ledger.domain.Transaction)" class="member-name-link">computeVat</a><wbr>(@NotNull <a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a>&nbsp;transaction)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Create synthetic transactions to deduct the VAT due amount and transfer it to the VAT account.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeVatSales(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">computeVatSales</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
@@ -203,6 +209,38 @@ extends net.tangly.core.domain.Realm</span></div>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="VAT_FLAT_RATE">
+<h3>VAT_FLAT_RATE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">VAT_FLAT_RATE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#net.tangly.erp.ledger.services.LedgerRealm.VAT_FLAT_RATE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="VAT_ACCOUNT">
+<h3>VAT_ACCOUNT</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">VAT_ACCOUNT</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#net.tangly.erp.ledger.services.LedgerRealm.VAT_ACCOUNT">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="logger">
 <h3>logger</h3>
@@ -310,25 +348,26 @@ extends net.tangly.core.domain.Realm</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="add(net.tangly.erp.ledger.domain.Transaction)">
-<h3>add</h3>
+<section class="detail" id="book(net.tangly.erp.ledger.domain.Transaction)">
+<h3>book</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">book</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a>&nbsp;transaction)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="addVat(net.tangly.erp.ledger.domain.Transaction)">
-<h3>addVat</h3>
+<section class="detail" id="computeVat(net.tangly.erp.ledger.domain.Transaction)">
+<h3>computeVat</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addVat</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a></span>&nbsp;<span class="element-name">computeVat</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a>&nbsp;transaction)</span></div>
-<div class="block">Adds a transaction to the ledger and the referenced accounts. A warning message is written to the log file if one of the involved accounts is not registered in the ledger.
- The involved accounts cannot be aggregate accounts.</div>
+<div class="block">Create synthetic transactions to deduct the VAT due amount and transfer it to the VAT account.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>transaction</code> - transaction to add to the ledger</dd>
+<dd><code>transaction</code> - transaction which VAT amount shall be computed and transferred to the VAT account.</dd>
+<dt>Returns:</dt>
+<dd>the transaction with the VAT entries</dd>
 </dl>
 </div>
 </section>

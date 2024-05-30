@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 <h1 title="Class Employee" class="title">Class Employee</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.tangly.core.EntityExtendedImp
+<div class="inheritance">net.tangly.core.MutableEntityExtendedImp
 <div class="inheritance">net.tangly.erp.crm.domain.Employee</div>
 </div>
 </div>
@@ -91,12 +91,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.tangly.core.Entity</code>, <code>net.tangly.core.EntityExtended</code>, <code>net.tangly.core.HasComments</code>, <code>net.tangly.core.HasDateRange</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasLocation</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasOid</code>, <code>net.tangly.core.HasTags</code>, <code>net.tangly.core.HasText</code>, <code><a href="CrmEntity.html" title="interface in net.tangly.erp.crm.domain">CrmEntity</a></code></dd>
+<dd><code>net.tangly.core.Entity</code>, <code>net.tangly.core.EntityExtended</code>, <code>net.tangly.core.HasComments</code>, <code>net.tangly.core.HasDateRange</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasLocation</code>, <code>net.tangly.core.HasMutableComments</code>, <code>net.tangly.core.HasMutableDateRange</code>, <code>net.tangly.core.HasMutableId</code>, <code>net.tangly.core.HasMutableName</code>, <code>net.tangly.core.HasMutableTags</code>, <code>net.tangly.core.HasMutableText</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasOid</code>, <code>net.tangly.core.HasTags</code>, <code>net.tangly.core.HasText</code>, <code>net.tangly.core.MutableEntity</code>, <code>net.tangly.core.MutableEntityExtended</code>, <code><a href="CrmEntity.html" title="interface in net.tangly.erp.crm.domain">CrmEntity</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Employee</span>
-<span class="extends-implements">extends net.tangly.core.EntityExtendedImp
-implements net.tangly.core.EntityExtended, <a href="CrmEntity.html" title="interface in net.tangly.erp.crm.domain">CrmEntity</a></span></div>
+<span class="extends-implements">extends net.tangly.core.MutableEntityExtendedImp
+implements net.tangly.core.MutableEntityExtended, <a href="CrmEntity.html" title="interface in net.tangly.erp.crm.domain">CrmEntity</a></span></div>
 <div class="block">Define an employee as a temporal work contract between a natural entity meaning a person and a legal entity meaning an organization or a company. The name property of the
  employee is the name property of the natural person of this employee. The from and to date defines the duration of the employment. If the _to date_ is empty the employee is still
  legally working for the organization.</div>
@@ -126,6 +126,9 @@ implements net.tangly.core.EntityExtended, <a href="CrmEntity.html" title="inter
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.tangly.core.HasId">Fields inherited from interface&nbsp;net.tangly.core.HasId</h3>
 <code>ID</code></div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-net.tangly.core.HasMutableName">Fields inherited from interface&nbsp;net.tangly.core.HasMutableName</h3>
+<code>NAME</code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.tangly.core.HasName">Fields inherited from interface&nbsp;net.tangly.core.HasName</h3>
 <code>NAME</code></div>
@@ -186,7 +189,7 @@ implements net.tangly.core.EntityExtended, <a href="CrmEntity.html" title="inter
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.tangly.core.EntityExtendedImp">Methods inherited from class&nbsp;net.tangly.core.EntityExtendedImp</h3>
+<h3 id="methods-inherited-from-class-net.tangly.core.MutableEntityExtendedImp">Methods inherited from class&nbsp;net.tangly.core.MutableEntityExtendedImp</h3>
 <code>add, add, clear, comments, comments, equals, hashCode, id, id, init, name, oid, range, range, remove, remove, tags, tags, text, text</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
@@ -196,28 +199,43 @@ implements net.tangly.core.EntityExtended, <a href="CrmEntity.html" title="inter
 <code><a href="CrmEntity.html#address(net.tangly.erp.crm.domain.VcardType)">address</a>, <a href="CrmEntity.html#address(net.tangly.erp.crm.domain.VcardType,net.tangly.core.Address)">address</a>, <a href="CrmEntity.html#email(net.tangly.erp.crm.domain.VcardType)">email</a>, <a href="CrmEntity.html#email(net.tangly.erp.crm.domain.VcardType,java.lang.String)">email</a>, <a href="CrmEntity.html#im(net.tangly.erp.crm.domain.VcardType)">im</a>, <a href="CrmEntity.html#im(net.tangly.erp.crm.domain.VcardType,java.lang.String)">im</a>, <a href="CrmEntity.html#phoneNr(net.tangly.erp.crm.domain.VcardType,java.lang.String)">phoneNr</a>, <a href="CrmEntity.html#phoneNr(net.tangly.erp.crm.domain.VcardType)">phoneNr</a>, <a href="CrmEntity.html#plusCode()">plusCode</a>, <a href="CrmEntity.html#position()">position</a>, <a href="CrmEntity.html#site(net.tangly.erp.crm.domain.VcardType)">site</a>, <a href="CrmEntity.html#site(net.tangly.erp.crm.domain.VcardType,java.lang.String)">site</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasComments">Methods inherited from interface&nbsp;net.tangly.core.HasComments</h3>
-<code>add, addComments, comments, comments, findByAuthor, findByTag, findByTime, remove</code></div>
+<code>comments, findByAuthor, findByTag, findByTime</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasDateRange">Methods inherited from interface&nbsp;net.tangly.core.HasDateRange</h3>
-<code>from, from, isActive, isActive, range, range, to, to</code></div>
+<code>from, isActive, isActive, range, to</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasId">Methods inherited from interface&nbsp;net.tangly.core.HasId</h3>
-<code>id, id</code></div>
+<code>id</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasLocation">Methods inherited from interface&nbsp;net.tangly.core.HasLocation</h3>
 <code>address, hasAddress, hasPlusCode, hasPosition</code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.tangly.core.HasName">Methods inherited from interface&nbsp;net.tangly.core.HasName</h3>
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableComments">Methods inherited from interface&nbsp;net.tangly.core.HasMutableComments</h3>
+<code>add, addComments, comments, remove</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableDateRange">Methods inherited from interface&nbsp;net.tangly.core.HasMutableDateRange</h3>
+<code>from, range, to</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableId">Methods inherited from interface&nbsp;net.tangly.core.HasMutableId</h3>
+<code>id</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableName">Methods inherited from interface&nbsp;net.tangly.core.HasMutableName</h3>
 <code>name</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableTags">Methods inherited from interface&nbsp;net.tangly.core.HasMutableTags</h3>
+<code>add, addTags, clear, rawTags, remove, removeTagNamed, tags, update, update</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.HasMutableText">Methods inherited from interface&nbsp;net.tangly.core.HasMutableText</h3>
+<code>text</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasOid">Methods inherited from interface&nbsp;net.tangly.core.HasOid</h3>
 <code>oid</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasTags">Methods inherited from interface&nbsp;net.tangly.core.HasTags</h3>
-<code>add, addTags, clear, containsTag, containsTag, findBy, findBy, findByNamespace, rawTags, rawTags, remove, removeTagNamed, tags, tags, update, update, value</code></div>
+<code>containsTag, containsTag, findBy, findBy, findByNamespace, rawTags, tags, value</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasText">Methods inherited from interface&nbsp;net.tangly.core.HasText</h3>
-<code>text, text</code></div>
+<code>text</code></div>
 </section>
 </li>
 </ul>
@@ -254,7 +272,7 @@ implements net.tangly.core.EntityExtended, <a href="CrmEntity.html" title="inter
 <dt>Specified by:</dt>
 <dd><code>name</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasName</code></dd>
 <dt>Overrides:</dt>
-<dd><code>name</code>&nbsp;in class&nbsp;<code>net.tangly.core.EntityExtendedImp</code></dd>
+<dd><code>name</code>&nbsp;in class&nbsp;<code>net.tangly.core.MutableEntityExtendedImp</code></dd>
 </dl>
 </div>
 </section>
@@ -301,6 +319,8 @@ implements net.tangly.core.EntityExtended, <a href="CrmEntity.html" title="inter
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>validate</code>&nbsp;in interface&nbsp;<code>net.tangly.core.Entity</code></dd>
+<dt>Specified by:</dt>
+<dd><code>validate</code>&nbsp;in interface&nbsp;<code>net.tangly.core.MutableEntity</code></dd>
 </dl>
 </div>
 </section>

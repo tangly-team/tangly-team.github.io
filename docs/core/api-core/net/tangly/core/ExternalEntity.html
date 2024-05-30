@@ -89,8 +89,12 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="HasComments.html" title="interface in net.tangly.core">HasComments</a></code>, <code><a href="HasDate.html" title="interface in net.tangly.core">HasDate</a></code>, <code><a href="HasId.html" title="interface in net.tangly.core">HasId</a></code>, <code><a href="HasName.html" title="interface in net.tangly.core">HasName</a></code>, <code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code>, <code><a href="HasText.html" title="interface in net.tangly.core">HasText</a></code></dd>
 </dl>
 <dl class="notes">
+<dt>All Known Subinterfaces:</dt>
+<dd><code><a href="MutableExternalEntity.html" title="interface in net.tangly.core">MutableExternalEntity</a></code></dd>
+</dl>
+<dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="ExternalEntityImp.html" title="class in net.tangly.core">ExternalEntityImp</a></code></dd>
+<dd><code><a href="ExternalEntityImp.html" title="class in net.tangly.core">ExternalEntityImp</a></code>, <code><a href="MutalbeExternalEntityImp.html" title="class in net.tangly.core">MutalbeExternalEntityImp</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ExternalEntity</span><span class="extends-implements">
@@ -138,22 +142,22 @@ extends <a href="HasId.html" title="interface in net.tangly.core">HasId</a>, <a 
 <h2>Method Summary</h2>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasComments">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasComments.html" title="interface in net.tangly.core">HasComments</a></h3>
-<code><a href="HasComments.html#add(net.tangly.core.Comment)">add</a>, <a href="HasComments.html#addComments(java.lang.Iterable)">addComments</a>, <a href="HasComments.html#comments()">comments</a>, <a href="HasComments.html#comments(java.util.Collection)">comments</a>, <a href="HasComments.html#findByAuthor(java.lang.String)">findByAuthor</a>, <a href="HasComments.html#findByTag(java.lang.String,java.lang.String)">findByTag</a>, <a href="HasComments.html#findByTime(java.time.LocalDateTime,java.time.LocalDateTime)">findByTime</a>, <a href="HasComments.html#remove(net.tangly.core.Comment)">remove</a></code></div>
+<code><a href="HasComments.html#comments()">comments</a>, <a href="HasComments.html#findByAuthor(java.lang.String)">findByAuthor</a>, <a href="HasComments.html#findByTag(java.lang.String,java.lang.String)">findByTag</a>, <a href="HasComments.html#findByTime(java.time.LocalDateTime,java.time.LocalDateTime)">findByTime</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasDate">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasDate.html" title="interface in net.tangly.core">HasDate</a></h3>
-<code><a href="HasDate.html#date()">date</a>, <a href="HasDate.html#date(java.time.LocalDate)">date</a></code></div>
+<code><a href="HasDate.html#date()">date</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasId">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasId.html" title="interface in net.tangly.core">HasId</a></h3>
-<code><a href="HasId.html#id()">id</a>, <a href="HasId.html#id(java.lang.String)">id</a></code></div>
+<code><a href="HasId.html#id()">id</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasName">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasName.html" title="interface in net.tangly.core">HasName</a></h3>
-<code><a href="HasName.html#name()">name</a>, <a href="HasName.html#name(java.lang.String)">name</a></code></div>
+<code><a href="HasName.html#name()">name</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasTags">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></h3>
-<code><a href="HasTags.html#add(net.tangly.core.Tag)">add</a>, <a href="HasTags.html#addTags(java.lang.Iterable)">addTags</a>, <a href="HasTags.html#clear()">clear</a>, <a href="HasTags.html#containsTag(java.lang.String)">containsTag</a>, <a href="HasTags.html#containsTag(java.lang.String,java.lang.String)">containsTag</a>, <a href="HasTags.html#findBy(java.lang.String)">findBy</a>, <a href="HasTags.html#findBy(java.lang.String,java.lang.String)">findBy</a>, <a href="HasTags.html#findByNamespace(java.lang.String)">findByNamespace</a>, <a href="HasTags.html#rawTags()">rawTags</a>, <a href="HasTags.html#rawTags(java.lang.String)">rawTags</a>, <a href="HasTags.html#remove(net.tangly.core.Tag)">remove</a>, <a href="HasTags.html#removeTagNamed(java.lang.String)">removeTagNamed</a>, <a href="HasTags.html#tags()">tags</a>, <a href="HasTags.html#tags(java.util.Collection)">tags</a>, <a href="HasTags.html#update(java.lang.String,java.lang.String)">update</a>, <a href="HasTags.html#update(net.tangly.core.Tag)">update</a>, <a href="HasTags.html#value(java.lang.String)">value</a></code></div>
+<code><a href="HasTags.html#containsTag(java.lang.String)">containsTag</a>, <a href="HasTags.html#containsTag(java.lang.String,java.lang.String)">containsTag</a>, <a href="HasTags.html#findBy(java.lang.String)">findBy</a>, <a href="HasTags.html#findBy(java.lang.String,java.lang.String)">findBy</a>, <a href="HasTags.html#findByNamespace(java.lang.String)">findByNamespace</a>, <a href="HasTags.html#rawTags()">rawTags</a>, <a href="HasTags.html#tags()">tags</a>, <a href="HasTags.html#value(java.lang.String)">value</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.HasText">Methods inherited from interface&nbsp;net.tangly.core.<a href="HasText.html" title="interface in net.tangly.core">HasText</a></h3>
-<code><a href="HasText.html#text()">text</a>, <a href="HasText.html#text(java.lang.String)">text</a></code></div>
+<code><a href="HasText.html#text()">text</a></code></div>
 </section>
 </li>
 </ul>

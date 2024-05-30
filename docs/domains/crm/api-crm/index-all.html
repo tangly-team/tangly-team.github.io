@@ -129,6 +129,14 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/crm/ports/VCard2.html#birthday()" class="member-name-link">birthday()</a> - Method in class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/VCard2.html" title="class in net.tangly.erp.crm.ports">VCard2</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/tangly/erp/crm/domain/Contract.html#budgetInHours()" class="member-name-link">budgetInHours()</a> - Method in class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/Contract.html" title="class in net.tangly.erp.crm.domain">Contract</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/tangly/erp/crm/domain/ContractExtension.html#budgetInHours()" class="member-name-link">budgetInHours()</a> - Method in record class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/ContractExtension.html" title="class in net.tangly.erp.crm.domain">ContractExtension</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>budgetInHours</code> record component.</div>
+</dd>
+<dt><a href="net/tangly/erp/crm/domain/Contract.html#budgetInHours(java.math.BigDecimal)" class="member-name-link">budgetInHours(BigDecimal)</a> - Method in class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/Contract.html" title="class in net.tangly.erp.crm.domain">Contract</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:C">C</h2>
 <dl class="index">
@@ -216,7 +224,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">A contract extension extends the budget for an existing contract.</div>
 </dd>
-<dt><a href="net/tangly/erp/crm/domain/ContractExtension.html#%3Cinit%3E(java.lang.String,java.lang.String,net.tangly.core.DateRange,java.lang.String,java.lang.String,java.math.BigDecimal)" class="member-name-link">ContractExtension(String, String, DateRange, String, String, BigDecimal)</a> - Constructor for record class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/ContractExtension.html" title="class in net.tangly.erp.crm.domain">ContractExtension</a></dt>
+<dt><a href="net/tangly/erp/crm/domain/ContractExtension.html#%3Cinit%3E(java.lang.String,java.lang.String,net.tangly.core.DateRange,java.lang.String,java.lang.String,java.math.BigDecimal,java.math.BigDecimal)" class="member-name-link">ContractExtension(String, String, DateRange, String, String, BigDecimal, BigDecimal)</a> - Constructor for record class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/ContractExtension.html" title="class in net.tangly.erp.crm.domain">ContractExtension</a></dt>
 <dd>
 <div class="block">Creates an instance of a <code>ContractExtension</code> record class.</div>
 </dd>
@@ -306,6 +314,12 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/erp/crm/services/CrmBusinessLogic.html#%3Cinit%3E(net.tangly.erp.crm.services.CrmRealm)" class="member-name-link">CrmBusinessLogic(CrmRealm)</a> - Constructor for class net.tangly.erp.crm.services.<a href="net/tangly/erp/crm/services/CrmBusinessLogic.html" title="class in net.tangly.erp.crm.services">CrmBusinessLogic</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/tangly/erp/crm/ports/CrmEnrichmentHdl.html" class="type-name-link" title="class in net.tangly.erp.crm.ports">CrmEnrichmentHdl</a> - Class in <a href="net/tangly/erp/crm/ports/package-summary.html">net.tangly.erp.crm.ports</a></dt>
+<dd>
+<div class="block">Handler to import and export VCard representations of natural entities.</div>
+</dd>
+<dt><a href="net/tangly/erp/crm/ports/CrmEnrichmentHdl.html#%3Cinit%3E(net.tangly.erp.crm.services.CrmRealm)" class="member-name-link">CrmEnrichmentHdl(CrmRealm)</a> - Constructor for class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmEnrichmentHdl.html" title="class in net.tangly.erp.crm.ports">CrmEnrichmentHdl</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/crm/ports/CrmEntities.html" class="type-name-link" title="class in net.tangly.erp.crm.ports">CrmEntities</a> - Class in <a href="net/tangly/erp/crm/ports/package-summary.html">net.tangly.erp.crm.ports</a></dt>
 <dd>
 <div class="block">Defines the customer relationship management <i>CRM</i> subsystem.</div>
@@ -335,12 +349,6 @@ loadScripts(document, 'script');</script>
 <div class="block">Provide import and export functions for CRM entities persisted in tab separated files.</div>
 </dd>
 <dt><a href="net/tangly/erp/crm/ports/CrmTsvHdl.html#%3Cinit%3E(net.tangly.erp.crm.services.CrmRealm)" class="member-name-link">CrmTsvHdl(CrmRealm)</a> - Constructor for class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmTsvHdl.html" title="class in net.tangly.erp.crm.ports">CrmTsvHdl</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="net/tangly/erp/crm/ports/CrmVcardHdl.html" class="type-name-link" title="class in net.tangly.erp.crm.ports">CrmVcardHdl</a> - Class in <a href="net/tangly/erp/crm/ports/package-summary.html">net.tangly.erp.crm.ports</a></dt>
-<dd>
-<div class="block">Handler to import and export VCard representations of natural entities.</div>
-</dd>
-<dt><a href="net/tangly/erp/crm/ports/CrmVcardHdl.html#%3Cinit%3E(net.tangly.erp.crm.services.CrmRealm)" class="member-name-link">CrmVcardHdl(CrmRealm)</a> - Constructor for class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmVcardHdl.html" title="class in net.tangly.erp.crm.ports">CrmVcardHdl</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/crm/domain/Contract.html#currency()" class="member-name-link">currency()</a> - Method in class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/Contract.html" title="class in net.tangly.erp.crm.domain">Contract</a></dt>
 <dd>&nbsp;</dd>
@@ -640,15 +648,17 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/crm/ports/CrmTsvHdl.html#importLegalEntities(java.io.Reader,java.lang.String)" class="member-name-link">importLegalEntities(Reader, String)</a> - Method in class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmTsvHdl.html" title="class in net.tangly.erp.crm.ports">CrmTsvHdl</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/tangly/erp/crm/ports/CrmEnrichmentHdl.html#importLinkedInPhotos(java.nio.file.Path)" class="member-name-link">importLinkedInPhotos(Path)</a> - Method in class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmEnrichmentHdl.html" title="class in net.tangly.erp.crm.ports">CrmEnrichmentHdl</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/crm/ports/CrmTsvHdl.html#importNaturalEntities(java.io.Reader,java.lang.String)" class="member-name-link">importNaturalEntities(Reader, String)</a> - Method in class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmTsvHdl.html" title="class in net.tangly.erp.crm.ports">CrmTsvHdl</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/crm/ports/CrmTsvHdl.html#importSubjects(java.io.Reader,java.lang.String)" class="member-name-link">importSubjects(Reader, String)</a> - Method in class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmTsvHdl.html" title="class in net.tangly.erp.crm.ports">CrmTsvHdl</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/erp/crm/ports/CrmVcardHdl.html#importVCard(java.nio.file.Path)" class="member-name-link">importVCard(Path)</a> - Method in class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmVcardHdl.html" title="class in net.tangly.erp.crm.ports">CrmVcardHdl</a></dt>
+<dt><a href="net/tangly/erp/crm/ports/CrmEnrichmentHdl.html#importVCard(java.nio.file.Path)" class="member-name-link">importVCard(Path)</a> - Method in class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmEnrichmentHdl.html" title="class in net.tangly.erp.crm.ports">CrmEnrichmentHdl</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/erp/crm/ports/CrmVcardHdl.html#importVCards(java.nio.file.Path)" class="member-name-link">importVCards(Path)</a> - Method in class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmVcardHdl.html" title="class in net.tangly.erp.crm.ports">CrmVcardHdl</a></dt>
+<dt><a href="net/tangly/erp/crm/ports/CrmEnrichmentHdl.html#importVCards(java.nio.file.Path)" class="member-name-link">importVCards(Path)</a> - Method in class net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmEnrichmentHdl.html" title="class in net.tangly.erp.crm.ports">CrmEnrichmentHdl</a></dt>
 <dd>
-<div class="block">Import all vcard files located in the folder <i>directory</i>.</div>
+<div class="block">Import all vcard files located in the folder <i>folder</i>.</div>
 </dd>
 <dt><a href="net/tangly/erp/crm/domain/CrmTags.html#imTag(java.lang.String)" class="member-name-link">imTag(String)</a> - Static method in class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/CrmTags.html" title="class in net.tangly.erp.crm.domain">CrmTags</a></dt>
 <dd>&nbsp;</dd>
@@ -741,7 +751,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/erp/crm/domain/CrmTags.html#LINKEDIN" class="member-name-link">LINKEDIN</a> - Static variable in class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/CrmTags.html" title="class in net.tangly.erp.crm.domain">CrmTags</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/erp/crm/domain/CrmTags.html#linkedInTag(net.tangly.core.HasTags)" class="member-name-link">linkedInTag(HasTags)</a> - Static method in class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/CrmTags.html" title="class in net.tangly.erp.crm.domain">CrmTags</a></dt>
+<dt><a href="net/tangly/erp/crm/domain/CrmTags.html#linkedInTag(net.tangly.core.HasMutableTags)" class="member-name-link">linkedInTag(HasMutableTags)</a> - Static method in class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/CrmTags.html" title="class in net.tangly.erp.crm.domain">CrmTags</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/erp/crm/domain/Contract.html#locale()" class="member-name-link">locale()</a> - Method in class net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/Contract.html" title="class in net.tangly.erp.crm.domain">Contract</a></dt>
 <dd>&nbsp;</dd>

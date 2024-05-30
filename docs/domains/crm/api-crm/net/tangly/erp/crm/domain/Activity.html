@@ -89,12 +89,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.tangly.core.HasDate</code>, <code>net.tangly.core.HasText</code></dd>
+<dd><code>net.tangly.core.HasDate</code>, <code>net.tangly.core.HasMutableDate</code>, <code>net.tangly.core.HasMutableText</code>, <code>net.tangly.core.HasText</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Activity</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
+implements net.tangly.core.HasMutableDate, net.tangly.core.HasMutableText</span></div>
 <div class="block">An activity is an action between a seller and a potential sellee. Activities are performed in the context of an interaction. Activities are only available
  through their context, meaning no access to all activities exists.
  <p>The author of the activity identifies the collaborator interacting with the potential customer. Consider using documentation templates in the textual
@@ -109,8 +109,8 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
 <div class="inherited-list">
-<h3 id="nested-classes-inherited-from-class-net.tangly.core.HasDate">Nested classes/interfaces inherited from interface&nbsp;net.tangly.core.HasDate</h3>
-<code>net.tangly.core.HasDate.IntervalFilter&lt;T extends net.tangly.core.HasDate&gt;</code></div>
+<h3 id="nested-classes-inherited-from-class-net.tangly.core.HasMutableDate">Nested classes/interfaces inherited from interface&nbsp;net.tangly.core.HasMutableDate</h3>
+<code>net.tangly.core.HasMutableDate.IntervalFilter&lt;T extends net.tangly.core.HasMutableDate&gt;</code></div>
 </section>
 </li>
 <!-- =========== FIELD SUMMARY =========== -->
@@ -245,7 +245,7 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">date</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>date</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasDate</code></dd>
+<dd><code>date</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasMutableDate</code></dd>
 </dl>
 </div>
 </section>
@@ -318,7 +318,7 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">text</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>text</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasText</code></dd>
+<dd><code>text</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasMutableText</code></dd>
 </dl>
 </div>
 </section>

@@ -16,11 +16,25 @@
       <description>OS-001 Removes usage of Google Guava Library Date: 2018-02-20&#xA;Status Implemented&#xA;Context Guava is an historical effort to provide much-needed functionalities to the Java community. The Java ecosystem evolves quite slowly at the beginning of the millennium. Later stewardship clearly improved with a six-month release schedule approach. Preview and incubator initiatives allowed timely evaluation of new features and idioms in the Java language and ecosystem.&#xA;JDK versions from release 8 often provide better replacement methods for a lot of Guava functions.</description>
     </item>
     <item>
+      <title>LED 001</title>
+      <link>https://blog.tangly.net/docs/domains/architecture/adr/led-001-ledger-tag-for-vat-costs/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>https://blog.tangly.net/docs/domains/architecture/adr/led-001-ledger-tag-for-vat-costs/</guid>
+      <description>LED-001 Use Tag for VAT costs computation Date: 2017-12-01&#xA;Status Discarded: Redesign provides a better solution.&#xA;Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.&#xA;The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.</description>
+    </item>
+    <item>
       <title>OS 002: Unit Test Conventions</title>
       <link>https://blog.tangly.net/docs/domains/architecture/adr/os-002-unit-test-conventions/</link>
       <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/adr/os-002-unit-test-conventions/</guid>
       <description>OS-002 Define Unit Test Conventions Date: 2020-06-15&#xA;Status Implemented&#xA;Context Some libraries need to create files on a file system. For example, you want to generate human-readable paper invoices.&#xA;Decision We recommend the following conventions when writing unit tests which need to create files. Use Google Java in memory file system Jimfs. Additional file systems can only be used in Java if all operations are performed through Path objects. Path objects have a reference to the file system; File objects always referenced the default file system.</description>
+    </item>
+    <item>
+      <title>PRJ 001</title>
+      <link>https://blog.tangly.net/docs/domains/architecture/adr/prj-001-project-tag-for-project-costs/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>https://blog.tangly.net/docs/domains/architecture/adr/prj-001-project-tag-for-project-costs/</guid>
+      <description>PRJ-001 Use Tag for product costs computation Date: 2017-12-01&#xA;Status Implemented&#xA;Context We would like to compute earnings and costs on per product base. Each transaction entry should support tags to identify the associated projects or departments. The tag approach supports multiple consolidation of an orthogonal cost structure.&#xA;Decision We will support tags at the transaction entry. The tags are a triplet [namespace:]name[=value] format. We recommend the namespace &amp;#34;fin&amp;#34;, the name &amp;#34;segment&amp;#34;, and a text identifier has value.</description>
     </item>
     <item>
       <title>OS 003: Use Modern Java Constructs</title>

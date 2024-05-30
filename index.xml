@@ -24,10 +24,17 @@
     </item>
     <item>
       <title>LED 001</title>
-      <link>https://blog.tangly.net/docs/domains/ledger/adr/led-001-ledger-tag-for-vat-costs/</link>
+      <link>https://blog.tangly.net/docs/domains/architecture/adr/led-001-ledger-tag-for-vat-costs/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/ledger/adr/led-001-ledger-tag-for-vat-costs/</guid>
-      <description>LED-001 Use Tag for VAT costs computation Date: 2017-12-01&#xA;Status Implemented&#xA;Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.&#xA;The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.</description>
+      <guid>https://blog.tangly.net/docs/domains/architecture/adr/led-001-ledger-tag-for-vat-costs/</guid>
+      <description>LED-001 Use Tag for VAT costs computation Date: 2017-12-01&#xA;Status Discarded: Redesign provides a better solution.&#xA;Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.&#xA;The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.</description>
+    </item>
+    <item>
+      <title>LED 001</title>
+      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/led-001-ledger-tag-for-vat-costs/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/led-001-ledger-tag-for-vat-costs/</guid>
+      <description>LED-001 Use Tag for VAT costs computation Date: 2017-12-01&#xA;Status Discarded: Redesign provides a better solution.&#xA;Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.&#xA;The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.</description>
     </item>
     <item>
       <title>OS 002: Unit Test Conventions</title>
@@ -45,9 +52,16 @@
     </item>
     <item>
       <title>PRJ 001</title>
-      <link>https://blog.tangly.net/docs/domains/products/adr/prj-001-project-tag-for-project-costs/</link>
+      <link>https://blog.tangly.net/docs/domains/architecture/adr/prj-001-project-tag-for-project-costs/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/products/adr/prj-001-project-tag-for-project-costs/</guid>
+      <guid>https://blog.tangly.net/docs/domains/architecture/adr/prj-001-project-tag-for-project-costs/</guid>
+      <description>PRJ-001 Use Tag for product costs computation Date: 2017-12-01&#xA;Status Implemented&#xA;Context We would like to compute earnings and costs on per product base. Each transaction entry should support tags to identify the associated projects or departments. The tag approach supports multiple consolidation of an orthogonal cost structure.&#xA;Decision We will support tags at the transaction entry. The tags are a triplet [namespace:]name[=value] format. We recommend the namespace &amp;#34;fin&amp;#34;, the name &amp;#34;segment&amp;#34;, and a text identifier has value.</description>
+    </item>
+    <item>
+      <title>PRJ 001</title>
+      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/prj-001-project-tag-for-project-costs/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/prj-001-project-tag-for-project-costs/</guid>
       <description>PRJ-001 Use Tag for product costs computation Date: 2017-12-01&#xA;Status Implemented&#xA;Context We would like to compute earnings and costs on per product base. Each transaction entry should support tags to identify the associated projects or departments. The tag approach supports multiple consolidation of an orthogonal cost structure.&#xA;Decision We will support tags at the transaction entry. The tags are a triplet [namespace:]name[=value] format. We recommend the namespace &amp;#34;fin&amp;#34;, the name &amp;#34;segment&amp;#34;, and a text identifier has value.</description>
     </item>
     <item>
@@ -181,7 +195,7 @@
       <link>https://blog.tangly.net/docs/fsm/examples/fsm-tests/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/fsm/examples/fsm-tests/</guid>
-      <description>Finite State Machines xBelow different formats to document automatically a finite state machine description.&#xA;The nicest diagrams are often produced through PlantUML. Sometimes you must tinker with the declaration order of the state to improve the layout result.&#xA;Finite State Machine bbv fsm-bbv States Name Context Description Final Initial Composite Entry Action Exit Action Root&#xA;-&#xA;true&#xA;true&#xA;true&#xA;-&#xA;-&#xA;Off&#xA;Root&#xA;false&#xA;true&#xA;false&#xA;Entry action of Off state</description>
+      <description>Finite State Machines Below different formats to document automatically a finite state machine description.&#xA;The nicest diagrams are often produced through PlantUML. Sometimes you must tinker with the declaration order of the state to improve the layout result.&#xA;Finite State Machine bbv fsm-bbv States Name Context Description Final Initial Composite Entry Action Exit Action Root&#xA;-&#xA;true&#xA;true&#xA;true&#xA;-&#xA;-&#xA;Off&#xA;Root&#xA;false&#xA;true&#xA;false&#xA;Entry action of Off state</description>
     </item>
     <item>
       <title>Introduction and Goals</title>
@@ -223,91 +237,91 @@
       <link>https://blog.tangly.net/docs/core/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/core/readme/</guid>
-      <description>Purpose The tangly core component provides a key abstraction for domain-driven development approach and entities with tags and comments. It requires Java 17 or higher.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly:core:0.2.7&amp;#34; The documentation can be found under Core.</description>
+      <description>Purpose The tangly core component provides a key abstraction for domain-driven development approach and entities with tags and comments. It requires Java 21 LTS or higher.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly:core:0.2.7&amp;#34; The documentation can be found under Core.&#xA;Awesome Sponsors and Developers Corporate sponsors are&#xA;tangly llc&#xA;Individual developers are</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/dev/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/dev/readme/</guid>
-      <description>Purpose Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;dev&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly:dev:0.2.7&amp;#34; The documentation can be found under Commons documentation&#xA;For any further questions, you can use the forum tangly-Discussions.</description>
+      <description>Purpose Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;dev&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly:dev:0.2.7&amp;#34; The documentation can be found under Commons documentation&#xA;For any further questions, you can use the forum tangly-Discussions.&#xA;Awesome Sponsors and Developers Corporate sponsors are&#xA;tangly llc&#xA;Individual developers are&#xA;Marcel Baumann&#xA;Alexandra Junghans</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/agile/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/agile/readme/</guid>
-      <description>Purpose The tangly erp agile bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;collaborators&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:collaborators:0.2.7&amp;#34; The documentation can be found under {-url}/domains/agile/[Business documentation].</description>
+      <description>Purpose The tangly erp agile bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 21 LTS or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;collaborators&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; Download and Documentation The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:collaborators:0.2.7&amp;#34; The documentation can be found under Business documentation.</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/collaborators/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/collaborators/readme/</guid>
-      <description>Purpose The tangly erp collaborators bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;collaborators&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:collaborators:0.2.7&amp;#34; The documentation can be found under {-url}/domains/collaborators/[Business documentation].&#xA;For any further questions, you can use the forum tangly-Discussions.</description>
+      <description>Purpose The tangly erp collaborators bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 21 LTS or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;collaborators&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:collaborators:0.2.7&amp;#34; The documentation can be found under {-url}/domains/collaborators/[Business documentation].&#xA;For any further questions, you can use the forum tangly-Discussions.</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/crm/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/crm/readme/</guid>
-      <description>Purpose The tangly erp crm bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;crm&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:crm:0.2.7&amp;#34; The documentation can be found under Business documentation.&#xA;For any further questions, you can use the forum tangly-Discussions.</description>
+      <description>Purpose The tangly erp crm bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 21 LTS or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;crm&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:crm:0.2.7&amp;#34; The documentation can be found under Business documentation.&#xA;For any further questions, you can use the forum tangly-Discussions.</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/invoices/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/invoices/readme/</guid>
-      <description>Purpose The tangly erp invoices bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;invoices&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:invoices:0.2.7&amp;#34; The documentation can be found under Business documentation.</description>
+      <description>Purpose The tangly erp invoices bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 21 LTS or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;invoices&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:invoices:0.2.7&amp;#34; The documentation can be found under Business documentation.&#xA;Awesome Sponsors and Developers Corporate sponsors are</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/ledger/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/ledger/readme/</guid>
-      <description>Purpose The tangly erp crm bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;crm&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:crm:0.2.7&amp;#34; The documentation can be found under Business documentation.</description>
+      <description>Purpose The tangly erp crm bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 21 LTS or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;crm&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:crm:0.2.7&amp;#34; The documentation can be found under Business documentation.&#xA;Awesome Sponsors and Developers Corporate sponsors are</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/products/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/products/readme/</guid>
-      <description>Purpose The tangly erp products bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;products&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:products:0.2.7&amp;#34; The documentation can be found under Business documentation.</description>
+      <description>Purpose The tangly erp products bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 21 LTS or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;products&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:products:0.2.7&amp;#34; The documentation can be found under Business documentation.&#xA;Awesome Sponsors and Developers Corporate sponsors are</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/shared/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/shared/readme/</guid>
-      <description>Purpose The tangly erp shared bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;shared&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:shared:0.2.7&amp;#34; The documentation can be found under Business documentation.</description>
+      <description>Purpose The tangly erp shared bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 21 LTS or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;shared&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:shared:0.2.7&amp;#34; The documentation can be found under Business documentation.&#xA;Awesome Sponsors and Developers Corporate sponsors are</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/ui/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/ui/readme/</guid>
-      <description>Purpose The tangly erp ui bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Try it out.&#xA;Download and Documentation Include the library in your Maven configuration as:&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ui&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; Include the library in your Gradle configuration as:&#xA;implementation &amp;#34;net.tangly.erp:ui:0.2.7&amp;#34; The documentation can be found under Business documentation.&#xA;For any further questions, you can use the forum tangly-Discussions.</description>
+      <description>Purpose The tangly erp ui bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 21 LTS or higher.&#xA;Try it out.&#xA;Download and Documentation Include the library in your Maven configuration as:&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ui&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; Include the library in your Gradle configuration as:&#xA;implementation &amp;#34;net.tangly.erp:ui:0.2.7&amp;#34; The documentation can be found under Business documentation.&#xA;For any further questions, you can use the forum tangly-Discussions.</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/fsm/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/fsm/readme/</guid>
-      <description>Purpose The tangly fsm is a finite state machine library. You can use it in productive projects and academic assignments. The component is using records and requires Java 17 or higher.&#xA;The library provides&#xA;Definition of hierarchical state machine descriptions. The machine states and transitions are generic classes. You provide an enumeration for the set of states, and an enumeration for the set of events triggering the machine. The builder pattern is used to create complex state machine definition declaratively,</description>
+      <description>Purpose The tangly fsm is a finite state machine library. You can use it in productive projects and academic assignments. The component is using records and requires Java 21 LTS or higher.&#xA;The library provides&#xA;Definition of hierarchical state machine descriptions. The machine states and transitions are generic classes. You provide an enumeration for the set of states, and an enumeration for the set of events triggering the machine. The builder pattern is used to create complex state machine definition declaratively,</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/gleam/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/gleam/readme/</guid>
-      <description>Purpose Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;gleam&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly:gleam:0.2.7&amp;#34; The documentation can be found under Commons documentation.</description>
+      <description>Purpose Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;gleam&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly:gleam:0.2.7&amp;#34; The documentation can be found under Commons documentation.&#xA;Awesome Sponsors and Developers Corporate sponsors are&#xA;tangly llc&#xA;Individual developers are&#xA;Marcel Baumann&#xA;Alexandra Junghans</description>
     </item>
     <item>
       <title>Readme</title>
       <link>https://blog.tangly.net/docs/ui/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/ui/readme/</guid>
-      <description>Purpose The tangly ui erp component provides a Vaadin based user interfaces for enterprise applications written in Java. The component is using records and requires Java 17 or higher.&#xA;Currently, we are moving at the bleeding edge of our components. Therefore, to build and execute the ERP application, please do:&#xA;mvn jetty:run The initial username and password are &amp;#39;administrator&amp;#39; and &amp;#39;aeon&amp;#39;.&#xA;The file application.properties in …/main/resources directory tailors the configuration of the application, mainly the location of data.</description>
+      <description>Purpose The tangly ui erp component provides a Vaadin based user interfaces for enterprise applications written in Java. The component is using records and requires Java 21 LTS or higher.&#xA;Currently, we are moving at the bleeding edge of our components. Therefore, to build and execute the ERP application, please do:&#xA;mvn jetty:run The initial username and password are &amp;#39;administrator&amp;#39; and &amp;#39;aeon&amp;#39;.&#xA;The file application.properties in …/main/resources directory tailors the configuration of the application, mainly the location of data.</description>
     </item>
     <item>
       <title>Agile Architecture</title>
@@ -328,7 +342,7 @@
       <link>https://blog.tangly.net/docs/ui/releasesnotes/</link>
       <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/ui/releasesnotes/</guid>
-      <description>Commons UI Library Change Logs This document provides a high-level view of the changes introduced in the Common UI library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Improvements CRM analytics are provided to have an analytics reporting of key indicators&#xA;Support for localized invoice generation and support of CHF and EUR as currency</description>
+      <description>Commons UI Library Change Logs This document provides a high-level view of the changes introduced in the Common UI library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Improvements CRM analytics are provided to have an analytics reporting of key indicators&#xA;Support for localized invoice generation and support of CHF and EUR as currency</description>
     </item>
     <item>
       <title>Agile Architecture</title>
@@ -356,98 +370,105 @@
       <link>https://blog.tangly.net/docs/apps/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/apps/releasesnotes/</guid>
-      <description>Apps Library Change Logs This document provides a high-level view of the changes introduced in the apps library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Initial release of the library</description>
+      <description>Apps Library Change Logs This document provides a high-level view of the changes introduced in the apps library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Initial release of the library</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/bdd/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/bdd/releasesnotes/</guid>
-      <description>BDD Library Change Logs This document provides a high-level view of the changes introduced in the BDD library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Update of the dependencies&#xA;0.2.5 (2020-08-31) Update of the dependencies&#xA;0.2.4 (2020-06-30) BDD library is now a regular Java 9 module (thanks to the new module support in Gradle 6.</description>
+      <description>BDD Library Change Logs This document provides a high-level view of the changes introduced in the BDD library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Update of the dependencies&#xA;0.2.5 (2020-08-31) Update of the dependencies&#xA;0.2.4 (2020-06-30) BDD library is now a regular Java 9 module (thanks to the new module support in Gradle 6.</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/commons/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/commons/releasesnotes/</guid>
-      <description>Commons Library Change Logs This document provides a high-level view of the changes introduced in the Commons library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions&#xA;0.2.6 (2021-08-31) Update of the dependencies&#xA;0.2.5 (2020-08-31) Initial release of the library</description>
+      <description>Commons Library Change Logs This document provides a high-level view of the changes introduced in the Commons library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions&#xA;0.2.6 (2021-08-31) Update of the dependencies&#xA;0.2.5 (2020-08-31) Initial release of the library</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/core/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/core/releasesnotes/</guid>
-      <description>Core Library Change Logs This document provides a high-level view of the changes introduced in the Core library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Initial release of the library</description>
+      <description>Core Library Change Logs This document provides a high-level view of the changes introduced in the Core library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Initial release of the library</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/dev/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/dev/releasesnotes/</guid>
-      <description>DEV Library Change Logs This document provides a high-level view of the changes introduced in the DEV library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Update of the dependencies&#xA;0.2.5 (2020-08-31) Initial release of the library</description>
+      <description>DEV Library Change Logs This document provides a high-level view of the changes introduced in the DEV library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Update of the dependencies&#xA;0.2.5 (2020-08-31) Initial release of the library</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/domains/agile/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/agile/releasesnotes/</guid>
-      <description>Agile Change Logs This document provides a high-level view of the changes introduced in the agile ERP library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-20, and modern Gradle approach to build solutions.</description>
+      <description>Agile Change Logs This document provides a high-level view of the changes introduced in the agile ERP library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-20, and modern Gradle approach to build solutions.</description>
+    </item>
+    <item>
+      <title>Release Notes</title>
+      <link>https://blog.tangly.net/docs/domains/collaborators/releasesnotes/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://blog.tangly.net/docs/domains/collaborators/releasesnotes/</guid>
+      <description>ERP Collaborators Library Change Logs This document provides a high-level view of the changes introduced in the ERP CRM library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Initial release of the library as a DDD bounded domain</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/domains/crm/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/crm/releasesnotes/</guid>
-      <description>ERP CRM Library Change Logs This document provides a high-level view of the changes introduced in the ERP CRM library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) First version of the library packed as a DDD bounded domain&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes</description>
+      <description>ERP CRM Library Change Logs This document provides a high-level view of the changes introduced in the ERP CRM library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;Fix: photo of a natural entity is persisted and displayed without distortions.&#xA;Fix: analytics diagrams display correctly upon initial import of data.</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/domains/invoices/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/invoices/releasesnotes/</guid>
-      <description>ERP Invoices Library Change Logs This document provides a high-level view of the changes introduced in the ERP Invoices library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) First version of the library packed as a DDD bounded domain&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes</description>
+      <description>ERP Invoices Library Change Logs This document provides a high-level view of the changes introduced in the ERP Invoices library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) First version of the library packed as a DDD bounded domain&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/domains/ledger/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/ledger/releasesnotes/</guid>
-      <description>ERP Ledger Library Change Logs This document provides a high-level view of the changes introduced in the Ledger CRM library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Initial version of the library packed as a DDD bounded domain.&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes.</description>
+      <description>ERP Ledger Library Change Logs This document provides a high-level view of the changes introduced in the Ledger CRM library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) Initial version of the library packed as a DDD bounded domain.&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes.</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/domains/products/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/products/releasesnotes/</guid>
-      <description>ERP Products Library Change Logs This document provides a high-level view of the changes introduced in the ERP Products library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions&#xA;0.2.6 (2021-08-31) Initial version of the library packed as a DDD bounded domain&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes</description>
+      <description>ERP Products Library Change Logs This document provides a high-level view of the changes introduced in the ERP Products library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions&#xA;Efforts are now stored in YAML files. The library provides a parser to read and write YAML files. Work contract abstraction tracks the efforts of a person on a project.</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/domains/shared/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/shared/releasesnotes/</guid>
-      <description>ERP Shared Library Change Logs This document provides a high-level view of the changes introduced in the ERP Shared library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) First version of the library packed as a DDD bounded domain&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes</description>
+      <description>ERP Shared Library Change Logs This document provides a high-level view of the changes introduced in the ERP Shared library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) First version of the library packed as a DDD bounded domain&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/domains/ui/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/ui/releasesnotes/</guid>
-      <description>UI Library Change Logs This document provides a high-level view of the changes introduced in the ERP UI library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions&#xA;0.2.6 (2021-08-31) Initial version of the library packed as a DDD bounded domain&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes</description>
+      <description>UI Library Change Logs This document provides a high-level view of the changes introduced in the ERP UI library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions&#xA;0.2.6 (2021-08-31) Initial version of the library packed as a DDD bounded domain&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/fsm/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/fsm/releasesnotes/</guid>
-      <description>FSM Library Change Logs This document provides a high-level view of the changes introduced in the FSM library by release. For a detailed view of what has changed, refer to the repository git commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;Added statechart diagram support for smcat and mermaid formats.&#xA;Actor library now uses the standard API FLow implementation and virtual thread executor.</description>
+      <description>FSM Library Change Logs This document provides a high-level view of the changes introduced in the FSM library by release. For a detailed view of what has changed, refer to the repository git commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;Added statechart diagram support for smcat and mermaid formats.&#xA;Actor library now uses the standard API FLow implementation and virtual thread executor.</description>
     </item>
     <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/gleam/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/gleam/releasesnotes/</guid>
-      <description>Gleam Library Change Logs This document provides a high-level view of the changes introduced in the Gleam library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024.05.31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions&#xA;0.2.6 (2021-08-31) Update of the dependencies&#xA;0.2.5 (2020-08-31) Initial release of the library&#xA;Framework to generate the TSV representation of business entities</description>
+      <description>Gleam Library Change Logs This document provides a high-level view of the changes introduced in the Gleam library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions&#xA;0.2.6 (2021-08-31) Update of the dependencies&#xA;0.2.5 (2020-08-31) Initial release of the library&#xA;Framework to generate the TSV representation of business entities</description>
     </item>
     <item>
       <title>Agile Products</title>
@@ -769,14 +790,14 @@
       <link>https://blog.tangly.net/docs/domains/architecture/09-architecture-decisions/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/09-architecture-decisions/</guid>
-      <description>Architecture Decisions Overall Decisions System Guava Removal&#xA;Unit Test Conventions&#xA;Use Modern Java Constructs&#xA;Publish Technical Documentation through Static Website&#xA;Publish Maven Central Artifacts&#xA;Dependency Injection Guice&#xA;Persistence with MicroStream&#xA;Use log4j2 as Default Logger&#xA;Use hsqldb as SQL store&#xA;Archive Data&#xA;Vaadin as User Interface Approach&#xA;ERP UI Decisions Asciidoc for all Texts&#xA;FSM Decisions Move Abstractions to JDK Classes&#xA;Publish Maven Central Artifacts</description>
+      <description>Architecture Decisions Overall Decisions System Guava Removal&#xA;Unit Test Conventions&#xA;Use Modern Java Constructs&#xA;Publish Technical Documentation through Static Website&#xA;Publish Maven Central Artifacts&#xA;Dependency Injection Guice&#xA;Persistence with MicroStream&#xA;Use log4j2 as Default Logger&#xA;Use hsqldb as SQL store&#xA;Archive Data&#xA;Vaadin as User Interface Approach&#xA;ERP UI Decisions Asciidoc for all Texts&#xA;FSM Decisions Move Abstractions to JDK Classes&#xA;Publish Maven Central Artifacts&#xA;PRJ Decisions link:../adr/prj-001-project-tag-for-project-costs/Project Tag for Project Costs]</description>
     </item>
     <item>
       <title>Architecture Decisions</title>
       <link>https://blog.tangly.net/docs/domains/shared/_design/09-architecture-decisions/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/shared/_design/09-architecture-decisions/</guid>
-      <description>Architecture Decisions Overall Decisions System Guava Removal&#xA;Unit Test Conventions&#xA;Use Modern Java Constructs&#xA;Publish Technical Documentation through Static Website&#xA;Publish Maven Central Artifacts&#xA;Dependency Injection Guice&#xA;Persistence with MicroStream&#xA;Use log4j2 as Default Logger&#xA;Use hsqldb as SQL store&#xA;Archive Data&#xA;Vaadin as User Interface Approach&#xA;ERP UI Decisions Asciidoc for all Texts&#xA;FSM Decisions Move Abstractions to JDK Classes&#xA;Publish Maven Central Artifacts</description>
+      <description>Architecture Decisions Overall Decisions System Guava Removal&#xA;Unit Test Conventions&#xA;Use Modern Java Constructs&#xA;Publish Technical Documentation through Static Website&#xA;Publish Maven Central Artifacts&#xA;Dependency Injection Guice&#xA;Persistence with MicroStream&#xA;Use log4j2 as Default Logger&#xA;Use hsqldb as SQL store&#xA;Archive Data&#xA;Vaadin as User Interface Approach&#xA;ERP UI Decisions Asciidoc for all Texts&#xA;FSM Decisions Move Abstractions to JDK Classes&#xA;Publish Maven Central Artifacts&#xA;PRJ Decisions link:../adr/prj-001-project-tag-for-project-costs/Project Tag for Project Costs]</description>
     </item>
     <item>
       <title>Quality Requirements</title>
@@ -881,14 +902,14 @@
       <link>https://blog.tangly.net/docs/contribution-guidelines/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/contribution-guidelines/</guid>
-      <description>Contribution Guidelines How to contribute to tangly Open Source Components This is an open source product. We love getting patches and contributions to make our components, and their documentation even better.&#xA;Contributing to tangly Open Source Components The components live in Open Source Components. The git repository and the issue tracker are public and accessible to all interested parties.&#xA;You can create the set of git remotes with the following instructions.</description>
+      <description>This is an open source product. We love getting patches and contributions to make our components, and their documentation even better.&#xA;Contributing to tangly Open Source Components The components live in Open Source Components. The git repository and the issue tracker are public and accessible to all interested parties.&#xA;You can create the set of git remotes with the following instructions.&#xA;git remote add origin-github git@github.com:marcelbaumann/tangly-os.git (1) git remote add origin-gitlab git@gitlab.</description>
     </item>
     <item>
       <title>Development Environment</title>
       <link>https://blog.tangly.net/docs/development-environment/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/development-environment/</guid>
-      <description>Development Environment The development environment is MacOS [1].&#xA;Java JDKs Install Java development kits. You should at least install the last released version and the last LTS version. We use the distributions of Oracle.&#xA;alias java17 = &amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 17`; java -version&amp;#34; alias java19 = &amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 19`; java -version&amp;#34; alias java20 = &amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 20`; java -version&amp;#34; Tools We use brew to install. The following tools shall be installed:</description>
+      <description>The development environment is MacOS [1].&#xA;Java JDKs Install Java development kits. You should at least install the last released version and the last LTS version. We use the distributions of Oracle.&#xA;alias java17 = &amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 17`; java -version&amp;#34; alias java19 = &amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 19`; java -version&amp;#34; alias java20 = &amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 20`; java -version&amp;#34; Tools We use brew to install. The following tools shall be installed [2].</description>
     </item>
     <item>
       <title>I Love My Nerdy Job</title>
@@ -1259,7 +1280,7 @@
       <link>https://blog.tangly.net/blog/2022/modular-monoliths-are-the-new-graal/</link>
       <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/blog/2022/modular-monoliths-are-the-new-graal/</guid>
-      <description>A modular monolith is a software design approach in which a monolith is designed with an emphasis on interchangeable and potentially reusable modules.&#xA;A modular monolith can be split in the future into a set of microservices.&#xA;Delay the split as long as you can. Microservices have a steep price tag during operations.&#xA;A modular monolith provides:&#xA;Independent and parallel development approach&#xA;Diminish coupling and improve cohesion. The interfaces are better documented and thinner.</description>
+      <description>A modular monolith is a software design approach in which a monolith is designed with an emphasis on interchangeable and potentially reusable modules.&#xA;A modular monolith can be split in the future into a set of microservices.&#xA;Delay the split as long as you can. Microservices have a steep price tag during operations.&#xA;A modular monolith provides:&#xA;Independent and parallel development approach.&#xA;Diminish coupling and improve cohesion. The interfaces are better documented and thinner.</description>
     </item>
     <item>
       <title>Software Structure with DDD</title>
