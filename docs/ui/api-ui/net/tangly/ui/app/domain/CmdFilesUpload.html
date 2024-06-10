@@ -165,29 +165,35 @@ implements <a href="Cmd.html" title="interface in net.tangly.ui.app.domain">Cmd<
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute()" class="member-name-link">execute</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected net.tangly.core.domain.BoundedDomain<wbr>&lt;<a href="CmdFilesUpload.html" title="type parameter in CmdFilesUpload">R</a>,<wbr><a href="CmdFilesUpload.html" title="type parameter in CmdFilesUpload">B</a>,<wbr><a href="CmdFilesUpload.html" title="type parameter in CmdFilesUpload">P</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#domain()" class="member-name-link">domain</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute()" class="member-name-link">execute</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Execute the command.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#overwrite()" class="member-name-link">overwrite</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processInputStream(java.lang.String,java.util.function.BiConsumer)" class="member-name-link">processInputStream</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Process the input stream with the provided consumer.</div>
-</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#overwrite()" class="member-name-link">overwrite</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processInputStream(java.lang.String,net.tangly.commons.lang.functional.TriConsumer)" class="member-name-link">processInputStream</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
- @NotNull net.tangly.commons.lang.functional.TriConsumer&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processInputStream(net.tangly.core.domain.DomainAudit,java.lang.String,boolean,net.tangly.commons.lang.functional.TriConsumer)" class="member-name-link">processInputStream</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
+ boolean&nbsp;overwrite,
+ @NotNull net.tangly.commons.lang.functional.TriConsumer&lt;net.tangly.core.domain.DomainAudit,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;consumer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Process the input stream with the provided consumer.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAllFinishedListener(com.vaadin.flow.component.ComponentEventListener)" class="member-name-link">registerAllFinishedListener</a><wbr>(@NotNull com.vaadin.flow.component.ComponentEventListener&lt;com.vaadin.flow.component.upload.AllFinishedEvent&gt;&nbsp;listener)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processInputStream(net.tangly.core.domain.DomainAudit,java.lang.String,net.tangly.commons.lang.functional.TriConsumer)" class="member-name-link">processInputStream</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
+ @NotNull net.tangly.commons.lang.functional.TriConsumer&lt;net.tangly.core.domain.DomainAudit,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;consumer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Process the input stream with the provided consumer.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAllFinishedListener(com.vaadin.flow.component.ComponentEventListener)" class="member-name-link">registerAllFinishedListener</a><wbr>(@NotNull com.vaadin.flow.component.ComponentEventListener&lt;com.vaadin.flow.component.upload.AllFinishedEvent&gt;&nbsp;listener)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Register the listener in charge to load and update the provided entities for the domain.</div>
 </div>
 </div>
@@ -337,6 +343,14 @@ implements <a href="Cmd.html" title="interface in net.tangly.ui.app.domain">Cmd<
 </section>
 </li>
 <li>
+<section class="detail" id="domain()">
+<h3>domain</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">net.tangly.core.domain.BoundedDomain&lt;<a href="CmdFilesUpload.html" title="type parameter in CmdFilesUpload">R</a>,<wbr><a href="CmdFilesUpload.html" title="type parameter in CmdFilesUpload">B</a>,<wbr><a href="CmdFilesUpload.html" title="type parameter in CmdFilesUpload">P</a>&gt;</span>&nbsp;<span class="element-name">domain</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="buffer()">
 <h3>buffer</h3>
 <div class="horizontal-scroll">
@@ -368,13 +382,15 @@ implements <a href="Cmd.html" title="interface in net.tangly.ui.app.domain">Cmd<
 </section>
 </li>
 <li>
-<section class="detail" id="processInputStream(java.lang.String,java.util.function.BiConsumer)">
+<section class="detail" id="processInputStream(net.tangly.core.domain.DomainAudit,java.lang.String,net.tangly.commons.lang.functional.TriConsumer)">
 <h3>processInputStream</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processInputStream</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
  @NotNull
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;consumer)</span></div>
+ @NotNull net.tangly.commons.lang.functional.TriConsumer&lt;net.tangly.core.domain.DomainAudit,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;consumer)</span></div>
 <div class="block">Process the input stream with the provided consumer.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -385,13 +401,16 @@ implements <a href="Cmd.html" title="interface in net.tangly.ui.app.domain">Cmd<
 </section>
 </li>
 <li>
-<section class="detail" id="processInputStream(java.lang.String,net.tangly.commons.lang.functional.TriConsumer)">
+<section class="detail" id="processInputStream(net.tangly.core.domain.DomainAudit,java.lang.String,boolean,net.tangly.commons.lang.functional.TriConsumer)">
 <h3>processInputStream</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processInputStream</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
  @NotNull
- @NotNull net.tangly.commons.lang.functional.TriConsumer&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;consumer)</span></div>
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
+ boolean&nbsp;overwrite,
+ @NotNull
+ @NotNull net.tangly.commons.lang.functional.TriConsumer&lt;net.tangly.core.domain.DomainAudit,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;consumer)</span></div>
 <div class="block">Process the input stream with the provided consumer.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

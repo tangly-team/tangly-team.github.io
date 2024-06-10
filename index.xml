@@ -6,20 +6,13 @@
     <description>Recent content in tangly OS components on tangly Components</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.tangly.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OS 001: System Guava Removal</title>
       <link>https://blog.tangly.net/docs/domains/architecture/adr/os-001-system-guava-removal/</link>
       <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/adr/os-001-system-guava-removal/</guid>
-      <description>OS-001 Removes usage of Google Guava Library Date: 2018-02-20&#xA;Status Implemented&#xA;Context Guava is an historical effort to provide much-needed functionalities to the Java community. The Java ecosystem evolves quite slowly at the beginning of the millennium. Later stewardship clearly improved with a six-month release schedule approach. Preview and incubator initiatives allowed timely evaluation of new features and idioms in the Java language and ecosystem.&#xA;JDK versions from release 8 often provide better replacement methods for a lot of Guava functions.</description>
-    </item>
-    <item>
-      <title>OS 001: System Guava Removal</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-001-system-guava-removal/</link>
-      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-001-system-guava-removal/</guid>
       <description>OS-001 Removes usage of Google Guava Library Date: 2018-02-20&#xA;Status Implemented&#xA;Context Guava is an historical effort to provide much-needed functionalities to the Java community. The Java ecosystem evolves quite slowly at the beginning of the millennium. Later stewardship clearly improved with a six-month release schedule approach. Preview and incubator initiatives allowed timely evaluation of new features and idioms in the Java language and ecosystem.&#xA;JDK versions from release 8 often provide better replacement methods for a lot of Guava functions.</description>
     </item>
     <item>
@@ -30,24 +23,10 @@
       <description>LED-001 Use Tag for VAT costs computation Date: 2017-12-01&#xA;Status Discarded: Redesign provides a better solution.&#xA;Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.&#xA;The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.</description>
     </item>
     <item>
-      <title>LED 001</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/led-001-ledger-tag-for-vat-costs/</link>
-      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/led-001-ledger-tag-for-vat-costs/</guid>
-      <description>LED-001 Use Tag for VAT costs computation Date: 2017-12-01&#xA;Status Discarded: Redesign provides a better solution.&#xA;Context We need to record the VAT components of transactions in our ledger system. The VAT value can be different for each position in a transaction therefore the VAT information shall be defined on each part of a transaction.&#xA;The value of the VAT is computed based on the VAT percentage. The percentage can change over time due to regulatory changes.</description>
-    </item>
-    <item>
       <title>OS 002: Unit Test Conventions</title>
       <link>https://blog.tangly.net/docs/domains/architecture/adr/os-002-unit-test-conventions/</link>
       <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/adr/os-002-unit-test-conventions/</guid>
-      <description>OS-002 Define Unit Test Conventions Date: 2020-06-15&#xA;Status Implemented&#xA;Context Some libraries need to create files on a file system. For example, you want to generate human-readable paper invoices.&#xA;Decision We recommend the following conventions when writing unit tests which need to create files. Use Google Java in memory file system Jimfs. Additional file systems can only be used in Java if all operations are performed through Path objects. Path objects have a reference to the file system; File objects always referenced the default file system.</description>
-    </item>
-    <item>
-      <title>OS 002: Unit Test Conventions</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-002-unit-test-conventions/</link>
-      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-002-unit-test-conventions/</guid>
       <description>OS-002 Define Unit Test Conventions Date: 2020-06-15&#xA;Status Implemented&#xA;Context Some libraries need to create files on a file system. For example, you want to generate human-readable paper invoices.&#xA;Decision We recommend the following conventions when writing unit tests which need to create files. Use Google Java in memory file system Jimfs. Additional file systems can only be used in Java if all operations are performed through Path objects. Path objects have a reference to the file system; File objects always referenced the default file system.</description>
     </item>
     <item>
@@ -58,24 +37,10 @@
       <description>PRJ-001 Use Tag for product costs computation Date: 2017-12-01&#xA;Status Implemented&#xA;Context We would like to compute earnings and costs on per product base. Each transaction entry should support tags to identify the associated projects or departments. The tag approach supports multiple consolidation of an orthogonal cost structure.&#xA;Decision We will support tags at the transaction entry. The tags are a triplet [namespace:]name[=value] format. We recommend the namespace &amp;#34;fin&amp;#34;, the name &amp;#34;segment&amp;#34;, and a text identifier has value.</description>
     </item>
     <item>
-      <title>PRJ 001</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/prj-001-project-tag-for-project-costs/</link>
-      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/prj-001-project-tag-for-project-costs/</guid>
-      <description>PRJ-001 Use Tag for product costs computation Date: 2017-12-01&#xA;Status Implemented&#xA;Context We would like to compute earnings and costs on per product base. Each transaction entry should support tags to identify the associated projects or departments. The tag approach supports multiple consolidation of an orthogonal cost structure.&#xA;Decision We will support tags at the transaction entry. The tags are a triplet [namespace:]name[=value] format. We recommend the namespace &amp;#34;fin&amp;#34;, the name &amp;#34;segment&amp;#34;, and a text identifier has value.</description>
-    </item>
-    <item>
       <title>OS 003: Use Modern Java Constructs</title>
       <link>https://blog.tangly.net/docs/domains/architecture/adr/os-003-use-modern-java-constructs/</link>
       <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/adr/os-003-use-modern-java-constructs/</guid>
-      <description>OS-003 Remove usage of Google Guava Library Date: 2020-01-01&#xA;Status Implemented&#xA;Context JDK is released every six months to all Java developers. The latest approach is to release a long-term supported version every two years.&#xA;Better approaches support clean code, less verbose source code and reduce programming [5] [2]. These constructs shall be used in our modules as soon as they are released to the developers.&#xA;The advantage is better integration, always synchronized with the current release of the JDK and no incompatibilities.</description>
-    </item>
-    <item>
-      <title>OS 003: Use Modern Java Constructs</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-003-use-modern-java-constructs/</link>
-      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-003-use-modern-java-constructs/</guid>
       <description>OS-003 Remove usage of Google Guava Library Date: 2020-01-01&#xA;Status Implemented&#xA;Context JDK is released every six months to all Java developers. The latest approach is to release a long-term supported version every two years.&#xA;Better approaches support clean code, less verbose source code and reduce programming [5] [2]. These constructs shall be used in our modules as soon as they are released to the developers.&#xA;The advantage is better integration, always synchronized with the current release of the JDK and no incompatibilities.</description>
     </item>
     <item>
@@ -86,24 +51,10 @@
       <description>OS-004 Publish Technical Documentation Through Static Website Date: 2020-01-01&#xA;Status Implemented&#xA;Context Legible, well-structured and up-to-date technical documentation of released open source components is a service to all our users. Due to the small size of our team, we want a straight forward tool chain to generate the website. In the future, we could move our product to another hosting platform. The solution should be built on a standard to minimize porting overhead.</description>
     </item>
     <item>
-      <title>OS 004: Publish Technical Documentation Through Static Website</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-004-publish-technical-documentation-through-static-website/</link>
-      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-004-publish-technical-documentation-through-static-website/</guid>
-      <description>OS-004 Publish Technical Documentation Through Static Website Date: 2020-01-01&#xA;Status Implemented&#xA;Context Legible, well-structured and up-to-date technical documentation of released open source components is a service to all our users. Due to the small size of our team, we want a straight forward tool chain to generate the website. In the future, we could move our product to another hosting platform. The solution should be built on a standard to minimize porting overhead.</description>
-    </item>
-    <item>
       <title>OS 005: Publish Maven Central Artifacts</title>
       <link>https://blog.tangly.net/docs/domains/architecture/adr/os-005-publish-maven-central-artifact/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/adr/os-005-publish-maven-central-artifact/</guid>
-      <description>OS-005 Publish Artifacts on Public Java Components Repository Date: 2019-05-01&#xA;Status Implemented&#xA;Links Supersede: FSM-0002&#xA;Context The tangly open source libraries are mature enough to be used in public commercial and academic projects.&#xA;The libraries were used in internal projects and refined to fulfill these requirements. More customers will validate the usefulness of the library and identify extensions for further releases.&#xA;We want to provide a standard and well-known approach for our customers.</description>
-    </item>
-    <item>
-      <title>OS 005: Publish Maven Central Artifacts</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-005-publish-maven-central-artifact/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-005-publish-maven-central-artifact/</guid>
       <description>OS-005 Publish Artifacts on Public Java Components Repository Date: 2019-05-01&#xA;Status Implemented&#xA;Links Supersede: FSM-0002&#xA;Context The tangly open source libraries are mature enough to be used in public commercial and academic projects.&#xA;The libraries were used in internal projects and refined to fulfill these requirements. More customers will validate the usefulness of the library and identify extensions for further releases.&#xA;We want to provide a standard and well-known approach for our customers.</description>
     </item>
     <item>
@@ -114,24 +65,10 @@
       <description>OS-006 Dependency Injection with Guice Date: 2018-02-20&#xA;Status Implemented&#xA;Context The modules provided as tangly open source components are used in more complex applications.&#xA;These applications often use dependency injection frameworks to construct and initialize their instances. Dependency injection is a technique in which an object receives other objects that it depends on, called dependencies.&#xA;Typically, the receiving object is called a client. The passed-in injected object is called a service.</description>
     </item>
     <item>
-      <title>OS 006: Dependency Injection with Guice</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-006-dependency-injection-guice/</link>
-      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-006-dependency-injection-guice/</guid>
-      <description>OS-006 Dependency Injection with Guice Date: 2018-02-20&#xA;Status Implemented&#xA;Context The modules provided as tangly open source components are used in more complex applications.&#xA;These applications often use dependency injection frameworks to construct and initialize their instances. Dependency injection is a technique in which an object receives other objects that it depends on, called dependencies.&#xA;Typically, the receiving object is called a client. The passed-in injected object is called a service.</description>
-    </item>
-    <item>
       <title>OS 007: Persistence with MicroStream</title>
       <link>https://blog.tangly.net/docs/domains/architecture/adr/os-007-persistence-microstream/</link>
       <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/adr/os-007-persistence-microstream/</guid>
-      <description>OS-007: Persistence with MicroStream Date: 2020-11-13&#xA;Status Implemented&#xA;Context The modules provided as tangly open source components are used in more complex applications. These applications require a reliable and performant persistence approach for their data.&#xA;In Java, everything is an object. In contrast, all databases come with their own specific data structure that is incompatible with Java objects.&#xA;This is called impedance mismatch.&#xA;As a consequence, a mapping is required, which means all data must be converted behind the scenes.</description>
-    </item>
-    <item>
-      <title>OS 007: Persistence with MicroStream</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-007-persistence-microstream/</link>
-      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-007-persistence-microstream/</guid>
       <description>OS-007: Persistence with MicroStream Date: 2020-11-13&#xA;Status Implemented&#xA;Context The modules provided as tangly open source components are used in more complex applications. These applications require a reliable and performant persistence approach for their data.&#xA;In Java, everything is an object. In contrast, all databases come with their own specific data structure that is incompatible with Java objects.&#xA;This is called impedance mismatch.&#xA;As a consequence, a mapping is required, which means all data must be converted behind the scenes.</description>
     </item>
     <item>
@@ -142,24 +79,10 @@
       <description>OS-008 Use log4j2 as default logging framework Date: 2021-06-15&#xA;Status Implemented&#xA;Context The logging library slf4j seems to be a dead project for at least one year. The last commit in the GitHub slf4j repository was performed two years ago. Version 2.0 of the library is an alpha release on Maven Central dating back to October 2019.&#xA;The apache project log4j has made tremendous progress with the creation of the log4j2 library.</description>
     </item>
     <item>
-      <title>OS 008: Use log4j2 as default logging framework</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-008-use-log4j2-as-default-logger/</link>
-      <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-008-use-log4j2-as-default-logger/</guid>
-      <description>OS-008 Use log4j2 as default logging framework Date: 2021-06-15&#xA;Status Implemented&#xA;Context The logging library slf4j seems to be a dead project for at least one year. The last commit in the GitHub slf4j repository was performed two years ago. Version 2.0 of the library is an alpha release on Maven Central dating back to October 2019.&#xA;The apache project log4j has made tremendous progress with the creation of the log4j2 library.</description>
-    </item>
-    <item>
       <title>OS 009: Use HSQLDB as an SQL DB</title>
       <link>https://blog.tangly.net/docs/domains/architecture/adr/os-009-use-hsqldb-as-sql-store/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/adr/os-009-use-hsqldb-as-sql-store/</guid>
-      <description>OS-009 Uses HSQLDB as an SQL store Date: 2022-01-01&#xA;Status Implemented&#xA;Context Applications regularly need to store information in a persistent store. A proven approach is to use an SQL database solution for such activities. The Java ecosystem supports a relational database with libraries.&#xA;The JPA approach provides an object relational mapper. The JOOQL approach has a genuine mapping of SQL statements to type verified Java expressions.&#xA;Decision The HSQLDB SQL database java solution is the preferred choice when an application needs to store data in a relational store.</description>
-    </item>
-    <item>
-      <title>OS 009: Use HSQLDB as an SQL DB</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-009-use-hsqldb-as-sql-store/</link>
-      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-009-use-hsqldb-as-sql-store/</guid>
       <description>OS-009 Uses HSQLDB as an SQL store Date: 2022-01-01&#xA;Status Implemented&#xA;Context Applications regularly need to store information in a persistent store. A proven approach is to use an SQL database solution for such activities. The Java ecosystem supports a relational database with libraries.&#xA;The JPA approach provides an object relational mapper. The JOOQL approach has a genuine mapping of SQL statements to type verified Java expressions.&#xA;Decision The HSQLDB SQL database java solution is the preferred choice when an application needs to store data in a relational store.</description>
     </item>
     <item>
@@ -170,24 +93,10 @@
       <description>OS-010 Archive Data using TSV and JSON Date: 2022-01-01&#xA;Status Implemented&#xA;Context Contrary to XML or JSON, TSV is perfectly suited to represent records with the least possible overhead. There are a lot of tools, like spreadsheet editors, which can read and modify TSV files. The file’s size is at the possible minimum, and the performance of the converter is significantly better than with the other formats.&#xA;Decision TSV is preferred to import data into the application or export information from the solution.</description>
     </item>
     <item>
-      <title>OS 010: Archive Data using TSV and JSON</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-010-archive-data/</link>
-      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-010-archive-data/</guid>
-      <description>OS-010 Archive Data using TSV and JSON Date: 2022-01-01&#xA;Status Implemented&#xA;Context Contrary to XML or JSON, TSV is perfectly suited to represent records with the least possible overhead. There are a lot of tools, like spreadsheet editors, which can read and modify TSV files. The file’s size is at the possible minimum, and the performance of the converter is significantly better than with the other formats.&#xA;Decision TSV is preferred to import data into the application or export information from the solution.</description>
-    </item>
-    <item>
       <title>OS 011: Vaadin User Interface</title>
       <link>https://blog.tangly.net/docs/domains/architecture/adr/os-011-vaadin-as-user-interface/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/adr/os-011-vaadin-as-user-interface/</guid>
-      <description>OS-011 Vaadin User Interface Date: 2022-01-01&#xA;Status Implemented&#xA;Context Our primary and almost exclusive technical stack is Modern Java.&#xA;A major weakness of the Java ecosystem is the user interface aspects. Swing is old and no more actively supported by Oracle or other major players. JavaFX has a small active community. The platform never had a huge acceptance.&#xA;We could use various JavaScript frameworks to realize our user interfaces. The drawback is supporting an additional technology stack.</description>
-    </item>
-    <item>
-      <title>OS 011: Vaadin User Interface</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/os-011-vaadin-as-user-interface/</link>
-      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/os-011-vaadin-as-user-interface/</guid>
       <description>OS-011 Vaadin User Interface Date: 2022-01-01&#xA;Status Implemented&#xA;Context Our primary and almost exclusive technical stack is Modern Java.&#xA;A major weakness of the Java ecosystem is the user interface aspects. Swing is old and no more actively supported by Oracle or other major players. JavaFX has a small active community. The platform never had a huge acceptance.&#xA;We could use various JavaScript frameworks to realize our user interfaces. The drawback is supporting an additional technology stack.</description>
     </item>
     <item>
@@ -202,13 +111,6 @@
       <link>https://blog.tangly.net/docs/domains/architecture/01-introduction-and-goals/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/01-introduction-and-goals/</guid>
-      <description>Introduction and Goals Application Goals The application is an application of modern software engineering principles.&#xA;The essential features are used to implement all acquisition, project management and financial process of an agile software consulting company.&#xA;The smoke test is to run the tangly processes on the ERP solution.&#xA;Requirements Overview ID Type Description Remarks req-001&#xA;import&#xA;As a user, I want to import all company data as a set of TSV files so that I can migrate strategic data.</description>
-    </item>
-    <item>
-      <title>Introduction and Goals</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/01-introduction-and-goals/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/01-introduction-and-goals/</guid>
       <description>Introduction and Goals Application Goals The application is an application of modern software engineering principles.&#xA;The essential features are used to implement all acquisition, project management and financial process of an agile software consulting company.&#xA;The smoke test is to run the tangly processes on the ERP solution.&#xA;Requirements Overview ID Type Description Remarks req-001&#xA;import&#xA;As a user, I want to import all company data as a set of TSV files so that I can migrate strategic data.</description>
     </item>
     <item>
@@ -290,13 +192,6 @@
     </item>
     <item>
       <title>Readme</title>
-      <link>https://blog.tangly.net/docs/domains/shared/readme/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/readme/</guid>
-      <description>Purpose The tangly erp shared bounded domain component provides regular business model abstractions for business applications written in Java. The component is using records and requires Java 21 LTS or higher.&#xA;Try it out.&#xA;Download and Documentation The library can be included in Maven as&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.tangly.erp&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;shared&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.2.8&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; The library can be included in Gradle as&#xA;implementation &amp;#34;net.tangly.erp:shared:0.2.8&amp;#34; The documentation can be found under Business documentation.&#xA;Awesome Sponsors and Developers Corporate sponsors are</description>
-    </item>
-    <item>
-      <title>Readme</title>
       <link>https://blog.tangly.net/docs/domains/ui/readme/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/ui/readme/</guid>
@@ -359,18 +254,11 @@
       <description>Architecture Constraints The programming language is Java. The version is the current released JDK.&#xA;Embedded programming language is C++. The version is the current released ISO standard.&#xA;Th user interface for all Java applications is build with Vaadin. The version is the current released version available on Maven Central.&#xA;The documentation language is English US.&#xA;Exchange of data is over TSV files.</description>
     </item>
     <item>
-      <title>Architecture Constraints</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/02-architecture-constraints/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/02-architecture-constraints/</guid>
-      <description>Architecture Constraints The programming language is Java. The version is the current released JDK.&#xA;Embedded programming language is C++. The version is the current released ISO standard.&#xA;Th user interface for all Java applications is build with Vaadin. The version is the current released version available on Maven Central.&#xA;The documentation language is English US.&#xA;Exchange of data is over TSV files.</description>
-    </item>
-    <item>
       <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/apps/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/apps/releasesnotes/</guid>
-      <description>Apps Library Change Logs This document provides a high-level view of the changes introduced in the apps library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.8 (2024-09-30) 0.2.7 (2024-05-31) Initial release of the library</description>
+      <description>Apps Library Changes Logs This document provides a high-level view of the changes introduced in the apps library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.8 (2024-09-30) Uer management, authorization and authentication is now supported.&#xA;Tenancy support is available.&#xA;0.2.7 (2024-05-31) Initial release of the library</description>
     </item>
     <item>
       <title>Release Notes</title>
@@ -444,13 +332,6 @@
     </item>
     <item>
       <title>Release Notes</title>
-      <link>https://blog.tangly.net/docs/domains/shared/releasesnotes/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/releasesnotes/</guid>
-      <description>ERP Shared Library Change Logs This document provides a high-level view of the changes introduced in the ERP Shared library by release. For a detailed view of what has changed, refer to the repository commits.&#xA;0.2.8 (2024-09-30) 0.2.7 (2024-05-31) Update of library dependencies, update to JDK-21, and modern Gradle approach to build solutions.&#xA;0.2.6 (2021-08-31) First version of the library packed as a DDD bounded domain&#xA;Requires Java 16 or higher due to extensive usage of records and sealed classes</description>
-    </item>
-    <item>
-      <title>Release Notes</title>
       <link>https://blog.tangly.net/docs/domains/ui/releasesnotes/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/ui/releasesnotes/</guid>
@@ -517,13 +398,6 @@
       <link>https://blog.tangly.net/docs/domains/architecture/03-system-scope-and-context/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/03-system-scope-and-context/</guid>
-      <description>System Scope and Context Contents System scope and context - as the name suggests - delimits your system (i.e. your scope) from all its communication partners (neighboring systems and users, i.e. the context of your system). It thereby specifies the external interfaces.&#xA;If necessary, differentiate the business context (domain specific inputs and outputs) from the technical context (channels, protocols, hardware).&#xA;Motivation The domain interfaces and technical interfaces to communication partners are among your system’s most critical aspects.</description>
-    </item>
-    <item>
-      <title>System Scope and Context</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/03-system-scope-and-context/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/03-system-scope-and-context/</guid>
       <description>System Scope and Context Contents System scope and context - as the name suggests - delimits your system (i.e. your scope) from all its communication partners (neighboring systems and users, i.e. the context of your system). It thereby specifies the external interfaces.&#xA;If necessary, differentiate the business context (domain specific inputs and outputs) from the technical context (channels, protocols, hardware).&#xA;Motivation The domain interfaces and technical interfaces to communication partners are among your system’s most critical aspects.</description>
     </item>
     <item>
@@ -604,13 +478,6 @@
       <description>Solution Strategy Technical Approach Software Development Modern Java is the preferred programming language for realization.&#xA;Embedded Software Development Modern C++ is the preferred programming language for embedded functionalities. The source code is object-oriented.&#xA;A realtime operating system RTOS provides scheduling and concurrent processing.&#xA;The communication uses asynchronous message passing. Messages are immutable value objects.&#xA;Thread logic is realized as a finite state machine.&#xA;Documentation Approach Follow the recommendations of arc42 approach for document structure and content.</description>
     </item>
     <item>
-      <title>Solution Strategy</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/04-solution-strategy/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/04-solution-strategy/</guid>
-      <description>Solution Strategy Technical Approach Software Development Modern Java is the preferred programming language for realization.&#xA;Embedded Software Development Modern C++ is the preferred programming language for embedded functionalities. The source code is object-oriented.&#xA;A realtime operating system RTOS provides scheduling and concurrent processing.&#xA;The communication uses asynchronous message passing. Messages are immutable value objects.&#xA;Thread logic is realized as a finite state machine.&#xA;Documentation Approach Follow the recommendations of arc42 approach for document structure and content.</description>
-    </item>
-    <item>
       <title>User Guide Actors</title>
       <link>https://blog.tangly.net/docs/fsm/userguideactor/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
@@ -678,14 +545,7 @@
       <link>https://blog.tangly.net/docs/domains/architecture/05-building-block-view/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/05-building-block-view/</guid>
-      <description>Building Block View Bounded Domain as a Building Block Bounded Domain User Interface Bounded Domain Persistence Bounded Domain Export and Import Rest Services for a Bounded Domain A bounded domain is the building block for a modular monolith architecture approach. Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain.&#xA;A bounded domain can provide a REST interface to expose its functionality to other modules or external clients.</description>
-    </item>
-    <item>
-      <title>Building Block View</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/05-building-block-view/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/05-building-block-view/</guid>
-      <description>Building Block View Bounded Domain as a Building Block Bounded Domain User Interface Bounded Domain Persistence Bounded Domain Export and Import Rest Services for a Bounded Domain A bounded domain is the building block for a modular monolith architecture approach. Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain.&#xA;A bounded domain can provide a REST interface to expose its functionality to other modules or external clients.</description>
+      <description>Building Block View A bounded domain is the key building block for a modular monolith architecture approach. The ERP application is consisting of multiple bounded domains.&#xA;The same approach should be used for a distributed microservice architecture.&#xA;Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain. Persistence shall be handled per bounded domain. Ideally, the domain model should be designed to be independent of the persistence technology.</description>
     </item>
     <item>
       <title>Core Models</title>
@@ -730,24 +590,10 @@
       <description>Runtime View Contents The runtime view describes concrete behavior and interactions of the system’s building blocks in form of scenarios from the following areas:&#xA;important use cases or features: how do building blocks execute them?&#xA;interactions at critical external interfaces: how do building blocks cooperate with users and neighboring systems?&#xA;operation and administration: launch, start-up, stop&#xA;error and exception scenarios&#xA;Remark: The main criterion for the choice of possible scenarios (sequences, workflows) is their architectural relevance.</description>
     </item>
     <item>
-      <title>Runtime View</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/06-runtime-view/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/06-runtime-view/</guid>
-      <description>Runtime View Contents The runtime view describes concrete behavior and interactions of the system’s building blocks in form of scenarios from the following areas:&#xA;important use cases or features: how do building blocks execute them?&#xA;interactions at critical external interfaces: how do building blocks cooperate with users and neighboring systems?&#xA;operation and administration: launch, start-up, stop&#xA;error and exception scenarios&#xA;Remark: The main criterion for the choice of possible scenarios (sequences, workflows) is their architectural relevance.</description>
-    </item>
-    <item>
       <title>Deployment View</title>
       <link>https://blog.tangly.net/docs/domains/architecture/07-deployment-view/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/07-deployment-view/</guid>
-      <description>Deployment View Content The deployment view describes:&#xA;technical infrastructure used to execute your system, with infrastructure elements like geographical locations, environments, computers, processors, channels and net topologies as well as other infrastructure elements and&#xA;mapping of (software) building blocks to that infrastructure elements.&#xA;Often systems are executed in different environments, e.g., development environment, test environment, production environment. In such cases, you should document all relevant environments.&#xA;Especially document a deployment view if your software is executed as a distributed system with more than one computer, processor, server or container or when you design and construct your own hardware processors and chips.</description>
-    </item>
-    <item>
-      <title>Deployment View</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/07-deployment-view/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/07-deployment-view/</guid>
       <description>Deployment View Content The deployment view describes:&#xA;technical infrastructure used to execute your system, with infrastructure elements like geographical locations, environments, computers, processors, channels and net topologies as well as other infrastructure elements and&#xA;mapping of (software) building blocks to that infrastructure elements.&#xA;Often systems are executed in different environments, e.g., development environment, test environment, production environment. In such cases, you should document all relevant environments.&#xA;Especially document a deployment view if your software is executed as a distributed system with more than one computer, processor, server or container or when you design and construct your own hardware processors and chips.</description>
     </item>
     <item>
@@ -762,13 +608,6 @@
       <link>https://blog.tangly.net/docs/domains/architecture/08-crosscutting-concepts/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/08-crosscutting-concepts/</guid>
-      <description>Cross-cutting Concepts Content This section describes overall, principal regulations and solution ideas that are relevant in multiple parts (= cross-cutting) of your system. Such concepts are often related to multiple building blocks. They can include many different topics, such as&#xA;models, especially domain models&#xA;architecture or design patterns&#xA;rules for using specific technology&#xA;principal, often technical decisions of an overarching (= cross-cutting) nature&#xA;implementation rules&#xA;Motivation Concepts form the basis for conceptual integrity (consistency, homogeneity) of the architecture.</description>
-    </item>
-    <item>
-      <title>Cross-cutting Concepts</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/08-crosscutting-concepts/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/08-crosscutting-concepts/</guid>
       <description>Cross-cutting Concepts Content This section describes overall, principal regulations and solution ideas that are relevant in multiple parts (= cross-cutting) of your system. Such concepts are often related to multiple building blocks. They can include many different topics, such as&#xA;models, especially domain models&#xA;architecture or design patterns&#xA;rules for using specific technology&#xA;principal, often technical decisions of an overarching (= cross-cutting) nature&#xA;implementation rules&#xA;Motivation Concepts form the basis for conceptual integrity (consistency, homogeneity) of the architecture.</description>
     </item>
     <item>
@@ -793,24 +632,10 @@
       <description>Architecture Decisions Overall Decisions System Guava Removal&#xA;Unit Test Conventions&#xA;Use Modern Java Constructs&#xA;Publish Technical Documentation through Static Website&#xA;Publish Maven Central Artifacts&#xA;Dependency Injection Guice&#xA;Persistence with MicroStream&#xA;Use log4j2 as Default Logger&#xA;Use hsqldb as SQL store&#xA;Archive Data&#xA;Vaadin as User Interface Approach&#xA;ERP UI Decisions Asciidoc for all Texts&#xA;FSM Decisions Move Abstractions to JDK Classes&#xA;Publish Maven Central Artifacts&#xA;PRJ Decisions link:../adr/prj-001-project-tag-for-project-costs/Project Tag for Project Costs]</description>
     </item>
     <item>
-      <title>Architecture Decisions</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/09-architecture-decisions/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/09-architecture-decisions/</guid>
-      <description>Architecture Decisions Overall Decisions System Guava Removal&#xA;Unit Test Conventions&#xA;Use Modern Java Constructs&#xA;Publish Technical Documentation through Static Website&#xA;Publish Maven Central Artifacts&#xA;Dependency Injection Guice&#xA;Persistence with MicroStream&#xA;Use log4j2 as Default Logger&#xA;Use hsqldb as SQL store&#xA;Archive Data&#xA;Vaadin as User Interface Approach&#xA;ERP UI Decisions Asciidoc for all Texts&#xA;FSM Decisions Move Abstractions to JDK Classes&#xA;Publish Maven Central Artifacts&#xA;PRJ Decisions link:../adr/prj-001-project-tag-for-project-costs/Project Tag for Project Costs]</description>
-    </item>
-    <item>
       <title>Quality Requirements</title>
       <link>https://blog.tangly.net/docs/domains/architecture/10-quality-requirements/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/10-quality-requirements/</guid>
-      <description>Quality Requirements Content This section contains all quality requirements as quality tree with scenarios. The most important ones have already been described in section 1.2. (quality goals)&#xA;Here you can also capture quality requirements with lesser priority, which will not create high risks when they are not fully achieved.&#xA;Motivation Since quality requirements will have a lot of influence on architectural decisions you should know for every stakeholder what is really important to them, concrete and measurable.</description>
-    </item>
-    <item>
-      <title>Quality Requirements</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/10-quality-requirements/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/10-quality-requirements/</guid>
       <description>Quality Requirements Content This section contains all quality requirements as quality tree with scenarios. The most important ones have already been described in section 1.2. (quality goals)&#xA;Here you can also capture quality requirements with lesser priority, which will not create high risks when they are not fully achieved.&#xA;Motivation Since quality requirements will have a lot of influence on architectural decisions you should know for every stakeholder what is really important to them, concrete and measurable.</description>
     </item>
     <item>
@@ -821,24 +646,10 @@
       <description>ERPUI-001 Asciidoc for Text Fields Date: 2021-06-01&#xA;Status Implemented&#xA;Context Asciidoc is a well-established approach to write rich text documentation or comments. The casual user can learn and use the notation without excessive effort. The legibility and professional appearance of asciidoc texts are striking higher than plain text. Asciidoc is an open standard and used in various environments and tools [1].&#xA;Decision All texts and comments in the ERP components shall use Asciidoc notation to improve legibility.</description>
     </item>
     <item>
-      <title>ERPUI-001: AsciiDoc for Text Fields</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/erpui-001-asciidoc-for-all-texts/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/erpui-001-asciidoc-for-all-texts/</guid>
-      <description>ERPUI-001 Asciidoc for Text Fields Date: 2021-06-01&#xA;Status Implemented&#xA;Context Asciidoc is a well-established approach to write rich text documentation or comments. The casual user can learn and use the notation without excessive effort. The legibility and professional appearance of asciidoc texts are striking higher than plain text. Asciidoc is an open standard and used in various environments and tools [1].&#xA;Decision All texts and comments in the ERP components shall use Asciidoc notation to improve legibility.</description>
-    </item>
-    <item>
       <title>Technical Risks and Debts</title>
       <link>https://blog.tangly.net/docs/domains/architecture/11-technical-risks/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/11-technical-risks/</guid>
-      <description>Risks and Technical Debts Contents A list of identified technical risks or technical debts, ordered by priority&#xA;Motivation “Risk management is project management for grown-ups” (Tim Lister, Atlantic Systems Guild.)&#xA;This should be your motto for systematic detection and evaluation of risks and technical debts in the architecture, which will be needed by management stakeholders (e.g. project managers, product owners) as part of the overall risk analysis and measurement planning.</description>
-    </item>
-    <item>
-      <title>Technical Risks and Debts</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/11-technical-risks/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/11-technical-risks/</guid>
       <description>Risks and Technical Debts Contents A list of identified technical risks or technical debts, ordered by priority&#xA;Motivation “Risk management is project management for grown-ups” (Tim Lister, Atlantic Systems Guild.)&#xA;This should be your motto for systematic detection and evaluation of risks and technical debts in the architecture, which will be needed by management stakeholders (e.g. project managers, product owners) as part of the overall risk analysis and measurement planning.</description>
     </item>
     <item>
@@ -849,24 +660,10 @@
       <description>User Manual Idea The tangly services ERP provides the functionalities to manage service company offerings and legal documents.&#xA;The first customer ever using the application is tangly llc company. The company is an agile consulting and Java stack boutique organization.&#xA;A service company has no inventory, production, or logistics departments.&#xA;A service company has a strong focus on customers, digital products, projects and associated efforts. Cash flow is dictated by the timely invoicing of performed activities.</description>
     </item>
     <item>
-      <title>User Manual</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/12-user-manual/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/12-user-manual/</guid>
-      <description>User Manual Idea The tangly services ERP provides the functionalities to manage service company offerings and legal documents.&#xA;The first customer ever using the application is tangly llc company. The company is an agile consulting and Java stack boutique organization.&#xA;A service company has no inventory, production, or logistics departments.&#xA;A service company has a strong focus on customers, digital products, projects and associated efforts. Cash flow is dictated by the timely invoicing of performed activities.</description>
-    </item>
-    <item>
       <title>Glossary</title>
       <link>https://blog.tangly.net/docs/domains/architecture/13-glossary/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/13-glossary/</guid>
-      <description>Glossary Term Definition Remarks ADR&#xA;Architecture Design Record&#xA;DDD&#xA;Domain-Driven Design&#xA;DoD&#xA;Definition of Done&#xA;FSM&#xA;Finite State Machine&#xA;SDL&#xA;Specification and Description Language&#xA;UML&#xA;Unified Modeling Language&#xA;VAT&#xA;Value-Added Tax</description>
-    </item>
-    <item>
-      <title>Glossary</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/13-glossary/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/13-glossary/</guid>
       <description>Glossary Term Definition Remarks ADR&#xA;Architecture Design Record&#xA;DDD&#xA;Domain-Driven Design&#xA;DoD&#xA;Definition of Done&#xA;FSM&#xA;Finite State Machine&#xA;SDL&#xA;Specification and Description Language&#xA;UML&#xA;Unified Modeling Language&#xA;VAT&#xA;Value-Added Tax</description>
     </item>
     <item>
@@ -877,24 +674,10 @@
       <description>FSM-001 Replace Guard and Action classes with JDK BiPredicate and BiFunction Classes Date: 2017-06-01&#xA;Status Implemented&#xA;Context We need a legible data model for finite state machine definitions. New users should easily understand the finite state machine abstractions and map them to their domain.&#xA;Decision We use standard classes of the JDK to minimize contextual complexity when learning and using the FSM library. We will evaluate if the loss of domain names for classes has a negative impact on the legibility of the library.</description>
     </item>
     <item>
-      <title>FSM 001: Move Abstractions to JDK Classes</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/fsm-001-move-abstractions-to-jdk-classes/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/fsm-001-move-abstractions-to-jdk-classes/</guid>
-      <description>FSM-001 Replace Guard and Action classes with JDK BiPredicate and BiFunction Classes Date: 2017-06-01&#xA;Status Implemented&#xA;Context We need a legible data model for finite state machine definitions. New users should easily understand the finite state machine abstractions and map them to their domain.&#xA;Decision We use standard classes of the JDK to minimize contextual complexity when learning and using the FSM library. We will evaluate if the loss of domain names for classes has a negative impact on the legibility of the library.</description>
-    </item>
-    <item>
       <title>FSM-002: Publish Maven Central Artifacts</title>
       <link>https://blog.tangly.net/docs/domains/architecture/adr/fsm-002-publish-maven-central-artifact/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/adr/fsm-002-publish-maven-central-artifact/</guid>
-      <description>FSM-002 Publish Artifacts on Public Java Components Repository Date: 2020-01-01&#xA;Status Retired&#xA;Links Superseded by: OS-0005&#xA;Context The library is mature enough to be used in commercial and academic projects. The library was used in internal projects and refined to fulfill these requirements. More customers will validate the usefulness of the library and identify extensions for further releases.&#xA;Decision The library shall be published on maven central and be accessible to a wide range of developers and organizations.</description>
-    </item>
-    <item>
-      <title>FSM-002: Publish Maven Central Artifacts</title>
-      <link>https://blog.tangly.net/docs/domains/shared/_design/adr/fsm-002-publish-maven-central-artifact/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.tangly.net/docs/domains/shared/_design/adr/fsm-002-publish-maven-central-artifact/</guid>
       <description>FSM-002 Publish Artifacts on Public Java Components Repository Date: 2020-01-01&#xA;Status Retired&#xA;Links Superseded by: OS-0005&#xA;Context The library is mature enough to be used in commercial and academic projects. The library was used in internal projects and refined to fulfill these requirements. More customers will validate the usefulness of the library and identify extensions for further releases.&#xA;Decision The library shall be published on maven central and be accessible to a wide range of developers and organizations.</description>
     </item>
     <item>
@@ -910,6 +693,13 @@
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/development-environment/</guid>
       <description>The development environment is MacOS [1].&#xA;Java JDKs Install Java development kits. You should at least install the last released version and the last LTS version. We use the distributions of Oracle.&#xA;alias java17 = &amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 17`; java -version&amp;#34; alias java19 = &amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 19`; java -version&amp;#34; alias java20 = &amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 20`; java -version&amp;#34; Tools We use brew to install. The following tools shall be installed [2].</description>
+    </item>
+    <item>
+      <title>Actors in Cpp</title>
+      <link>https://blog.tangly.net/blog/2024/actors-in-cpp/</link>
+      <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.tangly.net/blog/2024/actors-in-cpp/</guid>
+      <description>There is a strong need for higher-level frameworks ensuring safe concurrent programming.&#xA;The Actor Model is one of the best approaches to safe concurrency and legible code [1]. The model is based on Message Passing.&#xA;Although multiple actors can run at the same time, an actor will process a given message sequentially. This means that if you send three messages to the same actor, it will just execute one at a time.</description>
     </item>
     <item>
       <title>Daily Scrum Questions</title>

@@ -97,28 +97,35 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>com.vaadin.flow.component.AttachNotifier</code>, <code>com.vaadin.flow.component.ClickNotifier&lt;com.vaadin.flow.component.orderedlayout.VerticalLayout&gt;</code>, <code>com.vaadin.flow.component.DetachNotifier</code>, <code>com.vaadin.flow.component.HasComponents</code>, <code>com.vaadin.flow.component.HasElement</code>, <code>com.vaadin.flow.component.HasEnabled</code>, <code>com.vaadin.flow.component.HasOrderedComponents</code>, <code>com.vaadin.flow.component.HasSize</code>, <code>com.vaadin.flow.component.HasStyle</code>, <code>com.vaadin.flow.component.orderedlayout.FlexComponent</code>, <code>com.vaadin.flow.component.orderedlayout.ThemableLayout</code>, <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code></dd>
+<dd><code>com.vaadin.flow.component.AttachNotifier</code>, <code>com.vaadin.flow.component.ClickNotifier&lt;com.vaadin.flow.component.orderedlayout.VerticalLayout&gt;</code>, <code>com.vaadin.flow.component.DetachNotifier</code>, <code>com.vaadin.flow.component.HasComponents</code>, <code>com.vaadin.flow.component.HasElement</code>, <code>com.vaadin.flow.component.HasEnabled</code>, <code>com.vaadin.flow.component.HasOrderedComponents</code>, <code>com.vaadin.flow.component.HasSize</code>, <code>com.vaadin.flow.component.HasStyle</code>, <code>com.vaadin.flow.component.orderedlayout.FlexComponent</code>, <code>com.vaadin.flow.component.orderedlayout.ThemableLayout</code>, <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="../app/domain/View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="CommentsView.html" title="class in net.tangly.ui.components">CommentsView</a></code>, <code><a href="../app/domain/DomainEntitiesView.html" title="class in net.tangly.ui.app.domain">DomainEntitiesView</a></code>, <code><a href="EntityView.html" title="class in net.tangly.ui.components">EntityView</a></code>, <code><a href="TagsView.html" title="class in net.tangly.ui.components">TagsView</a></code>, <code><a href="../app/domain/TagTypesView.html" title="class in net.tangly.ui.app.domain">TagTypesView</a></code></dd>
+<dd><code><a href="CommentsView.html" title="class in net.tangly.ui.components">CommentsView</a></code>, <code><a href="../app/domain/DomainEntitiesView.html" title="class in net.tangly.ui.app.domain">DomainEntitiesView</a></code>, <code><a href="EntityView.html" title="class in net.tangly.ui.components">EntityView</a></code>, <code><a href="../app/domain/EventDataView.html" title="class in net.tangly.ui.app.domain">EventDataView</a></code>, <code><a href="TagsView.html" title="class in net.tangly.ui.components">TagsView</a></code>, <code><a href="../app/domain/TagTypesView.html" title="class in net.tangly.ui.app.domain">TagTypesView</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">ItemView&lt;T&gt;</span>
-<span class="extends-implements">extends com.vaadin.flow.component.orderedlayout.VerticalLayout</span></div>
-<div class="block">The entity view displays a list of entities in a grid.
+<span class="extends-implements">extends com.vaadin.flow.component.orderedlayout.VerticalLayout
+implements <a href="../app/domain/View.html" title="interface in net.tangly.ui.app.domain">View</a></span></div>
+<div class="block">The entity view displays a list of entities in a grid. The view has three main scenarios. First, it is used as a read-only list of entities.
+ Second, it is used as a read-only view with a menu item to display the details of an entity.
+ Third, it is used as an editable view with a form to view, create, duplicate, edit and delete the entity.
+ These operations are provided through a context menu. If the view is set to read-only, only the CRUD view operation is available.
+ <p>Specific situations are supported through helper functions. You can define a custom menu for your scenario.</p>
  <h2 id="crud-operations-heading">CRUD Operations</h2>
  <p>The view owns an optional form to display and edit details and an optional filter to filter desired entities in the
  grid. Following operations are available through a pop-up menu:</p>
  <dl>
-     <dt>List</dt><dd>Display the grid with the entity properties. No form can be selected and no modification operations are available.</dd>
-    <dt>View</dt><dd>Display a read-only form with the entity properties. If the form is displayed and another grid item is selected, the values of the selected entity are
-    displayed in the form. </dd>
-    <dt>Update</dt><dd>Display an editable form with the entity properties. If save operation is selected the updated values are stored into the entity. The grid is updated.</dd>
-    <dt>Create</dt><dd>Display an editable empty form. If save operation is selected the entity is added to the underlying list and to the grid.</dd>
-    <dt>Duplicate</dt><dd>Display an editable form with selected properties. If save operation is selected the entity is added to the underlying list and to the grid. The
-    selected property values are specific to the entity type.</dd>
-    <dt>Delete</dt><dd>Display a read-only form with the entity properties. If delete operation is selected the entity is removed from the underlying list and from the grid.</dd>
+     <dt>List</dt><dd>Display the grid with the entity properties. No form can be selected and no modification operations are available.
+     No context sensitive menu is displayed. The view is implicitly read-only.</dd>
+    <dt>View</dt><dd>Display a read-only form with the entity properties.</dd>
+    <dt>Update</dt><dd>Display an editable form with the entity properties. If the save operation is selected the updated values are stored into the entity.
+    The grid is updated.</dd>
+    <dt>Create</dt><dd>Display an editable empty form. If the save operation is selected the entity is added to the underlying list and to the grid.</dd>
+    <dt>Duplicate</dt><dd>Display an editable form with selected properties. If the save operation is selected the entity is added to the underlying list and
+    to the grid. The selected property values are specific to the entity type.</dd>
+    <dt>Delete</dt><dd>Display a read-only form with the entity properties. If the delete operation is selected the entity is removed from the underlying list
+    and from the grid.</dd>
  </dl>
  <h2 id="form-functions-heading">Form Functions</h2>
  <p>You must register a from object to have access to the form functions. The operations on the entity through the form are:</p>
@@ -140,19 +147,25 @@ loadScripts(document, 'script');</script>
  The create and duplicate mode open a form without a corresponding entity.</p>
  <p>Beware that an entity could displays other items such as comments, tags, and relations to other entities.
  These objects are often displayed as entity views in panels.</p>
-
  <h2 id="menu-extensions-heading">Menu Extensions</h2>
  <p>Views can add menu options to perform an action on the selected item or on the whole list. A set of related actions are
  added to the popup menu with a separation. Multiple blocks can be added.</p>
- <p>Separate menu actions specific to selected items from global menu actions. The first block should be the view CRUD operations. A second optional block should contain actions
- for selected items. A third optional blocks should contains global actions not related to selected items.</p>
+ <p>Separate menu actions specific to selected items from global menu actions. The first block should be the view related CRUD operations.
+ A second optional block should contain actions for selected items.
+ A third optional blocks should contains global actions not related to selected items.</p>
  
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet"><code> var items = List.of(new AbstractMap.SimpleImmutableEntry(Mode.EDIT_TEXT,
  (ComponentEventListener&lt;GridContextMenu.GridContextMenuItemClickEvent&lt;T&gt;&gt;)((e)-&gt;form.edit(e.getItem().orElse(null)))));
 </code></pre>
 </div>
-</div>
+
+ <h2 id="filtering-heading">Filtering</h2>
+ <p>You can add filtering capablitities to the view. The user can input filter criteria used to select which entities are displayed in the grid.</p>
+ <h2 id="access-rights-heading">Access Rights</h2>
+ <p>Access rights determines which menu items are available. The derived class can use the rights to limit data availability.
+ Access rights are used to create the adequate provider. This operation can be outside the view or in the derived view.
+ The class constructor has a provider parameter to support the first approach.</p></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -199,6 +212,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#DATE_LABEL" class="member-name-link">DATE_LABEL</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#DOMAIN" class="member-name-link">DOMAIN</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#DOMAIN_LABEL" class="member-name-link">DOMAIN_LABEL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#FROM" class="member-name-link">FROM</a></code></div>
@@ -252,8 +271,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.Class,net.tangly.core.domain.BoundedDomain,net.tangly.core.providers.Provider,net.tangly.ui.components.ItemView.ItemFilter,net.tangly.ui.components.Mode)" class="member-name-link">ItemView</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;entityClass,
- net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&nbsp;domain,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.Class,net.tangly.ui.app.domain.BoundedDomainUi,net.tangly.core.providers.Provider,net.tangly.ui.components.ItemView.ItemFilter,net.tangly.ui.components.Mode)" class="member-name-link">ItemView</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;entityClass,
+ <a href="../app/domain/BoundedDomainUi.html" title="class in net.tangly.ui.app.domain">BoundedDomainUi</a>&lt;?&gt;&nbsp;domain,
  @NotNull net.tangly.core.providers.Provider&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;provider,
  <a href="ItemView.ItemFilter.html" title="class in net.tangly.ui.components">ItemView.ItemFilter</a>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;filter,
  @NotNull <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</code></div>
@@ -277,7 +296,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addActions(com.vaadin.flow.component.grid.contextmenu.GridContextMenu)" class="member-name-link">addActions</a><wbr>(@NotNull com.vaadin.flow.component.grid.contextmenu.GridContextMenu&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;menu)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds custom actions to the context menu.</div>
+<div class="block">Add custom actions to the context menu.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addFilterText(com.vaadin.flow.component.grid.HeaderRow,java.lang.String,java.util.function.Consumer)" class="member-name-link">addFilterText</a><wbr>(@NotNull com.vaadin.flow.component.grid.HeaderRow&nbsp;headerRow,
@@ -285,7 +304,7 @@ loadScripts(document, 'script');</script>
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;attribute)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#buildMenu()" class="member-name-link">buildMenu</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#buildCrudMenu(net.tangly.ui.components.Mode)" class="member-name-link">buildCrudMenu</a><wbr>(<a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.vaadin.flow.component.Component</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createDateRangeField(java.util.function.Consumer)" class="member-name-link">createDateRangeField</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;net.tangly.core.DateRange&gt;&nbsp;consumer)</code></div>
@@ -299,59 +318,77 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.vaadin.flow.component.Component</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createTextFilterField(java.util.function.Consumer)" class="member-name-link">createTextFilterField</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;consumer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.vaadin.flow.component.grid.dataview.GridListDataView<wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final com.vaadin.flow.component.grid.dataview.GridListDataView<wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dataView()" class="member-name-link">dataView</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.domain.BoundedDomain<wbr>&lt;?,<wbr>?,<wbr>?&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#domain()" class="member-name-link">domain</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemView.html" title="type parameter in ItemView">T</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entity()" class="member-name-link">entity</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../app/domain/BoundedDomainUi.html" title="class in net.tangly.ui.app.domain">BoundedDomainUi</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#domainUi()" class="member-name-link">domainUi</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entity(T)" class="member-name-link">entity</a><wbr>(<a href="ItemView.html" title="type parameter in ItemView">T</a>&nbsp;entity)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemView.html" title="type parameter in ItemView">T</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entity()" class="member-name-link">entity</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a><wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entityClass()" class="member-name-link">entityClass</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entity(T)" class="member-name-link">entity</a><wbr>(<a href="ItemView.html" title="type parameter in ItemView">T</a>&nbsp;entity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="ItemView.ItemFilter.html" title="class in net.tangly.ui.components">ItemView.ItemFilter</a><wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filter()" class="member-name-link">filter</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a><wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entityClass()" class="member-name-link">entityClass</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final net.tangly.commons.lang.functional.LazyReference<wbr>&lt;<a href="ItemForm.html" title="class in net.tangly.ui.components">ItemForm</a>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>,<wbr>?&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#form()" class="member-name-link">form</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="ItemView.ItemFilter.html" title="class in net.tangly.ui.components">ItemView.ItemFilter</a><wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filter()" class="member-name-link">filter</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#form(java.util.function.Supplier)" class="member-name-link">form</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="ItemForm.html" title="class in net.tangly.ui.components">ItemForm</a>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>,<wbr>?&gt;&gt;&nbsp;supplier)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final net.tangly.commons.lang.functional.LazyReference<wbr>&lt;<a href="ItemForm.html" title="class in net.tangly.ui.components">ItemForm</a>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>,<wbr>?&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#form()" class="member-name-link">form</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.vaadin.flow.component.grid.Grid<wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#grid()" class="member-name-link">grid</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#form(java.util.function.Supplier)" class="member-name-link">form</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="ItemForm.html" title="class in net.tangly.ui.components">ItemForm</a>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>,<wbr>?&gt;&gt;&nbsp;supplier)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFormEmbedded()" class="member-name-link">isFormEmbedded</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final com.vaadin.flow.component.grid.Grid<wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#grid()" class="member-name-link">grid</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFormEmbedded(boolean)" class="member-name-link">isFormEmbedded</a><wbr>(boolean&nbsp;isFormEmbedded)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.vaadin.flow.component.grid.contextmenu.GridContextMenu<wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#menu()" class="member-name-link">menu</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mode()" class="member-name-link">mode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFormEmbedded()" class="member-name-link">isFormEmbedded</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns true if the form is embedded in the view.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mode(net.tangly.ui.components.Mode)" class="member-name-link">mode</a><wbr>(<a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected net.tangly.core.providers.Provider<wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFormEmbedded(boolean)" class="member-name-link">isFormEmbedded</a><wbr>(boolean&nbsp;isFormEmbedded)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set the form embedded attribute.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.vaadin.flow.component.grid.contextmenu.GridContextMenu<wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#menu()" class="member-name-link">menu</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mode()" class="member-name-link">mode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return the mode of the view.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.providers.Provider<wbr>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#provider()" class="member-name-link">provider</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#provider(net.tangly.core.providers.Provider)" class="member-name-link">provider</a><wbr>(@NotNull net.tangly.core.providers.Provider&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;provider)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the provider.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readonly()" class="member-name-link">readonly</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return if the view is in readonly mode.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readonly(boolean)" class="member-name-link">readonly</a><wbr>(boolean&nbsp;readonly)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set the view in readonly mode.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refresh()" class="member-name-link">refresh</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Refresh the view with the latest data.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.TypeRegistry</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registry()" class="member-name-link">registry</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -604,6 +641,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="DOMAIN">
+<h3>DOMAIN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DOMAIN</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#net.tangly.ui.components.ItemView.DOMAIN">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="DOMAIN_LABEL">
+<h3>DOMAIN_LABEL</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DOMAIN_LABEL</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#net.tangly.ui.components.ItemView.DOMAIN_LABEL">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="DATE">
 <h3>DATE</h3>
 <div class="horizontal-scroll">
@@ -660,25 +729,29 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(java.lang.Class,net.tangly.core.domain.BoundedDomain,net.tangly.core.providers.Provider,net.tangly.ui.components.ItemView.ItemFilter,net.tangly.ui.components.Mode)">
+<section class="detail" id="&lt;init&gt;(java.lang.Class,net.tangly.ui.app.domain.BoundedDomainUi,net.tangly.core.providers.Provider,net.tangly.ui.components.ItemView.ItemFilter,net.tangly.ui.components.Mode)">
 <h3>ItemView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">ItemView</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;entityClass,
- net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&nbsp;domain,
+ <a href="../app/domain/BoundedDomainUi.html" title="class in net.tangly.ui.app.domain">BoundedDomainUi</a>&lt;?&gt;&nbsp;domain,
  @NotNull
  @NotNull net.tangly.core.providers.Provider&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;provider,
  <a href="ItemView.ItemFilter.html" title="class in net.tangly.ui.components">ItemView.ItemFilter</a>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;filter,
  @NotNull
  @NotNull <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</span></div>
-<div class="block">Constructor of the class.</div>
+<div class="block">Constructor of the class. The access rights are used to filter the data the user can see and modify.
+ The filtering is often realized by defining a filtering provider other the given data provider.
+ <p>A view has always access rights. How the view interprets them is up the specific implementation.</p>
+ <p>The menu is refreshed each time the access rights or the mode is changed. The mode attribute supersedes the access rights when determining the
+ content of the menu.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>entityClass</code> - class of the generic type</dd>
-<dd><code>domain</code> - optional domain to which the generic entity belongs to</dd>
+<dd><code>entityClass</code> - class of the generic type.</dd>
+<dd><code>domain</code> - user interface domain to which the view belongs to</dd>
 <dd><code>provider</code> - provider for instances of the entity to display in the grid</dd>
 <dd><code>filter</code> - optional filter for the grid</dd>
-<dd><code>mode</code> - mode of the view</dd>
+<dd><code>mode</code> - mode of the view: LIST, VIEW, or EDITABLE</dd>
 </dl>
 </div>
 </section>
@@ -696,6 +769,14 @@ loadScripts(document, 'script');</script>
 <h3>entityClass</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</span>&nbsp;<span class="element-name">entityClass</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="domainUi()">
+<h3>domainUi</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../app/domain/BoundedDomainUi.html" title="class in net.tangly.ui.app.domain">BoundedDomainUi</a>&lt;?&gt;</span>&nbsp;<span class="element-name">domainUi</span>()</div>
 </div>
 </section>
 </li>
@@ -720,14 +801,58 @@ loadScripts(document, 'script');</script>
 <h3>mode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a></span>&nbsp;<span class="element-name">mode</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../app/domain/View.html#mode()">View</a></code></span></div>
+<div class="block">Return the mode of the view. Currently we support LIST, VIEW, and EDITABLE modes.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../app/domain/View.html#mode()">mode</a></code>&nbsp;in interface&nbsp;<code><a href="../app/domain/View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
+<dt>Returns:</dt>
+<dd>mode of the view</dd>
+</dl>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="mode(net.tangly.ui.components.Mode)">
-<h3>mode</h3>
+<section class="detail" id="readonly()">
+<h3>readonly</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">mode</span><wbr><span class="parameters">(<a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">readonly</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../app/domain/View.html#readonly()">View</a></code></span></div>
+<div class="block">Return if the view is in readonly mode.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../app/domain/View.html#readonly()">readonly</a></code>&nbsp;in interface&nbsp;<code><a href="../app/domain/View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
+<dt>Returns:</dt>
+<dd>true if the view is readonly otherwise false</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../app/domain/View.html#readonly(boolean)"><code>View.readonly(boolean)</code></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="readonly(boolean)">
+<h3>readonly</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readonly</span><wbr><span class="parameters">(boolean&nbsp;readonly)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../app/domain/View.html#readonly(boolean)">View</a></code></span></div>
+<div class="block">Set the view in readonly mode.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../app/domain/View.html#readonly(boolean)">readonly</a></code>&nbsp;in interface&nbsp;<code><a href="../app/domain/View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>readonly</code> - true if the view is readonly otherwise false</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../app/domain/View.html#readonly()"><code>View.readonly()</code></a></li>
+</ul>
+</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -752,6 +877,17 @@ loadScripts(document, 'script');</script>
 <h3>isFormEmbedded</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFormEmbedded</span>()</div>
+<div class="block">Returns true if the form is embedded in the view.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the form is embedded in the view</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="#isFormEmbedded(boolean)"><code>isFormEmbedded(boolean)</code></a></li>
+</ul>
+</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -760,6 +896,17 @@ loadScripts(document, 'script');</script>
 <h3>isFormEmbedded</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">isFormEmbedded</span><wbr><span class="parameters">(boolean&nbsp;isFormEmbedded)</span></div>
+<div class="block">Set the form embedded attribute. If the form is embedded in the view, the form is displayed in the view. If the form is not embedded, the form is displayed</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>isFormEmbedded</code> - new value of the property</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="#isFormEmbedded()"><code>isFormEmbedded()</code></a></li>
+</ul>
+</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -784,6 +931,12 @@ loadScripts(document, 'script');</script>
 <h3>refresh</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refresh</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../app/domain/View.html#refresh()">View</a></code></span></div>
+<div class="block">Refresh the view with the latest data.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../app/domain/View.html#refresh()">refresh</a></code>&nbsp;in interface&nbsp;<code><a href="../app/domain/View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
+</dl>
 </div>
 </section>
 </li>
@@ -818,7 +971,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="provider()">
 <h3>provider</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">net.tangly.core.providers.Provider&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</span>&nbsp;<span class="element-name">provider</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">net.tangly.core.providers.Provider&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</span>&nbsp;<span class="element-name">provider</span>()</div>
 </div>
 </section>
 </li>
@@ -834,7 +987,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="provider(net.tangly.core.providers.Provider)">
 <h3>provider</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">provider</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">provider</span><wbr><span class="parameters">(@NotNull
  @NotNull net.tangly.core.providers.Provider&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;provider)</span></div>
 <div class="block">Set the provider. Vaadin generates a new data view when the items of the provider are added to the grid. The existing filter, if defined, is added to the new data view.</div>
 <dl class="notes">
@@ -856,7 +1009,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="grid()">
 <h3>grid</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">com.vaadin.flow.component.grid.Grid&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</span>&nbsp;<span class="element-name">grid</span>()</div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">com.vaadin.flow.component.grid.Grid&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</span>&nbsp;<span class="element-name">grid</span>()</div>
 </div>
 </section>
 </li>
@@ -864,15 +1017,15 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="dataView()">
 <h3>dataView</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">com.vaadin.flow.component.grid.dataview.GridListDataView&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</span>&nbsp;<span class="element-name">dataView</span>()</div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">com.vaadin.flow.component.grid.dataview.GridListDataView&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;</span>&nbsp;<span class="element-name">dataView</span>()</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="buildMenu()">
-<h3>buildMenu</h3>
+<section class="detail" id="buildCrudMenu(net.tangly.ui.components.Mode)">
+<h3>buildCrudMenu</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">buildMenu</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">buildCrudMenu</span><wbr><span class="parameters">(<a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</span></div>
 </div>
 </section>
 </li>
@@ -882,8 +1035,9 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addActions</span><wbr><span class="parameters">(@NotNull
  @NotNull com.vaadin.flow.component.grid.contextmenu.GridContextMenu&lt;<a href="ItemView.html" title="type parameter in ItemView">T</a>&gt;&nbsp;menu)</span></div>
-<div class="block">Adds custom actions to the context menu. Overwrite the menu if you want to add actions to the context menu. The mode of the view is available through the  <a href="#mode()"><code>mode()</code></a>}
- method. The menu can also be retrieved through the <a href="#menu()"><code>menu()</code></a> method.</div>
+<div class="block">Add custom actions to the context menu. Overwrite the menu if you want to add actions to the context menu.
+ The mode of the view is available through the <a href="#mode()"><code>mode()</code></a>}. The read-only attribute is available through the <a href="#readonly()"><code>readonly()</code></a> method.
+ The menu can also be retrieved through the <a href="#menu()"><code>menu()</code></a> method.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>menu</code> - context menu of the grid</dd>

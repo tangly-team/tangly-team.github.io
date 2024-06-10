@@ -100,24 +100,12 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Defines the CRUD contract for a form used to display or modify an entity. The abstract methods are:
  <dl>
-    <dt><a href="#mode(net.tangly.ui.components.Mode)"><code>mode(Mode mode)</code></a></dt><dd>Set the mode of the fields in the form based on selected CRUD operation and additional business Logic.</dd>
     <dt><a href="#value(T)"><code>value(Object)</code></a></dt><dd>Fill the form with properties of the entity and business logic.</dd>
     <dt><a href="#clear()"><code>clear()</code></a></dt><dd>Clear all fields in the form</dd>
     <dt><a href="#createOrUpdateInstance(T)"><code>createOrUpdateInstance(Object)</code></a></dt><dd>Create a new entity based on the fields and business logic.</dd>
  </dl>
  <p>A form has a binder to transfer values between the form fields and the entity. The form has also a reference to the view containing the entities, which could be displayed
  in the form.</p>
-
- <h2 id="mode-propagation-heading">Mode Propagation</h2>
- <p>An item form can contains multiple item views. When the form is open with a specific operation, All views in the form should have the same mode for consistency.
- If a user opens the form with a view command, all contained components should also set to the mode view and be read-only.
- The developer is responsible to overwrite the <code>mode</code> method to propagate the mode change to all contained components.
- The rules should be:</p>
- <dl>
-     <dt>LIST</dt><dd>shall be propagated as LIST.</dd>
-     <dt>VIEW, DELETE</dt><dd>shall be propagated or translated to VIEW.</dd>
-     <dt>EDIT, CREATE, DUPLICATE</dt><dd>shall be translated to EDIT.</dd>
- </dl>
 
  <h2 id="buttons-heading">Buttons</h2>
  <dl>
@@ -222,41 +210,38 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;V&gt;&nbsp;V</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fromBinder(java.lang.String)" class="member-name-link">fromBinder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;field)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mode()" class="member-name-link">mode</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.domain.Operation</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#operation()" class="member-name-link">operation</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return the mode of the form.</div>
+<div class="block">Return the operation of the form.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mode(net.tangly.ui.components.Mode)" class="member-name-link">mode</a><wbr>(@NotNull <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#operation(net.tangly.core.domain.Operation)" class="member-name-link">operation</a><wbr>(@NotNull net.tangly.core.domain.Operation&nbsp;operation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set the mode of the form and propagate it to all components registered in the binder.</div>
+<div class="block">Set the operation of the form and propagates the readonly status to the form fields.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nameActionButton(net.tangly.ui.components.Mode)" class="member-name-link">nameActionButton</a><wbr>(@NotNull <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="ItemForm.html" title="type parameter in ItemForm">U</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parent()" class="member-name-link">parent</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.vaadin.flow.component.formlayout.FormLayout</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#textForm()" class="member-name-link">textForm</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="ItemForm.html" title="type parameter in ItemForm">U</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parent()" class="member-name-link">parent</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.vaadin.flow.component.formlayout.FormLayout</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#textForm(net.tangly.ui.asciidoc.AsciiDocField)" class="member-name-link">textForm</a><wbr>(<a href="../asciidoc/AsciiDocField.html" title="class in net.tangly.ui.asciidoc">AsciiDocField</a>&nbsp;text)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#textForm()" class="member-name-link">textForm</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemForm.html" title="type parameter in ItemForm">T</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateEntity()" class="member-name-link">updateEntity</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.vaadin.flow.component.formlayout.FormLayout</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#textForm(net.tangly.ui.asciidoc.AsciiDocField)" class="member-name-link">textForm</a><wbr>(<a href="../asciidoc/AsciiDocField.html" title="class in net.tangly.ui.asciidoc">AsciiDocField</a>&nbsp;text)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemForm.html" title="type parameter in ItemForm">T</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateEntity()" class="member-name-link">updateEntity</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Update the entity upon modification.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemForm.html" title="type parameter in ItemForm">T</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#value()" class="member-name-link">value</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemForm.html" title="type parameter in ItemForm">T</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#value()" class="member-name-link">value</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return the value displayed in the form.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#value(T)" class="member-name-link">value</a><wbr>(<a href="ItemForm.html" title="type parameter in ItemForm">T</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#value(T)" class="member-name-link">value</a><wbr>(<a href="ItemForm.html" title="type parameter in ItemForm">T</a>&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the value displayed in the form.</div>
 </div>
 </div>
@@ -322,18 +307,18 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="mode()">
-<h3>mode</h3>
+<section class="detail" id="operation()">
+<h3>operation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a></span>&nbsp;<span class="element-name">mode</span>()</div>
-<div class="block">Return the mode of the form. All contained items should have the same mode for consistency.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">net.tangly.core.domain.Operation</span>&nbsp;<span class="element-name">operation</span>()</div>
+<div class="block">Return the operation of the form.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the mode of the form</dd>
+<dd>the operation of the form</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="#mode(net.tangly.ui.components.Mode)"><code>mode(Mode)</code></a></li>
+<li><a href="#operation(net.tangly.core.domain.Operation)"><code>operation(Operation)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -341,20 +326,20 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="mode(net.tangly.ui.components.Mode)">
-<h3>mode</h3>
+<section class="detail" id="operation(net.tangly.core.domain.Operation)">
+<h3>operation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">mode</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</span></div>
-<div class="block">Set the mode of the form and propagate it to all components registered in the binder. Subclasses should overwrite the method to ensure that the mode is propagated to all
- contained views.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">operation</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.Operation&nbsp;operation)</span></div>
+<div class="block">Set the operation of the form and propagates the readonly status to the form fields.
+ Overwrite the method to update form components accordingly.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>mode</code> - mode of the form</dd>
+<dd><code>operation</code> - operation of the form</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="#mode()"><code>mode()</code></a></li>
+<li><a href="#operation()"><code>operation()</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -509,7 +494,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Create the CRUD button bar. The button bar has always a cancel operation and an additional CRUD operation.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>component containing the CRUD form command button</dd>
+<dd>domain containing the CRUD form command button</dd>
 </dl>
 </div>
 </section>
@@ -560,15 +545,6 @@ loadScripts(document, 'script');</script>
 <dt>Returns:</dt>
 <dd>deleted entity instance</dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nameActionButton(net.tangly.ui.components.Mode)">
-<h3>nameActionButton</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nameActionButton</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="Mode.html" title="enum class in net.tangly.ui.components">Mode</a>&nbsp;mode)</span></div>
 </div>
 </section>
 </li>

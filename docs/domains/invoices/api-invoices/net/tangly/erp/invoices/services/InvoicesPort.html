@@ -126,7 +126,8 @@ extends net.tangly.core.domain.Port&lt;<a href="InvoicesRealm.html" title="inter
 <div class="block">Returns true if the invoice document exists.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportInvoiceDocument(net.tangly.erp.invoices.domain.Invoice,boolean,boolean,boolean)" class="member-name-link">exportInvoiceDocument</a><wbr>(@NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportInvoiceDocument(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,boolean,boolean,boolean)" class="member-name-link">exportInvoiceDocument</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
  boolean&nbsp;withQrCode,
  boolean&nbsp;withEN16931,
  boolean&nbsp;overwrite)</code></div>
@@ -134,7 +135,8 @@ extends net.tangly.core.domain.Port&lt;<a href="InvoicesRealm.html" title="inter
 <div class="block">Export an invoice to a file.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportInvoiceDocuments(boolean,boolean,boolean,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">exportInvoiceDocuments</a><wbr>(boolean&nbsp;withQrCode,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportInvoiceDocuments(net.tangly.core.domain.DomainAudit,boolean,boolean,boolean,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">exportInvoiceDocuments</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ boolean&nbsp;withQrCode,
  boolean&nbsp;withEN16931,
  boolean&nbsp;overwrite,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
@@ -176,10 +178,12 @@ extends net.tangly.core.domain.Port&lt;<a href="InvoicesRealm.html" title="inter
 </section>
 </li>
 <li>
-<section class="detail" id="exportInvoiceDocument(net.tangly.erp.invoices.domain.Invoice,boolean,boolean,boolean)">
+<section class="detail" id="exportInvoiceDocument(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,boolean,boolean,boolean)">
 <h3>exportInvoiceDocument</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportInvoiceDocument</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
  boolean&nbsp;withQrCode,
  boolean&nbsp;withEN16931,
@@ -195,7 +199,7 @@ extends net.tangly.core.domain.Port&lt;<a href="InvoicesRealm.html" title="inter
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="#exportInvoiceDocument(net.tangly.erp.invoices.domain.Invoice,boolean,boolean,boolean)"><code>exportInvoiceDocument(Invoice, boolean, boolean, boolean)</code></a></li>
+<li><a href="#exportInvoiceDocuments(net.tangly.core.domain.DomainAudit,boolean,boolean,boolean,java.time.LocalDate,java.time.LocalDate)"><code>exportInvoiceDocuments(DomainAudit, boolean, boolean, boolean, LocalDate, LocalDate)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -203,10 +207,12 @@ extends net.tangly.core.domain.Port&lt;<a href="InvoicesRealm.html" title="inter
 </section>
 </li>
 <li>
-<section class="detail" id="exportInvoiceDocuments(boolean,boolean,boolean,java.time.LocalDate,java.time.LocalDate)">
+<section class="detail" id="exportInvoiceDocuments(net.tangly.core.domain.DomainAudit,boolean,boolean,boolean,java.time.LocalDate,java.time.LocalDate)">
 <h3>exportInvoiceDocuments</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportInvoiceDocuments</span><wbr><span class="parameters">(boolean&nbsp;withQrCode,
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportInvoiceDocuments</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ boolean&nbsp;withQrCode,
  boolean&nbsp;withEN16931,
  boolean&nbsp;overwrite,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,

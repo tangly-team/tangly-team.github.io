@@ -47,7 +47,7 @@ loadScripts(document, 'script');</script>
 <ul>
 <li>Field</li>
 <li><a href="#constructor-detail">Constr</a></li>
-<li>Method</li>
+<li><a href="#method-detail">Method</a></li>
 </ul>
 </li>
 </ul>
@@ -65,7 +65,7 @@ loadScripts(document, 'script');</script>
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method-detail">Method</a></li>
 </ul>
 </div>
 <div class="nav-list-search"><a href="../../../../../search.html">SEARCH</a>
@@ -93,11 +93,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>com.vaadin.flow.component.AttachNotifier</code>, <code>com.vaadin.flow.component.ClickNotifier&lt;com.vaadin.flow.component.orderedlayout.VerticalLayout&gt;</code>, <code>com.vaadin.flow.component.DetachNotifier</code>, <code>com.vaadin.flow.component.HasComponents</code>, <code>com.vaadin.flow.component.HasElement</code>, <code>com.vaadin.flow.component.HasEnabled</code>, <code>com.vaadin.flow.component.HasOrderedComponents</code>, <code>com.vaadin.flow.component.HasSize</code>, <code>com.vaadin.flow.component.HasStyle</code>, <code>com.vaadin.flow.component.orderedlayout.FlexComponent</code>, <code>com.vaadin.flow.component.orderedlayout.ThemableLayout</code>, <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code></dd>
+<dd><code>com.vaadin.flow.component.AttachNotifier</code>, <code>com.vaadin.flow.component.ClickNotifier&lt;com.vaadin.flow.component.orderedlayout.VerticalLayout&gt;</code>, <code>com.vaadin.flow.component.DetachNotifier</code>, <code>com.vaadin.flow.component.HasComponents</code>, <code>com.vaadin.flow.component.HasElement</code>, <code>com.vaadin.flow.component.HasEnabled</code>, <code>com.vaadin.flow.component.HasOrderedComponents</code>, <code>com.vaadin.flow.component.HasSize</code>, <code>com.vaadin.flow.component.HasStyle</code>, <code>com.vaadin.flow.component.orderedlayout.FlexComponent</code>, <code>com.vaadin.flow.component.orderedlayout.ThemableLayout</code>, <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">DomainView</span>
-<span class="extends-implements">extends com.vaadin.flow.component.orderedlayout.VerticalLayout</span></div>
+<span class="extends-implements">extends com.vaadin.flow.component.orderedlayout.VerticalLayout
+implements <a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></span></div>
 <div class="block">Provides a view on the domain with tabs monitoring the instances of domain-specific entities and tags used in the bounded domain. The list of domain entities is provided with
  statistics. Similar information is available for tag usage in the domain.</div>
 <dl class="notes">
@@ -129,7 +130,7 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.core.domain.BoundedDomain)" class="member-name-link">DomainView</a><wbr>(@NotNull net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&nbsp;domain)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.ui.app.domain.BoundedDomainUi)" class="member-name-link">DomainView</a><wbr>(@NotNull <a href="BoundedDomainUi.html" title="class in net.tangly.ui.app.domain">BoundedDomainUi</a>&lt;?&gt;&nbsp;domain)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -138,6 +139,31 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel">
+<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readonly()" class="member-name-link">readonly</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return if the view is in readonly mode.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readonly(boolean)" class="member-name-link">readonly</a><wbr>(boolean&nbsp;readonly)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set the view in readonly mode.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refresh()" class="member-name-link">refresh</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Refresh the view with the latest data.</div>
+</div>
+</div>
+</div>
+</div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.vaadin.flow.component.orderedlayout.VerticalLayout">Methods inherited from class&nbsp;com.vaadin.flow.component.orderedlayout.VerticalLayout</h3>
 <code>addAndExpand, getAlignItems, getAlignSelf, getDefaultHorizontalComponentAlignment, getHorizontalComponentAlignment, setAlignItems, setAlignSelf, setDefaultHorizontalComponentAlignment, setHorizontalComponentAlignment, setPadding, setSpacing</code></div>
@@ -180,6 +206,9 @@ loadScripts(document, 'script');</script>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.vaadin.flow.component.orderedlayout.ThemableLayout">Methods inherited from interface&nbsp;com.vaadin.flow.component.orderedlayout.ThemableLayout</h3>
 <code>getBoxSizing, getThemeList, isMargin, isPadding, isSpacing, setBoxSizing, setMargin</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.ui.app.domain.View">Methods inherited from interface&nbsp;net.tangly.ui.app.domain.<a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></h3>
+<code><a href="View.html#mode()">mode</a></code></div>
 </section>
 </li>
 </ul>
@@ -192,11 +221,77 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.tangly.core.domain.BoundedDomain)">
+<section class="detail" id="&lt;init&gt;(net.tangly.ui.app.domain.BoundedDomainUi)">
 <h3>DomainView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">DomainView</span><wbr><span class="parameters">(@NotNull
- @NotNull net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&nbsp;domain)</span></div>
+ @NotNull <a href="BoundedDomainUi.html" title="class in net.tangly.ui.app.domain">BoundedDomainUi</a>&lt;?&gt;&nbsp;domain)</span></div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="readonly()">
+<h3>readonly</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">readonly</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="View.html#readonly()">View</a></code></span></div>
+<div class="block">Return if the view is in readonly mode.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="View.html#readonly()">readonly</a></code>&nbsp;in interface&nbsp;<code><a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
+<dt>Returns:</dt>
+<dd>true if the view is readonly otherwise false</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="View.html#readonly(boolean)"><code>View.readonly(boolean)</code></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="readonly(boolean)">
+<h3>readonly</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readonly</span><wbr><span class="parameters">(boolean&nbsp;readonly)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="View.html#readonly(boolean)">View</a></code></span></div>
+<div class="block">Set the view in readonly mode.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="View.html#readonly(boolean)">readonly</a></code>&nbsp;in interface&nbsp;<code><a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>readonly</code> - true if the view is readonly otherwise false</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="View.html#readonly()"><code>View.readonly()</code></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="refresh()">
+<h3>refresh</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refresh</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="View.html#refresh()">View</a></code></span></div>
+<div class="block">Refresh the view with the latest data.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="View.html#refresh()">refresh</a></code>&nbsp;in interface&nbsp;<code><a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
+</dl>
 </div>
 </section>
 </li>

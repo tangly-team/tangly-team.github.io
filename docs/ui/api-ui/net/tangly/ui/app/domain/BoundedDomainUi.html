@@ -158,10 +158,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addAdministration(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.commons.lang.functional.LazyReference,net.tangly.ui.app.domain.Cmd)" class="member-name-link">addAdministration</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addAdministration(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.commons.lang.functional.LazyReference)" class="member-name-link">addAdministration</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout,
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar,
- @NotNull net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;domainView,
- <a href="Cmd.html" title="interface in net.tangly.ui.app.domain">Cmd</a>&nbsp;loadDialog)</code></div>
+ @NotNull net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;domainView)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The administration menu provides standard administration operation for a bounded domain.</div>
 </div>
@@ -170,25 +169,44 @@ loadScripts(document, 'script');</script>
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar,
  @NotNull net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;analyticsView)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;T extends com.vaadin.flow.component.Component&gt;<br>net.tangly.commons.lang.functional.LazyReference<wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentView()" class="member-name-link">currentView</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addView(java.lang.String,net.tangly.commons.lang.functional.LazyReference)" class="member-name-link">addView</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ @NotNull net.tangly.commons.lang.functional.LazyReference&lt;? extends <a href="View.html" title="interface in net.tangly.ui.app.domain">View</a>&gt;&nbsp;view)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;T extends com.vaadin.flow.component.Component&gt;<br>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentView(net.tangly.commons.lang.functional.LazyReference)" class="member-name-link">currentView</a><wbr>(net.tangly.commons.lang.functional.LazyReference&lt;T&gt;&nbsp;currentView)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;V extends com.vaadin.flow.component.Component&gt;<br>net.tangly.commons.lang.functional.LazyReference<wbr>&lt;V&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentView()" class="member-name-link">currentView</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;V extends <a href="View.html" title="interface in net.tangly.ui.app.domain">View</a>&gt;<br>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentView(java.lang.String)" class="member-name-link">currentView</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;V extends <a href="View.html" title="interface in net.tangly.ui.app.domain">View</a>&gt;<br>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentView(net.tangly.commons.lang.functional.LazyReference)" class="member-name-link">currentView</a><wbr>(net.tangly.commons.lang.functional.LazyReference&lt;V&gt;&nbsp;currentView)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomainUi.html" title="type parameter in BoundedDomainUi">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#domain()" class="member-name-link">domain</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasDomainAdminRights()" class="member-name-link">hasDomainAdminRights</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasReadOnlyRights()" class="member-name-link">hasReadOnlyRights</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return the name of bounded domain user interface as displayed in the user interface.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refreshViews()" class="member-name-link">refreshViews</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Refresh the views of the bounded domain user interface because the domain entities have changed</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshViews()" class="member-name-link">refreshViews</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Refresh the views of the bounded domain user interface because the domain entities have changed.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.domain.AccessRights</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rights()" class="member-name-link">rights</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rights(net.tangly.core.domain.AccessRights)" class="member-name-link">rights</a><wbr>(net.tangly.core.domain.AccessRights&nbsp;rights)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(com.vaadin.flow.component.applayout.AppLayout)" class="member-name-link">select</a><wbr>(@NotNull com.vaadin.flow.component.applayout.AppLayout&nbsp;layout)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -204,6 +222,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Select the new current view of the bounded domain interface.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#userChanged(net.tangly.core.domain.User)" class="member-name-link">userChanged</a><wbr>(net.tangly.core.domain.User&nbsp;user)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;net.tangly.commons.lang.functional.LazyReference&lt;? extends <a href="View.html" title="interface in net.tangly.ui.app.domain">View</a>&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#view(java.lang.String)" class="member-name-link">view</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -396,6 +420,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="rights()">
+<h3>rights</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">net.tangly.core.domain.AccessRights</span>&nbsp;<span class="element-name">rights</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="rights(net.tangly.core.domain.AccessRights)">
+<h3>rights</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">rights</span><wbr><span class="parameters">(net.tangly.core.domain.AccessRights&nbsp;rights)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="select(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar)">
 <h3>select</h3>
 <div class="horizontal-scroll">
@@ -407,7 +447,7 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>layout</code> - layout in which the view will be displayed</dd>
-<dd><code>menuBar</code> - empty menu bar of the layout</dd>
+<dd><code>menuBar</code> - empty menu bar of the layout. The domain adds domain-specific menu items to the menu bar</dd>
 </dl>
 </div>
 </section>
@@ -416,8 +456,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="refreshViews()">
 <h3>refreshViews</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refreshViews</span>()</div>
-<div class="block">Refresh the views of the bounded domain user interface because the domain entities have changed</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refreshViews</span>()</div>
+<div class="block">Refresh the views of the bounded domain user interface because the domain entities have changed.</div>
 </div>
 </section>
 </li>
@@ -447,7 +487,35 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="addAdministration(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.commons.lang.functional.LazyReference,net.tangly.ui.app.domain.Cmd)">
+<section class="detail" id="userChanged(net.tangly.core.domain.User)">
+<h3>userChanged</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">userChanged</span><wbr><span class="parameters">(net.tangly.core.domain.User&nbsp;user)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addView(java.lang.String,net.tangly.commons.lang.functional.LazyReference)">
+<h3>addView</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addView</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ @NotNull
+ @NotNull net.tangly.commons.lang.functional.LazyReference&lt;? extends <a href="View.html" title="interface in net.tangly.ui.app.domain">View</a>&gt;&nbsp;view)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="view(java.lang.String)">
+<h3>view</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;net.tangly.commons.lang.functional.LazyReference&lt;? extends <a href="View.html" title="interface in net.tangly.ui.app.domain">View</a>&gt;&gt;</span>&nbsp;<span class="element-name">view</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addAdministration(com.vaadin.flow.component.applayout.AppLayout,com.vaadin.flow.component.menubar.MenuBar,net.tangly.commons.lang.functional.LazyReference)">
 <h3>addAdministration</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addAdministration</span><wbr><span class="parameters">(@NotNull
@@ -455,15 +523,13 @@ loadScripts(document, 'script');</script>
  @NotNull
  @NotNull com.vaadin.flow.component.menubar.MenuBar&nbsp;menuBar,
  @NotNull
- @NotNull net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;domainView,
- <a href="Cmd.html" title="interface in net.tangly.ui.app.domain">Cmd</a>&nbsp;loadDialog)</span></div>
+ @NotNull net.tangly.commons.lang.functional.LazyReference&lt;?&gt;&nbsp;domainView)</span></div>
 <div class="block">The administration menu provides standard administration operation for a bounded domain.
  <ul>
      <li>Provides statistics about entities of the domain.</li>
      <li>Import domain entities from a set of TSV files stored in a directory. The command is responsible for a semantic meaningful ordering of the imports.</li>
      <li>Export domain entities to a set of TSV files stored in a directory. Existing files are overwritten. The exported entities could later be imported into the
      application with the import domain command.</li>
-     <li>Up load domain entities through the browser interface. Files are available on client site. The command is optional.</li>
  </ul></div>
 </div>
 </section>
@@ -482,11 +548,18 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="currentView(java.lang.String)">
+<h3>currentView</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="type-parameters">&lt;V extends <a href="View.html" title="interface in net.tangly.ui.app.domain">View</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">currentView</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="currentView(net.tangly.commons.lang.functional.LazyReference)">
 <h3>currentView</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="type-parameters">&lt;T extends com.vaadin.flow.component.Component&gt;</span>
-<span class="return-type">void</span>&nbsp;<span class="element-name">currentView</span><wbr><span class="parameters">(net.tangly.commons.lang.functional.LazyReference&lt;T&gt;&nbsp;currentView)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="type-parameters">&lt;V extends <a href="View.html" title="interface in net.tangly.ui.app.domain">View</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">currentView</span><wbr><span class="parameters">(net.tangly.commons.lang.functional.LazyReference&lt;V&gt;&nbsp;currentView)</span></div>
 </div>
 </section>
 </li>
@@ -494,8 +567,24 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="currentView()">
 <h3>currentView</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="type-parameters">&lt;T extends com.vaadin.flow.component.Component&gt;</span>
-<span class="return-type">net.tangly.commons.lang.functional.LazyReference&lt;T&gt;</span>&nbsp;<span class="element-name">currentView</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="type-parameters">&lt;V extends com.vaadin.flow.component.Component&gt;</span>
+<span class="return-type">net.tangly.commons.lang.functional.LazyReference&lt;V&gt;</span>&nbsp;<span class="element-name">currentView</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasReadOnlyRights()">
+<h3>hasReadOnlyRights</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasReadOnlyRights</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasDomainAdminRights()">
+<h3>hasDomainAdminRights</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasDomainAdminRights</span>()</div>
 </div>
 </section>
 </li>

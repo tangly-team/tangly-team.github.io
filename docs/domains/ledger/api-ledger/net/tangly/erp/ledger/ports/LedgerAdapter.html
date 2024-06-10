@@ -176,10 +176,10 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearEntities()" class="member-name-link">clearEntities</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">clearEntities</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEntities()" class="member-name-link">exportEntities</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">exportEntities</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportLedgerDocument(java.lang.String,java.time.LocalDate,java.time.LocalDate,boolean,boolean)" class="member-name-link">exportLedgerDocument</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
@@ -191,7 +191,7 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <div class="block">Exports a ledger report with profits and losses, and assets and liabilities information for a specific time interval.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEntities()" class="member-name-link">importEntities</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">importEntities</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#journalForYear(int)" class="member-name-link">journalForYear</a><wbr>(int&nbsp;year)</code></div>
@@ -400,10 +400,11 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 </section>
 </li>
 <li>
-<section class="detail" id="importEntities()">
+<section class="detail" id="importEntities(net.tangly.core.domain.DomainAudit)">
 <h3>importEntities</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importEntities</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importEntities</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>importEntities</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&gt;</code></dd>
@@ -412,10 +413,11 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 </section>
 </li>
 <li>
-<section class="detail" id="exportEntities()">
+<section class="detail" id="exportEntities(net.tangly.core.domain.DomainAudit)">
 <h3>exportEntities</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEntities</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEntities</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>exportEntities</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&gt;</code></dd>
@@ -424,10 +426,11 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 </section>
 </li>
 <li>
-<section class="detail" id="clearEntities()">
+<section class="detail" id="clearEntities(net.tangly.core.domain.DomainAudit)">
 <h3>clearEntities</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearEntities</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearEntities</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>clearEntities</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&gt;</code></dd>

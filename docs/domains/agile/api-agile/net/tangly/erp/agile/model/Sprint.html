@@ -91,12 +91,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.tangly.core.ExternalEntity</code>, <code>net.tangly.core.HasComments</code>, <code>net.tangly.core.HasDate</code>, <code>net.tangly.core.HasDateRange</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasMutableComments</code>, <code>net.tangly.core.HasMutableDate</code>, <code>net.tangly.core.HasMutableDateRange</code>, <code>net.tangly.core.HasMutableId</code>, <code>net.tangly.core.HasMutableName</code>, <code>net.tangly.core.HasMutableTags</code>, <code>net.tangly.core.HasMutableText</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasTags</code>, <code>net.tangly.core.HasText</code>, <code>net.tangly.core.MutableExternalEntity</code></dd>
+<dd><code>net.tangly.core.ExternalEntity</code>, <code>net.tangly.core.HasComments</code>, <code>net.tangly.core.HasDate</code>, <code>net.tangly.core.HasDateRange</code>, <code>net.tangly.core.HasId</code>, <code>net.tangly.core.HasMutableComments</code>, <code>net.tangly.core.HasMutableDate</code>, <code>net.tangly.core.HasMutableId</code>, <code>net.tangly.core.HasMutableName</code>, <code>net.tangly.core.HasMutableTags</code>, <code>net.tangly.core.HasMutableText</code>, <code>net.tangly.core.HasName</code>, <code>net.tangly.core.HasTags</code>, <code>net.tangly.core.HasText</code>, <code>net.tangly.core.MutableExternalEntity</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Sprint</span>
 <span class="extends-implements">extends net.tangly.core.MutalbeExternalEntityImp
-implements net.tangly.core.MutableExternalEntity, net.tangly.core.HasMutableDateRange</span></div>
+implements net.tangly.core.MutableExternalEntity, net.tangly.core.HasDateRange</span></div>
 </div>
 </section>
 <section class="summary">
@@ -161,18 +161,9 @@ implements net.tangly.core.MutableExternalEntity, net.tangly.core.HasMutableDate
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#from(java.time.LocalDate)" class="member-name-link">from</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.DateRange</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#range()" class="member-name-link">range</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.DateRange</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#range()" class="member-name-link">range</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#range(net.tangly.core.DateRange)" class="member-name-link">range</a><wbr>(@NotNull net.tangly.core.DateRange&nbsp;range)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#to(java.time.LocalDate)" class="member-name-link">to</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -257,43 +248,6 @@ implements net.tangly.core.MutableExternalEntity, net.tangly.core.HasMutableDate
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>range</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasDateRange</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="range(net.tangly.core.DateRange)">
-<h3>range</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">range</span><wbr><span class="parameters">(@NotNull
- @NotNull net.tangly.core.DateRange&nbsp;range)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code>range</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasMutableDateRange</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="from(java.time.LocalDate)">
-<h3>from</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">from</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code>from</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasMutableDateRange</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="to(java.time.LocalDate)">
-<h3>to</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">to</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code>to</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasMutableDateRange</code></dd>
 </dl>
 </div>
 </section>

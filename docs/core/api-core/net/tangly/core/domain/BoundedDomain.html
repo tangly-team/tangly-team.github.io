@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li>
 <p>Summary:</p>
 <ul>
-<li>Nested</li>
+<li><a href="#nested-class-summary">Nested</a></li>
 <li>Field</li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
@@ -56,7 +56,7 @@ loadScripts(document, 'script');</script>
 <div id="navbar-sub-list">
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
@@ -94,9 +94,14 @@ loadScripts(document, 'script');</script>
 <dd><code>P</code> - port empowers the business domain to communicate with outer layers or external systems.
             The communication is generally asynchronous</dd>
 </dl>
+<dl class="notes">
+<dt>All Implemented Interfaces:</dt>
+<dd><code><a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></code></dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">BoundedDomain&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>,<wbr>B,<wbr>P extends <a href="Port.html" title="interface in net.tangly.core.domain">Port</a>&lt;R&gt;&gt;</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></span></div>
 <div class="block">A bounded domain as defined in the DDD approach has a domain-specific model and a set of adapters.
  A bounded domain is a cohesive and decoupled unit of functionality that is relevant to the business.
  It has a unique name.
@@ -110,6 +115,21 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="BoundedDomain.EventListener.html" class="type-name-link" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -150,18 +170,32 @@ loadScripts(document, 'script');</script>
  @NotNull <a href="../providers/Provider.html" title="interface in net.tangly.core.providers">Provider</a>&lt;I&gt;&nbsp;provider,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../TagType.html" title="class in net.tangly.core">TagType</a>&lt;?&gt;,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;counts)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;net.tangly.commons.logger.EventData&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#auditEvents()" class="member-name-link">auditEvents</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/SubmissionPublisher.html" title="class or interface in java.util.concurrent" class="external-link">SubmissionPublisher</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#channel()" class="member-name-link">channel</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../TagType.html" title="class in net.tangly.core">TagType</a>&lt;?&gt;,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#countTags(java.util.Map)" class="member-name-link">countTags</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../TagType.html" title="class in net.tangly.core">TagType</a>&lt;?&gt;,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;counts)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="DomainEntity.html" title="class in net.tangly.core.domain">DomainEntity</a>&lt;?&gt;&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entities()" class="member-name-link">entities</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/SubmissionPublisher.html" title="class or interface in java.util.concurrent" class="external-link">SubmissionPublisher</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#internalChannel()" class="member-name-link">internalChannel</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#log(net.tangly.commons.logger.EventData)" class="member-name-link">log</a><wbr>(net.tangly.commons.logger.EventData&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">B</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logic()" class="member-name-link">logic</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return the name of the domain audit.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">P</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#port()" class="member-name-link">port</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -177,12 +211,21 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startup()" class="member-name-link">startup</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subscribe(net.tangly.core.domain.BoundedDomain.EventListener)" class="member-name-link">subscribe</a><wbr>(<a href="BoundedDomain.EventListener.html" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a>&nbsp;listener)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subscribeInternally(net.tangly.core.domain.BoundedDomain.EventListener)" class="member-name-link">subscribeInternally</a><wbr>(<a href="BoundedDomain.EventListener.html" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a>&nbsp;listener)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.domain.DomainAudit">Methods inherited from interface&nbsp;net.tangly.core.domain.<a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></h3>
+<code><a href="DomainAudit.html#log(java.lang.String,net.tangly.commons.logger.EventData.Status,java.lang.String,java.util.Map)">log</a>, <a href="DomainAudit.html#log(java.lang.String,net.tangly.commons.logger.EventData.Status,java.lang.String,java.util.Map,java.lang.Throwable)">log</a></code></div>
 </section>
 </li>
 </ul>
@@ -253,6 +296,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="channel()">
+<h3>channel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/SubmissionPublisher.html" title="class or interface in java.util.concurrent" class="external-link">SubmissionPublisher</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">channel</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="internalChannel()">
+<h3>internalChannel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/SubmissionPublisher.html" title="class or interface in java.util.concurrent" class="external-link">SubmissionPublisher</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">internalChannel</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="subscribe(net.tangly.core.domain.BoundedDomain.EventListener)">
+<h3>subscribe</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">subscribe</span><wbr><span class="parameters">(<a href="BoundedDomain.EventListener.html" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a>&nbsp;listener)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="subscribeInternally(net.tangly.core.domain.BoundedDomain.EventListener)">
+<h3>subscribeInternally</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">subscribeInternally</span><wbr><span class="parameters">(<a href="BoundedDomain.EventListener.html" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a>&nbsp;listener)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="countTags(java.util.Map)">
 <h3>countTags</h3>
 <div class="horizontal-scroll">
@@ -266,6 +341,14 @@ loadScripts(document, 'script');</script>
 <h3>name</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="DomainAudit.html#name()">DomainAudit</a></code></span></div>
+<div class="block">Return the name of the domain audit. It should be the name of the bounded domain.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="DomainAudit.html#name()">name</a></code>&nbsp;in interface&nbsp;<code><a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></code></dd>
+<dt>Returns:</dt>
+<dd>name of the domain audit</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -306,6 +389,26 @@ loadScripts(document, 'script');</script>
 <h3>entities</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="DomainEntity.html" title="class in net.tangly.core.domain">DomainEntity</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">entities</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="auditEvents()">
+<h3>auditEvents</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;net.tangly.commons.logger.EventData&gt;</span>&nbsp;<span class="element-name">auditEvents</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="log(net.tangly.commons.logger.EventData)">
+<h3>log</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">log</span><wbr><span class="parameters">(net.tangly.commons.logger.EventData&nbsp;auditEvent)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="DomainAudit.html#log(net.tangly.commons.logger.EventData)">log</a></code>&nbsp;in interface&nbsp;<code><a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></code></dd>
+</dl>
 </div>
 </section>
 </li>

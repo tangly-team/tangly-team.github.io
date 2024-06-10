@@ -68,11 +68,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="package-signature">package <span class="element-name">net.tangly.core.domain</span></div>
 <section class="package-description" id="package-description">
-<div class="block">The package defines the core abstractions for a bounded domain implementation. Entities defined in the domain can have oid, id, name, tags and comments.
+<div class="block">The package defines the core abstractions for a bounded domain implementation.
+ Entities defined in the domain can have oid, id, name, tags and comments.
  The realm interface is the entry point for the repository and factory abstractions.
  Repositories retrieve domain objects from persistence technologies.
  Factories create new object trees. The regular persistence approach is based on EclipseStore.
- The solution is well integrated in Java so that retrieval and creation operations are simple to implement.
+ The solution is well integrated in Java so that retrieval and creation operations are straightforward to implement.
  <p>The key abstractions are:</p>
  <dl>
      <dt>Bounded Domain</dt><dd>Defines the bounded domain model and the domain services.</dd>
@@ -105,7 +106,30 @@ loadScripts(document, 'script');</script>
          <li>Define the TSV Handler to enalbe the adapter to import entities from a TSV file and export them to a TSV file.</li>
      </ul>
  </dd>
- </dl></div>
+ </dl>
+
+ <h2 id="realm-heading">Realm</h2>
+ <p>The realm persists domain entities and aggregates.
+ The preferred approach uses EclipseStore to persist graphs of Java objects.
+ The provider interface and their various implementation is a powerful mechanism to store and retrieve domain entities.</p>
+ <h2 id="port-heading">Port</h2>
+ <p>The port provides the interface to the domain model for the adapters.
+ Any bounded domain provides an import, export, and clear operations.
+ The import loads an archive of all entities of the domain.
+ The export archives all entities to a set of files.
+ The clear removes all entities from the doamin.
+ THe preferred import and export format is TSV&gt;/p&gt;
+ <h2 id="tsv-import-and-export-heading">TSV Import and Export</h2>
+ <p>Utilities are provided in the Gleam module. </p>
+ You can use the TSV import and export utilities to import and export entities from and to TSV files.
+ <h2 id="business-logic-heading">Business Logic</h2>
+ <p></p>
+ <h2 id="vaadin-user-interface-heading">Vaadin User Interface</h2>
+ <p></p>
+ <h2 id="rest-interface-heading">REST Interface</h2>
+ <p></p>
+ <h2 id="domain-events-heading">Domain Events</h2>
+ <p></p></div>
 </section>
 </div>
 <section class="summary">
@@ -120,47 +144,57 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Provides core abstractions used in any commercial application.</div>
 </div>
-<div class="col-first odd-row-color"><a href="../codes/package-summary.html">net.tangly.core.codes</a></div>
-<div class="col-last odd-row-color">
-<div class="block">Defines dynamic enumeration values representing a code table and provides strong typing in the business models using them.</div>
-</div>
-<div class="col-first even-row-color"><a href="../gravatar/package-summary.html">net.tangly.core.gravatar</a></div>
-<div class="col-last even-row-color">
-<div class="block">Support for retrieving <a href="https://en.gravatar.com/">gravatar</a> images is provided through this package.</div>
-</div>
-<div class="col-first odd-row-color"><a href="../providers/package-summary.html">net.tangly.core.providers</a></div>
-<div class="col-last odd-row-color">
-<div class="block">Provides the provider abstraction to handle a list of items.</div>
-</div>
-<div class="col-first even-row-color"><a href="../tsv/package-summary.html">net.tangly.core.tsv</a></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="../validation/package-summary.html">net.tangly.core.validation</a></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab4" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab4', 2)" class="table-tab">Record Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button><button id="class-summary-tab4" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab4', 2)" class="table-tab">Record Classes</button></div>
 <div id="class-summary.tabpanel" role="tabpanel">
 <div class="summary-table two-column-summary" aria-labelledby="class-summary-tab0">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color class-summary class-summary-tab4"><a href="AccessRights.html" title="class in net.tangly.core.domain">AccessRights</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab4">&nbsp;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="block">A user has different access rights:
+ 
+     restricted-userhas anly read and write access to owned entities in a domain.</div>
+</div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a>&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>,<wbr>B,<wbr>P extends <a href="Port.html" title="interface in net.tangly.core.domain">Port</a>&lt;R&gt;&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A bounded domain as defined in the DDD approach has a domain-specific model and a set of adapters.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="BoundedDomain.EventListener.html" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">&nbsp;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block">Defines the interface to audit relevant events specific to a bounded domain.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab4"><a href="DomainEntity.html" title="class in net.tangly.core.domain">DomainEntity</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab4">
 <div class="block">Define the meta-information describing the characteristics of a domain entity.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Port.html" title="interface in net.tangly.core.domain">Port</a>&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>&gt;</div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Operation.html" title="enum class in net.tangly.core.domain">Operation</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
+<div class="block">Define the CRUD operations which can be applied on entities.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Port.html" title="interface in net.tangly.core.domain">Port</a>&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>&gt;</div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Define the inbound and outbound communication port to the bounded domain.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The realm is responsible for the handling of entities and value objects part of the domain model.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="TsvHdl.html" title="class in net.tangly.core.domain">TsvHdl</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">Utility class to handle TSV files.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab4"><a href="User.html" title="class in net.tangly.core.domain">User</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab4">
+<div class="block">An application user can log in the application and access to domain data based on domain access rights.</div>
 </div>
 </div>
 </div>

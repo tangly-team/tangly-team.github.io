@@ -20,13 +20,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Building Block View | tangly Components</title>
-<meta name="description" content="Building Block View Bounded Domain as a Building Block Bounded Domain User Interface Bounded Domain Persistence Bounded Domain Export and Import Rest Services for a Bounded Domain A bounded domain is the building block for a modular monolith architecture approach. Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain.
-A bounded domain can provide a REST interface to expose its functionality to other modules or external clients.">
+<meta name="description" content="Building Block View A bounded domain is the key building block for a modular monolith architecture approach. The ERP application is consisting of multiple bounded domains.
+The same approach should be used for a distributed microservice architecture.
+Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain. Persistence shall be handled per bounded domain. Ideally, the domain model should be designed to be independent of the persistence technology.">
 <meta property="og:url" content="https://blog.tangly.net/docs/domains/architecture/05-building-block-view/">
   <meta property="og:site_name" content="tangly Components">
   <meta property="og:title" content="Building Block View">
-  <meta property="og:description" content="Building Block View Bounded Domain as a Building Block Bounded Domain User Interface Bounded Domain Persistence Bounded Domain Export and Import Rest Services for a Bounded Domain A bounded domain is the building block for a modular monolith architecture approach. Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain.
-A bounded domain can provide a REST interface to expose its functionality to other modules or external clients.">
+  <meta property="og:description" content="Building Block View A bounded domain is the key building block for a modular monolith architecture approach. The ERP application is consisting of multiple bounded domains.
+The same approach should be used for a distributed microservice architecture.
+Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain. Persistence shall be handled per bounded domain. Ideally, the domain model should be designed to be independent of the persistence technology.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -34,15 +36,17 @@ A bounded domain can provide a REST interface to expose its functionality to oth
     <meta property="article:modified_time" content="2019-05-01T00:00:00+00:00">
 
   <meta itemprop="name" content="Building Block View">
-  <meta itemprop="description" content="Building Block View Bounded Domain as a Building Block Bounded Domain User Interface Bounded Domain Persistence Bounded Domain Export and Import Rest Services for a Bounded Domain A bounded domain is the building block for a modular monolith architecture approach. Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain.
-A bounded domain can provide a REST interface to expose its functionality to other modules or external clients.">
+  <meta itemprop="description" content="Building Block View A bounded domain is the key building block for a modular monolith architecture approach. The ERP application is consisting of multiple bounded domains.
+The same approach should be used for a distributed microservice architecture.
+Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain. Persistence shall be handled per bounded domain. Ideally, the domain model should be designed to be independent of the persistence technology.">
   <meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00">
   <meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="172">
+  <meta itemprop="wordCount" content="848">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Building Block View">
-  <meta name="twitter:description" content="Building Block View Bounded Domain as a Building Block Bounded Domain User Interface Bounded Domain Persistence Bounded Domain Export and Import Rest Services for a Bounded Domain A bounded domain is the building block for a modular monolith architecture approach. Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain.
-A bounded domain can provide a REST interface to expose its functionality to other modules or external clients.">
+  <meta name="twitter:description" content="Building Block View A bounded domain is the key building block for a modular monolith architecture approach. The ERP application is consisting of multiple bounded domains.
+The same approach should be used for a distributed microservice architecture.
+Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain. Persistence shall be handled per bounded domain. Ideally, the domain model should be designed to be independent of the persistence technology.">
 
 
 
@@ -130,7 +134,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.1b52d99082ea0adba8549de4cc824a5e.json"
+    data-offline-search-index-json-src="/offline-search-index.2ecf00799b40828815079d80072c9d67.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -154,7 +158,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.1b52d99082ea0adba8549de4cc824a5e.json"
+    data-offline-search-index-json-src="/offline-search-index.2ecf00799b40828815079d80072c9d67.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -544,80 +548,10 @@ if (!doNotTrack) {
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsshared-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared-li">
   <input type="checkbox" id="m-docsdomainsshared-check"/>
   <label for="m-docsdomainsshared-check"><a href="/docs/domains/shared/" title="Shared - Shared Kernel" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared"><span class="">Shared</span></a></label>
   
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsshared_design-li">
-  <input type="checkbox" id="m-docsdomainsshared_design-check"/>
-  <label for="m-docsdomainsshared_design-check"><a href="/docs/domains/shared/_design/" title="ERP Architecture" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsshared_design"><span class="">Architecture</span></a></label>
-  
-  <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design01-introduction-and-goals-li">
-  <input type="checkbox" id="m-docsdomainsshared_design01-introduction-and-goals-check"/>
-  <label for="m-docsdomainsshared_design01-introduction-and-goals-check"><a href="/docs/domains/shared/_design/01-introduction-and-goals/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design01-introduction-and-goals"><span class="">Introduction and Goals</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design02-architecture-constraints-li">
-  <input type="checkbox" id="m-docsdomainsshared_design02-architecture-constraints-check"/>
-  <label for="m-docsdomainsshared_design02-architecture-constraints-check"><a href="/docs/domains/shared/_design/02-architecture-constraints/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design02-architecture-constraints"><span class="">Architecture Constraints</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design03-system-scope-and-context-li">
-  <input type="checkbox" id="m-docsdomainsshared_design03-system-scope-and-context-check"/>
-  <label for="m-docsdomainsshared_design03-system-scope-and-context-check"><a href="/docs/domains/shared/_design/03-system-scope-and-context/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design03-system-scope-and-context"><span class="">System Scope and Context</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design04-solution-strategy-li">
-  <input type="checkbox" id="m-docsdomainsshared_design04-solution-strategy-check"/>
-  <label for="m-docsdomainsshared_design04-solution-strategy-check"><a href="/docs/domains/shared/_design/04-solution-strategy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design04-solution-strategy"><span class="">Solution Strategy</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design05-building-block-view-li">
-  <input type="checkbox" id="m-docsdomainsshared_design05-building-block-view-check"/>
-  <label for="m-docsdomainsshared_design05-building-block-view-check"><a href="/docs/domains/shared/_design/05-building-block-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design05-building-block-view"><span class="">Building Block View</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design06-runtime-view-li">
-  <input type="checkbox" id="m-docsdomainsshared_design06-runtime-view-check"/>
-  <label for="m-docsdomainsshared_design06-runtime-view-check"><a href="/docs/domains/shared/_design/06-runtime-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design06-runtime-view"><span class="">Runtime View</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design07-deployment-view-li">
-  <input type="checkbox" id="m-docsdomainsshared_design07-deployment-view-check"/>
-  <label for="m-docsdomainsshared_design07-deployment-view-check"><a href="/docs/domains/shared/_design/07-deployment-view/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design07-deployment-view"><span class="">Deployment View</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design08-crosscutting-concepts-li">
-  <input type="checkbox" id="m-docsdomainsshared_design08-crosscutting-concepts-check"/>
-  <label for="m-docsdomainsshared_design08-crosscutting-concepts-check"><a href="/docs/domains/shared/_design/08-crosscutting-concepts/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design08-crosscutting-concepts"><span class="">Cross-cutting Concepts</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design09-architecture-decisions-li">
-  <input type="checkbox" id="m-docsdomainsshared_design09-architecture-decisions-check"/>
-  <label for="m-docsdomainsshared_design09-architecture-decisions-check"><a href="/docs/domains/shared/_design/09-architecture-decisions/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design09-architecture-decisions"><span class="">Architecture Decisions</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design10-quality-requirements-li">
-  <input type="checkbox" id="m-docsdomainsshared_design10-quality-requirements-check"/>
-  <label for="m-docsdomainsshared_design10-quality-requirements-check"><a href="/docs/domains/shared/_design/10-quality-requirements/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design10-quality-requirements"><span class="">Quality Requirements</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design11-technical-risks-li">
-  <input type="checkbox" id="m-docsdomainsshared_design11-technical-risks-check"/>
-  <label for="m-docsdomainsshared_design11-technical-risks-check"><a href="/docs/domains/shared/_design/11-technical-risks/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design11-technical-risks"><span class="">Technical Risks and Debts</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design12-user-manual-li">
-  <input type="checkbox" id="m-docsdomainsshared_design12-user-manual-check"/>
-  <label for="m-docsdomainsshared_design12-user-manual-check"><a href="/docs/domains/shared/_design/12-user-manual/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design12-user-manual"><span class="">User Manual</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainsshared_design13-glossary-li">
-  <input type="checkbox" id="m-docsdomainsshared_design13-glossary-check"/>
-  <label for="m-docsdomainsshared_design13-glossary-check"><a href="/docs/domains/shared/_design/13-glossary/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainsshared_design13-glossary"><span class="">Glossary</span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainssharedreadme-li">
-  <input type="checkbox" id="m-docsdomainssharedreadme-check"/>
-  <label for="m-docsdomainssharedreadme-check"><a href="/docs/domains/shared/readme/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainssharedreadme"><span class="">Readme</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdomainssharedreleasesnotes-li">
-  <input type="checkbox" id="m-docsdomainssharedreleasesnotes-check"/>
-  <label for="m-docsdomainssharedreleasesnotes-check"><a href="/docs/domains/shared/releasesnotes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-docsdomainssharedreleasesnotes"><span class="">Release Notes</span></a></label>
-  
-</li>
-  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdomainsui-li">
   <input type="checkbox" id="m-docsdomainsui-check"/>
   <label for="m-docsdomainsui-check"><a href="/docs/domains/ui/" title="ERP-UI - UI for ERP Bounded Domains" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-docsdomainsui"><span class="">ERP-UI</span></a></label>
@@ -669,8 +603,8 @@ if (!doNotTrack) {
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">Agile</span><span class="taxonomy-count">108</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">25</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/c&#43;&#43;/" data-taxonomy-term="c&#43;&#43;"><span class="taxonomy-label">C&#43;&#43;</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">26</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/c&#43;&#43;/" data-taxonomy-term="c&#43;&#43;"><span class="taxonomy-label">C&#43;&#43;</span><span class="taxonomy-count">5</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/crm/" data-taxonomy-term="crm"><span class="taxonomy-label">Crm</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/design/" data-taxonomy-term="design"><span class="taxonomy-label">Design</span><span class="taxonomy-count">23</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">Devops</span><span class="taxonomy-count">8</span></a></li>
@@ -721,27 +655,193 @@ if (!doNotTrack) {
 	<div class="sect1">
 <h2 id="section-building-block-view">Building Block View</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_bounded_domain_as_a_building_block">Bounded Domain as a Building Block</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_bounded_domain_user_interface">Bounded Domain User Interface</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_bounded_domain_persistence">Bounded Domain Persistence</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_bounded_domain_export_and_import">Bounded Domain Export and Import</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_rest_services_for_a_bounded_domain">Rest Services for a Bounded Domain</h3>
 <div class="paragraph">
-<p>A bounded domain is the building block for a modular monolith architecture approach.
-Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain.</p>
+<p>A <strong>bounded domain</strong> is the key building block for a modular monolith architecture approach.
+The ERP application is consisting of multiple bounded domains.</p>
+</div>
+<div class="paragraph">
+<p>The same approach should be used for a distributed microservice architecture.</p>
+</div>
+<div class="paragraph">
+<p>Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain.
+Persistence shall be handled per bounded domain.
+Ideally, the domain model should be designed to be independent of the persistence technology.</p>
+</div>
+<div class="paragraph">
+<p>We assume the reader is familiar with the concepts of domain-driven design.</p>
+</div>
+<div class="sect2">
+<h3 id="_facets_of_a_bounded_domain">Facets of a Bounded Domain</h3>
+<div class="paragraph">
+<p>A bounded domain must provide the following abstractions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A bounded domain class as entry point to the domain.
+Each bounded domain has a unique name.</p>
+</li>
+<li>
+<p>A realm of the domain model and provides the factory and persistence functionality as described in DDD.</p>
+</li>
+<li>
+<p>A port describing the services provided by the domain.
+An adapter class and other helper classes are used to implement the port.</p>
+</li>
+<li>
+<p>An optional business logic implementing the business rules of the domain.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following abstractions are optional:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A user interface to interact with the domain.</p>
+</li>
+<li>
+<p>A REST service to expose the domain functionality to other modules or external clients.</p>
+</li>
+<li>
+<p>Domain events published by the domain.</p>
+</li>
+<li>
+<p>Domain commands to interact with the domain.</p>
+</li>
+<li>
+<p>Domain queries to retrieve information from the domain.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_domain_model">Domain Model</h4>
+<div class="paragraph">
+<p>The classes are declared in the package <code>net.erp.DOMAIN.domain</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="_internal_representation">Internal Representation</h5>
+<div class="paragraph">
+<p>The <strong>entities</strong> and <strong>aggregates</strong> of the domain are modeled as Java plain old objects (POJOs).
+<strong>Value objects</strong> are port of aggregates.
+They are immutable and are used to represent data in a graph of objects.
+Ideally, they should be implemented as Java records to reflect their immutability.</p>
+</div>
+<div class="paragraph">
+<p>An entity shall have an <strong>identifier</strong> that uniquely identifies the entity within the domain.
+Optionally, it can have an <strong>internal object identifier</strong> used to identify the entity within the domain model.</p>
+</div>
+<div class="paragraph">
+<p>An entity implements the <code>HasId</code> interface and optionally the <code>HasOid</code> interface.
+An entity can also have a human-readable name that is used to display the entity in the user interface.
+Such entities implement the <code>HasName</code> interface.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_external_representation">External Representation</h5>
+<div class="paragraph">
+<p>Our domains provide an external representation of the domain model instances.
+This representation is used to transfer the domain model instances between the domain and the external world.
+The mechanism provides import, export and archiving functionality.</p>
+</div>
+<div class="paragraph">
+<p>The preferred export format is TSV.
+Most entities map logically to a row in a TSV file.</p>
+</div>
+<div class="paragraph">
+<p>For complex structures, we use JSON.
+An example is the export of a complete invoice.</p>
+</div>
+<div class="paragraph">
+<p>Instances edited outside the domain are often encoded in YAML.
+An example is the documentation of monthly activities of a consultant in a services company.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>net.tangly.gleam</code> module provides the necessary classes to implement the import and export functionality.
+The module is a member of our open-source components and available on Maven Central.
+The <a href="https://blog.tangly.net/docs/gleam/">Gleam Module</a> documentation provides more details.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_domain_services">Domain Services</h4>
+<div class="paragraph">
+<p>The classes are declared in the package <code>net.erp.DOMAIN.service</code>.</p>
+</div>
+<div class="paragraph">
+<p>The implementation of the service is located in the services and port packages.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Port</code> interface requires the import, export and clear functionality.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_domain_interfaces">Domain Interfaces</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>REST Services are defined in the package <code>net.erp.DOMAIN.rest</code>.</p>
+</li>
+<li>
+<p>Events are defined in the package <code>net.erp.DOMAIN.events</code>.</p>
+</li>
+<li>
+<p>Commands are defined in the package <code>net.erp.DOMAIN.commands</code>.</p>
+</li>
+<li>
+<p>Queries are defined in the package <code>net.erp.DOMAIN.queries</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The number of commands and queries is an indicator of the coupling between the bounded domains.
+Try to minimize the number of commands and queries.</p>
+</div>
+<div class="paragraph">
+<p>REST services are an alternative path to realize a user interface for a bounded domain instead of a more traditional {ref-vaadin} user interface.
+Events are the preferred way to communicate between bounded domains.
+They are part of the domain-driven design approach.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_user_interface">User Interface</h4>
+<div class="paragraph">
+<p>The classes are declared in the package &#39;net.erp.DOMAIN.ui&#39;.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bounded_domain_application_services">Bounded Domain Application Services</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>User Interface for Bounded Domain Micro Frontends</p>
+</li>
+<li>
+<p>Authentication and Authorization</p>
+</li>
+<li>
+<p>Audit Log</p>
+</li>
+<li>
+<p>Event Publishing and Subscribing</p>
+</li>
+<li>
+<p>Tenancy</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>A bounded domain can provide a REST interface to expose its functionality to other modules or external clients.
@@ -768,6 +868,37 @@ OpenAPI and Swagger plugins are used to document and publish the documentation o
 </td>
 </tr>
 </tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>E. Evans, <em>Domain-driven design</em>. Addison-Wesley, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321125215" class="bare">https://www.amazon.com/dp/0321125215</a></p>
+</li>
+<li>
+<p>V. Vernon, <em>Domain-Driven Design Distilled</em>. Addison-Wesley Professional, 2016 [Online]. Available: <a href="https://www.amazon.com/dp/B01JJSGE5S/" class="bare">https://www.amazon.com/dp/B01JJSGE5S/</a></p>
+</li>
+<li>
+<p>V. Vernon, <em>Implementing Domain driven Design</em>. Addison-Wesley Professional, 2012 [Online]. Available: <a href="https://www.amazon.com/dp/B00BCLEBN8" class="bare">https://www.amazon.com/dp/B00BCLEBN8</a></p>
+</li>
+<li>
+<p>M. C. Feathers, <em>Working Effectively with Legacy Code</em>. Prentice Hall, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0131177052" class="bare">https://www.amazon.com/dp/0131177052</a></p>
+</li>
+<li>
+<p>J. Kerievsky, <em>Refactoring to Patterns</em>. Addison-Wesley Professional, 2004 [Online]. Available: <a href="https://www.amazon.com/dp/0321213351" class="bare">https://www.amazon.com/dp/0321213351</a></p>
+</li>
+<li>
+<p>E. Gamma, R. Helm, R. Johnson, and J. Vlissides, <em>Design Patterns</em>. Addison-Wesley Professional, 1995 [Online]. Available: <a href="https://www.amazon.com/dp/B000SEIBB8" class="bare">https://www.amazon.com/dp/B000SEIBB8</a></p>
+</li>
+<li>
+<p>S. Newman, <em>Building Microservices</em>. O’Reilly Media, Incorporated, 2020 [Online]. Available: <a href="https://www.amazon.com/dp/B09B5L4NVT" class="bare">https://www.amazon.com/dp/B09B5L4NVT</a></p>
+</li>
+<li>
+<p>N. Ford, <em>Software architecture</em>, First edition. Cambridge, Massachusetts: The MIT Press, 2021 [Online]. Available: <a href="https://www.amazon.com//dp/1492086894" class="bare">https://www.amazon.com//dp/1492086894</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

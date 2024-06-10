@@ -154,19 +154,22 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearEntities()" class="member-name-link">clearEntities</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">clearEntities</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEfforts(java.nio.file.Path)" class="member-name-link">exportEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEfforts(net.tangly.core.domain.DomainAudit,java.nio.file.Path)" class="member-name-link">exportEfforts</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Export all efforts in a hierarchy of folders.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEfforts(java.util.List,java.nio.file.Path)" class="member-name-link">exportEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../domain/Effort.html" title="class in net.tangly.erp.products.domain">Effort</a>&gt;&nbsp;efforts,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEfforts(net.tangly.core.domain.DomainAudit,java.util.List,java.nio.file.Path)" class="member-name-link">exportEfforts</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../domain/Effort.html" title="class in net.tangly.erp.products.domain">Effort</a>&gt;&nbsp;efforts,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;folder)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocument</a><wbr>(@NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEffortsDocument(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocument</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
@@ -175,7 +178,8 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="block">Exports all efforts of the assignment in the given period of time.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEffortsDocumentsSplitPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocumentsSplitPerMonth</a><wbr>(@NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEffortsDocumentsSplitPerMonth(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocumentsSplitPerMonth</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;from,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;to,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</code></div>
@@ -183,17 +187,18 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="block">Exports all efforts of the assignment in the given period of time.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEntities()" class="member-name-link">exportEntities</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">exportEntities</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEfforts(java.io.Reader,java.lang.String,boolean)" class="member-name-link">importEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;stream,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEfforts(net.tangly.core.domain.DomainAudit,java.io.Reader,java.lang.String,boolean)" class="member-name-link">importEfforts</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;stream,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  boolean&nbsp;replace)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Imports all efforts defined in the YAML file located at the given path.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEntities()" class="member-name-link">importEntities</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">importEntities</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../services/ProductsBusinessLogic.html" title="class in net.tangly.erp.products.services">ProductsBusinessLogic</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logic()" class="member-name-link">logic</a>()</code></div>
@@ -337,10 +342,11 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
-<section class="detail" id="importEntities()">
+<section class="detail" id="importEntities(net.tangly.core.domain.DomainAudit)">
 <h3>importEntities</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importEntities</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importEntities</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>importEntities</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/ProductsRealm.html" title="interface in net.tangly.erp.products.services">ProductsRealm</a>&gt;</code></dd>
@@ -349,10 +355,11 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
-<section class="detail" id="exportEntities()">
+<section class="detail" id="exportEntities(net.tangly.core.domain.DomainAudit)">
 <h3>exportEntities</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEntities</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEntities</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>exportEntities</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/ProductsRealm.html" title="interface in net.tangly.erp.products.services">ProductsRealm</a>&gt;</code></dd>
@@ -361,10 +368,11 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
-<section class="detail" id="clearEntities()">
+<section class="detail" id="clearEntities(net.tangly.core.domain.DomainAudit)">
 <h3>clearEntities</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearEntities</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearEntities</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>clearEntities</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/ProductsRealm.html" title="interface in net.tangly.erp.products.services">ProductsRealm</a>&gt;</code></dd>
@@ -373,21 +381,23 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
-<section class="detail" id="importEfforts(java.io.Reader,java.lang.String,boolean)">
+<section class="detail" id="importEfforts(net.tangly.core.domain.DomainAudit,java.io.Reader,java.lang.String,boolean)">
 <h3>importEfforts</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importEfforts</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;stream,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  boolean&nbsp;replace)</span>
                    throws <span class="exceptions">org.eclipse.serializer.exceptions.IORuntimeException</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#importEfforts(java.io.Reader,java.lang.String,boolean)">ProductsPort</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#importEfforts(net.tangly.core.domain.DomainAudit,java.io.Reader,java.lang.String,boolean)">ProductsPort</a></code></span></div>
 <div class="block">Imports all efforts defined in the YAML file located at the given path.
  An effort is identified by the combination of the assignment identifier and the date of the effort. The assignment identifies uniquely the collaborator working on the effort.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../services/ProductsPort.html#importEfforts(java.io.Reader,java.lang.String,boolean)">importEfforts</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
+<dd><code><a href="../services/ProductsPort.html#importEfforts(net.tangly.core.domain.DomainAudit,java.io.Reader,java.lang.String,boolean)">importEfforts</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>stream</code> - reader containing the efforts to import</dd>
 <dd><code>source</code> - source of the efforts used to audit the import operation</dd>
@@ -399,10 +409,12 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
-<section class="detail" id="exportEfforts(java.nio.file.Path)">
+<section class="detail" id="exportEfforts(net.tangly.core.domain.DomainAudit,java.nio.file.Path)">
 <h3>exportEfforts</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEfforts</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</span></div>
 <div class="block">Export all efforts in a hierarchy of folders. The files are grouped in folders by years.
  The efforts are grouped by assignment, contract, collaborator, and year-month and written in a yaml file.
@@ -415,10 +427,12 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
-<section class="detail" id="exportEfforts(java.util.List,java.nio.file.Path)">
+<section class="detail" id="exportEfforts(net.tangly.core.domain.DomainAudit,java.util.List,java.nio.file.Path)">
 <h3>exportEfforts</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEfforts</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../domain/Effort.html" title="class in net.tangly.erp.products.domain">Effort</a>&gt;&nbsp;efforts,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;folder)</span></div>
@@ -426,10 +440,12 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
-<section class="detail" id="exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">
+<section class="detail" id="exportEffortsDocument(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">
 <h3>exportEffortsDocument</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEffortsDocument</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
@@ -437,13 +453,13 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">ProductsPort</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#exportEffortsDocument(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">ProductsPort</a></code></span></div>
 <div class="block">Exports all efforts of the assignment in the given period of time. The export shall be an asciidoc document.
  The document name should contain the contract identifier, the collaborator identifier, and the period of time.
  The prefix should be the year and month of the period end. The prefix is used to sort the documents.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../services/ProductsPort.html#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">exportEffortsDocument</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
+<dd><code><a href="../services/ProductsPort.html#exportEffortsDocument(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">exportEffortsDocument</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>assignment</code> - assignment which efforts are of interest</dd>
 <dd><code>from</code> - start of the considered time interval</dd>
@@ -455,10 +471,12 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
-<section class="detail" id="exportEffortsDocumentsSplitPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">
+<section class="detail" id="exportEffortsDocumentsSplitPerMonth(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">
 <h3>exportEffortsDocumentsSplitPerMonth</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEffortsDocumentsSplitPerMonth</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;from,
@@ -466,13 +484,13 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;to,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#exportEffortsDocumentsSplitPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">ProductsPort</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/ProductsPort.html#exportEffortsDocumentsSplitPerMonth(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">ProductsPort</a></code></span></div>
 <div class="block">Exports all efforts of the assignment in the given period of time. The export shall create an asciidoc document per month.
  The document name should contain the contract identifier, the collaborator identifier, and the period of time.
  The prefix should be the year and month of the period end. The prefix is used to sort the documents.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../services/ProductsPort.html#exportEffortsDocumentsSplitPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">exportEffortsDocumentsSplitPerMonth</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
+<dd><code><a href="../services/ProductsPort.html#exportEffortsDocumentsSplitPerMonth(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">exportEffortsDocumentsSplitPerMonth</a></code>&nbsp;in interface&nbsp;<code><a href="../services/ProductsPort.html" title="interface in net.tangly.erp.products.services">ProductsPort</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>assignment</code> - assignment which efforts are of interest</dd>
 <dd><code>from</code> - first month to consider</dd>

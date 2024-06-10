@@ -124,27 +124,30 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportChartOfAccounts(java.nio.file.Path)" class="member-name-link">exportChartOfAccounts</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportChartOfAccounts(net.tangly.core.domain.DomainAudit,java.nio.file.Path)" class="member-name-link">exportChartOfAccounts</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Exports the chart of accounts to the provided file.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportJournal(java.nio.file.Path,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">exportJournal</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportJournal(net.tangly.core.domain.DomainAudit,java.nio.file.Path,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">exportJournal</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Exports the transactions with a date in the given time interval.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importChartOfAccounts(java.io.Reader,java.lang.String)" class="member-name-link">importChartOfAccounts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importChartOfAccounts(net.tangly.core.domain.DomainAudit,java.nio.file.Path)" class="member-name-link">importChartOfAccounts</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The file structure provided by the external program is:
  
      SectionDefines the section the account is belonging to: 1 for assets, 2 for liabilities, 4 for profits and losses.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importJournal(java.io.Reader,java.lang.String)" class="member-name-link">importJournal</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importJournal(net.tangly.core.domain.DomainAudit,java.io.Reader,java.lang.String)" class="member-name-link">importJournal</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Imports the transaction list exported from a CSV file with header.</div>
@@ -195,12 +198,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="importChartOfAccounts(java.io.Reader,java.lang.String)">
+<section class="detail" id="importChartOfAccounts(net.tangly.core.domain.DomainAudit,java.nio.file.Path)">
 <h3>importChartOfAccounts</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importChartOfAccounts</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source)</span></div>
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</span></div>
 <div class="block">The file structure provided by the external program is:
  <dl>
      <dt>Section</dt><dd>Defines the section the account is belonging to: 1 for assets, 2 for liabilities, 4 for profits and losses. A star indicates a
@@ -214,12 +218,11 @@ loadScripts(document, 'script');</script>
  </dl></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>reader</code> - reader to the file containing the chart of accounts</dd>
-<dd><code>source</code> - name of the source for the chart of accounts</dd>
+<dd><code>path</code> - path to the file containing the chart of accounts</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list">
-<li><a href="#exportChartOfAccounts(java.nio.file.Path)"><code>exportChartOfAccounts(Path)</code></a></li>
+<ul class="tag-list-long">
+<li><a href="#exportChartOfAccounts(net.tangly.core.domain.DomainAudit,java.nio.file.Path)"><code>exportChartOfAccounts(DomainAudit, Path)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -227,10 +230,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="exportChartOfAccounts(java.nio.file.Path)">
+<section class="detail" id="exportChartOfAccounts(net.tangly.core.domain.DomainAudit,java.nio.file.Path)">
 <h3>exportChartOfAccounts</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportChartOfAccounts</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportChartOfAccounts</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</span></div>
 <div class="block">Exports the chart of accounts to the provided file.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -238,7 +243,7 @@ loadScripts(document, 'script');</script>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="#importChartOfAccounts(java.io.Reader,java.lang.String)"><code>importChartOfAccounts(Reader, String)</code></a></li>
+<li><a href="#importChartOfAccounts(net.tangly.core.domain.DomainAudit,java.nio.file.Path)"><code>importChartOfAccounts(DomainAudit, Path)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -246,10 +251,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="importJournal(java.io.Reader,java.lang.String)">
+<section class="detail" id="importJournal(net.tangly.core.domain.DomainAudit,java.io.Reader,java.lang.String)">
 <h3>importJournal</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importJournal</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source)</span></div>
 <div class="block">Imports the transaction list exported from a CSV file with header.
@@ -270,7 +277,7 @@ loadScripts(document, 'script');</script>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="#exportJournal(java.nio.file.Path,java.time.LocalDate,java.time.LocalDate)"><code>exportJournal(Path, LocalDate, LocalDate)</code></a></li>
+<li><a href="#exportJournal(net.tangly.core.domain.DomainAudit,java.nio.file.Path,java.time.LocalDate,java.time.LocalDate)"><code>exportJournal(DomainAudit, Path, LocalDate, LocalDate)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -278,10 +285,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="exportJournal(java.nio.file.Path,java.time.LocalDate,java.time.LocalDate)">
+<section class="detail" id="exportJournal(net.tangly.core.domain.DomainAudit,java.nio.file.Path,java.time.LocalDate,java.time.LocalDate)">
 <h3>exportJournal</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportJournal</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>

@@ -118,7 +118,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Actors</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Default constructor.</div>
+<div class="block">Defaul constructor uses a virtual thread to execute tasks.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.ExecutorService)" class="member-name-link">Actors</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/ExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ExecutorService</a>&nbsp;executor)</code></div>
 <div class="col-last odd-row-color">
@@ -153,25 +153,28 @@ loadScripts(document, 'script');</script>
 <div class="block">Return the channel with the given name.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#register(java.lang.String)" class="member-name-link">register</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createAndRegister(java.lang.String)" class="member-name-link">createAndRegister</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Register the channel and activate it.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/ExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ExecutorService</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#executor()" class="member-name-link">executor</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#register(net.tangly.fsm.actors.Actor)" class="member-name-link">register</a><wbr>(@NotNull <a href="Actor.html" title="interface in net.tangly.fsm.actors">Actor</a>&lt;<a href="Actors.html" title="type parameter in Actors">T</a>&gt;&nbsp;actor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Register the actor in the pool of known actors and activate it by submitting it to the executor.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#register(net.tangly.fsm.actors.Actor)" class="member-name-link">register</a><wbr>(@NotNull <a href="Actor.html" title="interface in net.tangly.fsm.actors">Actor</a>&lt;<a href="Actors.html" title="type parameter in Actors">T</a>&gt;&nbsp;actor)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#register(net.tangly.fsm.actors.Actor,java.lang.String)" class="member-name-link">register</a><wbr>(@NotNull <a href="Actor.html" title="interface in net.tangly.fsm.actors">Actor</a>&lt;<a href="Actors.html" title="type parameter in Actors">T</a>&gt;&nbsp;actor,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Register the actor in the pool of known actors and activate it by submitting it to the executor.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#register(net.tangly.fsm.actors.Actor,java.lang.String)" class="member-name-link">register</a><wbr>(@NotNull <a href="Actor.html" title="interface in net.tangly.fsm.actors">Actor</a>&lt;<a href="Actors.html" title="type parameter in Actors">T</a>&gt;&nbsp;actor,
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Register the actor in the pool of known actors and activate it by submitting it to the executor.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendTo(T,java.util.UUID)" class="member-name-link">sendTo</a><wbr>(<a href="Actors.html" title="type parameter in Actors">T</a>&nbsp;message,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendTo(T,java.util.UUID)" class="member-name-link">sendTo</a><wbr>(<a href="Actors.html" title="type parameter in Actors">T</a>&nbsp;message,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;id)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Send an event to the actor with the given name.</div>
 </div>
 </div>
@@ -196,7 +199,7 @@ loadScripts(document, 'script');</script>
 <h3>Actors</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Actors</span>()</div>
-<div class="block">Default constructor.</div>
+<div class="block">Defaul constructor uses a virtual thread to execute tasks. Therefore, no constraints on the number of actors are imposed.</div>
 </div>
 </section>
 </li>
@@ -222,6 +225,14 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="executor()">
+<h3>executor</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/ExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ExecutorService</a></span>&nbsp;<span class="element-name">executor</span>()</div>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="sendTo(T,java.util.UUID)">
 <h3 id="sendTo(java.lang.Object,java.util.UUID)">sendTo</h3>
@@ -303,10 +314,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="register(java.lang.String)">
-<h3>register</h3>
+<section class="detail" id="createAndRegister(java.lang.String)">
+<h3>createAndRegister</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createAndRegister</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel)</span></div>
 <div class="block">Register the channel and activate it.</div>
 <dl class="notes">

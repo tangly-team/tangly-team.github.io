@@ -51,7 +51,6 @@ loadScripts(document, 'script');</script>
 <ul class="horizontal contents-list">
 <li><a href="net/tangly/app/package-tree.html">net.tangly.app</a>, </li>
 <li><a href="net/tangly/app/api/package-tree.html">net.tangly.app.api</a>, </li>
-<li><a href="net/tangly/app/domain/package-tree.html">net.tangly.app.domain</a>, </li>
 <li><a href="net/tangly/app/ports/package-tree.html">net.tangly.app.ports</a>, </li>
 <li><a href="net/tangly/app/services/package-tree.html">net.tangly.app.services</a>, </li>
 <li><a href="net/tangly/app/ui/package-tree.html">net.tangly.app.ui</a></li>
@@ -65,7 +64,8 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.app.ports.<a href="net/tangly/app/ports/AppsAdapter.html" class="type-name-link" title="class in net.tangly.app.ports">AppsAdapter</a> (implements net.tangly.app.services.<a href="net/tangly/app/services/AppsPort.html" title="interface in net.tangly.app.services">AppsPort</a>)</li>
 <li class="circle">net.tangly.app.services.<a href="net/tangly/app/services/AppsBusinessLogic.html" class="type-name-link" title="class in net.tangly.app.services">AppsBusinessLogic</a></li>
 <li class="circle">net.tangly.app.ports.<a href="net/tangly/app/ports/AppsEntities.html" class="type-name-link" title="class in net.tangly.app.ports">AppsEntities</a> (implements net.tangly.app.services.<a href="net/tangly/app/services/AppsRealm.html" title="interface in net.tangly.app.services">AppsRealm</a>)</li>
-<li class="circle">net.tangly.core.domain.BoundedDomain&lt;R,<wbr>B,<wbr>P&gt;
+<li class="circle">net.tangly.app.ports.<a href="net/tangly/app/ports/AppsTsvHdl.html" class="type-name-link" title="class in net.tangly.app.ports">AppsTsvHdl</a></li>
+<li class="circle">net.tangly.core.domain.BoundedDomain&lt;R,<wbr>B,<wbr>P&gt; (implements net.tangly.core.domain.DomainAudit)
 <ul>
 <li class="circle">net.tangly.app.services.<a href="net/tangly/app/services/AppsBoundedDomain.html" class="type-name-link" title="class in net.tangly.app.services">AppsBoundedDomain</a></li>
 </ul>
@@ -83,6 +83,15 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.app.<a href="net/tangly/app/ApplicationView.html" class="type-name-link" title="class in net.tangly.app">ApplicationView</a></li>
 </ul>
 </li>
+<li class="circle">com.vaadin.flow.component.orderedlayout.VerticalLayout (implements com.vaadin.flow.component.ClickNotifier&lt;T&gt;, com.vaadin.flow.component.orderedlayout.FlexComponent, com.vaadin.flow.component.orderedlayout.ThemableLayout)
+<ul>
+<li class="circle">net.tangly.ui.components.ItemView&lt;T&gt; (implements net.tangly.ui.app.domain.View)
+<ul>
+<li class="circle">net.tangly.app.ui.<a href="net/tangly/app/ui/AccessRightsView.html" class="type-name-link" title="class in net.tangly.app.ui">AccessRightsView</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="circle">jakarta.servlet.GenericServlet (implements java.io.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a>, jakarta.servlet.Servlet, jakarta.servlet.ServletConfig)
@@ -94,6 +103,7 @@ loadScripts(document, 'script');</script>
 </li>
 </ul>
 </li>
+<li class="circle">net.tangly.app.<a href="net/tangly/app/Tenant.html" class="type-name-link" title="class in net.tangly.app">Tenant</a></li>
 </ul>
 </li>
 </ul>
@@ -115,20 +125,6 @@ loadScripts(document, 'script');</script>
 </ul>
 </section>
 <section class="hierarchy">
-<h2 title="Enum Class Hierarchy">Enum Class Hierarchy</h2>
-<ul>
-<li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" class="type-name-link external-link" title="class or interface in java.lang">Object</a>
-<ul>
-<li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Enum.html" class="type-name-link external-link" title="class or interface in java.lang">Enum</a>&lt;E&gt; (implements java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;T&gt;, java.lang.constant.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/constant/Constable.html" title="class or interface in java.lang.constant" class="external-link">Constable</a>, java.io.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a>)
-<ul>
-<li class="circle">net.tangly.app.domain.<a href="net/tangly/app/domain/UserAccessRightsCode.html" class="type-name-link" title="enum class in net.tangly.app.domain">UserAccessRightsCode</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</section>
-<section class="hierarchy">
 <h2 title="Record Class Hierarchy">Record Class Hierarchy</h2>
 <ul>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" class="type-name-link external-link" title="class or interface in java.lang">Object</a>
@@ -138,8 +134,6 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.app.api.<a href="net/tangly/app/api/AppJavalinServlet.RestConfiguration.html" class="type-name-link" title="class in net.tangly.app.api">AppJavalinServlet.RestConfiguration</a></li>
 <li class="circle">net.tangly.app.ui.<a href="net/tangly/app/ui/CmdLogin.html" class="type-name-link" title="class in net.tangly.app.ui">CmdLogin</a> (implements net.tangly.ui.app.domain.Cmd)</li>
 <li class="circle">net.tangly.app.ui.<a href="net/tangly/app/ui/CmdLogout.html" class="type-name-link" title="class in net.tangly.app.ui">CmdLogout</a> (implements net.tangly.ui.app.domain.Cmd)</li>
-<li class="circle">net.tangly.app.domain.<a href="net/tangly/app/domain/User.html" class="type-name-link" title="class in net.tangly.app.domain">User</a></li>
-<li class="circle">net.tangly.app.domain.<a href="net/tangly/app/domain/UserAccessRights.html" class="type-name-link" title="class in net.tangly.app.domain">UserAccessRights</a></li>
 </ul>
 </li>
 </ul>

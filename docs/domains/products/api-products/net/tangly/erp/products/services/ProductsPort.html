@@ -121,7 +121,8 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocument</a><wbr>(@NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportEffortsDocument(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocument</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
@@ -130,7 +131,8 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 <div class="block">Exports all efforts of the assignment in the given period of time.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportEffortsDocumentsSplitPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocumentsSplitPerMonth</a><wbr>(@NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportEffortsDocumentsSplitPerMonth(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocumentsSplitPerMonth</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;from,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;to,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/temporal/ChronoUnit.html" title="class or interface in java.time.temporal" class="external-link">ChronoUnit</a>&nbsp;unit)</code></div>
@@ -138,7 +140,8 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 <div class="block">Exports all efforts of the assignment in the given period of time.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#importEfforts(java.io.Reader,java.lang.String,boolean)" class="member-name-link">importEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#importEfforts(net.tangly.core.domain.DomainAudit,java.io.Reader,java.lang.String,boolean)" class="member-name-link">importEfforts</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  boolean&nbsp;replace)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -173,10 +176,12 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 </section>
 </li>
 <li>
-<section class="detail" id="importEfforts(java.io.Reader,java.lang.String,boolean)">
+<section class="detail" id="importEfforts(net.tangly.core.domain.DomainAudit,java.io.Reader,java.lang.String,boolean)">
 <h3>importEfforts</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">importEfforts</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
@@ -196,10 +201,12 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 </section>
 </li>
 <li>
-<section class="detail" id="exportEffortsDocument(net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">
+<section class="detail" id="exportEffortsDocument(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)">
 <h3>exportEffortsDocument</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportEffortsDocument</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
@@ -222,10 +229,12 @@ extends net.tangly.core.domain.Port&lt;<a href="ProductsRealm.html" title="inter
 </section>
 </li>
 <li>
-<section class="detail" id="exportEffortsDocumentsSplitPerMonth(net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">
+<section class="detail" id="exportEffortsDocumentsSplitPerMonth(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.YearMonth,java.time.YearMonth,java.time.temporal.ChronoUnit)">
 <h3>exportEffortsDocumentsSplitPerMonth</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportEffortsDocumentsSplitPerMonth</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/YearMonth.html" title="class or interface in java.time" class="external-link">YearMonth</a>&nbsp;from,

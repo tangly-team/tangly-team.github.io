@@ -95,7 +95,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>com.vaadin.flow.component.AttachNotifier</code>, <code>com.vaadin.flow.component.ClickNotifier&lt;com.vaadin.flow.component.orderedlayout.VerticalLayout&gt;</code>, <code>com.vaadin.flow.component.DetachNotifier</code>, <code>com.vaadin.flow.component.HasComponents</code>, <code>com.vaadin.flow.component.HasElement</code>, <code>com.vaadin.flow.component.HasEnabled</code>, <code>com.vaadin.flow.component.HasOrderedComponents</code>, <code>com.vaadin.flow.component.HasSize</code>, <code>com.vaadin.flow.component.HasStyle</code>, <code>com.vaadin.flow.component.orderedlayout.FlexComponent</code>, <code>com.vaadin.flow.component.orderedlayout.ThemableLayout</code>, <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code></dd>
+<dd><code>com.vaadin.flow.component.AttachNotifier</code>, <code>com.vaadin.flow.component.ClickNotifier&lt;com.vaadin.flow.component.orderedlayout.VerticalLayout&gt;</code>, <code>com.vaadin.flow.component.DetachNotifier</code>, <code>com.vaadin.flow.component.HasComponents</code>, <code>com.vaadin.flow.component.HasElement</code>, <code>com.vaadin.flow.component.HasEnabled</code>, <code>com.vaadin.flow.component.HasOrderedComponents</code>, <code>com.vaadin.flow.component.HasSize</code>, <code>com.vaadin.flow.component.HasStyle</code>, <code>com.vaadin.flow.component.orderedlayout.FlexComponent</code>, <code>com.vaadin.flow.component.orderedlayout.ThemableLayout</code>, <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code>net.tangly.ui.app.domain.View</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">AnalyticsLedgerView</span>
@@ -138,7 +138,7 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.ledger.services.LedgerBoundedDomain)" class="member-name-link">AnalyticsLedgerView</a><wbr>(@NotNull <a href="../services/LedgerBoundedDomain.html" title="class in net.tangly.erp.ledger.services">LedgerBoundedDomain</a>&nbsp;domain)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.ledger.ui.LedgerBoundedDomainUi)" class="member-name-link">AnalyticsLedgerView</a><wbr>(@NotNull <a href="LedgerBoundedDomainUi.html" title="class in net.tangly.erp.ledger.ui">LedgerBoundedDomainUi</a>&nbsp;domain)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -154,15 +154,15 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refresh()" class="member-name-link">refresh</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.ui.app.domain.AnalyticsView">Methods inherited from class&nbsp;net.tangly.ui.app.domain.AnalyticsView</h3>
-<code>createAndRegisterChart, createChart, createLineChart, from, to, update</code></div>
+<code>createAndRegisterChart, createChart, createLineChart, from, readonly, readonly, refresh, to</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.vaadin.flow.component.orderedlayout.VerticalLayout">Methods inherited from class&nbsp;com.vaadin.flow.component.orderedlayout.VerticalLayout</h3>
 <code>addAndExpand, getAlignItems, getAlignSelf, getDefaultHorizontalComponentAlignment, getHorizontalComponentAlignment, setAlignItems, setAlignSelf, setDefaultHorizontalComponentAlignment, setHorizontalComponentAlignment, setPadding, setSpacing</code></div>
@@ -205,6 +205,9 @@ loadScripts(document, 'script');</script>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.vaadin.flow.component.orderedlayout.ThemableLayout">Methods inherited from interface&nbsp;com.vaadin.flow.component.orderedlayout.ThemableLayout</h3>
 <code>getBoxSizing, getThemeList, isMargin, isPadding, isSpacing, setBoxSizing, setMargin</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.ui.app.domain.View">Methods inherited from interface&nbsp;net.tangly.ui.app.domain.View</h3>
+<code>mode</code></div>
 </section>
 </li>
 </ul>
@@ -217,11 +220,11 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.tangly.erp.ledger.services.LedgerBoundedDomain)">
+<section class="detail" id="&lt;init&gt;(net.tangly.erp.ledger.ui.LedgerBoundedDomainUi)">
 <h3>AnalyticsLedgerView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">AnalyticsLedgerView</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="../services/LedgerBoundedDomain.html" title="class in net.tangly.erp.ledger.services">LedgerBoundedDomain</a>&nbsp;domain)</span></div>
+ @NotNull <a href="LedgerBoundedDomainUi.html" title="class in net.tangly.erp.ledger.ui">LedgerBoundedDomainUi</a>&nbsp;domain)</span></div>
 </div>
 </section>
 </li>
@@ -234,14 +237,10 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="update()">
-<h3>update</h3>
+<section class="detail" id="refresh()">
+<h3>refresh</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code>update</code>&nbsp;in class&nbsp;<code>net.tangly.ui.app.domain.AnalyticsView</code></dd>
-</dl>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refresh</span>()</div>
 </div>
 </section>
 </li>

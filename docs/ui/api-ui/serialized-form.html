@@ -66,6 +66,10 @@ loadScripts(document, 'script');</script>
 <pre><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a> from</pre>
 </li>
 <li class="block-list">
+<h5>readonly</h5>
+<pre>boolean readonly</pre>
+</li>
+<li class="block-list">
 <h5>tabSheet</h5>
 <pre>com.vaadin.flow.component.tabs.TabSheet tabSheet</pre>
 </li>
@@ -95,6 +99,10 @@ loadScripts(document, 'script');</script>
 <h4>Serialized Fields</h4>
 <ul class="block-list">
 <li class="block-list">
+<h5>readonly</h5>
+<pre>boolean readonly</pre>
+</li>
+<li class="block-list">
 <h5>tabSheet</h5>
 <pre>com.vaadin.flow.component.tabs.TabSheet tabSheet</pre>
 </li>
@@ -102,6 +110,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 </ul>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="net.tangly.ui.app.domain.EventDataView">
+<h3>Class&nbsp;<a href="net/tangly/ui/app/domain/EventDataView.html" title="class in net.tangly.ui.app.domain">net.tangly.ui.app.domain.EventDataView</a></h3>
+<div class="type-signature">class EventDataView extends <a href="net/tangly/ui/components/ItemView.html" title="class in net.tangly.ui.components">ItemView</a>&lt;net.tangly.commons.logger.EventData&gt; implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
 </section>
 </li>
 <li>
@@ -128,7 +142,7 @@ loadScripts(document, 'script');</script>
 <ul class="block-list">
 <li class="block-list">
 <h5>editField</h5>
-<pre>com.vaadin.flow.component.textfield.TextField editField</pre>
+<pre>com.vaadin.flow.component.textfield.TextArea editField</pre>
 </li>
 <li class="block-list">
 <h5>editTab</h5>
@@ -246,6 +260,29 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="serialized-class-details" id="net.tangly.ui.components.DateRangeField">
+<h3>Class&nbsp;<a href="net/tangly/ui/components/DateRangeField.html" title="class in net.tangly.ui.components">net.tangly.ui.components.DateRangeField</a></h3>
+<div class="type-signature">class DateRangeField extends com.vaadin.flow.component.customfield.CustomField&lt;net.tangly.core.DateRange&gt; implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>Serialized Fields</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>from</h5>
+<pre>com.vaadin.flow.component.datepicker.DatePicker from</pre>
+</li>
+<li class="block-list">
+<h5>to</h5>
+<pre>com.vaadin.flow.component.datepicker.DatePicker to</pre>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
 <section class="serialized-class-details" id="net.tangly.ui.components.DateRangePicker">
 <h3>Class&nbsp;<a href="net/tangly/ui/components/DateRangePicker.html" title="class in net.tangly.ui.components">net.tangly.ui.components.DateRangePicker</a></h3>
 <div class="type-signature">class DateRangePicker extends com.vaadin.flow.component.customfield.CustomField&lt;net.tangly.core.DateRange&gt; implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
@@ -328,7 +365,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="block-list">
 <h5>domain</h5>
-<pre>net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt; domain</pre>
+<pre><a href="net/tangly/ui/app/domain/BoundedDomainUi.html" title="class in net.tangly.ui.app.domain">BoundedDomainUi</a>&lt;?&gt; domain</pre>
 </li>
 <li class="block-list">
 <h5>entityClass</h5>
@@ -361,6 +398,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>provider</h5>
 <pre>net.tangly.core.providers.Provider&lt;<a href="net/tangly/ui/components/ItemView.html" title="type parameter in ItemView">T</a>&gt; provider</pre>
+</li>
+<li class="block-list">
+<h5>readonly</h5>
+<pre>boolean readonly</pre>
 </li>
 </ul>
 </section>
@@ -449,50 +490,6 @@ loadScripts(document, 'script');</script>
 <section class="serialized-class-details" id="net.tangly.ui.components.TagsView">
 <h3>Class&nbsp;<a href="net/tangly/ui/components/TagsView.html" title="class in net.tangly.ui.components">net.tangly.ui.components.TagsView</a></h3>
 <div class="type-signature">class TagsView extends <a href="net/tangly/ui/components/ItemView.html" title="class in net.tangly.ui.components">ItemView</a>&lt;net.tangly.core.Tag&gt; implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<li>
-<section class="serialized-package-container">
-<h2 title="Package">Package&nbsp;<a href="net/tangly/ui/daterange/package-summary.html">net.tangly.ui.daterange</a></h2>
-<ul class="block-list">
-<li>
-<section class="serialized-class-details" id="net.tangly.ui.daterange.DateRangePicker">
-<h3>Class&nbsp;<a href="net/tangly/ui/daterange/DateRangePicker.html" title="class in net.tangly.ui.daterange">net.tangly.ui.daterange.DateRangePicker</a></h3>
-<div class="type-signature">class DateRangePicker extends com.vaadin.flow.component.customfield.CustomField&lt;<a href="net/tangly/ui/daterange/TemporalDateRange.html" title="class in net.tangly.ui.daterange">TemporalDateRange</a>&gt; implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
-<ul class="block-list">
-<li>
-<section class="detail">
-<h4>Serialized Fields</h4>
-<ul class="block-list">
-<li class="block-list">
-<h5>contextMenu</h5>
-<pre><a href="net/tangly/ui/daterange/DateRangeShortcut.html" title="class in net.tangly.ui.daterange">DateRangeShortcut</a> contextMenu</pre>
-</li>
-<li class="block-list">
-<h5>endDatePicker</h5>
-<pre>com.vaadin.flow.component.datepicker.DatePicker endDatePicker</pre>
-</li>
-<li class="block-list">
-<h5>horizontalLayout</h5>
-<pre>com.vaadin.flow.component.orderedlayout.HorizontalLayout horizontalLayout</pre>
-</li>
-<li class="block-list">
-<h5>startDatePicker</h5>
-<pre>com.vaadin.flow.component.datepicker.DatePicker startDatePicker</pre>
-</li>
-</ul>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<li>
-<section class="serialized-class-details" id="net.tangly.ui.daterange.DateRangeShortcut">
-<h3>Class&nbsp;<a href="net/tangly/ui/daterange/DateRangeShortcut.html" title="class in net.tangly.ui.daterange">net.tangly.ui.daterange.DateRangeShortcut</a></h3>
-<div class="type-signature">class DateRangeShortcut extends com.vaadin.flow.component.contextmenu.ContextMenu implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
 </section>
 </li>
 </ul>

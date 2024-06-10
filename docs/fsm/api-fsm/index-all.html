@@ -66,13 +66,13 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">A local actor implements the actor contract as a local thread running in the virtual machine.</div>
 </dd>
-<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/ActorFsm.html#%3Cinit%3E(net.tangly.fsm.dsl.FsmBuilder,java.lang.String)" class="member-name-link">ActorFsm(FsmBuilder&lt;O, S, E&gt;, String)</a> - Constructor for class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/ActorFsm.html" title="class in net.tangly.fsm.actors">ActorFsm</a></dt>
+<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/ActorFsm.html#%3Cinit%3E(net.tangly.fsm.dsl.FsmBuilder,java.lang.String,java.util.concurrent.ExecutorService)" class="member-name-link">ActorFsm(FsmBuilder&lt;O, S, E&gt;, String, ExecutorService)</a> - Constructor for class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/ActorFsm.html" title="class in net.tangly.fsm.actors">ActorFsm</a></dt>
 <dd>
 <div class="block">Constructor of the class.</div>
 </dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/actors/ActorImp.html" class="type-name-link" title="class in net.tangly.fsm.actors">ActorImp&lt;T&gt;</a> - Class in <a href="net.tangly.fsm/net/tangly/fsm/actors/package-summary.html">net.tangly.fsm.actors</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/ActorImp.html#%3Cinit%3E(java.lang.String)" class="member-name-link">ActorImp(String)</a> - Constructor for class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/ActorImp.html" title="class in net.tangly.fsm.actors">ActorImp</a></dt>
+<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/ActorImp.html#%3Cinit%3E(java.lang.String,java.util.concurrent.ExecutorService)" class="member-name-link">ActorImp(String, ExecutorService)</a> - Constructor for class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/ActorImp.html" title="class in net.tangly.fsm.actors">ActorImp</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html#actorNamed(java.lang.String)" class="member-name-link">actorNamed(String)</a> - Method in class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html" title="class in net.tangly.fsm.actors">Actors</a></dt>
 <dd>
@@ -84,7 +84,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html#%3Cinit%3E()" class="member-name-link">Actors()</a> - Constructor for class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html" title="class in net.tangly.fsm.actors">Actors</a></dt>
 <dd>
-<div class="block">Default constructor.</div>
+<div class="block">Defaul constructor uses a virtual thread to execute tasks.</div>
 </dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html#%3Cinit%3E(java.util.concurrent.ExecutorService)" class="member-name-link">Actors(ExecutorService)</a> - Constructor for class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html" title="class in net.tangly.fsm.actors">Actors</a></dt>
 <dd>
@@ -92,7 +92,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/actors/ActorTimerMgr.html" class="type-name-link" title="class in net.tangly.fsm.actors">ActorTimerMgr&lt;T&gt;</a> - Class in <a href="net.tangly.fsm/net/tangly/fsm/actors/package-summary.html">net.tangly.fsm.actors</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/ActorTimerMgr.html#%3Cinit%3E(java.lang.String,java.util.function.Function,java.util.function.Function)" class="member-name-link">ActorTimerMgr(String, Function&lt;T, ActorTimerMgr.TimerCmd&lt;T&gt;&gt;, Function&lt;ActorTimerMgr.Timer&lt;T&gt;, T&gt;)</a> - Constructor for class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/ActorTimerMgr.html" title="class in net.tangly.fsm.actors">ActorTimerMgr</a></dt>
+<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/ActorTimerMgr.html#%3Cinit%3E(java.lang.String,java.util.concurrent.ExecutorService,java.util.function.Function,java.util.function.Function)" class="member-name-link">ActorTimerMgr(String, ExecutorService, Function&lt;T, ActorTimerMgr.TimerCmd&lt;T&gt;&gt;, Function&lt;ActorTimerMgr.Timer&lt;T&gt;, T&gt;)</a> - Constructor for class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/ActorTimerMgr.html" title="class in net.tangly.fsm.actors">ActorTimerMgr</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/actors/ActorTimerMgr.Timer.html" class="type-name-link" title="class in net.tangly.fsm.actors">ActorTimerMgr.Timer&lt;T&gt;</a> - Record Class in <a href="net.tangly.fsm/net/tangly/fsm/actors/package-summary.html">net.tangly.fsm.actors</a></dt>
 <dd>&nbsp;</dd>
@@ -196,6 +196,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/dsl/package-summary.html#create-a-fsm-description-with-builder-heading" class="search-tag-link">Create a FSM description with Builder</a> - Search tag in package net.tangly.fsm.dsl</dt>
 <dd>Section</dd>
+<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html#createAndRegister(java.lang.String)" class="member-name-link">createAndRegister(String)</a> - Method in class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html" title="class in net.tangly.fsm.actors">Actors</a></dt>
+<dd>
+<div class="block">Register the channel and activate it.</div>
+</dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/utilities/Checker.html#createError(java.util.ResourceBundle,java.lang.String,java.lang.Object...)" class="member-name-link">createError(ResourceBundle, String, Object...)</a> - Method in interface net.tangly.fsm.utilities.<a href="net.tangly.fsm/net/tangly/fsm/utilities/Checker.html" title="interface in net.tangly.fsm.utilities">Checker</a></dt>
 <dd>
 <div class="block">Creates an error message for the checker.</div>
@@ -241,8 +245,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Return the human-readable description of the transition.</div>
 </dd>
-<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Channel.html#dispatch(T)" class="member-name-link">dispatch(T)</a> - Method in class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Channel.html" title="class in net.tangly.fsm.actors">Channel</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/utilities/DynamicChecker.html" class="type-name-link" title="class in net.tangly.fsm.utilities">DynamicChecker&lt;O,<wbr>S,<wbr>E&gt;</a> - Record Class in <a href="net.tangly.fsm/net/tangly/fsm/utilities/package-summary.html">net.tangly.fsm.utilities</a></dt>
 <dd>
 <div class="block">The finite state machine dynamic checker verifies the correctness of a state machine description.</div>
@@ -348,6 +350,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Execute the exit action associated with the state if defined.</div>
 </dd>
+<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html#executor()" class="member-name-link">executor()</a> - Method in class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html" title="class in net.tangly.fsm.actors">Actors</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/State.html#exitAction()" class="member-name-link">exitAction()</a> - Method in interface net.tangly.fsm.<a href="net.tangly.fsm/net/tangly/fsm/State.html" title="interface in net.tangly.fsm">State</a></dt>
 <dd>
 <div class="block">Return the exit action of the state.</div>
@@ -799,6 +803,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/utilities/StateMachineLogger.html#processEvent(net.tangly.fsm.Event)" class="member-name-link">processEvent(Event&lt;E&gt;)</a> - Method in record class net.tangly.fsm.utilities.<a href="net.tangly.fsm/net/tangly/fsm/utilities/StateMachineLogger.html" title="class in net.tangly.fsm.utilities">StateMachineLogger</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Channel.html#publish(T)" class="member-name-link">publish(T)</a> - Method in class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Channel.html" title="class in net.tangly.fsm.actors">Channel</a></dt>
+<dd>
+<div class="block">Dispatch a message to all subscribers of the channel.</div>
+</dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Channel.html#publisher()" class="member-name-link">publisher()</a> - Method in class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Channel.html" title="class in net.tangly.fsm.actors">Channel</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -813,10 +821,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/actors/ActorTimerMgr.Timer.html#recurring()" class="member-name-link">recurring()</a> - Method in record class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/ActorTimerMgr.Timer.html" title="class in net.tangly.fsm.actors">ActorTimerMgr.Timer</a></dt>
 <dd>
 <div class="block">Returns the value of the <code>recurring</code> record component.</div>
-</dd>
-<dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html#register(java.lang.String)" class="member-name-link">register(String)</a> - Method in class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html" title="class in net.tangly.fsm.actors">Actors</a></dt>
-<dd>
-<div class="block">Register the channel and activate it.</div>
 </dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html#register(net.tangly.fsm.actors.Actor)" class="member-name-link">register(Actor&lt;T&gt;)</a> - Method in class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Actors.html" title="class in net.tangly.fsm.actors">Actors</a></dt>
 <dd>
@@ -894,7 +898,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/utilities/StaticChecker.html#%3Cinit%3E()" class="member-name-link">StaticChecker()</a> - Constructor for class net.tangly.fsm.utilities.<a href="net.tangly.fsm/net/tangly/fsm/utilities/StaticChecker.html" title="class in net.tangly.fsm.utilities">StaticChecker</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/actors/Channel.html#subscribe(net.tangly.fsm.actors.Actor)" class="member-name-link">subscribe(Actor&lt;T&gt;)</a> - Method in class net.tangly.fsm.actors.<a href="net.tangly.fsm/net/tangly/fsm/actors/Channel.html" title="class in net.tangly.fsm.actors">Channel</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Subscribe an actor to the channel.</div>
+</dd>
 <dt><a href="net.tangly.fsm/net/tangly/fsm/dsl/SubStateBuilder.html" class="type-name-link" title="interface in net.tangly.fsm.dsl">SubStateBuilder&lt;O,<wbr>S,<wbr>E&gt;</a> - Interface in <a href="net.tangly.fsm/net/tangly/fsm/dsl/package-summary.html">net.tangly.fsm.dsl</a></dt>
 <dd>
 <div class="block">Domain specific language fluent interface to configure a new state.</div>

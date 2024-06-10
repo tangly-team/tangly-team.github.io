@@ -148,7 +148,8 @@ implements <a href="InvoiceGenerator.html" title="interface in net.tangly.erp.in
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPositions()" class="member-name-link">createPositions</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exports(net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)" class="member-name-link">exports</a><wbr>(@NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exports(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)" class="member-name-link">exports</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;properties)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -158,7 +159,8 @@ implements <a href="InvoiceGenerator.html" title="interface in net.tangly.erp.in
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importArticle(org.json.JSONObject)" class="member-name-link">importArticle</a><wbr>(@NotNull org.json.JSONObject&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#imports(java.io.Reader,java.lang.String)" class="member-name-link">imports</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#imports(net.tangly.core.domain.DomainAudit,java.io.Reader,java.lang.String)" class="member-name-link">imports</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Import a JSON invoice into the domain.</div>
@@ -203,20 +205,22 @@ implements <a href="InvoiceGenerator.html" title="interface in net.tangly.erp.in
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="exports(net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)">
+<section class="detail" id="exports(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)">
 <h3>exports</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exports</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;properties)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="InvoiceGenerator.html#exports(net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)">InvoiceGenerator</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="InvoiceGenerator.html#exports(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)">InvoiceGenerator</a></code></span></div>
 <div class="block">Create a new invoice output document.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="InvoiceGenerator.html#exports(net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)">exports</a></code>&nbsp;in interface&nbsp;<code><a href="InvoiceGenerator.html" title="interface in net.tangly.erp.invoices.artifacts">InvoiceGenerator</a></code></dd>
+<dd><code><a href="InvoiceGenerator.html#exports(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)">exports</a></code>&nbsp;in interface&nbsp;<code><a href="InvoiceGenerator.html" title="interface in net.tangly.erp.invoices.artifacts">InvoiceGenerator</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>invoice</code> - invoice used to create a new invoice document</dd>
 <dd><code>path</code> - path to the document to create</dd>
@@ -226,10 +230,12 @@ implements <a href="InvoiceGenerator.html" title="interface in net.tangly.erp.in
 </section>
 </li>
 <li>
-<section class="detail" id="imports(java.io.Reader,java.lang.String)">
+<section class="detail" id="imports(net.tangly.core.domain.DomainAudit,java.io.Reader,java.lang.String)">
 <h3>imports</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a></span>&nbsp;<span class="element-name">imports</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source)</span></div>

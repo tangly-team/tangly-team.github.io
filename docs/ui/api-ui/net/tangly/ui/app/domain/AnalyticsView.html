@@ -93,11 +93,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>com.vaadin.flow.component.AttachNotifier</code>, <code>com.vaadin.flow.component.ClickNotifier&lt;com.vaadin.flow.component.orderedlayout.VerticalLayout&gt;</code>, <code>com.vaadin.flow.component.DetachNotifier</code>, <code>com.vaadin.flow.component.HasComponents</code>, <code>com.vaadin.flow.component.HasElement</code>, <code>com.vaadin.flow.component.HasEnabled</code>, <code>com.vaadin.flow.component.HasOrderedComponents</code>, <code>com.vaadin.flow.component.HasSize</code>, <code>com.vaadin.flow.component.HasStyle</code>, <code>com.vaadin.flow.component.orderedlayout.FlexComponent</code>, <code>com.vaadin.flow.component.orderedlayout.ThemableLayout</code>, <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code></dd>
+<dd><code>com.vaadin.flow.component.AttachNotifier</code>, <code>com.vaadin.flow.component.ClickNotifier&lt;com.vaadin.flow.component.orderedlayout.VerticalLayout&gt;</code>, <code>com.vaadin.flow.component.DetachNotifier</code>, <code>com.vaadin.flow.component.HasComponents</code>, <code>com.vaadin.flow.component.HasElement</code>, <code>com.vaadin.flow.component.HasEnabled</code>, <code>com.vaadin.flow.component.HasOrderedComponents</code>, <code>com.vaadin.flow.component.HasSize</code>, <code>com.vaadin.flow.component.HasStyle</code>, <code>com.vaadin.flow.component.orderedlayout.FlexComponent</code>, <code>com.vaadin.flow.component.orderedlayout.ThemableLayout</code>, <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">AnalyticsView</span>
-<span class="extends-implements">extends com.vaadin.flow.component.orderedlayout.VerticalLayout</span></div>
+<span class="extends-implements">extends com.vaadin.flow.component.orderedlayout.VerticalLayout
+implements <a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -152,21 +153,21 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel">
 <div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.storedobject.chart.SOChart</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final com.storedobject.chart.SOChart</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createAndRegisterChart(java.lang.String)" class="member-name-link">createAndRegisterChart</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.storedobject.chart.NightingaleRoseChart</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final com.storedobject.chart.NightingaleRoseChart</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createChart(java.lang.String,com.storedobject.chart.CategoryData,com.storedobject.chart.Data)" class="member-name-link">createChart</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  @NotNull com.storedobject.chart.CategoryData&nbsp;categoryData,
  @NotNull com.storedobject.chart.Data&nbsp;data)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.storedobject.chart.LineChart</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final com.storedobject.chart.LineChart</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createLineChart(java.lang.String,com.storedobject.chart.DateData,java.util.function.BiFunction,com.storedobject.chart.RectangularCoordinate)" class="member-name-link">createLineChart</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  @NotNull com.storedobject.chart.DateData&nbsp;xValues,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&gt;&nbsp;compute,
@@ -175,16 +176,23 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#from()" class="member-name-link">from</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#to()" class="member-name-link">to</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readonly()" class="member-name-link">readonly</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return if the view is in readonly mode.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readonly(boolean)" class="member-name-link">readonly</a><wbr>(boolean&nbsp;readonly)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set the view in readonly mode.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(com.storedobject.chart.SOChart,java.util.function.Consumer)" class="member-name-link">update</a><wbr>(@NotNull com.storedobject.chart.SOChart&nbsp;chart,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refresh(com.storedobject.chart.SOChart,java.util.function.Consumer)" class="member-name-link">refresh</a><wbr>(@NotNull com.storedobject.chart.SOChart&nbsp;chart,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;com.storedobject.chart.SOChart&gt;&nbsp;populate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#to()" class="member-name-link">to</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -230,6 +238,9 @@ loadScripts(document, 'script');</script>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.vaadin.flow.component.orderedlayout.ThemableLayout">Methods inherited from interface&nbsp;com.vaadin.flow.component.orderedlayout.ThemableLayout</h3>
 <code>getBoxSizing, getThemeList, isMargin, isPadding, isSpacing, setBoxSizing, setMargin</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.ui.app.domain.View">Methods inherited from interface&nbsp;net.tangly.ui.app.domain.<a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></h3>
+<code><a href="View.html#mode()">mode</a>, <a href="View.html#refresh()">refresh</a></code></div>
 </section>
 </li>
 </ul>
@@ -274,6 +285,50 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="readonly()">
+<h3>readonly</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">readonly</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="View.html#readonly()">View</a></code></span></div>
+<div class="block">Return if the view is in readonly mode.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="View.html#readonly()">readonly</a></code>&nbsp;in interface&nbsp;<code><a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
+<dt>Returns:</dt>
+<dd>true if the view is readonly otherwise false</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="View.html#readonly(boolean)"><code>View.readonly(boolean)</code></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="readonly(boolean)">
+<h3>readonly</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readonly</span><wbr><span class="parameters">(boolean&nbsp;readonly)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="View.html#readonly(boolean)">View</a></code></span></div>
+<div class="block">Set the view in readonly mode.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="View.html#readonly(boolean)">readonly</a></code>&nbsp;in interface&nbsp;<code><a href="View.html" title="interface in net.tangly.ui.app.domain">View</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>readonly</code> - true if the view is readonly otherwise false</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="View.html#readonly()"><code>View.readonly()</code></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="from()">
 <h3>from</h3>
 <div class="horizontal-scroll">
@@ -290,18 +345,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="update()">
-<h3>update</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="createChart(java.lang.String,com.storedobject.chart.CategoryData,com.storedobject.chart.Data)">
 <h3>createChart</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">com.storedobject.chart.NightingaleRoseChart</span>&nbsp;<span class="element-name">createChart</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">com.storedobject.chart.NightingaleRoseChart</span>&nbsp;<span class="element-name">createChart</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  @NotNull
  @NotNull com.storedobject.chart.CategoryData&nbsp;categoryData,
@@ -314,7 +361,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="createAndRegisterChart(java.lang.String)">
 <h3>createAndRegisterChart</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">com.storedobject.chart.SOChart</span>&nbsp;<span class="element-name">createAndRegisterChart</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">com.storedobject.chart.SOChart</span>&nbsp;<span class="element-name">createAndRegisterChart</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</span></div>
 </div>
 </section>
@@ -323,7 +370,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="createLineChart(java.lang.String,com.storedobject.chart.DateData,java.util.function.BiFunction,com.storedobject.chart.RectangularCoordinate)">
 <h3>createLineChart</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">com.storedobject.chart.LineChart</span>&nbsp;<span class="element-name">createLineChart</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">com.storedobject.chart.LineChart</span>&nbsp;<span class="element-name">createLineChart</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  @NotNull
  @NotNull com.storedobject.chart.DateData&nbsp;xValues,
@@ -335,10 +382,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="update(com.storedobject.chart.SOChart,java.util.function.Consumer)">
-<h3>update</h3>
+<section class="detail" id="refresh(com.storedobject.chart.SOChart,java.util.function.Consumer)">
+<h3>refresh</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refresh</span><wbr><span class="parameters">(@NotNull
  @NotNull com.storedobject.chart.SOChart&nbsp;chart,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;com.storedobject.chart.SOChart&gt;&nbsp;populate)</span></div>

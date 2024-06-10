@@ -50,7 +50,7 @@ loadScripts(document, 'script');</script>
 <span class="package-hierarchy-label">Package Hierarchies:</span>
 <ul class="horizontal contents-list">
 <li><a href="net/tangly/erp/crm/domain/package-tree.html">net.tangly.erp.crm.domain</a>, </li>
-<li><a href="net/tangly/erp/crm/gravatar/package-tree.html">net.tangly.erp.crm.gravatar</a>, </li>
+<li><a href="net/tangly/erp/crm/events/package-tree.html">net.tangly.erp.crm.events</a>, </li>
 <li><a href="net/tangly/erp/crm/ports/package-tree.html">net.tangly.erp.crm.ports</a>, </li>
 <li><a href="net/tangly/erp/crm/rest/package-tree.html">net.tangly.erp.crm.rest</a>, </li>
 <li><a href="net/tangly/erp/crm/services/package-tree.html">net.tangly.erp.crm.services</a>, </li>
@@ -62,7 +62,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" class="type-name-link external-link" title="class or interface in java.lang">Object</a>
 <ul>
 <li class="circle">net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/Activity.html" class="type-name-link" title="class in net.tangly.erp.crm.domain">Activity</a> (implements net.tangly.core.HasMutableDate, net.tangly.core.HasMutableText)</li>
-<li class="circle">net.tangly.core.domain.BoundedDomain&lt;R,<wbr>B,<wbr>P&gt;
+<li class="circle">net.tangly.core.domain.BoundedDomain&lt;R,<wbr>B,<wbr>P&gt; (implements net.tangly.core.domain.DomainAudit)
 <ul>
 <li class="circle">net.tangly.erp.crm.services.<a href="net/tangly/erp/crm/services/CrmBoundedDomain.html" class="type-name-link" title="class in net.tangly.erp.crm.services">CrmBoundedDomain</a></li>
 </ul>
@@ -72,21 +72,16 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.erp.crm.ui.<a href="net/tangly/erp/crm/ui/CrmBoundedDomainUi.html" class="type-name-link" title="class in net.tangly.erp.crm.ui">CrmBoundedDomainUi</a></li>
 </ul>
 </li>
-<li class="circle">net.tangly.ui.app.domain.CmdFilesUpload&lt;R,<wbr>B,<wbr>P&gt; (implements net.tangly.ui.app.domain.Cmd)
-<ul>
-<li class="circle">net.tangly.erp.crm.ui.<a href="net/tangly/erp/crm/ui/CmdFilesUploadCrm.html" class="type-name-link" title="class in net.tangly.erp.crm.ui">CmdFilesUploadCrm</a></li>
-</ul>
-</li>
 <li class="circle">com.vaadin.flow.component.Component (implements com.vaadin.flow.component.AttachNotifier, com.vaadin.flow.component.DetachNotifier, com.vaadin.flow.component.HasStyle)
 <ul>
 <li class="circle">com.vaadin.flow.component.orderedlayout.VerticalLayout (implements com.vaadin.flow.component.ClickNotifier&lt;T&gt;, com.vaadin.flow.component.orderedlayout.FlexComponent, com.vaadin.flow.component.orderedlayout.ThemableLayout)
 <ul>
-<li class="circle">net.tangly.ui.app.domain.AnalyticsView
+<li class="circle">net.tangly.ui.app.domain.AnalyticsView (implements net.tangly.ui.app.domain.View)
 <ul>
 <li class="circle">net.tangly.erp.crm.ui.<a href="net/tangly/erp/crm/ui/AnalyticsCrmView.html" class="type-name-link" title="class in net.tangly.erp.crm.ui">AnalyticsCrmView</a></li>
 </ul>
 </li>
-<li class="circle">net.tangly.ui.components.ItemView&lt;T&gt;
+<li class="circle">net.tangly.ui.components.ItemView&lt;T&gt; (implements net.tangly.ui.app.domain.View)
 <ul>
 <li class="circle">net.tangly.erp.crm.ui.<a href="net/tangly/erp/crm/ui/ContractExtensionsView.html" class="type-name-link" title="class in net.tangly.erp.crm.ui">ContractExtensionsView</a></li>
 <li class="circle">net.tangly.erp.crm.ui.<a href="net/tangly/erp/crm/ui/LeadsView.html" class="type-name-link" title="class in net.tangly.erp.crm.ui">LeadsView</a></li>
@@ -103,7 +98,6 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmEntities.html" class="type-name-link" title="class in net.tangly.erp.crm.ports">CrmEntities</a> (implements net.tangly.erp.crm.services.<a href="net/tangly/erp/crm/services/CrmRealm.html" title="interface in net.tangly.erp.crm.services">CrmRealm</a>)</li>
 <li class="circle">net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/CrmTags.html" class="type-name-link" title="class in net.tangly.erp.crm.domain">CrmTags</a></li>
 <li class="circle">net.tangly.erp.crm.ports.<a href="net/tangly/erp/crm/ports/CrmTsvHdl.html" class="type-name-link" title="class in net.tangly.erp.crm.ports">CrmTsvHdl</a></li>
-<li class="circle">net.tangly.erp.crm.gravatar.<a href="net/tangly/erp/crm/gravatar/Gravatar.html" class="type-name-link" title="class in net.tangly.erp.crm.gravatar">Gravatar</a></li>
 <li class="circle">net.tangly.erp.crm.rest.<a href="net/tangly/erp/crm/rest/LeadsRest.html" class="type-name-link" title="class in net.tangly.erp.crm.rest">LeadsRest</a></li>
 <li class="circle">net.tangly.erp.crm.rest.<a href="net/tangly/erp/crm/rest/LegalEntitiesRest.html" class="type-name-link" title="class in net.tangly.erp.crm.rest">LegalEntitiesRest</a></li>
 <li class="circle">net.tangly.core.MutableEntityExtendedImp (implements net.tangly.core.MutableEntityExtended)
@@ -159,8 +153,6 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/ActivityCode.html" class="type-name-link" title="enum class in net.tangly.erp.crm.domain">ActivityCode</a> (implements net.tangly.core.codes.Code)</li>
 <li class="circle">net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/GenderCode.html" class="type-name-link" title="enum class in net.tangly.erp.crm.domain">GenderCode</a> (implements net.tangly.core.codes.Code)</li>
-<li class="circle">net.tangly.erp.crm.gravatar.<a href="net/tangly/erp/crm/gravatar/GravatarImage.html" class="type-name-link" title="enum class in net.tangly.erp.crm.gravatar">GravatarImage</a></li>
-<li class="circle">net.tangly.erp.crm.gravatar.<a href="net/tangly/erp/crm/gravatar/GravatarRating.html" class="type-name-link" title="enum class in net.tangly.erp.crm.gravatar">GravatarRating</a></li>
 <li class="circle">net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/InteractionCode.html" class="type-name-link" title="enum class in net.tangly.erp.crm.domain">InteractionCode</a> (implements net.tangly.core.codes.Code)</li>
 <li class="circle">net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/LeadCode.html" class="type-name-link" title="enum class in net.tangly.erp.crm.domain">LeadCode</a> (implements net.tangly.core.codes.Code)</li>
 <li class="circle">net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/VcardType.html" class="type-name-link" title="enum class in net.tangly.erp.crm.domain">VcardType</a></li>
@@ -178,6 +170,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" class="type-name-link external-link" title="class or interface in java.lang">Record</a>
 <ul>
 <li class="circle">net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/ContractExtension.html" class="type-name-link" title="class in net.tangly.erp.crm.domain">ContractExtension</a> (implements net.tangly.core.HasDateRange, net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasText)</li>
+<li class="circle">net.tangly.erp.crm.events.<a href="net/tangly/erp/crm/events/ContractSignedEvent.html" class="type-name-link" title="class in net.tangly.erp.crm.events">ContractSignedEvent</a></li>
 <li class="circle">net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/Lead.html" class="type-name-link" title="class in net.tangly.erp.crm.domain">Lead</a> (implements net.tangly.core.HasDate)</li>
 <li class="circle">net.tangly.erp.crm.domain.<a href="net/tangly/erp/crm/domain/Photo.html" class="type-name-link" title="class in net.tangly.erp.crm.domain">Photo</a></li>
 </ul>
