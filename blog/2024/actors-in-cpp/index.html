@@ -43,7 +43,7 @@ The Actor Model is one of the best approaches to safe concurrency and legible co
 Although multiple actors can run at the same time, an actor will process a given message sequentially. This means that if you send three messages to the same actor, it will just execute one at a time.">
   <meta itemprop="datePublished" content="2024-06-10T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-06-10T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1994">
+  <meta itemprop="wordCount" content="1997">
   <meta itemprop="keywords" content="C&#43;&#43;,Architecture">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Actors in Cpp">
@@ -137,7 +137,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.c5f408392370ccbea381ba74794e8760.json"
+    data-offline-search-index-json-src="/offline-search-index.3aee315057c368ff4f573ce68884ff87.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -161,7 +161,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.c5f408392370ccbea381ba74794e8760.json"
+    data-offline-search-index-json-src="/offline-search-index.3aee315057c368ff4f573ce68884ff87.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -187,7 +187,11 @@ if (!doNotTrack) {
   <label for="m-blog2024-check"><a href="/blog/2024/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-blog2024"><span class="">2024</span></a></label>
   
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-blog2024actors-in-cpp-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog2024actors-with-cmsis-os-in-cpp-li">
+  <input type="checkbox" id="m-blog2024actors-with-cmsis-os-in-cpp-check"/>
+  <label for="m-blog2024actors-with-cmsis-os-in-cpp-check"><a href="/blog/2024/actors-with-cmsis-os-in-cpp/" title="Actors with CMSIS OS in Cpp" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-blog2024actors-with-cmsis-os-in-cpp"><span class="">C&#43;&#43; cmsis Actors</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-blog2024actors-in-cpp-li">
   <input type="checkbox" id="m-blog2024actors-in-cpp-check" checked/>
   <label for="m-blog2024actors-in-cpp-check"><a href="/blog/2024/actors-in-cpp/" title="Actors in Cpp" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-blog2024actors-in-cpp"><span class="td-sidebar-nav-active-item">Cpp Actors</span></a></label>
   
@@ -963,13 +967,13 @@ if (!doNotTrack) {
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">Agile</span><span class="taxonomy-count">108</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">26</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/c&#43;&#43;/" data-taxonomy-term="c&#43;&#43;"><span class="taxonomy-label">C&#43;&#43;</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">27</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/c&#43;&#43;/" data-taxonomy-term="c&#43;&#43;"><span class="taxonomy-label">C&#43;&#43;</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/crm/" data-taxonomy-term="crm"><span class="taxonomy-label">Crm</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/design/" data-taxonomy-term="design"><span class="taxonomy-label">Design</span><span class="taxonomy-count">23</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">Devops</span><span class="taxonomy-count">8</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/domain-driven-design/" data-taxonomy-term="domain-driven-design"><span class="taxonomy-label">Domain-Driven-Design</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/embedded/" data-taxonomy-term="embedded"><span class="taxonomy-label">Embedded</span><span class="taxonomy-count">2</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/embedded/" data-taxonomy-term="embedded"><span class="taxonomy-label">Embedded</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/git/" data-taxonomy-term="git"><span class="taxonomy-label">Git</span><span class="taxonomy-count">7</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/gradle/" data-taxonomy-term="gradle"><span class="taxonomy-label">Gradle</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/hugo/" data-taxonomy-term="hugo"><span class="taxonomy-label">Hugo</span><span class="taxonomy-count">5</span></a></li>
@@ -1567,11 +1571,11 @@ The advantage is more static checks from the compiler and better libraries.</p>
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
-<p><a id="actors"></a>[1] <a href="../../2024/actors/">Actors</a>
+<p><a id="actors"></a>[1] <a href="../../2024/actor-model/">Actor Model</a>
 Marcel Baumann. 2024.</p>
 </li>
 <li>
-<p><a id="finite-state-machines"></a>[2] <a href="../../2024/nice-statechart-diagrams/">Finite State Machines</a>
+<p><a id="finite-state-machines"></a>[2] <a href="../../2024/nice-statechart-diagrams/">Nice Statechart and FSM Diagrams</a>
 Marcel Baumann. 2024.</p>
 </li>
 </ul>
@@ -1619,7 +1623,7 @@ Marcel Baumann. 2024.</p>
     <a href="/blog/2024/daily-scrum-questions/" aria-label="Previous - Daily Scrum Questions" class="btn btn-primary"><span class="me-1">←</span>Previous</a>
   </li>
   <li>
-    <a class="btn btn-primary disabled">Next<span class="ms-1">→</span></a>
+    <a href="/blog/2024/actors-with-cmsis-os-in-cpp/" aria-label="Next - Actors with CMSIS OS in Cpp" class="btn btn-primary">Next<span class="ms-1">→</span></a>
   </li>
 </ul>
 

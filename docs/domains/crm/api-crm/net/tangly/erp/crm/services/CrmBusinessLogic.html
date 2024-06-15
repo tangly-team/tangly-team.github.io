@@ -120,7 +120,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#funnel(net.tangly.erp.crm.domain.InteractionCode,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">funnel</a><wbr>(@NotNull <a href="../domain/InteractionCode.html" title="enum class in net.tangly.erp.crm.domain">InteractionCode</a>&nbsp;code,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#funnel(net.tangly.erp.crm.domain.OpportunityCode,java.time.LocalDate,java.time.LocalDate)" class="member-name-link">funnel</a><wbr>(@NotNull <a href="../domain/OpportunityCode.html" title="enum class in net.tangly.erp.crm.domain">OpportunityCode</a>&nbsp;code,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -129,11 +129,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CrmRealm.html" title="interface in net.tangly.erp.crm.services">CrmRealm</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#realm()" class="member-name-link">realm</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateInteractions()" class="member-name-link">updateInteractions</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set the end date property of interaction to the end date of the last contract associated with the interaction in the case of customer and completed state.</div>
-</div>
 </div>
 </div>
 </div>
@@ -177,21 +172,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="updateInteractions()">
-<h3>updateInteractions</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateInteractions</span>()</div>
-<div class="block">Set the end date property of interaction to the end date of the last contract associated with the interaction in the case of customer and completed state. Set the end date
- property of interaction to the end date of the last activity associated with the interaction in the case of lost state.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="funnel(net.tangly.erp.crm.domain.InteractionCode,java.time.LocalDate,java.time.LocalDate)">
+<section class="detail" id="funnel(net.tangly.erp.crm.domain.OpportunityCode,java.time.LocalDate,java.time.LocalDate)">
 <h3>funnel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name">funnel</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="../domain/InteractionCode.html" title="enum class in net.tangly.erp.crm.domain">InteractionCode</a>&nbsp;code,
+ @NotNull <a href="../domain/OpportunityCode.html" title="enum class in net.tangly.erp.crm.domain">OpportunityCode</a>&nbsp;code,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
 <div class="block">Return the potential number of all interactions in the selected time slot and tate.</div>

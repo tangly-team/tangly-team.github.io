@@ -90,15 +90,30 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <div class="horizontal-scroll">
 <dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-date">date</span></code> - date when the lead was created</dd>
+<dd><code><span id="param-code">code</span></code> - code of the lead defining the qualification status</dd>
+<dd><code><span id="param-firstname">firstname</span></code> - first name of the lead</dd>
+<dd><code><span id="param-lastname">lastname</span></code> - last name of the lead</dd>
+<dd><code><span id="param-gender">gender</span></code> - gender of the lead</dd>
+<dd><code><span id="param-company">company</span></code> - name of the company the lead is associated with</dd>
+<dd><code><span id="param-phoneNr">phoneNr</span></code> - phone number of the lead</dd>
+<dd><code><span id="param-email">email</span></code> - email address of the lead</dd>
+<dd><code><span id="param-linkedIn">linkedIn</span></code> - linkedIn profile of the lead</dd>
+<dd><code><span id="param-text">text</span></code> - history of the lead</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code>net.tangly.core.HasDate</code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">Lead</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date, @NotNull <a href="LeadCode.html" title="enum class in net.tangly.erp.crm.domain">LeadCode</a>&nbsp;code, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;firstname, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lastname, <a href="GenderCode.html" title="enum class in net.tangly.erp.crm.domain">GenderCode</a>&nbsp;gender, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;company, net.tangly.core.PhoneNr&nbsp;phoneNr, net.tangly.core.EmailAddress&nbsp;email, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;linkedIn, @NotNull <a href="ActivityCode.html" title="enum class in net.tangly.erp.crm.domain">ActivityCode</a>&nbsp;activity, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)
+<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">Lead</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date, @NotNull <a href="LeadCode.html" title="enum class in net.tangly.erp.crm.domain">LeadCode</a>&nbsp;code, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;firstname, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lastname, <a href="GenderCode.html" title="enum class in net.tangly.erp.crm.domain">GenderCode</a>&nbsp;gender, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;company, net.tangly.core.PhoneNr&nbsp;phoneNr, net.tangly.core.EmailAddress&nbsp;email, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;linkedIn, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a>
 implements net.tangly.core.HasDate</span></div>
 <div class="block">Defines a lead in the customer relation domain. A lead is also often called a prospect. Once a lead was contacted, it should either be qualified and
- integrated into an interaction or disqualified. Leads are persisted to keep track of the disquaified ones over time.</div>
+ integrated into an opportunity or disqualified. Leads are persisted to keep track of the disqualified ones over time.
+ <p>The goal is to transform a lead into a qualified prospect. Therefore we currently only provide the text field to track history.
+ If a lot of activities are associated with a lead, you should probably qualify her and transform her into natural and legal entities.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -120,7 +135,7 @@ implements net.tangly.core.HasDate</span></div>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.time.LocalDate,net.tangly.erp.crm.domain.LeadCode,java.lang.String,java.lang.String,net.tangly.erp.crm.domain.GenderCode,java.lang.String,net.tangly.core.PhoneNr,net.tangly.core.EmailAddress,java.lang.String,net.tangly.erp.crm.domain.ActivityCode,java.lang.String)" class="member-name-link">Lead</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.time.LocalDate,net.tangly.erp.crm.domain.LeadCode,java.lang.String,java.lang.String,net.tangly.erp.crm.domain.GenderCode,java.lang.String,net.tangly.core.PhoneNr,net.tangly.core.EmailAddress,java.lang.String,java.lang.String)" class="member-name-link">Lead</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
  @NotNull <a href="LeadCode.html" title="enum class in net.tangly.erp.crm.domain">LeadCode</a>&nbsp;code,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;firstname,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lastname,
@@ -129,7 +144,6 @@ implements net.tangly.core.HasDate</span></div>
  net.tangly.core.PhoneNr&nbsp;phoneNr,
  net.tangly.core.EmailAddress&nbsp;email,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;linkedIn,
- @NotNull <a href="ActivityCode.html" title="enum class in net.tangly.erp.crm.domain">ActivityCode</a>&nbsp;activity,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates an instance of a <code>Lead</code> record class.</div>
@@ -148,74 +162,69 @@ implements net.tangly.core.HasDate</span></div>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="ActivityCode.html" title="enum class in net.tangly.erp.crm.domain">ActivityCode</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#activity()" class="member-name-link">activity</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="LeadCode.html" title="enum class in net.tangly.erp.crm.domain">LeadCode</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#code()" class="member-name-link">code</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>activity</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-code"><code>code</code></a> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="LeadCode.html" title="enum class in net.tangly.erp.crm.domain">LeadCode</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#code()" class="member-name-link">code</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#company()" class="member-name-link">company</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>code</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-company"><code>company</code></a> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#company()" class="member-name-link">company</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#date()" class="member-name-link">date</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>company</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-date"><code>date</code></a> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#date()" class="member-name-link">date</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.EmailAddress</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#email()" class="member-name-link">email</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>date</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-email"><code>email</code></a> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.EmailAddress</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#email()" class="member-name-link">email</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>email</code> record component.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#firstname()" class="member-name-link">firstname</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>firstname</code> record component.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GenderCode.html" title="enum class in net.tangly.erp.crm.domain">GenderCode</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gender()" class="member-name-link">gender</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#firstname()" class="member-name-link">firstname</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>gender</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-firstname"><code>firstname</code></a> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GenderCode.html" title="enum class in net.tangly.erp.crm.domain">GenderCode</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gender()" class="member-name-link">gender</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-gender"><code>gender</code></a> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash code value for this object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lastname()" class="member-name-link">lastname</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>lastname</code> record component.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linkedIn()" class="member-name-link">linkedIn</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lastname()" class="member-name-link">lastname</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>linkedIn</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-lastname"><code>lastname</code></a> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.PhoneNr</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#phoneNr()" class="member-name-link">phoneNr</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linkedIn()" class="member-name-link">linkedIn</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>phoneNr</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-linkedIn"><code>linkedIn</code></a> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text()" class="member-name-link">text</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.PhoneNr</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#phoneNr()" class="member-name-link">phoneNr</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>text</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-phoneNr"><code>phoneNr</code></a> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text()" class="member-name-link">text</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-text"><code>text</code></a> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this record class.</div>
 </div>
 </div>
@@ -236,7 +245,7 @@ implements net.tangly.core.HasDate</span></div>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(java.time.LocalDate,net.tangly.erp.crm.domain.LeadCode,java.lang.String,java.lang.String,net.tangly.erp.crm.domain.GenderCode,java.lang.String,net.tangly.core.PhoneNr,net.tangly.core.EmailAddress,java.lang.String,net.tangly.erp.crm.domain.ActivityCode,java.lang.String)">
+<section class="detail" id="&lt;init&gt;(java.time.LocalDate,net.tangly.erp.crm.domain.LeadCode,java.lang.String,java.lang.String,net.tangly.erp.crm.domain.GenderCode,java.lang.String,net.tangly.core.PhoneNr,net.tangly.core.EmailAddress,java.lang.String,java.lang.String)">
 <h3>Lead</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Lead</span><wbr><span class="parameters">(@NotNull
@@ -251,23 +260,20 @@ implements net.tangly.core.HasDate</span></div>
  net.tangly.core.PhoneNr&nbsp;phoneNr,
  net.tangly.core.EmailAddress&nbsp;email,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;linkedIn,
- @NotNull
- @NotNull <a href="ActivityCode.html" title="enum class in net.tangly.erp.crm.domain">ActivityCode</a>&nbsp;activity,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
 <div class="block">Creates an instance of a <code>Lead</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>date</code> - the value for the <code>date</code> record component</dd>
-<dd><code>code</code> - the value for the <code>code</code> record component</dd>
-<dd><code>firstname</code> - the value for the <code>firstname</code> record component</dd>
-<dd><code>lastname</code> - the value for the <code>lastname</code> record component</dd>
-<dd><code>gender</code> - the value for the <code>gender</code> record component</dd>
-<dd><code>company</code> - the value for the <code>company</code> record component</dd>
-<dd><code>phoneNr</code> - the value for the <code>phoneNr</code> record component</dd>
-<dd><code>email</code> - the value for the <code>email</code> record component</dd>
-<dd><code>linkedIn</code> - the value for the <code>linkedIn</code> record component</dd>
-<dd><code>activity</code> - the value for the <code>activity</code> record component</dd>
-<dd><code>text</code> - the value for the <code>text</code> record component</dd>
+<dd><code>date</code> - the value for the <a href="#param-date"><code>date</code></a> record component</dd>
+<dd><code>code</code> - the value for the <a href="#param-code"><code>code</code></a> record component</dd>
+<dd><code>firstname</code> - the value for the <a href="#param-firstname"><code>firstname</code></a> record component</dd>
+<dd><code>lastname</code> - the value for the <a href="#param-lastname"><code>lastname</code></a> record component</dd>
+<dd><code>gender</code> - the value for the <a href="#param-gender"><code>gender</code></a> record component</dd>
+<dd><code>company</code> - the value for the <a href="#param-company"><code>company</code></a> record component</dd>
+<dd><code>phoneNr</code> - the value for the <a href="#param-phoneNr"><code>phoneNr</code></a> record component</dd>
+<dd><code>email</code> - the value for the <a href="#param-email"><code>email</code></a> record component</dd>
+<dd><code>linkedIn</code> - the value for the <a href="#param-linkedIn"><code>linkedIn</code></a> record component</dd>
+<dd><code>text</code> - the value for the <a href="#param-text"><code>text</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -333,12 +339,12 @@ implements net.tangly.core.HasDate</span></div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@NotNull
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a></span>&nbsp;<span class="element-name">date</span>()</div>
-<div class="block">Returns the value of the <code>date</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-date"><code>date</code></a> record component.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>date</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasDate</code></dd>
 <dt>Returns:</dt>
-<dd>the value of the <code>date</code> record component</dd>
+<dd>the value of the <a href="#param-date"><code>date</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -349,10 +355,10 @@ implements net.tangly.core.HasDate</span></div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@NotNull
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="LeadCode.html" title="enum class in net.tangly.erp.crm.domain">LeadCode</a></span>&nbsp;<span class="element-name">code</span>()</div>
-<div class="block">Returns the value of the <code>code</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-code"><code>code</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>code</code> record component</dd>
+<dd>the value of the <a href="#param-code"><code>code</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -362,10 +368,10 @@ implements net.tangly.core.HasDate</span></div>
 <h3>firstname</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">firstname</span>()</div>
-<div class="block">Returns the value of the <code>firstname</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-firstname"><code>firstname</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>firstname</code> record component</dd>
+<dd>the value of the <a href="#param-firstname"><code>firstname</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -376,10 +382,10 @@ implements net.tangly.core.HasDate</span></div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@NotNull
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">lastname</span>()</div>
-<div class="block">Returns the value of the <code>lastname</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-lastname"><code>lastname</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>lastname</code> record component</dd>
+<dd>the value of the <a href="#param-lastname"><code>lastname</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -389,10 +395,10 @@ implements net.tangly.core.HasDate</span></div>
 <h3>gender</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GenderCode.html" title="enum class in net.tangly.erp.crm.domain">GenderCode</a></span>&nbsp;<span class="element-name">gender</span>()</div>
-<div class="block">Returns the value of the <code>gender</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-gender"><code>gender</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>gender</code> record component</dd>
+<dd>the value of the <a href="#param-gender"><code>gender</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -402,10 +408,10 @@ implements net.tangly.core.HasDate</span></div>
 <h3>company</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">company</span>()</div>
-<div class="block">Returns the value of the <code>company</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-company"><code>company</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>company</code> record component</dd>
+<dd>the value of the <a href="#param-company"><code>company</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -415,10 +421,10 @@ implements net.tangly.core.HasDate</span></div>
 <h3>phoneNr</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">net.tangly.core.PhoneNr</span>&nbsp;<span class="element-name">phoneNr</span>()</div>
-<div class="block">Returns the value of the <code>phoneNr</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-phoneNr"><code>phoneNr</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>phoneNr</code> record component</dd>
+<dd>the value of the <a href="#param-phoneNr"><code>phoneNr</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -428,10 +434,10 @@ implements net.tangly.core.HasDate</span></div>
 <h3>email</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">net.tangly.core.EmailAddress</span>&nbsp;<span class="element-name">email</span>()</div>
-<div class="block">Returns the value of the <code>email</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-email"><code>email</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>email</code> record component</dd>
+<dd>the value of the <a href="#param-email"><code>email</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -441,24 +447,10 @@ implements net.tangly.core.HasDate</span></div>
 <h3>linkedIn</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">linkedIn</span>()</div>
-<div class="block">Returns the value of the <code>linkedIn</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-linkedIn"><code>linkedIn</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>linkedIn</code> record component</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="activity()">
-<h3>activity</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations">@NotNull
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="ActivityCode.html" title="enum class in net.tangly.erp.crm.domain">ActivityCode</a></span>&nbsp;<span class="element-name">activity</span>()</div>
-<div class="block">Returns the value of the <code>activity</code> record component.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>the value of the <code>activity</code> record component</dd>
+<dd>the value of the <a href="#param-linkedIn"><code>linkedIn</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -468,10 +460,10 @@ implements net.tangly.core.HasDate</span></div>
 <h3>text</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">text</span>()</div>
-<div class="block">Returns the value of the <code>text</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-text"><code>text</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>text</code> record component</dd>
+<dd>the value of the <a href="#param-text"><code>text</code></a> record component</dd>
 </dl>
 </div>
 </section>

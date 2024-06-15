@@ -84,8 +84,6 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/MutalbeExternalEntityImp.html#add(net.tangly.core.Comment)" class="member-name-link">add(Comment)</a> - Method in class net.tangly.core.<a href="net/tangly/core/MutalbeExternalEntityImp.html" title="class in net.tangly.core">MutalbeExternalEntityImp</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/Comment.html#add(net.tangly.core.Tag)" class="member-name-link">add(Tag)</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/HasMutableTags.html#add(net.tangly.core.Tag)" class="member-name-link">add(Tag)</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></dt>
 <dd>
 <div class="block">Add the tag to the collection of tags.</div>
@@ -128,9 +126,9 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/User.html#authenticate(java.lang.String)" class="member-name-link">authenticate(String)</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/Comment.html#author()" class="member-name-link">author()</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
+<dt><a href="net/tangly/core/Comment.html#author()" class="member-name-link">author()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
 <dd>
-<div class="block">Return the author of the comment as human-readable information.</div>
+<div class="block">Returns the value of the <code>author</code> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/User.html#avatar(java.lang.String)" class="member-name-link">avatar(String)</a> - Static method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
 <dd>&nbsp;</dd>
@@ -204,8 +202,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the value of the <a href="./net/tangly/core/TagType.html#param-clazz"><code>clazz</code></a> record component.</div>
 </dd>
-<dt><a href="net/tangly/core/Comment.html#clear()" class="member-name-link">clear()</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/HasMutableTags.html#clear()" class="member-name-link">clear()</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/MutableEntityExtendedImp.html#clear()" class="member-name-link">clear()</a> - Method in class net.tangly.core.<a href="net/tangly/core/MutableEntityExtendedImp.html" title="class in net.tangly.core">MutableEntityExtendedImp</a></dt>
@@ -260,13 +256,17 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Creates an instance of a <code>CodeType</code> record class.</div>
 </dd>
-<dt><a href="net/tangly/core/Comment.html" class="type-name-link" title="class in net.tangly.core">Comment</a> - Class in <a href="net/tangly/core/package-summary.html">net.tangly.core</a></dt>
+<dt><a href="net/tangly/core/Comment.html" class="type-name-link" title="class in net.tangly.core">Comment</a> - Record Class in <a href="net/tangly/core/package-summary.html">net.tangly.core</a></dt>
 <dd>
 <div class="block">Defines a human-readable annotation to an entity.</div>
 </dd>
-<dt><a href="net/tangly/core/Comment.html#%3Cinit%3E(java.lang.String,java.lang.String)" class="member-name-link">Comment(String, String)</a> - Constructor for class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
+<dt><a href="net/tangly/core/Comment.html#%3Cinit%3E(java.time.LocalDateTime,java.lang.String,java.lang.String)" class="member-name-link">Comment(LocalDateTime, String, String)</a> - Constructor for record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
 <dd>
 <div class="block">Default constructor to create an immutable instance.</div>
+</dd>
+<dt><a href="net/tangly/core/Comment.html#%3Cinit%3E(java.time.LocalDateTime,java.lang.String,java.lang.String,java.util.Set)" class="member-name-link">Comment(LocalDateTime, String, String, Set&lt;Tag&gt;)</a> - Constructor for record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
+<dd>
+<div class="block">Creates an instance of a <code>Comment</code> record class.</div>
 </dd>
 <dt><a href="net/tangly/core/EntityExtendedImp.html#comments()" class="member-name-link">comments()</a> - Method in class net.tangly.core.<a href="net/tangly/core/EntityExtendedImp.html" title="class in net.tangly.core">EntityExtendedImp</a></dt>
 <dd>&nbsp;</dd>
@@ -316,9 +316,9 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/Operation.html#CREATE_TEXT" class="member-name-link">CREATE_TEXT</a> - Static variable in enum class net.tangly.core.domain.<a href="net/tangly/core/domain/Operation.html" title="enum class in net.tangly.core.domain">Operation</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/Comment.html#created()" class="member-name-link">created()</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
+<dt><a href="net/tangly/core/Comment.html#created()" class="member-name-link">created()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
 <dd>
-<div class="block">Return the timestamp when the comment was created.</div>
+<div class="block">Returns the value of the <code>created</code> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/Port.html#createDirectories(java.nio.file.Path)" class="member-name-link">createDirectories(Path)</a> - Static method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
 <dd>&nbsp;</dd>
@@ -510,8 +510,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </dd>
-<dt><a href="net/tangly/core/Comment.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/Comment.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
+<dd>
+<div class="block">Indicates whether some other object is "equal to" this one.</div>
+</dd>
 <dt><a href="net/tangly/core/DateRange.DateFilter.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in record class net.tangly.core.<a href="net/tangly/core/DateRange.DateFilter.html" title="class in net.tangly.core">DateRange.DateFilter</a></dt>
 <dd>
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
@@ -763,8 +765,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns a hash code value for this object.</div>
 </dd>
-<dt><a href="net/tangly/core/Comment.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/Comment.html#hashCode()" class="member-name-link">hashCode()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
+<dd>
+<div class="block">Returns a hash code value for this object.</div>
+</dd>
 <dt><a href="net/tangly/core/DateRange.DateFilter.html#hashCode()" class="member-name-link">hashCode()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/DateRange.DateFilter.html" title="class in net.tangly.core">DateRange.DateFilter</a></dt>
 <dd>
 <div class="block">Returns a hash code value for this object.</div>
@@ -1247,10 +1251,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Factory method to of a new phone number.</div>
 </dd>
-<dt><a href="net/tangly/core/Comment.html#of(java.lang.String,java.lang.String,net.tangly.core.Tag...)" class="member-name-link">of(String, String, Tag...)</a> - Static method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
-<dd>
-<div class="block">Factory method to update a new comment.</div>
-</dd>
+<dt><a href="net/tangly/core/Comment.html#of(java.lang.String,java.lang.String)" class="member-name-link">of(String, String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/Tag.html#of(java.lang.String,java.lang.String)" class="member-name-link">of(String, String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/Tag.html" title="class in net.tangly.core">Tag</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/BankConnection.html#of(java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">of(String, String, String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/BankConnection.html" title="class in net.tangly.core">BankConnection</a></dt>
@@ -1277,14 +1279,6 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/TagType.html#of(java.lang.String,java.lang.String,net.tangly.core.TagType.ValueKinds,java.lang.Class,java.util.function.Function,java.util.function.BiPredicate)" class="member-name-link">of(String, String, TagType.ValueKinds, Class&lt;T&gt;, Function&lt;String, T&gt;, BiPredicate&lt;TagType&lt;T&gt;, T&gt;)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/TagType.html" title="class in net.tangly.core">TagType</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/Comment.html#of(java.time.LocalDateTime,java.lang.String,java.lang.String)" class="member-name-link">of(LocalDateTime, String, String)</a> - Static method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
-<dd>
-<div class="block">Factory method to update a new comment.</div>
-</dd>
-<dt><a href="net/tangly/core/Comment.html#of(java.time.LocalDateTime,java.lang.String,java.lang.String,net.tangly.core.Tag...)" class="member-name-link">of(LocalDateTime, String, String, Tag...)</a> - Static method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
-<dd>
-<div class="block">Factory method to update a new comment.</div>
-</dd>
 <dt><a href="net/tangly/core/DateRange.html#of(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">of(LocalDate, LocalDate)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/DateRange.html" title="class in net.tangly.core">DateRange</a></dt>
 <dd>
 <div class="block">Factory method.</div>
@@ -1531,8 +1525,6 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/MutalbeExternalEntityImp.html#remove(net.tangly.core.Comment)" class="member-name-link">remove(Comment)</a> - Method in class net.tangly.core.<a href="net/tangly/core/MutalbeExternalEntityImp.html" title="class in net.tangly.core">MutalbeExternalEntityImp</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/Comment.html#remove(net.tangly.core.Tag)" class="member-name-link">remove(Tag)</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/HasMutableTags.html#remove(net.tangly.core.Tag)" class="member-name-link">remove(Tag)</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></dt>
 <dd>
 <div class="block">Remove the tag from the collection of tags.</div>
@@ -1607,8 +1599,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/TsvHdl.html#tagProperty(java.lang.String)" class="member-name-link">tagProperty(String)</a> - Static method in class net.tangly.core.domain.<a href="net/tangly/core/domain/TsvHdl.html" title="class in net.tangly.core.domain">TsvHdl</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/Comment.html#tags()" class="member-name-link">tags()</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/Comment.html#tags()" class="member-name-link">tags()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>tags</code> record component.</div>
+</dd>
 <dt><a href="net/tangly/core/EntityExtendedImp.html#tags()" class="member-name-link">tags()</a> - Method in class net.tangly.core.<a href="net/tangly/core/EntityExtendedImp.html" title="class in net.tangly.core">EntityExtendedImp</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/ExternalEntityImp.html#tags()" class="member-name-link">tags()</a> - Method in class net.tangly.core.<a href="net/tangly/core/ExternalEntityImp.html" title="class in net.tangly.core">ExternalEntityImp</a></dt>
@@ -1620,8 +1614,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="net/tangly/core/MutableEntityExtendedImp.html#tags()" class="member-name-link">tags()</a> - Method in class net.tangly.core.<a href="net/tangly/core/MutableEntityExtendedImp.html" title="class in net.tangly.core">MutableEntityExtendedImp</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/MutalbeExternalEntityImp.html#tags()" class="member-name-link">tags()</a> - Method in class net.tangly.core.<a href="net/tangly/core/MutalbeExternalEntityImp.html" title="class in net.tangly.core">MutalbeExternalEntityImp</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/Comment.html#tags(java.util.Collection)" class="member-name-link">tags(Collection&lt;Tag&gt;)</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/ExternalEntityImp.html#tags(java.util.Collection)" class="member-name-link">tags(Collection&lt;Tag&gt;)</a> - Method in class net.tangly.core.<a href="net/tangly/core/ExternalEntityImp.html" title="class in net.tangly.core">ExternalEntityImp</a></dt>
 <dd>&nbsp;</dd>
@@ -1665,9 +1657,9 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Return a comma-separated representation of a bank connection.</div>
 </dd>
-<dt><a href="net/tangly/core/Comment.html#text()" class="member-name-link">text()</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
+<dt><a href="net/tangly/core/Comment.html#text()" class="member-name-link">text()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
 <dd>
-<div class="block">Return the text of the comment.</div>
+<div class="block">Returns the value of the <code>text</code> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/EmailAddress.html#text()" class="member-name-link">text()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/EmailAddress.html" title="class in net.tangly.core">EmailAddress</a></dt>
 <dd>
@@ -1753,8 +1745,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns a string representation of this record class.</div>
 </dd>
-<dt><a href="net/tangly/core/Comment.html#toString()" class="member-name-link">toString()</a> - Method in class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/Comment.html#toString()" class="member-name-link">toString()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
+<dd>
+<div class="block">Returns a string representation of this record class.</div>
+</dd>
 <dt><a href="net/tangly/core/DateRange.DateFilter.html#toString()" class="member-name-link">toString()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/DateRange.DateFilter.html" title="class in net.tangly.core">DateRange.DateFilter</a></dt>
 <dd>
 <div class="block">Returns a string representation of this record class.</div>
