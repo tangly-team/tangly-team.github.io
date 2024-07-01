@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.tangly.erp.agile.model"},{"l":"net.tangly.erp.agile.ports"}];updateSearchResults();

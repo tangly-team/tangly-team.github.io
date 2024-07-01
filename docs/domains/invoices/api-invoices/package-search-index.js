@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.tangly.erp.invoices.artifacts"},{"l":"net.tangly.erp.invoices.domain"},{"l":"net.tangly.erp.invoices.ports"},{"l":"net.tangly.erp.invoices.services"},{"l":"net.tangly.erp.invoices.ui"}];updateSearchResults();

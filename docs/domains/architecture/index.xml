@@ -48,7 +48,7 @@
       <link>https://blog.tangly.net/docs/domains/architecture/06-runtime-view/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>https://blog.tangly.net/docs/domains/architecture/06-runtime-view/</guid>
-      <description>Runtime View Contents The runtime view describes concrete behavior and interactions of the system’s building blocks in form of scenarios from the following areas:&#xA;important use cases or features: how do building blocks execute them?&#xA;interactions at critical external interfaces: how do building blocks cooperate with users and neighboring systems?&#xA;operation and administration: launch, start-up, stop&#xA;error and exception scenarios&#xA;Remark: The main criterion for the choice of possible scenarios (sequences, workflows) is their architectural relevance.</description>
+      <description>Runtime View Build-In Confidentiality Runtime Isolation The application is a singleton to the running application. A tenant has no knowledge of other tenants or of the application itself. A bounded domain has no knowledge of other bounded domains or of its tenant.&#xA;A domain is interested in all users of its tenant having rights in the domain. The UsersProvider interface provides the list of users for a bounded domain without exposing user or tenant information.</description>
     </item>
     <item>
       <title>Deployment View</title>
