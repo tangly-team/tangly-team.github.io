@@ -90,13 +90,19 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <div class="horizontal-scroll">
 <dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-applicationView">applicationView</span></code> - the application view owning the command and the login dialog</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code>net.tangly.ui.app.domain.Cmd</code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">CmdLogin</span>(@NotNull <a href="../services/AppsBoundedDomain.html" title="class in net.tangly.app.services">AppsBoundedDomain</a>&nbsp;domain, @NotNull <a href="../ApplicationView.html" title="class in net.tangly.app">ApplicationView</a>&nbsp;applicationView)
+<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">CmdLogin</span>(@NotNull <a href="../ApplicationView.html" title="class in net.tangly.app">ApplicationView</a>&nbsp;applicationView)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a>
 implements net.tangly.ui.app.domain.Cmd</span></div>
+<div class="block">Command to display the login dialog and to authenticate the user.
+ The username is composed of the tenant and the user separated by a slash.</div>
 </div>
 </section>
 <section class="summary">
@@ -109,8 +115,7 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.app.services.AppsBoundedDomain,net.tangly.app.ApplicationView)" class="member-name-link">CmdLogin</a><wbr>(@NotNull <a href="../services/AppsBoundedDomain.html" title="class in net.tangly.app.services">AppsBoundedDomain</a>&nbsp;domain,
- @NotNull <a href="../ApplicationView.html" title="class in net.tangly.app">ApplicationView</a>&nbsp;applicationView)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.app.ApplicationView)" class="member-name-link">CmdLogin</a><wbr>(@NotNull <a href="../ApplicationView.html" title="class in net.tangly.app">ApplicationView</a>&nbsp;applicationView)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates an instance of a <code>CmdLogin</code> record class.</div>
 </div>
@@ -131,29 +136,24 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="../ApplicationView.html" title="class in net.tangly.app">ApplicationView</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applicationView()" class="member-name-link">applicationView</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>applicationView</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-applicationView"><code>applicationView</code></a> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="../services/AppsBoundedDomain.html" title="class in net.tangly.app.services">AppsBoundedDomain</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#domain()" class="member-name-link">domain</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>domain</code> record component.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute()" class="member-name-link">execute</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute()" class="member-name-link">execute</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash code value for this object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this record class.</div>
 </div>
 </div>
@@ -177,18 +177,15 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.tangly.app.services.AppsBoundedDomain,net.tangly.app.ApplicationView)">
+<section class="detail" id="&lt;init&gt;(net.tangly.app.ApplicationView)">
 <h3>CmdLogin</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CmdLogin</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="../services/AppsBoundedDomain.html" title="class in net.tangly.app.services">AppsBoundedDomain</a>&nbsp;domain,
- @NotNull
  @NotNull <a href="../ApplicationView.html" title="class in net.tangly.app">ApplicationView</a>&nbsp;applicationView)</span></div>
 <div class="block">Creates an instance of a <code>CmdLogin</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>domain</code> - the value for the <code>domain</code> record component</dd>
-<dd><code>applicationView</code> - the value for the <code>applicationView</code> record component</dd>
+<dd><code>applicationView</code> - the value for the <a href="#param-applicationView"><code>applicationView</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -261,29 +258,15 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="domain()">
-<h3>domain</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations">@NotNull
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="../services/AppsBoundedDomain.html" title="class in net.tangly.app.services">AppsBoundedDomain</a></span>&nbsp;<span class="element-name">domain</span>()</div>
-<div class="block">Returns the value of the <code>domain</code> record component.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>the value of the <code>domain</code> record component</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="applicationView()">
 <h3>applicationView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@NotNull
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="../ApplicationView.html" title="class in net.tangly.app">ApplicationView</a></span>&nbsp;<span class="element-name">applicationView</span>()</div>
-<div class="block">Returns the value of the <code>applicationView</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-applicationView"><code>applicationView</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>applicationView</code> record component</dd>
+<dd>the value of the <a href="#param-applicationView"><code>applicationView</code></a> record component</dd>
 </dl>
 </div>
 </section>

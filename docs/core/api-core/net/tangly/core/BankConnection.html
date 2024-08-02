@@ -89,6 +89,12 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <div class="horizontal-scroll">
+<dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-iban">iban</span></code> - iban of the bank connection</dd>
+<dd><code><span id="param-bic">bic</span></code> - bic of the bank connection</dd>
+<dd><code><span id="param-institute">institute</span></code> - institute of the bank connection</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">BankConnection</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;iban, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;bic, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;institute)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
@@ -133,7 +139,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bic()" class="member-name-link">bic</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>bic</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-bic"><code>bic</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
@@ -148,12 +154,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iban()" class="member-name-link">iban</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>iban</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-iban"><code>iban</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#institute()" class="member-name-link">institute</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>institute</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-institute"><code>institute</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="BankConnection.html" title="class in net.tangly.core">BankConnection</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.lang.String)" class="member-name-link">of</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
@@ -170,7 +176,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text()" class="member-name-link">text</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return a comma-separated representation of a bank connection.</div>
+<div class="block">Returns a comma-separated representation of a bank connection.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -180,12 +186,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#validateBic(java.lang.String)" class="member-name-link">validateBic</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;bic)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Validate a string representing a formatted bic number.</div>
+<div class="block">Validates a string representing a formatted bic number.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#validateIban(java.lang.String)" class="member-name-link">validateIban</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;iban)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Validate a string representing a formatted iban number.</div>
+<div class="block">Validates a string representing a formatted iban number.</div>
 </div>
 </div>
 </div>
@@ -215,9 +221,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Creates an instance of a <code>BankConnection</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>iban</code> - the value for the <code>iban</code> record component</dd>
-<dd><code>bic</code> - the value for the <code>bic</code> record component</dd>
-<dd><code>institute</code> - the value for the <code>institute</code> record component</dd>
+<dd><code>iban</code> - the value for the <a href="#param-iban"><code>iban</code></a> record component</dd>
+<dd><code>bic</code> - the value for the <a href="#param-bic"><code>bic</code></a> record component</dd>
+<dd><code>institute</code> - the value for the <a href="#param-institute"><code>institute</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -297,7 +303,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">validateIban</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;iban)</span></div>
-<div class="block">Validate a string representing a formatted iban number.</div>
+<div class="block">Validates a string representing a formatted iban number.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>iban</code> - iban number to validate</dd>
@@ -312,7 +318,7 @@ loadScripts(document, 'script');</script>
 <h3>validateBic</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">validateBic</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;bic)</span></div>
-<div class="block">Validate a string representing a formatted bic number.</div>
+<div class="block">Validates a string representing a formatted bic number.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>bic</code> - bic number to validate</dd>
@@ -327,9 +333,9 @@ loadScripts(document, 'script');</script>
 <h3>text</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">text</span>()</div>
-<div class="block">Return a comma-separated representation of a bank connection. Null values are shown as empty strings. The <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a> method is not used because the
- implementation is defined in the API implementation of record construct. The generated string can be feed to the <a href="#of(java.lang.String)"><code>of(String)</code></a> to create a bank
- connection object.</div>
+<div class="block">Returns a comma-separated representation of a bank connection. Null values are shown as empty strings. The <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a> method is not
+ used because the implementation is defined in the API implementation of record construct. The generated string can be feed to the
+ <a href="#of(java.lang.String)"><code>of(String)</code></a> to create a bank connection object.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>comma separated representation</dd>
@@ -396,10 +402,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@NotNull
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">iban</span>()</div>
-<div class="block">Returns the value of the <code>iban</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-iban"><code>iban</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>iban</code> record component</dd>
+<dd>the value of the <a href="#param-iban"><code>iban</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -409,10 +415,10 @@ loadScripts(document, 'script');</script>
 <h3>bic</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">bic</span>()</div>
-<div class="block">Returns the value of the <code>bic</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-bic"><code>bic</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>bic</code> record component</dd>
+<dd>the value of the <a href="#param-bic"><code>bic</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -422,10 +428,10 @@ loadScripts(document, 'script');</script>
 <h3>institute</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">institute</span>()</div>
-<div class="block">Returns the value of the <code>institute</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-institute"><code>institute</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>institute</code> record component</dd>
+<dd>the value of the <a href="#param-institute"><code>institute</code></a> record component</dd>
 </dl>
 </div>
 </section>

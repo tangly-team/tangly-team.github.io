@@ -89,9 +89,16 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <div class="horizontal-scroll">
+<dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-username">username</span></code> - of the user</dd>
+<dd><code><span id="param-domain">domain</span></code> - for which the access rights are defined</dd>
+<dd><code><span id="param-right">right</span></code> - access rights of the user to the domain</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">AccessRights</span>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username, @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain, @NotNull <a href="AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a>&nbsp;right)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
+<div class="block">Defines the access rights of a specific user to a specific domain.</div>
 </div>
 </section>
 <section class="summary">
@@ -127,7 +134,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#domain()" class="member-name-link">domain</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>domain</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-domain"><code>domain</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
@@ -142,7 +149,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#right()" class="member-name-link">right</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>right</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-right"><code>right</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -152,7 +159,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#username()" class="member-name-link">username</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>username</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-username"><code>username</code></a> record component.</div>
 </div>
 </div>
 </div>
@@ -184,9 +191,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Creates an instance of a <code>AccessRights</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>username</code> - the value for the <code>username</code> record component</dd>
-<dd><code>domain</code> - the value for the <code>domain</code> record component</dd>
-<dd><code>right</code> - the value for the <code>right</code> record component</dd>
+<dd><code>username</code> - the value for the <a href="#param-username"><code>username</code></a> record component</dd>
+<dd><code>domain</code> - the value for the <a href="#param-domain"><code>domain</code></a> record component</dd>
+<dd><code>right</code> - the value for the <a href="#param-right"><code>right</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -252,10 +259,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@NotNull
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">username</span>()</div>
-<div class="block">Returns the value of the <code>username</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-username"><code>username</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>username</code> record component</dd>
+<dd>the value of the <a href="#param-username"><code>username</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -266,10 +273,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@NotNull
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">domain</span>()</div>
-<div class="block">Returns the value of the <code>domain</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-domain"><code>domain</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>domain</code> record component</dd>
+<dd>the value of the <a href="#param-domain"><code>domain</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -280,10 +287,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@NotNull
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a></span>&nbsp;<span class="element-name">right</span>()</div>
-<div class="block">Returns the value of the <code>right</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-right"><code>right</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>right</code> record component</dd>
+<dd>the value of the <a href="#param-right"><code>right</code></a> record component</dd>
 </dl>
 </div>
 </section>

@@ -37,7 +37,7 @@ loadScripts(document, 'script');</script>
 <p>Summary:</p>
 <ul>
 <li><a href="#nested-class-summary">Nested</a></li>
-<li>Field</li>
+<li><a href="#field-summary">Field</a></li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -45,7 +45,7 @@ loadScripts(document, 'script');</script>
 <li>
 <p>Detail:</p>
 <ul>
-<li>Field</li>
+<li><a href="#field-detail">Field</a></li>
 <li><a href="#constructor-detail">Constr</a></li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -57,13 +57,13 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -98,7 +98,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ApplicationView</span>
 <span class="extends-implements">extends com.vaadin.flow.component.applayout.AppLayout</span></div>
-<div class="block">The main view of the application is the entry point to the application. Each bounded domain with a user interface is accessible through a tab.</div>
+<div class="block">The main view of the application is the entry point to the application. Each bounded domain with a user interface is accessible through a tab.
+ Vaadin creates for each tab a new instance of the bounded domain user interface.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -120,6 +121,27 @@ loadScripts(document, 'script');</script>
 <code>com.vaadin.flow.component.applayout.AppLayout.AppLayoutI18n, com.vaadin.flow.component.applayout.AppLayout.Section</code></div>
 </section>
 </li>
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="caption"><span>Fields</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IMAGE_NAME" class="member-name-link">IMAGE_NAME</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#USER" class="member-name-link">USER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#USERNAME" class="member-name-link">USERNAME</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -128,8 +150,7 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.app.Tenant,java.lang.String,boolean)" class="member-name-link">ApplicationView</a><wbr>(<a href="Tenant.html" title="class in net.tangly.app">Tenant</a>&nbsp;tenant,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;imageName,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.app.Tenant,boolean)" class="member-name-link">ApplicationView</a><wbr>(<a href="Tenant.html" title="class in net.tangly.app">Tenant</a>&nbsp;tenant,
  boolean&nbsp;hasAuthentication)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -149,11 +170,17 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>net.tangly.ui.app.domain.BoundedDomainUi&lt;?&gt;&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#boundedDomainUis()" class="member-name-link">boundedDomainUis</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawerMenu()" class="member-name-link">drawerMenu</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;com.vaadin.flow.component.tabs.Tab&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#domainTab(java.lang.String)" class="member-name-link">domainTab</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;net.tangly.ui.app.domain.BoundedDomainUi&lt;?&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundedDomainUi(java.lang.String)" class="member-name-link">getBoundedDomainUi</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawerMenu(net.tangly.core.domain.User)" class="member-name-link">drawerMenu</a><wbr>(net.tangly.core.domain.User&nbsp;user)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;net.tangly.ui.app.domain.BoundedDomainUi&lt;?&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundedDomainUi(java.lang.String)" class="member-name-link">getBoundedDomainUi</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected com.vaadin.flow.component.menubar.MenuBar</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#menuBar()" class="member-name-link">menuBar</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onAttach(com.vaadin.flow.component.AttachEvent)" class="member-name-link">onAttach</a><wbr>(@NotNull com.vaadin.flow.component.AttachEvent&nbsp;attachEvent)</code></div>
@@ -168,16 +195,17 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectBoundedDomainUi(com.vaadin.flow.component.tabs.Tabs.SelectedChangeEvent)" class="member-name-link">selectBoundedDomainUi</a><wbr>(com.vaadin.flow.component.tabs.Tabs.SelectedChangeEvent&nbsp;event)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectBoundedDomainUi(java.lang.String)" class="member-name-link">selectBoundedDomainUi</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domainName)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectBoundedDomainUi(java.lang.String)" class="member-name-link">selectBoundedDomainUi</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domainName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectBoundedDomainUi(net.tangly.ui.app.domain.BoundedDomainUi)" class="member-name-link">selectBoundedDomainUi</a><wbr>(net.tangly.ui.app.domain.BoundedDomainUi&lt;?&gt;&nbsp;ui)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectBoundedDomainUi(net.tangly.ui.app.domain.BoundedDomainUi)" class="member-name-link">selectBoundedDomainUi</a><wbr>(@NotNull net.tangly.ui.app.domain.BoundedDomainUi&lt;?&gt;&nbsp;ui)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static net.tangly.core.domain.User</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#user()" class="member-name-link">user</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#userChanged(net.tangly.core.domain.User)" class="member-name-link">userChanged</a><wbr>(@NotNull net.tangly.core.domain.User&nbsp;user)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#userChanged(net.tangly.app.Tenant,net.tangly.core.domain.User)" class="member-name-link">userChanged</a><wbr>(@NotNull <a href="Tenant.html" title="class in net.tangly.app">Tenant</a>&nbsp;tenant,
+ @NotNull net.tangly.core.domain.User&nbsp;user)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The method is called when a user successfully logs in.</div>
 </div>
@@ -217,17 +245,64 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field-detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="USERNAME">
+<h3>USERNAME</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">USERNAME</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#net.tangly.app.ApplicationView.USERNAME">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="USER">
+<h3>USER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">USER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#net.tangly.app.ApplicationView.USER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="IMAGE_NAME">
+<h3>IMAGE_NAME</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">IMAGE_NAME</span></div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.tangly.app.Tenant,java.lang.String,boolean)">
+<section class="detail" id="&lt;init&gt;(net.tangly.app.Tenant,boolean)">
 <h3>ApplicationView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ApplicationView</span><wbr><span class="parameters">(<a href="Tenant.html" title="class in net.tangly.app">Tenant</a>&nbsp;tenant,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;imageName,
  boolean&nbsp;hasAuthentication)</span></div>
 </div>
 </section>
@@ -241,10 +316,12 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="userChanged(net.tangly.core.domain.User)">
+<section class="detail" id="userChanged(net.tangly.app.Tenant,net.tangly.core.domain.User)">
 <h3>userChanged</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">userChanged</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="Tenant.html" title="class in net.tangly.app">Tenant</a>&nbsp;tenant,
+ @NotNull
  @NotNull net.tangly.core.domain.User&nbsp;user)</span></div>
 <div class="block">The method is called when a user successfully logs in. Update access to bounded domains based on the user's access rights.
  Propagate the user change to all bounded domains.</div>
@@ -325,7 +402,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="selectBoundedDomainUi(java.lang.String)">
 <h3>selectBoundedDomainUi</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">selectBoundedDomainUi</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domainName)</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">selectBoundedDomainUi</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domainName)</span></div>
 </div>
 </section>
 </li>
@@ -341,15 +419,32 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="selectBoundedDomainUi(net.tangly.ui.app.domain.BoundedDomainUi)">
 <h3>selectBoundedDomainUi</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">selectBoundedDomainUi</span><wbr><span class="parameters">(net.tangly.ui.app.domain.BoundedDomainUi&lt;?&gt;&nbsp;ui)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">selectBoundedDomainUi</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.ui.app.domain.BoundedDomainUi&lt;?&gt;&nbsp;ui)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="drawerMenu()">
+<section class="detail" id="drawerMenu(net.tangly.core.domain.User)">
 <h3>drawerMenu</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawerMenu</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawerMenu</span><wbr><span class="parameters">(net.tangly.core.domain.User&nbsp;user)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="menuBar()">
+<h3>menuBar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">com.vaadin.flow.component.menubar.MenuBar</span>&nbsp;<span class="element-name">menuBar</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="domainTab(java.lang.String)">
+<h3>domainTab</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;com.vaadin.flow.component.tabs.Tab&gt;</span>&nbsp;<span class="element-name">domainTab</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</span></div>
 </div>
 </section>
 </li>

@@ -90,6 +90,13 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <div class="horizontal-scroll">
 <dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-created">created</span></code> - timestamp when the comment was created</dd>
+<dd><code><span id="param-author">author</span></code> - of the comment instance as human-readable field</dd>
+<dd><code><span id="param-text">text</span></code> - text of the comment, we recommend using asciidoc format</dd>
+<dd><code><span id="param-tags">tags</span></code> - set of tags associated with the comment</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code></dd>
 </dl>
@@ -141,12 +148,12 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#author()" class="member-name-link">author</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>author</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-author"><code>author</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link">LocalDateTime</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#created()" class="member-name-link">created</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>created</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-created"><code>created</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
@@ -165,12 +172,12 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Tag.html" title="class in net.tangly.core">Tag</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tags()" class="member-name-link">tags</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>tags</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-tags"><code>tags</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text()" class="member-name-link">text</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>text</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-text"><code>text</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -228,10 +235,10 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <div class="block">Creates an instance of a <code>Comment</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>created</code> - the value for the <code>created</code> record component</dd>
-<dd><code>author</code> - the value for the <code>author</code> record component</dd>
-<dd><code>text</code> - the value for the <code>text</code> record component</dd>
-<dd><code>tags</code> - the value for the <code>tags</code> record component</dd>
+<dd><code>created</code> - the value for the <a href="#param-created"><code>created</code></a> record component</dd>
+<dd><code>author</code> - the value for the <a href="#param-author"><code>author</code></a> record component</dd>
+<dd><code>text</code> - the value for the <a href="#param-text"><code>text</code></a> record component</dd>
+<dd><code>tags</code> - the value for the <a href="#param-tags"><code>tags</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -307,10 +314,10 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <h3>created</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link">LocalDateTime</a></span>&nbsp;<span class="element-name">created</span>()</div>
-<div class="block">Returns the value of the <code>created</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-created"><code>created</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>created</code> record component</dd>
+<dd>the value of the <a href="#param-created"><code>created</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -320,10 +327,10 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <h3>author</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">author</span>()</div>
-<div class="block">Returns the value of the <code>author</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-author"><code>author</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>author</code> record component</dd>
+<dd>the value of the <a href="#param-author"><code>author</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -333,10 +340,10 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <h3>text</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">text</span>()</div>
-<div class="block">Returns the value of the <code>text</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-text"><code>text</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>text</code> record component</dd>
+<dd>the value of the <a href="#param-text"><code>text</code></a> record component</dd>
 </dl>
 </div>
 </section>
@@ -346,12 +353,12 @@ implements <a href="HasTags.html" title="interface in net.tangly.core">HasTags</
 <h3>tags</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Tag.html" title="class in net.tangly.core">Tag</a>&gt;</span>&nbsp;<span class="element-name">tags</span>()</div>
-<div class="block">Returns the value of the <code>tags</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-tags"><code>tags</code></a> record component.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="HasTags.html#tags()">tags</a></code>&nbsp;in interface&nbsp;<code><a href="HasTags.html" title="interface in net.tangly.core">HasTags</a></code></dd>
 <dt>Returns:</dt>
-<dd>the value of the <code>tags</code> record component</dd>
+<dd>the value of the <a href="#param-tags"><code>tags</code></a> record component</dd>
 </dl>
 </div>
 </section>

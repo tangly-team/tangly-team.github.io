@@ -126,7 +126,9 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="BoundedDomain.EventListener.html" class="type-name-link" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Defines a refined event listener interface to handle events in the domain or from another domain.</div>
+</div>
 </div>
 </section>
 </li>
@@ -176,7 +178,9 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/SubmissionPublisher.html" title="class or interface in java.util.concurrent" class="external-link">SubmissionPublisher</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#channel()" class="member-name-link">channel</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the external event channel of the domain.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../TagType.html" title="class in net.tangly.core">TagType</a>&lt;?&gt;,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#countTags(java.util.Map)" class="member-name-link">countTags</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../TagType.html" title="class in net.tangly.core">TagType</a>&lt;?&gt;,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;counts)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -185,9 +189,11 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/SubmissionPublisher.html" title="class or interface in java.util.concurrent" class="external-link">SubmissionPublisher</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#internalChannel()" class="member-name-link">internalChannel</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the internal event channel of the domain.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#log(net.tangly.commons.logger.EventData)" class="member-name-link">log</a><wbr>(net.tangly.commons.logger.EventData&nbsp;auditEvent)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#log(net.tangly.commons.logger.EventData)" class="member-name-link">log</a><wbr>(@NotNull net.tangly.commons.logger.EventData&nbsp;auditEvent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">B</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logic()" class="member-name-link">logic</a>()</code></div>
@@ -195,7 +201,7 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return the name of the domain audit.</div>
+<div class="block">Returns the name of the domain audit.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BoundedDomain.html" title="type parameter in BoundedDomain">P</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#port()" class="member-name-link">port</a>()</code></div>
@@ -214,10 +220,14 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subscribe(net.tangly.core.domain.BoundedDomain.EventListener)" class="member-name-link">subscribe</a><wbr>(<a href="BoundedDomain.EventListener.html" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a>&nbsp;listener)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Subscribes to the public event channel of the domain.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subscribeInternally(net.tangly.core.domain.BoundedDomain.EventListener)" class="member-name-link">subscribeInternally</a><wbr>(<a href="BoundedDomain.EventListener.html" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a>&nbsp;listener)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Subscribes to the internal event channel of the domain.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="UsersProvider.html" title="interface in net.tangly.core.domain">UsersProvider</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#usersProvider()" class="member-name-link">usersProvider</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -305,6 +315,11 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <h3>channel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/SubmissionPublisher.html" title="class or interface in java.util.concurrent" class="external-link">SubmissionPublisher</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">channel</span>()</div>
+<div class="block">Returns the external event channel of the domain. The channel is used to publish events to the external world.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>external event channel</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -313,6 +328,11 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <h3>internalChannel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/SubmissionPublisher.html" title="class or interface in java.util.concurrent" class="external-link">SubmissionPublisher</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">internalChannel</span>()</div>
+<div class="block">Returns the internal event channel of the domain. The channel is used to publish internal events within the domain.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>internal event channel</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -321,6 +341,11 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <h3>subscribe</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">subscribe</span><wbr><span class="parameters">(<a href="BoundedDomain.EventListener.html" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a>&nbsp;listener)</span></div>
+<div class="block">Subscribes to the public event channel of the domain.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>listener</code> - event listener</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -329,6 +354,11 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <h3>subscribeInternally</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">subscribeInternally</span><wbr><span class="parameters">(<a href="BoundedDomain.EventListener.html" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a>&nbsp;listener)</span></div>
+<div class="block">Subscribes to the internal event channel of the domain.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>listener</code> - event listener</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -347,7 +377,7 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="DomainAudit.html#name()">DomainAudit</a></code></span></div>
-<div class="block">Return the name of the domain audit. It should be the name of the bounded domain.</div>
+<div class="block">Returns the name of the domain audit. It should be the name of the bounded domain.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="DomainAudit.html#name()">name</a></code>&nbsp;in interface&nbsp;<code><a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></code></dd>
@@ -417,7 +447,8 @@ implements <a href="DomainAudit.html" title="interface in net.tangly.core.domain
 <section class="detail" id="log(net.tangly.commons.logger.EventData)">
 <h3>log</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">log</span><wbr><span class="parameters">(net.tangly.commons.logger.EventData&nbsp;auditEvent)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">log</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.commons.logger.EventData&nbsp;auditEvent)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="DomainAudit.html#log(net.tangly.commons.logger.EventData)">log</a></code>&nbsp;in interface&nbsp;<code><a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></code></dd>

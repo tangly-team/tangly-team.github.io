@@ -100,8 +100,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">JsonEntity&lt;T&gt;</span>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="JsonField.html" title="interface in net.tangly.gleam.model">JsonField</a>&lt;<a href="JsonEntity.html" title="type parameter in JsonEntity">T</a>,<wbr>?&gt;&gt;&nbsp;properties, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="JsonEntity.html" title="type parameter in JsonEntity">T</a>&gt;&nbsp;factory, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;org.json.JSONObject,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>,<wbr><a href="JsonEntity.html" title="type parameter in JsonEntity">T</a>&gt;&nbsp;imports, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="JsonEntity.html" title="type parameter in JsonEntity">T</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>,<wbr>org.json.JSONObject&gt;&nbsp;exports)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
-<div class="block">Defines a mapping between JSON entity and a Java entity. We have an isomorphic structure of two graphs, meaning Java entities can contains other entities and
- JSON entities can contains the associated JSON entities mapping these Java entities.
+<div class="block">Defines a mapping between JSON entity and a Java entity. We have an isomorphic structure of two graphs, meaning Java entities can contain other entities and
+ JSON entities can contain the associated JSON entities mapping these Java entities.
  <ul>
    <li>A regular Java class is mapped. The property declarations are used to map between Java instance and JSON object.</li>
    <li>A Java class is inferred from some JSON fields and lookup in the data model. Therefore the import function is specific to the business
@@ -369,8 +369,8 @@ loadScripts(document, 'script');</script>
 <dd><code>factory</code> - factory method to create a new Java class instance, often the default constructor</dd>
 <dd><code>imports</code> - import function transforming a JSON object into a Java instance, parameters are the JSON object, the object owning the transformed Java
                    entity and the Java object as return value.</dd>
-<dd><code>exports</code> - export function transforming a Java instance into a JSON object, parameters are the Java entity to be transformed in a JSON
-                   representation, the object owning the the Java entity and the JSON object of the entity JSON representation as return value.</dd>
+<dd><code>exports</code> - export function transforming a Java instance into a JSON object. The parameters are the Java entity to be transformed in a JSON
+                   representation, the object owning the Java entity and the JSON object of the entity JSON representation as return value.</dd>
 <dt>Returns:</dt>
 <dd>JSON entity defining the transformation process</dd>
 </dl>

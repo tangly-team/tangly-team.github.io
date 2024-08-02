@@ -95,9 +95,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">Cmd</span></div>
-<div class="block">The interface defines the abstraction for the command pattern. A command is an action mostly executed through the user interface as a client. A command is an object whose role
- is to store all the information required for executing an action, including the method to call, the method arguments, and the object (known as the receiver) that implements
- the method.</div>
+<div class="block">Defines the abstraction for the command pattern. A command is an action mostly executed through the user interface as a client. A command is an object
+ whose role is to store all the information required for executing an action, including the method to call, the method arguments, and the object (known as
+ the receiver) that implementsthe method.</div>
 </div>
 </section>
 <section class="summary">
@@ -175,7 +175,7 @@ loadScripts(document, 'script');</script>
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;&nbsp;consumer)</span></div>
 <div class="block">Factory method to create a command from a grid context menu item click event. The command is executed on the item selected in the grid.
- An item must be selected to trigger the command.</div>
+ An item must be selected and available in the event to trigger the command.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><code>T</code> - type of the item</dd>
@@ -211,7 +211,8 @@ loadScripts(document, 'script');</script>
  com.vaadin.flow.component.grid.contextmenu.GridContextMenu.GridContextMenuItemClickEvent&lt;T&gt;&nbsp;event,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;&nbsp;consumer)</span></div>
-<div class="block">Factory method to create a command from a grid context menu item click event. The command is executed if one or no items are selected in the grid.
+<div class="block">Factory method to create a command from a grid context menu item click event. The command is executed if zereo, one or more items are selected in the
+ grid.
  The consumer receives the selected item in the grid or null if no item is selected.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -272,7 +273,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the dialog associated with the command if existing.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>associated dialog if defined othwrwise null</dd>
+<dd>associated dialog if defined otherwise null</dd>
 </dl>
 </div>
 </section>

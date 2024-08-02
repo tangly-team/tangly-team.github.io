@@ -157,7 +157,8 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.ledger.services.LedgerRealm,java.nio.file.Path,java.nio.file.Path)" class="member-name-link">LedgerAdapter</a><wbr>(@NotNull <a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&nbsp;realm,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.ledger.services.LedgerRealm,net.tangly.core.TypeRegistry,java.nio.file.Path,java.nio.file.Path)" class="member-name-link">LedgerAdapter</a><wbr>(@NotNull <a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&nbsp;realm,
+ @NotNull net.tangly.core.TypeRegistry&nbsp;registry,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;dataFolder,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;reportsFolder)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -191,14 +192,17 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <div class="block">Exports a ledger report with profits and losses, and assets and liabilities information for a specific time interval.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">importEntities</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importConfiguration(net.tangly.core.TypeRegistry)" class="member-name-link">importConfiguration</a><wbr>(@NotNull net.tangly.core.TypeRegistry&nbsp;registry)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#journalForYear(int)" class="member-name-link">journalForYear</a><wbr>(int&nbsp;year)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#realm()" class="member-name-link">realm</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">importEntities</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#journalForYear(int)" class="member-name-link">journalForYear</a><wbr>(int&nbsp;year)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#realm()" class="member-name-link">realm</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -369,11 +373,13 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.tangly.erp.ledger.services.LedgerRealm,java.nio.file.Path,java.nio.file.Path)">
+<section class="detail" id="&lt;init&gt;(net.tangly.erp.ledger.services.LedgerRealm,net.tangly.core.TypeRegistry,java.nio.file.Path,java.nio.file.Path)">
 <h3>LedgerAdapter</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LedgerAdapter</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&nbsp;realm,
+ @NotNull
+ @NotNull net.tangly.core.TypeRegistry&nbsp;registry,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;dataFolder,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;reportsFolder)</span></div>
 </div>
@@ -434,6 +440,19 @@ implements <a href="../services/LedgerPort.html" title="interface in net.tangly.
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>clearEntities</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&gt;</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="importConfiguration(net.tangly.core.TypeRegistry)">
+<h3>importConfiguration</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importConfiguration</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.tangly.core.TypeRegistry&nbsp;registry)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>importConfiguration</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.Port&lt;<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>&gt;</code></dd>
 </dl>
 </div>
 </section>

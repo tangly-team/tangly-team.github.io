@@ -86,7 +86,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="../domain/AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a></code>, <code><a href="CodeImp.html" title="class in net.tangly.core.codes">CodeImp</a></code></dd>
+<dd><code><a href="../domain/AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a></code>, <code><a href="CodeImp.html" title="class in net.tangly.core.codes">CodeImp</a></code>, <code><a href="../GenderCode.html" title="enum class in net.tangly.core">GenderCode</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Code</span></div>
@@ -110,17 +110,17 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#code()" class="member-name-link">code</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Return the human-readable representation of a code table entity.</div>
+<div class="block">Returna the human-readable representation of a code table entity.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#enabled()" class="member-name-link">enabled</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Return the unique identifier of a code table entity.</div>
+<div class="block">Returna true if the code table instance is enabled.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isEnabled()" class="member-name-link">isEnabled</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Return true if the code table instance is enabled.</div>
+<div class="block">Returna the unique identifier of a code table entity.</div>
 </div>
 </div>
 </div>
@@ -141,7 +141,7 @@ loadScripts(document, 'script');</script>
 <h3>id</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">id</span>()</div>
-<div class="block">Return the unique identifier of a code table entity.</div>
+<div class="block">Returna the unique identifier of a code table entity.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>unique identifier of the code table instance</dd>
@@ -154,7 +154,7 @@ loadScripts(document, 'script');</script>
 <h3>code</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">code</span>()</div>
-<div class="block">Return the human-readable representation of a code table entity.</div>
+<div class="block">Returna the human-readable representation of a code table entity.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>human-readable code</dd>
@@ -163,11 +163,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="isEnabled()">
-<h3>isEnabled</h3>
+<section class="detail" id="enabled()">
+<h3>enabled</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isEnabled</span>()</div>
-<div class="block">Return true if the code table instance is enabled.</div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">enabled</span>()</div>
+<div class="block">Returna true if the code table instance is enabled.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>flag indicating if the code is enabled or archived</dd>

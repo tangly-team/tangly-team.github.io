@@ -120,7 +120,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="Address.Builder.html" class="type-name-link" title="class in net.tangly.core">Address.Builder</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Define the builder for the address class with a fluent interface.</div>
+<div class="block">Defines the builder for the address class with a fluent interface.</div>
 </div>
 </div>
 </section>
@@ -160,7 +160,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Address.Builder.html" title="class in net.tangly.core">Address.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#builder()" class="member-name-link">builder</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Return a builder instance for an address object.</div>
+<div class="block">Returns a builder instance for an address object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#country()" class="member-name-link">country</a>()</code></div>
@@ -190,7 +190,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Address.html" title="class in net.tangly.core">Address</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.lang.String)" class="member-name-link">of</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Build an address object from a comma separated string representation.</div>
+<div class="block">Builds an address object from a comma separated string representation.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#poBox()" class="member-name-link">poBox</a>()</code></div>
@@ -215,7 +215,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text()" class="member-name-link">text</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return a comma-separated representation of an address.</div>
+<div class="block">Returns a comma-separated representation of an address.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -277,7 +277,7 @@ loadScripts(document, 'script');</script>
 <h3>builder</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Address.Builder.html" title="class in net.tangly.core">Address.Builder</a></span>&nbsp;<span class="element-name">builder</span>()</div>
-<div class="block">Return a builder instance for an address object. The builder can be used to create multiple address objects</div>
+<div class="block">Returns a builder instance for an address object. The builder can be used to create multiple address objects</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>builder instance</dd>
@@ -290,8 +290,9 @@ loadScripts(document, 'script');</script>
 <h3>text</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">text</span>()</div>
-<div class="block">Return a comma-separated representation of an address. Null values are shown as empty strings. The <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a> method is not used because the implementation is
- defined in the API implementation of record construct. The generated string can be feed to the <a href="#of(java.lang.String)"><code>of(String)</code></a> to create an address object.</div>
+<div class="block">Returns a comma-separated representation of an address. Null values are shown as empty strings. The <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a> method is not used
+ because the implementation is defined in the API implementation of record construct. The generated string can be feed to the
+ <a href="#of(java.lang.String)"><code>of(String)</code></a> to create an address object.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>comma separated representation</dd>
@@ -311,7 +312,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Address.html" title="class in net.tangly.core">Address</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
-<div class="block">Build an address object from a comma separated string representation.</div>
+<div class="block">Builds an address object from a comma separated string representation.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>text</code> - comma separated representation of the address instance</dd>

@@ -55,19 +55,24 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the value of the <a href="./net/tangly/core/domain/User.html#param-accessRights"><code>accessRights</code></a> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/AccessRights.html" class="type-name-link" title="class in net.tangly.core.domain">AccessRights</a> - Record Class in <a href="net/tangly/core/domain/package-summary.html">net.tangly.core.domain</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Defines the access rights of a specific user to a specific domain.</div>
+</dd>
 <dt><a href="net/tangly/core/domain/AccessRights.html#%3Cinit%3E(java.lang.String,java.lang.String,net.tangly.core.domain.AccessRightsCode)" class="member-name-link">AccessRights(String, String, AccessRightsCode)</a> - Constructor for record class net.tangly.core.domain.<a href="net/tangly/core/domain/AccessRights.html" title="class in net.tangly.core.domain">AccessRights</a></dt>
 <dd>
 <div class="block">Creates an instance of a <code>AccessRights</code> record class.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/AccessRightsCode.html" class="type-name-link" title="enum class in net.tangly.core.domain">AccessRightsCode</a> - Enum Class in <a href="net/tangly/core/domain/package-summary.html">net.tangly.core.domain</a></dt>
 <dd>
-<div class="block">A user has different access rights:
+<div class="block">A user has different access rights for a specific domain or the whole application:
  
-     restricted-userhas anly read and write access to owned entities in a domain.</div>
+     nonehas no access to the domain.
+     restricted-userhas only read and write access to owned entities in a domain.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/User.html#accessRightsFor(java.lang.String)" class="member-name-link">accessRightsFor(String)</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the access rights of a user for a specific domain.</div>
+</dd>
 <dt><a href="net/tangly/core/domain/User.html#active()" class="member-name-link">active()</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
 <dd>
 <div class="block">Returns the value of the <a href="./net/tangly/core/domain/User.html#param-active"><code>active</code></a> record component.</div>
@@ -116,7 +121,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/Address.Builder.html" class="type-name-link" title="class in net.tangly.core">Address.Builder</a> - Class in <a href="net/tangly/core/package-summary.html">net.tangly.core</a></dt>
 <dd>
-<div class="block">Define the builder for the address class with a fluent interface.</div>
+<div class="block">Defines the builder for the address class with a fluent interface.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#addTagCounts(net.tangly.core.TypeRegistry,java.util.List,java.util.Map)" class="member-name-link">addTagCounts(TypeRegistry, List&lt;I&gt;, Map&lt;TagType&lt;?&gt;, Integer&gt;)</a> - Static method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
 <dd>&nbsp;</dd>
@@ -129,13 +134,17 @@ loadScripts(document, 'script');</script>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#auditEvents()" class="member-name-link">auditEvents()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/User.html#authenticate(java.lang.String)" class="member-name-link">authenticate(String)</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Authenticates the user based on the password provided.</div>
+</dd>
 <dt><a href="net/tangly/core/Comment.html#author()" class="member-name-link">author()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>author</code> record component.</div>
+<div class="block">Returns the value of the <a href="./net/tangly/core/Comment.html#param-author"><code>author</code></a> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/User.html#avatar(java.lang.String)" class="member-name-link">avatar(String)</a> - Static method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the avatar of a user based on the email address of the user.</div>
+</dd>
 <dt><a href="net/tangly/core/gravatar/Gravatar.html#avatar(java.lang.String)" class="member-name-link">avatar(String)</a> - Method in class net.tangly.core.gravatar.<a href="net/tangly/core/gravatar/Gravatar.html" title="class in net.tangly.core.gravatar">Gravatar</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/gravatar/Gravatar.html#avatar(java.lang.String,int,net.tangly.core.gravatar.GravatarRating,net.tangly.core.gravatar.GravatarImage)" class="member-name-link">avatar(String, int, GravatarRating, GravatarImage)</a> - Method in class net.tangly.core.gravatar.<a href="net/tangly/core/gravatar/Gravatar.html" title="class in net.tangly.core.gravatar">Gravatar</a></dt>
@@ -157,7 +166,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/BankConnection.html#bic()" class="member-name-link">bic()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/BankConnection.html" title="class in net.tangly.core">BankConnection</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>bic</code> record component.</div>
+<div class="block">Returns the value of the <a href="./net/tangly/core/BankConnection.html#param-bic"><code>bic</code></a> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html" class="type-name-link" title="class in net.tangly.core.domain">BoundedDomain&lt;R,<wbr>B,<wbr>P&gt;</a> - Class in <a href="net/tangly/core/domain/package-summary.html">net.tangly.core.domain</a></dt>
 <dd>
@@ -168,12 +177,30 @@ loadScripts(document, 'script');</script>
 <div class="block">Constructor of the bounded domain.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.EventListener.html" class="type-name-link" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a> - Interface in <a href="net/tangly/core/domain/package-summary.html">net.tangly.core.domain</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Defines a refined event listener interface to handle events in the domain or from another domain.</div>
+</dd>
 <dt><a href="net/tangly/core/Address.Builder.html#build()" class="member-name-link">build()</a> - Method in class net.tangly.core.<a href="net/tangly/core/Address.Builder.html" title="class in net.tangly.core">Address.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/codes/CodeHelper.html#build(java.lang.Class)" class="member-name-link">build(Class&lt;T&gt;)</a> - Static method in class net.tangly.core.codes.<a href="net/tangly/core/codes/CodeHelper.html" title="class in net.tangly.core.codes">CodeHelper</a></dt>
+<dd>
+<div class="block">Utility method to read all code values from an enumeration type implementing the {}@link Code} interface.</div>
+</dd>
+<dt><a href="net/tangly/core/codes/CodeHelper.html#build(java.lang.Class,java.util.function.Function,javax.sql.DataSource,java.lang.String)" class="member-name-link">build(Class&lt;T&gt;, Function&lt;ResultSet, T&gt;, DataSource, String)</a> - Static method in class net.tangly.core.codes.<a href="net/tangly/core/codes/CodeHelper.html" title="class in net.tangly.core.codes">CodeHelper</a></dt>
+<dd>
+<div class="block">Utility method to read all code values from a relational database table using Java regular API.</div>
+</dd>
+<dt><a href="net/tangly/core/codes/CodeHelper.html#build(java.lang.Class,java.util.function.Function,java.nio.file.Path)" class="member-name-link">build(Class&lt;T&gt;, Function&lt;JSONObject, T&gt;, Path)</a> - Static method in class net.tangly.core.codes.<a href="net/tangly/core/codes/CodeHelper.html" title="class in net.tangly.core.codes">CodeHelper</a></dt>
+<dd>
+<div class="block">Utility method to read all code values from a JSON file using the org.json library.</div>
+</dd>
+<dt><a href="net/tangly/core/TagHelper.html#build(java.nio.file.Path)" class="member-name-link">build(Path)</a> - Static method in class net.tangly.core.<a href="net/tangly/core/TagHelper.html" title="class in net.tangly.core">TagHelper</a></dt>
+<dd>
+<div class="block">Utility method to read all tag type values of type string from a JSON file using the org.json library.</div>
+</dd>
 <dt><a href="net/tangly/core/Address.html#builder()" class="member-name-link">builder()</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/Address.html" title="class in net.tangly.core">Address</a></dt>
 <dd>
-<div class="block">Return a builder instance for an address object.</div>
+<div class="block">Returns a builder instance for an address object.</div>
 </dd>
 <dt><a href="net/tangly/core/Address.Builder.html#%3Cinit%3E()" class="member-name-link">Builder()</a> - Constructor for class net.tangly.core.<a href="net/tangly/core/Address.Builder.html" title="class in net.tangly.core">Address.Builder</a></dt>
 <dd>&nbsp;</dd>
@@ -189,7 +216,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="net/tangly/core/TagType.html#canHaveValue()" class="member-name-link">canHaveValue()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/TagType.html" title="class in net.tangly.core">TagType</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#channel()" class="member-name-link">channel()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the external event channel of the domain.</div>
+</dd>
 <dt><a href="net/tangly/core/domain/Realm.html#checkEntities(net.tangly.core.providers.Provider)" class="member-name-link">checkEntities(Provider&lt;T&gt;)</a> - Static method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Realm.html" title="interface in net.tangly.core.domain">Realm</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/codes/CodeType.html#clazz()" class="member-name-link">clazz()</a> - Method in record class net.tangly.core.codes.<a href="net/tangly/core/codes/CodeType.html" title="class in net.tangly.core.codes">CodeType</a></dt>
@@ -212,17 +241,19 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/Port.html#clearEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">clearEntities(DomainAudit)</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
 <dd>
-<div class="block">Clear all entities of the bounded domain.</div>
+<div class="block">Clears all entities of the bounded domain.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/Realm.html#close()" class="member-name-link">close()</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Realm.html" title="interface in net.tangly.core.domain">Realm</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/codes/Code.html#code()" class="member-name-link">code()</a> - Method in interface net.tangly.core.codes.<a href="net/tangly/core/codes/Code.html" title="interface in net.tangly.core.codes">Code</a></dt>
 <dd>
-<div class="block">Return the human-readable representation of a code table entity.</div>
+<div class="block">Returna the human-readable representation of a code table entity.</div>
 </dd>
 <dt><a href="net/tangly/core/codes/CodeImp.html#code()" class="member-name-link">code()</a> - Method in class net.tangly.core.codes.<a href="net/tangly/core/codes/CodeImp.html" title="class in net.tangly.core.codes">CodeImp</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/AccessRightsCode.html#code()" class="member-name-link">code()</a> - Method in enum class net.tangly.core.domain.<a href="net/tangly/core/domain/AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/GenderCode.html#code()" class="member-name-link">code()</a> - Method in enum class net.tangly.core.<a href="net/tangly/core/GenderCode.html" title="enum class in net.tangly.core">GenderCode</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/gravatar/GravatarImage.html#code()" class="member-name-link">code()</a> - Method in enum class net.tangly.core.gravatar.<a href="net/tangly/core/gravatar/GravatarImage.html" title="enum class in net.tangly.core.gravatar">GravatarImage</a></dt>
 <dd>&nbsp;</dd>
@@ -237,6 +268,8 @@ loadScripts(document, 'script');</script>
 <div class="block">The abstraction of a reference table or reference codes.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/TsvHdl.html#CODE" class="member-name-link">CODE</a> - Static variable in class net.tangly.core.domain.<a href="net/tangly/core/domain/TsvHdl.html" title="class in net.tangly.core.domain">TsvHdl</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/codes/CodeHelper.html" class="type-name-link" title="class in net.tangly.core.codes">CodeHelper</a> - Class in <a href="net/tangly/core/codes/package-summary.html">net.tangly.core.codes</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/codes/CodeImp.html" class="type-name-link" title="class in net.tangly.core.codes">CodeImp</a> - Class in <a href="net/tangly/core/codes/package-summary.html">net.tangly.core.codes</a></dt>
 <dd>
@@ -320,7 +353,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/Comment.html#created()" class="member-name-link">created()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>created</code> record component.</div>
+<div class="block">Returns the value of the <a href="./net/tangly/core/Comment.html#param-created"><code>created</code></a> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/Port.html#createDirectories(java.nio.file.Path)" class="member-name-link">createDirectories(Path)</a> - Static method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
 <dd>&nbsp;</dd>
@@ -361,7 +394,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/DateRange.html" class="type-name-link" title="class in net.tangly.core">DateRange</a> - Record Class in <a href="net/tangly/core/package-summary.html">net.tangly.core</a></dt>
 <dd>
-<div class="block">Define an absolute local date range.</div>
+<div class="block">Defines an absolute local date range.</div>
 </dd>
 <dt><a href="net/tangly/core/DateRange.html#%3Cinit%3E()" class="member-name-link">DateRange()</a> - Constructor for record class net.tangly.core.<a href="net/tangly/core/DateRange.html" title="class in net.tangly.core">DateRange</a></dt>
 <dd>
@@ -373,7 +406,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/DateRange.DateFilter.html" class="type-name-link" title="class in net.tangly.core">DateRange.DateFilter</a> - Record Class in <a href="net/tangly/core/package-summary.html">net.tangly.core</a></dt>
 <dd>
-<div class="block">Test if the date is inside the date interval specified in the filter.</div>
+<div class="block">Tests if the date is inside the date interval specified in the filter.</div>
 </dd>
 <dt><a href="net/tangly/core/providers/Provider.html#delete(T)" class="member-name-link">delete(T)</a> - Method in interface net.tangly.core.providers.<a href="net/tangly/core/providers/Provider.html" title="interface in net.tangly.core.providers">Provider</a></dt>
 <dd>
@@ -409,7 +442,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/AccessRights.html#domain()" class="member-name-link">domain()</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/AccessRights.html" title="class in net.tangly.core.domain">AccessRights</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>domain</code> record component.</div>
+<div class="block">Returns the value of the <a href="./net/tangly/core/domain/AccessRights.html#param-domain"><code>domain</code></a> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/DomainEntity.html#domain()" class="member-name-link">domain()</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/DomainEntity.html" title="class in net.tangly.core.domain">DomainEntity</a></dt>
 <dd>
@@ -464,8 +497,20 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Creates an instance of a <code>EmailAddress</code> record class.</div>
 </dd>
-<dt><a href="net/tangly/core/domain/User.html#encryptPassword(java.lang.String,java.lang.String)" class="member-name-link">encryptPassword(String, String)</a> - Static method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
+<dt><a href="net/tangly/core/codes/Code.html#enabled()" class="member-name-link">enabled()</a> - Method in interface net.tangly.core.codes.<a href="net/tangly/core/codes/Code.html" title="interface in net.tangly.core.codes">Code</a></dt>
+<dd>
+<div class="block">Returna true if the code table instance is enabled.</div>
+</dd>
+<dt><a href="net/tangly/core/codes/CodeImp.html#enabled()" class="member-name-link">enabled()</a> - Method in class net.tangly.core.codes.<a href="net/tangly/core/codes/CodeImp.html" title="class in net.tangly.core.codes">CodeImp</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/domain/AccessRightsCode.html#enabled()" class="member-name-link">enabled()</a> - Method in enum class net.tangly.core.domain.<a href="net/tangly/core/domain/AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/GenderCode.html#enabled()" class="member-name-link">enabled()</a> - Method in enum class net.tangly.core.<a href="net/tangly/core/GenderCode.html" title="enum class in net.tangly.core">GenderCode</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/domain/User.html#encryptPassword(java.lang.String,java.lang.String)" class="member-name-link">encryptPassword(String, String)</a> - Static method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
+<dd>
+<div class="block">Encrypts the password of a user using a salt.</div>
+</dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#entities()" class="member-name-link">entities()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/Port.html#entitiesCleared(net.tangly.core.domain.DomainAudit,java.lang.String)" class="member-name-link">entitiesCleared(DomainAudit, String)</a> - Static method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
@@ -488,7 +533,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/EntityExtendedImp.html" class="type-name-link" title="class in net.tangly.core">EntityExtendedImp</a> - Class in <a href="net/tangly/core/package-summary.html">net.tangly.core</a></dt>
 <dd>
-<div class="block">Default implementation of the <a href="net/tangly/core/MutableEntityExtended.html" title="interface in net.tangly.core"><code>MutableEntityExtended</code></a> interface.</div>
+<div class="block">Default implementation of the <a href="net/tangly/core/EntityExtended.html" title="interface in net.tangly.core"><code>EntityExtended</code></a> interface.</div>
 </dd>
 <dt><a href="net/tangly/core/EntityExtendedImp.html#%3Cinit%3E(long)" class="member-name-link">EntityExtendedImp(long)</a> - Constructor for class net.tangly.core.<a href="net/tangly/core/EntityExtendedImp.html" title="class in net.tangly.core">EntityExtendedImp</a></dt>
 <dd>&nbsp;</dd>
@@ -588,7 +633,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/Port.html#exportEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">exportEntities(DomainAudit)</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
 <dd>
-<div class="block">Export all entities of the bounded domain to the file system as TSV, JSON, TOML, and YAML files.</div>
+<div class="block">Exports all entities of the bounded domain to the file system as TSV, JSON, TOML, and YAML files.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/TsvHdl.html#exportEntities(net.tangly.core.domain.DomainAudit,java.nio.file.Path,net.tangly.gleam.model.TsvEntity,net.tangly.core.providers.Provider)" class="member-name-link">exportEntities(DomainAudit, Path, TsvEntity&lt;T&gt;, Provider&lt;T&gt;)</a> - Static method in class net.tangly.core.domain.<a href="net/tangly/core/domain/TsvHdl.html" title="class in net.tangly.core.domain">TsvHdl</a></dt>
 <dd>&nbsp;</dd>
@@ -608,22 +653,24 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/ExternalEntityImp.html" class="type-name-link" title="class in net.tangly.core">ExternalEntityImp</a> - Class in <a href="net/tangly/core/package-summary.html">net.tangly.core</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/ExternalEntityImp.html#%3Cinit%3E(java.lang.String)" class="member-name-link">ExternalEntityImp(String)</a> - Constructor for class net.tangly.core.<a href="net/tangly/core/ExternalEntityImp.html" title="class in net.tangly.core">ExternalEntityImp</a></dt>
+<dt><a href="net/tangly/core/ExternalEntityImp.html#%3Cinit%3E(java.lang.String,java.lang.String,java.time.LocalDate,java.lang.String)" class="member-name-link">ExternalEntityImp(String, String, LocalDate, String)</a> - Constructor for class net.tangly.core.<a href="net/tangly/core/ExternalEntityImp.html" title="class in net.tangly.core">ExternalEntityImp</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:F">F</h2>
 <dl class="index">
+<dt><a href="net/tangly/core/GenderCode.html#female" class="member-name-link">female</a> - Enum constant in enum class net.tangly.core.<a href="net/tangly/core/GenderCode.html" title="enum class in net.tangly.core">GenderCode</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/TypeRegistry.html#find(java.lang.Class)" class="member-name-link">find(Class&lt;T&gt;)</a> - Method in class net.tangly.core.<a href="net/tangly/core/TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a></dt>
 <dd>
-<div class="block">Return the code type for the provided code class.</div>
+<div class="block">Returns the code type for the provided code class.</div>
 </dd>
 <dt><a href="net/tangly/core/TypeRegistry.html#find(java.lang.String,java.lang.String)" class="member-name-link">find(String, String)</a> - Method in class net.tangly.core.<a href="net/tangly/core/TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a></dt>
 <dd>
-<div class="block">Return the tag type describing the requested namespace and name.</div>
+<div class="block">Returns the tag type describing the requested namespace and name.</div>
 </dd>
 <dt><a href="net/tangly/core/TypeRegistry.html#find(net.tangly.core.Tag)" class="member-name-link">find(Tag)</a> - Method in class net.tangly.core.<a href="net/tangly/core/TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a></dt>
 <dd>
-<div class="block">Return the tag type describing the tag.</div>
+<div class="block">Returns the tag type describing the tag.</div>
 </dd>
 <dt><a href="net/tangly/core/HasTags.html#findBy(java.lang.String)" class="member-name-link">findBy(String)</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasTags.html" title="interface in net.tangly.core">HasTags</a></dt>
 <dd>
@@ -683,7 +730,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/DateRange.html#from(java.time.LocalDate)" class="member-name-link">from(LocalDate)</a> - Method in record class net.tangly.core.<a href="net/tangly/core/DateRange.html" title="class in net.tangly.core">DateRange</a></dt>
 <dd>
-<div class="block">Create a new data range with the given lower bound.</div>
+<div class="block">Creates a new data range with the given lower bound.</div>
 </dd>
 <dt><a href="net/tangly/core/HasMutableDateRange.html#from(java.time.LocalDate)" class="member-name-link">from(LocalDate)</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a></dt>
 <dd>
@@ -698,6 +745,10 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:G">G</h2>
 <dl class="index">
+<dt><a href="net/tangly/core/GenderCode.html" class="type-name-link" title="enum class in net.tangly.core">GenderCode</a> - Enum Class in <a href="net/tangly/core/package-summary.html">net.tangly.core</a></dt>
+<dd>
+<div class="block">Define the gender of a natural person.</div>
+</dd>
 <dt><a href="net/tangly/core/gravatar/GravatarRating.html#GENERAL_AUDIENCES" class="member-name-link">GENERAL_AUDIENCES</a> - Enum constant in enum class net.tangly.core.gravatar.<a href="net/tangly/core/gravatar/GravatarRating.html" title="enum class in net.tangly.core.gravatar">GravatarRating</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/HasLocation.GeoPosition.html#%3Cinit%3E(double,double)" class="member-name-link">GeoPosition(double, double)</a> - Constructor for record class net.tangly.core.<a href="net/tangly/core/HasLocation.GeoPosition.html" title="class in net.tangly.core">HasLocation.GeoPosition</a></dt>
@@ -914,11 +965,11 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="net/tangly/core/BankConnection.html#iban()" class="member-name-link">iban()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/BankConnection.html" title="class in net.tangly.core">BankConnection</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>iban</code> record component.</div>
+<div class="block">Returns the value of the <a href="./net/tangly/core/BankConnection.html#param-iban"><code>iban</code></a> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/codes/Code.html#id()" class="member-name-link">id()</a> - Method in interface net.tangly.core.codes.<a href="net/tangly/core/codes/Code.html" title="interface in net.tangly.core.codes">Code</a></dt>
 <dd>
-<div class="block">Return the unique identifier of a code table entity.</div>
+<div class="block">Returna the unique identifier of a code table entity.</div>
 </dd>
 <dt><a href="net/tangly/core/codes/CodeImp.html#id()" class="member-name-link">id()</a> - Method in class net.tangly.core.codes.<a href="net/tangly/core/codes/CodeImp.html" title="class in net.tangly.core.codes">CodeImp</a></dt>
 <dd>&nbsp;</dd>
@@ -927,6 +978,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="net/tangly/core/EntityExtendedImp.html#id()" class="member-name-link">id()</a> - Method in class net.tangly.core.<a href="net/tangly/core/EntityExtendedImp.html" title="class in net.tangly.core">EntityExtendedImp</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/ExternalEntityImp.html#id()" class="member-name-link">id()</a> - Method in class net.tangly.core.<a href="net/tangly/core/ExternalEntityImp.html" title="class in net.tangly.core">ExternalEntityImp</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/GenderCode.html#id()" class="member-name-link">id()</a> - Method in enum class net.tangly.core.<a href="net/tangly/core/GenderCode.html" title="enum class in net.tangly.core">GenderCode</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/HasId.html#id()" class="member-name-link">id()</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasId.html" title="interface in net.tangly.core">HasId</a></dt>
 <dd>
@@ -950,9 +1003,13 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/gravatar/GravatarImage.html#IDENTICON" class="member-name-link">IDENTICON</a> - Enum constant in enum class net.tangly.core.gravatar.<a href="net/tangly/core/gravatar/GravatarImage.html" title="enum class in net.tangly.core.gravatar">GravatarImage</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/domain/Port.html#importConfiguration(net.tangly.core.TypeRegistry)" class="member-name-link">importConfiguration(TypeRegistry)</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
+<dd>
+<div class="block">Imports configuration specific to the bounded domain in the context of a tenant.</div>
+</dd>
 <dt><a href="net/tangly/core/domain/Port.html#importEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">importEntities(DomainAudit)</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Port.html" title="interface in net.tangly.core.domain">Port</a></dt>
 <dd>
-<div class="block">Import all entities of the bounded domain from the file system.</div>
+<div class="block">Imports all entities of the bounded domain from the file system.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/TsvHdl.html#importEntities(net.tangly.core.domain.DomainAudit,java.nio.file.Path,net.tangly.gleam.model.TsvEntity,net.tangly.core.providers.Provider)" class="member-name-link">importEntities(DomainAudit, Path, TsvEntity&lt;T&gt;, Provider&lt;T&gt;)</a> - Static method in class net.tangly.core.domain.<a href="net/tangly/core/domain/TsvHdl.html" title="class in net.tangly.core.domain">TsvHdl</a></dt>
 <dd>&nbsp;</dd>
@@ -970,10 +1027,12 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/BankConnection.html#institute()" class="member-name-link">institute()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/BankConnection.html" title="class in net.tangly.core">BankConnection</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>institute</code> record component.</div>
+<div class="block">Returns the value of the <a href="./net/tangly/core/BankConnection.html#param-institute"><code>institute</code></a> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#internalChannel()" class="member-name-link">internalChannel()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the internal event channel of the domain.</div>
+</dd>
 <dt><a href="net/tangly/core/DateRange.DateFilter.html#interval()" class="member-name-link">interval()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/DateRange.DateFilter.html" title="class in net.tangly.core">DateRange.DateFilter</a></dt>
 <dd>
 <div class="block">Returns the value of the <a href="./net/tangly/core/DateRange.DateFilter.html#param-interval"><code>interval</code></a> record component.</div>
@@ -988,7 +1047,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/DateRange.html#isActive()" class="member-name-link">isActive()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/DateRange.html" title="class in net.tangly.core">DateRange</a></dt>
 <dd>
-<div class="block">Return true if the date now is in the time interval of the instance.</div>
+<div class="block">Returns true if the date now is in the time interval of the instance.</div>
 </dd>
 <dt><a href="net/tangly/core/HasDateRange.html#isActive()" class="member-name-link">isActive()</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasDateRange.html" title="interface in net.tangly.core">HasDateRange</a></dt>
 <dd>
@@ -996,7 +1055,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/DateRange.html#isActive(java.time.LocalDate)" class="member-name-link">isActive(LocalDate)</a> - Method in record class net.tangly.core.<a href="net/tangly/core/DateRange.html" title="class in net.tangly.core">DateRange</a></dt>
 <dd>
-<div class="block">Return true if the date is in the time interval of the instance.</div>
+<div class="block">Returns true if the date is in the time interval of the instance.</div>
 </dd>
 <dt><a href="net/tangly/core/HasDateRange.html#isActive(java.time.LocalDate)" class="member-name-link">isActive(LocalDate)</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasDateRange.html" title="interface in net.tangly.core">HasDateRange</a></dt>
 <dd>
@@ -1004,17 +1063,9 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/domain/TsvHdl.html#isEmpty(org.apache.commons.csv.CSVRecord)" class="member-name-link">isEmpty(CSVRecord)</a> - Static method in class net.tangly.core.domain.<a href="net/tangly/core/domain/TsvHdl.html" title="class in net.tangly.core.domain">TsvHdl</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/codes/Code.html#isEnabled()" class="member-name-link">isEnabled()</a> - Method in interface net.tangly.core.codes.<a href="net/tangly/core/codes/Code.html" title="interface in net.tangly.core.codes">Code</a></dt>
-<dd>
-<div class="block">Return true if the code table instance is enabled.</div>
-</dd>
-<dt><a href="net/tangly/core/codes/CodeImp.html#isEnabled()" class="member-name-link">isEnabled()</a> - Method in class net.tangly.core.codes.<a href="net/tangly/core/codes/CodeImp.html" title="class in net.tangly.core.codes">CodeImp</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/domain/AccessRightsCode.html#isEnabled()" class="member-name-link">isEnabled()</a> - Method in enum class net.tangly.core.domain.<a href="net/tangly/core/domain/AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/DateRange.html#isInfinite()" class="member-name-link">isInfinite()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/DateRange.html" title="class in net.tangly.core">DateRange</a></dt>
 <dd>
-<div class="block">Return true if the date range is fully open.</div>
+<div class="block">Returns true if the date range is fully open.</div>
 </dd>
 <dt><a href="net/tangly/core/EmailAddress.html#isValid(java.lang.String)" class="member-name-link">isValid(String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/EmailAddress.html" title="class in net.tangly.core">EmailAddress</a></dt>
 <dd>&nbsp;</dd>
@@ -1043,6 +1094,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the value of the <a href="./net/tangly/core/TagType.html#param-kind"><code>kind</code></a> record component.</div>
 </dd>
+<dt><a href="net/tangly/core/TagHelper.html#KIND" class="member-name-link">KIND</a> - Static variable in class net.tangly.core.<a href="net/tangly/core/TagHelper.html" title="class in net.tangly.core">TagHelper</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:L">L</h2>
 <dl class="index">
@@ -1062,9 +1115,9 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/DomainAudit.html#log(java.lang.String,net.tangly.commons.logger.EventData.Status,java.lang.String,java.util.Map,java.lang.Throwable)" class="member-name-link">log(String, EventData.Status, String, Map&lt;String, Object&gt;, Throwable)</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/tangly/core/domain/DomainAudit.html#log(net.tangly.commons.logger.EventData)" class="member-name-link">log(EventData)</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#log(net.tangly.commons.logger.EventData)" class="member-name-link">log(EventData)</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/domain/DomainAudit.html#log(net.tangly.commons.logger.EventData)" class="member-name-link">log(EventData)</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#logic()" class="member-name-link">logic()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
 <dd>&nbsp;</dd>
@@ -1075,6 +1128,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:M">M</h2>
 <dl class="index">
+<dt><a href="net/tangly/core/GenderCode.html#male" class="member-name-link">male</a> - Enum constant in enum class net.tangly.core.<a href="net/tangly/core/GenderCode.html" title="enum class in net.tangly.core">GenderCode</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/TagType.ValueKinds.html#MANDATORY" class="member-name-link">MANDATORY</a> - Enum constant in enum class net.tangly.core.<a href="net/tangly/core/TagType.ValueKinds.html" title="enum class in net.tangly.core">TagType.ValueKinds</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/Realm.html#maxOid(java.util.List)" class="member-name-link">maxOid(List&lt;T&gt;)</a> - Static method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Realm.html" title="interface in net.tangly.core.domain">Realm</a></dt>
@@ -1116,7 +1171,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/DomainAudit.html#name()" class="member-name-link">name()</a> - Method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></dt>
 <dd>
-<div class="block">Return the name of the domain audit.</div>
+<div class="block">Returns the name of the domain audit.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/DomainEntity.html#name()" class="member-name-link">name()</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/DomainEntity.html" title="class in net.tangly.core.domain">DomainEntity</a></dt>
 <dd>&nbsp;</dd>
@@ -1156,6 +1211,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">String representation of the property associated with the mixin.</div>
 </dd>
+<dt><a href="net/tangly/core/TagHelper.html#NAME" class="member-name-link">NAME</a> - Static variable in class net.tangly.core.<a href="net/tangly/core/TagHelper.html" title="class in net.tangly.core">TagHelper</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/tsv/TsvHdlCore.html#NAME" class="member-name-link">NAME</a> - Static variable in class net.tangly.core.tsv.<a href="net/tangly/core/tsv/TsvHdlCore.html" title="class in net.tangly.core.tsv">TsvHdlCore</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/Tag.html#namespace()" class="member-name-link">namespace()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Tag.html" title="class in net.tangly.core">Tag</a></dt>
@@ -1168,9 +1225,11 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/Tag.html#namespace(java.lang.String)" class="member-name-link">namespace(String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/Tag.html" title="class in net.tangly.core">Tag</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/TagHelper.html#NAMESPACE" class="member-name-link">NAMESPACE</a> - Static variable in class net.tangly.core.<a href="net/tangly/core/TagHelper.html" title="class in net.tangly.core">TagHelper</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/TypeRegistry.html#namespaces()" class="member-name-link">namespaces()</a> - Method in class net.tangly.core.<a href="net/tangly/core/TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a></dt>
 <dd>
-<div class="block">Return all the namespaces registered.</div>
+<div class="block">Returns all the namespaces registered.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/User.html#naturalPersonId()" class="member-name-link">naturalPersonId()</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
 <dd>
@@ -1203,7 +1262,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="net/tangly/core/validation/package-summary.html">net.tangly.core.validation</a> - package net.tangly.core.validation</dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/User.html#newSalt()" class="member-name-link">newSalt()</a> - Static method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Generates a new salt value with a JDK provided random generator.</div>
+</dd>
 <dt><a href="net/tangly/core/domain/TsvHdl.html#nextNonEmptyRecord(java.util.Iterator)" class="member-name-link">nextNonEmptyRecord(Iterator&lt;CSVRecord&gt;)</a> - Static method in class net.tangly.core.domain.<a href="net/tangly/core/domain/TsvHdl.html" title="class in net.tangly.core.domain">TsvHdl</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/AccessRightsCode.html#none" class="member-name-link">none</a> - Enum constant in enum class net.tangly.core.domain.<a href="net/tangly/core/domain/AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a></dt>
@@ -1231,7 +1292,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/Address.html#of(java.lang.String)" class="member-name-link">of(String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/Address.html" title="class in net.tangly.core">Address</a></dt>
 <dd>
-<div class="block">Build an address object from a comma separated string representation.</div>
+<div class="block">Builds an address object from a comma separated string representation.</div>
 </dd>
 <dt><a href="net/tangly/core/BankConnection.html#of(java.lang.String)" class="member-name-link">of(String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/BankConnection.html" title="class in net.tangly.core">BankConnection</a></dt>
 <dd>
@@ -1274,7 +1335,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Factory method.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/UsersProvider.html#of(java.util.function.Supplier,java.util.function.Supplier)" class="member-name-link">of(Supplier&lt;List&lt;String&gt;&gt;, Supplier&lt;List&lt;String&gt;&gt;)</a> - Static method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/UsersProvider.html" title="interface in net.tangly.core.domain">UsersProvider</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">factory method to create a new instance of the user provider.</div>
+</dd>
 <dt><a href="net/tangly/core/providers/ProviderHasOid.html#of(net.tangly.commons.generator.IdGenerator)" class="member-name-link">of(IdGenerator)</a> - Static method in class net.tangly.core.providers.<a href="net/tangly/core/providers/ProviderHasOid.html" title="class in net.tangly.core.providers">ProviderHasOid</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/providers/ProviderHasOid.html#of(net.tangly.commons.generator.IdGenerator,java.lang.Iterable)" class="member-name-link">of(IdGenerator, Iterable&lt;T&gt;)</a> - Static method in class net.tangly.core.providers.<a href="net/tangly/core/providers/ProviderHasOid.html" title="class in net.tangly.core.providers">ProviderHasOid</a></dt>
@@ -1306,6 +1369,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="net/tangly/core/TagType.html#ofMandatoryString(java.lang.String,java.lang.String)" class="member-name-link">ofMandatoryString(String, String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/TagType.html" title="class in net.tangly.core">TagType</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/TagType.html#ofOptionalString(java.lang.String,java.lang.String)" class="member-name-link">ofOptionalString(String, String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/TagType.html" title="class in net.tangly.core">TagType</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/TagType.html#ofString(java.lang.String,java.lang.String,net.tangly.core.TagType.ValueKinds)" class="member-name-link">ofString(String, String, TagType.ValueKinds)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/TagType.html" title="class in net.tangly.core">TagType</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/TagType.html#ofString(java.lang.String,java.lang.String,net.tangly.core.TagType.ValueKinds,java.util.function.BiPredicate)" class="member-name-link">ofString(String, String, TagType.ValueKinds, BiPredicate&lt;TagType&lt;String&gt;, String&gt;)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/TagType.html" title="class in net.tangly.core">TagType</a></dt>
 <dd>&nbsp;</dd>
@@ -1340,6 +1405,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Define the CRUD operations which can be applied on entities.</div>
 </dd>
 <dt><a href="net/tangly/core/TagType.ValueKinds.html#OPTIONAL" class="member-name-link">OPTIONAL</a> - Enum constant in enum class net.tangly.core.<a href="net/tangly/core/TagType.ValueKinds.html" title="enum class in net.tangly.core">TagType.ValueKinds</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/tangly/core/GenderCode.html#other" class="member-name-link">other</a> - Enum constant in enum class net.tangly.core.<a href="net/tangly/core/GenderCode.html" title="enum class in net.tangly.core">GenderCode</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:P">P</h2>
@@ -1394,7 +1461,7 @@ loadScripts(document, 'script');</script>
 <dd>Section</dd>
 <dt><a href="net/tangly/core/domain/Port.html" class="type-name-link" title="interface in net.tangly.core.domain">Port&lt;R&gt;</a> - Interface in <a href="net/tangly/core/domain/package-summary.html">net.tangly.core.domain</a></dt>
 <dd>
-<div class="block">Define the inbound and outbound communication port to the bounded domain.</div>
+<div class="block">Defines the inbound and outbound communication port to the bounded domain.</div>
 </dd>
 <dt><a href="net/tangly/core/HasLocation.html#position()" class="member-name-link">position()</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasLocation.html" title="interface in net.tangly.core">HasLocation</a></dt>
 <dd>&nbsp;</dd>
@@ -1503,11 +1570,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/TypeRegistry.html#register(net.tangly.core.TagType)" class="member-name-link">register(TagType&lt;?&gt;)</a> - Method in class net.tangly.core.<a href="net/tangly/core/TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a></dt>
 <dd>
-<div class="block">Register a tag type.</div>
+<div class="block">Registers a tag type.</div>
 </dd>
 <dt><a href="net/tangly/core/TypeRegistry.html#register(net.tangly.core.codes.CodeType)" class="member-name-link">register(CodeType&lt;T&gt;)</a> - Method in class net.tangly.core.<a href="net/tangly/core/TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a></dt>
 <dd>
-<div class="block">Register a code type to the registry.</div>
+<div class="block">Registers a code type to the registry.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#registry()" class="member-name-link">registry()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
 <dd>&nbsp;</dd>
@@ -1553,13 +1620,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/AccessRights.html#right()" class="member-name-link">right()</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/AccessRights.html" title="class in net.tangly.core.domain">AccessRights</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>right</code> record component.</div>
+<div class="block">Returns the value of the <a href="./net/tangly/core/domain/AccessRights.html#param-right"><code>right</code></a> record component.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:S">S</h2>
 <dl class="index">
-<dt><a href="net/tangly/core/domain/Realm.html#setOid(T,long)" class="member-name-link">setOid(T, long)</a> - Static method in interface net.tangly.core.domain.<a href="net/tangly/core/domain/Realm.html" title="interface in net.tangly.core.domain">Realm</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#shutdown()" class="member-name-link">shutdown()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#startup()" class="member-name-link">startup()</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
@@ -1571,9 +1636,13 @@ loadScripts(document, 'script');</script>
 <dt><a href="net/tangly/core/Address.Builder.html#street(java.lang.String)" class="member-name-link">street(String)</a> - Method in class net.tangly.core.<a href="net/tangly/core/Address.Builder.html" title="class in net.tangly.core">Address.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#subscribe(net.tangly.core.domain.BoundedDomain.EventListener)" class="member-name-link">subscribe(BoundedDomain.EventListener)</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Subscribes to the public event channel of the domain.</div>
+</dd>
 <dt><a href="net/tangly/core/domain/BoundedDomain.html#subscribeInternally(net.tangly.core.domain.BoundedDomain.EventListener)" class="member-name-link">subscribeInternally(BoundedDomain.EventListener)</a> - Method in class net.tangly.core.domain.<a href="net/tangly/core/domain/BoundedDomain.html" title="class in net.tangly.core.domain">BoundedDomain</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Subscribes to the internal event channel of the domain.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:T">T</h2>
 <dl class="index">
@@ -1585,13 +1654,15 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Creates an instance of a <code>Tag</code> record class.</div>
 </dd>
+<dt><a href="net/tangly/core/TagHelper.html" class="type-name-link" title="class in net.tangly.core">TagHelper</a> - Class in <a href="net/tangly/core/package-summary.html">net.tangly.core</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/TypeRegistry.html#tagNamesForNamespace(java.lang.String)" class="member-name-link">tagNamesForNamespace(String)</a> - Method in class net.tangly.core.<a href="net/tangly/core/TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/TsvHdl.html#tagProperty(java.lang.String)" class="member-name-link">tagProperty(String)</a> - Static method in class net.tangly.core.domain.<a href="net/tangly/core/domain/TsvHdl.html" title="class in net.tangly.core.domain">TsvHdl</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/Comment.html#tags()" class="member-name-link">tags()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>tags</code> record component.</div>
+<div class="block">Returns the value of the <a href="./net/tangly/core/Comment.html#param-tags"><code>tags</code></a> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/EntityExtendedImp.html#tags()" class="member-name-link">tags()</a> - Method in class net.tangly.core.<a href="net/tangly/core/EntityExtendedImp.html" title="class in net.tangly.core">EntityExtendedImp</a></dt>
 <dd>&nbsp;</dd>
@@ -1641,19 +1712,19 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/Address.html#text()" class="member-name-link">text()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Address.html" title="class in net.tangly.core">Address</a></dt>
 <dd>
-<div class="block">Return a comma-separated representation of an address.</div>
+<div class="block">Returns a comma-separated representation of an address.</div>
 </dd>
 <dt><a href="net/tangly/core/BankConnection.html#text()" class="member-name-link">text()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/BankConnection.html" title="class in net.tangly.core">BankConnection</a></dt>
 <dd>
-<div class="block">Return a comma-separated representation of a bank connection.</div>
+<div class="block">Returns a comma-separated representation of a bank connection.</div>
 </dd>
 <dt><a href="net/tangly/core/Comment.html#text()" class="member-name-link">text()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Comment.html" title="class in net.tangly.core">Comment</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>text</code> record component.</div>
+<div class="block">Returns the value of the <a href="./net/tangly/core/Comment.html#param-text"><code>text</code></a> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/EmailAddress.html#text()" class="member-name-link">text()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/EmailAddress.html" title="class in net.tangly.core">EmailAddress</a></dt>
 <dd>
-<div class="block">Return a text representation of an email address.</div>
+<div class="block">Returns a text representation of an email address.</div>
 </dd>
 <dt><a href="net/tangly/core/EntityExtendedImp.html#text()" class="member-name-link">text()</a> - Method in class net.tangly.core.<a href="net/tangly/core/EntityExtendedImp.html" title="class in net.tangly.core">EntityExtendedImp</a></dt>
 <dd>&nbsp;</dd>
@@ -1707,7 +1778,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/DateRange.html#to(java.time.LocalDate)" class="member-name-link">to(LocalDate)</a> - Method in record class net.tangly.core.<a href="net/tangly/core/DateRange.html" title="class in net.tangly.core">DateRange</a></dt>
 <dd>
-<div class="block">Create a new data range with the given upper bound.</div>
+<div class="block">Creates a new data range with the given upper bound.</div>
 </dd>
 <dt><a href="net/tangly/core/HasMutableDateRange.html#to(java.time.LocalDate)" class="member-name-link">to(LocalDate)</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasMutableDateRange.html" title="interface in net.tangly.core">HasMutableDateRange</a></dt>
 <dd>
@@ -1811,6 +1882,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/domain/package-summary.html#tsv-import-and-export-heading" class="search-tag-link">TSV Import and Export</a> - Search tag in package net.tangly.core.domain</dt>
 <dd>Section</dd>
+<dt><a href="net/tangly/core/TagHelper.html#TYPE" class="member-name-link">TYPE</a> - Static variable in class net.tangly.core.<a href="net/tangly/core/TagHelper.html" title="class in net.tangly.core">TagHelper</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/TypeRegistry.html" class="type-name-link" title="class in net.tangly.core">TypeRegistry</a> - Class in <a href="net/tangly/core/package-summary.html">net.tangly.core</a></dt>
 <dd>
 <div class="block">Registry of tag types defined for a domain model.</div>
@@ -1824,6 +1897,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Placeholder to identify an illegal or undefined internal identifier.</div>
 </dd>
+<dt><a href="net/tangly/core/GenderCode.html#unspecified" class="member-name-link">unspecified</a> - Enum constant in enum class net.tangly.core.<a href="net/tangly/core/GenderCode.html" title="enum class in net.tangly.core">GenderCode</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/HasMutableTags.html#update(java.lang.String,java.lang.String)" class="member-name-link">update(String, String)</a> - Method in interface net.tangly.core.<a href="net/tangly/core/HasMutableTags.html" title="interface in net.tangly.core">HasMutableTags</a></dt>
 <dd>
 <div class="block">Replace or inserts the given tag.</div>
@@ -1864,7 +1939,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/tangly/core/domain/AccessRights.html#username()" class="member-name-link">username()</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/AccessRights.html" title="class in net.tangly.core.domain">AccessRights</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>username</code> record component.</div>
+<div class="block">Returns the value of the <a href="./net/tangly/core/domain/AccessRights.html#param-username"><code>username</code></a> record component.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/User.html#username()" class="member-name-link">username()</a> - Method in record class net.tangly.core.domain.<a href="net/tangly/core/domain/User.html" title="class in net.tangly.core.domain">User</a></dt>
 <dd>
@@ -1887,7 +1962,7 @@ loadScripts(document, 'script');</script>
 <dd>Section</dd>
 <dt><a href="net/tangly/core/Entity.html#validate()" class="member-name-link">validate()</a> - Method in interface net.tangly.core.<a href="net/tangly/core/Entity.html" title="interface in net.tangly.core">Entity</a></dt>
 <dd>
-<div class="block">Check if the entity is consistent based on the field values and business rules.</div>
+<div class="block">Checks if the entity is consistent based on the field values and business rules.</div>
 </dd>
 <dt><a href="net/tangly/core/MutableEntity.html#validate()" class="member-name-link">validate()</a> - Method in interface net.tangly.core.<a href="net/tangly/core/MutableEntity.html" title="interface in net.tangly.core">MutableEntity</a></dt>
 <dd>
@@ -1901,11 +1976,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/tangly/core/BankConnection.html#validateBic(java.lang.String)" class="member-name-link">validateBic(String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/BankConnection.html" title="class in net.tangly.core">BankConnection</a></dt>
 <dd>
-<div class="block">Validate a string representing a formatted bic number.</div>
+<div class="block">Validates a string representing a formatted bic number.</div>
 </dd>
 <dt><a href="net/tangly/core/BankConnection.html#validateIban(java.lang.String)" class="member-name-link">validateIban(String)</a> - Static method in record class net.tangly.core.<a href="net/tangly/core/BankConnection.html" title="class in net.tangly.core">BankConnection</a></dt>
 <dd>
-<div class="block">Validate a string representing a formatted iban number.</div>
+<div class="block">Validates a string representing a formatted iban number.</div>
 </dd>
 <dt><a href="net/tangly/core/Tag.html#value()" class="member-name-link">value()</a> - Method in record class net.tangly.core.<a href="net/tangly/core/Tag.html" title="class in net.tangly.core">Tag</a></dt>
 <dd>
@@ -1929,6 +2004,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
+<dt><a href="net/tangly/core/GenderCode.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class net.tangly.core.<a href="net/tangly/core/GenderCode.html" title="enum class in net.tangly.core">GenderCode</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
 <dt><a href="net/tangly/core/gravatar/GravatarImage.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class net.tangly.core.gravatar.<a href="net/tangly/core/gravatar/GravatarImage.html" title="enum class in net.tangly.core.gravatar">GravatarImage</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
@@ -1947,6 +2026,11 @@ loadScripts(document, 'script');</script>
 the order they are declared.</div>
 </dd>
 <dt><a href="net/tangly/core/domain/Operation.html#values()" class="member-name-link">values()</a> - Static method in enum class net.tangly.core.domain.<a href="net/tangly/core/domain/Operation.html" title="enum class in net.tangly.core.domain">Operation</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="net/tangly/core/GenderCode.html#values()" class="member-name-link">values()</a> - Static method in enum class net.tangly.core.<a href="net/tangly/core/GenderCode.html" title="enum class in net.tangly.core">GenderCode</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>

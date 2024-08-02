@@ -113,7 +113,7 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.invoices.domain.Invoice,net.tangly.erp.invoices.services.InvoicesBoundedDomain)" class="member-name-link">CmdCreateInvoiceDocument</a><wbr>(<a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
  @NotNull <a href="../services/InvoicesBoundedDomain.html" title="class in net.tangly.erp.invoices.services">InvoicesBoundedDomain</a>&nbsp;domain)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Create a command to create a document for a specific invoice.</div>
+<div class="block">Creates a command to create a document for a specific invoice or for all invoices within a date range.</div>
 </div>
 </div>
 </section>
@@ -165,10 +165,10 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CmdCreateInvoiceDocument</span><wbr><span class="parameters">(<a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
  @NotNull
  @NotNull <a href="../services/InvoicesBoundedDomain.html" title="class in net.tangly.erp.invoices.services">InvoicesBoundedDomain</a>&nbsp;domain)</span></div>
-<div class="block">Create a command to create a document for a specific invoice.</div>
+<div class="block">Creates a command to create a document for a specific invoice or for all invoices within a date range.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>invoice</code> - invoice for which the document is created</dd>
+<dd><code>invoice</code> - invoice for which the document is created. If null, the command creates documents for all invoices within the date range</dd>
 <dd><code>domain</code> - bounded domain of the invoices</dd>
 </dl>
 </div>

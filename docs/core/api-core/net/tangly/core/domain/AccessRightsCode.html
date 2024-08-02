@@ -97,15 +97,16 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public enum </span><span class="element-name type-name-label">AccessRightsCode</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a>&gt;
 implements <a href="../codes/Code.html" title="interface in net.tangly.core.codes">Code</a></span></div>
-<div class="block">A user has different access rights:
+<div class="block">A user has different access rights for a specific domain or the whole application:
  <dl>
-     <dt>restricted-user</dt><dd>has anly read and write access to owned entities in a domain. Ownership is identified through the username of the
+     <dt>none</dt><dd>has no access to the domain.</dd>
+     <dt>restricted-user</dt><dd>has only read and write access to owned entities in a domain. Ownership is identified through the username of the
      logged-in user.</dd>
      <dt>readonly user</dt><dd>has read access to all entities in a domain. No edition functions are available.</dd>
-     <dt>user</dt> <dd>has write access to all entities in a domain. The user can create, modify, delete and duplify aggregates.</dd>
+     <dt>user</dt> <dd>has write access to all entities in a domain. The user can create, modify, delete and duplicate aggregates.</dd>
      <dt>domain-admin</dt><dd>has write access to all entities in a domain and access to specific domain actions. This right if necessary to import and
      export datasets of the domain.</dd>
-     <dt>app-admin</dt><dd>has access to application specific data and function. She does not have access to damains.</dd>
+     <dt>app-admin</dt><dd>has access to application specific data and function. She does not have access to domains.</dd>
  </dl></div>
 </div>
 </section>
@@ -157,17 +158,17 @@ implements <a href="../codes/Code.html" title="interface in net.tangly.core.code
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#code()" class="member-name-link">code</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return the human-readable representation of a code table entity.</div>
+<div class="block">Returna the human-readable representation of a code table entity.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enabled()" class="member-name-link">enabled</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return the unique identifier of a code table entity.</div>
+<div class="block">Returna true if the code table instance is enabled.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEnabled()" class="member-name-link">isEnabled</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return true if the code table instance is enabled.</div>
+<div class="block">Returna the unique identifier of a code table entity.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AccessRightsCode.html" title="enum class in net.tangly.core.domain">AccessRightsCode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#valueOf(java.lang.String)" class="member-name-link">valueOf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
@@ -297,7 +298,7 @@ not permitted.)</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">id</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../codes/Code.html#id()">Code</a></code></span></div>
-<div class="block">Return the unique identifier of a code table entity.</div>
+<div class="block">Returna the unique identifier of a code table entity.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../codes/Code.html#id()">id</a></code>&nbsp;in interface&nbsp;<code><a href="../codes/Code.html" title="interface in net.tangly.core.codes">Code</a></code></dd>
@@ -313,7 +314,7 @@ not permitted.)</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">code</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../codes/Code.html#code()">Code</a></code></span></div>
-<div class="block">Return the human-readable representation of a code table entity.</div>
+<div class="block">Returna the human-readable representation of a code table entity.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../codes/Code.html#code()">code</a></code>&nbsp;in interface&nbsp;<code><a href="../codes/Code.html" title="interface in net.tangly.core.codes">Code</a></code></dd>
@@ -324,15 +325,15 @@ not permitted.)</div>
 </section>
 </li>
 <li>
-<section class="detail" id="isEnabled()">
-<h3>isEnabled</h3>
+<section class="detail" id="enabled()">
+<h3>enabled</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEnabled</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../codes/Code.html#isEnabled()">Code</a></code></span></div>
-<div class="block">Return true if the code table instance is enabled.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">enabled</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../codes/Code.html#enabled()">Code</a></code></span></div>
+<div class="block">Returna true if the code table instance is enabled.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../codes/Code.html#isEnabled()">isEnabled</a></code>&nbsp;in interface&nbsp;<code><a href="../codes/Code.html" title="interface in net.tangly.core.codes">Code</a></code></dd>
+<dd><code><a href="../codes/Code.html#enabled()">enabled</a></code>&nbsp;in interface&nbsp;<code><a href="../codes/Code.html" title="interface in net.tangly.core.codes">Code</a></code></dd>
 <dt>Returns:</dt>
 <dd>flag indicating if the code is enabled or archived</dd>
 </dl>
