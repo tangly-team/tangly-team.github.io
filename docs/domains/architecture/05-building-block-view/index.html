@@ -39,7 +39,7 @@ The same approach should be used for a distributed microservice architecture.
 Each bounded domain is a self-contained module that encapsulates the business logic and data for a specific domain. Persistence shall be handled per bounded domain. Ideally, the domain model should be designed to be independent of the persistence technology.">
   <meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00">
   <meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="848">
+  <meta itemprop="wordCount" content="884">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Building Block View">
   <meta name="twitter:description" content="Building Block View A bounded domain is the key building block for a modular monolith architecture approach. The ERP application is consisting of multiple bounded domains.
@@ -185,7 +185,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.6811d1c9afee1973d8af0d1934792b44.json"
+    data-offline-search-index-json-src="/offline-search-index.5da7f7e47d78495233678f014a84e6e3.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -209,7 +209,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.6811d1c9afee1973d8af0d1934792b44.json"
+    data-offline-search-index-json-src="/offline-search-index.5da7f7e47d78495233678f014a84e6e3.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -650,13 +650,13 @@ if (!doNotTrack) {
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">Agile</span><span class="taxonomy-count">109</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">29</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/c&#43;&#43;/" data-taxonomy-term="c&#43;&#43;"><span class="taxonomy-label">C&#43;&#43;</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">30</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/c&#43;&#43;/" data-taxonomy-term="c&#43;&#43;"><span class="taxonomy-label">C&#43;&#43;</span><span class="taxonomy-count">7</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/crm/" data-taxonomy-term="crm"><span class="taxonomy-label">Crm</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/design/" data-taxonomy-term="design"><span class="taxonomy-label">Design</span><span class="taxonomy-count">23</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">Devops</span><span class="taxonomy-count">8</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/domain-driven-design/" data-taxonomy-term="domain-driven-design"><span class="taxonomy-label">Domain-Driven-Design</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/embedded/" data-taxonomy-term="embedded"><span class="taxonomy-label">Embedded</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/embedded/" data-taxonomy-term="embedded"><span class="taxonomy-label">Embedded</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/git/" data-taxonomy-term="git"><span class="taxonomy-label">Git</span><span class="taxonomy-count">7</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/gradle/" data-taxonomy-term="gradle"><span class="taxonomy-label">Gradle</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/hugo/" data-taxonomy-term="hugo"><span class="taxonomy-label">Hugo</span><span class="taxonomy-count">5</span></a></li>
@@ -717,6 +717,15 @@ Ideally, the domain model should be designed to be independent of the persistenc
 <div class="paragraph">
 <p>We assume the reader is familiar with the concepts of domain-driven design.</p>
 </div>
+<div class="paragraph">
+<p>The key abstractions are described in the following diagram. The <code>CRM</code> bounded domain is used as an example.
+See also the <a href="https://blog.tangly.net/docs/core/api-core/net/tangly/core/domain/package-summary.html">JavaDoc Domain Model</a>.</p>
+</div>
+<div class="imageblock text-center kroki-format-svg kroki">
+<div class="content">
+<img src="https://kroki.io/plantuml/svg/eNp1Ud1qwyAUvvcpDr3aIC30dhRh2R4gpNsDuHpWhKjhaMbK1nefJjPVglfhfH98flHGI32KE8Kr1UKZ50kqDz9XplaiRzHoEuos-UMP-O3RSLcoeJSw0yCcg9ZORqJcIu-FDbQNdCu2ZHEOSo8DajTelV0YwNGTMmcwQuPDI7uyIh_sdgub_QbeLiP2eFbO0wWewGdnxfHukDqyX0oiBceUnRVHH2QUX1Hhu8CP4UUVug30x-SUQefSWC-k513YMvThN2hX7KZp_23ZzAGN60Vk_iZrPHJn8TdSdJOHNsnGIaaV5VNsgbJ7AHY7futdY-dqNTK1-QMFO-Dh" alt="domain-model"/>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_facets_of_a_bounded_domain">Facets of a Bounded Domain</h3>
 <div class="paragraph">
@@ -729,11 +738,12 @@ Ideally, the domain model should be designed to be independent of the persistenc
 Each bounded domain has a unique name.</p>
 </li>
 <li>
-<p>A realm of the domain model and provides the factory and persistence functionality as described in DDD.</p>
+<p>A realm of the domain model and provides the factory and persistence functionality as described in DDD.
+All aggregates of the domain are created and persisted using the realm.</p>
 </li>
 <li>
 <p>A port describing the services provided by the domain.
-An adapter class and other helper classes are used to implement the port.</p>
+An adapter class and other helper classes are used to implement the port contract.</p>
 </li>
 <li>
 <p>An optional business logic implementing the business rules of the domain.</p>
@@ -781,7 +791,7 @@ Optionally, it can have an <strong>internal object identifier</strong> used to i
 </div>
 <div class="paragraph">
 <p>An entity implements the <code>HasId</code> interface and optionally the <code>HasOid</code> interface.
-An entity can also have a human-readable name that is used to display the entity in the user interface.
+An entity can also have a human-readable name used to display the entity in the user interface.
 Such entities implement the <code>HasName</code> interface.</p>
 </div>
 </div>
@@ -802,7 +812,7 @@ An example is the export of a complete invoice.</p>
 </div>
 <div class="paragraph">
 <p>Instances edited outside the domain are often encoded in YAML.
-An example is the documentation of monthly activities of a consultant in a services company.</p>
+An example is the documentation for the monthly activities of a consultant in a services company.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -895,7 +905,7 @@ They are part of the domain-driven design approach.</p>
 The definition and documentation of the REST services are part of the bounded domain and should be packaged with the domain artifacts.</p>
 </div>
 <div class="paragraph">
-<p>THe REST services are documented using the OpenAPI specification and the documentation is displayed using Swagger UI.</p>
+<p>THe REST services are documented using the OpenAPI specification, and the documentation is displayed using Swagger UI.</p>
 </div>
 <div class="admonitionblock note">
 <table>

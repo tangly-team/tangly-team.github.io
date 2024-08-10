@@ -163,7 +163,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#resolvePath(java.nio.file.Path,java.lang.String)" class="member-name-link">resolvePath</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;directory,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
-<div class="block">Resolve the path to where a document should be located in the file system.</div>
+<div class="block">Resolve the uri to where a document should be located in the file system.</div>
 </div>
 </div>
 </div>
@@ -245,7 +245,8 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">clearEntities</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a>&nbsp;audit)</span></div>
-<div class="block">Clears all entities of the bounded domain. Upon execution, the domain is empty. Use with caution as the operation is not reversible.
+<div class="block">Clears all entities of the bounded domain. All <em>generated</em> documents and reports are cleared.
+ Upon execution, the domain is empty. Use with caution as the operation is not reversible.
  Typically, the operation is used before an import to ensure that the domain is empty.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -301,14 +302,14 @@ loadScripts(document, 'script');</script>
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;directory,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</span></div>
-<div class="block">Resolve the path to where a document should be located in the file system. The convention is <em>base directory/year</em>. If folders do not
+<div class="block">Resolve the uri to where a document should be located in the file system. The convention is <em>base directory/year</em>. If folders do not
  exist, they are created. The year must contain four digits.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>directory</code> - base directory containing all reports and documents</dd>
 <dd><code>filename</code> - filename of the document to write</dd>
 <dt>Returns:</dt>
-<dd>path to the folder where the document should be written. If the file does not contain a year, the base directory is returned</dd>
+<dd>uri to the folder where the document should be written. If the file does not contain a year, the base directory is returned</dd>
 </dl>
 </div>
 </section>

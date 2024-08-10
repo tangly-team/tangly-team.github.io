@@ -127,9 +127,11 @@ loadScripts(document, 'script');</script>
  <p>Utilities are provided in the Gleam module. </p>
  You can use the TSV import and export utilities to import and export entities from and to TSV files.
  <h2 id="business-logic-heading">Business Logic</h2>
- <p></p>
+ <p>Complex business logic should be implemented in this class</p>
  <h2 id="vaadin-user-interface-heading">Vaadin User Interface</h2>
- <p></p>
+ <p>The user interface of a bounded domain is optional.
+ Use the <code>BoundedDomainUi</code> class as the entry point for the bounded domain specific user interface.
+ </p>
  <h2 id="rest-interface-heading">REST Interface</h2>
  <p></p>
  <h2 id="domain-events-heading">Domain Events</h2>
@@ -177,36 +179,40 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Defines a refined event listener interface to handle events in the domain or from another domain.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab4"><a href="Document.html" title="class in net.tangly.core.domain">Document</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab4">
+<div class="block">Defines a document and its metadata stored in the system as immutable record.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Defines the interface to audit relevant events specific to a bounded domain.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab4"><a href="DomainEntity.html" title="class in net.tangly.core.domain">DomainEntity</a>&lt;T&gt;</div>
-<div class="col-last odd-row-color class-summary class-summary-tab4">
+<div class="col-first even-row-color class-summary class-summary-tab4"><a href="DomainEntity.html" title="class in net.tangly.core.domain">DomainEntity</a>&lt;T&gt;</div>
+<div class="col-last even-row-color class-summary class-summary-tab4">
 <div class="block">Define the meta-information describing the characteristics of a domain entity.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Operation.html" title="enum class in net.tangly.core.domain">Operation</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab3">
-<div class="block">Define the CRUD operations which can be applied on entities.</div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="Operation.html" title="enum class in net.tangly.core.domain">Operation</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="block">Defines the CRUD operations which can be applied on entities.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Port.html" title="interface in net.tangly.core.domain">Port</a>&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>&gt;</div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Port.html" title="interface in net.tangly.core.domain">Port</a>&lt;R extends <a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a>&gt;</div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Defines the inbound and outbound communication port to the bounded domain.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Realm.html" title="interface in net.tangly.core.domain">Realm</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">The realm is responsible for the handling of entities and value objects part of the domain model.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="TsvHdl.html" title="class in net.tangly.core.domain">TsvHdl</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="TsvHdl.html" title="class in net.tangly.core.domain">TsvHdl</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Utility class to handle TSV files.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab4"><a href="User.html" title="class in net.tangly.core.domain">User</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab4">
+<div class="col-first odd-row-color class-summary class-summary-tab4"><a href="User.html" title="class in net.tangly.core.domain">User</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab4">
 <div class="block">An application user can log in the application and access to domain data based on domain access rights.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="UsersProvider.html" title="interface in net.tangly.core.domain">UsersProvider</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="UsersProvider.html" title="interface in net.tangly.core.domain">UsersProvider</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Defines a provider for the list of users and the list of active users for a domain.</div>
 </div>
 </div>

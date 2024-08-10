@@ -137,7 +137,7 @@ implements <a href="../services/InvoicesPort.html" title="interface in net.tangl
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.invoices.services.InvoicesRealm,java.nio.file.Path,java.nio.file.Path)" class="member-name-link">InvoicesAdapter</a><wbr>(@NotNull <a href="../services/InvoicesRealm.html" title="interface in net.tangly.erp.invoices.services">InvoicesRealm</a>&nbsp;realm,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;dataFolder,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;reportsFolder)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;docsFolder)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -289,7 +289,7 @@ implements <a href="../services/InvoicesPort.html" title="interface in net.tangl
  @NotNull <a href="../services/InvoicesRealm.html" title="interface in net.tangly.erp.invoices.services">InvoicesRealm</a>&nbsp;realm,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;dataFolder,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;reportsFolder)</span></div>
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;docsFolder)</span></div>
 </div>
 </section>
 </li>
@@ -383,7 +383,7 @@ implements <a href="../services/InvoicesPort.html" title="interface in net.tangl
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/InvoicesPort.html#exportInvoiceDocuments(net.tangly.core.domain.DomainAudit,boolean,boolean,boolean,java.time.LocalDate,java.time.LocalDate)">InvoicesPort</a></code></span></div>
-<div class="block">Exports all selected invoices as artifact to a file. The method is responsible to infer the path to the generated invoice document.
+<div class="block">Exports all selected invoices as artifact to a file. The method is responsible to infer the uri to the generated invoice document.
  <p><em>implNote</em> The asciidoc document is deleted upon creation of the pdf document.</p></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -410,7 +410,7 @@ implements <a href="../services/InvoicesPort.html" title="interface in net.tangl
  boolean&nbsp;withEN16931,
  boolean&nbsp;overwrite)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../services/InvoicesPort.html#exportInvoiceDocument(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,boolean,boolean,boolean)">InvoicesPort</a></code></span></div>
-<div class="block">Export an invoice to a file. The method is responsible to infer the path to the generated invoice document.
+<div class="block">Export an invoice to a file. The method is responsible to infer the uri to the generated invoice document.
  <p><em>implNote</em> The asciidoc document is deleted upon creation of the pdf document.</p></div>
 <dl class="notes">
 <dt>Specified by:</dt>

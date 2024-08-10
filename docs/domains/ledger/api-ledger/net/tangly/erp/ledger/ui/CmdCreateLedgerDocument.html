@@ -95,6 +95,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CmdCreateLedgerDocument</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements net.tangly.ui.app.domain.Cmd</span></div>
+<div class="block">Command to create a ledger document for a given period. The command is parameterized with the bounded domain to access the ledger and the UI components to
+ capture the period and the options of the document.
+ <p>The from and to date are mandatory.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -107,7 +110,7 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.ledger.services.LedgerBoundedDomain)" class="member-name-link">CmdCreateLedgerDocument</a><wbr>(<a href="../services/LedgerBoundedDomain.html" title="class in net.tangly.erp.ledger.services">LedgerBoundedDomain</a>&nbsp;domain)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.ledger.services.LedgerBoundedDomain)" class="member-name-link">CmdCreateLedgerDocument</a><wbr>(@NotNull <a href="../services/LedgerBoundedDomain.html" title="class in net.tangly.erp.ledger.services">LedgerBoundedDomain</a>&nbsp;domain)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -156,7 +159,8 @@ implements net.tangly.ui.app.domain.Cmd</span></div>
 <section class="detail" id="&lt;init&gt;(net.tangly.erp.ledger.services.LedgerBoundedDomain)">
 <h3>CmdCreateLedgerDocument</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CmdCreateLedgerDocument</span><wbr><span class="parameters">(<a href="../services/LedgerBoundedDomain.html" title="class in net.tangly.erp.ledger.services">LedgerBoundedDomain</a>&nbsp;domain)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CmdCreateLedgerDocument</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="../services/LedgerBoundedDomain.html" title="class in net.tangly.erp.ledger.services">LedgerBoundedDomain</a>&nbsp;domain)</span></div>
 </div>
 </section>
 </li>
