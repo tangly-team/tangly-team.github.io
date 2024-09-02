@@ -115,11 +115,14 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="col-second odd-row-color"><code><a href="#PRODUCTS_TSV" class="member-name-link">PRODUCTS_TSV</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#WORK_CONTRACTS_TSV" class="member-name-link">WORK_CONTRACTS_TSV</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SCHEMA_FILE" class="member-name-link">SCHEMA_FILE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#YAML_EXT" class="member-name-link">YAML_EXT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WORK_CONTRACTS_TSV" class="member-name-link">WORK_CONTRACTS_TSV</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#YAML_EXT" class="member-name-link">YAML_EXT</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.tangly.core.domain.Port">Fields inherited from interface&nbsp;net.tangly.core.domain.Port</h3>
@@ -134,8 +137,9 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.products.services.ProductsRealm,net.tangly.erp.products.services.ProductsBusinessLogic,java.nio.file.Path,java.nio.file.Path)" class="member-name-link">ProductsAdapter</a><wbr>(@NotNull <a href="../services/ProductsRealm.html" title="interface in net.tangly.erp.products.services">ProductsRealm</a>&nbsp;realm,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.erp.products.services.ProductsRealm,net.tangly.erp.products.services.ProductsBusinessLogic,java.util.Properties,java.nio.file.Path,java.nio.file.Path)" class="member-name-link">ProductsAdapter</a><wbr>(@NotNull <a href="../services/ProductsRealm.html" title="interface in net.tangly.erp.products.services">ProductsRealm</a>&nbsp;realm,
  @NotNull <a href="../services/ProductsBusinessLogic.html" title="class in net.tangly.erp.products.services">ProductsBusinessLogic</a>&nbsp;logic,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;properties,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;dataFolder,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;reportFolder)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -157,16 +161,15 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearEntities(net.tangly.core.domain.DomainAudit)" class="member-name-link">clearEntities</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEfforts(net.tangly.core.domain.DomainAudit,java.nio.file.Path)" class="member-name-link">exportEfforts</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Export all efforts in a hierarchy of folders.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEfforts(net.tangly.core.domain.DomainAudit,java.util.List,java.nio.file.Path)" class="member-name-link">exportEfforts</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../domain/Effort.html" title="class in net.tangly.erp.products.domain">Effort</a>&gt;&nbsp;efforts,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEfforts(java.util.List,java.nio.file.Path)" class="member-name-link">exportEfforts</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../domain/Effort.html" title="class in net.tangly.erp.products.domain">Effort</a>&gt;&nbsp;efforts,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;folder)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEfforts(net.tangly.core.domain.DomainAudit,java.nio.file.Path)" class="member-name-link">exportEfforts</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Exports all efforts in a hierarchy of folders.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportEffortsDocument(net.tangly.core.domain.DomainAudit,net.tangly.erp.products.domain.Assignment,java.time.LocalDate,java.time.LocalDate,java.lang.String,java.time.temporal.ChronoUnit)" class="member-name-link">exportEffortsDocument</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
  @NotNull <a href="../domain/Assignment.html" title="class in net.tangly.erp.products.domain">Assignment</a>&nbsp;assignment,
@@ -205,6 +208,15 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../services/ProductsRealm.html" title="interface in net.tangly.erp.products.services">ProductsRealm</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#realm()" class="member-name-link">realm</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#yamlLiteralBlockScalar(java.lang.String,int)" class="member-name-link">yamlLiteralBlockScalar</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
+ int&nbsp;indent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#yamlScalar(java.lang.String,java.lang.String,int)" class="member-name-link">yamlScalar</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value,
+ int&nbsp;indent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -275,6 +287,22 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
+<section class="detail" id="SCHEMA_FILE">
+<h3>SCHEMA_FILE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SCHEMA_FILE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#net.tangly.erp.products.ports.ProductsAdapter.SCHEMA_FILE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="YAML_EXT">
 <h3>YAML_EXT</h3>
 <div class="horizontal-scroll">
@@ -299,13 +327,15 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.tangly.erp.products.services.ProductsRealm,net.tangly.erp.products.services.ProductsBusinessLogic,java.nio.file.Path,java.nio.file.Path)">
+<section class="detail" id="&lt;init&gt;(net.tangly.erp.products.services.ProductsRealm,net.tangly.erp.products.services.ProductsBusinessLogic,java.util.Properties,java.nio.file.Path,java.nio.file.Path)">
 <h3>ProductsAdapter</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ProductsAdapter</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="../services/ProductsRealm.html" title="interface in net.tangly.erp.products.services">ProductsRealm</a>&nbsp;realm,
  @NotNull
  @NotNull <a href="../services/ProductsBusinessLogic.html" title="class in net.tangly.erp.products.services">ProductsBusinessLogic</a>&nbsp;logic,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;properties,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;dataFolder,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;reportFolder)</span></div>
@@ -419,7 +449,7 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
  @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</span></div>
-<div class="block">Export all efforts in a hierarchy of folders. The files are grouped in folders by years.
+<div class="block">Exports all efforts in a hierarchy of folders. The files are grouped in folders by years.
  The efforts are grouped by assignment, contract, collaborator, and year-month and written in a yaml file.
  The name of the file is the year and month of the efforts, the name of the collaborator, and the identifier of the contract.</div>
 <dl class="notes">
@@ -430,15 +460,35 @@ implements <a href="../services/ProductsPort.html" title="interface in net.tangl
 </section>
 </li>
 <li>
-<section class="detail" id="exportEfforts(net.tangly.core.domain.DomainAudit,java.util.List,java.nio.file.Path)">
+<section class="detail" id="exportEfforts(java.util.List,java.nio.file.Path)">
 <h3>exportEfforts</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportEfforts</span><wbr><span class="parameters">(@NotNull
- @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
- @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../domain/Effort.html" title="class in net.tangly.erp.products.domain">Effort</a>&gt;&nbsp;efforts,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;folder)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="yamlScalar(java.lang.String,java.lang.String,int)">
+<h3>yamlScalar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">yamlScalar</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value,
+ int&nbsp;indent)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="yamlLiteralBlockScalar(java.lang.String,int)">
+<h3>yamlLiteralBlockScalar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">yamlLiteralBlockScalar</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
+ int&nbsp;indent)</span></div>
 </div>
 </section>
 </li>

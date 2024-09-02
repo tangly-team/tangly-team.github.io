@@ -89,12 +89,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.tangly.core.domain.Realm</code>, <code><a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a></code></dd>
+<dd><code>net.tangly.core.domain.Realm</code>, <code>net.tangly.core.domain.RealmEclipseStore</code>, <code><a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LedgerEntities</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a></span></div>
+implements <a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a>, net.tangly.core.domain.RealmEclipseStore</span></div>
 </div>
 </section>
 <section class="summary">
@@ -118,7 +118,7 @@ implements <a href="../services/LedgerRealm.html" title="interface in net.tangly
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">LedgerEntities</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.nio.file.Path)" class="member-name-link">LedgerEntities</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.nio.file.Path)" class="member-name-link">LedgerEntities</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -146,12 +146,15 @@ implements <a href="../services/LedgerRealm.html" title="interface in net.tangly
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.providers.Provider<wbr>&lt;<a href="../domain/AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entries()" class="member-name-link">entries</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#storeRoot()" class="member-name-link">storeRoot</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isShutdown()" class="member-name-link">isShutdown</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.providers.Provider<wbr>&lt;<a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transactions()" class="member-name-link">transactions</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#storeRoot()" class="member-name-link">storeRoot</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.providers.Provider<wbr>&lt;<a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transactions()" class="member-name-link">transactions</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -160,7 +163,7 @@ implements <a href="../services/LedgerRealm.html" title="interface in net.tangly
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.erp.ledger.services.LedgerRealm">Methods inherited from interface&nbsp;net.tangly.erp.ledger.services.<a href="../services/LedgerRealm.html" title="interface in net.tangly.erp.ledger.services">LedgerRealm</a></h3>
-<code><a href="../services/LedgerRealm.html#accountBy(java.lang.String)">accountBy</a>, <a href="../services/LedgerRealm.html#accountsOwnedBy(java.lang.String)">accountsOwnedBy</a>, <a href="../services/LedgerRealm.html#assets()">assets</a>, <a href="../services/LedgerRealm.html#book(net.tangly.erp.ledger.domain.Transaction)">book</a>, <a href="../services/LedgerRealm.html#bookableAccounts()">bookableAccounts</a>, <a href="../services/LedgerRealm.html#build()">build</a>, <a href="../services/LedgerRealm.html#computeDueVat(java.time.LocalDate,java.time.LocalDate)">computeDueVat</a>, <a href="../services/LedgerRealm.html#computeVat(java.time.LocalDate,java.time.LocalDate)">computeVat</a>, <a href="../services/LedgerRealm.html#computeVat(net.tangly.erp.ledger.domain.Transaction)">computeVat</a>, <a href="../services/LedgerRealm.html#computeVatSales(java.time.LocalDate,java.time.LocalDate)">computeVatSales</a>, <a href="../services/LedgerRealm.html#liabilities()">liabilities</a>, <a href="../services/LedgerRealm.html#profitAndLoss()">profitAndLoss</a>, <a href="../services/LedgerRealm.html#transactions(java.time.LocalDate,java.time.LocalDate)">transactions</a></code></div>
+<code><a href="../services/LedgerRealm.html#accountBy(java.lang.String)">accountBy</a>, <a href="../services/LedgerRealm.html#accountsOwnedBy(java.lang.String)">accountsOwnedBy</a>, <a href="../services/LedgerRealm.html#assets()">assets</a>, <a href="../services/LedgerRealm.html#book(net.tangly.erp.ledger.domain.Transaction)">book</a>, <a href="../services/LedgerRealm.html#bookableAccounts()">bookableAccounts</a>, <a href="../services/LedgerRealm.html#build()">build</a>, <a href="../services/LedgerRealm.html#computeDueVat(java.time.LocalDate,java.time.LocalDate,net.tangly.erp.ledger.domain.VatCode)">computeDueVat</a>, <a href="../services/LedgerRealm.html#computeVat(java.time.LocalDate,java.time.LocalDate,net.tangly.erp.ledger.domain.VatCode)">computeVat</a>, <a href="../services/LedgerRealm.html#computeVat(net.tangly.erp.ledger.domain.Transaction)">computeVat</a>, <a href="../services/LedgerRealm.html#computeVatSales(java.time.LocalDate,java.time.LocalDate,net.tangly.erp.ledger.domain.VatCode)">computeVatSales</a>, <a href="../services/LedgerRealm.html#liabilities()">liabilities</a>, <a href="../services/LedgerRealm.html#profitAndLoss()">profitAndLoss</a>, <a href="../services/LedgerRealm.html#transactions(java.time.LocalDate,java.time.LocalDate)">transactions</a></code></div>
 </section>
 </li>
 </ul>
@@ -176,7 +179,8 @@ implements <a href="../services/LedgerRealm.html" title="interface in net.tangly
 <section class="detail" id="&lt;init&gt;(java.nio.file.Path)">
 <h3>LedgerEntities</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LedgerEntities</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LedgerEntities</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</span></div>
 </div>
 </section>
 </li>
@@ -201,6 +205,18 @@ implements <a href="../services/LedgerRealm.html" title="interface in net.tangly
 <h3>storeRoot</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">storeRoot</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isShutdown()">
+<h3>isShutdown</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isShutdown</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>isShutdown</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.RealmEclipseStore</code></dd>
+</dl>
 </div>
 </section>
 </li>

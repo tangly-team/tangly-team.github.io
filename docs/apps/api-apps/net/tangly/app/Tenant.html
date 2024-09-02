@@ -87,13 +87,20 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <div class="horizontal-scroll">
+<dl class="notes">
+<dt>All Implemented Interfaces:</dt>
+<dd><code>net.tangly.core.domain.TenantDirectory</code>, <code>net.tangly.core.HasId</code></dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Tenant</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+implements net.tangly.core.domain.TenantDirectory</span></div>
 <div class="block">A tenant has a set of bounded domains specific to an organizational entity. Each bounded domain can have a user interface or a REST interface.
- A tenant has a set of users and roles. The tenant is the root of the security model.
+ A tenant has a set of users and roles. Authorization rights are declared per uer and per bounded domain. The tenant is the root of the security model.
  Persistent data is stored on a per-tenant basis.
- <p>A tenant is configured through the properties file passed to the constructor.</p></div>
+ <p>A tenant is configured through the properties file passed to the constructor. The identifier of the tenant is used to select the organization during
+ the authentication process.</p>
+ <p>Tenants have no access to other tenants defined in the application.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -120,12 +127,15 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#IN_MEMORY_PROPERTY" class="member-name-link">IN_MEMORY_PROPERTY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#TENANT_ID_PROPERTY" class="member-name-link">TENANT_ID_PROPERTY</a></code></div>
+<div class="col-second even-row-color"><code><a href="#TENANT_ROOT_DIRECTORY_PROPERTY" class="member-name-link">TENANT_ROOT_DIRECTORY_PROPERTY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#TENANT_ROOT_DIRECTORY_PROPERTY" class="member-name-link">TENANT_ROOT_DIRECTORY_PROPERTY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-net.tangly.core.HasId">Fields inherited from interface&nbsp;net.tangly.core.HasId</h3>
+<code>ID</code></div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-net.tangly.core.domain.TenantDirectory">Fields inherited from interface&nbsp;net.tangly.core.domain.TenantDirectory</h3>
+<code>TENANT_ID_PROPERTY, TENANT_ORGANIZATION_ADDRESS_PROPERTY, TENANT_ORGANIZATION_DATE_FORMAT_PROPERTY, TENANT_ORGANIZATION_ID_PROPERTY, TENANT_ORGANIZATION_LANGUAGE_PROPERTY, TENANT_ORGANIZATION_NAME_PROPERTY</code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -152,53 +162,53 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="services/AppsBoundedDomain.html" title="class in net.tangly.app.services">AppsBoundedDomain</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apps()" class="member-name-link">apps</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#activeUsersFor(java.lang.String)" class="member-name-link">activeUsersFor</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="api/BoundedDomainRest.html" title="interface in net.tangly.app.api">BoundedDomainRest</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#boundedDomainRests()" class="member-name-link">boundedDomainRests</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="services/AppsBoundedDomain.html" title="class in net.tangly.app.services">AppsBoundedDomain</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apps()" class="member-name-link">apps</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#boundedDomains()" class="member-name-link">boundedDomains</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="api/BoundedDomainRest.html" title="interface in net.tangly.app.api">BoundedDomainRest</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#boundedDomainRests()" class="member-name-link">boundedDomainRests</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#databases()" class="member-name-link">databases</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#docs(java.lang.String)" class="member-name-link">docs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundedDomain(java.lang.String)" class="member-name-link">getBoundedDomain</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="api/BoundedDomainRest.html" title="interface in net.tangly.app.api">BoundedDomainRest</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundedDomainRest(java.lang.String)" class="member-name-link">getBoundedDomainRest</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProperty(java.lang.String)" class="member-name-link">getProperty</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;property)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#boundedDomains()" class="member-name-link">boundedDomains</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#databases()" class="member-name-link">databases</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#imports(java.lang.String)" class="member-name-link">imports</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#docs(java.lang.String)" class="member-name-link">docs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#inMemory()" class="member-name-link">inMemory</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundedDomain(java.lang.String)" class="member-name-link">getBoundedDomain</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="api/BoundedDomainRest.html" title="interface in net.tangly.app.api">BoundedDomainRest</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundedDomainRest(java.lang.String)" class="member-name-link">getBoundedDomainRest</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProperty(java.lang.String)" class="member-name-link">getProperty</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;property)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#imports(java.lang.String)" class="member-name-link">imports</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEnabled(java.lang.String)" class="member-name-link">isEnabled</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#inMemory()" class="member-name-link">inMemory</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#properties()" class="member-name-link">properties</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEnabled(java.lang.String)" class="member-name-link">isEnabled</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerBoundedDomain(net.tangly.core.domain.BoundedDomain)" class="member-name-link">registerBoundedDomain</a><wbr>(net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&nbsp;domain)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#properties()" class="member-name-link">properties</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerBoundedDomainRest(net.tangly.app.api.BoundedDomainRest)" class="member-name-link">registerBoundedDomainRest</a><wbr>(<a href="api/BoundedDomainRest.html" title="interface in net.tangly.app.api">BoundedDomainRest</a>&nbsp;domain)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerBoundedDomain(net.tangly.core.domain.BoundedDomain)" class="member-name-link">registerBoundedDomain</a><wbr>(net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&nbsp;domain)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.TypeRegistry</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registry()" class="member-name-link">registry</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerBoundedDomainRest(net.tangly.app.api.BoundedDomainRest)" class="member-name-link">registerBoundedDomainRest</a><wbr>(<a href="api/BoundedDomainRest.html" title="interface in net.tangly.app.api">BoundedDomainRest</a>&nbsp;domain)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resources(java.lang.String)" class="member-name-link">resources</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
@@ -213,8 +223,8 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes the tenant upon creation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.tangly.core.domain.UsersProvider</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#UsersProviderFor(java.lang.String)" class="member-name-link">UsersProviderFor</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#usersFor(java.lang.String)" class="member-name-link">usersFor</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -243,22 +253,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#net.tangly.app.Tenant.IN_MEMORY_PROPERTY">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="TENANT_ID_PROPERTY">
-<h3>TENANT_ID_PROPERTY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">TENANT_ID_PROPERTY</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../constant-values.html#net.tangly.app.Tenant.TENANT_ID_PROPERTY">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -355,19 +349,83 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="UsersProviderFor(java.lang.String)">
-<h3>UsersProviderFor</h3>
+<section class="detail" id="id()">
+<h3>id</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">net.tangly.core.domain.UsersProvider</span>&nbsp;<span class="element-name">UsersProviderFor</span><wbr><span class="parameters">(@NotNull
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">id</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>id</code>&nbsp;in interface&nbsp;<code>net.tangly.core.HasId</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getProperty(java.lang.String)">
+<h3>getProperty</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getProperty</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;property)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getProperty</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.TenantDirectory</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getBoundedDomain(java.lang.String)">
+<h3>getBoundedDomain</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&gt;</span>&nbsp;<span class="element-name">getBoundedDomain</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBoundedDomain</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.TenantDirectory</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="usersFor(java.lang.String)">
+<h3>usersFor</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">usersFor</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>usersFor</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.TenantDirectory</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="activeUsersFor(java.lang.String)">
+<h3>activeUsersFor</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">activeUsersFor</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>activeUsersFor</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.TenantDirectory</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isEnabled(java.lang.String)">
+<h3>isEnabled</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEnabled</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="id()">
-<h3>id</h3>
+<section class="detail" id="properties()">
+<h3>properties</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">id</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a></span>&nbsp;<span class="element-name">properties</span>()</div>
 </div>
 </section>
 </li>
@@ -389,22 +447,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">shutdown</span>()</div>
 <div class="block">Shutdowns the tenant before unloading the tenant from the application.
  Tenants are shutdown when the last user of the tenant logs out.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="properties()">
-<h3>properties</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a></span>&nbsp;<span class="element-name">properties</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="registry()">
-<h3>registry</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">net.tangly.core.TypeRegistry</span>&nbsp;<span class="element-name">registry</span>()</div>
 </div>
 </section>
 </li>
@@ -433,14 +475,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getBoundedDomain(java.lang.String)">
-<h3>getBoundedDomain</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;net.tangly.core.domain.BoundedDomain&lt;?,<wbr>?,<wbr>?&gt;&gt;</span>&nbsp;<span class="element-name">getBoundedDomain</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="apps()">
 <h3>apps</h3>
 <div class="horizontal-scroll">
@@ -465,27 +499,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="isEnabled(java.lang.String)">
-<h3>isEnabled</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEnabled</span><wbr><span class="parameters">(@NotNull
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;domain)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="inMemory()">
 <h3>inMemory</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">inMemory</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getProperty(java.lang.String)">
-<h3>getProperty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getProperty</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;property)</span></div>
 </div>
 </section>
 </li>

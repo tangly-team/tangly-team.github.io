@@ -91,7 +91,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.tangly.core.domain.DomainAudit</code></dd>
+<dd><code>net.tangly.core.domain.DomainAudit</code>, <code>net.tangly.core.HasName</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">AppsBoundedDomain</span>
@@ -122,6 +122,9 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#DOMAIN" class="member-name-link">DOMAIN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-net.tangly.core.HasName">Fields inherited from interface&nbsp;net.tangly.core.HasName</h3>
+<code>NAME</code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -132,11 +135,11 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.app.Tenant,net.tangly.app.services.AppsRealm,net.tangly.app.services.AppsBusinessLogic,net.tangly.app.services.AppsPort,net.tangly.core.TypeRegistry)" class="member-name-link">AppsBoundedDomain</a><wbr>(@NotNull <a href="../Tenant.html" title="class in net.tangly.app">Tenant</a>&nbsp;tenant,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.tangly.app.Tenant,net.tangly.app.services.AppsRealm,net.tangly.app.services.AppsBusinessLogic,net.tangly.app.services.AppsPort,net.tangly.core.domain.TenantDirectory)" class="member-name-link">AppsBoundedDomain</a><wbr>(@NotNull <a href="../Tenant.html" title="class in net.tangly.app">Tenant</a>&nbsp;tenant,
  <a href="AppsRealm.html" title="interface in net.tangly.app.services">AppsRealm</a>&nbsp;realm,
  <a href="AppsBusinessLogic.html" title="class in net.tangly.app.services">AppsBusinessLogic</a>&nbsp;logic,
  <a href="AppsPort.html" title="interface in net.tangly.app.services">AppsPort</a>&nbsp;port,
- net.tangly.core.TypeRegistry&nbsp;registry)</code></div>
+ net.tangly.core.domain.TenantDirectory&nbsp;directory)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -155,18 +158,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;net.tangly.core.domain.DomainEntity&lt;?&gt;&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entities()" class="member-name-link">entities</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AppsRealm.html" title="interface in net.tangly.app.services">AppsRealm</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#realm()" class="member-name-link">realm</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Tenant.html" title="class in net.tangly.app">Tenant</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tenant()" class="member-name-link">tenant</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Tenant.html" title="class in net.tangly.app">Tenant</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tenant()" class="member-name-link">tenant</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.tangly.core.domain.BoundedDomain">Methods inherited from class&nbsp;net.tangly.core.domain.BoundedDomain</h3>
-<code>addTagCounts, addTagCounts, auditEvents, channel, countTags, internalChannel, log, logic, name, port, registry, shutdown, startup, subscribe, subscribeInternally, usersProvider</code></div>
+<code>addTagCounts, addTagCounts, auditEvents, channel, countTags, directory, internalChannel, log, logic, name, port, realm, registry, shutdown, startup, subscribe, subscribeInternally</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -209,7 +209,7 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.tangly.app.Tenant,net.tangly.app.services.AppsRealm,net.tangly.app.services.AppsBusinessLogic,net.tangly.app.services.AppsPort,net.tangly.core.TypeRegistry)">
+<section class="detail" id="&lt;init&gt;(net.tangly.app.Tenant,net.tangly.app.services.AppsRealm,net.tangly.app.services.AppsBusinessLogic,net.tangly.app.services.AppsPort,net.tangly.core.domain.TenantDirectory)">
 <h3>AppsBoundedDomain</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">AppsBoundedDomain</span><wbr><span class="parameters">(@NotNull
@@ -217,7 +217,7 @@ loadScripts(document, 'script');</script>
  <a href="AppsRealm.html" title="interface in net.tangly.app.services">AppsRealm</a>&nbsp;realm,
  <a href="AppsBusinessLogic.html" title="class in net.tangly.app.services">AppsBusinessLogic</a>&nbsp;logic,
  <a href="AppsPort.html" title="interface in net.tangly.app.services">AppsPort</a>&nbsp;port,
- net.tangly.core.TypeRegistry&nbsp;registry)</span></div>
+ net.tangly.core.domain.TenantDirectory&nbsp;directory)</span></div>
 </div>
 </section>
 </li>
@@ -245,18 +245,6 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code>entities</code>&nbsp;in class&nbsp;<code>net.tangly.core.domain.BoundedDomain&lt;<a href="AppsRealm.html" title="interface in net.tangly.app.services">AppsRealm</a>,<wbr><a href="AppsBusinessLogic.html" title="class in net.tangly.app.services">AppsBusinessLogic</a>,<wbr><a href="AppsPort.html" title="interface in net.tangly.app.services">AppsPort</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="realm()">
-<h3>realm</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="AppsRealm.html" title="interface in net.tangly.app.services">AppsRealm</a></span>&nbsp;<span class="element-name">realm</span>()</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code>realm</code>&nbsp;in class&nbsp;<code>net.tangly.core.domain.BoundedDomain&lt;<a href="AppsRealm.html" title="interface in net.tangly.app.services">AppsRealm</a>,<wbr><a href="AppsBusinessLogic.html" title="class in net.tangly.app.services">AppsBusinessLogic</a>,<wbr><a href="AppsPort.html" title="interface in net.tangly.app.services">AppsPort</a>&gt;</code></dd>
 </dl>
 </div>
 </section>

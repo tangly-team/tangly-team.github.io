@@ -1,1 +1,1 @@
-moduleSearchIndex = [];updateSearchResults();
+moduleSearchIndex = [{"l":"net.tangly.commons"}];updateSearchResults();

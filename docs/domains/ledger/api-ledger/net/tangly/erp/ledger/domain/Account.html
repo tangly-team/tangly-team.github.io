@@ -176,70 +176,76 @@ implements net.tangly.core.HasId, net.tangly.core.HasName</span></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#aggregatedAccounts()" class="member-name-link">aggregatedAccounts</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#balance(java.time.LocalDate)" class="member-name-link">balance</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#balance(java.time.LocalDate)" class="member-name-link">balance</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Debits and Credits are from the bank’s point of view and so are the opposite of what you expect when it comes to the maths involved.</div>
+<div class="block">Debits and Credits are from the bank’s point of view, and so are the opposite of what you expect when it comes to the maths involved.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Currency.html" title="class or interface in java.util" class="external-link">Currency</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currency()" class="member-name-link">currency</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entries()" class="member-name-link">entries</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#balance(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">balance</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the balance of the account between two dates.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Currency.html" title="class or interface in java.util" class="external-link">Currency</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currency()" class="member-name-link">currency</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntriesFor(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">getEntriesFor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#entries()" class="member-name-link">entries</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Account.AccountGroup.html" title="enum class in net.tangly.erp.ledger.domain">Account.AccountGroup</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#group()" class="member-name-link">group</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntriesFor(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">getEntriesFor</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAggregate()" class="member-name-link">isAggregate</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return true if the account is an aggregate account, meaning the balance is the aggregation of a set of accounts.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCredit()" class="member-name-link">isCredit</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return true if the account is a credit account.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDebit()" class="member-name-link">isDebit</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return true if the account is a debit account.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Account.AccountKind.html" title="enum class in net.tangly.erp.ledger.domain">Account.AccountKind</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kind()" class="member-name-link">kind</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Account.AccountGroup.html" title="enum class in net.tangly.erp.ledger.domain">Account.AccountGroup</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#group()" class="member-name-link">group</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Account.html" title="class in net.tangly.erp.ledger.domain">Account</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(int,net.tangly.erp.ledger.domain.Account.AccountKind,java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">of</a><wbr>(int&nbsp;id,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAggregate()" class="member-name-link">isAggregate</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return true if the account is an aggregate account, meaning the balance is the aggregation of a set of accounts.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCredit()" class="member-name-link">isCredit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return true if the account is a credit account.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDebit()" class="member-name-link">isDebit</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return true if the account is a debit account.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Account.AccountKind.html" title="enum class in net.tangly.erp.ledger.domain">Account.AccountKind</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kind()" class="member-name-link">kind</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Account.html" title="class in net.tangly.erp.ledger.domain">Account</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(int,net.tangly.erp.ledger.domain.Account.AccountKind,java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">of</a><wbr>(int&nbsp;id,
  <a href="Account.AccountKind.html" title="enum class in net.tangly.erp.ledger.domain">Account.AccountKind</a>&nbsp;kind,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;currency,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ownedByGroupId)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Account.html" title="class in net.tangly.erp.ledger.domain">Account</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.lang.String,net.tangly.erp.ledger.domain.Account.AccountGroup,java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Account.html" title="class in net.tangly.erp.ledger.domain">Account</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.lang.String,net.tangly.erp.ledger.domain.Account.AccountGroup,java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
  <a href="Account.AccountGroup.html" title="enum class in net.tangly.erp.ledger.domain">Account.AccountGroup</a>&nbsp;group,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;currency,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ownedByGroupId)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ownedBy()" class="member-name-link">ownedBy</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ownedBy()" class="member-name-link">ownedBy</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateAggregatedAccounts(java.util.Collection)" class="member-name-link">updateAggregatedAccounts</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="Account.html" title="class in net.tangly.erp.ledger.domain">Account</a>&gt;&nbsp;aggregatedAccounts)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateAggregatedAccounts(java.util.Collection)" class="member-name-link">updateAggregatedAccounts</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="Account.html" title="class in net.tangly.erp.ledger.domain">Account</a>&gt;&nbsp;aggregatedAccounts)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -432,17 +438,16 @@ implements net.tangly.core.HasId, net.tangly.core.HasName</span></div>
 <section class="detail" id="balance(java.time.LocalDate)">
 <h3>balance</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name">balance</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date)</span></div>
-<div class="block">Debits and Credits are from the bank’s point of view and so are the opposite of what you expect when it comes to the maths involved. Debits - meaning
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name">balance</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date)</span></div>
+<div class="block">Debits and Credits are from the bank’s point of view, and so are the opposite of what you expect when it comes to the maths involved. Debits - meaning
  assets and expenses - have a positive balance and Credits - meaning liabilities and income - have a negative balance.
- <p>
- If I Debit (add to) a Debit account it gets more positive and has a larger format (Debit -&gt; Soll)
- <p>
- If I Credit (subtract from) a Debit account, it gets less positive and has a smaller format (Credit -&gt; Haben)
- <p>
- If I Debit (add to) a Credit account, it gets less negative and has a smaller format
- <p>
- If I Credit (subtract from) a Credit account, it gets more negative and has a larger format</div>
+ <ul>
+ <li>If I Debit (add to) a Debit account, it gets more positive and has a larger format (Debit -&gt; Soll)</li>
+ <li> If I Credit (subtract from) a Debit account, it gets less positive and has a smaller format (Credit -&gt; Haben)</li>
+ <li> If I Debit (add to) a Credit account, it gets less negative and has a smaller format</li>
+ <li> If I Credit (subtract from) a Credit account, it gets more negative and has a larger format</li>
+ </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>date</code> - date at which the balance is computed</dd>
@@ -453,11 +458,32 @@ implements net.tangly.core.HasId, net.tangly.core.HasName</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="balance(java.time.LocalDate,java.time.LocalDate)">
+<h3>balance</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name">balance</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
+<div class="block">Returns the balance of the account between two dates. The balance is computed by summing the booking entries between the two dates.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - start date</dd>
+<dd><code>to</code> - end date</dd>
+<dt>Returns:</dt>
+<dd>the balance of the account between the two dates</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getEntriesFor(java.time.LocalDate,java.time.LocalDate)">
 <h3>getEntriesFor</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;</span>&nbsp;<span class="element-name">getEntriesFor</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;</span>&nbsp;<span class="element-name">getEntriesFor</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
 </div>
 </section>
 </li>

@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.tangly.erp.ledger.domain"},{"l":"net.tangly.erp.ledger.ports"},{"l":"net.tangly.erp.ledger.services"},{"l":"net.tangly.erp.ledger.ui"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.tangly.erp.ledger.artifacts"},{"l":"net.tangly.erp.ledger.domain"},{"l":"net.tangly.erp.ledger.ports"},{"l":"net.tangly.erp.ledger.services"},{"l":"net.tangly.erp.ledger.ui"}];updateSearchResults();

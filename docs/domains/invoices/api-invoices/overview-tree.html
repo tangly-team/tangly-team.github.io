@@ -60,7 +60,7 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" class="type-name-link external-link" title="class or interface in java.lang">Object</a>
 <ul>
-<li class="circle">net.tangly.core.domain.BoundedDomain&lt;R,<wbr>B,<wbr>P&gt; (implements net.tangly.core.domain.DomainAudit)
+<li class="circle">net.tangly.core.domain.BoundedDomain&lt;R,<wbr>B,<wbr>P&gt; (implements net.tangly.core.domain.DomainAudit, net.tangly.core.HasName)
 <ul>
 <li class="circle">net.tangly.erp.invoices.services.<a href="net/tangly/erp/invoices/services/InvoicesBoundedDomain.html" class="type-name-link" title="class in net.tangly.erp.invoices.services">InvoicesBoundedDomain</a></li>
 </ul>
@@ -76,15 +76,28 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.erp.invoices.ui.<a href="net/tangly/erp/invoices/ui/CmdFilesUploadInvoices.html" class="type-name-link" title="class in net.tangly.erp.invoices.ui">CmdFilesUploadInvoices</a></li>
 </ul>
 </li>
+<li class="circle">com.vaadin.flow.component.Component (implements com.vaadin.flow.component.AttachNotifier, com.vaadin.flow.component.DetachNotifier, com.vaadin.flow.component.HasStyle)
+<ul>
+<li class="circle">com.vaadin.flow.component.orderedlayout.VerticalLayout (implements com.vaadin.flow.component.ClickNotifier&lt;T&gt;, com.vaadin.flow.component.orderedlayout.FlexComponent, com.vaadin.flow.component.orderedlayout.ThemableLayout)
+<ul>
+<li class="circle">net.tangly.ui.app.domain.AnalyticsView (implements net.tangly.ui.app.domain.View)
+<ul>
+<li class="circle">net.tangly.erp.invoices.ui.<a href="net/tangly/erp/invoices/ui/AnalyticsProductsView.html" class="type-name-link" title="class in net.tangly.erp.invoices.ui">AnalyticsProductsView</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="circle">net.tangly.erp.invoices.domain.<a href="net/tangly/erp/invoices/domain/Invoice.html" class="type-name-link" title="class in net.tangly.erp.invoices.domain">Invoice</a> (implements net.tangly.core.HasMutableDate, net.tangly.core.HasMutableId, net.tangly.core.HasMutableName, net.tangly.core.HasMutableText)</li>
-<li class="circle">net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceAsciiDoc.html" class="type-name-link" title="class in net.tangly.erp.invoices.artifacts">InvoiceAsciiDoc</a> (implements net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceGenerator.html" title="interface in net.tangly.erp.invoices.artifacts">InvoiceGenerator</a>)</li>
-<li class="circle">net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceJson.html" class="type-name-link" title="class in net.tangly.erp.invoices.artifacts">InvoiceJson</a> (implements net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceGenerator.html" title="interface in net.tangly.erp.invoices.artifacts">InvoiceGenerator</a>)</li>
-<li class="circle">net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceQrCode.html" class="type-name-link" title="class in net.tangly.erp.invoices.artifacts">InvoiceQrCode</a> (implements net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceGenerator.html" title="interface in net.tangly.erp.invoices.artifacts">InvoiceGenerator</a>)</li>
+<li class="circle">net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceAsciiDoc.html" class="type-name-link" title="class in net.tangly.erp.invoices.artifacts">InvoiceAsciiDoc</a> (implements net.tangly.core.domain.DocumentGenerator&lt;T&gt;)</li>
+<li class="circle">net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceJson.html" class="type-name-link" title="class in net.tangly.erp.invoices.artifacts">InvoiceJson</a> (implements net.tangly.core.domain.DocumentGenerator&lt;T&gt;)</li>
+<li class="circle">net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceQrCode.html" class="type-name-link" title="class in net.tangly.erp.invoices.artifacts">InvoiceQrCode</a> (implements net.tangly.core.domain.DocumentGenerator&lt;T&gt;)</li>
 <li class="circle">net.tangly.erp.invoices.ports.<a href="net/tangly/erp/invoices/ports/InvoicesAdapter.html" class="type-name-link" title="class in net.tangly.erp.invoices.ports">InvoicesAdapter</a> (implements net.tangly.erp.invoices.services.<a href="net/tangly/erp/invoices/services/InvoicesPort.html" title="interface in net.tangly.erp.invoices.services">InvoicesPort</a>)</li>
 <li class="circle">net.tangly.erp.invoices.services.<a href="net/tangly/erp/invoices/services/InvoicesBusinessLogic.html" class="type-name-link" title="class in net.tangly.erp.invoices.services">InvoicesBusinessLogic</a></li>
 <li class="circle">net.tangly.erp.invoices.ports.<a href="net/tangly/erp/invoices/ports/InvoicesEntities.html" class="type-name-link" title="class in net.tangly.erp.invoices.ports">InvoicesEntities</a> (implements net.tangly.erp.invoices.services.<a href="net/tangly/erp/invoices/services/InvoicesRealm.html" title="interface in net.tangly.erp.invoices.services">InvoicesRealm</a>)</li>
 <li class="circle">net.tangly.erp.invoices.ports.<a href="net/tangly/erp/invoices/ports/InvoicesTsvJsonHdl.html" class="type-name-link" title="class in net.tangly.erp.invoices.ports">InvoicesTsvJsonHdl</a></li>
-<li class="circle">net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceZugFerd.html" class="type-name-link" title="class in net.tangly.erp.invoices.artifacts">InvoiceZugFerd</a> (implements org.mustangproject.ZUGFeRD.IExportableTransaction, net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceGenerator.html" title="interface in net.tangly.erp.invoices.artifacts">InvoiceGenerator</a>)</li>
+<li class="circle">net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceZugFerd.html" class="type-name-link" title="class in net.tangly.erp.invoices.artifacts">InvoiceZugFerd</a> (implements net.tangly.core.domain.DocumentGenerator&lt;T&gt;, org.mustangproject.ZUGFeRD.IExportableTransaction)</li>
 </ul>
 </li>
 </ul>
@@ -97,7 +110,6 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.erp.invoices.domain.<a href="net/tangly/erp/invoices/domain/InvoiceLine.html" class="type-name-link" title="interface in net.tangly.erp.invoices.domain">InvoiceLine</a></li>
 </ul>
 </li>
-<li class="circle">net.tangly.erp.invoices.artifacts.<a href="net/tangly/erp/invoices/artifacts/InvoiceGenerator.html" class="type-name-link" title="interface in net.tangly.erp.invoices.artifacts">InvoiceGenerator</a></li>
 <li class="circle">net.tangly.core.domain.Port&lt;R&gt;
 <ul>
 <li class="circle">net.tangly.erp.invoices.services.<a href="net/tangly/erp/invoices/services/InvoicesPort.html" class="type-name-link" title="interface in net.tangly.erp.invoices.services">InvoicesPort</a></li>
@@ -135,6 +147,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.tangly.erp.invoices.domain.<a href="net/tangly/erp/invoices/domain/Article.html" class="type-name-link" title="class in net.tangly.erp.invoices.domain">Article</a> (implements net.tangly.core.HasId, net.tangly.core.HasName, net.tangly.core.HasText)</li>
 <li class="circle">net.tangly.erp.invoices.domain.<a href="net/tangly/erp/invoices/domain/InvoiceItem.html" class="type-name-link" title="class in net.tangly.erp.invoices.domain">InvoiceItem</a> (implements net.tangly.erp.invoices.domain.<a href="net/tangly/erp/invoices/domain/InvoiceLine.html" title="interface in net.tangly.erp.invoices.domain">InvoiceLine</a>)</li>
 <li class="circle">net.tangly.erp.invoices.domain.<a href="net/tangly/erp/invoices/domain/InvoiceLegalEntity.html" class="type-name-link" title="class in net.tangly.erp.invoices.domain">InvoiceLegalEntity</a> (implements net.tangly.core.HasId, net.tangly.core.HasName)</li>
+<li class="circle">net.tangly.erp.invoices.services.<a href="net/tangly/erp/invoices/services/InvoicesPort.InvoiceView.html" class="type-name-link" title="class in net.tangly.erp.invoices.services">InvoicesPort.InvoiceView</a></li>
 <li class="circle">net.tangly.erp.invoices.domain.<a href="net/tangly/erp/invoices/domain/Subtotal.html" class="type-name-link" title="class in net.tangly.erp.invoices.domain">Subtotal</a> (implements net.tangly.erp.invoices.domain.<a href="net/tangly/erp/invoices/domain/InvoiceLine.html" title="interface in net.tangly.erp.invoices.domain">InvoiceLine</a>)</li>
 </ul>
 </li>

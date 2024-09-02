@@ -150,22 +150,21 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reference,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;&nbsp;splits)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.time.LocalDate,java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.String,java.lang.String,net.tangly.erp.ledger.services.VatCode,java.time.LocalDate,java.util.List)" class="member-name-link">Transaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.time.LocalDate,java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.VatCode,java.time.LocalDate,java.util.List)" class="member-name-link">Transaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;debitAccount,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;creditAccount,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&nbsp;amount,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reference,
- <a href="../services/VatCode.html" title="class in net.tangly.erp.ledger.services">VatCode</a>&nbsp;vatCode,
+ <a href="VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&nbsp;vatCode,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;dateExpected,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;&nbsp;splits)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.time.LocalDate,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.services.VatCode,java.time.LocalDate,boolean,java.util.List)" class="member-name-link">Transaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.time.LocalDate,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.domain.AccountEntry,java.time.LocalDate,boolean,java.util.List)" class="member-name-link">Transaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reference,
  <a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&nbsp;debit,
  <a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&nbsp;credit,
- <a href="../services/VatCode.html" title="class in net.tangly.erp.ledger.services">VatCode</a>&nbsp;vatCode,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;dateExpected,
  boolean&nbsp;synthetic,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;&nbsp;splits)</code></div>
@@ -220,6 +219,12 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#debitSplits()" class="member-name-link">debitSplits</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasCreditSplits()" class="member-name-link">hasCreditSplits</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasDebitSplits()" class="member-name-link">hasDebitSplits</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSplit()" class="member-name-link">isSplit</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return true if the transaction is split between multiple accounts.</div>
@@ -243,23 +248,22 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reference)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.time.LocalDate,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.services.VatCode,java.time.LocalDate,java.util.List)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.time.LocalDate,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.domain.AccountEntry,java.time.LocalDate,java.util.List)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reference,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&nbsp;debitAccount,
  <a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&nbsp;creditAccount,
- <a href="../services/VatCode.html" title="class in net.tangly.erp.ledger.services">VatCode</a>&nbsp;vatCode,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;dateExpected,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;&nbsp;splits)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofSynthetic(java.time.LocalDate,java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.String,java.lang.String,net.tangly.erp.ledger.services.VatCode,java.time.LocalDate,java.util.List)" class="member-name-link">ofSynthetic</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofSynthetic(java.time.LocalDate,java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.VatCode,java.time.LocalDate,java.util.List)" class="member-name-link">ofSynthetic</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;debitAccount,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;creditAccount,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&nbsp;amount,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reference,
- <a href="../services/VatCode.html" title="class in net.tangly.erp.ledger.services">VatCode</a>&nbsp;vatCode,
+ <a href="VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&nbsp;vatCode,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;dateExpected,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;&nbsp;splits)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -279,7 +283,7 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../services/VatCode.html" title="class in net.tangly.erp.ledger.services">VatCode</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#vatCode()" class="member-name-link">vatCode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
@@ -330,7 +334,7 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(java.time.LocalDate,java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.String,java.lang.String,net.tangly.erp.ledger.services.VatCode,java.time.LocalDate,java.util.List)">
+<section class="detail" id="&lt;init&gt;(java.time.LocalDate,java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.VatCode,java.time.LocalDate,java.util.List)">
 <h3>Transaction</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Transaction</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
@@ -339,14 +343,14 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&nbsp;amount,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reference,
- <a href="../services/VatCode.html" title="class in net.tangly.erp.ledger.services">VatCode</a>&nbsp;vatCode,
+ <a href="VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&nbsp;vatCode,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;dateExpected,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;&nbsp;splits)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(java.time.LocalDate,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.services.VatCode,java.time.LocalDate,boolean,java.util.List)">
+<section class="detail" id="&lt;init&gt;(java.time.LocalDate,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.domain.AccountEntry,java.time.LocalDate,boolean,java.util.List)">
 <h3>Transaction</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Transaction</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
@@ -354,7 +358,6 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reference,
  <a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&nbsp;debit,
  <a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&nbsp;credit,
- <a href="../services/VatCode.html" title="class in net.tangly.erp.ledger.services">VatCode</a>&nbsp;vatCode,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;dateExpected,
  boolean&nbsp;synthetic,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;&nbsp;splits)</span></div>
@@ -370,7 +373,7 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="of(java.time.LocalDate,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.services.VatCode,java.time.LocalDate,java.util.List)">
+<section class="detail" id="of(java.time.LocalDate,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.AccountEntry,net.tangly.erp.ledger.domain.AccountEntry,java.time.LocalDate,java.util.List)">
 <h3>of</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
@@ -378,7 +381,6 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&nbsp;debitAccount,
  <a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&nbsp;creditAccount,
- <a href="../services/VatCode.html" title="class in net.tangly.erp.ledger.services">VatCode</a>&nbsp;vatCode,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;dateExpected,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;&nbsp;splits)</span></div>
 </div>
@@ -410,7 +412,7 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="ofSynthetic(java.time.LocalDate,java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.String,java.lang.String,net.tangly.erp.ledger.services.VatCode,java.time.LocalDate,java.util.List)">
+<section class="detail" id="ofSynthetic(java.time.LocalDate,java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.String,java.lang.String,net.tangly.erp.ledger.domain.VatCode,java.time.LocalDate,java.util.List)">
 <h3>ofSynthetic</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a></span>&nbsp;<span class="element-name">ofSynthetic</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date,
@@ -419,7 +421,7 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&nbsp;amount,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reference,
- <a href="../services/VatCode.html" title="class in net.tangly.erp.ledger.services">VatCode</a>&nbsp;vatCode,
+ <a href="VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&nbsp;vatCode,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;dateExpected,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;&nbsp;splits)</span></div>
 </div>
@@ -434,10 +436,26 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="hasDebitSplits()">
+<h3>hasDebitSplits</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasDebitSplits</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="creditSplits()">
 <h3>creditSplits</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;</span>&nbsp;<span class="element-name">creditSplits</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasCreditSplits()">
+<h3>hasCreditSplits</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasCreditSplits</span>()</div>
 </div>
 </section>
 </li>
@@ -485,7 +503,7 @@ implements net.tangly.core.HasDate, net.tangly.core.HasText</span></div>
 <section class="detail" id="vatCode()">
 <h3>vatCode</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../services/VatCode.html" title="class in net.tangly.erp.ledger.services">VatCode</a>&gt;</span>&nbsp;<span class="element-name">vatCode</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&gt;</span>&nbsp;<span class="element-name">vatCode</span>()</div>
 </div>
 </section>
 </li>

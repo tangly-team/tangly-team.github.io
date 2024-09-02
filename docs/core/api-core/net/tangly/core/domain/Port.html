@@ -140,7 +140,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Exports all entities of the bounded domain to the file system as TSV, JSON, TOML, and YAML files.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#importConfiguration(net.tangly.core.TypeRegistry)" class="member-name-link">importConfiguration</a><wbr>(@NotNull <a href="../TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a>&nbsp;registry)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#importConfiguration(net.tangly.core.domain.DomainAudit,net.tangly.core.TypeRegistry)" class="member-name-link">importConfiguration</a><wbr>(@NotNull <a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a>&nbsp;audit,
+ @NotNull <a href="../TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a>&nbsp;registry)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Imports configuration specific to the bounded domain in the context of a tenant.</div>
 </div>
@@ -157,10 +158,14 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#resolvePath(java.nio.file.Path,int,java.lang.String)" class="member-name-link">resolvePath</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;directory,
  int&nbsp;year,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Resolve the uri to where a document should be located in the file system.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#resolvePath(java.nio.file.Path,java.lang.String)" class="member-name-link">resolvePath</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;directory,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#resolvePath(java.nio.file.Path,int,java.time.Month,java.lang.String)" class="member-name-link">resolvePath</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;directory,
+ int&nbsp;year,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/Month.html" title="class or interface in java.time" class="external-link">Month</a>&nbsp;month,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Resolve the uri to where a document should be located in the file system.</div>
@@ -256,16 +261,19 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="importConfiguration(net.tangly.core.TypeRegistry)">
+<section class="detail" id="importConfiguration(net.tangly.core.domain.DomainAudit,net.tangly.core.TypeRegistry)">
 <h3>importConfiguration</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importConfiguration</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a>&nbsp;audit,
+ @NotNull
  @NotNull <a href="../TypeRegistry.html" title="class in net.tangly.core">TypeRegistry</a>&nbsp;registry)</span></div>
 <div class="block">Imports configuration specific to the bounded domain in the context of a tenant.
+ The reference code values and tags are imported and registered in the type registry.
  The configuration is typically used to configure codes and tags.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>registry</code> - registry of code and tag types to register the configuration</dd>
+<dd><code>audit</code> - domain audit sink to log the operation events</dd>
 </dl>
 </div>
 </section>
@@ -295,11 +303,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="resolvePath(java.nio.file.Path,java.lang.String)">
+<section class="detail" id="resolvePath(java.nio.file.Path,int,java.lang.String)">
 <h3>resolvePath</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></span>&nbsp;<span class="element-name">resolvePath</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;directory,
+ int&nbsp;year,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</span></div>
 <div class="block">Resolve the uri to where a document should be located in the file system. The convention is <em>base directory/year</em>. If folders do not
@@ -307,21 +316,34 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>directory</code> - base directory containing all reports and documents</dd>
+<dd><code>year</code> - year of the document</dd>
 <dd><code>filename</code> - filename of the document to write</dd>
 <dt>Returns:</dt>
-<dd>uri to the folder where the document should be written. If the file does not contain a year, the base directory is returned</dd>
+<dd>uri to the file where the document should be written</dd>
 </dl>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="resolvePath(java.nio.file.Path,int,java.lang.String)">
+<section class="detail" id="resolvePath(java.nio.file.Path,int,java.time.Month,java.lang.String)">
 <h3>resolvePath</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></span>&nbsp;<span class="element-name">resolvePath</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;directory,
  int&nbsp;year,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</span></div>
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/Month.html" title="class or interface in java.time" class="external-link">Month</a>&nbsp;month,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</span></div>
+<div class="block">Resolve the uri to where a document should be located in the file system. The convention is <em>base directory/year/month</em>. If folders do not
+ exist, they are created. The year must contain four digits. The month is transformed to a two-digit string.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>directory</code> - base directory containing all reports and documents</dd>
+<dd><code>year</code> - year of the document</dd>
+<dd><code>filename</code> - filename of the document to write</dd>
+<dt>Returns:</dt>
+<dd>uri to the file where the document should be written</dd>
+</dl>
 </div>
 </section>
 </li>

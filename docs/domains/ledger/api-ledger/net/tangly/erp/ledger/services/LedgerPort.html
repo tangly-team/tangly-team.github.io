@@ -121,11 +121,14 @@ extends net.tangly.core.domain.Port&lt;<a href="LedgerRealm.html" title="interfa
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportLedgerDocument(java.lang.String,java.time.LocalDate,java.time.LocalDate,boolean,boolean)" class="member-name-link">exportLedgerDocument</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportLedgerDocument(java.lang.String,java.time.LocalDate,java.time.LocalDate,boolean,boolean,boolean,boolean,boolean)" class="member-name-link">exportLedgerDocument</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
- boolean&nbsp;withVat,
- boolean&nbsp;withTransactions)</code></div>
+ boolean&nbsp;withBalanceSheet,
+ boolean&nbsp;withProfitsAndLosses,
+ boolean&nbsp;withEmptyAccounts,
+ boolean&nbsp;withTransactions,
+ boolean&nbsp;withVat)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Exports a ledger report with profits and losses, and assets and liabilities information for a specific time interval.</div>
 </div>
@@ -147,22 +150,28 @@ extends net.tangly.core.domain.Port&lt;<a href="LedgerRealm.html" title="interfa
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="exportLedgerDocument(java.lang.String,java.time.LocalDate,java.time.LocalDate,boolean,boolean)">
+<section class="detail" id="exportLedgerDocument(java.lang.String,java.time.LocalDate,java.time.LocalDate,boolean,boolean,boolean,boolean,boolean)">
 <h3>exportLedgerDocument</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportLedgerDocument</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
- boolean&nbsp;withVat,
- boolean&nbsp;withTransactions)</span></div>
+ boolean&nbsp;withBalanceSheet,
+ boolean&nbsp;withProfitsAndLosses,
+ boolean&nbsp;withEmptyAccounts,
+ boolean&nbsp;withTransactions,
+ boolean&nbsp;withVat)</span></div>
 <div class="block">Exports a ledger report with profits and losses, and assets and liabilities information for a specific time interval.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>name</code> - name of the document</dd>
 <dd><code>from</code> - start of the time interval relevant for the report</dd>
 <dd><code>to</code> - end of the time interval relevant for the report</dd>
-<dd><code>withVat</code> - flag indicating if VAT information should be part of the report</dd>
+<dd><code>withBalanceSheet</code> - flag indicating if the balance sheet information should be part of the report</dd>
+<dd><code>withProfitsAndLosses</code> - flag indicating if the profits and losses information should be part of the report</dd>
+<dd><code>withEmptyAccounts</code> - flag indicating if empty accounts should be part of the report</dd>
 <dd><code>withTransactions</code> - flag indicating if the transactions should be part of the report</dd>
+<dd><code>withVat</code> - flag indicating if VAT information should be part of the report</dd>
 </dl>
 </div>
 </section>

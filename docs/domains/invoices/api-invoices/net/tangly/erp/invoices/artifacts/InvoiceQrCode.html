@@ -37,7 +37,7 @@ loadScripts(document, 'script');</script>
 <p>Summary:</p>
 <ul>
 <li>Nested</li>
-<li>Field</li>
+<li><a href="#field-summary">Field</a></li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -57,7 +57,7 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -89,16 +89,25 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="InvoiceGenerator.html" title="interface in net.tangly.erp.invoices.artifacts">InvoiceGenerator</a></code></dd>
+<dd><code>net.tangly.core.domain.DocumentGenerator&lt;<a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">InvoiceQrCode</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="InvoiceGenerator.html" title="interface in net.tangly.erp.invoices.artifacts">InvoiceGenerator</a></span></div>
+implements net.tangly.core.domain.DocumentGenerator&lt;<a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&gt;</span></div>
 </div>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-net.tangly.core.domain.DocumentGenerator">Fields inherited from interface&nbsp;net.tangly.core.domain.DocumentGenerator</h3>
+<code>COPYRIGHT_KEY, LOGO_PATH_KEY, ORGANIZATION_DATE_FORMAT_KEY, ORGANIZATION_ID_KEY, ORGANIZATION_LANGUAGE_KEY, ORGANIZATION_NAME_KEY, THEME_PATH_KEY</code></div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -124,19 +133,20 @@ implements <a href="InvoiceGenerator.html" title="interface in net.tangly.erp.in
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exports(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)" class="member-name-link">exports</a><wbr>(@NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
- @NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#export(net.tangly.erp.invoices.domain.Invoice,boolean,java.nio.file.Path,net.tangly.core.domain.DomainAudit)" class="member-name-link">export</a><wbr>(@NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
+ boolean&nbsp;overwrite,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;invoicePath,
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;properties)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Create a new invoice output document.</div>
-</div>
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.tangly.core.domain.DocumentGenerator">Methods inherited from interface&nbsp;net.tangly.core.domain.DocumentGenerator</h3>
+<code>shouldExport</code></div>
 </section>
 </li>
 </ul>
@@ -165,26 +175,19 @@ implements <a href="InvoiceGenerator.html" title="interface in net.tangly.erp.in
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="exports(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)">
-<h3>exports</h3>
+<section class="detail" id="export(net.tangly.erp.invoices.domain.Invoice,boolean,java.nio.file.Path,net.tangly.core.domain.DomainAudit)">
+<h3>export</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exports</span><wbr><span class="parameters">(@NotNull
- @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit,
- @NotNull
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">export</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&nbsp;invoice,
+ boolean&nbsp;overwrite,
  @NotNull
  @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;invoicePath,
  @NotNull
- @NotNull <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;properties)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="InvoiceGenerator.html#exports(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)">InvoiceGenerator</a></code></span></div>
-<div class="block">Create a new invoice output document.</div>
+ @NotNull net.tangly.core.domain.DomainAudit&nbsp;audit)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="InvoiceGenerator.html#exports(net.tangly.core.domain.DomainAudit,net.tangly.erp.invoices.domain.Invoice,java.nio.file.Path,java.util.Map)">exports</a></code>&nbsp;in interface&nbsp;<code><a href="InvoiceGenerator.html" title="interface in net.tangly.erp.invoices.artifacts">InvoiceGenerator</a></code></dd>
-<dt>Parameters:</dt>
-<dd><code>invoice</code> - invoice used to create a new invoice document</dd>
-<dd><code>invoicePath</code> - uri to the document to create</dd>
-<dd><code>properties</code> - fields to configure the creation process</dd>
+<dd><code>export</code>&nbsp;in interface&nbsp;<code>net.tangly.core.domain.DocumentGenerator&lt;<a href="../domain/Invoice.html" title="class in net.tangly.erp.invoices.domain">Invoice</a>&gt;</code></dd>
 </dl>
 </div>
 </section>

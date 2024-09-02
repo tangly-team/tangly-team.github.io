@@ -56,7 +56,7 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" class="type-name-link external-link" title="class or interface in java.lang">Object</a>
 <ul>
-<li class="circle">net.tangly.core.domain.<a href="BoundedDomain.html" class="type-name-link" title="class in net.tangly.core.domain">BoundedDomain</a>&lt;R,<wbr>B,<wbr>P&gt; (implements net.tangly.core.domain.<a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a>)</li>
+<li class="circle">net.tangly.core.domain.<a href="BoundedDomain.html" class="type-name-link" title="class in net.tangly.core.domain">BoundedDomain</a>&lt;R,<wbr>B,<wbr>P&gt; (implements net.tangly.core.domain.<a href="DomainAudit.html" title="interface in net.tangly.core.domain">DomainAudit</a>, net.tangly.core.<a href="../HasName.html" title="interface in net.tangly.core">HasName</a>)</li>
 <li class="circle">net.tangly.core.domain.<a href="TsvHdl.html" class="type-name-link" title="class in net.tangly.core.domain">TsvHdl</a></li>
 </ul>
 </li>
@@ -65,15 +65,24 @@ loadScripts(document, 'script');</script>
 <section class="hierarchy">
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
+<li class="circle">net.tangly.core.domain.<a href="DocumentGenerator.html" class="type-name-link" title="interface in net.tangly.core.domain">DocumentGenerator</a>&lt;T&gt;</li>
 <li class="circle">net.tangly.core.domain.<a href="DomainAudit.html" class="type-name-link" title="interface in net.tangly.core.domain">DomainAudit</a></li>
 <li class="circle">java.util.concurrent.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/concurrent/Flow.Subscriber.html" class="type-name-link external-link" title="class or interface in java.util.concurrent">Flow.Subscriber</a>&lt;T&gt;
 <ul>
 <li class="circle">net.tangly.core.domain.<a href="BoundedDomain.EventListener.html" class="type-name-link" title="interface in net.tangly.core.domain">BoundedDomain.EventListener</a></li>
 </ul>
 </li>
+<li class="circle">net.tangly.core.<a href="../HasId.html" class="type-name-link" title="interface in net.tangly.core">HasId</a>
+<ul>
+<li class="circle">net.tangly.core.domain.<a href="TenantDirectory.html" class="type-name-link" title="interface in net.tangly.core.domain">TenantDirectory</a></li>
+</ul>
+</li>
 <li class="circle">net.tangly.core.domain.<a href="Port.html" class="type-name-link" title="interface in net.tangly.core.domain">Port</a>&lt;R&gt;</li>
-<li class="circle">net.tangly.core.domain.<a href="Realm.html" class="type-name-link" title="interface in net.tangly.core.domain">Realm</a></li>
-<li class="circle">net.tangly.core.domain.<a href="UsersProvider.html" class="type-name-link" title="interface in net.tangly.core.domain">UsersProvider</a></li>
+<li class="circle">net.tangly.core.domain.<a href="Realm.html" class="type-name-link" title="interface in net.tangly.core.domain">Realm</a>
+<ul>
+<li class="circle">net.tangly.core.domain.<a href="RealmEclipseStore.html" class="type-name-link" title="interface in net.tangly.core.domain">RealmEclipseStore</a></li>
+</ul>
+</li>
 </ul>
 </section>
 <section class="hierarchy">
@@ -99,7 +108,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Record.html" class="type-name-link external-link" title="class or interface in java.lang">Record</a>
 <ul>
 <li class="circle">net.tangly.core.domain.<a href="AccessRights.html" class="type-name-link" title="class in net.tangly.core.domain">AccessRights</a></li>
-<li class="circle">net.tangly.core.domain.<a href="Document.html" class="type-name-link" title="class in net.tangly.core.domain">Document</a> (implements net.tangly.core.<a href="../HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="../HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="../HasText.html" title="interface in net.tangly.core">HasText</a>)</li>
+<li class="circle">net.tangly.core.domain.<a href="Document.html" class="type-name-link" title="class in net.tangly.core.domain">Document</a> (implements net.tangly.core.<a href="../HasDate.html" title="interface in net.tangly.core">HasDate</a>, net.tangly.core.<a href="../HasDateRange.html" title="interface in net.tangly.core">HasDateRange</a>, net.tangly.core.<a href="../HasId.html" title="interface in net.tangly.core">HasId</a>, net.tangly.core.<a href="../HasName.html" title="interface in net.tangly.core">HasName</a>, net.tangly.core.<a href="../HasText.html" title="interface in net.tangly.core">HasText</a>)</li>
 <li class="circle">net.tangly.core.domain.<a href="DomainEntity.html" class="type-name-link" title="class in net.tangly.core.domain">DomainEntity</a>&lt;T&gt;</li>
 <li class="circle">net.tangly.core.domain.<a href="User.html" class="type-name-link" title="class in net.tangly.core.domain">User</a></li>
 </ul>

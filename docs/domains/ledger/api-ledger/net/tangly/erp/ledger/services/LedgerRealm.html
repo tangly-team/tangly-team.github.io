@@ -157,24 +157,27 @@ extends net.tangly.core.domain.Realm</span></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Build the account tree structure and perform basic validation.</div>
+<div class="block">Builds the account tree structure and perform basic validation.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeDueVat(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">computeDueVat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeDueVat(java.time.LocalDate,java.time.LocalDate,net.tangly.erp.ledger.domain.VatCode)" class="member-name-link">computeDueVat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
+ <a href="../domain/VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&nbsp;vatCode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeVat(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">computeVat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeVat(java.time.LocalDate,java.time.LocalDate,net.tangly.erp.ledger.domain.VatCode)" class="member-name-link">computeVat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
+ <a href="../domain/VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&nbsp;vatCode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeVat(net.tangly.erp.ledger.domain.Transaction)" class="member-name-link">computeVat</a><wbr>(@NotNull <a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a>&nbsp;transaction)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Create synthetic transactions to deduct the VAT due amount and transfer it to the VAT account.</div>
+<div class="block">Creates synthetic transactions to deduct the VAT due amount and transfer it to the VAT account <em>2201</em>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeVatSales(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">computeVatSales</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeVatSales(java.time.LocalDate,java.time.LocalDate,net.tangly.erp.ledger.domain.VatCode)" class="member-name-link">computeVatSales</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
+ <a href="../domain/VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&nbsp;vatCode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>net.tangly.core.providers.Provider<wbr>&lt;<a href="../domain/AccountEntry.html" title="class in net.tangly.erp.ledger.domain">AccountEntry</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#entries()" class="member-name-link">entries</a>()</code></div>
@@ -362,7 +365,8 @@ extends net.tangly.core.domain.Realm</span></div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a></span>&nbsp;<span class="element-name">computeVat</span><wbr><span class="parameters">(@NotNull
  @NotNull <a href="../domain/Transaction.html" title="class in net.tangly.erp.ledger.domain">Transaction</a>&nbsp;transaction)</span></div>
-<div class="block">Create synthetic transactions to deduct the VAT due amount and transfer it to the VAT account.</div>
+<div class="block">Creates synthetic transactions to deduct the VAT due amount and transfer it to the VAT account <em>2201</em>.
+ For each credit entry with a VAT code defined, a synthetic transaction is created to transfer the associated VAT due amount to the VAT account.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>transaction</code> - transaction which VAT amount shall be computed and transferred to the VAT account.</dd>
@@ -377,34 +381,37 @@ extends net.tangly.core.domain.Realm</span></div>
 <h3>build</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">build</span>()</div>
-<div class="block">Build the account tree structure and perform basic validation.</div>
+<div class="block">Builds the account tree structure and perform basic validation. The updated accounts are stored in the realm.</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="computeVatSales(java.time.LocalDate,java.time.LocalDate)">
+<section class="detail" id="computeVatSales(java.time.LocalDate,java.time.LocalDate,net.tangly.erp.ledger.domain.VatCode)">
 <h3>computeVatSales</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name">computeVatSales</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
+ <a href="../domain/VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&nbsp;vatCode)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="computeVat(java.time.LocalDate,java.time.LocalDate)">
+<section class="detail" id="computeVat(java.time.LocalDate,java.time.LocalDate,net.tangly.erp.ledger.domain.VatCode)">
 <h3>computeVat</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name">computeVat</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
+ <a href="../domain/VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&nbsp;vatCode)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="computeDueVat(java.time.LocalDate,java.time.LocalDate)">
+<section class="detail" id="computeDueVat(java.time.LocalDate,java.time.LocalDate,net.tangly.erp.ledger.domain.VatCode)">
 <h3>computeDueVat</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name">computeDueVat</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;from,
- <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to)</span></div>
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;to,
+ <a href="../domain/VatCode.html" title="class in net.tangly.erp.ledger.domain">VatCode</a>&nbsp;vatCode)</span></div>
 </div>
 </section>
 </li>
