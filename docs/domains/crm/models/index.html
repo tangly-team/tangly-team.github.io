@@ -18,21 +18,47 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Bounded Domain CRM Model | tangly Components</title>
-<meta name="description" content="Bounded Domain CRM Context The bounded domain contextCRM implements
+<meta name="description" content=" Bounded Domain CRM Context The bounded domain contextCRM implements
 The core domain Customer Relationship Management
 It uses the shared kernel Core providing core abstractions to modeling
 Bounded Domain Workflow The workflows describe the regular activities a service company has with their contacts and customers.
 Table 1. CRM Workflows ID Description CRM-001
-As a salesperson I want to create and modify a legal entity so that I have a record of every organization my company is working with.">
+As a salesperson I want to create and modify a legal entity so that I have a record of every organization my company is working with. I want to have access to data describing the organization so that I can formally interact with them.
+CRM-002
+As a salesperson I want to create and modify a natural entity so that I have a record of every prospect my company interacts with. I want to have access to data describing the person so that I can better interact with her.
+CRM-003
+As a salesperson I want to define when a person is working for an organization so that I have an history of which companies a contact worked for. We register the duration when a person is an employee of an organization. A person can work for multiple organizations simultaneously.
+CRM-004
+As an employee I want to create and modify an opportunity describing how I interact with a legal entity so that an history of all initiatives exists. The goal of an opportunity is to conclude a contract.
+CRM-005
+As an employee I want to document all activities with entities necessary during an opportunity so that an history of all communicaitons exists
+CRM-006
+As a salesperson I want to register all legal contracts with an organization so taht I have a trace of these legal documens.
+CRM-007
+As a salesperson I want to initiate an opportunity with a legal entity and actively work to conclude a contract with them. I can have multiple activities to interact with the organization before concluding the opportunity. An opportunity can be completed successfully or not. During the timeline of the opportunity the potential and probability of success can change. As a salesperson I am only interested on the current potential and success odds and not on their timely evolution.
+A legal and natural entity shall provide links to gather additional information. A standard approach is to provide a link to the organization or persson LinkedIn profile.">
 <meta property="og:url" content="https://blog.tangly.net/docs/domains/crm/models/">
   <meta property="og:site_name" content="tangly Components">
   <meta property="og:title" content="Bounded Domain CRM Model">
-  <meta property="og:description" content="Bounded Domain CRM Context The bounded domain contextCRM implements
+  <meta property="og:description" content=" Bounded Domain CRM Context The bounded domain contextCRM implements
 The core domain Customer Relationship Management
 It uses the shared kernel Core providing core abstractions to modeling
 Bounded Domain Workflow The workflows describe the regular activities a service company has with their contacts and customers.
 Table 1. CRM Workflows ID Description CRM-001
-As a salesperson I want to create and modify a legal entity so that I have a record of every organization my company is working with.">
+As a salesperson I want to create and modify a legal entity so that I have a record of every organization my company is working with. I want to have access to data describing the organization so that I can formally interact with them.
+CRM-002
+As a salesperson I want to create and modify a natural entity so that I have a record of every prospect my company interacts with. I want to have access to data describing the person so that I can better interact with her.
+CRM-003
+As a salesperson I want to define when a person is working for an organization so that I have an history of which companies a contact worked for. We register the duration when a person is an employee of an organization. A person can work for multiple organizations simultaneously.
+CRM-004
+As an employee I want to create and modify an opportunity describing how I interact with a legal entity so that an history of all initiatives exists. The goal of an opportunity is to conclude a contract.
+CRM-005
+As an employee I want to document all activities with entities necessary during an opportunity so that an history of all communicaitons exists
+CRM-006
+As a salesperson I want to register all legal contracts with an organization so taht I have a trace of these legal documens.
+CRM-007
+As a salesperson I want to initiate an opportunity with a legal entity and actively work to conclude a contract with them. I can have multiple activities to interact with the organization before concluding the opportunity. An opportunity can be completed successfully or not. During the timeline of the opportunity the potential and probability of success can change. As a salesperson I am only interested on the current potential and success odds and not on their timely evolution.
+A legal and natural entity shall provide links to gather additional information. A standard approach is to provide a link to the organization or persson LinkedIn profile.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -40,23 +66,49 @@ As a salesperson I want to create and modify a legal entity so that I have a rec
     <meta property="article:modified_time" content="2019-05-01T00:00:00+00:00">
 
   <meta itemprop="name" content="Bounded Domain CRM Model">
-  <meta itemprop="description" content="Bounded Domain CRM Context The bounded domain contextCRM implements
+  <meta itemprop="description" content=" Bounded Domain CRM Context The bounded domain contextCRM implements
 The core domain Customer Relationship Management
 It uses the shared kernel Core providing core abstractions to modeling
 Bounded Domain Workflow The workflows describe the regular activities a service company has with their contacts and customers.
 Table 1. CRM Workflows ID Description CRM-001
-As a salesperson I want to create and modify a legal entity so that I have a record of every organization my company is working with.">
+As a salesperson I want to create and modify a legal entity so that I have a record of every organization my company is working with. I want to have access to data describing the organization so that I can formally interact with them.
+CRM-002
+As a salesperson I want to create and modify a natural entity so that I have a record of every prospect my company interacts with. I want to have access to data describing the person so that I can better interact with her.
+CRM-003
+As a salesperson I want to define when a person is working for an organization so that I have an history of which companies a contact worked for. We register the duration when a person is an employee of an organization. A person can work for multiple organizations simultaneously.
+CRM-004
+As an employee I want to create and modify an opportunity describing how I interact with a legal entity so that an history of all initiatives exists. The goal of an opportunity is to conclude a contract.
+CRM-005
+As an employee I want to document all activities with entities necessary during an opportunity so that an history of all communicaitons exists
+CRM-006
+As a salesperson I want to register all legal contracts with an organization so taht I have a trace of these legal documens.
+CRM-007
+As a salesperson I want to initiate an opportunity with a legal entity and actively work to conclude a contract with them. I can have multiple activities to interact with the organization before concluding the opportunity. An opportunity can be completed successfully or not. During the timeline of the opportunity the potential and probability of success can change. As a salesperson I am only interested on the current potential and success odds and not on their timely evolution.
+A legal and natural entity shall provide links to gather additional information. A standard approach is to provide a link to the organization or persson LinkedIn profile.">
   <meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00">
   <meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00">
   <meta itemprop="wordCount" content="548">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bounded Domain CRM Model">
-  <meta name="twitter:description" content="Bounded Domain CRM Context The bounded domain contextCRM implements
+  <meta name="twitter:description" content=" Bounded Domain CRM Context The bounded domain contextCRM implements
 The core domain Customer Relationship Management
 It uses the shared kernel Core providing core abstractions to modeling
 Bounded Domain Workflow The workflows describe the regular activities a service company has with their contacts and customers.
 Table 1. CRM Workflows ID Description CRM-001
-As a salesperson I want to create and modify a legal entity so that I have a record of every organization my company is working with.">
+As a salesperson I want to create and modify a legal entity so that I have a record of every organization my company is working with. I want to have access to data describing the organization so that I can formally interact with them.
+CRM-002
+As a salesperson I want to create and modify a natural entity so that I have a record of every prospect my company interacts with. I want to have access to data describing the person so that I can better interact with her.
+CRM-003
+As a salesperson I want to define when a person is working for an organization so that I have an history of which companies a contact worked for. We register the duration when a person is an employee of an organization. A person can work for multiple organizations simultaneously.
+CRM-004
+As an employee I want to create and modify an opportunity describing how I interact with a legal entity so that an history of all initiatives exists. The goal of an opportunity is to conclude a contract.
+CRM-005
+As an employee I want to document all activities with entities necessary during an opportunity so that an history of all communicaitons exists
+CRM-006
+As a salesperson I want to register all legal contracts with an organization so taht I have a trace of these legal documens.
+CRM-007
+As a salesperson I want to initiate an opportunity with a legal entity and actively work to conclude a contract with them. I can have multiple activities to interact with the organization before concluding the opportunity. An opportunity can be completed successfully or not. During the timeline of the opportunity the potential and probability of success can change. As a salesperson I am only interested on the current potential and success odds and not on their timely evolution.
+A legal and natural entity shall provide links to gather additional information. A standard approach is to provide a link to the organization or persson LinkedIn profile.">
 
 
 
@@ -197,7 +249,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.4c070384f7b3758d9a1c897e7c60d720.json"
+    data-offline-search-index-json-src="/offline-search-index.3deb0e618b1f73db294bef2ef40177b4.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -221,7 +273,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.4c070384f7b3758d9a1c897e7c60d720.json"
+    data-offline-search-index-json-src="/offline-search-index.3deb0e618b1f73db294bef2ef40177b4.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -662,9 +714,8 @@ if (!doNotTrack) {
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">Agile</span><span class="taxonomy-count">109</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">30</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">31</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/c&#43;&#43;/" data-taxonomy-term="c&#43;&#43;"><span class="taxonomy-label">C&#43;&#43;</span><span class="taxonomy-count">8</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/crm/" data-taxonomy-term="crm"><span class="taxonomy-label">Crm</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/design/" data-taxonomy-term="design"><span class="taxonomy-label">Design</span><span class="taxonomy-count">23</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">Devops</span><span class="taxonomy-count">8</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/domain-driven-design/" data-taxonomy-term="domain-driven-design"><span class="taxonomy-label">Domain-Driven-Design</span><span class="taxonomy-count">6</span></a></li>
@@ -672,7 +723,7 @@ if (!doNotTrack) {
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/git/" data-taxonomy-term="git"><span class="taxonomy-label">Git</span><span class="taxonomy-count">7</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/gradle/" data-taxonomy-term="gradle"><span class="taxonomy-label">Gradle</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/hugo/" data-taxonomy-term="hugo"><span class="taxonomy-label">Hugo</span><span class="taxonomy-count">5</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">Java</span><span class="taxonomy-count">52</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">Java</span><span class="taxonomy-count">53</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/jvm-languages/" data-taxonomy-term="jvm-languages"><span class="taxonomy-label">Jvm-Languages</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/organization/" data-taxonomy-term="organization"><span class="taxonomy-label">Organization</span><span class="taxonomy-count">18</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/series-agile-design/" data-taxonomy-term="series-agile-design"><span class="taxonomy-label">Series-Agile-Design</span><span class="taxonomy-count">6</span></a></li>
@@ -682,6 +733,7 @@ if (!doNotTrack) {
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/series-swiss-agile-trends/" data-taxonomy-term="series-swiss-agile-trends"><span class="taxonomy-label">Series-Swiss-Agile-Trends</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/students-java/" data-taxonomy-term="students-java"><span class="taxonomy-label">Students-Java</span><span class="taxonomy-count">5</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/tangly/" data-taxonomy-term="tangly"><span class="taxonomy-label">Tangly</span><span class="taxonomy-count">10</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/tangly-os/" data-taxonomy-term="tangly-os"><span class="taxonomy-label">Tangly-Os</span><span class="taxonomy-count">11</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/vaadin/" data-taxonomy-term="vaadin"><span class="taxonomy-label">Vaadin</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>

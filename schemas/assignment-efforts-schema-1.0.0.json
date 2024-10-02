@@ -1,0 +1,61 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://blog.tangly.erp/schemas/assignment-efforts-schema-1.0.0.json",
+    "title": "product assignment effort archive schema",
+    "description": "schema for assignment work effort activity reports",
+    "definitions": {
+        "effort": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "duration": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "text": {
+                    "type": "string",
+                    "style": "literal"
+                },
+                "minutes": {
+                    "type": "string",
+                    "style": "literal"
+                },
+                "required": [
+                    "date",
+                    "duration",
+                    "text"
+                ]
+            }
+        }
+    },
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "assignmentOid": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "contractId": {
+            "type": "string"
+        },
+        "collaborator": {
+            "type": "string"
+        },
+        "efforts": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/effort"
+            }
+        },
+        "required": [
+            "assignmentOid",
+            "contractId",
+            "collaborator",
+            "efforts"
+        ]
+    }
+}

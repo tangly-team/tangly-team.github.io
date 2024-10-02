@@ -1,0 +1,246 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://blog.tangly.erp/schemas/invoice-schema-1.0.0.json",
+    "title": "invoice archive schema",
+    "description": "schema to describe invoices",
+    "definitions": {
+        "address": {
+            "type": "object",
+            "properties": {
+                "street": {
+                    "type": "string"
+                },
+                "extended": {
+                    "type": "string"
+                },
+                "locality": {
+                    "type": "string"
+                },
+                "postCode": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                }
+            }
+        },
+        "legalEntity": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "vatNr": {
+                    "type": "string"
+                },
+                "address": {
+                    "$ref": "#/definitions/address"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "emailccs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "email"
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "address"
+            ],
+            "additionalProperties": false
+        },
+        "bankConnection": {
+            "type": "object",
+            "description": "bank connection information to perform a money transfer",
+            "properties": {
+                "iban": {
+                    "type": "string"
+                },
+                "bic": {
+                    "type": "string"
+                },
+                "institute": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "iban"
+            ]
+        },
+        "article": {
+            "type": "object",
+            "description": "article sold and invoiced with a standard price and VAT rate",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "unitPrice": {
+                    "type": "string"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "unitPrice",
+                "unit"
+            ],
+            "additionalProperties": false
+        },
+        "invoiceLine": {
+            "type": "object",
+            "properties": {
+                "position": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "position",
+                "text"
+            ]
+        },
+        "invoiceItem": {
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/invoiceLine"
+                },
+                {
+                    "properties": {
+                        "article": {
+                            "$ref": "#/definitions/article"
+                        },
+                        "quantity": {
+                            "type": "string"
+                        },
+                        "vatRate": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "quantity",
+                        "vatRate"
+                    ]
+                }
+            ]
+        },
+        "invoiceSubtotal": {
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/invoiceLine"
+                },
+                {
+                    "properties": {
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "type": "number",
+                                "minimum": 0
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                        }
+                    },
+                    "required": [
+                        "items"
+                    ]
+                }
+            ]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "id": {
+            "description": "unique identifier of the invoice",
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "contractId": {
+            "type": "string"
+        },
+        "invoicingEntity": {
+            "$ref": "#/definitions/legalEntity"
+        },
+        "invoicingConnection": {
+            "$ref": "#/definitions/bankConnection"
+        },
+        "invoicedEntity": {
+            "$ref": "#/definitions/legalEntity"
+        },
+        "deliveryDate": {
+            "type": "string",
+            "format": "date"
+        },
+        "invoiceDate": {
+            "type": "string",
+            "format": "date"
+        },
+        "dueDate": {
+            "type": "string",
+            "format": "date"
+        },
+        "currency": {
+            "type": "string"
+        },
+        "locale": {
+            "type": "string"
+        },
+        "text": {
+            "type": "string"
+        },
+        "paymentConditions": {
+            "type": "string"
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/invoiceItem"
+                    },
+                    {
+                        "$ref": "#/definitions/invoiceSubtotal"
+                    }
+                ]
+            },
+            "minItems": 1
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "contractId",
+        "invoicingEntity",
+        "invoicedEntity",
+        "invoiceDate",
+        "dueDate",
+        "currency"
+    ],
+    "additionalProperties": true
+}
