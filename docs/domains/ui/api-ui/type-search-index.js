@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"net.tangly.erp.ui","l":"AppShell"},{"p":"net.tangly.erp.ui","l":"Main"},{"p":"net.tangly.erp.ui","l":"MainView"}];updateSearchResults();

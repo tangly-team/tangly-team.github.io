@@ -33,17 +33,12 @@
   <meta itemprop="description" content="Workflow to publish open source components">
   <meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00">
   <meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1330">
+  <meta itemprop="wordCount" content="1730">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Components Publication">
   <meta name="twitter:description" content="Workflow to publish open source components">
-
-
-
-
-<link rel="preload" href="/scss/main.min.654811ade0c5885c72e6c8bfc21cfd62bfdfe6d8d6047e169e59f62a01acdf0d.css" as="style">
-<link href="/scss/main.min.654811ade0c5885c72e6c8bfc21cfd62bfdfe6d8d6047e169e59f62a01acdf0d.css" rel="stylesheet" integrity="">
-
+<link rel="preload" href="/scss/main.min.818c1c452f0907bb848da26f3f44a57429c6592d53081b50637ad62758f7db9e.css" as="style" integrity="sha256-gYwcRS8JB7uEjaJvP0SldCnGWS1TCBtQY3rWJ1j3254=" crossorigin="anonymous">
+<link href="/scss/main.min.818c1c452f0907bb848da26f3f44a57429c6592d53081b50637ad62758f7db9e.css" rel="stylesheet" integrity="sha256-gYwcRS8JB7uEjaJvP0SldCnGWS1TCBtQY3rWJ1j3254=" crossorigin="anonymous">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -69,16 +64,21 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EYDTXKRW9J"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-EYDTXKRW9J');
-}
-</script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYDTXKRW9J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-EYDTXKRW9J');
+        }
+      </script>
   </head>
   <body class="td-page">
     <header>
@@ -177,7 +177,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.3deb0e618b1f73db294bef2ef40177b4.json"
+    data-offline-search-index-json-src="/offline-search-index.96753287f7a49c76c112c2f999d4ed5f.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -201,7 +201,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.3deb0e618b1f73db294bef2ef40177b4.json"
+    data-offline-search-index-json-src="/offline-search-index.96753287f7a49c76c112c2f999d4ed5f.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="50"
   >
@@ -293,12 +293,38 @@ if (!doNotTrack) {
 
 </div>
 
-            
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_regular_git_repository_update">Regular Git Repository Update</a></li>
+    <li><a href="#_release_process">Release Process</a>
+      <ul>
+        <li><a href="#_constraints">Constraints</a></li>
+        <li><a href="#_maven_central_publication">Maven Central Publication</a></li>
+      </ul>
+    </li>
+    <li><a href="#dependencies">Dependencies</a></li>
+    <li><a href="#_decisions">Decisions</a></li>
+    <li><a href="#_findings">Findings</a></li>
+    <li><a href="#website-publication">Static Website Publication</a>
+      <ul>
+        <li><a href="#_introduction">Introduction</a></li>
+        <li><a href="#_configure_asciidoctor">Configure Asciidoctor</a></li>
+        <li><a href="#_docsy_tailoring">Docsy Tailoring</a></li>
+        <li><a href="#_create_website">Create Website</a></li>
+        <li><a href="#_set_jdk_version_under_macos">Set JDK Version under macOS</a></li>
+        <li><a href="#_create_docker_distribution">Create Docker Distribution</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
             <div class="taxonomy taxonomy-terms-cloud taxo-tags">
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/agile/" data-taxonomy-term="agile"><span class="taxonomy-label">Agile</span><span class="taxonomy-count">109</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">31</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/architecture/" data-taxonomy-term="architecture"><span class="taxonomy-label">Architecture</span><span class="taxonomy-count">32</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/c&#43;&#43;/" data-taxonomy-term="c&#43;&#43;"><span class="taxonomy-label">C&#43;&#43;</span><span class="taxonomy-count">8</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/design/" data-taxonomy-term="design"><span class="taxonomy-label">Design</span><span class="taxonomy-count">23</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">Devops</span><span class="taxonomy-count">8</span></a></li>
@@ -307,7 +333,7 @@ if (!doNotTrack) {
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/git/" data-taxonomy-term="git"><span class="taxonomy-label">Git</span><span class="taxonomy-count">7</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/gradle/" data-taxonomy-term="gradle"><span class="taxonomy-label">Gradle</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/hugo/" data-taxonomy-term="hugo"><span class="taxonomy-label">Hugo</span><span class="taxonomy-count">5</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">Java</span><span class="taxonomy-count">53</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/java/" data-taxonomy-term="java"><span class="taxonomy-label">Java</span><span class="taxonomy-count">54</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/jvm-languages/" data-taxonomy-term="jvm-languages"><span class="taxonomy-label">Jvm-Languages</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/organization/" data-taxonomy-term="organization"><span class="taxonomy-label">Organization</span><span class="taxonomy-count">18</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/series-agile-design/" data-taxonomy-term="series-agile-design"><span class="taxonomy-label">Series-Agile-Design</span><span class="taxonomy-count">6</span></a></li>
@@ -317,7 +343,7 @@ if (!doNotTrack) {
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/series-swiss-agile-trends/" data-taxonomy-term="series-swiss-agile-trends"><span class="taxonomy-label">Series-Swiss-Agile-Trends</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/students-java/" data-taxonomy-term="students-java"><span class="taxonomy-label">Students-Java</span><span class="taxonomy-count">5</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/tangly/" data-taxonomy-term="tangly"><span class="taxonomy-label">Tangly</span><span class="taxonomy-count">10</span></a></li>
-        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/tangly-os/" data-taxonomy-term="tangly-os"><span class="taxonomy-label">Tangly-Os</span><span class="taxonomy-count">11</span></a></li>
+        <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/tangly-os/" data-taxonomy-term="tangly-os"><span class="taxonomy-label">Tangly-Os</span><span class="taxonomy-count">12</span></a></li>
         <li><a class="taxonomy-term" href="https://blog.tangly.net/tags/vaadin/" data-taxonomy-term="vaadin"><span class="taxonomy-label">Vaadin</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
@@ -343,11 +369,10 @@ if (!doNotTrack) {
 	<header class="article-meta">
 		
 </header>
-	<div class="sect1">
-<h2 id="_components_publication">Components Publication</h2>
+	
+<div class="sect1">
+<h2 id="_regular_git_repository_update">Regular Git Repository Update</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_regular_git_repository_update">Regular Git Repository Update</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -361,16 +386,129 @@ if (!doNotTrack) {
 </div>
 </li>
 <li>
-<p>Push the changes to the GitHub repository.
-<em>The statistics for developer activities will be automatically updated.</em></p>
+<p>The continuous integration pipeline is triggered by the push to the <a href="https://github.com/">GitHub</a> repository.
+Check that the job has been completed successfully.
+See <a href="https://github.com/tangly-team/tangly-os/blob/master/buildSrc/readme.adoc">Readme</a>.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p><em>The statistics for developer activities will be automatically updated.</em></p>
+</div>
+<div class="paragraph">
+<p>A good sanity check before pushing to the repository is to run the following command before pushing the code to the repository:</p>
+</div>
+<div class="paragraph">
+<p><code>./gradlew clean build test javadoc testCodeCoverageReport testAggregateTestReport -Pvaadin.productionMode</code></p>
+</div>
+<div class="paragraph">
+<p>You can consult the various reports generated by opening <code>&lt;PROJECT_ROOT&gt;/src/site/reports.html</code> in your browser.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_release_process">Release Process</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We use a monorepo to manage the source code of the libraries and the example application.
+All libraries are released and published together on the maven central repository.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>push to GitHub and verify the build on the CI server</p>
+</li>
+<li>
+<p><code>git commit -m &#34;Release X.Y.Z&#34;</code></p>
+</li>
+<li>
+<p><code>git tag -a &#34;tangly-os-X.Y.Z&#34; -m &#34;official release published on maven central&#34;</code></p>
+</li>
+<li>
+<p><code>git push origin --tags</code></p>
+</li>
+<li>
+<p><code>./gradlew publishMavenJavaPublicationToMavenRepository -Pvaadin.productionMode</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Run all build-related tasks with <code>-Pvaadin.productionMode</code> due to a bug in the vaadin plugin.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Verify first that the example application runs correctly with the new artifacts.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Publish artifacts to the local maven repository <code>./gradlew publishMavenJavaPublicationToMavenLocal</code>.
+The example application uses the artifacts from the local maven repository to compile and run.</p>
+</li>
+<li>
+<p>Update the <a href="https://github.com/tangly-team/tangly-app-example">tangly App Example</a>.
+Update the artifacts in the build.gradle file to the latest version.</p>
+</li>
+<li>
+<p>Verify the application runs correctly with the new artifacts.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Upon releasing the new version of the libraries, you have to wait until the artifacts are available on the maven central repository.
+Once the artifacts are available, you can push the new version of the example application to the GitHub repository.
+It triggers the CI/CD pipeline.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You can check the release on the maven central repository under <a href="https://repo1.maven.org/maven2/net/tangly">Maven Central net.tangly</a>.
+The search index takes a few hours to be updated.</p>
+</div>
+<div class="paragraph">
+<p>Log in the <a href="https://oss.sonatype.org/">sonatype portal</a> for the staging repository and close the repository.
+Search the component in</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://search.maven.org/">maven central repository</a> to check the release.</p>
+</li>
+<li>
+<p><a href="https://central.sonatype.com/">sonatype repository</a> to check the release.</p>
+</li>
+</ul>
 </div>
 <div class="sect2">
-<h3 id="_continuous_delivery_pipelines">Continuous Delivery Pipelines</h3>
+<h3 id="_constraints">Constraints</h3>
 <div class="paragraph">
-<p>See <a href="https://github.com/tangly-team/tangly-os/blob/master/buildSrc/readme.adoc">Readme</a>.</p>
+<p>The build process of the Gradle build file requires these variables to run without errors.</p>
+</div>
+<div class="paragraph">
+<p>You must create a gradle <code>~/.gradle/gradle.properties</code> file with the following content:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>mavenCentralUsername=*Value*
+mavenCentralPassword=*Value*
+
+signing.secretKeyRingFile=*Path to your secring.kbx*
+signing.keyId=743B11D9
+signing.password=*Password to unlock the secret key*</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For mysterious reasons, the Maven Publish plugin does work only if you have a <code>secring.kbx</code> file.
+If necessary, run the command <code>gpg --keyring secring.gpg --export-secret-keys &gt; ~/.gnupg/secring.gpg</code> to create the file
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -382,55 +520,55 @@ if (!doNotTrack) {
 <ol class="arabic">
 <li>
 <p>Publish artifacts of a component with the script <code>uploadToMavenCentral.sh</code>.
-Do not use the gradle task <code>gradle publishAllPublicationsToMavenRepository -Pmode=prod</code>.
+<strong>Do not use the gradle task <code>gradle publishAllPublicationsToMavenRepository -Pvaadin.productionMode</code></strong>.
 Sonatype cannot handle a parallel upload of multiple components and simply close the connections during upload (Status 2020-Q2).</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Pre-activity: test publishing with <code>gradle publishToMavenLocal</code></p>
+<p>Pre-activity: test publishing with <code>gradle publishToMavenLocal</code>.</p>
 </li>
 <li>
-<p>Pre-activity: check on bitbucket the product compiles through the <strong>CI</strong> continuous integration pipeline</p>
+<p>Pre-activity: check on <a href="https://github.com/">GitHub</a> the product compiles through the <strong>CI</strong> continuous integration pipeline.</p>
 </li>
 <li>
 <p>Post-activity: <strong>tag repository</strong> on git to identify the version of the published packages.
 The tag version semantic part <strong>must</strong> be the same as the package version on <a href="https://central.sonatype.com/">Maven Central</a>.<br/>
-The tag is of the form -AcronymComponent-MajorVersion-MinorVersion-PatchVersion-</p>
+The tag is of the form -AcronymComponent-MajorVersion-MinorVersion-PatchVersion-.</p>
 </li>
 <li>
-<p>Verify with <code>git tag label</code> and <code>git push origin --tags</code></p>
+<p>Verify with <code>git tag label</code> and <code>git push origin --tags</code>.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Log into <a href="https://oss.sonatype.org/#welcome">Sonatype Maven Central Repository</a></p>
+<p>Log into <a href="https://oss.sonatype.org/#welcome">Sonatype Maven Central Repository</a>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Go to <a href="https://oss.sonatype.org/#stagingRepositories">Staging Repositories</a></p>
+<p>Go to <a href="https://oss.sonatype.org/#stagingRepositories">Staging Repositories</a>.</p>
 </li>
 <li>
-<p>Find your temporary repository at the end of the list</p>
+<p>Find your temporary repository at the end of the list.</p>
 </li>
 <li>
-<p>Review the content of the repository</p>
+<p>Review the content of the repository,</p>
 </li>
 <li>
-<p>Close the repository-button on the tool list-</p>
+<p>Close the repository-button on the tool list.</p>
 </li>
 <li>
 <p>Close stage is initiated and checks are performed.
 If everything was fine, the content was published.</p>
 </li>
 <li>
-<p>Release the artifact-button on the tool list-</p>
+<p>Release the artifact-button on the tool list.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>See <a href="#website-publication">Static Website Publication</a> to update the website</p>
+<p>See <a href="#website-publication">Static Website Publication</a> to update the website.</p>
 </li>
 </ol>
 </div>
@@ -452,6 +590,15 @@ If everything was fine, the content was published.</p>
 </tbody></table>
 </div>
 <div class="paragraph">
+<p>The final step is to create a release on <a href="https://github.com/">GitHub</a> and update the website.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dependencies">Dependencies</h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>Below the dependencies between tangly open source components as defined in the multi-modules <a href="https://gradle.org/">Gradle Build Tool</a> build file.</p>
 </div>
 <div class="imageblock kroki">
@@ -460,8 +607,10 @@ If everything was fine, the content was published.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_decisions">Decisions</h3>
+</div>
+<div class="sect1">
+<h2 id="_decisions">Decisions</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -473,16 +622,16 @@ Each component is declared as a Gradle module.</p>
 </li>
 <li>
 <p>We are hosted at <a href="https://github.com/">GitHub</a>
-<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.
 Mirror repositories are hosted at <a href="https://about.gitlab.com/">GitLab</a>
-<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
 </li>
 <li>
 <p>The continuous delivery pipelines work for the primary and the mirror platforms.
 The build uses the <em>eclipse-temurin</em> Java distribution.
 This docker image is based on Ubuntu.
 The installation of additional packages is therefore simplified
-<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
+<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.</p>
 </li>
 </ol>
 </div>
@@ -497,7 +646,7 @@ The installation of additional packages is therefore simplified
 
 git remote                                                                <i class="conum" data-value="2"></i><b>(2)</b>
 
-git push origin-github                                                    <i class="conum" data-value="3"></i><b>(3)</b>
+git push origin                                                           <i class="conum" data-value="3"></i><b>(3)</b>
 git push origin-gitlab
 git push origin-hslu
 git push origin-bitbucket</span></code></pre>
@@ -524,11 +673,14 @@ The push shall trigger the continuous integration pipeline</td>
 <p>You must create a token for a developer account to be able to push changes and trigger the CI pipeline.
 The username is your account username.
 The password is the generated token
-<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.
+<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.
 Store it in a safe place.</p>
 </div>
-<div class="sect3">
-<h4 id="_findings">Findings</h4>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_findings">Findings</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -555,10 +707,11 @@ Set the property if you want to sign the component artifacts and publish to <a h
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="website-publication">Static Website Publication</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="website-publication">Static Website Publication</h3>
-<div class="sect3">
-<h4 id="_introduction">Introduction</h4>
+<h3 id="_introduction">Introduction</h3>
 <div class="paragraph">
 <p>The static website uses <a href="https://asciidoc.org/">Asciidoc</a> to write all documents.</p>
 </div>
@@ -567,8 +720,8 @@ Set the property if you want to sign the component artifacts and publish to <a h
 The Hugo theme is <a href="https://www.docsy.dev/">Docsy</a>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_configure_asciidoctor">Configure Asciidoctor</h4>
+<div class="sect2">
+<h3 id="_configure_asciidoctor">Configure Asciidoctor</h3>
 <div class="paragraph">
 <p>The new version of the <a href="https://gohugo.io/">Hugo</a> support configuration of <a href="https://asciidoctor.org/">Asciidoctor</a> through <code>config.toml</code> therefore no manipulation of asciidoctor is needed.
 As a bonus, the files generated by PlantUml are created in the correct folder.
@@ -599,7 +752,6 @@ sudo gem install asciimath <i class="conum" data-value="3"></i><b>(3)</b>
 </tbody></table>
 </div>
 </div>
-</div>
 <div class="sect2">
 <h3 id="_docsy_tailoring">Docsy Tailoring</h3>
 <div class="paragraph">
@@ -614,19 +766,19 @@ Our extensions follow the official rules on how a theme can be tailored and expa
 <ul>
 <li>
 <p>Inclusion of the styling sheet <em>asciidoctor.scss</em> to style AsciiDoc documents
-<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.</p>
-</li>
-<li>
-<p>Inclusion of the shortcodes extension <em>shortcodes.html</em> layouts and the style file <em>shortcodes.scss</em> to support file attachments in the website
 <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>.</p>
 </li>
 <li>
-<p>Extension of the blog section with <em>comments-uttereances.html</em> to support comments on blog articles
+<p>Inclusion of the shortcodes extension <em>shortcodes.html</em> layouts and the style file <em>shortcodes.scss</em> to support file attachments in the website
 <sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup>.</p>
 </li>
 <li>
-<p>Changes in the header and footer partials to display mathematical expressions and well-styled copyright
+<p>Extension of the blog section with <em>comments-uttereances.html</em> to support comments on blog articles
 <sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup>.</p>
+</li>
+<li>
+<p>Changes in the header and footer partials to display mathematical expressions and well-styled copyright
+<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>.</p>
 </li>
 </ul>
 </div>
@@ -642,7 +794,7 @@ Hugo’s algorithms select local overwritten files and ignore the corresponding 
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The current structure of our extensions follows the official approach how a Hugo module should be extended.
+<p>The current structure of our extensions follows the official approach to how a Hugo module should be extended.
 We do not change any files in the theme.
 All changes are defined locally.
 We use the selection algorithm of Hugo to activate our tailoring and extensions.</p>
@@ -651,8 +803,9 @@ We use the selection algorithm of Hugo to activate our tailoring and extensions.
 </tr>
 </tbody></table>
 </div>
-<div class="sect3">
-<h4 id="_create_website">Create Website</h4>
+</div>
+<div class="sect2">
+<h3 id="_create_website">Create Website</h3>
 <div class="paragraph">
 <p>The tangly open source components website is hosted under <a href="https://blog.tangly.net/docs">Documentation</a>.</p>
 </div>
@@ -677,7 +830,7 @@ Before uploading the site, stop the Hugo local server.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>the script <em>completeHugo.sh</em> generates the static pictures and copies them to the static folder and publish the whole site on bitbucket.</p>
+<p>the script <em>completeHugo.sh</em> generates the static pictures and copies them to the static folder and publish the whole site on <a href="https://github.com/">GitHub</a>.</p>
 </li>
 </ol>
 </div>
@@ -685,15 +838,15 @@ Before uploading the site, stop the Hugo local server.</p>
 <p>Upon completion, the site is published on the web for all.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_set_jdk_version_under_macos">Set JDK Version under macOS</h4>
+<div class="sect2">
+<h3 id="_set_jdk_version_under_macos">Set JDK Version under macOS</h3>
 <div class="paragraph">
 <p>Install regular Java JDK such as the Oracle or OpenJDK distribution.
 They will be located under <em>/Library/Java/JavaVirtualMachines</em>.</p>
 </div>
 <div class="paragraph">
 <p>If using bash or zsh shell, add the following commands to your <em>.bash_profile</em> or <em>.zshrc</em>
-<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>.</p>
+<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -716,8 +869,8 @@ They will be located under <em>/Library/Java/JavaVirtualMachines</em>.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_create_docker_distribution">Create Docker Distribution</h4>
+<div class="sect2">
+<h3 id="_create_docker_distribution">Create Docker Distribution</h3>
 <div class="paragraph">
 <p>Generate the ERP application as a production release.</p>
 </div>
@@ -739,7 +892,7 @@ docker run -ti -p 8080:8080 erp-docker <i class="conum" data-value="4"></i><b>(4
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Unzip the packed distribution because the docker base image does not contain the unzip utility</td>
+<td>Unzip the packed distribution because the docker base image does not contain the <code>unzip</code> utility</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
@@ -754,35 +907,37 @@ docker run -ti -p 8080:8080 erp-docker <i class="conum" data-value="4"></i><b>(4
 </div>
 </div>
 </div>
-</div>
 <div id="footnotes">
 <hr/>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. We moved from <a href="https://bitbucket.org/">Bitbucket</a> to <a href="https://github.com/">GitHub</a> in 2022. The reasons were that the new platform supports publishing of static websites with a lot more functionalities. The new agile project management functionality with Scrum boards, sprint iterations, and insight report is riveting.
+<a href="#_footnoteref_1">1</a>. The newer version macOS GPP stopped creating the <code>secring.kbx</code> file and stored public and private keys into the <code>pubring.kbx</code> file.
 </div>
 <div class="footnote" id="_footnotedef_2">
-<a href="#_footnoteref_2">2</a>. The support for the mirrors <a href="https://bitbucket.org/">Bitbucket</a> and the technical university of Lucerne was removed due to obsolete technology and lack of interest.
+<a href="#_footnoteref_2">2</a>. We moved from <a href="https://bitbucket.org/">Bitbucket</a> to <a href="https://github.com/">GitHub</a> in 2022. The reasons were that the new platform supports publishing of static websites with a lot more functionalities. The new agile project management functionality with Scrum boards, sprint iterations, and insight report is riveting.
 </div>
 <div class="footnote" id="_footnotedef_3">
-<a href="#_footnoteref_3">3</a>. It is a shame that each hosting platform has created their own incompatible pipeline script syntax.
+<a href="#_footnoteref_3">3</a>. The support for the mirrors <a href="https://bitbucket.org/">Bitbucket</a> and the technical university of Lucerne was removed due to obsolete technology and lack of interest.
 </div>
 <div class="footnote" id="_footnotedef_4">
-<a href="#_footnoteref_4">4</a>. This is necessary if you have enabled two factors authentication. The other approach is to generate an SSH key and perform all operations other SSH. This is my preferred approach.
+<a href="#_footnoteref_4">4</a>. It is a shame that each hosting platform has created their own incompatible pipeline script syntax.
 </div>
 <div class="footnote" id="_footnotedef_5">
-<a href="#_footnoteref_5">5</a>. I asked for a change request on GitHub for Docsy to better support AsciiDoc documents. The Docsy team decided that their priorities are different and rejected the request.
+<a href="#_footnoteref_5">5</a>. This is necessary if you have enabled two factors authentication. The other approach is to generate an SSH key and perform all operations other SSH. This is my preferred approach.
 </div>
 <div class="footnote" id="_footnotedef_6">
-<a href="#_footnoteref_6">6</a>. This change is defined as a merge request. The pull request is quite old and seems to have a low priority.
+<a href="#_footnoteref_6">6</a>. I asked for a change request on GitHub for Docsy to better support AsciiDoc documents. The Docsy team decided that their priorities are different and rejected the request.
 </div>
 <div class="footnote" id="_footnotedef_7">
-<a href="#_footnoteref_7">7</a>. The current setup of the template does not allow selection of a comment solution per configuration.
+<a href="#_footnoteref_7">7</a>. This change is defined as a merge request. The pull request is quite old and seems to have a low priority.
 </div>
 <div class="footnote" id="_footnotedef_8">
-<a href="#_footnoteref_8">8</a>. An issue report exists on GitHub about the copyright issue.
+<a href="#_footnoteref_8">8</a>. The current setup of the template does not allow selection of a comment solution per configuration.
 </div>
 <div class="footnote" id="_footnotedef_9">
-<a href="#_footnoteref_9">9</a>. <em>zsh</em> is the default shell in current macOS versions.
+<a href="#_footnoteref_9">9</a>. An issue report exists on GitHub about the copyright issue.
+</div>
+<div class="footnote" id="_footnotedef_10">
+<a href="#_footnoteref_10">10</a>. <em>zsh</em> is the default shell in current macOS versions.
 </div>
 </div>
 
