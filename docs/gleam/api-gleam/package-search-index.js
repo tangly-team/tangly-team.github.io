@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.tangly.gleam.model"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"tangly.os.net.tangly.gleam","l":"net.tangly.gleam.model"}];updateSearchResults();
